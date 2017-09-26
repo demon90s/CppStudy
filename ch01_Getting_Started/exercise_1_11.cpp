@@ -8,7 +8,7 @@ int main()
 {
 	int lval = 0, rval = 0;
 
-	std::cout << "Enter two number:" << std::endl;
+	std::cout << "Enter two integers:" << std::endl;
 	std::cin >> lval >> rval;
 
 	if (lval > rval) {
