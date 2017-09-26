@@ -28,16 +28,21 @@ main() {
 			continue
 		fi
 
-
 		if [ $exe_file -nt $cpp_file ] && [ "$1" != "rebuild" ]; then
 			continue
 		fi
 
 		echo "[BUILDING] $cpp_file -> $exe_file"
 		g++ -g -Wall -std=c++11 $cpp_file -o $exe_file
+
+		if [ "$?" != "0" ]; then
+			return 1
+		fi
 	done
+
+	return 0
 }
 
 main $1
 
-exit 0
+exit $?
