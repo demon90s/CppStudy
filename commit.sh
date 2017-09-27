@@ -2,6 +2,24 @@
 
 # 提交代码到github
 
+get_all_ch_dir() {
+	all_files=`ls`
+	for f in $all_files; do
+		if [ -d $f ]; then
+			echo -e "$f \c"
+		fi
+	done
+}
+
+clear_build() {
+	all_ch_dir=$(get_all_ch_dir)
+	for ch_dir in $all_ch_dir; do
+		cd $ch_dir
+		sh build.sh clear
+		cd ..
+	done
+}
+
 show_status() {
 	if git status | grep 'nothing to commit'; then
 		return 1
@@ -21,6 +39,8 @@ commit() {
 }
 
 main() {
+	clear_build
+
 	if ! show_status; then
 		return 0
 	fi
@@ -36,4 +56,3 @@ main() {
 main
 
 exit 0
-
