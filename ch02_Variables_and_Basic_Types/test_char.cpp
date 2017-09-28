@@ -7,7 +7,7 @@ int main()
 	if (a < 0)
 		std::cout << "On this compiler, char is signed" << std::endl;
 	else
-		std::cout << "On this comiler, char is unsigned" << std::endl;
+		std::cout << "On this compiler, char is unsigned" << std::endl;
 
 	return 0;
 }
