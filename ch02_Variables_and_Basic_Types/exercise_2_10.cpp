@@ -12,7 +12,6 @@
 
 /*
  * global_str是一个空串，global_int是0，local_int的值未定义，local_str是一个空串。
- *
  */
 
 #include <iostream>
