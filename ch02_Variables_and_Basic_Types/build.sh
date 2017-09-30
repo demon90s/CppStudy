@@ -3,7 +3,12 @@
 # 自动编译源文件的脚本，使用方法：sh build.sh [rebuild | clear]
 
 all_cpp_files=`ls *.cpp`
-exclude_files="exercise_2_6.cpp exercise_2_9.cpp exercise_2_10.cpp test_list_initialization.cpp"
+exclude_files="exercise_2_6.cpp\
+	       exercise_2_9.cpp\
+	       exercise_2_10.cpp\
+	       exercise_2_34.cpp\
+	       exercise_2_35.cpp\
+	       test_list_initialization.cpp"
 
 is_exclude_file() {
 	for file in $exclude_files; do
