@@ -123,7 +123,6 @@ int main()
 */
 
 // 1.5.2节，1.23
-<<<<<<< HEAD
 // $ ./exercise_2_41 < data/book_sales
 /*
 int main()
@@ -190,11 +189,5 @@ int main()
 		return -1;
 	}
 
-=======
-
-int main()
-{
-	// TODO
->>>>>>> 0c6fdb8575f35ff6c49dce2839b1899ec947b076
 	return 0;
 }
