@@ -1,5 +1,5 @@
 /*
- * ./example_reading_unknow_num_of_strings < example_reading_unknow_num_of_strings.cpp
+ * ./example_read_string < example_read_string.cpp
  */
 
 #include <iostream>
