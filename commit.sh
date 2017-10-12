@@ -15,7 +15,11 @@ clear_build() {
 	all_dir=$(get_all_dir)
 	for d in $all_dir; do
 		cd $d
-			sh build.sh clear > /dev/null 2>&1
+			if [ -f build.sh ]; then
+				sh build.sh clear
+			elif [ -f Makefile ]; then
+				make clean
+			fi
 		cd ..
 	done
 }
