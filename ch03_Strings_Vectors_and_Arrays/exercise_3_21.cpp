@@ -12,10 +12,12 @@ using std::endl;
 using std::vector;
 
 #define PRINT_VEC(vec) \
+do { \
 	cout << #vec << " has " << (vec).size() << " element(s):"; \
 	for (auto it = (vec).cbegin(); it != (vec).cend(); ++it) \
 		cout << " " << *it; \
 	cout << endl; \
+} while(0)
 
 int main()
 {
