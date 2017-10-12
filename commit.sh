@@ -15,9 +15,7 @@ clear_build() {
 	all_dir=$(get_all_dir)
 	for d in $all_dir; do
 		cd $d
-		if [ -f build.sh ]; then
-			sh build.sh clear
-		fi
+			sh build.sh clear > /dev/null 2>&1
 		cd ..
 	done
 }
