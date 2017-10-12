@@ -1,5 +1,5 @@
 /*
- * 练习3.16：编写一段程序，把练习3.13中vector对象的容量和其具体内容输出出来，检验你之前的回答是否正确，如果不对，回头重新学习3.3.1节（第87页）直到弄明白错在何处位置。
+ *  练习3.21：请使用迭代器重做3.3.3节（第94页）的第一个练习。
  */
 
 #include <iostream>
@@ -13,8 +13,8 @@ using std::vector;
 
 #define PRINT_VEC(vec) \
 	cout << #vec << " has " << (vec).size() << " element(s):"; \
-	for (auto &s : (vec)) \
-		cout << " " << s; \
+	for (auto it = (vec).cbegin(); it != (vec).cend(); ++it) \
+		cout << " " << *it; \
 	cout << endl; \
 
 int main()
