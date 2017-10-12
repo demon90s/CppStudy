@@ -2,7 +2,7 @@
 
 # 提交代码到github
 
-get_all_ch_dir() {
+get_all_dir() {
 	all_files=`ls`
 	for f in $all_files; do
 		if [ -d $f ]; then
@@ -12,10 +12,12 @@ get_all_ch_dir() {
 }
 
 clear_build() {
-	all_ch_dir=$(get_all_ch_dir)
-	for ch_dir in $all_ch_dir; do
-		cd $ch_dir
-		sh build.sh clear
+	all_dir=$(get_all_dir)
+	for d in $all_dir; do
+		cd $d
+		if [ -f build.sh ]; then
+			sh build.sh clear
+		fi
 		cd ..
 	done
 }
