@@ -3,7 +3,7 @@
 # 自动编译源文件的脚本，使用方法：sh build.sh [rebuild | clear]
 
 all_cpp_files=`ls *.cpp`
-exclude_files=""
+exclude_files="test_sizeof.cpp"
 
 is_exclude_file() {
 	for file in $exclude_files; do
