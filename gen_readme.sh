@@ -50,7 +50,6 @@ gen_exercise_txt()
 	echo "| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |" >> $readme_file # 居中
 	
 	num=0	# 第几个练习
-	is_execute_special_file=FALSE
 	for exercise_file in $exercise_files; do
 
 		num=$((num + 1))
@@ -60,7 +59,6 @@ gen_exercise_txt()
 		tab_name=${tab_name##0}
 		tab_name=${tab_name%%.*}
 		tab_name=练习$n_ch.$tab_name
-
 
 		echo -e "|[$tab_name]($ch_dir/$exercise_file)\c" >> $readme_file
 
@@ -79,7 +77,6 @@ gen_exercise_txt()
 	cd ..
 	return 0
 }
-
 
 ######################################################################
 

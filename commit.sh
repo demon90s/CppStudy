@@ -45,6 +45,8 @@ commit() {
 main() {
 	clear_build
 
+	sh ./gen_readme.sh
+
 	if ! show_status; then
 		return 0
 	fi
