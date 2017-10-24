@@ -13,6 +13,11 @@ get_all_chapters()
 {
 cat << !CHAPTERS!
 第1章_开始
+第2章_变量和基本类型
+第3章_字符串、向量和数组
+第4章_表达式
+第5章_语句
+第6章_函数
 !CHAPTERS!
 }
 
@@ -32,6 +37,7 @@ gen_exercise_txt()
 {
 	ch_name=$1				# 章节名
 	ch_dir=$(ls -d $2*)		# 章节路径
+	n_ch=$3					# 第几章
 
 	#echo "$ch_name $ch_dir"
 
@@ -43,16 +49,25 @@ gen_exercise_txt()
 	echo "|E|X|E|R|C|I|S|E|" >> $readme_file
 	echo "| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |" >> $readme_file # 居中
 	
-	num=1	# 第几个练习
+	num=0	# 第几个练习
+	is_execute_special_file=FALSE
 	for exercise_file in $exercise_files; do
-		echo -e "|[$num]($ch_dir/$exercise_file)\c" >> $readme_file
-
-		# 8列一行
-		if [ $((num % 8)) == "0" ]; then
-			echo "|" >> $readme_file
-		fi
 
 		num=$((num + 1))
+
+		# exercise_1_01a.cpp --> 01a.cpp --> 1a.cpp --> 1a --> 练习1.1a
+		tab_name=${exercise_file##*_}
+		tab_name=${tab_name##0}
+		tab_name=${tab_name%%.*}
+		tab_name=练习$n_ch.$tab_name
+
+
+		echo -e "|[$tab_name]($ch_dir/$exercise_file)\c" >> $readme_file
+
+		# 8列一行
+		if [ $((num % 8)) = "0" ]; then
+			echo "|" >> $readme_file
+		fi
 	done
 
 	if [ $((num % 8)) != "0" ]; then
@@ -70,8 +85,10 @@ gen_exercise_txt()
 
 gen_readme()
 {
-	n_ch=1 		# 当前处理的第几章
+	n_ch=0 		# 当前处理的第几章
 	for ch_name in $chapters; do
+		n_ch=$(($n_ch + 1))
+
 		cur_ch=ch # 章节的英文路径开头
 
 		if [ $n_ch -lt 10 ]; then
@@ -80,9 +97,7 @@ gen_readme()
 
 		cur_ch=${cur_ch}$n_ch
 
-		gen_exercise_txt $ch_name $cur_ch
-
-		n_ch=$(($n_ch + 1))
+		gen_exercise_txt $ch_name $cur_ch $n_ch
 	done
 
 	return 0
