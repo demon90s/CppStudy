@@ -1,0 +1,103 @@
+# 生成README.md文件
+
+#! /bin/bash
+
+old_dir=$(pwd)
+readme_file=${old_dir}/README.md
+
+#######################################################################
+
+# 设置每一个章节名字
+
+get_all_chapters()
+{
+cat << !CHAPTERS!
+第1章_开始
+!CHAPTERS!
+}
+
+chapters=$(get_all_chapters)
+
+#第2章_变量和基本类型
+#第3章_字符串、向量和数组
+#第4章_表达式
+#第5章_语句
+#第6章_函数
+
+######################################################################
+
+# 生成一个章节练习的md文本
+
+gen_exercise_txt()
+{
+	ch_name=$1				# 章节名
+	ch_dir=$(ls -d $2*)		# 章节路径
+
+	#echo "$ch_name $ch_dir"
+
+	cd $ch_dir
+
+	exercise_files=$(ls -d exercise*); # 所有的练习文件，包括目录
+	echo "### $ch_name" >> $readme_file
+	echo >> $readme_file
+	echo "|E|X|E|R|C|I|S|E|" >> $readme_file
+	echo "| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |" >> $readme_file # 居中
+	
+	num=1	# 第几个练习
+	for exercise_file in $exercise_files; do
+		echo -e "|[$num]($ch_dir/$exercise_file)\c" >> $readme_file
+
+		# 8列一行
+		if [ $((num % 8)) == "0" ]; then
+			echo "|" >> $readme_file
+		fi
+
+		num=$((num + 1))
+	done
+
+	if [ $((num % 8)) != "0" ]; then
+		echo "|" >> $readme_file
+	fi
+	
+	echo >> $readme_file
+
+	cd ..
+	return 0
+}
+
+
+######################################################################
+
+gen_readme()
+{
+	n_ch=1 		# 当前处理的第几章
+	for ch_name in $chapters; do
+		cur_ch=ch # 章节的英文路径开头
+
+		if [ $n_ch -lt 10 ]; then
+			cur_ch=ch0
+		fi
+
+		cur_ch=${cur_ch}$n_ch
+
+		gen_exercise_txt $ch_name $cur_ch
+
+		n_ch=$(($n_ch + 1))
+	done
+
+	return 0
+}
+
+main()
+{
+	rm -f $readme_file
+	touch $readme_file
+
+	gen_readme
+
+	return 0
+}
+
+main
+
+exit 0
