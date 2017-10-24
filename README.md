@@ -55,4 +55,5 @@
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习6.1](ch06_Functions/exercise_6_01.txt)|[练习6.2](ch06_Functions/exercise_6_02.txt)|[练习6.3](ch06_Functions/exercise_6_03.cpp)|[练习6.4](ch06_Functions/exercise_6_04.cpp)|[练习6.5](ch06_Functions/exercise_6_05.cpp)|[练习6.6](ch06_Functions/exercise_6_06.cpp)|[练习6.7](ch06_Functions/exercise_6_07.cpp)|[练习6.8](ch06_Functions/exercise_6_08.txt)|
 |[练习6.9](ch06_Functions/exercise_6_09)|[练习6.10](ch06_Functions/exercise_6_10.cpp)|[练习6.11](ch06_Functions/exercise_6_11.cpp)|[练习6.12](ch06_Functions/exercise_6_12.cpp)|[练习6.13](ch06_Functions/exercise_6_13.txt)|[练习6.14](ch06_Functions/exercise_6_14.txt)|[练习6.15](ch06_Functions/exercise_6_15.txt)|[练习6.16](ch06_Functions/exercise_6_16.md)|
+|[练习6.17](ch06_Functions/exercise_6_17.cpp)|[练习6.18](ch06_Functions/exercise_6_18.md)|
 
