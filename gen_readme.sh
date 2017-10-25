@@ -103,11 +103,10 @@ gen_example_txt()
 		desc=${desc#*: }
 
 		if [ "$desc" != "" ]; then
-			echo "[$desc]($ch_dir/$file)" >> $readme_file
+			echo "- [$desc]($ch_dir/$file)" >> $readme_file
+			echo >> $readme_file
 		fi
 	done
-
-	echo >> $readme_file
 
 	cd ..
 	return 0
