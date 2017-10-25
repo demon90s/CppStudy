@@ -7,6 +7,9 @@
 |[练习1.17](ch01_Getting_Started/exercise_1_17.cpp)|[练习1.18](ch01_Getting_Started/exercise_1_18.cpp)|[练习1.19](ch01_Getting_Started/exercise_1_19.cpp)|[练习1.20](ch01_Getting_Started/exercise_1_20.cpp)|[练习1.21](ch01_Getting_Started/exercise_1_21.cpp)|[练习1.22](ch01_Getting_Started/exercise_1_22.cpp)|[练习1.23](ch01_Getting_Started/exercise_1_23.cpp)|[练习1.24](ch01_Getting_Started/exercise_1_24.cpp)|
 |[练习1.25](ch01_Getting_Started/exercise_1_25.cpp)|
 
+#### 案例代码
+
+
 ### 第2章_变量和基本类型
 
 |E|X|E|R|C|I|S|E|
@@ -30,6 +33,9 @@
 |[练习3.35](ch03_Strings_Vectors_and_Arrays/exercise_3_35.cpp)|[练习3.36a](ch03_Strings_Vectors_and_Arrays/exercise_3_36a.cpp)|[练习3.36b](ch03_Strings_Vectors_and_Arrays/exercise_3_36b.cpp)|[练习3.37](ch03_Strings_Vectors_and_Arrays/exercise_3_37.cpp)|[练习3.38](ch03_Strings_Vectors_and_Arrays/exercise_3_38.txt)|[练习3.39a](ch03_Strings_Vectors_and_Arrays/exercise_3_39a.cpp)|[练习3.39b](ch03_Strings_Vectors_and_Arrays/exercise_3_39b.cpp)|[练习3.40](ch03_Strings_Vectors_and_Arrays/exercise_3_40.cpp)|
 |[练习3.41](ch03_Strings_Vectors_and_Arrays/exercise_3_41.cpp)|[练习3.42](ch03_Strings_Vectors_and_Arrays/exercise_3_42.cpp)|[练习3.43a](ch03_Strings_Vectors_and_Arrays/exercise_3_43a.cpp)|[练习3.43b](ch03_Strings_Vectors_and_Arrays/exercise_3_43b.cpp)|[练习3.43c](ch03_Strings_Vectors_and_Arrays/exercise_3_43c.cpp)|[练习3.44](ch03_Strings_Vectors_and_Arrays/exercise_3_44.cpp)|[练习3.45](ch03_Strings_Vectors_and_Arrays/exercise_3_45.cpp)|
 
+#### 案例代码
+
+
 ### 第4章_表达式
 
 |E|X|E|R|C|I|S|E|
@@ -40,6 +46,9 @@
 |[练习4.24](ch04_Expressions/exercise_4_24.txt)|[练习4.25](ch04_Expressions/exercise_4_25.cpp)|[练习4.26](ch04_Expressions/exercise_4_26.txt)|[练习4.27](ch04_Expressions/exercise_4_27.cpp)|[练习4.28](ch04_Expressions/exercise_4_28.cpp)|[练习4.29](ch04_Expressions/exercise_4_29.cpp)|[练习4.30](ch04_Expressions/exercise_4_30.txt)|[练习4.31](ch04_Expressions/exercise_4_31.cpp)|
 |[练习4.32](ch04_Expressions/exercise_4_32.txt)|[练习4.33](ch04_Expressions/exercise_4_33.txt)|[练习4.34](ch04_Expressions/exercise_4_34.txt)|[练习4.35](ch04_Expressions/exercise_4_35.txt)|[练习4.36](ch04_Expressions/exercise_4_36.txt)|[练习4.37](ch04_Expressions/exercise_4_37.txt)|[练习4.38](ch04_Expressions/exercise_4_38.txt)|
 
+#### 案例代码
+
+
 ### 第5章_语句
 
 |E|X|E|R|C|I|S|E|
@@ -49,6 +58,9 @@
 |[练习5.16b](ch05_Statements/exercise_5_16b.cpp)|[练习5.16c](ch05_Statements/exercise_5_16c.cpp)|[练习5.16d](ch05_Statements/exercise_5_16d.cpp)|[练习5.17](ch05_Statements/exercise_5_17.cpp)|[练习5.18](ch05_Statements/exercise_5_18.txt)|[练习5.19](ch05_Statements/exercise_5_19.cpp)|[练习5.20](ch05_Statements/exercise_5_20.cpp)|[练习5.21](ch05_Statements/exercise_5_21.cpp)|
 |[练习5.22](ch05_Statements/exercise_5_22.txt)|[练习5.23](ch05_Statements/exercise_5_23.cpp)|[练习5.24](ch05_Statements/exercise_5_24.cpp)|[练习5.25](ch05_Statements/exercise_5_25.cpp)|
 
+#### 案例代码
+
+
 ### 第6章_函数
 
 |E|X|E|R|C|I|S|E|
@@ -56,4 +68,8 @@
 |[练习6.1](ch06_Functions/exercise_6_01.txt)|[练习6.2](ch06_Functions/exercise_6_02.txt)|[练习6.3](ch06_Functions/exercise_6_03.cpp)|[练习6.4](ch06_Functions/exercise_6_04.cpp)|[练习6.5](ch06_Functions/exercise_6_05.cpp)|[练习6.6](ch06_Functions/exercise_6_06.cpp)|[练习6.7](ch06_Functions/exercise_6_07.cpp)|[练习6.8](ch06_Functions/exercise_6_08.txt)|
 |[练习6.9](ch06_Functions/exercise_6_09)|[练习6.10](ch06_Functions/exercise_6_10.cpp)|[练习6.11](ch06_Functions/exercise_6_11.cpp)|[练习6.12](ch06_Functions/exercise_6_12.cpp)|[练习6.13](ch06_Functions/exercise_6_13.txt)|[练习6.14](ch06_Functions/exercise_6_14.txt)|[练习6.15](ch06_Functions/exercise_6_15.txt)|[练习6.16](ch06_Functions/exercise_6_16.md)|
 |[练习6.17](ch06_Functions/exercise_6_17.cpp)|[练习6.18](ch06_Functions/exercise_6_18.md)|[练习6.19](ch06_Functions/exercise_6_19.md)|[练习6.20](ch06_Functions/exercise_6_20.md)|
+
+#### 案例代码
+
+[数组形参（p193）](ch06_Functions/example_array_param.cpp)
 

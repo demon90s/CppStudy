@@ -80,6 +80,41 @@ gen_exercise_txt()
 
 ######################################################################
 
+# 生成一个章节的案例代码的文本
+
+gen_example_txt()
+{
+	ch_dir=$(ls -d $1*)		# 章节路径
+
+	cd $ch_dir
+	example_files=$(ls -d example* 2> /dev/null); # 所有的案例文件，包括目录
+
+	if [ "$example_files" = "" ]; then
+		cd ..
+		return 0
+	fi
+
+	echo "#### 案例代码" >> $readme_file
+	echo >> $readme_file
+
+	for file in $example_files; do
+		# // example: 数组形参（p193） --> 数组形参（p193）
+		desc=$(grep "// example" $file)
+		desc=${desc#*: }
+
+		if [ "$desc" != "" ]; then
+			echo "[$desc]($ch_dir/$file)" >> $readme_file
+		fi
+	done
+
+	echo >> $readme_file
+
+	cd ..
+	return 0
+}
+
+######################################################################
+
 gen_readme()
 {
 	n_ch=0 		# 当前处理的第几章
@@ -95,6 +130,7 @@ gen_readme()
 		cur_ch=${cur_ch}$n_ch
 
 		gen_exercise_txt $ch_name $cur_ch $n_ch
+		gen_example_txt $cur_ch
 	done
 
 	return 0
