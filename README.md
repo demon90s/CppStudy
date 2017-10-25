@@ -101,6 +101,8 @@
 
 - [数组形参（p193）](ch06_Functions/example_array_param.cpp)
 
+- [传递多维数组（给形参p195）](ch06_Functions/example_passing_a_multidimensional_array.cpp)
+
 - [使用引用传递避免拷贝（p189）](ch06_Functions/example_using_ref_to_avoid_cp.cpp)
 
 - [使用引用形参返回额外信息（p189）](ch06_Functions/example_using_ref_to_return_info.cpp)
