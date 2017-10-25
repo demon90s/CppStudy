@@ -1,3 +1,5 @@
+// example: if语句（p15）
+
 #include <iostream>
 
 // 统计输入中每个值连续出现了多少次

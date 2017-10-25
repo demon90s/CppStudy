@@ -1,6 +1,4 @@
-/*
- * 书本案例，使用引用传递避免拷贝（p189）
- */
+// example: 使用引用传递避免拷贝（p189）
 
 #include <iostream>
 #include <string>

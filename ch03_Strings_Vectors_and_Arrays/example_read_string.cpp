@@ -1,3 +1,5 @@
+// example: 读取未知数量的string对象（p78）
+
 /*
  * ./example_read_string < example_read_string.cpp
  */

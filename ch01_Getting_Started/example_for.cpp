@@ -1,3 +1,5 @@
+// example: for语句（p11）
+
 #include <iostream>
 
 int main()

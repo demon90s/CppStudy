@@ -1,3 +1,5 @@
+// example: do while语句（p169）
+
 /*
  * 使用do while循环询问用户
  */

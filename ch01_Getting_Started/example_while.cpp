@@ -1,3 +1,5 @@
+// example: while语句（p10）
+
 #include <iostream>
 
 int main()

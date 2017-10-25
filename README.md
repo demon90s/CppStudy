@@ -9,6 +9,12 @@
 
 #### 案例代码
 
+[C++中的注释使用（p8）](ch01_Getting_Started/example_comments.cpp)
+[for语句（p11）](ch01_Getting_Started/example_for.cpp)
+[if语句（p15）](ch01_Getting_Started/example_if.cpp)
+[使用IO库（p5）](ch01_Getting_Started/example_iostream.cpp)
+[最简单的C++程序（p2）](ch01_Getting_Started/example_main.cpp)
+[while语句（p10）](ch01_Getting_Started/example_while.cpp)
 
 ### 第2章_变量和基本类型
 
@@ -35,6 +41,12 @@
 
 #### 案例代码
 
+[使用getline读取一整行（p78）](ch03_Strings_Vectors_and_Arrays/example_getline.cpp)
+[向vector对象中添加元素（p90）](ch03_Strings_Vectors_and_Arrays/example_push_back.cpp)
+[使用基于范围for语句处理每个字符（p82）](ch03_Strings_Vectors_and_Arrays/example_range_for.cpp)
+[读取未知数量的string对象（p78）](ch03_Strings_Vectors_and_Arrays/example_read_string.cpp)
+[迭代器运算符（p96）](ch03_Strings_Vectors_and_Arrays/example_using_iterators.cpp)
+[使用下标执行迭代（p85）](ch03_Strings_Vectors_and_Arrays/example_using_subscript.cpp)
 
 ### 第4章_表达式
 
@@ -48,6 +60,8 @@
 
 #### 案例代码
 
+[逗号运算符（p140）](ch04_Expressions/example_comma_operator.cpp)
+[在一条语句中混用解引用和递增运算符（p132）](ch04_Expressions/example_increment_operator.cpp)
 
 ### 第5章_语句
 
@@ -60,6 +74,8 @@
 
 #### 案例代码
 
+[do while语句（p169）](ch05_Statements/example_do_while.cpp)
+[嵌套if语句（p157）](ch05_Statements/example_if_statement.cpp)
 
 ### 第6章_函数
 
@@ -72,4 +88,6 @@
 #### 案例代码
 
 [数组形参（p193）](ch06_Functions/example_array_param.cpp)
+[使用引用传递避免拷贝（p189）](ch06_Functions/example_using_ref_to_avoid_cp.cpp)
+[使用引用形参返回额外信息（p189）](ch06_Functions/example_using_ref_to_return_info.cpp)
 

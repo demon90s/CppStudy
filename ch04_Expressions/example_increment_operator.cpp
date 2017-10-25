@@ -1,6 +1,4 @@
-/*
- * 在一条语句中混用解引用和递增运算符（p132）
- */
+// example: 在一条语句中混用解引用和递增运算符（p132）
 
 #include <iostream>
 #include <vector>

@@ -1,4 +1,4 @@
-// 一个使用IO库的程序
+// example: 使用IO库（p5）
 
 #include <iostream>
 

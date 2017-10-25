@@ -1,3 +1,5 @@
+// example: 使用基于范围for语句处理每个字符（p82）
+
 #include <iostream>
 #include <string>
 

@@ -1,3 +1,5 @@
+// example: C++中的注释使用（p8）
+
 #include <iostream>
 
 /*

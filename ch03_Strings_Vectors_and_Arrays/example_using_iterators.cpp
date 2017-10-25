@@ -1,3 +1,4 @@
+// example: 迭代器运算符（p96）
 // 把string对象的第一个字母改为大写形式
 
 #include <iostream>

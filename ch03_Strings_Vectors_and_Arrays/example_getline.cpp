@@ -1,3 +1,4 @@
+// example: 使用getline读取一整行（p78）
 // ./example_getline < example_getline.cpp
 
 #include <iostream>

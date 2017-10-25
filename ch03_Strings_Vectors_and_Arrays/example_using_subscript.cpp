@@ -1,3 +1,4 @@
+// example: 使用下标执行迭代（p85）
 // 使用下标进行迭代
 
 #include <iostream>

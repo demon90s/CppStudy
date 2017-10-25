@@ -1,6 +1,4 @@
-/*
- * 书本案例，使用引用形参返回额外信息（p189）
- */
+// example: 使用引用形参返回额外信息（p189）
 
 #include <iostream>
 #include <string>
