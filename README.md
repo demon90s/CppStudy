@@ -102,9 +102,15 @@
 
 - [数组形参（p193）](ch06_Functions/example_array_param.cpp)
 
+- [无返回值函数（p200）](ch06_Functions/example_functions_with_no_return_value.cpp)
+
 - [initializer_list形参（可变形参，p198）](ch06_Functions/example_initializer_list_param.cpp)
 
 - [传递多维数组给形参（p195）](ch06_Functions/example_passing_a_multidimensional_array.cpp)
+
+- [递归（p204）](ch06_Functions/example_recursion.cpp)
+
+- [主函数main的返回值（p203）](ch06_Functions/example_return_from_main.cpp)
 
 - [使用引用传递避免拷贝（p189）](ch06_Functions/example_using_ref_to_avoid_cp.cpp)
 
