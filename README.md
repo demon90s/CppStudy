@@ -95,13 +95,14 @@
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习6.1](ch06_Functions/exercise_6_01.txt)|[练习6.2](ch06_Functions/exercise_6_02.txt)|[练习6.3](ch06_Functions/exercise_6_03.cpp)|[练习6.4](ch06_Functions/exercise_6_04.cpp)|[练习6.5](ch06_Functions/exercise_6_05.cpp)|[练习6.6](ch06_Functions/exercise_6_06.cpp)|[练习6.7](ch06_Functions/exercise_6_07.cpp)|[练习6.8](ch06_Functions/exercise_6_08.txt)|
 |[练习6.9](ch06_Functions/exercise_6_09)|[练习6.10](ch06_Functions/exercise_6_10.cpp)|[练习6.11](ch06_Functions/exercise_6_11.cpp)|[练习6.12](ch06_Functions/exercise_6_12.cpp)|[练习6.13](ch06_Functions/exercise_6_13.txt)|[练习6.14](ch06_Functions/exercise_6_14.txt)|[练习6.15](ch06_Functions/exercise_6_15.txt)|[练习6.16](ch06_Functions/exercise_6_16.md)|
-|[练习6.17](ch06_Functions/exercise_6_17.cpp)|[练习6.18](ch06_Functions/exercise_6_18.md)|[练习6.19](ch06_Functions/exercise_6_19.md)|[练习6.20](ch06_Functions/exercise_6_20.md)|
+|[练习6.17](ch06_Functions/exercise_6_17.cpp)|[练习6.18](ch06_Functions/exercise_6_18.md)|[练习6.19](ch06_Functions/exercise_6_19.md)|[练习6.20](ch06_Functions/exercise_6_20.md)|[练习6.21](ch06_Functions/exercise_6_21.cpp)|[练习6.22](ch06_Functions/exercise_6_22.cpp)|[练习6.23](ch06_Functions/exercise_6_23.cpp)|[练习6.24](ch06_Functions/exercise_6_24.cpp)|
+|[练习6.25](ch06_Functions/exercise_6_25.cpp)|[练习6.26](ch06_Functions/exercise_6_26.cpp)|
 
 #### 案例代码
 
 - [数组形参（p193）](ch06_Functions/example_array_param.cpp)
 
-- [传递多维数组（给形参p195）](ch06_Functions/example_passing_a_multidimensional_array.cpp)
+- [传递多维数组给形参（p195）](ch06_Functions/example_passing_a_multidimensional_array.cpp)
 
 - [使用引用传递避免拷贝（p189）](ch06_Functions/example_using_ref_to_avoid_cp.cpp)
 

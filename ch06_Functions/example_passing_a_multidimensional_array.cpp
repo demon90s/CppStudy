@@ -1,4 +1,4 @@
-// example: 传递多维数组（给形参p195）
+// example: 传递多维数组给形参（p195）
 
 #include <iostream>
 
