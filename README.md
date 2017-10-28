@@ -98,7 +98,7 @@
 |[练习6.17](ch06_Functions/exercise_6_17.cpp)|[练习6.18](ch06_Functions/exercise_6_18.md)|[练习6.19](ch06_Functions/exercise_6_19.md)|[练习6.20](ch06_Functions/exercise_6_20.md)|[练习6.21](ch06_Functions/exercise_6_21.cpp)|[练习6.22](ch06_Functions/exercise_6_22.cpp)|[练习6.23](ch06_Functions/exercise_6_23.cpp)|[练习6.24](ch06_Functions/exercise_6_24.cpp)|
 |[练习6.25](ch06_Functions/exercise_6_25.cpp)|[练习6.26](ch06_Functions/exercise_6_26.cpp)|[练习6.27](ch06_Functions/exercise_6_27.cpp)|[练习6.28](ch06_Functions/exercise_6_28.md)|[练习6.29](ch06_Functions/exercise_6_29.md)|[练习6.30](ch06_Functions/exercise_6_30.cpp)|[练习6.31](ch06_Functions/exercise_6_31.md)|[练习6.32](ch06_Functions/exercise_6_32.md)|
 |[练习6.33](ch06_Functions/exercise_6_33.cpp)|[练习6.34](ch06_Functions/exercise_6_34.cpp)|[练习6.35](ch06_Functions/exercise_6_35.md)|[练习6.36](ch06_Functions/exercise_6_36.cpp)|[练习6.37](ch06_Functions/exercise_6_37.cpp)|[练习6.38](ch06_Functions/exercise_6_38.cpp)|[练习6.39](ch06_Functions/exercise_6_39.md)|[练习6.40](ch06_Functions/exercise_6_40.md)|
-|[练习6.41](ch06_Functions/exercise_6_41.md)|[练习6.42](ch06_Functions/exercise_6_42.cpp)|[练习6.43](ch06_Functions/exercise_6_43.md)|[练习6.44](ch06_Functions/exercise_6_44.cpp)|[练习6.45](ch06_Functions/exercise_6_45.md)|[练习6.46](ch06_Functions/exercise_6_46.cpp)|
+|[练习6.41](ch06_Functions/exercise_6_41.md)|[练习6.42](ch06_Functions/exercise_6_42.cpp)|[练习6.43](ch06_Functions/exercise_6_43.md)|[练习6.44](ch06_Functions/exercise_6_44.cpp)|[练习6.45](ch06_Functions/exercise_6_45.md)|[练习6.46](ch06_Functions/exercise_6_46.cpp)|[练习6.47](ch06_Functions/exercise_6_47.cpp)|[练习6.48](ch06_Functions/exercise_6_48.md)|
 
 #### 案例代码
 
@@ -113,6 +113,8 @@
 - [内联函数可避免函数调用开销（p213）](ch06_Functions/example_inline_functions.cpp)
 
 - [传递多维数组给形参（p195）](ch06_Functions/example_passing_a_multidimensional_array.cpp)
+
+- [使用预处理变量输出错误信息（p216）](ch06_Functions/example_preprocessor_variable.cpp)
 
 - [递归（p204）](ch06_Functions/example_recursion.cpp)
 
