@@ -98,7 +98,7 @@
 |[练习6.17](ch06_Functions/exercise_6_17.cpp)|[练习6.18](ch06_Functions/exercise_6_18.md)|[练习6.19](ch06_Functions/exercise_6_19.md)|[练习6.20](ch06_Functions/exercise_6_20.md)|[练习6.21](ch06_Functions/exercise_6_21.cpp)|[练习6.22](ch06_Functions/exercise_6_22.cpp)|[练习6.23](ch06_Functions/exercise_6_23.cpp)|[练习6.24](ch06_Functions/exercise_6_24.cpp)|
 |[练习6.25](ch06_Functions/exercise_6_25.cpp)|[练习6.26](ch06_Functions/exercise_6_26.cpp)|[练习6.27](ch06_Functions/exercise_6_27.cpp)|[练习6.28](ch06_Functions/exercise_6_28.md)|[练习6.29](ch06_Functions/exercise_6_29.md)|[练习6.30](ch06_Functions/exercise_6_30.cpp)|[练习6.31](ch06_Functions/exercise_6_31.md)|[练习6.32](ch06_Functions/exercise_6_32.md)|
 |[练习6.33](ch06_Functions/exercise_6_33.cpp)|[练习6.34](ch06_Functions/exercise_6_34.cpp)|[练习6.35](ch06_Functions/exercise_6_35.md)|[练习6.36](ch06_Functions/exercise_6_36.cpp)|[练习6.37](ch06_Functions/exercise_6_37.cpp)|[练习6.38](ch06_Functions/exercise_6_38.cpp)|[练习6.39](ch06_Functions/exercise_6_39.md)|[练习6.40](ch06_Functions/exercise_6_40.md)|
-|[练习6.41](ch06_Functions/exercise_6_41.md)|[练习6.42](ch06_Functions/exercise_6_42.cpp)|
+|[练习6.41](ch06_Functions/exercise_6_41.md)|[练习6.42](ch06_Functions/exercise_6_42.cpp)|[练习6.43](ch06_Functions/exercise_6_43.md)|[练习6.44](ch06_Functions/exercise_6_44.cpp)|[练习6.45](ch06_Functions/exercise_6_45.md)|
 
 #### 案例代码
 
@@ -109,6 +109,8 @@
 - [无返回值函数（p200）](ch06_Functions/example_functions_with_no_return_value.cpp)
 
 - [initializer_list形参（可变形参，p198）](ch06_Functions/example_initializer_list_param.cpp)
+
+- [内联函数可避免函数调用开销（p213）](ch06_Functions/example_inline_functions.cpp)
 
 - [传递多维数组给形参（p195）](ch06_Functions/example_passing_a_multidimensional_array.cpp)
 
