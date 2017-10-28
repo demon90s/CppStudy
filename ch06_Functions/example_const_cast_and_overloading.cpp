@@ -1,4 +1,4 @@
-// const_cast和重载（p209）
+// example: const_cast和重载（p209）
 
 #include <iostream>
 #include <string>

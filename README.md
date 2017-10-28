@@ -103,6 +103,8 @@
 
 - [数组形参（p193）](ch06_Functions/example_array_param.cpp)
 
+- [const_cast和重载（p209）](ch06_Functions/example_const_cast_and_overloading.cpp)
+
 - [无返回值函数（p200）](ch06_Functions/example_functions_with_no_return_value.cpp)
 
 - [initializer_list形参（可变形参，p198）](ch06_Functions/example_initializer_list_param.cpp)
