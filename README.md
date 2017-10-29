@@ -99,7 +99,7 @@
 |[练习6.25](ch06_Functions/exercise_6_25.cpp)|[练习6.26](ch06_Functions/exercise_6_26.cpp)|[练习6.27](ch06_Functions/exercise_6_27.cpp)|[练习6.28](ch06_Functions/exercise_6_28.md)|[练习6.29](ch06_Functions/exercise_6_29.md)|[练习6.30](ch06_Functions/exercise_6_30.cpp)|[练习6.31](ch06_Functions/exercise_6_31.md)|[练习6.32](ch06_Functions/exercise_6_32.md)|
 |[练习6.33](ch06_Functions/exercise_6_33.cpp)|[练习6.34](ch06_Functions/exercise_6_34.cpp)|[练习6.35](ch06_Functions/exercise_6_35.md)|[练习6.36](ch06_Functions/exercise_6_36.cpp)|[练习6.37](ch06_Functions/exercise_6_37.cpp)|[练习6.38](ch06_Functions/exercise_6_38.cpp)|[练习6.39](ch06_Functions/exercise_6_39.md)|[练习6.40](ch06_Functions/exercise_6_40.md)|
 |[练习6.41](ch06_Functions/exercise_6_41.md)|[练习6.42](ch06_Functions/exercise_6_42.cpp)|[练习6.43](ch06_Functions/exercise_6_43.md)|[练习6.44](ch06_Functions/exercise_6_44.cpp)|[练习6.45](ch06_Functions/exercise_6_45.md)|[练习6.46](ch06_Functions/exercise_6_46.cpp)|[练习6.47](ch06_Functions/exercise_6_47.cpp)|[练习6.48](ch06_Functions/exercise_6_48.md)|
-|[练习6.49](ch06_Functions/exercise_6_49.md)|[练习6.50](ch06_Functions/exercise_6_50.md)|[练习6.51](ch06_Functions/exercise_6_51.cpp)|
+|[练习6.49](ch06_Functions/exercise_6_49.md)|[练习6.50](ch06_Functions/exercise_6_50.md)|[练习6.51](ch06_Functions/exercise_6_51.cpp)|[练习6.52](ch06_Functions/exercise_6_52.md)|[练习6.53](ch06_Functions/exercise_6_53.md)|
 
 #### 案例代码
 
