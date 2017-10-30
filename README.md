@@ -131,5 +131,10 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习7.1](ch07_Classes/exercise_7_01.cpp)|[练习7.2](ch07_Classes/exercise_7_02.cpp)|[练习7.3](ch07_Classes/exercise_7_03.cpp)|[练习7.4](ch07_Classes/exercise_7_04.cpp)|[练习7.5](ch07_Classes/exercise_7_05.cpp)|
+|[练习7.1](ch07_Classes/exercise_7_01.cpp)|[练习7.2](ch07_Classes/exercise_7_02.cpp)|[练习7.3](ch07_Classes/exercise_7_03.cpp)|[练习7.4](ch07_Classes/exercise_7_04.cpp)|[练习7.5](ch07_Classes/exercise_7_05.cpp)|[练习7.6](ch07_Classes/exercise_7_06.cpp)|[练习7.7](ch07_Classes/exercise_7_07.cpp)|[练习7.8](ch07_Classes/exercise_7_08.md)|
+|[练习7.9](ch07_Classes/exercise_7_09.cpp)|[练习7.10](ch07_Classes/exercise_7_10.md)|
+
+#### 案例代码
+
+- [Sales_data案例（自p228始）](ch07_Classes/example_Sales_data.cpp)
 

@@ -7,6 +7,7 @@
 // 顶层const this指针导致无法调用。
 
 #include <iostream>
+#include <string>
 
 using std::cout;
 using std::endl;
@@ -15,7 +16,7 @@ using std::cin;
 struct Person
 {
 	std::string GetName() const { return name; }
-	std::String GetAddr() const { return addr; }
+	std::string GetAddr() const { return addr; }
 
 	std::string name;
 	std::string addr;
