@@ -127,3 +127,9 @@
 
 - [使用引用形参返回额外信息（p189）](ch06_Functions/example_using_ref_to_return_info.cpp)
 
+### 第7章_类
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习7.1](ch07_Classes/exercise_7_01.cpp)|
+
