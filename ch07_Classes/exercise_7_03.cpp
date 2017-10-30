@@ -1,9 +1,8 @@
 /*
- * 练习7.1：使用2.6.1节练习定义的Sales_data类为1.6节（第21页）的交易处理程
- * 序编写一个新版本。
+ * 练习7.3：修改7.1.1节（第229页）的交易处理程序，令其使用这些成员。
  */
 
-// ./exercise_7_01 < data/book_sales
+// ./exercise_7_03 < data/book_sales
 
 #include <iostream>
 #include <string>
@@ -17,10 +16,20 @@ using std::string;
 // 定义在练习2.40
 struct Sales_data
 {
+	Sales_data &combine(const Sales_data &rhs);
+	std::string isbn() const { return bookNo; }
+
 	std::string bookNo;
 	unsigned int units_sold = {0};
 	double revenue = {0.0};
 };
+
+Sales_data &Sales_data::combine(const Sales_data &rhs)
+{
+	units_sold += rhs.units_sold;
+	revenue += rhs.revenue;
+	return *this;
+}
 
 std::istream &read(std::istream &is, Sales_data &sd)
 {
@@ -53,9 +62,8 @@ int main()
 		// 读入并处理剩余交易记录
 		while (read(cin, trans)) {
 			// 如果我们仍在处理相同的书
-			if (total.bookNo == trans.bookNo) {
-				total.units_sold += trans.units_sold;
-				total.revenue += trans.revenue;
+			if (total.isbn() == trans.isbn()) {
+				total.combine(trans);
 			}
 			else {
 				print(cout, total) << endl;	// 输出结果

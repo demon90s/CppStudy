@@ -131,5 +131,5 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习7.1](ch07_Classes/exercise_7_01.cpp)|
+|[练习7.1](ch07_Classes/exercise_7_01.cpp)|[练习7.2](ch07_Classes/exercise_7_02.cpp)|[练习7.3](ch07_Classes/exercise_7_03.cpp)|[练习7.4](ch07_Classes/exercise_7_04.cpp)|[练习7.5](ch07_Classes/exercise_7_05.cpp)|
 
