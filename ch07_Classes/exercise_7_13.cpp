@@ -1,6 +1,6 @@
-// example: Sales_data案例（自p228始）
-
-// ./example_Sales_data < data/book_sales
+/*
+ * 练习7.13：使用istream构造函数重写第229页的程序。
+ */
 
 #include <iostream>
 #include <string>
@@ -83,13 +83,14 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs)
 
 int main()
 {
-	Sales_data total;	// 保存下一条交易记录的变量
+	Sales_data total(cin);	// 保存下一条交易记录的变量
 	// 读入第一条交易记录，并确保有数据可以处理
-	if (read(cin, total)) {
-		Sales_data trans;	// 保存和的变量
+	if (cin) {
 		// 读入并处理剩余交易记录
-		while (read(cin, trans)) {
-			// 如果我们仍在处理相同的书
+		while (true) {
+			Sales_data trans(cin);	// 保存和的变量
+			if (!cin) break;
+
 			if (total.isbn() == trans.isbn()) {
 				total.combine(trans);
 			}

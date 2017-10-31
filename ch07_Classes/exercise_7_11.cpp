@@ -1,6 +1,7 @@
-// example: Sales_data案例（自p228始）
-
-// ./example_Sales_data < data/book_sales
+/*
+ * 练习7.11：在你的Sales_data类中添加构造函数，然后编写一段程序令其用到每个
+ * 构造函数。
+ */
 
 #include <iostream>
 #include <string>
@@ -8,7 +9,6 @@
 using std::cout;
 using std::endl;
 using std::cin;
-using std::cerr;
 
 //--------------------------------------------------------------------------
 
@@ -83,26 +83,17 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs)
 
 int main()
 {
-	Sales_data total;	// 保存下一条交易记录的变量
-	// 读入第一条交易记录，并确保有数据可以处理
-	if (read(cin, total)) {
-		Sales_data trans;	// 保存和的变量
-		// 读入并处理剩余交易记录
-		while (read(cin, trans)) {
-			// 如果我们仍在处理相同的书
-			if (total.isbn() == trans.isbn()) {
-				total.combine(trans);
-			}
-			else {
-				print(cout, total) << endl;	// 输出结果
-				total = trans;		// 处理下一本书
-			}
-		}
-		print(cout, total) << endl;	// 输出最后一条交易
-	}
-	else {
-		cerr << "No data?!" << endl;
-	}
+	Sales_data sd1;
+	print(cout, sd1) << endl; //  0 0 0
+
+	Sales_data sd2("0-201-70353-X");
+	print(cout, sd2) << endl; // 0-201-70353-X 0 0 0
+
+	Sales_data sd3("0-201-70353-X", 2, 20);
+	print(cout, sd3) << endl; // 0-201-70353-X 2 40 20
+
+	Sales_data sd4(cin);	  // 0-201-70353-X 2 20
+	print(cout, sd4) << endl; // 0-201-70353-X 2 40 20
 
 	return 0;
 }
