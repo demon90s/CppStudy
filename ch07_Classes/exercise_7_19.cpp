@@ -16,7 +16,7 @@ using std::cin;
 
 struct Person
 {
-public:
+//public: 如果使用了访问控制说明符，还需要声明相关友元函数
 	// 构造函数
 	Person() = default;
 	Person(const std::string &_name, const std::string &_addr) :
@@ -26,7 +26,7 @@ public:
 	std::string GetName() const { return name; }
 	std::string GetAddr() const { return addr; }
 
-private:
+//private:
 	std::string name;
 	std::string addr;
 };
