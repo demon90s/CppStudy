@@ -1,6 +1,11 @@
 /*
- * 练习7.15：对于7.1.2节（第233页）练习中的代码，添加读取和打印Person对象的操作。
+ * 练习7.19：在你的Person类中，你将把哪些成员声明成public的？
+ * 解释你这样做的原因。
  */
+
+// 见下面修改的Person类。构造函数和Get函数都要被用户代码所使用，
+// 因此应该是public的。而数据成员属于实现细节，需要被隐藏，所以
+// 是private的。
 
 #include <iostream>
 #include <string>
@@ -11,6 +16,7 @@ using std::cin;
 
 struct Person
 {
+public:
 	// 构造函数
 	Person() = default;
 	Person(const std::string &_name, const std::string &_addr) :
@@ -20,6 +26,7 @@ struct Person
 	std::string GetName() const { return name; }
 	std::string GetAddr() const { return addr; }
 
+private:
 	std::string name;
 	std::string addr;
 };

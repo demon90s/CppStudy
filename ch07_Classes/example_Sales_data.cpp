@@ -13,6 +13,7 @@ using std::cerr;
 //--------------------------------------------------------------------------
 
 struct Sales_data {
+public:
 	// 构造函数
 	Sales_data() = default;
 	Sales_data(const std::string &s) : bookNo(s) { }
@@ -23,6 +24,8 @@ struct Sales_data {
 	// 其他成员函数
 	std::string isbn() const { return bookNo; }
 	Sales_data& combine(const Sales_data&);
+
+private:
 	double avg_price() const;
 
 	// 数据成员

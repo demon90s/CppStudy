@@ -132,7 +132,8 @@
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习7.1](ch07_Classes/exercise_7_01.cpp)|[练习7.2](ch07_Classes/exercise_7_02.cpp)|[练习7.3](ch07_Classes/exercise_7_03.cpp)|[练习7.4](ch07_Classes/exercise_7_04.cpp)|[练习7.5](ch07_Classes/exercise_7_05.cpp)|[练习7.6](ch07_Classes/exercise_7_06.cpp)|[练习7.7](ch07_Classes/exercise_7_07.cpp)|[练习7.8](ch07_Classes/exercise_7_08.md)|
-|[练习7.9](ch07_Classes/exercise_7_09.cpp)|[练习7.10](ch07_Classes/exercise_7_10.md)|[练习7.11](ch07_Classes/exercise_7_11.cpp)|[练习7.12](ch07_Classes/exercise_7_12.cpp)|[练习7.13](ch07_Classes/exercise_7_13.cpp)|[练习7.14](ch07_Classes/exercise_7_14.md)|[练习7.15](ch07_Classes/exercise_7_15.cpp)|
+|[练习7.9](ch07_Classes/exercise_7_09.cpp)|[练习7.10](ch07_Classes/exercise_7_10.md)|[练习7.11](ch07_Classes/exercise_7_11.cpp)|[练习7.12](ch07_Classes/exercise_7_12.cpp)|[练习7.13](ch07_Classes/exercise_7_13.cpp)|[练习7.14](ch07_Classes/exercise_7_14.md)|[练习7.15](ch07_Classes/exercise_7_15.cpp)|[练习7.16](ch07_Classes/exercise_7_16.md)|
+|[练习7.17](ch07_Classes/exercise_7_17.md)|[练习7.18](ch07_Classes/exercise_7_18.md)|[练习7.19](ch07_Classes/exercise_7_19.cpp)|
 
 #### 案例代码
 
