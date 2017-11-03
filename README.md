@@ -141,3 +141,5 @@
 
 - [Sales_data案例（自p228始）](ch07_Classes/example_Sales_data.cpp)
 
+- [窗口类的设计与实现(自p243始)](ch07_Classes/example_Screen)
+

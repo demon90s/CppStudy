@@ -93,8 +93,13 @@ gen_example_txt()
 	echo >> $readme_file
 
 	for file in $example_files; do
+		grep_file=$file
+		if [ -d $file ]; then
+			grep_file=$file/main.cpp
+		fi
+
 		# // example: 数组形参（p193） --> 数组形参（p193）
-		desc=$(grep "// example" $file)
+		desc=$(grep "// example" $grep_file)
 		desc=${desc#*: }
 
 		if [ "$desc" != "" ]; then
