@@ -1,7 +1,13 @@
-#ifndef SCREEN_H
-#define SCREEN_H
+/*
+ * 练习7.29：修改你的Screen类，令move、set和display函数返回Screen并检
+ * 查程序的运行结果，在上一个练习中你的推测正确吗？
+ */
 
+#include <iostream>
 #include <string>
+
+using std::cout;
+using std::endl;
 
 class Screen
 {
@@ -14,13 +20,13 @@ public:
 	
 	char get() const { return contents[cursor]; }	// 读取光标处的字符，隐式内联
 	inline char get(pos ht, pos wd) const;			// 显示内联
-	Screen &move(pos r, pos c);						// 可以在之后设置为内联
+	Screen move(pos r, pos c);						// 可以在之后设置为内联
 
-	Screen &set(char c);
-	Screen &set(pos row, pos col, char c);
+	Screen set(char c);
+	Screen set(pos row, pos col, char c);
 
-	Screen &display(std::ostream &os) { do_display(os); return *this; }
-	const Screen &display(std::ostream &os) const { do_display(os); return *this;  }
+	Screen display(std::ostream &os) { do_display(os); return *this; }
+	const Screen display(std::ostream &os) const { do_display(os); return *this;  }
 
 private:
 	// 该函数负责显示Screen的内容
@@ -34,7 +40,7 @@ private:
 };
 
 inline
-Screen& Screen::move(pos r, pos c) 
+Screen Screen::move(pos r, pos c) 
 {
 	pos row = r * width;	// 计算行的位置
 	cursor = row + c;		// 在行内将光标移动到指定的列
@@ -50,17 +56,26 @@ char Screen::get(pos r, pos c) const
 }
 
 inline
-Screen& Screen::set(char c)
+Screen Screen::set(char c)
 {
 	contents[cursor] = c;
 	return *this;
 }
 
 inline
-Screen& Screen::set(pos row, pos col, char c)
+Screen Screen::set(pos row, pos col, char c)
 {
 	contents[row * width + col] = c;
 	return *this;
 }
 
-#endif
+int main()
+{
+	Screen myScreen(5, 5, 'X');
+	myScreen.move(4, 0).set('#').display(cout);
+	cout << "\n";
+	myScreen.display(cout);
+	cout << "\n";
+
+	return 0;
+}

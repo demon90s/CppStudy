@@ -8,9 +8,9 @@ using std::endl;
 
 int main()
 {
-	Screen screen(24, 80, 'a');
+	Screen screen(5, 3, 'A');
 
-	cout << screen.get() << endl;
+	screen.set('#').display(cout);
 
 	return 0;
 }
