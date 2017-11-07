@@ -5,6 +5,7 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
+#include <string>
 #include <iterator>
 
 // 求数组的元素的数量，得到的是一个ptrdiff_t（p107）
@@ -17,5 +18,12 @@
 void SetBit(unsigned long *flag, size_t bit);
 void ClearBit(unsigned long *flag, size_t bit);
 bool IsBitSet(const unsigned long *flag, size_t bit);
+
+/*
+ * 字符串替换
+ * 将s中所有的old_val替换成new_val
+ * 返回替换的字符串个数
+ */
+int str_replace(std::string &s, const std::string &old_val, const std::string &new_val);
 
 #endif
