@@ -12,5 +12,7 @@ int main()
 
 	screen.set('#').display(cout);
 
+	cout << endl;
+
 	return 0;
 }
