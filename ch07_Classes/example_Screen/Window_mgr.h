@@ -10,6 +10,9 @@ public:
 	// 窗口中每个屏幕的编号
 	using ScreenIndex = std::vector<Screen>::size_type;
 
+	// 添加一个Screen，返回它的编号
+	ScreenIndex addScreen(const Screen&);
+
 	// 按照编号将指定的Screen重置为空白
 	void clear(ScreenIndex);
 
@@ -23,6 +26,13 @@ void Window_mgr::clear(ScreenIndex i)
 {
 	Screen &s = screens[i];
 	s.contents = std::string(s.height * s.width, ' ');
+}
+
+Window_mgr::ScreenIndex
+Window_mgr::addScreen(const Screen& s)
+{
+	screens.push_back(s);
+	return screens.size() - 1;
 }
 
 #endif

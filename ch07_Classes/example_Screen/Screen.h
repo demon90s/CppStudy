@@ -13,6 +13,8 @@ public:
 	Screen() = default;	// 因为Screen有另一个构造函数，所以本函数是必须的
 	// cursor被其类内初始值初始化为0
 	Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c) {}
+
+	pos size() const;
 	
 	char get() const { return contents[cursor]; }	// 读取光标处的字符，隐式内联
 	inline char get(pos ht, pos wd) const;			// 显示内联
@@ -34,6 +36,12 @@ private:
 
 	mutable size_t access_get_ctr;	// 即使在一个const对象内也能被修改
 };
+
+inline
+Screen::pos Screen::size() const
+{
+	return height * width;
+}
 
 inline
 Screen& Screen::move(pos r, pos c) 
