@@ -143,6 +143,8 @@
 
 #### 案例代码
 
+- [字面值常量类（p267）](ch07_Classes/example_literal_classes.cpp)
+
 - [Person类的设计与实现](ch07_Classes/example_Person.cpp)
 
 - [Sales_data案例（自p228始）](ch07_Classes/example_Sales_data)

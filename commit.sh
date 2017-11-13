@@ -43,9 +43,6 @@ commit() {
 }
 
 main() {
-	echo "Pulling ..."
-	git pull origin master
-
 	clear_build
 
 	sh ./gen_readme.sh
