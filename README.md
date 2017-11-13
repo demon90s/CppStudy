@@ -48,6 +48,8 @@
 
 - [使用getline读取一整行（p78）](ch03_Strings_Vectors_and_Arrays/example_getline.cpp)
 
+- [一维数组模拟二维数组](ch03_Strings_Vectors_and_Arrays/example_normal_array_simulate_dimensional_array.cpp)
+
 - [向vector对象中添加元素（p90）](ch03_Strings_Vectors_and_Arrays/example_push_back.cpp)
 
 - [使用基于范围for语句处理每个字符（p82）](ch03_Strings_Vectors_and_Arrays/example_range_for.cpp)
