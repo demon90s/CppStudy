@@ -18,7 +18,7 @@ public:
 	Person() = default;
 	Person(const std::string &_name, const std::string &_addr) :
 	       name(_name), addr(_addr) {}
-	Person(std::istream &is);
+	explicit Person(std::istream &is);
 
 	std::string GetName() const { return name; }
 	std::string GetAddr() const { return addr; }
