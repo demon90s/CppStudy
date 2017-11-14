@@ -41,7 +41,7 @@ gen_ch_index()
 		term_name_cn=${term_name_cn%%（*}
 
 		tag="[$term_name_cn $term_name](./$dir/$term)"
-		echo -e "$tag\t\c" >> $out_file
+		echo -e "- $tag" >> $out_file
 	done
 }
 
@@ -62,7 +62,6 @@ gen_index()
 		echo "### $ch_name" >> $out_file
 		echo >> $out_file
 		gen_ch_index $cur_ch
-		echo >> $out_file
 	done
 
 	return 0
