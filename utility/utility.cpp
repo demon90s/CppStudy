@@ -36,3 +36,23 @@ int str_replace(std::string &s, const std::string &old_val, const std::string &n
 
 	return cnt;
 }
+
+const char *read_name(const char *p, std::string *name)
+{
+	*name = "";
+
+	if (p && *p && isalpha(*p))
+	{
+		const char *start = p;
+		while (p && *p && 
+			  (isalnum(*p)
+		       || *p == '_') )
+		{
+			++p;
+		}
+
+		if (p - start > 0) name->assign(start, p - start);
+		return p;
+	}
+	return 0;
+}

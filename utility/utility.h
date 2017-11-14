@@ -28,4 +28,11 @@ bool IsBitSet(const unsigned long *flag, size_t bit);
  */
 int str_replace(std::string &s, const std::string &old_val, const std::string &new_val);
 
+/*
+ * 从p中读取一个合法的名字，存入name中，成功返回p中最后读取字符的下一个字符的地址，失败返回NULL
+ * p是空指针，或者p指向的字符不是一个合法名字的开头字符，都会返回空指针
+ * 所谓合法的名字，就是开头是一个字母或者_，后面跟着字母、数字或者下划线的名字
+ */
+const char *read_name(const char *p, std::string *name);
+
 #endif
