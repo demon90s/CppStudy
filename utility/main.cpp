@@ -58,6 +58,23 @@ void test_str_replace()
 	     << "str: " << str << endl;
 }
 
+void test_read_name()
+{
+	string name;
+	char str[] = "demon90s@163.com";
+
+	const char *p = str;
+	p = read_name(p, &name);
+	if (p) {
+		cout << name << endl;
+		cout << p << endl;
+	}
+
+	p = read_name(p, &name);
+	if (!p)
+		cout << "p is nullptr" << endl;
+}
+
 int main()
 {
 	// 测试求数组元素的数量
@@ -66,7 +83,9 @@ int main()
 	// 测试设置、清除、判断比特位
 	//test_bitwise_operator(); 
 	
-	test_str_replace();
+	//test_str_replace();
+	
+	test_read_name();
 
 	return 0;
 }
