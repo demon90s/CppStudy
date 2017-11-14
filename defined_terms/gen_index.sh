@@ -37,10 +37,15 @@ gen_ch_index()
 		term_name=${term%.md}	# 截取术语的英文名
 		
 		# 截取术语的中文名：文件第一行 -> 参数（... -> 参数
-		term_name_cn=$(head -1 ./$dir/$term)
-		term_name_cn=${term_name_cn%%（*}
+		first_line=$(head -1 ./$dir/$term)
+		term_name_cn=${first_line%%（*}
+		if [ "$first_line" = "$term_name_cn" ]; then
+			# 没有中文的情况
+			tag="[$term_name](./$dir/$term)"
+		else
+			tag="[$term_name_cn $term_name](./$dir/$term)"
+		fi
 
-		tag="[$term_name_cn $term_name](./$dir/$term)"
 		echo -e "- $tag" >> $out_file
 	done
 }
