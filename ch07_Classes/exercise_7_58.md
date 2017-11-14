@@ -23,12 +23,12 @@ vector<double> Example::vec;
 
 ```
 static double rate = 6.5;
-			  ^
-			  普通的静态成员不应该在类的内部初始化
+              ^
+              普通的静态成员不应该在类的内部初始化
 
 static vector<double> vec(vecSize);
-						  ^
-						  应该在类的外部对vec初始化
+                          ^
+                          应该在类的外部对vec初始化
 ```
 
 修改：
