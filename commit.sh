@@ -47,6 +47,10 @@ main() {
 
 	sh ./gen_readme.sh
 
+	cd ./defined_terms
+	sh ./gen_index.sh
+	cd ..
+
 	if ! show_status; then
 		return 0
 	fi

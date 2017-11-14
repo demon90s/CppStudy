@@ -1,3 +1,5 @@
+### [术语表](./defined_terms/terms_index.md)
+
 ### 第1章_开始
 
 |E|X|E|R|C|I|S|E|

@@ -140,6 +140,9 @@ main()
 	rm -f $readme_file
 	touch $readme_file
 
+	echo "### [术语表](./defined_terms/terms_index.md)" >> $readme_file
+	echo >> $readme_file
+
 	gen_readme
 
 	return 0
