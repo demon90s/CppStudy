@@ -11,10 +11,10 @@ get_all_chapters()
 {
 cat << !CHAPTERS!
 第1章_开始
+第2章_变量和基本类型
 !CHAPTERS!
 }
 
-#第2章_变量和基本类型
 #第3章_字符串、向量和数组
 #第4章_表达式
 #第5章_语句
@@ -69,6 +69,7 @@ gen_index()
 		echo "### $ch_name" >> $out_file
 		echo >> $out_file
 		gen_ch_index $cur_ch
+		echo >> $out_file
 	done
 
 	return 0

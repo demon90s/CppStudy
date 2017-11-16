@@ -59,3 +59,17 @@
 - [<<运算符 输出运算符](./ch01/输出运算符.md)
 - [--运算符 递减运算符](./ch01/递减运算符.md)
 - [++运算符 递增运算符](./ch01/递增运算符.md)
+
+### 第2章_变量和基本类型
+
+- [地址 address](./ch02/address.md)
+- [别名声明 alias declaration](./ch02/alias_declaration.md)
+- [算术类型 arithmetic type](./ch02/arithmetic_type.md)
+- [数组 array](./ch02/array.md)
+- [auto](./ch02/auto.md)
+- [基本类型 base type](./ch02/base_type.md)
+- [绑定 bind](./ch02/bind.md)
+- [字节 byte](./ch02/byte.md)
+- [类成员 class member](./ch02/class_member.md)
+- [复合类型 compound type](./ch02/compound_type.md)
+
