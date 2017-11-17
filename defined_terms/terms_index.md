@@ -81,4 +81,13 @@
 - [声明 declaration](./ch02/declaration.md)
 - [声明符 declarator](./ch02/declarator.md)
 - [decltype](./ch02/decltype.md)
+- [默认初始化 default initialization](./ch02/default_initialization.md)
+- [定义 definition](./ch02/definition.md)
+- [转义序列 escape sequence](./ch02/escape_sequence.md)
+- [全局作用域 global scope](./ch02/global_scope.md)
+- [头文件保护符 header guard](./ch02/header_guard.md)
+- [标识符 identifier](./ch02/identifier.md)
+- [类内初始值 in-class initializer](./ch02/in-class_initializer.md)
+- [列表初始化 list initialization](./ch02/list_initialization.md)
+- [字面值 literal](./ch02/literal.md)
 
