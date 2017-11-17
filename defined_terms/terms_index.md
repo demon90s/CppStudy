@@ -72,4 +72,13 @@
 - [字节 byte](./ch02/byte.md)
 - [类成员 class member](./ch02/class_member.md)
 - [复合类型 compound type](./ch02/compound_type.md)
+- [常量表达式 const expression](./ch02/const_expression.md)
+- [const](./ch02/const.md)
+- [常量指针 const pointer](./ch02/const_pointer.md)
+- [常量引用 const reference](./ch02/const_reference.md)
+- [转换 conversion](./ch02/conversion.md)
+- [数据成员 data member](./ch02/data_member.md)
+- [声明 declaration](./ch02/declaration.md)
+- [声明符 declarator](./ch02/declarator.md)
+- [decltype](./ch02/decltype.md)
 
