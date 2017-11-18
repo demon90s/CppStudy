@@ -118,3 +118,14 @@
 - [void*](./ch02/void*.md)
 - [字 word](./ch02/word.md)
 
+### 第3章_字符串、向量和数组
+
+- [begin](./ch03/begin.md)
+- [缓冲区溢出 buffer overflow](./ch03/buffer_overflow.md)
+- [类模板 class template](./ch03/class_template.md)
+- [编译器扩展 compiler extension](./ch03/compiler_extension.md)
+- [容器 container](./ch03/container.md)
+- [拷贝初始化 copy initialization](./ch03/copy_initialization.md)
+- [C风格字符串 C-style string](./ch03/C-style_string.md)
+- [difference type](./ch03/difference_type.md)
+
