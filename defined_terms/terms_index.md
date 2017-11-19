@@ -157,3 +157,18 @@
 - [||运算符 逻辑或运算符](./ch03/逻辑或运算符.md)
 - [!运算符 逻辑非运算符](./ch03/逻辑非运算符.md)
 
+### 第4章_表达式
+
+- [算术转换 arithmetic conversion](./ch04/arithmetic_conversion.md)
+- [结合律 associativity](./ch04/associativity.md)
+- [二元运算符 binary operator](./ch04/binary_operator.md)
+- [强制类型转换 cast](./ch04/cast.md)
+- [复合表达式 compound expression](./ch04/compound_expression.md)
+- [const cast](./ch04/const_cast.md)
+- [转换 conversion](./ch04/conversion.md)
+- [表达式 expression](./ch04/expression.md)
+- [隐式转换 implicit conversion](./ch04/implicit_conversion.md)
+- [整型提升 integral promotion](./ch04/integral_promotion.md)
+- [左值 lvalue](./ch04/lvalue.md)
+- [运算对象 operand](./ch04/operand.md)
+
