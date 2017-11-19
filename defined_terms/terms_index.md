@@ -171,4 +171,13 @@
 - [整型提升 integral promotion](./ch04/integral_promotion.md)
 - [左值 lvalue](./ch04/lvalue.md)
 - [运算对象 operand](./ch04/operand.md)
+- [运算符 operator](./ch04/operator.md)
+- [求值顺序 order of evaluation](./ch04/order_of_evaluation.md)
+- [重载运算符 overloaded operator](./ch04/overloaded_operator.md)
+- [优先级 precedence](./ch04/precedence.md)
+- [reinterpret case](./ch04/reinterpret_case.md)
+- [右值 rvalue](./ch04/rvalue.md)
+- [短路求值 short-circuit evaluation](./ch04/short-circuit_evaluation.md)
+- [sizeof](./ch04/sizeof.md)
+- [static cast](./ch04/static_cast.md)
 
