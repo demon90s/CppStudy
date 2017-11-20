@@ -15,10 +15,10 @@ cat << !CHAPTERS!
 第3章_字符串、向量和数组
 第4章_表达式
 第5章_语句
+第6章_函数
 !CHAPTERS!
 }
 
-#第6章_函数
 #第7章_类
 
 chapters=$(get_all_chapters)

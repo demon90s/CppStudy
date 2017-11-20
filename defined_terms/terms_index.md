@@ -223,3 +223,12 @@
 - [try语句块 try block](./ch05/try_block.md)
 - [while语句 while statement](./ch05/while_statement.md)
 
+### 第6章_函数
+
+- [二义性调用 ambiguous call](./ch06/ambiguous_call.md)
+- [实参 argument](./ch06/argument.md)
+- [assert](./ch06/assert.md)
+- [自动对象 automatic object](./ch06/automatic_object.md)
+- [最佳匹配 best match](./ch06/best_match.md)
+- [候选函数 candidate function](./ch06/candidate_function.md)
+
