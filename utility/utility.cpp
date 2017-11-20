@@ -1,17 +1,21 @@
+#include <cassert>
 #include "utility.h"
 
 void SetBit(unsigned long *flag, size_t bit)
 {
+	assert(bit < sizeof(*flag) * 8);
 	*flag |= 1UL << bit;
 }
 
 void ClearBit(unsigned long *flag, size_t bit)
 {
+	assert(bit < sizeof(*flag) * 8);
 	*flag &= ~(1UL << bit);
 }
 
 bool IsBitSet(const unsigned long *flag, size_t bit)
 {
+	assert(bit < sizeof(*flag) * 8);
 	return *flag & (1UL << bit);
 }
 

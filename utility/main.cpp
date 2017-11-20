@@ -14,15 +14,17 @@ void test_ARRAY_ITEM_NUM()
 
 void test_bitwise_operator()
 {
+	constexpr size_t bit = 63;
+
 	unsigned long quizl = 0;
-	SetBit(&quizl, 27);
-	if (IsBitSet(&quizl, 27))
+	SetBit(&quizl, bit);
+	if (IsBitSet(&quizl, bit))
 		cout << "bit is set" << endl;
 	else
 		cout << "bit is not set" << endl;
 
-	ClearBit(&quizl, 27);
-	if (IsBitSet(&quizl, 27))
+	ClearBit(&quizl, bit);
+	if (IsBitSet(&quizl, bit))
 		cout << "bit is set" << endl;
 	else
 		cout << "bit is not set" << endl;
@@ -81,11 +83,11 @@ int main()
 	//test_ARRAY_ITEM_NUM();
 
 	// 测试设置、清除、判断比特位
-	//test_bitwise_operator(); 
+	test_bitwise_operator(); 
 	
 	//test_str_replace();
 	
-	test_read_name();
+	//test_read_name();
 
 	return 0;
 }
