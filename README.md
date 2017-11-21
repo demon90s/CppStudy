@@ -156,3 +156,9 @@
 
 - [窗口类的设计与实现(自p243始)](ch07_Classes/example_Screen)
 
+### 第8章_IO库
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习8.1](ch08_The_IO_Library/exercise_8_01.cpp)|
+
