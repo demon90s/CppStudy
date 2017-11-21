@@ -160,5 +160,9 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习8.1](ch08_The_IO_Library/exercise_8_01.cpp)|[练习8.2](ch08_The_IO_Library/exercise_8_02.md)|[练习8.3](ch08_The_IO_Library/exercise_8_03.md)|
+|[练习8.1](ch08_The_IO_Library/exercise_8_01.cpp)|[练习8.2](ch08_The_IO_Library/exercise_8_02.md)|[练习8.3](ch08_The_IO_Library/exercise_8_03.md)|[练习8.4](ch08_The_IO_Library/exercise_8_04.cpp)|[练习8.5](ch08_The_IO_Library/exercise_8_05.cpp)|[练习8.6](ch08_The_IO_Library/exercise_8_06.md)|
+
+#### 案例代码
+
+- [Sales_data案例（从文件中读取交易记录，p284）](ch08_The_IO_Library/example_Sales_data)
 
