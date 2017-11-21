@@ -1,0 +1,1 @@
+继承（inheritance）程序设计功能，令一个类型可以从另一个类型继承接口。类ifstream和istringstream继承自istream，ofstream和ostringstream继承自ostream。第15章将介绍继承。

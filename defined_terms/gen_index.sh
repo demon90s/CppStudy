@@ -17,6 +17,7 @@ cat << !CHAPTERS!
 第5章_语句
 第6章_函数
 第7章_类
+第8章_IO库
 !CHAPTERS!
 }
 

@@ -288,3 +288,7 @@
 - [合成默认构造函数 synthesized default constructor](./ch07/synthesized_default_constructor.md)
 - [this指针 this pointer](./ch07/this_pointer.md)
 
+### 第8章_IO库
+
+- [继承 inheritance](./ch08/inheritance.md)
+
