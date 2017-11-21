@@ -16,10 +16,9 @@ cat << !CHAPTERS!
 第4章_表达式
 第5章_语句
 第6章_函数
+第7章_类
 !CHAPTERS!
 }
-
-#第7章_类
 
 chapters=$(get_all_chapters)
 

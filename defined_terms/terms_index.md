@@ -257,3 +257,12 @@
 - [尾置返回类型 trailing return type](./ch06/trailing_return_type.md)
 - [可行函数 viable function](./ch06/viable_function.md)
 
+### 第7章_类
+
+- [抽象数据类型 abstract data type](./ch07/abstract_data_type.md)
+- [访问说明符 access specifier](./ch07/access_specifier.md)
+- [聚合类 aggregate class](./ch07/aggregate_class.md)
+- [类的声明 class declaration](./ch07/class_declaration.md)
+- [类 class](./ch07/class.md)
+- [类的作用域 class scope](./ch07/class_scope.md)
+
