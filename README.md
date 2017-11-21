@@ -160,5 +160,5 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习8.1](ch08_The_IO_Library/exercise_8_01.cpp)|
+|[练习8.1](ch08_The_IO_Library/exercise_8_01.cpp)|[练习8.2](ch08_The_IO_Library/exercise_8_02.md)|[练习8.3](ch08_The_IO_Library/exercise_8_03.md)|
 
