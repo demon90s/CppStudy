@@ -171,5 +171,9 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习9.1](ch09_Sequential_Containers/exercise_9_01.md)|[练习9.2](ch09_Sequential_Containers/exercise_9_02.cpp)|
+|[练习9.1](ch09_Sequential_Containers/exercise_9_01.md)|[练习9.2](ch09_Sequential_Containers/exercise_9_02.cpp)|[练习9.3](ch09_Sequential_Containers/exercise_9_03.md)|[练习9.4](ch09_Sequential_Containers/exercise_9_04.cpp)|[练习9.5](ch09_Sequential_Containers/exercise_9_05.cpp)|[练习9.6](ch09_Sequential_Containers/exercise_9_06.md)|
+
+#### 案例代码
+
+- [迭代器范围iterator range（p296）](ch09_Sequential_Containers/example_iterator_range.cpp)
 
