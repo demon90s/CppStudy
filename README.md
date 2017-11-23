@@ -171,5 +171,5 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习9.1](ch09_Sequential_Containers/exercise_9_01.md)|
+|[练习9.1](ch09_Sequential_Containers/exercise_9_01.md)|[练习9.2](ch09_Sequential_Containers/exercise_9_02.cpp)|
 
