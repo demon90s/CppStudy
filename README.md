@@ -167,3 +167,9 @@
 
 - [使用fstream代替iostream&读取Sales_data（p284）](ch08_The_IO_Library/example_fstream.cpp)
 
+### 第9章_顺序容器
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习9.1](ch09_Sequential_Containers/exercise_9_01.md)|
+

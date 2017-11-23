@@ -47,9 +47,11 @@ main() {
 
 	sh ./gen_readme.sh
 
-	cd ./defined_terms
-	sh ./gen_index.sh
-	cd ..
+	if [ "$1" = "-t" ]; then
+		cd ./defined_terms
+		sh ./gen_index.sh
+		cd ..
+	fi
 
 	if ! show_status; then
 		return 0
@@ -63,6 +65,6 @@ main() {
 	fi
 }
 
-main
+main $*
 
 exit 0
