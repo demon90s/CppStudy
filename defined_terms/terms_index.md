@@ -290,5 +290,13 @@
 
 ### 第8章_IO库
 
+- [条件状态 condition state](./ch08/condition_state.md)
+- [文件模式 file mode](./ch08/file_mode.md)
+- [文件流 file stream](./ch08/file_stream.md)
+- [fstream](./ch08/fstream.md)
+- [ifstream](./ch08/ifstream.md)
 - [继承 inheritance](./ch08/inheritance.md)
+- [istringstream](./ch08/istringstream.md)
+- [ofstream](./ch08/ofstream.md)
+- [字符串流 string stream](./ch08/string_stream.md)
 
