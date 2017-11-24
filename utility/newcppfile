@@ -5,9 +5,7 @@
 get_file_content()
 {
 cat << !FILE_CONTENT!
-/*
- *
- */
+//
 
 #include <iostream>
 
