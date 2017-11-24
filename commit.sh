@@ -22,6 +22,10 @@ clear_build() {
 			fi
 		cd ..
 	done
+
+	cd labs
+	sh build.sh clear
+	cd ..
 }
 
 show_status() {
