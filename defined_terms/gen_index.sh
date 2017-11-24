@@ -36,7 +36,7 @@ gen_ch_index()
 	for term in $terms; do
 		# 截取术语的英文名：文件名 -> 去掉后缀.md -> 将'_'替换成' '
 		term_name=${term%.md}
-		term_name=$(echo $term_name | sed 's/_/ /g')
+		term_name=${term_name//_/ }
 		
 		# 截取术语的中文名：文件第一行 -> 参数（... -> 参数
 		first_line=$(head -1 ./$dir/$term)
