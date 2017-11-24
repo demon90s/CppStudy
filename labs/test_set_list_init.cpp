@@ -1,4 +1,4 @@
-// test: list的列表初始化
+// test: set的列表初始化
 
 #include <iostream>
 #include <set>

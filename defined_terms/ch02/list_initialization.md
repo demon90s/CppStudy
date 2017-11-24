@@ -14,4 +14,4 @@
 
 **相关测试**
 
-[list的列表初始化](../../labs/test_set_list_init.cpp)
+[set的列表初始化](../../labs/test_set_list_init.cpp)
