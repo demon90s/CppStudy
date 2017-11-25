@@ -8,6 +8,7 @@
 #define UTILITY_H
 
 #include <string>
+#include <sstream>
 #include <iterator>
 
 // 求数组的元素的数量，得到的是一个ptrdiff_t（p107）
@@ -34,5 +35,32 @@ int str_replace(std::string &s, const std::string &old_val, const std::string &n
  * 所谓合法的名字，就是开头是一个字母或者_，后面跟着字母、数字或者下划线的名字
  */
 const char *read_name(const char *p, std::string *name);
+
+/*
+ * string转换成基础类型，返回是否转换成功
+ */
+template<typename T>
+bool string_to_basetype(const std::string &str, T &val)
+{
+	std::istringstream iss(str);
+	if (iss >> val)
+		return true;
+	else
+		return false;
+}
+
+/*
+ * 基础类型转换成string，返回是否转换成功
+ */
+template<typename T>
+bool basetype_to_string(T &val, std::string &str)
+{
+	std::ostringstream oss;
+	if (oss << val) {
+		str = oss.str();
+		return true;
+	}
+	return false;
+}
 
 #endif

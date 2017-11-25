@@ -77,17 +77,31 @@ void test_read_name()
 		cout << "p is nullptr" << endl;
 }
 
+void test_string_to_basetype()
+{
+	string s = "12345";
+	int a = 0;
+	if (string_to_basetype(s, a))
+		cout << a << endl;
+
+	double pi = 3.14;
+	if (basetype_to_string(pi, s))
+		cout << s << endl;
+}
+
 int main()
 {
 	// 测试求数组元素的数量
 	//test_ARRAY_ITEM_NUM();
 
 	// 测试设置、清除、判断比特位
-	test_bitwise_operator(); 
+	//test_bitwise_operator(); 
 	
 	//test_str_replace();
 	
 	//test_read_name();
+	
+	test_string_to_basetype();
 
 	return 0;
 }
