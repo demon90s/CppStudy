@@ -21,11 +21,12 @@ while (iter != mid)
 vector<int>::iterator iter = iv.begin(),
                       mid = iv.begin() + iv.size()/2;
 
-while (iter != mid)
+while (iter != mid) {
 	if (*iter == some_val) {
 		iter = iv.insert(iter, 2 * some_val);
 		++iter;
 		mid = iv.begin() + iv.size()/2;
 	}
 	++iter;
+}
 ```
