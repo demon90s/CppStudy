@@ -174,8 +174,11 @@
 |[练习9.1](ch09_Sequential_Containers/exercise_9_01.md)|[练习9.2](ch09_Sequential_Containers/exercise_9_02.cpp)|[练习9.3](ch09_Sequential_Containers/exercise_9_03.md)|[练习9.4](ch09_Sequential_Containers/exercise_9_04.cpp)|[练习9.5](ch09_Sequential_Containers/exercise_9_05.cpp)|[练习9.6](ch09_Sequential_Containers/exercise_9_06.md)|[练习9.7](ch09_Sequential_Containers/exercise_9_07.md)|[练习9.8](ch09_Sequential_Containers/exercise_9_08.md)|
 |[练习9.9](ch09_Sequential_Containers/exercise_9_09.md)|[练习9.10](ch09_Sequential_Containers/exercise_9_10.md)|[练习9.11](ch09_Sequential_Containers/exercise_9_11.cpp)|[练习9.12](ch09_Sequential_Containers/exercise_9_12.md)|[练习9.13](ch09_Sequential_Containers/exercise_9_13.cpp)|[练习9.14](ch09_Sequential_Containers/exercise_9_14.cpp)|[练习9.15](ch09_Sequential_Containers/exercise_9_15.cpp)|[练习9.16](ch09_Sequential_Containers/exercise_9_16.cpp)|
 |[练习9.17](ch09_Sequential_Containers/exercise_9_17.md)|[练习9.18](ch09_Sequential_Containers/exercise_9_18.cpp)|[练习9.19](ch09_Sequential_Containers/exercise_9_19.cpp)|[练习9.20](ch09_Sequential_Containers/exercise_9_20.cpp)|[练习9.21](ch09_Sequential_Containers/exercise_9_21.md)|[练习9.22](ch09_Sequential_Containers/exercise_9_22.md)|[练习9.23](ch09_Sequential_Containers/exercise_9_23.md)|[练习9.24](ch09_Sequential_Containers/exercise_9_24.cpp)|
+|[练习9.25](ch09_Sequential_Containers/exercise_9_25.cpp)|[练习9.26](ch09_Sequential_Containers/exercise_9_26.cpp)|
 
 #### 案例代码
+
+- [从容器内部删除一个元素（p312）](ch09_Sequential_Containers/example_erase.cpp)
 
 - [使用insert的返回值（p308）](ch09_Sequential_Containers/example_insert.cpp)
 
