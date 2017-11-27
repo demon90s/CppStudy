@@ -1,4 +1,4 @@
-// forward_list操作（p313）
+// example: forward_list操作（p313）
 
 #include <iostream>
 #include <forward_list>

@@ -180,6 +180,8 @@
 
 - [从容器内部删除一个元素（p312）](ch09_Sequential_Containers/example_erase.cpp)
 
+- [forward_list操作（p313）](ch09_Sequential_Containers/example_forward_list.cpp)
+
 - [使用insert的返回值（p308）](ch09_Sequential_Containers/example_insert.cpp)
 
 - [迭代器范围iterator range（p296）](ch09_Sequential_Containers/example_iterator_range.cpp)
