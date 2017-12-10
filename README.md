@@ -177,7 +177,7 @@
 |[练习9.25](ch09_Sequential_Containers/exercise_9_25.cpp)|[练习9.26](ch09_Sequential_Containers/exercise_9_26.cpp)|[练习9.27](ch09_Sequential_Containers/exercise_9_27.cpp)|[练习9.28](ch09_Sequential_Containers/exercise_9_28.cpp)|[练习9.29](ch09_Sequential_Containers/exercise_9_29.md)|[练习9.30](ch09_Sequential_Containers/exercise_9_30.md)|[练习9.31](ch09_Sequential_Containers/exercise_9_31.cpp)|[练习9.32](ch09_Sequential_Containers/exercise_9_32.md)|
 |[练习9.33](ch09_Sequential_Containers/exercise_9_33.cpp)|[练习9.34](ch09_Sequential_Containers/exercise_9_34.cpp)|[练习9.35](ch09_Sequential_Containers/exercise_9_35.md)|[练习9.36](ch09_Sequential_Containers/exercise_9_36.md)|[练习9.37](ch09_Sequential_Containers/exercise_9_37.md)|[练习9.38](ch09_Sequential_Containers/exercise_9_38.cpp)|[练习9.39](ch09_Sequential_Containers/exercise_9_39.md)|[练习9.40](ch09_Sequential_Containers/exercise_9_40.cpp)|
 |[练习9.41](ch09_Sequential_Containers/exercise_9_41.cpp)|[练习9.42](ch09_Sequential_Containers/exercise_9_42.md)|[练习9.43](ch09_Sequential_Containers/exercise_9_43.cpp)|[练习9.44](ch09_Sequential_Containers/exercise_9_44.cpp)|[练习9.45](ch09_Sequential_Containers/exercise_9_45.cpp)|[练习9.46](ch09_Sequential_Containers/exercise_9_46.cpp)|[练习9.47](ch09_Sequential_Containers/exercise_9_47.cpp)|[练习9.48](ch09_Sequential_Containers/exercise_9_48.cpp)|
-|[练习9.49](ch09_Sequential_Containers/exercise_9_49.cpp)|[练习9.50](ch09_Sequential_Containers/exercise_9_50.cpp)|[练习9.51](ch09_Sequential_Containers/exercise_9_51.cpp)|
+|[练习9.49](ch09_Sequential_Containers/exercise_9_49.cpp)|[练习9.50](ch09_Sequential_Containers/exercise_9_50.cpp)|[练习9.51](ch09_Sequential_Containers/exercise_9_51.cpp)|[练习9.52](ch09_Sequential_Containers/exercise_9_52.cpp)|
 
 #### 案例代码
 
