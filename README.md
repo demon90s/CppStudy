@@ -195,5 +195,5 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习10.1](ch10_Generic_Algorithms/exercise_10_01.cpp)|[练习10.2](ch10_Generic_Algorithms/exercise_10_02.cpp)|
+|[练习10.1](ch10_Generic_Algorithms/exercise_10_01.cpp)|[练习10.2](ch10_Generic_Algorithms/exercise_10_02.cpp)|[练习10.3](ch10_Generic_Algorithms/exercise_10_03.cpp)|[练习10.4](ch10_Generic_Algorithms/exercise_10_04.cpp)|[练习10.5](ch10_Generic_Algorithms/exercise_10_05.md)|
 
