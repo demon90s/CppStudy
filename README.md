@@ -191,3 +191,9 @@
 
 - [迭代器范围iterator range（p296）](ch09_Sequential_Containers/example_iterator_range.cpp)
 
+### 第10章_泛型算法
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习10.1](ch10_Generic_Algorithms/exercise_10_01.cpp)|[练习10.2](ch10_Generic_Algorithms/exercise_10_02.cpp)|
+
