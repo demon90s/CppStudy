@@ -196,7 +196,7 @@
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习10.1](ch10_Generic_Algorithms/exercise_10_01.cpp)|[练习10.2](ch10_Generic_Algorithms/exercise_10_02.cpp)|[练习10.3](ch10_Generic_Algorithms/exercise_10_03.cpp)|[练习10.4](ch10_Generic_Algorithms/exercise_10_04.cpp)|[练习10.5](ch10_Generic_Algorithms/exercise_10_05.md)|[练习10.6](ch10_Generic_Algorithms/exercise_10_06.cpp)|[练习10.7](ch10_Generic_Algorithms/exercise_10_07.md)|[练习10.8](ch10_Generic_Algorithms/exercise_10_08.md)|
-|[练习10.9](ch10_Generic_Algorithms/exercise_10_09.cpp)|[练习10.10](ch10_Generic_Algorithms/exercise_10_10.md)|
+|[练习10.9](ch10_Generic_Algorithms/exercise_10_09.cpp)|[练习10.10](ch10_Generic_Algorithms/exercise_10_10.md)|[练习10.11](ch10_Generic_Algorithms/exercise_10_11.cpp)|[练习10.12](ch10_Generic_Algorithms/exercise_10_12.cpp)|[练习10.13](ch10_Generic_Algorithms/exercise_10_13.cpp)|
 
 #### 案例代码
 
