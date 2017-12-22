@@ -203,5 +203,7 @@
 
 - [使用lambda案例（p349）](ch10_Generic_Algorithms/example_lambda.cpp)
 
+- [stable_sort（p345）](ch10_Generic_Algorithms/example_stable_sort.cpp)
+
 - [sort和unique函数，消除重复单词（p343）](ch10_Generic_Algorithms/example_unique.cpp)
 
