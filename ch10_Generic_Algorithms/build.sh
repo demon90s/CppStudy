@@ -21,6 +21,7 @@ main() {
 
 		if [ "$1" == "clear" ]; then
 			rm -f $exe_file
+			rm -f out1 out2
 			continue
 		fi
 
