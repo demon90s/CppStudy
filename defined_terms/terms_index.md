@@ -322,3 +322,7 @@
 - [stack](./ch09/stack.md)
 - [vector](./ch09/vector.md)
 
+### 第10章_泛型算法
+
+- [back inserter](./ch10/back_inserter.md)
+
