@@ -200,6 +200,7 @@
 |[练习10.17](ch10_Generic_Algorithms/exercise_10_17.cpp)|[练习10.18](ch10_Generic_Algorithms/exercise_10_18.cpp)|[练习10.19](ch10_Generic_Algorithms/exercise_10_19.cpp)|[练习10.20](ch10_Generic_Algorithms/exercise_10_20.cpp)|[练习10.21](ch10_Generic_Algorithms/exercise_10_21.cpp)|[练习10.22](ch10_Generic_Algorithms/exercise_10_22.cpp)|[练习10.23](ch10_Generic_Algorithms/exercise_10_23.md)|[练习10.24](ch10_Generic_Algorithms/exercise_10_24.cpp)|
 |[练习10.25](ch10_Generic_Algorithms/exercise_10_25.cpp)|[练习10.26](ch10_Generic_Algorithms/exercise_10_26.md)|[练习10.27](ch10_Generic_Algorithms/exercise_10_27.cpp)|[练习10.28](ch10_Generic_Algorithms/exercise_10_28.cpp)|[练习10.29](ch10_Generic_Algorithms/exercise_10_29.cpp)|[练习10.30](ch10_Generic_Algorithms/exercise_10_30.cpp)|[练习10.31](ch10_Generic_Algorithms/exercise_10_31.cpp)|[练习10.32](ch10_Generic_Algorithms/exercise_10_32.cpp)|
 |[练习10.33](ch10_Generic_Algorithms/exercise_10_33.cpp)|[练习10.34](ch10_Generic_Algorithms/exercise_10_34.cpp)|[练习10.35](ch10_Generic_Algorithms/exercise_10_35.cpp)|[练习10.36](ch10_Generic_Algorithms/exercise_10_36.cpp)|[练习10.37](ch10_Generic_Algorithms/exercise_10_37.cpp)|[练习10.38](ch10_Generic_Algorithms/exercise_10_38.md)|[练习10.39](ch10_Generic_Algorithms/exercise_10_39.md)|[练习10.40](ch10_Generic_Algorithms/exercise_10_40.md)|
+|[练习10.41](ch10_Generic_Algorithms/exercise_10_41.md)|[练习10.42](ch10_Generic_Algorithms/exercise_10_42.cpp)|
 
 #### 案例代码
 
