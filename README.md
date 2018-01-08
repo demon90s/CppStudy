@@ -204,6 +204,8 @@
 
 #### 案例代码
 
+- [介绍back_inserter(p341)](ch10_Generic_Algorithms/example_back_inserter.cpp)
+
 - [istream_iterator操作（p359）](ch10_Generic_Algorithms/example_istream_iterator.cpp)
 
 - [使用lambda案例（p349）](ch10_Generic_Algorithms/example_lambda.cpp)
