@@ -220,8 +220,11 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习11.1](ch11_Associative_Containers/exercise_11_01.md)|[练习11.2](ch11_Associative_Containers/exercise_11_02.md)|[练习11.3](ch11_Associative_Containers/exercise_11_03.cpp)|[练习11.4](ch11_Associative_Containers/exercise_11_04.cpp)|
 
 #### 案例代码
 
 - [使用map（p375）](ch11_Associative_Containers/example_map.cpp)
+
+- [使用set（p375）](ch11_Associative_Containers/example_set.cpp)
 
