@@ -221,11 +221,13 @@
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习11.1](ch11_Associative_Containers/exercise_11_01.md)|[练习11.2](ch11_Associative_Containers/exercise_11_02.md)|[练习11.3](ch11_Associative_Containers/exercise_11_03.cpp)|[练习11.4](ch11_Associative_Containers/exercise_11_04.cpp)|[练习11.5](ch11_Associative_Containers/exercise_11_05.md)|[练习11.6](ch11_Associative_Containers/exercise_11_06.md)|[练习11.7](ch11_Associative_Containers/exercise_11_07.cpp)|[练习11.8](ch11_Associative_Containers/exercise_11_08.cpp)|
-|[练习11.9](ch11_Associative_Containers/exercise_11_09.cpp)|[练习11.10](ch11_Associative_Containers/exercise_11_10.md)|[练习11.11](ch11_Associative_Containers/exercise_11_11.cpp)|
+|[练习11.9](ch11_Associative_Containers/exercise_11_09.cpp)|[练习11.10](ch11_Associative_Containers/exercise_11_10.md)|[练习11.11](ch11_Associative_Containers/exercise_11_11.cpp)|[练习11.12](ch11_Associative_Containers/exercise_11_12.cpp)|[练习11.13](ch11_Associative_Containers/exercise_11_13.cpp)|[练习11.14](ch11_Associative_Containers/exercise_11_14.cpp)|
 
 #### 案例代码
 
 - [初始化multiset(p377)](ch11_Associative_Containers/example_init_multiset.cpp)
+
+- [创建pair对象的函数](ch11_Associative_Containers/example_make_pair.cpp)
 
 - [使用map（p375）](ch11_Associative_Containers/example_map.cpp)
 
