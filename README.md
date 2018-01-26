@@ -224,6 +224,7 @@
 |[练习11.9](ch11_Associative_Containers/exercise_11_09.cpp)|[练习11.10](ch11_Associative_Containers/exercise_11_10.md)|[练习11.11](ch11_Associative_Containers/exercise_11_11.cpp)|[练习11.12](ch11_Associative_Containers/exercise_11_12.cpp)|[练习11.13](ch11_Associative_Containers/exercise_11_13.cpp)|[练习11.14](ch11_Associative_Containers/exercise_11_14.cpp)|[练习11.15](ch11_Associative_Containers/exercise_11_15.md)|[练习11.16](ch11_Associative_Containers/exercise_11_16.md)|
 |[练习11.17](ch11_Associative_Containers/exercise_11_17.cpp)|[练习11.18](ch11_Associative_Containers/exercise_11_18.md)|[练习11.19](ch11_Associative_Containers/exercise_11_19.cpp)|[练习11.20](ch11_Associative_Containers/exercise_11_20.cpp)|[练习11.21](ch11_Associative_Containers/exercise_11_21.md)|[练习11.22](ch11_Associative_Containers/exercise_11_22.md)|[练习11.23](ch11_Associative_Containers/exercise_11_23.cpp)|[练习11.24](ch11_Associative_Containers/exercise_11_24.md)|
 |[练习11.25](ch11_Associative_Containers/exercise_11_25.md)|[练习11.26](ch11_Associative_Containers/exercise_11_26.md)|[练习11.27](ch11_Associative_Containers/exercise_11_27.md)|[练习11.28](ch11_Associative_Containers/exercise_11_28.cpp)|[练习11.29](ch11_Associative_Containers/exercise_11_29.md)|[练习11.30](ch11_Associative_Containers/exercise_11_30.md)|[练习11.31](ch11_Associative_Containers/exercise_11_31.cpp)|[练习11.32](ch11_Associative_Containers/exercise_11_32.cpp)|
+|[练习11.33](ch11_Associative_Containers/exercise_11_33.cpp)|[练习11.34](ch11_Associative_Containers/exercise_11_34.md)|[练习11.35](ch11_Associative_Containers/exercise_11_35.md)|[练习11.36](ch11_Associative_Containers/exercise_11_36.md)|
 
 #### 案例代码
 
@@ -234,4 +235,6 @@
 - [使用map（p375）](ch11_Associative_Containers/example_map.cpp)
 
 - [使用set（p375）](ch11_Associative_Containers/example_set.cpp)
+
+- [单词转换程序（p392）](ch11_Associative_Containers/example_word_transform.cpp)
 
