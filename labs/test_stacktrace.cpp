@@ -6,14 +6,17 @@
 
 using namespace std;
 
-void a()
+namespace Test
 {
-	print_stacktrace();
+	void a()
+	{
+		print_stacktrace();
+	}
 }
 
 void b(int n)
 {
-	a();
+	Test::a();
 }
 
 void c()
