@@ -244,6 +244,7 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习12.1](ch12_Dynamic_Memory/exercise_12_01.cpp)|[练习12.2](ch12_Dynamic_Memory/exercise_12_02.md)|[练习12.3](ch12_Dynamic_Memory/exercise_12_03.md)|[练习12.4](ch12_Dynamic_Memory/exercise_12_04.md)|[练习12.5](ch12_Dynamic_Memory/exercise_12_05.md)|
 
 #### 案例代码
 
