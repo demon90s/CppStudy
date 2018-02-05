@@ -240,3 +240,12 @@
 
 - [单词转换程序（p392）](ch11_Associative_Containers/example_word_transform.cpp)
 
+### 第12章_动态内存
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+
+#### 案例代码
+
+- [使用智能指针共享底层数据(p405)](ch12_Dynamic_Memory/example_StrBlob)
+
