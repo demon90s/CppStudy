@@ -1,4 +1,4 @@
-// exmaple: 使用我们自己的释放操作（p416）
+// example: 使用我们自己的释放操作（p416）
 
 #include <iostream>
 #include <memory>

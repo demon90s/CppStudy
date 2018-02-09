@@ -251,3 +251,5 @@
 
 - [使用智能指针共享底层数据(p405)](ch12_Dynamic_Memory/example_StrBlob)
 
+- [使用我们自己的释放操作（p416）](ch12_Dynamic_Memory/example_using_own_deletion.cpp)
+
