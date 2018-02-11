@@ -246,6 +246,7 @@
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习12.1](ch12_Dynamic_Memory/exercise_12_01.cpp)|[练习12.2](ch12_Dynamic_Memory/exercise_12_02.md)|[练习12.3](ch12_Dynamic_Memory/exercise_12_03.md)|[练习12.4](ch12_Dynamic_Memory/exercise_12_04.md)|[练习12.5](ch12_Dynamic_Memory/exercise_12_05.md)|[练习12.6](ch12_Dynamic_Memory/exercise_12_06.cpp)|[练习12.7](ch12_Dynamic_Memory/exercise_12_07.cpp)|[练习12.8](ch12_Dynamic_Memory/exercise_12_08.md)|
 |[练习12.9](ch12_Dynamic_Memory/exercise_12_09.md)|[练习12.10](ch12_Dynamic_Memory/exercise_12_10.md)|[练习12.11](ch12_Dynamic_Memory/exercise_12_11.md)|[练习12.12](ch12_Dynamic_Memory/exercise_12_12.md)|[练习12.13](ch12_Dynamic_Memory/exercise_12_13.md)|[练习12.14](ch12_Dynamic_Memory/exercise_12_14.md)|[练习12.15](ch12_Dynamic_Memory/exercise_12_15.cpp)|[练习12.16](ch12_Dynamic_Memory/exercise_12_16.cpp)|
+|[练习12.17](ch12_Dynamic_Memory/exercise_12_17.md)|[练习12.18](ch12_Dynamic_Memory/exercise_12_18.md)|
 
 #### 案例代码
 
