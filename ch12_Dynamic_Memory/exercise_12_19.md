@@ -2,4 +2,4 @@
 
 ---
 
-见[](./example_StrBlobPtr)
+见[案例](./example_StrBlobPtr)
