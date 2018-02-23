@@ -1,5 +1,4 @@
-// 练习12.27：TextQuery和QueryResult类只使用了我们已介绍过的语言和标准
-// 库特性。不要提前看后续章节内容，只用已经学到的知识编写你自己的版本。
+// 重写TextQuery和QueryResult类，用StrBlob代替vector<string>保存输入文件。
 
 #include <iostream>
 #include <string>
@@ -8,6 +7,8 @@
 #include <set>
 #include <fstream>
 #include <sstream>
+
+#include "./example_StrBlob/StrBlob.h"
 
 using namespace std;
 
@@ -20,14 +21,14 @@ public:
 
 	bool IsValid() const { return m_lines && m_line_numbers; }
 
-	void SetRes(vector<string> *lines, set<int> *line_numbers)
+	void SetRes(StrBlob *lines, set<int> *line_numbers)
 	{
 		m_lines = lines;
 		m_line_numbers = line_numbers;
 	}
 
 private:
-	vector<string> *m_lines;
+	StrBlob *m_lines;
 	set<int> *m_line_numbers;
 	string m_word;
 };
@@ -40,7 +41,7 @@ public:
 	QueryResult query(const string &word);
 
 private:
-	vector<string> m_lines;
+	StrBlob m_lines;
 	map<string, set<int>> m_word_to_line_map;
 };
 

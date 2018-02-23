@@ -16,6 +16,11 @@ public:
 				std::shared_ptr<std::vector<std::string>> f):
 		sought(s), lines(p), file(f) {}
 
+	std::set<line_no>::iterator begin() { return lines->begin(); }
+	std::set<line_no>::iterator end()   { return lines->end(); }
+
+	std::shared_ptr<std::vector<std::string>> get_file() const { return file; }
+
 private:
 	std::string sought;	// 查询单词
 	std::shared_ptr<std::set<line_no>> lines;	// 出现的行号
