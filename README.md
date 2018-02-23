@@ -254,7 +254,7 @@
 
 - [使用智能指针共享底层数据(p405)](ch12_Dynamic_Memory/example_StrBlob)
 
-- [使用智能指针共享底层数据(p405)](ch12_Dynamic_Memory/example_StrBlobPtr)
+- [weak_ptr的一个例子(p421)](ch12_Dynamic_Memory/example_StrBlobPtr)
 
 - [文本查询程序(p430始)](ch12_Dynamic_Memory/example_TextQuery)
 

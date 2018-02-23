@@ -1,4 +1,4 @@
-// example: 使用智能指针共享底层数据(p405)
+// example: weak_ptr的一个例子(p421)
 
 #include <iostream>
 
