@@ -1,0 +1,1 @@
+unique_ptr 提供独享所有权的智能指针，当unique_ptr被销毁时，它指向的对象被释放。unique_ptr不能直接拷贝或赋值。

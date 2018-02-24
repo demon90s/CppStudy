@@ -21,6 +21,7 @@ cat << !CHAPTERS!
 第9章_顺序容器
 第10章_泛型算法
 第11章_关联容器
+第12章_动态内存
 !CHAPTERS!
 }
 
@@ -39,14 +40,15 @@ gen_ch_index()
 	for term in $terms; do
 		# 截取术语的英文名：文件名 -> 去掉后缀.md -> 将'_'替换成' '
 		term_name=${term%.md}
+		old_term_name=$term_name
 		term_name=${term_name//_/ }
 		
 		# 截取术语的中文名：文件第一行 -> 参数（... -> 参数
 		first_line=$(head -1 ./$dir/$term)
 		term_name_cn=${first_line%%（*}
 		if [ "$first_line" = "$term_name_cn" ]; then
-			# 没有中文的情况
-			tag="[$term_name](./$dir/$term)"
+			# 没有中文的情况，一般都是类名，故保留下划线
+			tag="[$old_term_name](./$dir/$term)"
 		else
 			tag="[$term_name_cn $term_name](./$dir/$term)"
 		fi
