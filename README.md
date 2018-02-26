@@ -260,3 +260,9 @@
 
 - [使用我们自己的释放操作（p416）](ch12_Dynamic_Memory/example_using_own_deletion.cpp)
 
+### 第13章_拷贝控制
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习13.1](ch13_Copy_Control/exercise_13_01.md)|[练习13.2](ch13_Copy_Control/exercise_13_02.md)|[练习13.3](ch13_Copy_Control/exercise_13_03.md)|
+
