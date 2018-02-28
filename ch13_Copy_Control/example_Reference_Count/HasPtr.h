@@ -4,6 +4,8 @@
 #include <string>
 
 class HasPtr {
+	friend void swap(HasPtr&, HasPtr&);
+
 public:
 	// 构造函数分配新的string和新的计数器，将计数器置为1
 	HasPtr(const std::string &s = std::string()) :
@@ -41,6 +43,14 @@ HasPtr& HasPtr::operator=(const HasPtr &rhs)
 	i = rhs.i;
 	use = rhs.use;
 	return *this;		// 返回本对象
+}
+
+inline
+void swap(HasPtr &lhs, HasPtr &rhs)
+{
+	using std::swap;
+	swap(lhs.ps, rhs.ps);	// 交换指针，而不是string数据
+	swap(lhs.i, rhs.i);		// 交换int成员
 }
 
 #endif // HAS_PTR_H
