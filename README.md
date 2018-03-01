@@ -252,6 +252,8 @@
 
 #### 案例代码
 
+- [allocator类（427）](ch12_Dynamic_Memory/example_allocator.cpp)
+
 - [使用智能指针共享底层数据(p405)](ch12_Dynamic_Memory/example_StrBlob)
 
 - [weak_ptr的一个例子(p421)](ch12_Dynamic_Memory/example_StrBlobPtr)
