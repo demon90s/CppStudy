@@ -271,5 +271,7 @@
 
 #### 案例代码
 
+- [拷贝控制示例（p460）](ch13_Copy_Control/example_Copy_Control)
+
 - [使用引用计数的类（p456）](ch13_Copy_Control/example_Reference_Count)
 
