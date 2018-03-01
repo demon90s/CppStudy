@@ -18,7 +18,7 @@ public:
 	HasPtr(const HasPtr &hp) :
 		ps(new std::string(*hp.ps)), i(hp.i) {}
 
-	HasPtr& operator=(const HasPtr &hp);
+	HasPtr& operator=(HasPtr hp);
 
 	bool operator<(const HasPtr &rhs) const { return *ps > *rhs.ps; }
 
@@ -39,10 +39,9 @@ void swap(HasPtr &lhs, HasPtr &rhs)
 	swap(lhs.i, rhs.i);
 }
 
-HasPtr& HasPtr::operator=(const HasPtr &hp)
+HasPtr& HasPtr::operator=(HasPtr hp)
 {
-	HasPtr tmp(hp);
-	swap(*this, tmp);
+	swap(*this, hp);
 	return *this;
 }
 
