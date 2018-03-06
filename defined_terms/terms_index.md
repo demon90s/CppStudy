@@ -115,7 +115,6 @@
 - [无符号类型 unsigned](./ch02/unsigned.md)
 - [变量 variable](./ch02/variable.md)
 - [void](./ch02/void.md)
-- [void*](./ch02/void*.md)
 - [字 word](./ch02/word.md)
 
 ### 第3章_字符串、向量和数组
