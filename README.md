@@ -278,3 +278,5 @@
 
 - [使用引用计数的类（p456）](ch13_Copy_Control/example_Reference_Count)
 
+- [动态内存管理类（p464）](ch13_Copy_Control/example_StrVec)
+
