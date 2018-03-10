@@ -1,14 +1,14 @@
-// example: 动态内存管理类（p464）
+// example: 自定义String简化版本（p470练习13.44）
 
 #include <iostream>
 
-#include "StrVec.h"
+#include "String.h"
 
 using namespace std;
 
 void func1()
 {
-	StrVec v;
+	String v;
 
 	cout << "v.size(): " << v.size() << endl;
 	cout << "v.capacity(): " << v.capacity() << endl;
@@ -18,9 +18,9 @@ void func1()
 	cout << "v.size(): " << v.size() << endl;
 	cout << "v.capacity(): " << v.capacity() << endl;
 
-	cout << "push_back 2 string ..." << endl;
-	v.push_back("a");
-	v.push_back("b");
+	cout << "push_back 2 char ..." << endl;
+	v.push_back('a');
+	v.push_back('b');
 	cout << "v.size(): " << v.size() << endl;
 	cout << "v.capacity(): " << v.capacity() << endl;
 
@@ -37,7 +37,7 @@ void func1()
 
 void func2()
 {
-	StrVec v{"a", "b", "Hello", "World"};
+	String v{'a', 'b', 'c', 'd'};
 
 	for (auto p = v.begin(); p != v.end(); ++p)
 		cout << *p << " ";
@@ -47,10 +47,20 @@ void func2()
 	cout << "v.capacity(): " << v.capacity() << endl;
 }
 
+void func3()
+{
+	String v;
+	cout << v << endl;
+
+	v = "Hello world";
+	cout << v << endl;
+}
+
 int main()
 {
 	//func1();
-	func2();
+	//func2();
+	func3();
 
 	return 0;
 }

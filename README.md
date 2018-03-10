@@ -270,13 +270,16 @@
 |[练习13.9](ch13_Copy_Control/exercise_13_09.md)|[练习13.10](ch13_Copy_Control/exercise_13_10.md)|[练习13.11](ch13_Copy_Control/exercise_13_11.cpp)|[练习13.12](ch13_Copy_Control/exercise_13_12.md)|[练习13.13](ch13_Copy_Control/exercise_13_13.cpp)|[练习13.14](ch13_Copy_Control/exercise_13_14.md)|[练习13.15](ch13_Copy_Control/exercise_13_15.md)|[练习13.16](ch13_Copy_Control/exercise_13_16.md)|
 |[练习13.17](ch13_Copy_Control/exercise_13_17.cpp)|[练习13.18](ch13_Copy_Control/exercise_13_18.cpp)|[练习13.19](ch13_Copy_Control/exercise_13_19.cpp)|[练习13.20](ch13_Copy_Control/exercise_13_20.md)|[练习13.21](ch13_Copy_Control/exercise_13_21.md)|[练习13.22](ch13_Copy_Control/exercise_13_22.md)|[练习13.23](ch13_Copy_Control/exercise_13_23.md)|[练习13.24](ch13_Copy_Control/exercise_13_24.md)|
 |[练习13.25](ch13_Copy_Control/exercise_13_25.md)|[练习13.26](ch13_Copy_Control/exercise_13_26.cpp)|[练习13.27](ch13_Copy_Control/exercise_13_27.md)|[练习13.28](ch13_Copy_Control/exercise_13_28.cpp)|[练习13.29](ch13_Copy_Control/exercise_13_29.md)|[练习13.30](ch13_Copy_Control/exercise_13_30.cpp)|[练习13.31](ch13_Copy_Control/exercise_13_31.cpp)|[练习13.32](ch13_Copy_Control/exercise_13_32.md)|
-|[练习13.33](ch13_Copy_Control/exercise_13_33.md)|[练习13.34](ch13_Copy_Control/exercise_13_34.md)|[练习13.35](ch13_Copy_Control/exercise_13_35.md)|[练习13.36](ch13_Copy_Control/exercise_13_36.md)|[练习13.37](ch13_Copy_Control/exercise_13_37.md)|[练习13.38](ch13_Copy_Control/exercise_13_38.md)|
+|[练习13.33](ch13_Copy_Control/exercise_13_33.md)|[练习13.34](ch13_Copy_Control/exercise_13_34.md)|[练习13.35](ch13_Copy_Control/exercise_13_35.md)|[练习13.36](ch13_Copy_Control/exercise_13_36.md)|[练习13.37](ch13_Copy_Control/exercise_13_37.md)|[练习13.38](ch13_Copy_Control/exercise_13_38.md)|[练习13.39](ch13_Copy_Control/exercise_13_39.md)|[练习13.40](ch13_Copy_Control/exercise_13_40.md)|
+|[练习13.41](ch13_Copy_Control/exercise_13_41.md)|[练习13.42](ch13_Copy_Control/exercise_13_42.md)|[练习13.43](ch13_Copy_Control/exercise_13_43.md)|[练习13.44](ch13_Copy_Control/exercise_13_44.md)|
 
 #### 案例代码
 
 - [拷贝控制示例（p460）](ch13_Copy_Control/example_Copy_Control)
 
 - [使用引用计数的类（p456）](ch13_Copy_Control/example_Reference_Count)
+
+- [自定义String简化版本（p470练习13.44）](ch13_Copy_Control/example_String)
 
 - [动态内存管理类（p464）](ch13_Copy_Control/example_StrVec)
 

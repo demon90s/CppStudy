@@ -1,6 +1,5 @@
 #include <memory>
 #include <utility>
-#include <algorithm>
 
 #include "StrVec.h"
 
@@ -60,11 +59,8 @@ void StrVec::free()
 	// 不能传递给deallocate一个空指针，如果elements为0，函数什么也不做
 	if (elements) {
 		// 逆序销毁旧元素
-		
-		//for (auto p = first_free; p != elements;) alloc.destroy(--p);
-
-		for_each(elements, first_free, [this](string &s){ alloc.destroy(&s); } );
-
+		for (auto p = first_free; p != elements; /* empty */)
+			alloc.destroy(--p);
 		alloc.deallocate(elements, cap - elements);
 	}
 }
