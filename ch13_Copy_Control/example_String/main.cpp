@@ -1,6 +1,7 @@
 // example: 自定义String简化版本（p470练习13.44）
 
 #include <iostream>
+#include <vector>
 
 #include "String.h"
 
@@ -56,11 +57,26 @@ void func3()
 	cout << v << endl;
 }
 
+void func4()
+{
+	vector<String> v;
+	v.push_back("Hello World");
+	cout << "v.capacity(): " << v.capacity() << endl;
+
+	v.push_back("Hi");
+	cout << "v.capacity(): " << v.capacity() << endl;
+
+	v.push_back("WoW");
+	cout << "v.capacity(): " << v.capacity() << endl;
+
+}
+
 int main()
 {
 	//func1();
 	//func2();
-	func3();
+	//func3();
+	func4();
 
 	return 0;
 }

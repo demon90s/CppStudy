@@ -40,6 +40,8 @@ String::String(const String &s)
 	auto newdata = alloc_n_copy(s.begin(), s.end());
 	elements = newdata.first;
 	first_free = cap = newdata.second;
+
+	cout << "String::String(const String &s)" << endl;
 }
 
 String::~String()
@@ -54,6 +56,8 @@ String &String::operator=(const String &rhs)
 	free();
 	elements = data.first;
 	first_free = cap = data.second;
+
+	cout << "String &String::operator=(const String &rhs)" << endl;
 	return *this;
 }
 
