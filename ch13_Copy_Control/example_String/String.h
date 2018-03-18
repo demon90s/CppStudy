@@ -1,5 +1,5 @@
-#ifndef STR_VEC_H
-#define STR_VEC_H
+#ifndef STRING_H
+#define STRING_H
 
 #include <iostream>
 
@@ -44,4 +44,4 @@ private:
 
 };
 
-#endif // STR_VEC_H
+#endif // STRING_H
