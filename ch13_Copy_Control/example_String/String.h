@@ -11,11 +11,15 @@ public:
 		elements(nullptr), first_free(nullptr), cap(nullptr) {}
 	String(const std::initializer_list<char>&);
 	String(const char*);
-	String(const String&);						// 拷贝构造函数
-	String& operator=(const String&);			// 拷贝赋值运算符
 	String& operator=(const char*);
+
+	String(const String&);						// 拷贝构造函数
+	String(String&&) noexcept;					// 移动构造函数
+	String& operator=(const String&);			// 拷贝赋值运算符
+	String& operator=(String&&) noexcept;		// 移动赋值运算符
 	~String();									// 析构函数
-	void push_back(const char&);			// 拷贝元素
+
+	void push_back(const char&);				// 拷贝元素
 	size_t size() const { return first_free - elements; }
 	size_t capacity() const { return cap - elements; }
 	void reserve(size_t n);

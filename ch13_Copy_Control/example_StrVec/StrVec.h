@@ -9,9 +9,13 @@ public:
 	StrVec() :	// allocator成员进行默认初始化
 		elements(nullptr), first_free(nullptr), cap(nullptr) {}
 	StrVec(const std::initializer_list<std::string>&);
+	
 	StrVec(const StrVec&);						// 拷贝构造函数
+	StrVec(StrVec&&) noexcept;					// 移动构造函数
 	StrVec& operator=(const StrVec&);			// 拷贝赋值运算符
+	StrVec& operator=(StrVec&&) noexcept;		// 移动赋值运算符
 	~StrVec();									// 析构函数
+
 	void push_back(const std::string&);			// 拷贝元素
 	size_t size() const { return first_free - elements; }
 	size_t capacity() const { return cap - elements; }

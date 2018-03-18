@@ -272,6 +272,7 @@
 |[练习13.25](ch13_Copy_Control/exercise_13_25.md)|[练习13.26](ch13_Copy_Control/exercise_13_26.cpp)|[练习13.27](ch13_Copy_Control/exercise_13_27.md)|[练习13.28](ch13_Copy_Control/exercise_13_28.cpp)|[练习13.29](ch13_Copy_Control/exercise_13_29.md)|[练习13.30](ch13_Copy_Control/exercise_13_30.cpp)|[练习13.31](ch13_Copy_Control/exercise_13_31.cpp)|[练习13.32](ch13_Copy_Control/exercise_13_32.md)|
 |[练习13.33](ch13_Copy_Control/exercise_13_33.md)|[练习13.34](ch13_Copy_Control/exercise_13_34.md)|[练习13.35](ch13_Copy_Control/exercise_13_35.md)|[练习13.36](ch13_Copy_Control/exercise_13_36.md)|[练习13.37](ch13_Copy_Control/exercise_13_37.md)|[练习13.38](ch13_Copy_Control/exercise_13_38.md)|[练习13.39](ch13_Copy_Control/exercise_13_39.md)|[练习13.40](ch13_Copy_Control/exercise_13_40.md)|
 |[练习13.41](ch13_Copy_Control/exercise_13_41.md)|[练习13.42](ch13_Copy_Control/exercise_13_42.md)|[练习13.43](ch13_Copy_Control/exercise_13_43.md)|[练习13.44](ch13_Copy_Control/exercise_13_44.md)|[练习13.45](ch13_Copy_Control/exercise_13_45.md)|[练习13.46](ch13_Copy_Control/exercise_13_46.md)|[练习13.47](ch13_Copy_Control/exercise_13_47.md)|[练习13.48](ch13_Copy_Control/exercise_13_48.md)|
+|[练习13.49](ch13_Copy_Control/exercise_13_49.md)|[练习13.50](ch13_Copy_Control/exercise_13_50.md)|
 
 #### 案例代码
 

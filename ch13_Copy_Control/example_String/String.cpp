@@ -44,9 +44,29 @@ String::String(const String &s)
 	cout << "String::String(const String &s)" << endl;
 }
 
+String::String(String &&s) noexcept
+	: elements(s.elements), first_free(s.first_free), cap(s.cap)
+{
+	s.elements = s.first_free = s.cap = nullptr;
+
+	cout << "String::String(String &&s) noexcept" << endl;
+}
+
 String::~String()
 {
 	free();
+}
+
+String &String::operator=(String &&rhs) noexcept
+{
+	if (this != &rhs) {
+		elements = rhs.elements;
+		first_free = rhs.first_free;
+		cap = rhs.cap;
+
+		rhs.elements = rhs.first_free = rhs.cap = nullptr;
+	}
+	return *this;
 }
 
 String &String::operator=(const String &rhs)

@@ -13,6 +13,16 @@ void Message::remove_from_Folders()
 		f->remMsg(this);	// 从该Folder中删除本Message
 }
 
+void Message::move_Folders(Message *m)
+{
+	folders = std::move(m->folders); // 使用set的移动赋值运算符
+	for (auto f : folders) {	// 对于每个Folder
+		f->remMsg(m);			// 从Folder中删除旧Message
+		f->addMsg(this);		// 将本Message添加到Folder中
+	}
+	m->folders.clear();			// 确保销毁m是无害的
+}
+
 void Message::save(Folder &f)
 {
 	folders.insert(&f);		// 将给定Folder添加到我们的Folder列表中
@@ -35,6 +45,11 @@ Message::Message(const Message &m) :
 	add_to_Folders(m);		// 将本消息添加到指向m的Folder中
 }
 
+Message::Message(Message &&m) : contents(std::move(m.contents))
+{
+	move_Folders(&m);		// 移动Folders并更新Folder指针
+}
+
 Message::~Message()
 {
 	remove_from_Folders();
@@ -47,6 +62,16 @@ Message& Message::operator=(const Message &rhs)
 	contents = rhs.contents;// 从rhs拷贝消息内容
 	folders = rhs.folders;	// 从rhs拷贝Folder指针
 	add_to_Folders(rhs);	// 将本Message添加到那些Folder中
+	return *this;
+}
+
+Message& Message::operator=(Message &&rhs)
+{
+	if (this != &rhs) {		// 直接检查自赋值情况
+		remove_from_Folders();
+		contents = std::move(rhs.contents); // 移动赋值运算符
+		move_Folders(&rhs); // 重置Folders指向本Message
+	}
 	return *this;
 }
 

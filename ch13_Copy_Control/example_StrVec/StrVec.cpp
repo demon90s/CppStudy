@@ -23,6 +23,29 @@ StrVec::StrVec(const StrVec &s)
 	first_free = cap = newdata.second;
 }
 
+StrVec::StrVec(StrVec &&s) noexcept
+	// 成员初始化器接管s中的资源
+	: elements(s.elements), first_free(s.first_free), cap(s.cap)
+{
+	// 令s进入这样的状态：对其进行析构函数是安全的
+	s.elements = s.first_free = s.cap = nullptr;
+}
+
+StrVec& StrVec::operator=(StrVec &&rhs) noexcept
+{
+	// 直接检测自赋值
+	if (this != &rhs) {
+		free();	// 释放已有元素
+		elements = rhs.elements; // 从rhs接管资源
+		first_free = rhs.first_free;
+		cap = rhs.cap;
+
+		// 将rhs置于可析构状态
+		rhs.elements = rhs.first_free = rhs.cap = nullptr;
+	}
+	return *this;
+}
+
 StrVec::~StrVec()
 {
 	free();
