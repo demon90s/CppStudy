@@ -19,6 +19,7 @@ public:
 
 	// 添加和删除元素
 	inline void push_back(const std::string &t) { data->push_back(t); }
+	inline void push_back(std::string &&t) { data->push_back(std::move(t)); } // 右值引用版本，13.55练习
 	inline void pop_back();
 
 	// 元素访问
