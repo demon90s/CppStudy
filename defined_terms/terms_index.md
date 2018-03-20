@@ -388,3 +388,25 @@
 - [unique_ptr](./ch12/unique_ptr.md)
 - [weak_ptr](./ch12/weak_ptr.md)
 
+### 第13章_拷贝控制
+
+- [拷贝并交换 copy and swap](./ch13/copy_and_swap.md)
+- [拷贝赋值运算符 copy-assignment operator](./ch13/copy-assignment_operator.md)
+- [拷贝构造函数 copy constructor](./ch13/copy_constructor.md)
+- [拷贝控制 copy control](./ch13/copy_control.md)
+- [拷贝初始化 copy initialization](./ch13/copy_initialization.md)
+- [删除的函数 deleted function](./ch13/deleted_function.md)
+- [析构函数 destructor](./ch13/destructor.md)
+- [左值引用 lvalue reference](./ch13/lvalue_reference.md)
+- [逐成员拷贝/赋值 memberwise copy assign](./ch13/memberwise_copy_assign.md)
+- [移动赋值运算符 move-assignment operator](./ch13/move-assignment_operator.md)
+- [移动构造函数 move constructor](./ch13/move_constructor.md)
+- [move](./ch13/move.md)
+- [重载运算符 overload operator](./ch13/overload_operator.md)
+- [引用计数 reference count](./ch13/reference_count.md)
+- [引用限定符 reference qualifier](./ch13/reference_qualifier.md)
+- [右值引用 rvalue reference](./ch13/rvalue_reference.md)
+- [合成赋值运算符 synthesized assignment operator](./ch13/synthesized_assignment_operator.md)
+- [合成拷贝/移动构造函数 synthesized copy move constructor](./ch13/synthesized_copy_move_constructor.md)
+- [合成析构函数 synthesized destructor](./ch13/synthesized_destructor.md)
+
