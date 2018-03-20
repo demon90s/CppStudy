@@ -280,6 +280,8 @@
 
 - [使用引用计数的类（p456）](ch13_Copy_Control/example_Reference_Count)
 
+- [引用限定符（p483）](ch13_Copy_Control/example_Reference_Qualifier)
+
 - [自定义String简化版本（p470练习13.44）](ch13_Copy_Control/example_String)
 
 - [动态内存管理类（p464）](ch13_Copy_Control/example_StrVec)
