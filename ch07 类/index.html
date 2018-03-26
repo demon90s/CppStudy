@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>ch07 类 - CppPrimer学习笔记</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../%E7%AC%94%E8%AE%B0%E4%BF%A1%E6%81%AF/">CppPrimer学习笔记</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../%E7%AC%94%E8%AE%B0%E4%BF%A1%E6%81%AF/">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapters <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../ch01%20%E5%BC%80%E5%A7%8B/">ch01 开始</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch02 变量和基本类型</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B_1/">变量和基本类型1</a>
+</li>
+            
+<li >
+    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B_2/">变量和基本类型2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/">ch03 字符串、向量和数组</a>
+</li>
+                            
+<li >
+    <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/">ch04 表达式</a>
+</li>
+                            
+<li >
+    <a href="../ch05%20%E8%AF%AD%E5%8F%A5/">ch05 语句</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch06 函数</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch06%20%E5%87%BD%E6%95%B0_1/">函数1</a>
+</li>
+            
+<li >
+    <a href="../ch06%20%E5%87%BD%E6%95%B0_2/">函数2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li class="active">
+    <a href="./">ch07 类</a>
+</li>
+                            
+<li >
+    <a href="../ch08%20IO%E5%BA%93/">ch08 IO库</a>
+</li>
+                            
+<li >
+    <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/">ch09 顺序容器</a>
+</li>
+                            
+<li >
+    <a href="../ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/">ch10 泛型算法</a>
+</li>
+                            
+<li >
+    <a href="../ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/">ch11 关联容器</a>
+</li>
+                            
+<li >
+    <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/">ch12 动态内存</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch13 拷贝控制</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6_1/">拷贝控制1</a>
+</li>
+            
+<li >
+    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6_2/">拷贝控制2</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../ch06%20%E5%87%BD%E6%95%B0_2/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../ch08%20IO%E5%BA%93/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">定义抽象数据类型</a></li>
+            <li><a href="#_2">定义类相关的非成员函数</a></li>
+            <li><a href="#_3">构造函数</a></li>
+            <li><a href="#_4">拷贝、赋值和析构</a></li>
+        <li class="main "><a href="#_5">访问控制与封装</a></li>
+            <li><a href="#_6">友元</a></li>
+        <li class="main "><a href="#_7">类的其它特性</a></li>
+            <li><a href="#_8">类成员再探</a></li>
+            <li><a href="#42this">返回*this的成员函数</a></li>
+            <li><a href="#_9">类类型</a></li>
+            <li><a href="#_10">友元再探</a></li>
+        <li class="main "><a href="#_11">类的作用域</a></li>
+            <li><a href="#_12">名字查找与类的作用域</a></li>
+        <li class="main "><a href="#_13">构造函数再探</a></li>
+            <li><a href="#_14">构造函数初始值列表</a></li>
+            <li><a href="#_15">委托构造函数</a></li>
+            <li><a href="#_16">默认构造函数的作用</a></li>
+            <li><a href="#_17">隐式的类类型转换</a></li>
+            <li><a href="#_18">聚合类</a></li>
+            <li><a href="#literal-classes">字面值常量类（ Literal Classes）</a></li>
+        <li class="main "><a href="#_19">类的静态成员</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>类的基本思想是<strong>数据抽象</strong>(data abstraction)和<strong>封装</strong>(encapsulation)。</p>
+<p>数据抽象就是<strong>接口(interface)与实现(implementation)分离</strong>的技术。</p>
+<p>接口就是暴露给用户的操作，比如公有的成员函数。</p>
+<p>实现就是数据成员、接口的实现、私有的成员函数。</p>
+<p>通过<strong>抽象数据类型(abstract data type)</strong>，来实现数据抽象和封装。</p>
+<blockquote>
+<p>my note: 在第二章自定义的Sales_data类由于没有实现封装，且没有定义自己的操作，因此不是一个抽象数据类型。后续章节的内容将要对其进行改造使其成为一个抽象数据类型。</p>
+</blockquote>
+<h1 id="_1">定义抽象数据类型</h1>
+<p>封装就是隐藏，抽象数据类型隐藏了自己的成员变量，外部只能使用其接口来间接访问其成员。</p>
+<p><strong>定义成员函数</strong></p>
+<p>类内的所有成员必须声明在类的内部。</p>
+<p>类的成员函数可以定义在类的内部，也可以定义在类的外部。</p>
+<p>【NOTE】定义在类内部的函数是隐式的inline函数。</p>
+<hr />
+<p><strong>引入this</strong></p>
+<p>当调用一个成员函数时，实际上是替某个对象调用它。</p>
+<p>成员函数通过名为<strong>this</strong>的隐式参数来访问此对象。this指向了此对象的地址。</p>
+<p>在成员函数内部，可以省略this来访问成员。</p>
+<p>this是一个常量指针，不能够修改其值。</p>
+<p>当成员函数中调用另一个成员函数时，将隐式传递this指针。</p>
+<hr />
+<p><strong>引入const成员函数</strong></p>
+<p>参数列表之后，添加const关键字，表明传入的this指针是一个指向常量对象的指针。故此成员函数内，不能修改成员变量的内容。</p>
+<p>const对象只能调用const版本的成员函数（因此如果函数不修改成员变量，那么为了提高灵活性，应该把函数声明成const版本的）。</p>
+<hr />
+<p><strong>类作用域和成员函数</strong></p>
+<p>类本身就是一个作用域。</p>
+<p>成员函数的定义必须包含其所属的类名（使用作用域运算符）。</p>
+<p>如果成员函数声明为const版本的，其定义时，也要在参数列表后加const。</p>
+<p>成员函数体可以随意使用类中的成员，无须在意成员出现的顺序，这是因为编译器分两步处理类：首先编译成员的声明，然后才轮到成员函数体。</p>
+<hr />
+<p><strong>定义一个返回this对象的函数</strong></p>
+<p>可以使用如下语句返回this对象：</p>
+<pre><code>return *this;
+</code></pre>
+
+<p>返回类型使用引用类型，表明返回的就是this所指的对象。</p>
+<p>一般来说，当我们定义的函数类似于某个内置运算符时，应该令函数的行为尽量模仿这个运算符。比如说内置的赋值运算符把它的左侧运算对象当成左值返回，这种情况下，函数就可以返回this对象的引用。（见书本p233的详细讨论）</p>
+<h2 id="_2">定义类相关的非成员函数</h2>
+<p>有些函数也提供了操作类对象的方法，但他们不属于类的成员函数。</p>
+<p>可以把这些函数放到类的头文件中声明。这些函数也可以看成是类的接口。</p>
+<p>有可能会把这些函数声明称友元，从而方便它们直接操作成员变量。</p>
+<h2 id="_3">构造函数</h2>
+<p>类通过一个或几个特殊的成员函数初始化其成员变量，这些函数叫<strong>构造函数（constructor）</strong>。</p>
+<p>每当类对象被创建，构造函数就会被执行。</p>
+<p>构造函数名和类名一致，无返回类型，可能有多个（参数个数差异），不能是const的。</p>
+<p>对于const对象，构造函数执行完毕后，它才获得const属性。</p>
+<hr />
+<p><strong>合成的默认构造函数</strong></p>
+<p>如果对象没有初始值，它将执行默认初始化。</p>
+<p>类通过<strong>默认构造函数(default constructor)</strong>来执行默认初始化。如果没有显示定义过构造函数，编译器就会自动生成一个，叫做合成的默认构造函数。</p>
+<p>合成的默认构造函数根据如下规则初始化类成员：</p>
+<p>- 如果存在类内初始值，使用它来初始化成员</p>
+<p>- 否则，对成员执行默认初始化</p>
+<hr />
+<p><strong>某些类不能依赖合成的默认构造函数</strong></p>
+<p>所谓不能依赖，就是不可以让编译器生成默认构造函数，要自己定义一个。其原因可能是：</p>
+<p>- 如果定义了自己的构造函数，那么编译器就不会生成默认的构造函数，此类就没有了默认构造函数。</p>
+<p>- 默认构造函数可能执行的是错误的操作，比如内置类型若没有类内初始值，则进行默认初始化，其值未定义。</p>
+<p>- 有时候，编译器无法生成默认构造函数，比如类成员中有类，而此类有可能没有默认构造函数。</p>
+<hr />
+<p><strong>=default</strong></p>
+<p>C++11中，使用这种语句来让编译器生成一个默认构造函数：</p>
+<pre><code>SalesData() = default;
+</code></pre>
+
+<p>【WARNING】这种情况下，应当对内置类型的数据成员提供类内初始值，否则应当使用构造函数初始值列表形式的默认构造函数。</p>
+<hr />
+<p><strong>构造函数初始值列表</strong></p>
+<p>参数列表后，函数体前的一部分内容叫构造函数初始值列表（constructor initialize list）。</p>
+<p>它负责为对象的成员变量赋初值。</p>
+<p>如果成员不在初始化列表中，它用类内初始值初始化（如果存在），否则执行默认初始化。</p>
+<h2 id="_4">拷贝、赋值和析构</h2>
+<p>拷贝构造函数，当初始化变量时以值传递或函数返回一个对象时，会发生拷贝。</p>
+<p>赋值运算，当使用了赋值运算符时，会发生对象的赋值操作。</p>
+<p>析构函数，当一个变量不在存在时，会执行析构。</p>
+<p>这些操作如果不显示定义，编译器就会合成一个，合成的拷贝赋值版本只是做了浅拷贝操作。</p>
+<p><strong>某些类不能依赖合成的版本</strong></p>
+<p>如果类中有成员绑定了外部的对象（比如动态内存），那么就不可依赖合成的版本。</p>
+<p>可使用容器管理必要的存储空间，当发生拷贝等操作时，容器也会执行正确的拷贝。</p>
+<h1 id="_5">访问控制与封装</h1>
+<p>使用<strong>访问说明符（access specifiers）</strong>加强类的封装性。</p>
+<p>- public说明符之后的成员对外可见，外部可访问，public成员定义类的接口。</p>
+<p>- private说明符之后的成员对内可见，外部无法访问，即隐藏了实现细节。</p>
+<p><strong>class和struct</strong></p>
+<p>其区别仅仅在于默认的访问权限。class默认为private，struct默认是public。</p>
+<blockquote>
+<p>my note: 作为接口，应当是public的，而实现细节（数据成员或相关函数）应当为private的。</p>
+</blockquote>
+<h2 id="_6">友元</h2>
+<p>类可以允许其他类或者函数访问它的非公有成员，方法是令其他类或者函数成为它的友元（friend）。</p>
+<p>即在函数或类前面加friend关键字。</p>
+<p>友元声明只能出现在类的内部。它并非函数声明，函数声明还要在别的地方声明。</p>
+<p>【TIP】一般来说，最好在类定义的开始或结束前的位置集中声明友元。</p>
+<p>【关键概念：封装的益处】</p>
+<p>封装有两个重要的优点：</p>
+<p>- 确保用户代码不会无意间破坏封装对象的状态。</p>
+<p>- 被封装的类的具体实现可以随时改变，而无须调整用户级别的代码。</p>
+<h1 id="_7">类的其它特性</h1>
+<h2 id="_8">类成员再探</h2>
+<p><strong>定义一个类型成员</strong></p>
+<p>可以在类的内部定义一个类型（使用typedef或using），这个类型也有访问限制。</p>
+<p>通常放在类的开头位置。</p>
+<p><strong>令成员作为内联函数</strong></p>
+<p>规模较小的成员函数适合声明成内联函数（定义时在前面加inline即可）。</p>
+<p>如果定义在类内的函数，默认就是inline的。</p>
+<p>inline成员函数通常定义到类的头文件中，即声明和定义在同一个文件中。</p>
+<p><strong>重载成员函数</strong></p>
+<p>和普通函数的重载规则一样。只要参数的数量or类型有区别，就可以重载。</p>
+<p>如果是const版本的成员函数（传入const this），那么也可以重载。因为本质上，其隐式参数this的类型改变了。</p>
+<p><strong>类数据成员的初始值</strong></p>
+<p>可以给类数据成员一个类内初始值。使用等号或者花括号。</p>
+<h2 id="42this">返回*this的成员函数</h2>
+<p>返回引用的函数是左值的，意味着这些函数（返回*this）返回的是对象本身而非对象的副本。</p>
+<p>【NOTE】一个const成员函数如果以引用的形式返回*this，那么它的返回类型将是常量引用。</p>
+<blockquote>
+<p>my note: 书本使用一个详细的案例Screen来阐述本节的知识点。见p243。</p>
+</blockquote>
+<p>但是如此一来（const成员函数返回const引用），就无法继续让返回的对象调用非常量版本的成员函数。一个解决的办法就是<strong>重载一个非常量版本的接口</strong>，定义一个私有的常量版本的函数，负责具体工作，而非常量版本的接口负责调用它，并返回非常量引用。</p>
+<p>建议：对于公共代码使用私有功能函数。</p>
+<h2 id="_9">类类型</h2>
+<p>每个类是一个唯一的类型，即使其内容完全一样。</p>
+<p><strong>类的声明</strong></p>
+<p>可以暂时声明类而不定义它，这叫前置声明（forward declaration）。</p>
+<p>这种类型，在没有定义前是一个不完全类型（incomplete type）。这种类型只能在有限的情况下使用：</p>
+<p>- 定义指向这种类型的指针or引用</p>
+<p>- 声明以不完全类型为参数or返回值的函数</p>
+<p>要创建一个类的对象，则必须已经定义好了这个类，这是因为编译器需要知道类的存储空间大小。</p>
+<p>只有被定义，才能访问其成员。</p>
+<p>声明一个前置类型的方法：</p>
+<pre><code>class A;
+
+struct B;
+
+namespace game
+{
+    class C;    // 前置声明一个在命名空间中的类
+}
+</code></pre>
+
+<h2 id="_10">友元再探</h2>
+<p>类可以把普通函数定义成友元，也可以把类，类的成员函数定义成友元。</p>
+<p>友元类有权访问本类的非公有成员。</p>
+<h1 id="_11">类的作用域</h1>
+<p>一个类就是一个作用域。</p>
+<p>类的作用域之外，普通的成员只能通过对象、引用or指针访问。对于类型成员的访问，需要使用域运算符<code>::</code>来访问。</p>
+<h2 id="_12">名字查找与类的作用域</h2>
+<p>编译器处理完类的全部声明后，才会处理成员函数的定义。因此成员函数体中可以使用类中定义的任何位置的名字。</p>
+<p><strong>成员函数中的名字查找</strong></p>
+<p>按如下方式解析：</p>
+<p>- 在块内查找声明</p>
+<p>- 在类内查找，所有成员都可以被考虑</p>
+<p>- 在类的外围作用域中查找</p>
+<h1 id="_13">构造函数再探</h1>
+<h2 id="_14">构造函数初始值列表</h2>
+<p>如果没有在构造函数的初始值列表中显示初始化成员，那么该成员将执行默认初始化。</p>
+<p>【NOTE】如果成员是const、引用，或者属于某种未提供默认构造函数的类类型，我们必须通过构造函数初始值列表为这些成员提供初始值。</p>
+<p><strong>成员初始化的顺序</strong></p>
+<p>成员的初始化顺序和它们在类内的定义顺序一致。</p>
+<p>而非其在初始值列表中的顺序，初始值列表只是做了初始化的工作。所以要让初始值列表中的成员顺序与定义顺序一致。</p>
+<p><strong>有默认实参的构造函数</strong></p>
+<p>如果构造函数的所有实参都有默认实参，那么它实际上也同时定义了默认构造函数。</p>
+<h2 id="_15">委托构造函数</h2>
+<p>C++11可以定义委托构造函数（delegating constructor）。一个委托构造函数使用它所属类的其他构造函数执行他自己的初始化过程，或者说它把它自己的一些职责委托给了其他构造函数。</p>
+<p>当一个构造函数委托给另一个构造函数时，受委托的构造函数的初始值列表和函数体被依次执行。</p>
+<blockquote>
+<p>my note: 即先执行受委托的构造函数内容，再执行自己的。</p>
+</blockquote>
+<h2 id="_16">默认构造函数的作用</h2>
+<p>当对象被默认初始化或值初始化时，自动执行默认构造函数。</p>
+<p>默认构造函数在以下情况发生：</p>
+<p>- 不使用初始值定义一个非静态变量或者数组时</p>
+<p>- 当类含有类类型的成员且使用合成的默认构造函数时</p>
+<p>- 当类类型的成员没有在构造函数初始值列表中显式初始化时</p>
+<p>值初始化在以下情况下发生：</p>
+<p>- 数组初始化时，若提供的初始值少于数组大小时</p>
+<p>- 不使用初始值定义一个局部静态变量时</p>
+<p>- 书写形如T()的表达式显式请求值初始化时</p>
+<h2 id="_17">隐式的类类型转换</h2>
+<p>如果构造函数只接受一个实参，则它实际上定义了<strong>转换构造函数（converting constructor）</strong>。</p>
+<p>即定义了一个隐式转换机制。如string的接受一个const char*版本的构造函数。</p>
+<p>使用explicit阻止这种隐式转换机制，explicit只能放到类内声明构造函数里。</p>
+<h2 id="_18">聚合类</h2>
+<p>聚合类（aggregate class）使得用户可以直接访问其成员。当类满足如下条件时，是聚合的：</p>
+<p>- 所有成员都是public的</p>
+<p>- 没有定义任何构造函数</p>
+<p>- 没有类内初始值</p>
+<p>- 没有基类，没有virtual函数</p>
+<p>可以使用花括号括起来的成员初始值列表来初始化聚合类对象。</p>
+<h2 id="literal-classes">字面值常量类（ Literal Classes）</h2>
+<p>类也可以是字面值类型。</p>
+<p>这样的类可以含有constexpr函数成员，且符合constexpr函数的所有要求，且是隐式const的。</p>
+<p>数据成员都是字面值类型的聚合类是字面值常量类。</p>
+<p>如果不是聚合类，满足如下条件也是一个字面值常量类：</p>
+<p>- 数据成员都是字面值类型</p>
+<p>- 至少含有一个constexpr构造函数</p>
+<p>- 如果数据成员含有类内初始值，则内置类型成员的初始值必须是一条常量表达式；类类型成员必须使用自己的constexpr构造函数</p>
+<p>- 类必须使用析构函数的默认定义</p>
+<h1 id="_19">类的静态成员</h1>
+<p>有时候类需要一些只与类相关，而与具体对象无关的特殊成员，这就是静态成员。</p>
+<p><strong>声明静态成员</strong></p>
+<p>在声明前加static关键字。</p>
+<p>静态成员可以是public或private。数据成员可以是常量，引用，指针，类类型等。</p>
+<p>对象不包含与静态数据成员有关的数据。</p>
+<p>静态函数不包含this指针。</p>
+<p><strong>使用类的静态成员</strong></p>
+<p>使用作用域运算符访问静态成员。</p>
+<p>类的对象、引用或指针可以访问静态成员。</p>
+<p>类的成员函数可以直接访问静态成员。</p>
+<p><strong>定义静态成员</strong></p>
+<p>static只能出现在类的内部，不能出现在外部。</p>
+<p>静态数据成员不属于类的对象，不是有构造函数初始化的。静态数据成员定义在函数体之外，一旦定义，就一直存在于程序的整个生命周期中。</p>
+<pre><code>double T::a = 1; // 定义并初始化一个静态成员
+</code></pre>
+
+<p><strong>静态成员的类内初始化</strong></p>
+<p>通常，不应该在类内初始化静态数据成员。</p>
+<p>不过，可以为静态成员提供const整数类型的类内初始值。</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

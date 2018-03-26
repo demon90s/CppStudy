@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>拷贝控制2 - CppPrimer学习笔记</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../%E7%AC%94%E8%AE%B0%E4%BF%A1%E6%81%AF/">CppPrimer学习笔记</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../%E7%AC%94%E8%AE%B0%E4%BF%A1%E6%81%AF/">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapters <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../ch01%20%E5%BC%80%E5%A7%8B/">ch01 开始</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch02 变量和基本类型</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B_1/">变量和基本类型1</a>
+</li>
+            
+<li >
+    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B_2/">变量和基本类型2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/">ch03 字符串、向量和数组</a>
+</li>
+                            
+<li >
+    <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/">ch04 表达式</a>
+</li>
+                            
+<li >
+    <a href="../ch05%20%E8%AF%AD%E5%8F%A5/">ch05 语句</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch06 函数</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch06%20%E5%87%BD%E6%95%B0_1/">函数1</a>
+</li>
+            
+<li >
+    <a href="../ch06%20%E5%87%BD%E6%95%B0_2/">函数2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch07%20%E7%B1%BB/">ch07 类</a>
+</li>
+                            
+<li >
+    <a href="../ch08%20IO%E5%BA%93/">ch08 IO库</a>
+</li>
+                            
+<li >
+    <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/">ch09 顺序容器</a>
+</li>
+                            
+<li >
+    <a href="../ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/">ch10 泛型算法</a>
+</li>
+                            
+<li >
+    <a href="../ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/">ch11 关联容器</a>
+</li>
+                            
+<li >
+    <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/">ch12 动态内存</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch13 拷贝控制</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6_1/">拷贝控制1</a>
+</li>
+            
+<li class="active">
+    <a href="./">拷贝控制2</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6_1/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">拷贝控制和资源管理</a></li>
+            <li><a href="#_2">行为像值的类</a></li>
+            <li><a href="#_3">定义行为像指针的类</a></li>
+        <li class="main "><a href="#_4">交换操作</a></li>
+        <li class="main "><a href="#_5">对象移动</a></li>
+            <li><a href="#_6">右值引用</a></li>
+            <li><a href="#_7">移动构造函数和移动赋值运算符</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<div class="toc">
+<ul>
+<li><a href="#_1">拷贝控制和资源管理</a><ul>
+<li><a href="#_2">行为像值的类</a></li>
+<li><a href="#_3">定义行为像指针的类</a></li>
+</ul>
+</li>
+<li><a href="#_4">交换操作</a></li>
+<li><a href="#_5">对象移动</a><ul>
+<li><a href="#_6">右值引用</a></li>
+<li><a href="#_7">移动构造函数和移动赋值运算符</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="_1">拷贝控制和资源管理</h1>
+<p>通常，管理类外资源的类必须定义拷贝控制成员。这种类需要通过析构函数来释放对象所分配的资源。一旦一个类需要析构函数，那么它几乎肯定也需要一个拷贝构造函数和一个拷贝赋值运算符。</p>
+<p>为了定义这些成员，必须先确定类对象的拷贝语义。一般有两种选择：可以定义拷贝操作，使类的行为看起来像一个值或者像一个指针。</p>
+<p>类的行为像一个值，意味着它应该有自己的状态。当拷贝一个对象时，副本和原对象是完全独立的。改变副本不会影响原对象，反之亦然。</p>
+<p>类的行为像一个指针，意味着拷贝一个对象时，副本和原对象使用相同的底层数据。改变副本也会改变原对象，反之亦然。</p>
+<p>详细讨论见书本和代码案例。</p>
+<p>使用这样的例子解释：</p>
+<pre><code>class HasPtr {
+public:
+     // 准备定义构造函数、拷贝构造函数、拷贝赋值运算符、析构函数
+private:
+    std::string *ps;    // 管理的类外资源
+    int i;
+};
+</code></pre>
+
+<h2 id="_2">行为像值的类</h2>
+<p>对于类管理的资源，每个对象都应该拥有一份自己的拷贝。</p>
+<p>为了实现类值的行为，HasPtr需要：</p>
+<p>- 定义一个拷贝构造函数，完成string的拷贝，而不是拷贝指针</p>
+<p>- 定义一个析构函数来释放string</p>
+<p>- 定义一个拷贝赋值运算符来释放对象当前的string，并从右侧运算对象拷贝string</p>
+<p><strong>类值拷贝赋值运算符</strong></p>
+<p>一个好的模式是先将右侧运算对象拷贝到一个局部临时对象中。当拷贝完成后，销毁左侧对象的现有成员就是安全的了。接着再将数据从临时对象拷贝到左侧运算对象的成员中。</p>
+<p>这样就可以正确进行自赋值操作。</p>
+<h2 id="_3">定义行为像指针的类</h2>
+<p>这种情况下，HasPtr仍然需要通过析构函数来释放string。但只有当最后一个指向string的HasPtr对象销毁时，它才可以释放string。</p>
+<p>令一个类展现类似指针的行为的最好方法是使用shared_ptr来管理类中的资源。shared_ptr类自己会记录有多少用户共享它所指向的对象，当没有用户使用对象时，shared_ptr类负责释放资源。</p>
+<p>但是有时候我们希望直接管理资源，这种情况下，可以使用<strong>引用计数（reference count）</strong>。</p>
+<p><strong>引用计数</strong></p>
+<p>引用计数的工作方式如下：</p>
+<p>- 除了初始化对象外，每个构造函数（除了拷贝构造函数）还要创建一个引用计数，用来记录有多少个对象与正在创建的对象共享状态。计数器初始化为1。</p>
+<p>- 拷贝构造函数不分配新的计数器，而是拷贝给定对象的数据成员，包括计数器。拷贝构造函数递增共享的计数器。</p>
+<p>- 析构函数递减计数器，如果变为0，则析构函数释放状态。</p>
+<p>- 拷贝赋值运算符递增右侧运算对象的计数器，递减左侧运算对象的计数器。如果左侧运算对象的计数器变为0，则销毁状态。</p>
+<p>引用计数应该保存在动态内存中，这样才能保证共享引用计数。</p>
+<h1 id="_4">交换操作</h1>
+<p>管理资源的类通常还定义一个名为swap的函数。一些算法会在需要交换两个元素时调用swap。</p>
+<p>如果一个类定义了自己的swap，那么算法将使用类自定义的版本。否则算法将使用标准库定义的swap。标准库定义的版本可能像这样：</p>
+<pre><code>HasPtr temp = v1;
+v1 = v2;
+v2 = temp;
+</code></pre>
+
+<p>但对于HasPtr这样管理外部资源的类，可以直接交换指针，而不是分配多一个副本。</p>
+<pre><code>string *temp = v1.ps;
+v1.ps = v2.ps;
+v2.ps = temp;
+</code></pre>
+
+<p>swap函数的存在是为了优化代码。详细定义方法见书本。</p>
+<p><strong>在赋值运算符中使用swap</strong></p>
+<p>定义swap的类通常用swap来定义它们的赋值运算符。这些运算符使用了一种名为<strong>拷贝并交换（copy and swap）</strong>的技术。</p>
+<pre><code>HasPtr &amp;HasPtr::operator=(HasPtr rhs)
+{
+    swap(*this, rhs);
+    return *this;
+}
+</code></pre>
+
+<p>rhs是右侧运算对象的一个副本，它会在赋值运算符结束时被自动销毁。</p>
+<p>这种技术自动处理了自赋值的情况且天然就是异常安全的。</p>
+<h1 id="_5">对象移动</h1>
+<p>新标准的一个最主要的特性是可以移动而非拷贝对象的能力。在很多情况下，对象拷贝后就立即销毁了，这种情况下，使用移动而非拷贝会大幅提升性能。</p>
+<p>使用移动而不是拷贝的另一个原因源于IO类或unique_ptr这样的类。这些类都包含不能被共享的资源（指针或IO缓冲）。因此，这些类的对象不能拷贝但可以移动。</p>
+<h2 id="_6">右值引用</h2>
+<p>为了支持移动操作，新标准引入了一种新的类型——<strong>右值引用（rvalue reference）</strong>。右值引用必须绑定到右值——一个将要销毁的对象。因此，我们可以自由地将一个右值引用的资源移动到另一个对象中。</p>
+<pre><code>int i = 42;
+int &amp;r = i;    // 正确：r引用i
+int &amp;&amp;rr = i;  // 错误：不能将一个右值引用绑定到一个左值上
+int &amp;&amp;r2 = i * 42; // 正确：将rr2绑定到乘法结果上
+</code></pre>
+
+<p><strong>左值持久，右值短暂</strong></p>
+<p>左值与右值的区别：左值有持久的状态，而右值要么是字面常量，要么是在表达式求值过程中创建的临时对象。</p>
+<p><strong>标准库move函数</strong></p>
+<p>虽然不能将一个右值引用直接绑定到一个左值上，但我们可以显式地将一个左值转换为对应的右值引用类型。方法是通过调用一个名为move的新标准库函数来获得绑定到左值上的右值引用。</p>
+<pre><code>int &amp;&amp;rr3 = std::move(i); // OK
+</code></pre>
+
+<p>move调用告诉编译器：我们有一个左值，但我们希望像一个右值一样处理它。调用move就意味着承诺：除了对i赋值或销毁它外，我们将不再使用它。</p>
+<h2 id="_7">移动构造函数和移动赋值运算符</h2>
+<p>移动的版本从给定对象“窃取”资源而不是拷贝资源。</p>
+<p>移动构造函数的第一个参数是该类型的一个右值引用。与拷贝构造函数一样，任何额外的参数都必须有默认实参。</p>
+<p>除了完成资源的移动，移动构造函数还必须确保移后源对象处于这样一个状态——销毁它是无害的。</p>
+<pre><code>StrVec::StrVec(StrVec &amp;&amp;s) noexcpet // 移动构造函数不应抛出异常
+ // 成员初始化器接管s中的资源
+ : elements(s.elements), first_free(s.first_free), cap(s.cap)
+{
+    // 令s进入这样的状态——对其运行析构函数是安全的
+    s.elements = s.first_free = s.cap = nullptr;
+}
+</code></pre>
+
+<p><strong>移动操作、标准库容器和异常</strong></p>
+<p>移动操作通常不分配资源，因此通常不会抛出异常，我们应当将此事通知标准库。除非标准库知道我们的移动构造函数不会抛出异常，否则它会认为移动我们的类对象时可能会抛出异常，并且为了处理这种可能性而做一些额外的工作。</p>
+<p>通知的方法是在构造函数中指明noexcept。</p>
+<p>详细的解释见书本p474。</p>
+<p><strong>移动赋值运算符</strong></p>
+<p>移动赋值运算符执行与析构函数和移动构造函数相同的工作。类似拷贝赋值运算符，移动赋值运算符必须正确处理自赋值：</p>
+<pre><code>StrVec&amp; StrVec::operator=(StrVec &amp;&amp;rhs) noexcept
+{
+    // 直接检测自赋值
+    if (this != &amp;rhs) {
+        free();    // 释放已有资源
+        elements = rhs.elements; // 接管资源
+        first_free = rhs.first_free;
+        cap = rhs.cap;
+        // 将rhs置于可析构状态
+        rhs.elements = rhs.first_free = rhs.cap = nullptr;
+    }
+    return *this;
+}
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
