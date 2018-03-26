@@ -1,3 +1,5 @@
+学习笔记：https://demon90s.github.io/CppPrimer/
+
 ### [术语表](./defined_terms/terms_index.md)
 
 ### 第1章_开始
