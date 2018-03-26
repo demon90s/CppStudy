@@ -289,3 +289,9 @@
 
 - [动态内存管理类（p464）](ch13_Copy_Control/example_StrVec)
 
+### 第14章_操作重载与类型转换
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习14.1](ch14_Overloaded_Operations_and_Conversions/exercise_14_01.md)|
+

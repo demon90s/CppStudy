@@ -39,7 +39,7 @@ show_status() {
 }
 
 commit() {
-	git add *
+	git add -f *
 	git commit -m "commit"
 
 	echo "Committing ..."

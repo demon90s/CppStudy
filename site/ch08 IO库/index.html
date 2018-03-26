@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>ch08 IO库 - CppPrimer学习笔记</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">CppPrimer学习笔记</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapters <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../ch01 开始/">ch01 开始</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch02 变量和基本类型</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch02 变量和基本类型_1/">变量和基本类型1</a>
+</li>
+            
+<li >
+    <a href="../ch02 变量和基本类型_2/">变量和基本类型2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch03 字符串、向量和数组/">ch03 字符串、向量和数组</a>
+</li>
+                            
+<li >
+    <a href="../ch04 表达式/">ch04 表达式</a>
+</li>
+                            
+<li >
+    <a href="../ch05 语句/">ch05 语句</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch06 函数</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch06 函数_1/">函数1</a>
+</li>
+            
+<li >
+    <a href="../ch06 函数_2/">函数2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch07 类/">ch07 类</a>
+</li>
+                            
+<li class="active">
+    <a href="./">ch08 IO库</a>
+</li>
+                            
+<li >
+    <a href="../ch09 顺序容器/">ch09 顺序容器</a>
+</li>
+                            
+<li >
+    <a href="../ch10 泛型算法/">ch10 泛型算法</a>
+</li>
+                            
+<li >
+    <a href="../ch11 关联容器/">ch11 关联容器</a>
+</li>
+                            
+<li >
+    <a href="../ch12 动态内存/">ch12 动态内存</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch13 拷贝控制</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch13 拷贝控制_1/">拷贝控制1</a>
+</li>
+            
+<li >
+    <a href="../ch13 拷贝控制_2/">拷贝控制2</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../ch07 类/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../ch09 顺序容器/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#io">IO类</a></li>
+            <li><a href="#io_1">IO对象无拷贝或赋值</a></li>
+            <li><a href="#_1">条件状态</a></li>
+            <li><a href="#_2">管理输出缓冲</a></li>
+        <li class="main "><a href="#_3">文件输入输出</a></li>
+            <li><a href="#_4">使用文件流对象</a></li>
+            <li><a href="#_5">文件模式</a></li>
+        <li class="main "><a href="#string">string流</a></li>
+            <li><a href="#istringstream">使用istringstream</a></li>
+            <li><a href="#ostringstream">使用ostringstream</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="io">IO类</h1>
+<p>为了支持不同种类的IO处理操作，标准库定义了这几种类型：</p>
+<p>- iostream 定义了用于读写流的基本类型</p>
+<p>- fstream 定义了读写命名文件的类型</p>
+<p>- sstream 定义了读写内存string对象的类型</p>
+<p>它们分别定义在同名的头文件中。</p>
+<p><strong>IO类型间的关系</strong></p>
+<p>类型ifstream和istringstream都继承自istream。我们可以像使用istream对象一样来使用它们。对于ostream也是如此。</p>
+<h2 id="io_1">IO对象无拷贝或赋值</h2>
+<p>由于不能拷贝IO对象，因此也不能将形参或返回类型设置为流类型。进行IO操作的函数通常以引用方式传递或返回流。</p>
+<p>读写一个IO对象会改变其状态，因此传递和返回的引用不能是const的。</p>
+<h2 id="_1">条件状态</h2>
+<p>IO类定义了一些函数和标志，可以帮助我们访问和操纵流的条件状态。见p279。</p>
+<p>一个IO错误的例子：</p>
+<pre><code>int ival;
+cin &gt;&gt; ival;
+</code></pre>
+
+<p>如果试图在标准输入上键入Boo，读操作就会失败，cin进入错误状态。</p>
+<p>如果输入一个文件结束符标识，cin也会进入错误状态。</p>
+<p>一个流一旦发生错误，其上后续的IO操作都会失败。确定一个流对象的状态的最简单的方法是将它当作一个条件来使用：</p>
+<pre><code>while (cin &gt;&gt; word)
+    // ok
+</code></pre>
+
+<h2 id="_2">管理输出缓冲</h2>
+<p>每个输出流都管理一个缓冲区，用来保存程序读写的数据。如果执行下面的代码：</p>
+<pre><code>os &lt;&lt; &quot;please enter a value: &quot;;
+</code></pre>
+
+<p>文本串可能立即打印出来，但也有可能被操作系统保存在缓冲区中，随后再打印。这样可以带来很大的性能提升。</p>
+<p>导致缓冲区刷新的原因有：</p>
+<p>- 程序正常结束</p>
+<p>- 缓冲区满时</p>
+<p>- 使用操纵符，如endl，来显式刷新缓冲区</p>
+<p>- 读cin或写cerr，都会导致cout的缓冲区被刷新</p>
+<p><strong>刷新输出缓冲区</strong></p>
+<p>IO库还提供了两个操纵符用于刷新缓冲区：</p>
+<p>- flush 刷新缓冲区，但不输出任何额外字符</p>
+<p>- ends 向缓冲区插入一个空字符，然后刷新缓冲区</p>
+<p><strong>unitbuf操纵符</strong></p>
+<p>如果想在每次输出操作后都刷新缓冲区，我们可以使用unitbuf操纵符。</p>
+<pre><code>cout &lt;&lt; unitbuf;    // 所有输出操作后都会立即刷新缓冲区
+cout &lt;&lt; nounitbuf;  // 回到正常的缓冲方式
+</code></pre>
+
+<p>【警告】如果程序崩溃，输出缓冲区不会刷新</p>
+<h1 id="_3">文件输入输出</h1>
+<p>除了继承自iostream类型的行为之外，fstream中定义的类型还增加了一些新的成员来管理与流关联的文件。见p283。</p>
+<h2 id="_4">使用文件流对象</h2>
+<p>当想要读写一个文件时，可以定义一个文件流对象，并将对象与文件关联起来。</p>
+<p>每个文件流类都定义了一个名为open的成员函数，它完成一些系统相关的操作，来定位给定的文件，并视情况打开为读或写模式。</p>
+<p>创建文件流对象时，如果提供了一个文件名，则open会被自动调用：</p>
+<pre><code>ifstream in(file);    // 构造一个ifstream并打开给定的文件
+ofstream out;         // 输出文件流未关联到任何文件
+</code></pre>
+
+<p>【NOTE】当一个fstream对象被销毁时，close会自动被调用。</p>
+<h2 id="_5">文件模式</h2>
+<p>每个流都有一个关联的文件模式，用来指出如何使用文件。见p286。</p>
+<p>每个文件流类型都定义了一个默认的文件模式，当未制定文件模式时，就使用此默认模式。</p>
+<p>- 与ifstream关联的文件默认以in模式打开；</p>
+<p>- 与ofstream关联的文件默认以out模式打开；</p>
+<p>- 与fstream关联的文件默认以in和out模式打开。</p>
+<p><strong>以out模式打开文件会丢失已有数据</strong></p>
+<p>默认情况下，当我们打开一个ofstream时，文件的内容会被丢弃。</p>
+<p>阻止丢弃的方法是同时指定app模式：</p>
+<pre><code>ofstream out(&quot;file1&quot;);    // 文件被截断
+ofstream app(&quot;file2&quot;, ofstream::app);    // 保留文件内容，写操作在文件末尾进行
+</code></pre>
+
+<h1 id="string">string流</h1>
+<p>sstream头文件定义了三个类型来支持内存IO：</p>
+<p>- istringstream从string读取数据。</p>
+<p>- ostringstream向string写入数据。</p>
+<p>- stringstream既可以从string读数据，也可以向string写数据。</p>
+<p>sstream增加了一些成员来管理与流相关联的string。见p287。</p>
+<h2 id="istringstream">使用istringstream</h2>
+<p>当我们的某些工作是对整行文本进行处理，而其他一些工作是处理行内的单个单词时，通常可以使用istringstream。</p>
+<h2 id="ostringstream">使用ostringstream</h2>
+<p>当我们逐步构造输出，希望最后一期打印时，ostringstream是很有用的。</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

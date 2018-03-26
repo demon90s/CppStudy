@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>函数1 - CppPrimer学习笔记</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">CppPrimer学习笔记</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapters <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../ch01 开始/">ch01 开始</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch02 变量和基本类型</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch02 变量和基本类型_1/">变量和基本类型1</a>
+</li>
+            
+<li >
+    <a href="../ch02 变量和基本类型_2/">变量和基本类型2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch03 字符串、向量和数组/">ch03 字符串、向量和数组</a>
+</li>
+                            
+<li >
+    <a href="../ch04 表达式/">ch04 表达式</a>
+</li>
+                            
+<li >
+    <a href="../ch05 语句/">ch05 语句</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch06 函数</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">函数1</a>
+</li>
+            
+<li >
+    <a href="../ch06 函数_2/">函数2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch07 类/">ch07 类</a>
+</li>
+                            
+<li >
+    <a href="../ch08 IO库/">ch08 IO库</a>
+</li>
+                            
+<li >
+    <a href="../ch09 顺序容器/">ch09 顺序容器</a>
+</li>
+                            
+<li >
+    <a href="../ch10 泛型算法/">ch10 泛型算法</a>
+</li>
+                            
+<li >
+    <a href="../ch11 关联容器/">ch11 关联容器</a>
+</li>
+                            
+<li >
+    <a href="../ch12 动态内存/">ch12 动态内存</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch13 拷贝控制</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch13 拷贝控制_1/">拷贝控制1</a>
+</li>
+            
+<li >
+    <a href="../ch13 拷贝控制_2/">拷贝控制2</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../ch05 语句/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../ch06 函数_2/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">函数基础</a></li>
+            <li><a href="#_2">局部对象</a></li>
+            <li><a href="#_3">函数声明</a></li>
+            <li><a href="#_4">分离式编译</a></li>
+        <li class="main "><a href="#_5">参数传递</a></li>
+            <li><a href="#_6">传值参数</a></li>
+            <li><a href="#_7">传引用参数</a></li>
+            <li><a href="#const">const形参和实参</a></li>
+            <li><a href="#_8">数组形参</a></li>
+            <li><a href="#main">main: 处理命令行选项</a></li>
+            <li><a href="#_9">含有可变形参的函数</a></li>
+        <li class="main "><a href="#return">返回类型和return语句</a></li>
+            <li><a href="#_10">无返回值函数</a></li>
+            <li><a href="#_11">有返回值函数</a></li>
+            <li><a href="#_12">返回数组的指针</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>函数是一个命名了的代码块，我们通过调用函数执行相应的代码。函数可以有0个或多个参数，而且（通常）会产生一个结果。</p>
+<h1 id="_1">函数基础</h1>
+<p>一个典型的函数（function）定义包括以下部分：返回类型（return type）、函数名字、由0个或多个形参（parameter）组成的列表以及函数体。</p>
+<p>我们通过<strong>调用运算符（call operator）</strong>来执行函数。调用运算符的形式是一对圆括号，它作用于一个表达式，该表达式是函数或者指向函数的指针；圆括号内是一个用逗号隔开的实参列表，我们用实参初始化函数的形参。调用表达式的类型就是函数的返回类型。</p>
+<p>函数的调用完成两项工作：一是用实参初始化函数对应的形参，二是将控制权转移给被调用函数。此时，<strong>主调函数</strong>（calling function）的执行暂时被中断，<strong>被调函数</strong>（called function）开始执行。</p>
+<p>当遇到一条return语句时函数结束执行过程。函数的返回值用于初始化调用表达式的结果。</p>
+<h2 id="_2">局部对象</h2>
+<p>在C++语言中，名字有作用域，对象有<strong>生命周期（lifetime）</strong>，理解这两个概念非常重要：</p>
+<p>- 名字的作用域是程序文本的一部分，名字在其中可见。
+- 对象的生命周期是程序执行过程中该对象存在的一段时间。</p>
+<p>形参和函数体内部定义的变量统称为<strong>局部变量（local variable）</strong>。它们仅在函数的作用域内可见。</p>
+<p>在所有函数体之外定义的对象存在于程序的整个执行过程中。此类对象在程序启动时被创建，直到程序结束才会销毁。局部变量的生命周期依赖于定义的方式。</p>
+<p><strong>自动对象</strong></p>
+<p>对于普通局部变量对应的对象来说，当函数的控制路径经过变量定义语句时创建该对象，当到达定义所在的块末尾时销毁它。我们把只存在于块执行期间的对象称为<strong>自动对象（automatic object）</strong>。</p>
+<p>形参是一种自动对象。函数开始时为形参申请存储空间，函数一旦终止，形参就被销毁。</p>
+<p>对于局部变量对应的自动对象来说，如果变量定义本身含有初始值，就用这个初始值进行初始化；否则执行默认初始化（内置类型产生未定义的值）。</p>
+<p><strong>局部静态对象</strong></p>
+<p><strong>局部静态对象（local static object）</strong>在程序的执行路径第一次经过对象定义语句时初始化，并且直到程序终止才被销毁。</p>
+<p>一个例子（其解释见书本p185）：</p>
+<pre><code>// 统计函数被调用了多少次
+size_t count_calls()
+{
+    static size_t ctr = 0; // 调用结束后，这个值仍然有效
+    return ++ctr;
+}
+</code></pre>
+
+<p><strong>函数返回类型</strong></p>
+<p>大多数类型都能用作函数的返回类型。一种特殊的返回类型是void，它表示函数不返回任何类型。函数的返回类型不能是数组类型或函数类型，但可以是指向数组或函数的指针。</p>
+<h2 id="_3">函数声明</h2>
+<p>函数的名字必须在使用之前声明。类似于变量，函数只能定义一次，但可以声明多次。</p>
+<p>函数的声明和定义唯一的区别是声明无须函数体，用一个分号替代即可。</p>
+<p>函数的三要素（返回类型、函数名、形参类型）描述了函数的接口，说明了调用该函数所需的全部信息。函数声明也称作<strong>函数原型（function prototype）</strong>。</p>
+<p><strong>在头文件中进行函数声明</strong></p>
+<p>我们建议函数在头文件中声明，在源文件中定义。</p>
+<p>这是因为如果把函数声明放在头文件中，就能确保同一函数的所有声明保持一致。而且一旦我们想改变函数的接口，只需改变一条声明即可。</p>
+<p>定义函数的源文件应该把含有函数声明的头文件包含进来，编译器负责验证函数的定义和声明是否匹配。</p>
+<h2 id="_4">分离式编译</h2>
+<p>C++语言支持所谓的<strong>分离式编译（separate compilation）</strong>。分离式编译允许我们把程序分割到几个文件中去，每个文件独立编译。</p>
+<blockquote>
+<p>my note: 这部分内容我比较熟悉了，详细解释见书本p186。</p>
+</blockquote>
+<h1 id="_5">参数传递</h1>
+<p>【NOTE】形参初始化的机理与变量初始化一样。</p>
+<p>如果形参是引用类型，它将绑定到对应的实参上；否则，将实参的值拷贝后赋给形参。</p>
+<p>当形参是引用类型时，我们说它对应的实参被<strong>引用传递</strong>（passed by reference）或者函数被<strong>传引用调用</strong>（called by reference）。</p>
+<p>当实参的值被拷贝给形参时，形参和实参是两个相互独立的对象。我们说这样的实参被<strong>值传递</strong>（passed by value）或函数被<strong>传值调用</strong>（called by value）。</p>
+<h2 id="_6">传值参数</h2>
+<p>当初始化一个非引用类型的变量时，初始值被拷贝给变量。此时，对变量的改动不会影响初始值。</p>
+<p><strong>指针形参</strong></p>
+<p>当执行指针拷贝操作时，拷贝的是指针的值。拷贝之后，两个指针是不同的指针。因为指针使我们可以间接地访问它所指的对象，所以通过指针可以修改它所指对象的值。</p>
+<p>【BEST PRACTICES】熟悉C的程序员常常使用指针类型的形参访问函数外部的对象。在C++语言中，建议使用引用类型的形参代替指针。</p>
+<h2 id="_7">传引用参数</h2>
+<p>对于引用的操作实际上是作用于引用所引的对象上，引用形参也是如此。通过使用引用形参，允许函数改变一个或多个实参的值。</p>
+<p><strong>使用引用避免拷贝</strong></p>
+<p>拷贝大的类类型对象或者容器对象比较低效。甚至有的类型根本就不支持拷贝操作。此时应该使用引用形参访问该类型的对象。</p>
+<p>如果函数无须改变引用形参的值，最好将其声明为常量引用。</p>
+<p><strong>使用引用形参返回额外信息</strong></p>
+<p>一个函数只能返回一个值，然而有时函数需要同时返回多个值，引用形参为我们一次返回多个结果提供了有效的途径。那就是通过引用形参并修改它（也就是修改了其引用的对象），从而作为结果传出。</p>
+<h2 id="const">const形参和实参</h2>
+<p>当形参是const时，必须注意关于顶层const的讨论（p57）。</p>
+<p>当用实参初始化形参时会忽略形参的顶层const。即当形参有顶层const时，传递给它常量对象或者非常量对象都是可以的。</p>
+<p>忽略形参的顶层const可能产生意想不到的结果：</p>
+<pre><code>void fcn(const int i) {}
+void fcn(int i) {}    // 错误：重复定义
+</code></pre>
+
+<p>在C++中，允许我们定义若干具有相同名字的函数，不过前提是不同函数的形参列表有明显的区别。因为顶层const被忽略了，所以在上面的代码中传入两个fcn函数的参数可以完全一样（从而编译器不知道该调用哪一个）。</p>
+<p><strong>指针或引用形参与const</strong></p>
+<p>我们可以使用非常量初始化一个底层const，但是反过来不行（不能用一个常量初始化一个非底层const）；同时一个普通的引用必须用同类型的对象初始化。</p>
+<p><strong>尽量使用常量引用</strong></p>
+<p>把函数不会改变的形参定义成（普通的）引用是一种常见错误，这么做给函数的调用者一种误导，即函数可以修改它的实参的值。此外，使用引用而非常量引用也会极大地限制函数所能接受的实参类型（比如无法传入一个常量对象了）。</p>
+<p>比如下面这个例子将导致编译错误（p192）：</p>
+<pre><code>// 不良设计，第一个形参的类型应该是const string&amp;
+string::size_type find_char(string &amp;s, char c, string::size_type &amp;occurs);
+//...
+find_char(&quot;Hello World&quot;, 'o', ctr); // 无法编译通过
+</code></pre>
+
+<h2 id="_8">数组形参</h2>
+<p>当我们为函数传递一个数组时，实际上传递的是指向数组首元素的指针。</p>
+<p>尽管不能以值传递的方式传递数组，但是我们可以把形参写成类似数组的形式：</p>
+<pre><code>// 每个函数都有一个const int*类型的形参
+void print(const int*);
+void print(const int[]);    // 可以看出来，函数的意图是作用于一个数组
+void print(const int[10]);  // 这里的维度表示我们期望数组含有多少元素，实际不一定
+</code></pre>
+
+<p>【WARNING】和其他使用数组的代码一样，以数组作为形参的函数也必须确保使用数组时不会越界。</p>
+<p>因为数组是以指针的形式传递给函数的，所以一开始函数并不知道数组的确切尺寸，调用者应该为此提供一些额外的信息。管理指针形参有三种常用技术。</p>
+<p>1. 使用标记指定数组长度，如C风格字符串。</p>
+<p>2. 使用标准库规范，如传递首元素和尾后元素的指针，来表示一个范围。</p>
+<p>3. 显示传递一个表示数组大小的形参。</p>
+<blockquote>
+<p>my note: 以上技术详细解读见书本p194。</p>
+</blockquote>
+<p><strong>数组形参和const</strong></p>
+<p>当函数不需要对数组元素执行写操作的时候，数组形参应该是指向const的指针。只有当函数确实要改变元素值的时候，才把形参定义成指向非常量的指针。</p>
+<p><strong>数组引用形参</strong></p>
+<p>C++语言允许将变量定义成数组的引用，基于同样的道理，形参也可以是数组的引用。此时，引用形参绑定到对应的实参上，也就是绑定到数组上。</p>
+<pre><code>// 正确，形参是数组的引用，维度是类型的一部分
+void print(int (&amp;arr)[10])
+{
+    for (auto elem : arr)
+        cout &lt;&lt; elem &lt;&lt; endl;
+}
+</code></pre>
+
+<p>但这一用法也限制了print函数的可用性，我们只能将函数作用于大小为10的数组。</p>
+<p><strong>传递多维数组</strong></p>
+<p>和所有数组一样，当将多维数组传递给函数时，真正传递的是指向数组首元素的指针，也就是一个指向数组的指针。数组第二维（以及后面所有维度）的大小都是数组类型的一部分，不能省略：</p>
+<pre><code>// matrix指向数组的首元素，该数组的元素是由10个整数构成的数组
+void print(int (*matrix)[10], int rowSize) { /* ... */ }
+</code></pre>
+
+<p>也可以使用数组的语法定义函数，此时编译器会一如既往地忽略掉第一个维度：</p>
+<pre><code>// 等价定义
+void print(int matrix[][10], int rowSize) { /* ... */ }
+</code></pre>
+
+<p>matrix的声明看起来是一个二维数组，实际上形参是指向含有10个整数的数组的指针。</p>
+<h2 id="main">main: 处理命令行选项</h2>
+<p>有时候我们需要给main函数传递实参。一种常见的情况是用户通过设置一组选项来确定函数所要执行的操作。例如：</p>
+<pre><code>prog -d -o ofile data0
+</code></pre>
+
+<p>这些命令行选项通过两个（可选的）形参传递给main函数。</p>
+<pre><code>int main(int argc, char *argv[]) { ... }
+</code></pre>
+
+<p>第二个形参argv是一个数组，它的元素是指向C风格字符串的指针；第一个参数argc表示数组中字符串的数量。</p>
+<p>当实参传给main函数之后，argv的第一个元素指向程序的名字或者一个空字符串，接下来的元素依次传递命令行提供的实参。最后一个指针之后的元素值保证为0。</p>
+<p>以上面的为例，argc应该等于5，argv应该包含如下的C风格字符串：</p>
+<pre><code>argv[0] = &quot;prog&quot;;    // 或者argv[0]也可以指向一个空字符串
+argv[1] = &quot;-d&quot;;
+argv[2] = &quot;-o&quot;;
+argv[3] = &quot;ofile&quot;;
+argv[4] = &quot;data0&quot;;
+argv[5] = 0;
+</code></pre>
+
+<p>【WARNING】当使用argv中的实参时，一定要记得可选的实参从argv[1]开始；argv[0]保存程序的名字，而非用户的输入。</p>
+<h2 id="_9">含有可变形参的函数</h2>
+<p>为了编写能处理不同数量实参的函数，C++11新标准提供了两种主要的方法：</p>
+<p>- 如果所有的实参类型相同，可以传递一个名为initializer_list的标准库类型；</p>
+<p>- 如果实参的类型不同，我们可以编写一种可变参数模板，其细节将在16.4节介绍（p618）。</p>
+<p>C++还有一种特殊的形参类型（即省略符），可以用它传递可变数量的实参。这种功能一般只用于与C函数交互的接口程序。</p>
+<p><strong>initializer_list形参</strong></p>
+<p>initializer_list是一种标准库类型，用于表示某种特定类型的值的数组。initializer_list类型定义在同名的头文件中，提供如下操作：</p>
+<p><img alt="" src="../index_files/initializer_list_u64CD_u4F5C.png" /></p>
+<p>initializer_list对象中的元素永远是常量值，我们无法改变initializer_list对象中元素的值。</p>
+<p><strong>省略符形参</strong></p>
+<p>省略符形参是为了便于C++程序访问某些特殊的C代码而设置的。</p>
+<p>【WARNING】省略符形参应该仅仅用于C和C++通用的类型。特别应该注意的是，大多数类类型的对象在传递给省略符形参时都无法正确拷贝。</p>
+<p>省略符形参只能出现在形参列表的最后一个位置，它的形式无外乎以下两种：</p>
+<pre><code>void foo(param_list, ...);
+void foo(...);
+</code></pre>
+
+<h1 id="return">返回类型和return语句</h1>
+<p>return语句终止当前正在执行的函数并将控制权返回到调用该函数的地方。</p>
+<p>return语句有两种形式：</p>
+<pre><code>return;
+return expression;
+</code></pre>
+
+<h2 id="_10">无返回值函数</h2>
+<p>没有返回值的return语句只能用在返回类型是void的函数中。返回void的函数不要求非得有return语句，因为在这类函数的最后一句后面会隐式地执行return。</p>
+<h2 id="_11">有返回值函数</h2>
+<p>只要函数的返回类型不是void，则该函数内的每条return语句必须返回一个值。return语句返回值的类型必须与函数的返回类型相同，或者能隐式地转换成函数的返回类型。</p>
+<p><strong>值是如何被返回的</strong></p>
+<p>返回一个值的方式和初始化一个变量或形参的方式完全一样：返回的值用于初始化调用点的一个临时量，该临时量就是函数调用的结果。</p>
+<p>如果函数返回引用，则该引用仅是它所引对象的一个别名。</p>
+<p><strong>不要返回局部对象的引用或指针</strong></p>
+<p>函数完成后，它所占用的存储空间也随之被释放掉。因此，函数终止意味着局部变量的引用将指向不再有效的内存区域。</p>
+<p><strong>列表初始化返回值</strong></p>
+<p>C++11新标准规定，函数可以返回花括号包围的值的列表。此处的列表也用来对表示函数返回的临时量进行初始化。如果列表为空，临时量执行值初始化；否则，返回的值由函数的返回类型决定。</p>
+<p><strong>主函数main的返回值</strong></p>
+<p>我们允许main函数没有return语句直接结束，这样编译器将隐式地插入一条返回0的return语句，表示执行成功。</p>
+<p>为了使返回值与机器无关，cstdlib头文件定义了两个预处理变量，可以用来表示成功与失败：</p>
+<pre><code>int main()
+{
+    if (some_failure)
+        return EXIT_FAILURE;
+    else
+        return EXIT_SUCCESS;
+}
+</code></pre>
+
+<p><strong>递归</strong></p>
+<p>如果函数调用了它自身，不管这种调用是直接的还是间接的，都称该函数为<strong>递归函数</strong>（recursive function）。</p>
+<p>在递归函数中，一定有某条路径是不包含递归调用的；否则，函数将“永远”递归下去，换句话说，函数将不断地调用它自身直到程序栈空间耗尽为止。</p>
+<p>【NOTE】main函数不能调用它自己。</p>
+<h2 id="_12">返回数组的指针</h2>
+<p>因为数组不能被拷贝，所以函数不能返回数组。不过，函数可以返回数组的指针或引用。使用<strong>类型别名</strong>（p60）可以简化这种返回类型：</p>
+<pre><code>typedef int arrT[10];    // arrT是一个类型别名，表示含有10个整数的数组
+using arrT = int[10];    // arrT的等价声明
+arrT* func(int i);       // func返回一个指向含有10个整数的数组的指针
+</code></pre>
+
+<p><strong>声明一个返回数组指针的函数</strong></p>
+<p>形式如下：</p>
+<pre><code>Type (*function(param_list))[dimension]
+</code></pre>
+
+<p>类似于其他数组的声明，Type表示元素的类型，dimension表示数组的大小。（*表示返回的是一个指针。）</p>
+<p>举一个例子：</p>
+<pre><code>int (*func(int i))[10];
+</code></pre>
+
+<p>可以按照以下的顺序来逐层理解该声明的含义：</p>
+<p>- <code>func(int i)</code>表示调用func函数时需要一个int类型的实参。</p>
+<p>- <code>(*func(int i))</code>意味着我们可以对函数的调用结果执行解引用操作。</p>
+<p>- <code>(*func(int i))[10]</code>表示解引用func的调用将得到一个大小是10的数组。</p>
+<p>- <code>int (*func(int i))[10]</code>表示数组中的元素是int类型。</p>
+<p><strong>使用尾置返回类型</strong></p>
+<p>C++新标准提供了另一种简化上述func声明的方法，就是使用<strong>尾置返回类型（trailing return type）</strong>。任何函数的定义都能使用尾置返回，但是这种形式对于返回类型比较复杂的函数最有效。</p>
+<p>尾置返回类型跟在形参列表后面并以一个-&gt;符号开头。为了表示函数真正的返回类型跟在形参列表之后，我们在本应该出现返回类型的地方放置一个auto：</p>
+<pre><code>// func接受一个int类型的实参，返回一个指针，该指针指向含有10个整数的数组
+auto func(int i) -&gt; int(*)[10];
+</code></pre>
+
+<p><strong>使用decltype</strong></p>
+<p>如果我们知道函数返回的指针将指向哪个数组，就可以使用decltype关键字声明返回类型（即获得一个数组类型）。</p>
+<p>案例：</p>
+<pre><code>int odd[] = {1, 3, 5, 7, 9};
+int even[] = {0, 2, 4, 6, 8};
+
+// 返回一个指针，该指针指向含有5个整数的数组
+decltype(odd) *arrPtr(int i)
+{
+    return (i % 2) ? &amp;odd : &amp;even;
+}
+</code></pre>
+
+<blockquote>
+<p>my note: decltype并不负责把数组类型转换成对应的指针。</p>
+</blockquote></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

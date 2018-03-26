@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>ch03 字符串、向量和数组 - CppPrimer学习笔记</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">CppPrimer学习笔记</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapters <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../ch01 开始/">ch01 开始</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch02 变量和基本类型</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch02 变量和基本类型_1/">变量和基本类型1</a>
+</li>
+            
+<li >
+    <a href="../ch02 变量和基本类型_2/">变量和基本类型2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li class="active">
+    <a href="./">ch03 字符串、向量和数组</a>
+</li>
+                            
+<li >
+    <a href="../ch04 表达式/">ch04 表达式</a>
+</li>
+                            
+<li >
+    <a href="../ch05 语句/">ch05 语句</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch06 函数</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch06 函数_1/">函数1</a>
+</li>
+            
+<li >
+    <a href="../ch06 函数_2/">函数2</a>
+</li>
+    </ul>
+  </li>
+                            
+<li >
+    <a href="../ch07 类/">ch07 类</a>
+</li>
+                            
+<li >
+    <a href="../ch08 IO库/">ch08 IO库</a>
+</li>
+                            
+<li >
+    <a href="../ch09 顺序容器/">ch09 顺序容器</a>
+</li>
+                            
+<li >
+    <a href="../ch10 泛型算法/">ch10 泛型算法</a>
+</li>
+                            
+<li >
+    <a href="../ch11 关联容器/">ch11 关联容器</a>
+</li>
+                            
+<li >
+    <a href="../ch12 动态内存/">ch12 动态内存</a>
+</li>
+                            
+  <li class="dropdown-submenu">
+    <a href="#">ch13 拷贝控制</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ch13 拷贝控制_1/">拷贝控制1</a>
+</li>
+            
+<li >
+    <a href="../ch13 拷贝控制_2/">拷贝控制2</a>
+</li>
+    </ul>
+  </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../ch02 变量和基本类型_2/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../ch04 表达式/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#using">命名空间的using声明</a></li>
+        <li class="main "><a href="#string">标准库类型string</a></li>
+            <li><a href="#string_1">定义和初始化string对象</a></li>
+            <li><a href="#string_2">string对象上的操作</a></li>
+            <li><a href="#string_3">处理string对象中的字符</a></li>
+        <li class="main "><a href="#vector">标准库类型vector</a></li>
+            <li><a href="#vector_1">定义和初始化vector对象</a></li>
+            <li><a href="#vector_2">向vector中添加元素</a></li>
+            <li><a href="#vector_3">其它vector操作</a></li>
+        <li class="main "><a href="#_1">迭代器介绍</a></li>
+            <li><a href="#_2">使用迭代器</a></li>
+            <li><a href="#_3">迭代器运算</a></li>
+        <li class="main "><a href="#_4">数组</a></li>
+            <li><a href="#_5">定义和初始化内置数组</a></li>
+            <li><a href="#_6">访问数组元素</a></li>
+            <li><a href="#_7">指针和数组</a></li>
+            <li><a href="#c">C风格字符串</a></li>
+        <li class="main "><a href="#_8">多维数组</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="using">命名空间的using声明</h1>
+<p>有如下形式：</p>
+<pre><code>using namespace::name;
+</code></pre>
+
+<p>使用完using声明（using declaration）后，就可以省略掉名字前的前缀了（如std::）。</p>
+<pre><code>#include &lt;iostream&gt;
+
+using std::cin;
+
+int main()
+{
+    int i;
+    cin &gt;&gt; i;
+    cout &lt;&lt; i;    // 错误，没有对应的using声明，必须使用完整的名字
+    return 0;
+}
+</code></pre>
+
+<p><strong>头文件不应包含using声明</strong></p>
+<p>这是因为头文件会被其它文件引用，从而使其它文件也使用了using声明，有可能造成命名冲突。</p>
+<h1 id="string">标准库类型string</h1>
+<p>string表示可变长的字符序列。使用string类型需要包含string头文件。</p>
+<h2 id="string_1">定义和初始化string对象</h2>
+<p>如何初始化类的对象是由类本身决定的。一个类可以定义很多种初始化对象的方式，只不过这些方式之间必须有所区别。</p>
+<p><strong>初始化string对象的方式：</strong></p>
+<pre><code>string s1;           // 默认初始化，s1是一个空串
+string s2(s1);       // s2是s1的副本
+string s2 = s1;      // 等价于s2(s1)
+string s3(&quot;value&quot;);  // s3是字面值&quot;value&quot;的副本，不包括最后的空字符
+string s3 = &quot;value&quot;; // 等价于s3(&quot;value&quot;)
+string s4(n, 'c');   // 初始化为由n个字符c组成的串
+</code></pre>
+
+<p><strong>直接初始化和拷贝初始化</strong></p>
+<p>如果使用等号（=）初始化一个变量，实际上执行的是<strong>拷贝初始化（copy initialization）</strong>，编译器把等号右侧的对象初始值拷贝到新创建的对象中去。如果不适用等号，则执行的是<strong>直接初始化</strong>（direct initialization）。</p>
+<pre><code>string s5 = &quot;hiya&quot;;  // 拷贝初始化
+string s6(&quot;hiya&quot;);   // 直接初始化
+string s7(10, 'c');  // 直接初始化
+</code></pre>
+
+<h2 id="string_2">string对象上的操作</h2>
+<p>如：</p>
+<p>- <code>os &lt;&lt; s</code>, 将s写入输出流os当中，返回os</p>
+<p>- <code>is &gt;&gt; s</code>，从输入流中读取字符串赋值给s，字符串以空白分隔，返回is</p>
+<p>- <code>getline(is, s)</code>，从输入流中读取一行赋值给s，返回is</p>
+<p>- <code>s.empty()</code>，如果s为空，返回true</p>
+<p>- <code>s.size()</code>，返回s中的字符数，与s.length()等价</p>
+<p>- <code>s[n]</code>，返回s中第n个字符的引用</p>
+<p>- <code>s1 + s2</code>，返回s1和s2连接后的结果</p>
+<p>- <code>s1 = s2</code>，用s2的副本代替s1</p>
+<p>- <code>s1 == s2</code>，<code>s1 != s2</code>，如果s1和s2完全一样，则相等</p>
+<p>- &lt;, &lt;=, &gt;, &gt;=，顺序比较字符大小，完全一致再比较长度</p>
+<p>getline函数会读取换行符，但不会把它存入字符串中。getline返回输入流。</p>
+<p><strong>string::size_type类型</strong></p>
+<p>size函数返回的是一个string::size_type类型的值。这是一个无符号的整数。</p>
+<p>string类和大多数标准库类型都定义了几种配套类型，它们体现的是标准库与机器无关的特性。</p>
+<p><strong>字面值和string对象相加</strong></p>
+<p>标准库允许把字符字面值和字符串字面值转换成string对象，所以在需要string对象的地方就可以使用这两种字面值来替代。</p>
+<pre><code>string s1 = s1 + &quot;hi&quot;;
+string s2 = s1 + ',';
+</code></pre>
+
+<h2 id="string_3">处理string对象中的字符</h2>
+<p>字符处理函数的头文件是cctype，它和C的ctype.c一样，只不过前者是C++的命名规范。在书本p82有cctype头文件中的函数说明。</p>
+<p><strong>处理每个字符？使用基于范围的for语句</strong></p>
+<p>如果想对string对象中的每个字符做点儿什么操作，目前最好的办法是使用C++11新标准提供的一种语句：<strong>范围for</strong>（range for）语句。这种语句遍历序列中的每个元素并对序列中的每个值执行某种操作，其语法格式是：</p>
+<pre><code>for (declaration : expression)
+    statement
+</code></pre>
+
+<p>其中，expression部分是一个对象，用于表示一个序列。declaration部分负责定义一个变量，该变量将被用于访问序列中的基础元素。每次迭代，declaration部分的变量会被初始化为expression部分的下一个元素值。</p>
+<p>如：</p>
+<pre><code>for (auto c : str)
+    // do something
+</code></pre>
+
+<p>这里c是str中字符的副本，若要改变str中的字符，需要用引用：</p>
+<pre><code>for (auto &amp;c : str)
+    // do something
+</code></pre>
+
+<p><strong>使用下标运算符</strong></p>
+<p><code>[ ]</code>符号叫做下标运算符，范围是[0, s.size())，越界的结果是UB（undefined behavior，未定义行为）。</p>
+<h1 id="vector">标准库类型vector</h1>
+<p>vector是对象的集合，也叫容器（container）。集合中的每个对象都有一个索引，索引用于访问对象。</p>
+<p>vector是一个类模板。模板是为编译器提供的一份生成类或函数的说明。</p>
+<p>vector是模板而非类型，由vector生成的类型必须包含元素的类型，如：</p>
+<pre><code>vector&lt;int&gt; v;
+</code></pre>
+
+<p>vector中存放的是对象，而引用不是对象，故不能存储引用。</p>
+<h2 id="vector_1">定义和初始化vector对象</h2>
+<p>vector模板控制着初始化向量的方法。</p>
+<p>定义vector对象的方法有：</p>
+<p>- <code>vector&lt;T&gt; v1</code>，默认初始化，v1是一个空的vector</p>
+<p>- <code>vector&lt;T&gt; v2(v1)</code>，v2中包含v1所有元素的副本</p>
+<p>- <code>vector&lt;T&gt; v2 = v1</code>，等价于v2(v1)</p>
+<p>- <code>vector&lt;T&gt; v3(n, val)</code>，v3包含了n个重复的元素，每个元素的值都是val</p>
+<p>- <code>vector&lt;T&gt; v4(n)</code>，v4包含了n个执行了值初始化的对象</p>
+<p>- <code>vector&lt;T&gt; v5{a,b,c...}</code>，v5里包含了用a,b,c...初始化的元素</p>
+<p>- <code>vector&lt;T&gt; v5 = {a,b,c...}</code>，等价于<code>vector&lt;T&gt; v5{a,b,c...}</code></p>
+<p><strong>值初始化</strong></p>
+<p>值初始化（value initialize），是指如果是内置类型，则初始值为0；如果是类类型，执行类默认初始化。</p>
+<p><code>vector&lt;T&gt;(n)</code>中，所有元素将执行值初始化。</p>
+<h2 id="vector_2">向vector中添加元素</h2>
+<p>push_back函数把一个元素压入vector对象的尾端。</p>
+<p>vector的对象能高效地增长，因此更常见的情况是：创建一个空vector，然后在运行时再利用vector的成员函数push_back向其中添加元素。</p>
+<p><strong>一定不能在遍历vector的时候改变vector对象的大小。</strong></p>
+<p><strong>【关键概念：vector对象能高效增长】</strong></p>
+<p>C++标准要求vector应该能在运行时高效快速地添加元素。因此既然vector对象能高效地增长，那么在定义vector对象的时候设定其大小就没有什么必要了，只有一种例外，即当所有元素的值都一样。一旦元素的值有所不同，更有效的办法是先定义一个空的vector对象，再在运行时向其中添加具体值。</p>
+<h2 id="vector_3">其它vector操作</h2>
+<p>如（很多和string类似）：</p>
+<p>- <code>v.empty()</code>，如果v不含有任何元素，返回true</p>
+<p>- <code>v.size()</code>，返回v中的元素个数</p>
+<p>- <code>v[n]</code>，返回v中第n个位置上元素的引用</p>
+<p>- <code>v1 = v2</code>，v2中的元素将拷贝替换v1的</p>
+<p>- <code>v1 = {a,b,c...}</code>，列表中的元素将拷贝替换v1中的</p>
+<p>- <code>v1 == v2</code>, <code>v1 != v2</code>，元素数量相同，对应位置的元素也相等，则相等</p>
+<p>- &lt;,&lt;=,&gt;,&gt;=，比首个相异元素的大小，如都一样，比长度，即字典顺序</p>
+<p>size返回的类型由vector定义的size_type类型。</p>
+<pre><code>vector&lt;int&gt;::size_type    // 正确
+vector::size_type         // 错误
+</code></pre>
+
+<p>只有当元素的值可比较时，vector对象才能被比较。</p>
+<p>只能对确已存在的元素执行下标操作。</p>
+<h1 id="_1">迭代器介绍</h1>
+<p>使用迭代器（iterator）是一种通用的访问容器中元素的方法。</p>
+<p>迭代器有有效和无效之分。有效的迭代器指向某个元素，或指向尾元素的下一个位置，其它情况都属于无效。</p>
+<h2 id="_2">使用迭代器</h2>
+<p>有迭代器的类型同时拥有返回迭代器的成员。</p>
+<p>标准库容器都拥有名为begin和end的成员（函数）。其中begin成员负责返回指向第一个元素的迭代器。</p>
+<p>end成员负责返回指向容器“尾元素的下一个位置”的迭代器。叫<strong>尾后迭代器（off-the-end iterator）</strong>。</p>
+<p>如果容器为空，begin和end都返回尾后迭代器。即：<code>v.begin() == v.end()</code></p>
+<p>如：</p>
+<pre><code>auto b = v.begin();
+auto e = v.end();
+</code></pre>
+
+<p><strong>迭代器运算符</strong></p>
+<p>标准容器迭代器的运算符：</p>
+<p>- <code>*iter</code>，返回迭代器所指对象的引用（解引用）</p>
+<p>- <code>iter-&gt;mem</code>，解引用iter，并获取其成员mem，等价于<code>(*iter).mem</code></p>
+<p>- <code>++iter</code>，令iter指示容器中的下一个元素</p>
+<p>- <code>--iter</code>，令iter指示容器中的上一个元素</p>
+<p>- <code>iter1 == iter2</code>，如果两个迭代器指示的是同一个元素，或者它们都是尾后迭代器，则相等，反之不相等</p>
+<p>迭代器指示一个元素时，才可对其解引用。对尾后迭代器或者无效迭代器解引用的结果是UB。</p>
+<p><strong>迭代器类型</strong></p>
+<p>标准库类型使用iterator和const_iterator来表示迭代器类型。</p>
+<p>如：</p>
+<pre><code>vector&lt;int&gt;::iterator it1;
+vector&lt;int&gt;::const_iterator it2;
+</code></pre>
+
+<p>it1能读写元素，而it2只能读。</p>
+<p>认定某个类型是迭代器类型当且仅当它支持一套操作，这套操作使得我们能访问容器的元素，或者从某个元素移动到另外一个元素。</p>
+<p><strong>begin和end运算符</strong></p>
+<p>begin和end返回的具体类型由对象是否是常量决定。如果对象是常量，返回const_iterator，否则返回iterator。</p>
+<p>为了专门得到const_iterator类型的迭代器，C++11中可以使用cbegin和cend：</p>
+<pre><code>auto it = v.cbegin();
+</code></pre>
+
+<p><strong>箭头运算符</strong></p>
+<p>即<code>-&gt;</code>，它把解引用和成员访问两个操作结合在一起。即：</p>
+<p><code>(*iter).mem</code>等价于<code>iter-&gt;mem</code>。</p>
+<p><strong>某些对vector对象的操作会使迭代器失效</strong></p>
+<p>任何一种可能改变vector对象容量的操作，比如push_back，都会使该vector对象的迭代器失效。</p>
+<h2 id="_3">迭代器运算</h2>
+<p>递增运算令迭代器每次移动一个元素，所有的标准库容器的迭代器都支持递增运算，也支持==和!=运算。</p>
+<p>string和vector的迭代器提供了额外的运算符，有：</p>
+<p>- <code>iter + n</code>，新迭代器向前移动若干个元素，它指向容器的一个元素，或是尾后迭代器</p>
+<p>- <code>iter - n</code>，新迭代器向后移动若干个元素，它指向容器的一个元素，或是尾后迭代器</p>
+<p>- <code>iter1 - iter2</code>，得到迭代器之间的距离，参与计算的迭代器必须是指向同一个容器中的元素或者尾元素的下一个位置</p>
+<p>- <code>&gt;,&gt;=,&lt;,&lt;=</code>，比较迭代器所处的位置，前面的小于后面的，参与计算的迭代器必须是指向同一个容器中的元素或者尾元素的下一个位置  </p>
+<p><strong>迭代器的算数运算</strong></p>
+<p>迭代器相减的结果的类型是difference_type，表示右侧的迭代器要移动多少个位置才能到达左侧的。</p>
+<p>difference_type是一个带符号的整数，string和vector都定义了这个类型。</p>
+<h1 id="_4">数组</h1>
+<p>数组是存放相同类型的对象的容器，这些对象是匿名的。</p>
+<p>数组的大小确定不变。</p>
+<p>数组是一种内置类型。</p>
+<h2 id="_5">定义和初始化内置数组</h2>
+<p>数组是一种复合类型，其声明形如<code>a[N]</code>。N叫维度，说明了数组中元素的个数，必须大于0，且必须是一个常量表达式，即其值在编译期间已知。</p>
+<p>默认情况下，数组的元素执行默认初始化，这意味着在函数块内定义的执行默认初始化的含内置类型元素的数组，其元素的值未定义。</p>
+<p>定义数组的时候必须指定数组的类型，不允许用auto关键字由初始值的列表推断类型。数组的元素应为对象，所以不存在存储引用的数组。</p>
+<p><strong>显式初始化数组元素</strong></p>
+<p>即列表初始化，此时可以忽略数组的维度，维度由编译器推断出来。</p>
+<p>如：</p>
+<pre><code>int a1[10] = {0}; // 剩下的元素执行值初始化，即为0
+int a2[] = {1, 2, 3};
+</code></pre>
+
+<p><strong>字符数组的特殊性</strong></p>
+<p>可以用字符串字面值对此类数组进行初始化。如：</p>
+<pre><code>char s[] = &quot;hello&quot;;
+</code></pre>
+
+<p>这样初始化的数组包含结尾的空字符。</p>
+<p><strong>不允许拷贝和赋值</strong></p>
+<p>这样的操作是非法的：</p>
+<pre><code>int a1[] = {1, 2, 3};
+int a2[] = a1; // 非法
+</code></pre>
+
+<p><strong>理解复杂的数组声明</strong></p>
+<p>定义一个指针数组：</p>
+<pre><code>int* a[10] = {};
+</code></pre>
+
+<p>定义一个指向数组的指针：</p>
+<pre><code>int (*ptr)[10] = &amp;a;
+</code></pre>
+
+<p>定义一个绑定到数组的引用：</p>
+<pre><code>int (&amp;a_ref)[10] = a;
+</code></pre>
+
+<p>默认情况下，类型修饰符从右向左依次绑定。不过理解数组的复杂声明时，应该由内向外理解。即从数组的名字开始按照由内向外的顺序阅读。</p>
+<h2 id="_6">访问数组元素</h2>
+<p>使用数组下标的时候，通常将其定义为size_t类型，这是一种机器相关的无符号类型。定义在cstddef头文件中，是C标准库stddef.h头文件的C++版本。</p>
+<p>可以使用范围for语句来遍历数组。</p>
+<pre><code>for (auto i : arr)
+    cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+cout &lt;&lt; endl;
+</code></pre>
+
+<p><strong>检查下标的值</strong></p>
+<p>与string和vector一样，数组的下标是否在合理范围之内由程序员负责检查。</p>
+<p>【WARNING】大多数常见的安全问题都源于缓冲区溢出错误。当数组或其他类似数据结构的下标越界并试图访问非法内存区域时，就会产生此类错误。</p>
+<h2 id="_7">指针和数组</h2>
+<p>在很多用到数组名字的地方，编译器都会自动地将其替换为一个<strong>指向数组首元素的指针</strong>。</p>
+<p><strong>decltype</strong></p>
+<p>下面得到一个数组类型：</p>
+<pre><code>int a1[10] = {};
+decltype(a1) a2;
+</code></pre>
+
+<p><strong>auto</strong></p>
+<p>下面得到一个整型指针：</p>
+<pre><code>int a1[10] = {};
+auto a2(a1);
+</code></pre>
+
+<p><strong>指针也是迭代器</strong></p>
+<p>string和vector的迭代器支持的运算，指针都支持。</p>
+<p>使用递增运算符既可以让指向数组元素的指针向前移动到下一个位置上。</p>
+<p>这样可以获取数组尾元素的下一个位置的指针：</p>
+<pre><code>int *end = &amp;a[N];
+</code></pre>
+
+<p>不过C++11提供了begin和end函数，可以获取数组首元素的指针和尾后指针：</p>
+<pre><code>int a[10] = {};
+int *beg_p = begin(a);
+int *end_p = end(a);
+</code></pre>
+
+<p>这俩函数定义在头文件iterator.h中。</p>
+<p>尾后指针不能解引用和递增操作。</p>
+<p>和迭代器一样，两个指针相减的结果是它们之间的距离。参与运算的两个指针必须指向同一个数组当中的元素。</p>
+<p><strong>下标和指针</strong></p>
+<p>对数组执行下标运算其实是对指向数组元素的指针执行下标运算：</p>
+<pre><code>int i = ia[2];    // ia转换成指向数组首元素的指针
+                  // ia[2]得到(ia + 2)所指的元素
+int *p = ia;      // p指向ia的首元素
+i = *(p + 2);     // 等价于i = ia[2]
+</code></pre>
+
+<p>只要指针指向的是数组中的元素，都可以执行下标运算。</p>
+<p>内置的下标运算符可以处理负值，这和标准库类型的下标不一样（必须是无符号的）。</p>
+<h2 id="c">C风格字符串</h2>
+<p>C风格的字符串即是字符串字面量，也是一种字符数组，并以空字符结尾（null terminated）。</p>
+<p>p109列举了C语言标准库提供的一组函数，可以操作C风格字符串，他们定义在cstring头文件中。</p>
+<p><strong>c_str函数</strong></p>
+<p>string可使用c_str函数返回其C风格的字符串，如：</p>
+<pre><code>string s(&quot;hello&quot;);
+const char *c_s = s.c_str();
+</code></pre>
+
+<p>无法保证返回的C风格字符串一直有效，因此通常在返回后再把它拷贝到另一个地方。</p>
+<p><strong>使用数组初始化vector对象</strong></p>
+<p>如：</p>
+<pre><code>int a[] = {1, 2, 3};
+vector&lt;int&gt; vec(begin(a), end(a));
+</code></pre>
+
+<h1 id="_8">多维数组</h1>
+<p>多维数组，实际上是数组的数组。</p>
+<p>如：<code>int a[3][4]</code>，可由内而外理解，a是一个含有3个元素的数组，每个元素又是一个含有4个元素的数组。</p>
+<p>对于二维数组，常把第一个维度看作行，第二个维度看作列。</p>
+<p><strong>多维数组的初始化</strong></p>
+<p>如：</p>
+<pre><code>int a[3][4] = {
+    {0, 1, 2, 3},
+    {4, 5, 6, 7},
+    {8, 9, 10, 11}
+};
+</code></pre>
+
+<p>列表初始化中未列出的元素执行值初始化。</p>
+<p><strong>多维数组的下标引用</strong></p>
+<p>如果表达式含有的下标运算符数量和维度一样多，该表达式的结果将是给定类型的元素；否则表达式的结果是内层数组。</p>
+<pre><code>int a[3][4] = {};
+int (&amp;row)[4] = a[2]; // row绑定到a的第二个数组上
+</code></pre>
+
+<p><strong>使用范围for语句处理多维数组</strong></p>
+<p>如果是外层循环，控制变量将得到数组类型。</p>
+<p>除了最内层的循环外，其他所有循环控制变量都应该是引用类型（因为若不是引用，编译器会认为外层控制变量是指针类型，而无法遍历一个指针）。</p>
+<p><strong>指针和多维数组</strong></p>
+<p>当程序使用多维数组名字时，也会自动将其转换成指向数组首元素的指针。</p>
+<p>多维数组的首元素是一个内层数组，故使用多维数组名将得到一个指向内层数组的指针。</p>
+<p>即：</p>
+<pre><code>int a[2][3] = {};
+int (*p)[3] = a;
+</code></pre>
+
+<p>还可以使用auto或者begin来得到指向内层数组的指针。</p>
+<p><strong>类型别名简化多维数组的指针</strong></p>
+<p>可以这样定义一个数组类型：</p>
+<pre><code>using int_arr = int[4]; // C++11
+typedef int int_arr[4];
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
