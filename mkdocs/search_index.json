@@ -1,17 +1,17 @@
 {
     "docs": [
         {
-            "location": "/笔记信息/", 
+            "location": "/", 
             "text": "资料\n\n\n书名：C++ Primer 第5版\n\n\n作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie\n\n\n学习代码笔记：https://github.com/demon90s/CppPrimer\n\n\ncpp reference: http://zh.cppreference.com/w/cpp\n\n\n学习方法\n\n\n读CppPrimer 5。\n\n\n手打其中的代码案例，做其中的练习，将代码上传到GitHub保存。\n\n\n写每一章的术语表。\n\n\n重头读一遍，写下笔记。", 
             "title": "Home"
         }, 
         {
-            "location": "/笔记信息/#_1", 
+            "location": "/#_1", 
             "text": "书名：C++ Primer 第5版  作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie  学习代码笔记：https://github.com/demon90s/CppPrimer  cpp reference: http://zh.cppreference.com/w/cpp", 
             "title": "资料"
         }, 
         {
-            "location": "/笔记信息/#_2", 
+            "location": "/#_2", 
             "text": "读CppPrimer 5。  手打其中的代码案例，做其中的练习，将代码上传到GitHub保存。  写每一章的术语表。  重头读一遍，写下笔记。", 
             "title": "学习方法"
         }, 
