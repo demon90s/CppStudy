@@ -48,6 +48,7 @@ commit() {
 
 main() {
 	clear_build
+	git rm -rf site
 
 	sh ./gen_readme.sh
 
