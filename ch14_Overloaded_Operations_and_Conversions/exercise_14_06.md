@@ -2,4 +2,4 @@
 
 ---
 
-见[Sales_data](./ch07_Classes/example_Sales_data/Sales_data.h)
+见[Sales_data](../ch07_Classes/example_Sales_data/Sales_data.h)
