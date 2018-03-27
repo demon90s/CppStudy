@@ -48,6 +48,9 @@ std::ostream& operator<<(std::ostream &os, const Book &rhs)
 std::istream& operator>>(std::istream &is, Book &rhs)
 {
 	is >> rhs.m_no >> rhs.m_name >> rhs.m_auther >> rhs.m_pubdate;
+	if (!is)
+		rhs = Book();
+
 	return is;
 }
 
