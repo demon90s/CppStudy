@@ -9,6 +9,7 @@
 class StrBlob {
 	friend bool operator==(const StrBlob &rhs, const StrBlob &lhs);
 	friend bool operator!=(const StrBlob &rhs, const StrBlob &lhs);
+	friend bool operator<(const StrBlob &rhs, const StrBlob &lhs);
 
 public:
 	typedef std::vector<std::string>::size_type size_type;

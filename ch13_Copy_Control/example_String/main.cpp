@@ -76,12 +76,16 @@ void func5()
 	String s1 = "Hello";
 	String s2 = "Hillo";
 	String s3 = "Hillo";
+	String s4 = "Him";
 
 	if (s1 != s2)
 		cout << "s1 != s2" << endl;
 
 	if (s2 == s3)
 		cout << "s2 == s3" << endl;
+
+	if (s3 < s4)
+		cout << "s3 < s4" << endl;
 }
 
 int main()

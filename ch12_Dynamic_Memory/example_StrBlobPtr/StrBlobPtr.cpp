@@ -12,3 +12,8 @@ bool operator!=(const StrBlobPtr &rhs, const StrBlobPtr &lhs)
 {
 	return !(rhs == lhs);
 }
+
+bool operator<(const StrBlobPtr &rhs, const StrBlobPtr &lhs)
+{
+	return rhs.curr < lhs.curr;
+}

@@ -117,6 +117,27 @@ String& String::operator=(const char *str)
 	return *this;
 }
 
+bool operator<(const String &lhs, const String &rhs)
+{
+	auto lhs_beg = lhs.elements;
+	auto rhs_beg = rhs.elements;
+
+	while (lhs_beg != lhs.first_free && rhs_beg != rhs.first_free) {
+		if (*lhs_beg > *rhs_beg)
+			return false;
+		else if (*lhs_beg < *rhs_beg)
+			return true;
+
+		++lhs_beg;
+		++rhs_beg;
+	}
+
+	if (lhs_beg == lhs.first_free && rhs_beg <= rhs.first_free)
+		return true;
+
+	return false;
+}
+
 void String::push_back(const char &s)
 {
 	chk_n_alloc(); // 确保有空间容纳新元素

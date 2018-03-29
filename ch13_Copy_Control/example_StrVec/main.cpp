@@ -52,12 +52,16 @@ void func3()
 	StrVec v1{"a", "b", "Hi"};
 	StrVec v2{"a", "n", "Hi"};
 	StrVec v3{"a", "n", "Hi"};
+	StrVec v4{"a", "n", "Hi", "Hello"};
 
 	if (v1 != v2)
 		cout << "v1 != v2" << endl;
 
 	if (v2 == v3)
 		cout << "v2 == v3" << endl;
+
+	if (v3 < v4)
+		cout << "v3 < v4" << endl;
 }
 
 int main()
