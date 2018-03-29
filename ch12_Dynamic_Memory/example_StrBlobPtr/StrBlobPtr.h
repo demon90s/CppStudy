@@ -9,6 +9,9 @@ class StrBlob;
 
 class StrBlobPtr
 {
+	friend bool operator==(const StrBlobPtr &rhs, const StrBlobPtr &lhs);
+	friend bool operator!=(const StrBlobPtr &rhs, const StrBlobPtr &lhs);
+
 public:
 	StrBlobPtr() : curr(0) {}
 	StrBlobPtr(StrBlob &a, size_t sz = 0); 

@@ -69,6 +69,30 @@ String &String::operator=(String &&rhs) noexcept
 	return *this;
 }
 
+bool operator==(const String &lhs, const String &rhs)
+{
+	auto lhs_beg = lhs.elements;
+	auto rhs_beg = rhs.elements;
+
+	while (lhs_beg != lhs.first_free && rhs_beg != rhs.first_free) {
+		if (*lhs_beg != *rhs_beg)
+			return false;
+
+		++lhs_beg;
+		++rhs_beg;
+	}
+
+	if (lhs_beg == lhs.first_free && rhs_beg == rhs.first_free)
+		return true;
+
+	return false;
+}
+
+bool operator!=(const String &lhs, const String &rhs)
+{
+	return !(lhs == rhs);
+}
+
 String &String::operator=(const String &rhs)
 {
 	// 调用alloc_n_copy分配内存，大小与rhs中元素占用空间一样多

@@ -6,6 +6,8 @@
 class String
 {
 	friend std::ostream& operator<<(std::ostream &os, String &rhs);
+	friend bool operator==(const String &lhs, const String &rhs);
+	friend bool operator!=(const String &lhs, const String &rhs);
 public:
 	String() :	// allocator成员进行默认初始化
 		elements(nullptr), first_free(nullptr), cap(nullptr) {}

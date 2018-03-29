@@ -18,6 +18,8 @@ class Sales_data {
 	friend std::istream& operator>>(std::istream &is, Sales_data &sd);
 	friend std::ostream& operator<<(std::ostream &os, const Sales_data &sd);
 	friend Sales_data operator+(const Sales_data &sd1, const Sales_data &sd2);
+	friend bool operator==(const Sales_data &lhs, const Sales_data &rhs);
+	friend bool operator!=(const Sales_data &lhs, const Sales_data &rhs);
 
 public:
 	// 构造函数
@@ -120,6 +122,18 @@ Sales_data& Sales_data::operator+=(const Sales_data &rhs)
 {
 	combine(rhs);
 	return *this;
+}
+
+bool operator==(const Sales_data &lhs, const Sales_data &rhs)
+{
+	return lhs.isbn() == rhs.isbn() &&
+	       lhs.units_sold == rhs.units_sold &&
+		   lhs.revenue == rhs.revenue;
+}
+
+bool operator!=(const Sales_data &lhs, const Sales_data &rhs)
+{
+	return !(lhs == rhs);
 }
 
 #endif // SALES_DATA_H

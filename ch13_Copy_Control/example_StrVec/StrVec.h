@@ -5,6 +5,9 @@
 
 class StrVec
 {
+	friend bool operator==(const StrVec &lhs, const StrVec &rhs);
+	friend bool operator!=(const StrVec &lhs, const StrVec &rhs);
+
 public:
 	StrVec() :	// allocator成员进行默认初始化
 		elements(nullptr), first_free(nullptr), cap(nullptr) {}

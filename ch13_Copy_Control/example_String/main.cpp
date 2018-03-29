@@ -71,12 +71,26 @@ void func4()
 
 }
 
+void func5()
+{
+	String s1 = "Hello";
+	String s2 = "Hillo";
+	String s3 = "Hillo";
+
+	if (s1 != s2)
+		cout << "s1 != s2" << endl;
+
+	if (s2 == s3)
+		cout << "s2 == s3" << endl;
+}
+
 int main()
 {
 	//func1();
 	//func2();
 	//func3();
-	func4();
+	//func4();
+	func5();
 
 	return 0;
 }

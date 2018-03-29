@@ -47,10 +47,24 @@ void func2()
 	cout << "v.capacity(): " << v.capacity() << endl;
 }
 
+void func3()
+{
+	StrVec v1{"a", "b", "Hi"};
+	StrVec v2{"a", "n", "Hi"};
+	StrVec v3{"a", "n", "Hi"};
+
+	if (v1 != v2)
+		cout << "v1 != v2" << endl;
+
+	if (v2 == v3)
+		cout << "v2 == v3" << endl;
+}
+
 int main()
 {
 	//func1();
-	func2();
+	//func2();
+	func3();
 
 	return 0;
 }

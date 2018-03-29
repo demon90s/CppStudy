@@ -46,6 +46,30 @@ StrVec& StrVec::operator=(StrVec &&rhs) noexcept
 	return *this;
 }
 
+bool operator==(const StrVec &lhs, const StrVec &rhs)
+{
+	auto lhs_beg = lhs.elements;
+	auto rhs_beg = rhs.elements;
+
+	while (lhs_beg != lhs.first_free && rhs_beg != rhs.first_free) {
+		if (*lhs_beg != *rhs_beg)
+			return false;
+
+		++lhs_beg;
+		++rhs_beg;
+	}
+
+	if (lhs_beg == lhs.first_free && rhs_beg == rhs.first_free)
+		return true;
+
+	return false;
+}
+
+bool operator!=(const StrVec &lhs, const StrVec &rhs)
+{
+	return !(lhs == rhs);
+}
+
 StrVec::~StrVec()
 {
 	free();
