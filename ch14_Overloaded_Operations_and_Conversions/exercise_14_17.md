@@ -4,4 +4,4 @@
 
 可以实现一个。见：
 
-[Book](./ch07_Classes/exercise_7_40.cpp)
+[Book](../ch07_Classes/exercise_7_40.cpp)
