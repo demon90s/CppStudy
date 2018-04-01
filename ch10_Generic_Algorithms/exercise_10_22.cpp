@@ -8,9 +8,9 @@
 using namespace std;
 using namespace std::placeholders;
 
-bool func(const string &w, int n)
+bool func(const string &w, size_t n)
 {
-	return w.size() > 6;
+	return w.size() > n;
 }
 
 int main()
