@@ -21,6 +21,8 @@ public:
 	~StrVec();									// 析构函数
 
 	StrVec& operator=(std::initializer_list<std::string> il);
+	std::string& operator[](std::size_t n) { return elements[n]; }
+	const std::string& operator[](std::size_t n) const { return elements[n]; }
 
 	void push_back(const std::string&);			// 拷贝元素
 	size_t size() const { return first_free - elements; }

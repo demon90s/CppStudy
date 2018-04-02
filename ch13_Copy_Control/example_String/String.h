@@ -16,6 +16,8 @@ public:
 	String(const std::initializer_list<char>&);
 	String(const char*);
 	String& operator=(const char*);
+	char& operator[](size_t n) { return elements[n]; }
+	const char& operator[](size_t n) const { return elements[n]; }
 
 	String(const String&);						// 拷贝构造函数
 	String(String&&) noexcept;					// 移动构造函数

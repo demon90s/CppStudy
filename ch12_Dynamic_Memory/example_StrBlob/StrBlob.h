@@ -33,6 +33,7 @@ public:
 	inline std::string& back() const;
 
 	std::string& operator[](size_type i) { return (*data)[i]; } // 省略了check
+	const std::string& operator[](size_type i) const { return (*data)[i]; } // 省略了check
 
 private:
 	std::shared_ptr<std::vector<std::string>> data;
