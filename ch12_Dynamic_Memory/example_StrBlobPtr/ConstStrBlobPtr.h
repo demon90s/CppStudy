@@ -16,6 +16,9 @@ public:
 	const std::string &deref() const;
 	ConstStrBlobPtr &incr(); // 前缀递增
 
+	const std::string& operator*() const;
+	const std::string* operator->() const;
+
 private:
 	// 若检查成功，check返回一个指向vector的shared_ptr
 	std::shared_ptr<std::vector<std::string>>
@@ -56,6 +59,17 @@ inline ConstStrBlobPtr & ConstStrBlobPtr::incr()
 	check(curr, "increment past end of ConstStrBlobPtr");
 	++curr;
 	return *this;
+}
+
+inline const std::string& ConstStrBlobPtr::operator*() const
+{
+	auto p = check(curr, "deference past end");
+	return (*p)[curr];
+}
+
+inline const std::string* ConstStrBlobPtr::operator->() const
+{
+	return & operator*();
 }
 
 #endif

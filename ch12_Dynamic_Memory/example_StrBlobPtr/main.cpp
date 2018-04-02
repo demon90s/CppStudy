@@ -6,7 +6,17 @@
 
 using namespace std;
 
+void func1()
+{
+	StrBlob a1 = {"hi", "bye", "now"};
+	StrBlobPtr p(a1);
+	*p = "okay";
+	cout << p->size() << endl; // 4，okey长度是4
+}
+
 int main()
 {
+	func1();
+
 	return 0;
 }
