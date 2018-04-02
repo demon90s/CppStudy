@@ -4,10 +4,10 @@
 
 见：
 
-[StrBlob](../ch12_Dynamic_Memory/example_StrBlob/StrBlob.cpp)
+[StrBlob](../ch12_Dynamic_Memory/example_StrBlob/)
 
-[StrBlobPtr](../ch12_Dynamic_Memory/example_StrBlobPtr/StrBlobPtr.cpp)
+[StrBlobPtr](../ch12_Dynamic_Memory/example_StrBlobPtr/)
 
-[StrVec](../ch13_Copy_Control/example_StrVec/StrVec.cpp)
+[StrVec](../ch13_Copy_Control/example_StrVec/)
 
-[String](../ch13_Copy_Control/example_String/String.cpp)
+[String](../ch13_Copy_Control/example_String/)
