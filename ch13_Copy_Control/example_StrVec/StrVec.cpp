@@ -106,6 +106,16 @@ StrVec &StrVec::operator=(const StrVec &rhs)
 	return *this;
 }
 
+StrVec &StrVec::operator=(initializer_list<string> il)
+{
+	// alloc_n_copy分配内存空间并从给定范围内拷贝元素
+	auto data = alloc_n_copy(il.begin(), il.end());
+	free();					// 销毁对象中的元素并释放内存空间
+	elements = data.first;	// 更新数据成员使其指向新空间
+	first_free = cap = data.second;
+	return *this;
+}
+
 void StrVec::push_back(const string &s)
 {
 	chk_n_alloc(); // 确保有空间容纳新元素

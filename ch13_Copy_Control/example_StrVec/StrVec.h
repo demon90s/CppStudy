@@ -20,6 +20,8 @@ public:
 	StrVec& operator=(StrVec&&) noexcept;		// 移动赋值运算符
 	~StrVec();									// 析构函数
 
+	StrVec& operator=(std::initializer_list<std::string> il);
+
 	void push_back(const std::string&);			// 拷贝元素
 	size_t size() const { return first_free - elements; }
 	size_t capacity() const { return cap - elements; }

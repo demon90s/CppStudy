@@ -29,6 +29,7 @@ public:
 		   bookNo(s), units_sold(n), revenue(p*n) { }
 	Sales_data(std::istream &);
 
+	Sales_data& operator=(const std::string &s);
 	Sales_data& operator+=(const Sales_data &rhs);
 
 	// 其他成员函数
@@ -116,6 +117,12 @@ Sales_data operator+(const Sales_data &sd1, const Sales_data &sd2)
 	Sales_data sum = sd1;
 	sum.combine(sd2);
 	return sum;
+}
+
+Sales_data& Sales_data::operator=(const std::string &s)
+{
+	*this = Sales_data(s);
+	return *this;
 }
 
 Sales_data& Sales_data::operator+=(const Sales_data &rhs)
