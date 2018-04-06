@@ -30,7 +30,7 @@ void print(const int *beg, const int *end)
 
 // 显示传递一个表示数组大小的形参
 // const int ia[]等价于const int* ia
-// size表示数组的大小，将它现实地传给函数用于控制对ia元素的访问
+// size表示数组的大小，将它显式地传给函数用于控制对ia元素的访问
 void print(const int ia[], size_t size)
 {
 	for (size_t i = 0; i != size; ++i) {
