@@ -4,6 +4,6 @@
 
 作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie
 
-学习代码笔记：https://github.com/demon90s/CppPrimer
+[github code](https://github.com/demon90s/CppPrimer)
 
-cpp reference: http://zh.cppreference.com/w/cpp
+[cpp reference](http://zh.cppreference.com/w/cpp)
