@@ -2,6 +2,12 @@ site_name: CppPrimer学习笔记
 
 docs_dir: study_notes
 
+repo_url: https://github.com/demon90s/CppPrimer
+edit_uri: ""
+
+markdown_extensions:
+    - admonition
+
 pages:
   - Home: index.md
   - Chapters: 

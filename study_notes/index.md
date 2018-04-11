@@ -1,9 +1,7 @@
-# 资料
+# <center>资料</center>
 
-书名：C++ Primer 第5版
+---
 
-作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie
+[C++ Primer 第5版](https://book.douban.com/subject/25708312/)
 
-[github code](https://github.com/demon90s/CppPrimer)
-
-[cpp reference](http://zh.cppreference.com/w/cpp)
+[C++参考手册](http://zh.cppreference.com/w/cpp)
