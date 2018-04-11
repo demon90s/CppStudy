@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,20 +164,15 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">动态内存与智能指针</a></li>
-            <li><a href="#shared_ptr">shared_ptr类</a></li>
-            <li><a href="#_2">直接管理内存</a></li>
-            <li><a href="#shared_ptrnew">shared_ptr和new结合使用</a></li>
-            <li><a href="#_3">智能指针和异常</a></li>
-            <li><a href="#unique_ptr">unique_ptr</a></li>
-            <li><a href="#weak_ptr">weak_ptr</a></li>
-        <li class="main "><a href="#_4">动态数组</a></li>
-            <li><a href="#new">new和数组</a></li>
-            <li><a href="#allocator">allocator类</a></li>
+        <li class="main active"><a href="#_1">动态内存</a></li>
+            <li><a href="#_2">动态内存与智能指针</a></li>
+            <li><a href="#_5">动态数组</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h1 id="_1"><center>动态内存</center></h1>
+<hr />
 <p>我们的程序到目前为止只使用过静态内存或栈内存。</p>
 <p>- 静态内存用来保存局部static对象、类static数据成员以及定义在任何函数之外的变量。</p>
 <p>- 栈内存用来保存定义在函数内的非static对象。</p>
@@ -183,7 +181,7 @@
 <p>- static对象在使用之前分配，在程序结束时销毁。</p>
 <p>除了静态内存和栈内存，每个程序还拥有一个内存池，这部分内存被称作自由空间或堆（heap）。程序用堆来存储动态分配（dynamically allocate）的对象。</p>
 <p>动态对象的生存周期由程序来控制，当动态对象不再使用时，我们的代码必须显示地销毁它们。</p>
-<h1 id="_1">动态内存与智能指针</h1>
+<h2 id="_2">动态内存与智能指针</h2>
 <p>C++中，动态内存的管理是通过一对运算符来完成的：</p>
 <p>- new，在动态内存中为对象分配空间并返回一个指向该对象的指针。</p>
 <p>- delete，接受一个动态对象的指针，销毁该对象，并释放与之关联的内存。</p>
@@ -193,7 +191,7 @@
 <p>- unique_ptr则“独占”所指向的对象。</p>
 <p>- 标准库还定义了一个名为weak_ptr的伴随类，它是一种弱引用，指向shared_ptr所管理的对象。</p>
 <p>这些类型定义在memory头文件中。</p>
-<h2 id="shared_ptr">shared_ptr类</h2>
+<h3 id="shared_ptr">shared_ptr类</h3>
 <p>智能指针也是模板，当创建一个智能指针时，必须提供指向的类型：</p>
 <pre><code>shared_ptr&lt;string&gt; p1; // shared_ptr, 可以指向string
 </code></pre>
@@ -229,7 +227,7 @@ auto q(p); // p和q指向相同的对象，此对象有两个引用者
 <p>2. 程序不知道所需对象的准确类型</p>
 <p>3. 程序需要在多个对象间共享数据</p>
 <p>容器类是出于第一种原因而使用动态内存的典型例子，我们将在第15章看到出于第二种原因的例子。本章介绍出于第三种原因的例子。</p>
-<h2 id="_2">直接管理内存</h2>
+<h3 id="_3">直接管理内存</h3>
 <p>C++提供了new运算符分配内存，delete运算符释放new分配的内存。</p>
 <p>相对于智能指针，使用这两个运算符管理内存非常容易出错。</p>
 <p><strong>使用new动态分配和初始化对象</strong></p>
@@ -265,7 +263,7 @@ int *p2 = new (nothrow) int; // 如果分配失败，new返回一个空�
 
 <p>释放一块并非new分配的内存，或者将相同的指针值释放多次，其行为是未定义的。</p>
 <p>更多有关使用原生指针管理动态内存的危险的讨论见书本p409。</p>
-<h2 id="shared_ptrnew">shared_ptr和new结合使用</h2>
+<h3 id="shared_ptrnew">shared_ptr和new结合使用</h3>
 <p>如果不初始化一个智能指针，它就会被初始化为一个空指针。还可以用new返回的指针来初始化智能指针：</p>
 <pre><code>shared_ptr&lt;int&gt; p2(new int(42)); // p2指向一个值为42的int
 </code></pre>
@@ -277,7 +275,7 @@ shared_ptr&lt;int&gt; p2(new int(1024));  // 正确：使用了直接初始
 
 <p>默认情况下，一个用来初始化智能指针的普通指针必须指向动态内存，因为智能指针默认使用delete释放它所关联的对象（可以提供自己的操作来替代delete）。</p>
 <p>更多关于智能指针使用的讨论见p412。</p>
-<h2 id="_3">智能指针和异常</h2>
+<h3 id="_4">智能指针和异常</h3>
 <p>程序需要确保在异常发生后资源能被正确地释放。一个简单的确保资源被释放的方法是使用智能指针：</p>
 <pre><code>void f()
 {
@@ -297,7 +295,7 @@ shared_ptr&lt;int&gt; p2(new int(1024));  // 正确：使用了直接初始
 </code></pre>
 
 <p>如果在new和delete之间发生了异常，且异常未在f中被捕获，则内存就永远不会被释放了。</p>
-<h2 id="unique_ptr">unique_ptr</h2>
+<h3 id="unique_ptr">unique_ptr</h3>
 <p>与shared_ptr不同，某个时刻只能有一个unique_ptr指向一个给定对象。当unique_ptr被销毁时，它所指向的对象也被销毁。</p>
 <p>与shared_ptr不同，没有类似make_shared的标准库函数返回一个unique_ptr。当我们定义一个unique_ptr时，需要将其绑定到一个new返回的指针上。</p>
 <pre><code>unique_ptr&lt;double&gt; p1; // 可以指向一个double的unique_ptr
@@ -306,7 +304,7 @@ unique_ptr&lt;int&gt; p2(new int(42)); // p2指向一个值为42的int
 
 <p>由于一个unique_ptr拥有它指向的对象，因此unique_ptr不支持普通的拷贝或赋值操作。</p>
 <p>更多有关unique_ptr操作的讨论见p418。</p>
-<h2 id="weak_ptr">weak_ptr</h2>
+<h3 id="weak_ptr">weak_ptr</h3>
 <p>weak_ptr是一种不控制所指对象生存期的智能指针，它指向一个shared_ptr管理的对象。将一个weak_ptr绑定到一个shared_ptr不会改变shared_ptr的引用计数。一旦最后一个指向对象的shared_ptr被销毁，对象就会被释放。即使有weak_ptr指向对象，对象还是会被释放。</p>
 <p>当我们创建一个weak_ptr时，要用一个shared_ptr来初始化它：</p>
 <pre><code>auto p = make_shared&lt;int&gt;(42);
@@ -319,12 +317,12 @@ weak_ptr&lt;int&gt; wp(p); // wp若共享p；p的引用计数未改变
 }
 </code></pre>
 
-<h1 id="_4">动态数组</h1>
+<h2 id="_5">动态数组</h2>
 <p>C++语言和标准库提供了两种一次分配一个对象数组的方法：</p>
 <p>- 一种new表达式语法，可以分配并初始化一个对象数组。</p>
 <p>- 标准库中包含一个名为allocator的类，允许我们将分配和初始化分离。使用allocator通常会提供更好的性能和更灵活的内存管理能力。</p>
 <p>【BEST PRACITICES】大多数应用应该使用标准库容器而不是动态分配的数组。使用容器更为简单、更不容易出现内存管理错误并且可能有更好的性能。</p>
-<h2 id="new">new和数组</h2>
+<h3 id="new">new和数组</h3>
 <p>为了让new分配一个对象数组，我们要在类型名之后跟一对方括号，在其中指明要分配的对象的数目：</p>
 <pre><code>// 调用get_size确定分配多少个int
 int *pia = new int[get_size()]; // pia指向第一个int
@@ -361,7 +359,7 @@ up.release(); // 自动用delete[]销毁其指针
 
 <p>【MY NOTE】这里似乎有错误，release方法据p418介绍，是放弃对指针的控制权，返回指针。并不销毁原来指向的对象。另一个事例见：http://zh.cppreference.com/w/cpp/memory/unique_ptr/release</p>
 <p>当unique_ptr销毁时，会自动销毁其指向的对象。</p>
-<h2 id="allocator">allocator类</h2>
+<h3 id="allocator">allocator类</h3>
 <p>new和delete有一些灵活性上的局限：</p>
 <p>- new将内存分配和对象构造组合在了一起。</p>
 <p>- delete将对象析构和内存释放组合在了一起。</p>
@@ -400,8 +398,11 @@ alloc.construct(q++, &quot;hi&quot;); // *q为hi!
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -424,7 +425,47 @@ alloc.construct(q++, &quot;hi&quot;); // *q为hi!
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

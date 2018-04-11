@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,40 +164,29 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">概述</a></li>
-        <li class="main "><a href="#_2">初识泛型算法</a></li>
-            <li><a href="#_3">只读算法</a></li>
-            <li><a href="#_4">写容器元素的算法</a></li>
-            <li><a href="#_5">重排元素的算法</a></li>
-        <li class="main "><a href="#_6">定义操作</a></li>
-            <li><a href="#_7">向算法传递函数</a></li>
-            <li><a href="#lambda">lambda表达式</a></li>
-            <li><a href="#lambda_1">lambda捕获和返回</a></li>
-            <li><a href="#_8">参数绑定</a></li>
-        <li class="main "><a href="#_9">再探迭代器</a></li>
-            <li><a href="#_10">插入迭代器</a></li>
-            <li><a href="#iostream">iostream迭代器</a></li>
-            <li><a href="#_11">反向迭代器</a></li>
-        <li class="main "><a href="#_12">泛型算法结构</a></li>
-            <li><a href="#5">5类迭代器</a></li>
-            <li><a href="#_13">算法的形参模式</a></li>
-            <li><a href="#_14">算法命名规范</a></li>
-        <li class="main "><a href="#_15">特定容器的算法</a></li>
+        <li class="main active"><a href="#_1">泛型算法</a></li>
+            <li><a href="#_2">概述</a></li>
+            <li><a href="#_3">初识泛型算法</a></li>
+            <li><a href="#_7">定义操作</a></li>
+            <li><a href="#_10">再探迭代器</a></li>
+            <li><a href="#_13">泛型算法结构</a></li>
+            <li><a href="#_16">特定容器的算法</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>标准库并未给每个容器都定义成员函数来实现一些特殊的操作，如查找元素、替换或删除元素、重排元素等。</p>
-<p>而是定义了一组泛型算法。它们实现了一些经典算法的公共接口，可以用于不同类型的元素和多种容器类型，包括内置的数组类型。</p>
-<h1 id="_1">概述</h1>
+<h1 id="_1"><center>泛型算法</center></h1>
+<p>标准库并未给每个容器都定义成员函数来实现一些特殊的操作，如查找元素、替换或删除元素、重排元素等。而是定义了一组泛型算法。它们实现了一些经典算法的公共接口，可以用于不同类型的元素和多种容器类型，包括内置的数组类型。</p>
+<hr />
+<h2 id="_2">概述</h2>
 <p>大多数算法定义在头文件algorithm中，头文件numeric中定义了一组数值泛型算法。</p>
 <p>通常，算法并不直接操作容器，而是遍历由两个迭代器指定的一个元素范围来进行操作。</p>
 <p>算法不依赖于容器，但依赖于元素类型的操作。比如，find用元素类型的==运算符完成序列中的元素与给定值的比较。大多数算法提供了一种方法，允许我们使用自定义的操作来代替默认的运算符（即使用谓词）。</p>
-<h1 id="_2">初识泛型算法</h1>
+<h2 id="_3">初识泛型算法</h2>
 <p>附录A按照操作方式列出了所有的算法。</p>
 <p>除了少数例外，标准库算法都对一个范围内的元素进行操作。我们将此元素范围称为“输入范围”。</p>
 <p>理解算法的最基本的方法就是了解它们是否读取元素、改变元素或是重排元素顺序。</p>
-<h2 id="_3">只读算法</h2>
+<h3 id="_4">只读算法</h3>
 <p>一些算法只会读取其输入范围内的元素，而从不改变元素。比如find。</p>
 <p><strong>操作两个序列的算法</strong></p>
 <p>举一个列子：equal算法，它比较两个序列中的元素。此算法接受三个迭代器：前两个表示第一个序列中的元素的范围，第三个表示第二个序列的首元素：</p>
@@ -203,23 +195,23 @@ equal(roster1.cbegin(), roster1.cend(), roster2.cbegin());
 </code></pre>
 
 <p>这样的算法基于一个非常重要的假设：它假定第二个序列至少与第一个序列一样长。</p>
-<h2 id="_4">写容器元素的算法</h2>
-<p>一些算法将新指赋予序列中的元素。当我们使用这类算法时，必须注意确保序列原大小至少不小于我们要求算法写入元素数目（note：如容器大小足够）。</p>
+<h3 id="_5">写容器元素的算法</h3>
+<p>一些算法将新值赋予序列中的元素。当我们使用这类算法时，必须注意确保序列原大小至少不小于我们要求算法写入元素数目（note：如容器大小足够）。</p>
 <p>这样的算法比如fill。</p>
 <p><strong>介绍back_inserter</strong></p>
 <p>一种保证算法有足够元素空间来容纳输出数据的方法是使用<strong>插入迭代器</strong>（insert iterator）。插入迭代器是一种向容器中添加元素的迭代器。当我们通过一个插入迭代器赋值时，一个与赋值号右侧值相等的元素被添加到容器中。</p>
-<h2 id="_5">重排元素的算法</h2>
+<h3 id="_6">重排元素的算法</h3>
 <p>某些算法会重排容器中元素的顺序，比如sort，它利用元素类型的&lt;运算符来实现排序。</p>
-<h1 id="_6">定义操作</h1>
+<h2 id="_7">定义操作</h2>
 <p>很多算法都会比较输入序列中的元素。默认情况下，这类算法使用元素类型的&lt;或==运算符完成比较。标准库为这些算法定义了额外的版本，允许我们提供自己定义的操作来替代默认运算符。</p>
-<h2 id="_7">向算法传递函数</h2>
+<h3 id="_8">向算法传递函数</h3>
 <p>sort接受第三个参数，此参数是一个谓词（predicate）。</p>
 <p><strong>谓词</strong></p>
 <p>谓词是一个可调用的表达式，其调用结果是一个能用作条件的值。标准库算法使用的谓词分为两类：</p>
 <p>- 一元谓词，意味着它们只接受单一参数</p>
 <p>- 二元谓词，意味着它们有两个参数</p>
 <p>接受谓词的算法对输入序列中的元素调用谓词。</p>
-<h2 id="lambda">lambda表达式</h2>
+<h3 id="lambda">lambda表达式</h3>
 <p>我们传递给算法的谓词必须严格接受一个或两个参数，但是有时我们希望进行的操作需要更多的参数，超出了算法对谓词的限制。</p>
 <p><strong>介绍lambda</strong></p>
 <p>我们可以向一个算法传递任何类别的可调用对象，对于一个对象或一个表达式，如果可以对其使用可调用运算符，则称它为可调用的。</p>
@@ -233,7 +225,7 @@ equal(roster1.cbegin(), roster1.cend(), roster2.cbegin());
 <pre><code>auto func = [](){ return 42; };
 </code></pre>
 
-<h2 id="lambda_1">lambda捕获和返回</h2>
+<h3 id="lambda_1">lambda捕获和返回</h3>
 <p>当定义一个lambda时，编译器生成一个与lambda对应的新的（未命名的）类类型。当向一个函数传递一个lambda时，同时定义了一个新类型和该类型的一个对象。类似地，当使用auto定义一个用lambda初始化的变量时，定义了一个从lambda生成的类型的对象。</p>
 <p>默认情况下，从lambda生成的类都包含一个对应该lambda所捕获的变量的数据成员。类似任何普通类的数据成员，lambda的数据成员也在lambda对象创建时被初始化。</p>
 <p>变量捕获的方式可以是值或引用。值捕获是变量的拷贝，引用捕获是变量的引用。</p>
@@ -249,7 +241,7 @@ wc = find_if(words.begin(), words.end(),
 
 <p>详见lambda捕获列表，p352。</p>
 <p><strong>可变lambda</strong></p>
-<p>默认情况下，对于一个值拷贝的变量，lambda不会改变其值。如果希望改变，必须在参数列表首加上关键字mutable。</p>
+<p>默认情况下，对于一个值拷贝的变量，lambda不会改变其值。如果希望改变，必须在参数列表后加上关键字mutable。</p>
 <pre><code>void fcn3()
 {
     size_t v1 = 42;
@@ -260,7 +252,7 @@ wc = find_if(words.begin(), words.end(),
 }
 </code></pre>
 
-<h2 id="_8">参数绑定</h2>
+<h3 id="_9">参数绑定</h3>
 <p>对于那种只在一两个地方使用的简单操作，lambda表达式是最有用的。如果需要在很多地方使用相同的操作，或者一个操作需要很多语句完成，通常应该定义一个函数。</p>
 <p>如果lambda的捕获列表为空，通常可以用函数来代替它。但如果捕获列表不为空就不能直接代替了。</p>
 <p><strong>标准库bind函数</strong></p>
@@ -281,13 +273,13 @@ wc = find_if(words.begin(), words.end(),
 </code></pre>
 
 <p>这使得placeholders定义的所有名字都可用。</p>
-<h1 id="_9">再探迭代器</h1>
+<h2 id="_10">再探迭代器</h2>
 <p>除了每个容器的迭代器，标准库在头文件iterator中还定义了额外几种迭代器。</p>
 <p>- 插入迭代器：这些迭代器被绑定到一个容器上，可以用来向容器插入元素。</p>
 <p>- 流迭代器：这些迭代器被绑定到输入或输出流上，可以来遍历所关联的IO流。</p>
 <p>- 反向迭代器：这些迭代器向后而不是向前移动。</p>
 <p>- 移动迭代器：不拷贝其中的元素，而是移动它们。将在13.6.2节（p480页）介绍。</p>
-<h2 id="_10">插入迭代器</h2>
+<h3 id="_11">插入迭代器</h3>
 <p>插入器是一种迭代器适配器，它接受一个容器，生成一个迭代器，能实现向给定容器添加元素。当我们通过一个插入迭代器进行赋值时，该迭代器调用容器操作来向给定容器的指定位置插入一个元素。</p>
 <pre><code>it = t; // 在it指定的当前位置插入值t。
 </code></pre>
@@ -296,14 +288,14 @@ wc = find_if(words.begin(), words.end(),
 <p>- back_inserter，创建一个使用push_back的迭代器。</p>
 <p>- front_inserter，创建一个使用push_front的迭代器。</p>
 <p>- inserter，创建一个使用insert的迭代器。此函数接受第二个参数，这个参数必须是一个指向给定容器的迭代器。元素将被插入到给定迭代器所表示的元素之前。</p>
-<h2 id="iostream">iostream迭代器</h2>
+<h3 id="iostream">iostream迭代器</h3>
 <p>istream_iterator读取输入流，ostream_iterator向一个输出流写数据。这些迭代器将它们对应的流当作一个特定类型的元素序列来处理。</p>
 <p>通过使用流迭代器，我们可以使用泛型算法从流对象读取数据以及向其写入数据。</p>
 <p>详细操作见p359。</p>
-<h2 id="_11">反向迭代器</h2>
+<h3 id="_12">反向迭代器</h3>
 <p>反向迭代器就是在容器中从尾元素向首元素反向移动的迭代器。对于反向迭代器，递增（以及递减）操作的含义会颠倒过来。</p>
 <p>可以通过rbegin, rend, crbegin, crend成员函数来获得反向迭代器。这些成员函数返回指向容器尾元素和首元素之前一个位置的迭代器。</p>
-<h1 id="_12">泛型算法结构</h1>
+<h2 id="_13">泛型算法结构</h2>
 <p>任何算法的最基本的特性是它要求其迭代器提供哪些操作。算法所要求的迭代器操作可以分为5个迭代器类别。</p>
 <table>
 <thead>
@@ -335,11 +327,11 @@ wc = find_if(words.begin(), words.end(),
 </tr>
 </tbody>
 </table>
-<h2 id="5">5类迭代器</h2>
+<h3 id="5">5类迭代器</h3>
 <p>类似容器，迭代器也定义了一组公共操作。一些操作所有迭代器都支持，另一些只有特定类别的迭代器才支持。</p>
 <p>如ostream_iterator只支持递增、解引用和赋值。vector、string、deque的迭代器除了这些操作，还支持递减、关系和算术运算。</p>
 <p>除了输出迭代器之外，一个高层类别的迭代器支持低层类别迭代器的所有操作。</p>
-<h2 id="_13">算法的形参模式</h2>
+<h3 id="_14">算法的形参模式</h3>
 <p>大多数算法具有如下4种形式之一：</p>
 <pre><code>alg(beg, end, other args);
 alg(beg, end, dest, other args);
@@ -354,7 +346,7 @@ alg(beg, end, beg2, end2, other args);
 <p><strong>接受第二个输入序列的算法</strong></p>
 <p>接受beg2或beg2和end2的算法用这些迭代器表示第二个输入范围。</p>
 <p>接受单独beg2的算法假定从beg2开始的序列与beg和end所表示的范围至少一样大。</p>
-<h2 id="_14">算法命名规范</h2>
+<h3 id="_15">算法命名规范</h3>
 <p>除了参数规范，算法还遵循一套命名和重载规范。</p>
 <p><strong>一些算法使用重载形式传递一个谓词</strong></p>
 <p>函数的一个版本用元素类型的运算符来比较元素；另一个版本接受一个额外的谓词参数，来代替&lt;或==：</p>
@@ -374,7 +366,7 @@ find_if(beg, end, pred);
 reverse_copy(beg, end, dest);
 </code></pre>
 
-<h1 id="_15">特定容器的算法</h1>
+<h2 id="_16">特定容器的算法</h2>
 <p>链表类型list定义了几个成员函数形式的算法。通用版本的sort要求随机访问迭代器，因此不能用于list。</p>
 <p>链表类型定义的其他算法的通用版本可以用于链表，但代价太高。这些算法需要交换输入序列中的元素。一个链表可以通过改变元素间的链接而不是真的交换它们的值来快速“交换”元素。因此，这些链表版本的算法的性能比对应的通用版本好得多。</p>
 <p>这些算法见p369。</p></div>
@@ -385,8 +377,11 @@ reverse_copy(beg, end, dest);
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -409,7 +404,47 @@ reverse_copy(beg, end, dest);
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

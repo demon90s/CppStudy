@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,29 +164,20 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">简单语句</a></li>
-        <li class="main "><a href="#_2">语句作用域</a></li>
-        <li class="main "><a href="#_3">条件语句</a></li>
-            <li><a href="#if">if语句</a></li>
-            <li><a href="#switch">switch语句</a></li>
-        <li class="main "><a href="#_4">迭代语句</a></li>
-            <li><a href="#while">while语句</a></li>
-            <li><a href="#for">传统的for语句</a></li>
-            <li><a href="#for_1">范围for语句</a></li>
-            <li><a href="#do-while">do while语句</a></li>
-        <li class="main "><a href="#_5">跳转语句</a></li>
-            <li><a href="#break">break语句</a></li>
-            <li><a href="#continue">continue语句</a></li>
-            <li><a href="#goto">goto语句</a></li>
-        <li class="main "><a href="#try">try语句块和异常处理</a></li>
-            <li><a href="#throw">throw表达式</a></li>
-            <li><a href="#try_1">try语句块</a></li>
-            <li><a href="#_6">标准异常</a></li>
+        <li class="main active"><a href="#_1">语句</a></li>
+            <li><a href="#_2">简单语句</a></li>
+            <li><a href="#_3">语句作用域</a></li>
+            <li><a href="#_4">条件语句</a></li>
+            <li><a href="#_5">迭代语句</a></li>
+            <li><a href="#_6">跳转语句</a></li>
+            <li><a href="#try">try语句块和异常处理</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">简单语句</h1>
+<h1 id="_1"><center>语句</center></h1>
+<hr />
+<h2 id="_2">简单语句</h2>
 <p>C++语言中的大多数语句都以分号结束，一个表达式，比如ival+5，末尾加上分号就变成了<strong>表达式语句</strong>(expression statement)，表达式语句的作用是执行表达式并丢弃掉求值结果：</p>
 <pre><code>ival + 5;    // 无意义的表达式语句
 cout &lt;&lt; ival;// 有意义的表达式语句
@@ -203,7 +197,7 @@ cout &lt;&lt; ival;// 有意义的表达式语句
 {}  // 空块
 </code></pre>
 
-<h1 id="_2">语句作用域</h1>
+<h2 id="_3">语句作用域</h2>
 <p>可以在if、switch、while和for语句的控制结构内定义变量。定义在控制结构当中的变量只在相应语句的内部可见，一旦语句结束，变量也就超出其作用范围了：</p>
 <pre><code>while (int i = get_num()) // 每次迭代时创建并初始化
     cout &lt;&lt; i &lt;&lt; endl;
@@ -213,14 +207,14 @@ i = 0;    // 错误，在循环外部无法访问
 <blockquote>
 <p>my note: 如上述例子的写法，似乎没有什么实际意义。</p>
 </blockquote>
-<h1 id="_3">条件语句</h1>
+<h2 id="_4">条件语句</h2>
 <p>C++语言提供了两种按条件执行的语句。一种是if语句，它根据条件决定控制流；另一种是switch语句，它计算一个整型表达式的值，然后根据这个值从几条执行路径中选择一条。</p>
-<h2 id="if">if语句</h2>
+<h3 id="if">if语句</h3>
 <p>if语句的作用是：判断一个指定的条件是否为真，根据判断结果决定是否执行另外一条语句。</p>
 <blockquote>
 <p>my note: 这里讲解的语法自己已经很熟悉了，故不做更多笔记。</p>
 </blockquote>
-<h2 id="switch">switch语句</h2>
+<h3 id="switch">switch语句</h3>
 <p>switch语句提供了一条便利的途径使得我们能够在若干固定选项中做出选择。</p>
 <hr />
 <p><strong>my note</strong></p>
@@ -238,9 +232,9 @@ i = 0;    // 错误，在循环外部无法访问
 <p>my note: 要记住的是，C++语言规定，不允许跨过变量的初始化语句直接跳转到该变量作用域内的另一个位置。基于此，在case分支后面定义并初始化一个变量很可能是不合法的，因为此分支可能被跳过，而另一个分支却访问了此变量。</p>
 </blockquote>
 <hr />
-<h1 id="_4">迭代语句</h1>
+<h2 id="_5">迭代语句</h2>
 <p>迭代语句通常称之为循环，它重复执行操作直到满足某个条件才停下来。while和for语句在执行循环体之前检查条件，do while语句先执行循环体，然后再检查条件。</p>
-<h2 id="while">while语句</h2>
+<h3 id="while">while语句</h3>
 <p>语法格式是：</p>
 <p>while (condition)
     statement</p>
@@ -248,14 +242,14 @@ i = 0;    // 错误，在循环外部无法访问
 <p>while的条件部分可以是一个表达式或者是一个带初始化的变量声明。</p>
 <p><strong>使用while循环</strong></p>
 <p>当不确定到底要迭代多少次时，使用while循环比较合适。还有一种情况也应该使用while循环，这就是我们想在循环结束后访问循环控制变量。</p>
-<h2 id="for">传统的for语句</h2>
+<h3 id="for">传统的for语句</h3>
 <p>for语句的语法形式是</p>
 <p>for (init-statement: condition; expression)
     statement</p>
 <blockquote>
 <p>my note: 传统for语句我已经比较熟悉了，故不做更多笔记。</p>
 </blockquote>
-<h2 id="for_1">范围for语句</h2>
+<h3 id="for_1">范围for语句</h3>
 <p>C++11新标准引入了一种更简单的for语句，这种语句可以遍历容器或其他序列的所有元素。<strong>范围for语句</strong>（range for statement）的语法形式是：</p>
 <p>for (declaration : expression)
     statement</p>
@@ -263,7 +257,7 @@ i = 0;    // 错误，在循环外部无法访问
 <p>declaration定义一个变量，序列中的每个元素都能转换成该变量的类型。</p>
 <p>每次迭代都会重新定义循环控制变量，并将其初始化成序列中的下一个值，之后才会执行statement。</p>
 <p>在范围for语句中，预存了end()的值。一旦在序列中添加（删除）元素，end函数的值就可能变得无效了。因此不能通过范围for语句增加vector对象的元素。</p>
-<h2 id="do-while">do while语句</h2>
+<h3 id="do-while">do while语句</h3>
 <p>do while语句和while语句非常相似，唯一的区别是，do while语句先执行循环体后检查条件。不管条件的值如何，我们都至少会执行一次循环。do while语句的语法形式如下：</p>
 <pre><code>do
     statement
@@ -274,13 +268,13 @@ while (condition);
 <blockquote>
 <p>my note: 如果在condition中定义变量，是没有意义的，因为statement无法访问它，它在do while循环的外面也无法访问。</p>
 </blockquote>
-<h1 id="_5">跳转语句</h1>
+<h2 id="_6">跳转语句</h2>
 <p>跳转语句中断当前的执行过程。C++语言提供了4种跳转语句：break, continue, goto和return。本章介绍前三种，return在第六章介绍（p199页）。</p>
-<h2 id="break">break语句</h2>
+<h3 id="break">break语句</h3>
 <p>break语句负责终止离它最近的while, do while, for或switch语句，并从这些语句之后的第一条语句开始执行。</p>
-<h2 id="continue">continue语句</h2>
+<h3 id="continue">continue语句</h3>
 <p>continue语句终止最近的循环中的当前迭代并立即开始下一次迭代。continue语句只能出现在for, while和do while循环的内部。</p>
-<h2 id="goto">goto语句</h2>
+<h3 id="goto">goto语句</h3>
 <p>goto语句（goto statement）的作用是从goto语句无条件跳转到同一函数内的另一条语句。</p>
 <blockquote>
 <p>my note: 书上建议不要使用goto语句。我认为它应该有其合适的应用场景，只不过对于初学者并不需要。</p>
@@ -312,7 +306,7 @@ begin:
         goto begin;
 </code></pre>
 
-<h1 id="try">try语句块和异常处理</h1>
+<h2 id="try">try语句块和异常处理</h2>
 <p>异常是指存在于运行时的反常行为，这些行为超出了函数正常功能的范围。</p>
 <p>当程序的某部分检测到一个它无法处理的问题时，需要用到异常处理。此时，检测出问题的部分应该发出某种信号以表明程序遇到了故障，无法继续下去了，而信号的发出方无须知道故障将在何处得到解决。</p>
 <p>如果程序中含有可能引发异常的代码，那么通常也会有专门的代码处理问题。</p>
@@ -323,7 +317,7 @@ begin:
 <blockquote>
 <p>my note: 编写异常安全的代码非常困难，关于异常安全的概念见书本p175。另外，本书中会介绍一些比较常规的提升异常安全性的技术，但不会详细介绍编写异常处理的代码。</p>
 </blockquote>
-<h2 id="throw">throw表达式</h2>
+<h3 id="throw">throw表达式</h3>
 <p>抛出异常的一个例子是：</p>
 <pre><code>throw runtime_error(&quot;Data must refer to same ISBN&quot;);
 </code></pre>
@@ -332,7 +326,7 @@ begin:
 <blockquote>
 <p>my note: 书本上有例子的详细解读，见p173。</p>
 </blockquote>
-<h2 id="try_1">try语句块</h2>
+<h3 id="try_1">try语句块</h3>
 <p>try语句块的通用语法形式是：</p>
 <pre><code>try {
     program-statements
@@ -363,7 +357,7 @@ begin:
 <p><strong>函数在寻找处理代码的过程中退出</strong></p>
 <p>当异常被抛出时，首先搜索抛出该异常的函数。如果没找到匹配的catch子句，终止该函数，并在调用该函数的函数中继续寻找。如果还是没找到匹配的catch子句，这个新的函数也被终止，继续搜索调用它的函数。以此类推，直到找到适当类型的catch子句为止。</p>
 <p>如果最终还是没能找到，程序转到名为terminate的标准库函数。该函数的行为与系统有关，一般情况下，执行该函数将导致程序非正常退出。</p>
-<h2 id="_6">标准异常</h2>
+<h3 id="_7">标准异常</h3>
 <p>C++标准库定义了一组类，用于报告标准库函数遇到的问题。这些异常类也可以用在用户编写的程序中。这些异常类见书本p176以及下表。</p>
 <p><img alt="" src="../index_files/1508725854336_u6807_u51C6_u5F02_u5E38_u7C7B.png" /></p>
 <p>异常类型只定义了一个名为what的成员函数，该函数没有任何参数，返回值是一个指向C风格字符串的异常说明。</p>
@@ -375,8 +369,11 @@ begin:
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -399,7 +396,47 @@ begin:
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

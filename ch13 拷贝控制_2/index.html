@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,33 +164,18 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">拷贝控制和资源管理</a></li>
-            <li><a href="#_2">行为像值的类</a></li>
-            <li><a href="#_3">定义行为像指针的类</a></li>
-        <li class="main "><a href="#_4">交换操作</a></li>
-        <li class="main "><a href="#_5">对象移动</a></li>
-            <li><a href="#_6">右值引用</a></li>
-            <li><a href="#_7">移动构造函数和移动赋值运算符</a></li>
+        <li class="main active"><a href="#2">拷贝控制2</a></li>
+            <li><a href="#_1">拷贝控制和资源管理</a></li>
+            <li><a href="#_4">交换操作</a></li>
+            <li><a href="#_5">对象移动</a></li>
+            <li><a href="#_8">右值引用和成员函数</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<div class="toc">
-<ul>
-<li><a href="#_1">拷贝控制和资源管理</a><ul>
-<li><a href="#_2">行为像值的类</a></li>
-<li><a href="#_3">定义行为像指针的类</a></li>
-</ul>
-</li>
-<li><a href="#_4">交换操作</a></li>
-<li><a href="#_5">对象移动</a><ul>
-<li><a href="#_6">右值引用</a></li>
-<li><a href="#_7">移动构造函数和移动赋值运算符</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<h1 id="_1">拷贝控制和资源管理</h1>
+<h1 id="2"><center>拷贝控制2</center></h1>
+<hr />
+<h2 id="_1">拷贝控制和资源管理</h2>
 <p>通常，管理类外资源的类必须定义拷贝控制成员。这种类需要通过析构函数来释放对象所分配的资源。一旦一个类需要析构函数，那么它几乎肯定也需要一个拷贝构造函数和一个拷贝赋值运算符。</p>
 <p>为了定义这些成员，必须先确定类对象的拷贝语义。一般有两种选择：可以定义拷贝操作，使类的行为看起来像一个值或者像一个指针。</p>
 <p>类的行为像一个值，意味着它应该有自己的状态。当拷贝一个对象时，副本和原对象是完全独立的。改变副本不会影响原对象，反之亦然。</p>
@@ -203,7 +191,7 @@ private:
 };
 </code></pre>
 
-<h2 id="_2">行为像值的类</h2>
+<h3 id="_2">行为像值的类</h3>
 <p>对于类管理的资源，每个对象都应该拥有一份自己的拷贝。</p>
 <p>为了实现类值的行为，HasPtr需要：</p>
 <p>- 定义一个拷贝构造函数，完成string的拷贝，而不是拷贝指针</p>
@@ -212,7 +200,7 @@ private:
 <p><strong>类值拷贝赋值运算符</strong></p>
 <p>一个好的模式是先将右侧运算对象拷贝到一个局部临时对象中。当拷贝完成后，销毁左侧对象的现有成员就是安全的了。接着再将数据从临时对象拷贝到左侧运算对象的成员中。</p>
 <p>这样就可以正确进行自赋值操作。</p>
-<h2 id="_3">定义行为像指针的类</h2>
+<h3 id="_3">定义行为像指针的类</h3>
 <p>这种情况下，HasPtr仍然需要通过析构函数来释放string。但只有当最后一个指向string的HasPtr对象销毁时，它才可以释放string。</p>
 <p>令一个类展现类似指针的行为的最好方法是使用shared_ptr来管理类中的资源。shared_ptr类自己会记录有多少用户共享它所指向的对象，当没有用户使用对象时，shared_ptr类负责释放资源。</p>
 <p>但是有时候我们希望直接管理资源，这种情况下，可以使用<strong>引用计数（reference count）</strong>。</p>
@@ -223,7 +211,7 @@ private:
 <p>- 析构函数递减计数器，如果变为0，则析构函数释放状态。</p>
 <p>- 拷贝赋值运算符递增右侧运算对象的计数器，递减左侧运算对象的计数器。如果左侧运算对象的计数器变为0，则销毁状态。</p>
 <p>引用计数应该保存在动态内存中，这样才能保证共享引用计数。</p>
-<h1 id="_4">交换操作</h1>
+<h2 id="_4">交换操作</h2>
 <p>管理资源的类通常还定义一个名为swap的函数。一些算法会在需要交换两个元素时调用swap。</p>
 <p>如果一个类定义了自己的swap，那么算法将使用类自定义的版本。否则算法将使用标准库定义的swap。标准库定义的版本可能像这样：</p>
 <pre><code>HasPtr temp = v1;
@@ -249,10 +237,10 @@ v2.ps = temp;
 
 <p>rhs是右侧运算对象的一个副本，它会在赋值运算符结束时被自动销毁。</p>
 <p>这种技术自动处理了自赋值的情况且天然就是异常安全的。</p>
-<h1 id="_5">对象移动</h1>
+<h2 id="_5">对象移动</h2>
 <p>新标准的一个最主要的特性是可以移动而非拷贝对象的能力。在很多情况下，对象拷贝后就立即销毁了，这种情况下，使用移动而非拷贝会大幅提升性能。</p>
 <p>使用移动而不是拷贝的另一个原因源于IO类或unique_ptr这样的类。这些类都包含不能被共享的资源（指针或IO缓冲）。因此，这些类的对象不能拷贝但可以移动。</p>
-<h2 id="_6">右值引用</h2>
+<h3 id="_6">右值引用</h3>
 <p>为了支持移动操作，新标准引入了一种新的类型——<strong>右值引用（rvalue reference）</strong>。右值引用必须绑定到右值——一个将要销毁的对象。因此，我们可以自由地将一个右值引用的资源移动到另一个对象中。</p>
 <pre><code>int i = 42;
 int &amp;r = i;    // 正确：r引用i
@@ -268,7 +256,7 @@ int &amp;&amp;r2 = i * 42; // 正确：将rr2绑定到乘法结果上
 </code></pre>
 
 <p>move调用告诉编译器：我们有一个左值，但我们希望像一个右值一样处理它。调用move就意味着承诺：除了对i赋值或销毁它外，我们将不再使用它。</p>
-<h2 id="_7">移动构造函数和移动赋值运算符</h2>
+<h3 id="_7">移动构造函数和移动赋值运算符</h3>
 <p>移动的版本从给定对象“窃取”资源而不是拷贝资源。</p>
 <p>移动构造函数的第一个参数是该类型的一个右值引用。与拷贝构造函数一样，任何额外的参数都必须有默认实参。</p>
 <p>除了完成资源的移动，移动构造函数还必须确保移后源对象处于这样一个状态——销毁它是无害的。</p>
@@ -300,7 +288,41 @@ int &amp;&amp;r2 = i * 42; // 正确：将rr2绑定到乘法结果上
     }
     return *this;
 }
-</code></pre></div>
+</code></pre>
+
+<p><strong>移后源对象必须可析构</strong></p>
+<p>从一个对象移动数据并不会销毁此对象，但有时在移动操作完成后，源对象会被销毁。因此，当我们编写一个移动操作时，必须确保移后源对象进入一个可析构的状态。</p>
+<p>除了将移后源对象置为析构安全的状态之外，移动操作还必须保证对象仍然是有效的，即可以安全地为其赋予新值或者可以安全地使用而不依赖其当前值。但是移动操作对移后源对象中留下的值没有任何要求。因此，我们的程序不应该依赖于移后源对象中的数据。</p>
+<p><strong>【WARNING】 在移动操作之后，移后源对象必须保持有效的、可析构的状态，但是用户不能对其值进行任何假设。</strong></p>
+<p><strong>合成的移动操作</strong></p>
+<p>如果一个类定义了自己的拷贝构造函数、拷贝赋值运算符或者析构函数，编译器就不会为它合成移动构造函数和移动赋值运算符了。只有当一个类没有定义任何自己版本的拷贝控制成员，且类的每个非static数据成员都可以移动时，编译器才会为它合成移动构造函数或移动赋值运算符。</p>
+<p>如果类定义了一个移动构造函数或一个移动赋值运算符，则该类的拷贝版本会被定义为删除的。</p>
+<p><strong>移动右值，拷贝左值</strong></p>
+<p>如果一个类既有移动构造函数，也有拷贝构造函数，编译器使用普通的函数匹配规则来确定使用哪个构造函数。赋值操作的情况类似。</p>
+<pre><code>StrVec v1, v2;
+v1 = v2;                    // v2是左值，使用拷贝赋值
+StrVec getVec(istream&amp;);    // getVec返回一个右值
+v2 = getVec(cin);           // getVec(cin)是一个右值；使用移动赋值
+</code></pre>
+
+<p><strong>更新三/五法则</strong></p>
+<p>所有五个拷贝控制成员应该看作一个整体：一般来说，如果一个类定义了任何一个拷贝操作，它就应该定义所有五个操作。这些类通常拥有一个资源，而拷贝成员必须拷贝此资源。一般来说，拷贝一个资源会导致一些额外开销。在这种拷贝并非必要的情况下，定义了移动构造函数和移动赋值运算符的类就可以避免此问题。</p>
+<h2 id="_8">右值引用和成员函数</h2>
+<p>除了构造函数和赋值运算符之外，成员函数也可以提供拷贝和移动的版本：一个版本有一个右值引用参数，而另一个版本有一个const左值引用。</p>
+<pre><code>void push_back(const X&amp;);   // 拷贝：绑定到任意类型的X
+void push_back(X&amp;&amp;);        // 移动：只能绑定到类型X的可修改的右值
+</code></pre>
+
+<p><strong>右值和左值引用成员函数</strong></p>
+<p>我们可以强制左侧运算对象是一个左值。</p>
+<p>我们指出this的左值/右值属性的方式与定义const成员函数相同，即，在参数列表后放置一个<strong>引用限定符（reference qualifier）</strong>。</p>
+<pre><code>class Foo {
+public:
+    Foo &amp;operator=(const Foo&amp;) &amp;;   // 只能向可修改的左值赋值
+};
+</code></pre>
+
+<p>引用限定符可以是&amp;或&amp;&amp;，分别指出this可以指向一个左值或右值。如果存在const限定符，引用限定符必须跟随在const限定符之后。</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -308,8 +330,11 @@ int &amp;&amp;r2 = i * 42; // 正确：将rr2绑定到乘法结果上
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -332,7 +357,47 @@ int &amp;&amp;r2 = i * 42; // 正确：将rr2绑定到乘法结果上
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

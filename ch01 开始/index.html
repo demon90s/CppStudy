@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,23 +164,20 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#c">编写一个简单的C++程序</a></li>
-            <li><a href="#_1">编译、运行程序</a></li>
-        <li class="main "><a href="#_2">初识输入输出</a></li>
-        <li class="main "><a href="#_3">注释简介</a></li>
-        <li class="main "><a href="#_4">控制流</a></li>
-            <li><a href="#while">while语句</a></li>
-            <li><a href="#for">for语句</a></li>
-            <li><a href="#_5">读取数量不定的输入数据</a></li>
-            <li><a href="#if">if语句</a></li>
-        <li class="main "><a href="#_6">类简介</a></li>
-            <li><a href="#_7">初识成员函数</a></li>
+        <li class="main active"><a href="#_1">开始</a></li>
+            <li><a href="#c">编写一个简单的C++程序</a></li>
+            <li><a href="#_3">初识输入输出</a></li>
+            <li><a href="#_4">注释简介</a></li>
+            <li><a href="#_5">控制流</a></li>
+            <li><a href="#_7">类简介</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>学习一门新的程序设计语言的最好方法就是练习编写程序。</p>
-<h1 id="c">编写一个简单的C++程序</h1>
+<h1 id="_1"><center>开始</center></h1>
+<p><center>学习一门新的程序设计语言的最好方法就是练习编写程序。</center></p>
+<hr />
+<h2 id="c">编写一个简单的C++程序</h2>
 <p>每个C++程序都包含一个或多个函数（function），其中一个必须命名为<strong>main</strong>。操作系统通过调用main来运行C++程序。</p>
 <p>下面是一个简单的main函数，它什么都不做，只是返回给操作系统一个值：</p>
 <pre><code>int main()
@@ -191,11 +191,11 @@
 <p>return语句结束函数的执行。main的返回值被用来指示状态。返回值0表明成功，非0的返回值的含义由系统定义，通常用来指出错误类型。</p>
 <p><strong>重要概念：类型</strong></p>
 <p>一种类型不仅定义了数据元素的内容，还定义了这类数据上可以进行的运算。程序所处理的数据都保存在变量中，而每个变量都拥有自己的类型。</p>
-<h2 id="_1">编译、运行程序</h2>
+<h3 id="_2">编译、运行程序</h3>
 <p>编写好程序后，我们就需要编译它，这依赖于操作系统和编译器。</p>
 <p><strong>程序源文件命名约定</strong></p>
 <p>程序文件通常被称为源文件（source file）。它以一个后缀为结尾，告诉系统这个文件是一个C++程序，比如.cpp。</p>
-<h1 id="_2">初识输入输出</h1>
+<h2 id="_3">初识输入输出</h2>
 <p>C++包含了一个全面的<strong>标准库</strong>（standard library）来提供IO机制（以及很多其他设施）。</p>
 <p><strong>iostream</strong>库包含两个基础类型istream和ostream，分别表示输入流和输出流。一个流就是一个字符序列，是从IO设备读出或写入IO设备的。</p>
 <p><strong>标准输入输出对象</strong></p>
@@ -242,7 +242,7 @@ int main()
 </code></pre>
 
 <p>这条语句读入输入数据。<strong>输入运算符</strong>（&gt;&gt;）接受一个istream作为其左侧运算对象，接受一个对象作为其右侧运算对象。它从给定的istream读入数据，并存入给定对象中。输入运算符返回其左侧运算对象作为计算结果。</p>
-<h1 id="_3">注释简介</h1>
+<h2 id="_4">注释简介</h2>
 <p>注释（comments）通常用于概述算法，确定变量的用途，或者解释晦涩难懂的代码段。编译器会忽略掉注释，因此注释对程序的行为和性能不会有任何影响。</p>
 <p><strong>C++中注释的种类</strong></p>
 <p>C++中有两种注释：单行注释和界定符注释。</p>
@@ -254,9 +254,9 @@ int main()
 //  */
 </code></pre>
 
-<h1 id="_4">控制流</h1>
+<h2 id="_5">控制流</h2>
 <p>语句一般是顺序执行的，语句块的第一条语句首先执行，然后是第二条，以此类推。但程序设计语言提供了多种不同的控制语句，允许我们写出更为复杂的执行路径。</p>
-<h2 id="while">while语句</h2>
+<h3 id="while">while语句</h3>
 <p>while语句反复执行一段代码，直到给定条件为假为止。</p>
 <p>while语句的形式为：</p>
 <pre><code>while (condition)
@@ -265,7 +265,7 @@ int main()
 
 <p>while语句的执行过程是交替地检测condition条件和执行关联的语句statement，直至condition为假时停止。所谓<strong>条件</strong>就是一个产生真或假的结果的表达式。</p>
 <p>statement可以是语句块，也叫循环体。所谓语句块（block），就是用花括号包围的语句序列。语句块也是语句的一种，在任何要求使用语句的地方都可以使用语句块。</p>
-<h2 id="for">for语句</h2>
+<h3 id="for">for语句</h3>
 <p>每个for语句都包含两部分：循环头和循环体。循环头控制循环体的执行次数，它由三部分组成：一个初始化语句（init-statement）、一个循环条件（condition）以及一个表达式（expression）。</p>
 <p>比如：</p>
 <pre><code>for (int val = 1; val &lt;= 10; ++val)
@@ -277,7 +277,7 @@ int main()
 <p>0. 检测val是否小于等于10。如果检测成功，执行循环体。若失败，退出循环。</p>
 <p>0. 将val的值增加1。</p>
 <p>0. 重复第二个步骤。</p>
-<h2 id="_5">读取数量不定的输入数据</h2>
+<h3 id="_6">读取数量不定的输入数据</h3>
 <p>使用这样的方法连续读入数据，直到遇到文件尾（Linux下，输入CTRL+D）：</p>
 <pre><code>while (std::cin &gt;&gt; value)
     statement
@@ -285,7 +285,7 @@ int main()
 
 <p>输入运算符返回其左侧对象，因此，此循环条件检测的是std::cin。</p>
 <p>当使用一个istream对象作为条件时，其效果是检测流的状态。如果流是有效的，那么检测成功。当遇到文件结束符（end-of-file），或遇到一个无效输入时，istream对象的状态会变为无效。</p>
-<h2 id="if">if语句</h2>
+<h3 id="if">if语句</h3>
 <p>if也对一个条件求值，书本里有一个完整的例子。</p>
 <p>语法大致如此：</p>
 <pre><code>if (condition) {
@@ -295,10 +295,10 @@ int main()
 }
 </code></pre>
 
-<h1 id="_6">类简介</h1>
+<h2 id="_7">类简介</h2>
 <p>在C++中，通过定义一个<strong>类</strong>（class）来定义自己的数据结构。一个类定义了一个类型，以及与其关联的一组操作。</p>
 <p>类似使用标准库设施，我们也需要使用头文件来自己的类。习惯上，头文件根据类名来命名，使用.h作为头文件的后缀。标准库的头文件通常不带后缀。</p>
-<h2 id="_7">初识成员函数</h2>
+<h3 id="_8">初识成员函数</h3>
 <p><strong>什么是成员函数？</strong></p>
 <p>有这样的检测条件：</p>
 <pre><code>item1.isbn() == item2.isbn()
@@ -314,8 +314,11 @@ int main()
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -338,7 +341,47 @@ int main()
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

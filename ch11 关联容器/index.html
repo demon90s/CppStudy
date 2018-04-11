@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,37 +164,32 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">使用关联容器</a></li>
-        <li class="main "><a href="#_2">关联容器概述</a></li>
-            <li><a href="#_3">定义关联容器</a></li>
-            <li><a href="#_4">关键字类型的要求</a></li>
-            <li><a href="#pair">pair类型</a></li>
-        <li class="main "><a href="#_5">关联容器操作</a></li>
-            <li><a href="#_6">关联容器迭代器</a></li>
-            <li><a href="#_7">添加元素</a></li>
-            <li><a href="#_8">删除元素</a></li>
-            <li><a href="#map">map的下标操作</a></li>
-            <li><a href="#_9">访问元素</a></li>
-        <li class="main "><a href="#_10">无序容器</a></li>
+        <li class="main active"><a href="#_1">关联容器</a></li>
+            <li><a href="#_2">使用关联容器</a></li>
+            <li><a href="#_3">关联容器概述</a></li>
+            <li><a href="#_6">关联容器操作</a></li>
+            <li><a href="#_11">无序容器</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h1 id="_1"><center>关联容器</center></h1>
+<hr />
 <p>关联容器与顺序容器有着根本的不同：</p>
 <p>- 关联容器中的元素是按关键字来保存和访问的。</p>
 <p>- 顺序容器中的元素是按它们在容器中的位置来顺序保存和访问的。</p>
 <p>关联容器支持高效的关键字查找和访问，有两个主要的关联容器：</p>
 <p>- map，其元素是一些关键字-值对，关键字起到索引作用，值则表示与之相关的数据。</p>
 <p>- set，每个元素只包含一个关键字。</p>
-<h1 id="_1">使用关联容器</h1>
+<h2 id="_2">使用关联容器</h2>
 <p>map是关键字-值对的集合，通常被称为关联数组。关联数组与“正常”数组类似，不同之处在于其下标不必是整数。我们通过一个关键字而不是位置来查找值。</p>
 <p>set就是关键字的简单集合。</p>
 <p>具体使用案例见书本p375。</p>
-<h1 id="_2">关联容器概述</h1>
+<h2 id="_3">关联容器概述</h2>
 <p>关联容器（有序的和无序的）都支持9.2节（第294页）中介绍的普通容器操作。关联容器不支持顺序容器的位置相关的操作，例如push_front。</p>
 <p>除了与顺序容器相同的操作之外，关联容器还支持一些顺序容器不支持的操作（见p388）和类型别名（见p381）。</p>
 <p>关联容器的迭代器都是双向的。</p>
-<h2 id="_3">定义关联容器</h2>
+<h3 id="_4">定义关联容器</h3>
 <pre><code>map&lt;string, size_t&gt; word_count; // 空容器
 set&lt;string&gt; exclude = {&quot;the&quot;, &quot;but&quot;, &quot;and&quot;}; // 列表初始化
 
@@ -206,7 +204,7 @@ map&lt;string, string&gt; authors = {
 <p><strong>初始化multimap或multiset</strong></p>
 <p>一个map或set中的关键字必须是唯一的，即，对于一个给定的关键字，只能有一个元素的关键字等于它。</p>
 <p>multimap和multiset没有此限制，它们都允许多个元素具有相同的关键字（这些元素会相邻存储）。</p>
-<h2 id="_4">关键字类型的要求</h2>
+<h3 id="_5">关键字类型的要求</h3>
 <p>对于有序容器，关键字类型必须定义元素比较的方法，默认情况下，标准库使用关键字类型的&lt;运算符来比较两个关键字。</p>
 <p><strong>使用关键字类型的比较函数</strong></p>
 <p>用来阻止一个容器中元素的操作的类型也是该容器类型的一部分。为了指定使用自定义的操作，必须在定义关联容器类型时提供此操作的类型（比如一个函数指针类型）。</p>
@@ -218,7 +216,7 @@ map&lt;string, string&gt; authors = {
 multiset&lt;Sales_data, decltype(compareIsbn*&gt; bookstore(compareIsbn);
 </code></pre>
 
-<h2 id="pair">pair类型</h2>
+<h3 id="pair">pair类型</h3>
 <p>pair类型定义在头文件utility中。</p>
 <p>一个pair保存两个数据成员，pair是一个用来生成特定类型的模板。</p>
 <pre><code>pair&lt;string, string&gt; anon; // 保存两个string
@@ -242,12 +240,12 @@ process(vector&lt;string&gt; &amp;v)
 }
 </code></pre>
 
-<h1 id="_5">关联容器操作</h1>
+<h2 id="_6">关联容器操作</h2>
 <p>除了表9.2(第295页)中列出的类型，关联容器还定义了这些类型：</p>
 <p>- key_type, 此容器类型的关键字类型</p>
 <p>- mapped_type, 每个关键字关联的类型，只适用于map</p>
 <p>- value_type, 对于set，与key_type相同，对于map, 为<code>pair&lt;const key_type, mapped_type&gt;</code></p>
-<h2 id="_6">关联容器迭代器</h2>
+<h3 id="_7">关联容器迭代器</h3>
 <p>当解引用一个关联容器迭代器时，我们会得到一个类型为容器的value_type的值的引用。对map而言，value_type是一个pair类型。</p>
 <p>【NOTE】必须记住，一个map的value_type是一个pair，我们可以改变pair的值，但不能改变关键字成员的值。</p>
 <p><strong>set的迭代器是const的</strong></p>
@@ -264,7 +262,7 @@ while (map_it != word_count.cend()) {
 <p>【NOTE】当使用一个迭代器遍历一个map、multimap、set或multiset时，迭代器按关键字升序遍历元素。</p>
 <p><strong>关联容器和算法</strong></p>
 <p>我们通常不对关联容器使用泛型算法。更多讨论见书本p383。</p>
-<h2 id="_7">添加元素</h2>
+<h3 id="_8">添加元素</h3>
 <p>关联容器的insert成员向容器中添加一个元素或一个元素范围。由于map和set包含不重复的关键字，因此插入一个已存在的元素对容器没有任何影响。</p>
 <p><strong>向map添加元素</strong></p>
 <p>对一个map进行insert操作时，必须记住元素类型是pair。</p>
@@ -284,12 +282,12 @@ authors.insert({&quot;Barth, John&quot;}, &quot;Lost in the Funhouse&quot;)
 </code></pre>
 
 <p>对允许重复关键字的容器，接受单个元素的insert操作返回一个指向新元素的迭代器。</p>
-<h2 id="_8">删除元素</h2>
+<h3 id="_9">删除元素</h3>
 <p>关联容器定义了三个版本的erase：</p>
 <p>- 与顺序容器一样，传递给erase一个迭代器或一个迭代器范围来删除一个元素或一个元素范围。</p>
 <p>- 接受一个key_type参数，删除所有匹配给定关键字的元素（如果存在的话），返回实际删除的元素的数量。</p>
 <p>对于保存不重复关键字的容器，erase的返回值总是0或1。</p>
-<h2 id="map">map的下标操作</h2>
+<h3 id="map">map的下标操作</h3>
 <p>map和unordered_map容器提供了下标运算符和一个对应的at函数。</p>
 <p>set类型不支持下标操作，不能对一个multimap或一个unordered_multimap进行下标操作，因为这些容器中可能有多个值与一个关键字相关联。</p>
 <p>map下标运算符接受一个索引获取与此关键字相关联的值，如果关键字不在map中，会为它创建一个元素并插入到map中，关联值将进行值初始化。</p>
@@ -297,11 +295,11 @@ authors.insert({&quot;Barth, John&quot;}, &quot;Lost in the Funhouse&quot;)
 <p>当对一个map进行下标操作时，会获得一个mapped_type对象。</p>
 <p>当解引用一个map迭代器时，会得到一个value_type对象。</p>
 <p>【NOTE】与vector与string不同，map的下标运算符返回的类型与解引用map迭代器得到的类型不同。</p>
-<h2 id="_9">访问元素</h2>
+<h3 id="_10">访问元素</h3>
 <p>如果我们关心的只不过是一个特定元素是否已在容器中，使用find比较好。</p>
 <p>对于不允许重复关键字的容器，可能使用find还是count没什么区别。</p>
 <p>对于允许重复关键字的容器，count会统计有多少个元素有相同的关键字。</p>
-<h1 id="_10">无序容器</h1>
+<h2 id="_11">无序容器</h2>
 <p>无序容器不是使用比较运算符来组织元素，而是使用一个哈希函数和关键字类型的==运算符。</p>
 <p>在关键字类型的元素没有明显的序关系的情况下，无序容器是非常有用的。</p></div>
         </div>
@@ -311,8 +309,11 @@ authors.insert({&quot;Barth, John&quot;}, &quot;Lost in the Funhouse&quot;)
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -335,7 +336,47 @@ authors.insert({&quot;Barth, John&quot;}, &quot;Lost in the Funhouse&quot;)
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

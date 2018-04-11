@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,20 +164,18 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">函数重载</a></li>
-            <li><a href="#_2">重载与作用域</a></li>
-        <li class="main "><a href="#_3">特殊用途语言特性</a></li>
-            <li><a href="#_4">默认实参</a></li>
-            <li><a href="#constexpr">内联函数和constexpr函数</a></li>
-            <li><a href="#_5">调试帮助</a></li>
-        <li class="main "><a href="#_6">函数匹配</a></li>
-            <li><a href="#_7">实参类型转换</a></li>
-        <li class="main "><a href="#_8">函数指针</a></li>
+        <li class="main active"><a href="#2">函数2</a></li>
+            <li><a href="#_1">函数重载</a></li>
+            <li><a href="#_3">特殊用途语言特性</a></li>
+            <li><a href="#_6">函数匹配</a></li>
+            <li><a href="#_8">函数指针</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">函数重载</h1>
+<h1 id="2"><center>函数2</center></h1>
+<hr />
+<h2 id="_1">函数重载</h2>
 <p>如果同一作用域内的几个函数名字相同但形参列表不同，我们称之为<strong>重载（overload）函数</strong>。比如：</p>
 <pre><code>void print(const char *cp);
 void print(const int *beg, const int *end);
@@ -230,14 +231,14 @@ string &amp;shorterString(string &amp;s1, string &amp;s2)
 <p>- 编译器找到一个与实参<strong>最佳匹配（best match）</strong>的函数，并生成调用该函数的代码。
 - 找不到任何一个函数与调用的实参匹配，此时编译器发出<strong>无匹配（no match）</strong>的错误信息。
 - 有多于一个函数可以匹配，但是每一个都不是明显的最佳选择。此时也将发生错误，称为<strong>二义性调用（ambiguous call）</strong>。</p>
-<h2 id="_2">重载与作用域</h2>
+<h3 id="_2">重载与作用域</h3>
 <p>【WARNING】一般来说，将函数声明置于局部作用域内不是一个明智的选择。</p>
 <p>如果我们在内层作用域中声明名字，它将隐藏外层作用域中声明的同名实体。对于函数而言也是如此。</p>
 <blockquote>
 <p>my note: 具体例子可见于书本p210。总之，如果在内层作用域声明了一个函数，那么外层的同名的函数都将变得不可见，因此无法找到外层的重载版本。</p>
 </blockquote>
-<h1 id="_3">特殊用途语言特性</h1>
-<h2 id="_4">默认实参</h2>
+<h2 id="_3">特殊用途语言特性</h2>
+<h3 id="_4">默认实参</h3>
 <p>这样一种形参，在函数的很多次调用中它们都被赋予一个相同的值，此时，我们把这个反复出现的值称为函数的<strong>默认实参</strong>（default argument）。调用含有默认实参的函数时，可以包含该实参，也可以省略该实参。如：</p>
 <pre><code>typedef string::size_type sz;
 string screen(sz ht = 24, sz wid = 80, char backrnd = ' ');
@@ -260,7 +261,7 @@ window = stcreen(66); // 等价于screen(66, 80, ' ');
 void f(int a = g_a);
 </code></pre>
 
-<h2 id="constexpr">内联函数和constexpr函数</h2>
+<h3 id="constexpr">内联函数和constexpr函数</h3>
 <p>调用普通函数比直接写其语句要慢，这是因为调用函数包含一些额外的工作。</p>
 <p><strong>内联函数可以避免函数调用的开销</strong></p>
 <p>将函数指定为内联函数（inline），通常就是将它在每个调用点上“内联地”展开。</p>
@@ -277,7 +278,7 @@ constexpr int foo = new_sz();
 <p>constexpr函数被隐式地指定为内联函数。</p>
 <p><strong>把内联函数和constexpr函数放在头文件内</strong></p>
 <p>这是因为内联函数和constexpr函数可以多次定义，且必须完全一致。所以把它们都定义在头文件内。</p>
-<h2 id="_5">调试帮助</h2>
+<h3 id="_5">调试帮助</h3>
 <p>程序可以包含一些用于调试的代码，但是这些代码只在开发程序时使用。当应用程序编写完成准备发布时，要先屏蔽掉调试代码。这种方法用到两项预处理功能：assert和NDEBUG。</p>
 <p><strong>assert预处理宏</strong></p>
 <p>assert是一种<strong>预处理宏（preprocessor macro）</strong>。所谓预处理宏其实是一个预处理变量，它的行为有点类似于内联函数。assert宏使用一个表达式作为它的条件：</p>
@@ -313,7 +314,7 @@ constexpr int foo = new_sz();
 - <code>__LINE__</code>, 存放当前行号的整型字面值。
 - <code>__TIME__</code>, 存放文件编译时间的字符串字面值。
 - <code>__DATA__</code>, 存放文件编译日期的字符串字面值。</p>
-<h1 id="_6">函数匹配</h1>
+<h2 id="_6">函数匹配</h2>
 <p>本节(p217)讲述编译器如何确定调用哪个重载函数，并以下述这组函数及其调用为例：</p>
 <pre><code class="c++">void f();
 void f(int);
@@ -340,7 +341,7 @@ f(5.6);    // 调用void f(double, double);
 <blockquote>
 <p>my note: 如果编译器检查了每一个可行函数，没有一个能脱颖而出，则会报告二义性调用错误。</p>
 </blockquote>
-<h2 id="_7">实参类型转换</h2>
+<h3 id="_7">实参类型转换</h3>
 <p>为了确定最佳匹配，编译器将实参类型到形参类型的转换划分成几个等级，具体排序如下所示：</p>
 <p>0. 精确匹配，包括以下情况：
  - 实参类型和形参类型相同。
@@ -353,7 +354,7 @@ f(5.6);    // 调用void f(double, double);
 <blockquote>
 <p>my note: 详细案例解析见书本p220。</p>
 </blockquote>
-<h1 id="_8">函数指针</h1>
+<h2 id="_8">函数指针</h2>
 <p>函数指针指向的是函数而非对象。函数的类型由它的返回类型和形参类型共同决定，与函数名无关。例如：</p>
 <pre><code class="c++">bool lengthCompare(const string&amp;, const string&amp;);
 </code></pre>
@@ -410,8 +411,11 @@ using FuncP = bool(*)(int);
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -434,7 +438,47 @@ using FuncP = bool(*)(int);
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

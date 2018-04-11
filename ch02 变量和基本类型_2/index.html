@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,20 +164,18 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">处理类型</a></li>
-            <li><a href="#_2">类型别名</a></li>
-            <li><a href="#auto">auto类型说明符</a></li>
-            <li><a href="#decltype">decltype类型指示符</a></li>
-        <li class="main "><a href="#_3">自定义数据结构</a></li>
-            <li><a href="#sales_data">定义Sales_data类型</a></li>
-            <li><a href="#_4">编写自己的头文件</a></li>
+        <li class="main active"><a href="#2">变量和基本类型2</a></li>
+            <li><a href="#_1">处理类型</a></li>
+            <li><a href="#_3">自定义数据结构</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">处理类型</h1>
+<h1 id="2"><center>变量和基本类型2</center></h1>
+<hr />
+<h2 id="_1">处理类型</h2>
 <p>随着程序越来越复杂，程序中用到的类型也越来越复杂，这种复杂性体现在两个方面。一是一些类难于“拼写”。二是有时候根本搞不清到底需要什么类型，需要从程序的上下文中寻求帮助。</p>
-<h2 id="_2">类型别名</h2>
+<h3 id="_2">类型别名</h3>
 <p><strong>类型别名</strong>（type alias）是一个名字，它是某种类型的同义词。使用类型别名可以让复杂的名字变得简单，有助于程序员清楚地知道使用该类型的真实目的。</p>
 <p>传统的定义类型别名的方法是使用typedef:</p>
 <pre><code>typedef double wages;    // wages是double的同义词
@@ -185,7 +186,7 @@
 </code></pre>
 
 <p>这种方法使用关键字using作为别名声明的开始，其后紧跟别名和等号，其作用是把等号左侧的名字规定成等号右侧类型的别名。</p>
-<h2 id="auto">auto类型说明符</h2>
+<h3 id="auto">auto类型说明符</h3>
 <p>C++11新标准引入了auto类型说明符，用它让编译器替我们去分析表达式所属的类型。</p>
 <p>显然，auto定义的变量必须有初始值：</p>
 <pre><code>// 由val1和val2相加的结果可以推断出item的类型
@@ -222,7 +223,7 @@ auto &amp;h = 42; // 错误：不能为非常量引用绑定到字面值
 const auto &amp;j = 42; // 正确，可以为常量引用绑定字面值
 </code></pre>
 
-<h2 id="decltype">decltype类型指示符</h2>
+<h3 id="decltype">decltype类型指示符</h3>
 <p>C++新标准引入了第二种类型说明符<strong>decltype</strong>，它的作用是选择并返回操作数的数据类型。在此过程中，编译器分析表达式并得到它的类型，却不实际计算表达式的值：</p>
 <pre><code>decltype(f()) sum = x; // sum的类型就是函数f的返回类型
 </code></pre>
@@ -250,10 +251,10 @@ decltype(i) e; // 正确，e是一个int。
 </code></pre>
 
 <p>【WARNING】切记，decltype((variable))的结果永远是引用，而decltype(variable)结果只有当variable本身就是一个引用时才是引用。</p>
-<h1 id="_3">自定义数据结构</h1>
+<h2 id="_3">自定义数据结构</h2>
 <p>从最基本的层面理解，数据结构是把一组相关的数据元素组织起来然后使用它们的策略和方法。</p>
 <p>C++语言允许用户以类的形式自定义数据类型，而库类型string、istream、ostream等也都是以类的形式定义的，就像第1章的Sales_item类型一样。</p>
-<h2 id="sales_data">定义Sales_data类型</h2>
+<h3 id="sales_data">定义Sales_data类型</h3>
 <p>Sales_data初步定义如下：</p>
 <pre><code>struct Sales_data {
     std::string bookNo;
@@ -267,7 +268,7 @@ decltype(i) e; // 正确，e是一个int。
 <p><strong>类数据成员</strong></p>
 <p>类体定义类的成员，我们的类只有数据成员（data member）。类的数据成员定义了类的对象的具体内容，每个对象都有自己的一份数据成员拷贝。</p>
 <p>C++11新标准规定，可以为数据成员提供一个<strong>类内初始值</strong>（in-class initializer）。创建对象时，类内初始值将用于初始化数据成员。没有初始值的成员将被默认初始化。</p>
-<h2 id="_4">编写自己的头文件</h2>
+<h3 id="_4">编写自己的头文件</h3>
 <p>为了确保各个文件中类的定义一致，类通常被定义在头文件中，而且类所在头文件的名字应与类的名字一样。</p>
 <p>头文件通常包含那些只能被定义一次的实体，如类、const和constexpr变量等。</p>
 <p><strong>预处理器概述</strong></p>
@@ -291,8 +292,11 @@ struct Sales_data {
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -315,7 +319,47 @@ struct Sales_data {
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>

@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -153,6 +153,9 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -161,29 +164,20 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#using">命名空间的using声明</a></li>
-        <li class="main "><a href="#string">标准库类型string</a></li>
-            <li><a href="#string_1">定义和初始化string对象</a></li>
-            <li><a href="#string_2">string对象上的操作</a></li>
-            <li><a href="#string_3">处理string对象中的字符</a></li>
-        <li class="main "><a href="#vector">标准库类型vector</a></li>
-            <li><a href="#vector_1">定义和初始化vector对象</a></li>
-            <li><a href="#vector_2">向vector中添加元素</a></li>
-            <li><a href="#vector_3">其它vector操作</a></li>
-        <li class="main "><a href="#_1">迭代器介绍</a></li>
-            <li><a href="#_2">使用迭代器</a></li>
-            <li><a href="#_3">迭代器运算</a></li>
-        <li class="main "><a href="#_4">数组</a></li>
-            <li><a href="#_5">定义和初始化内置数组</a></li>
-            <li><a href="#_6">访问数组元素</a></li>
-            <li><a href="#_7">指针和数组</a></li>
-            <li><a href="#c">C风格字符串</a></li>
-        <li class="main "><a href="#_8">多维数组</a></li>
+        <li class="main active"><a href="#_1">字符串、向量和数组</a></li>
+            <li><a href="#using">命名空间的using声明</a></li>
+            <li><a href="#string">标准库类型string</a></li>
+            <li><a href="#vector">标准库类型vector</a></li>
+            <li><a href="#_2">迭代器介绍</a></li>
+            <li><a href="#_5">数组</a></li>
+            <li><a href="#_9">多维数组</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="using">命名空间的using声明</h1>
+<h1 id="_1"><center>字符串、向量和数组</center></h1>
+<hr />
+<h2 id="using">命名空间的using声明</h2>
 <p>有如下形式：</p>
 <pre><code>using namespace::name;
 </code></pre>
@@ -204,9 +198,9 @@ int main()
 
 <p><strong>头文件不应包含using声明</strong></p>
 <p>这是因为头文件会被其它文件引用，从而使其它文件也使用了using声明，有可能造成命名冲突。</p>
-<h1 id="string">标准库类型string</h1>
+<h2 id="string">标准库类型string</h2>
 <p>string表示可变长的字符序列。使用string类型需要包含string头文件。</p>
-<h2 id="string_1">定义和初始化string对象</h2>
+<h3 id="string_1">定义和初始化string对象</h3>
 <p>如何初始化类的对象是由类本身决定的。一个类可以定义很多种初始化对象的方式，只不过这些方式之间必须有所区别。</p>
 <p><strong>初始化string对象的方式：</strong></p>
 <pre><code>string s1;           // 默认初始化，s1是一个空串
@@ -224,7 +218,7 @@ string s6(&quot;hiya&quot;);   // 直接初始化
 string s7(10, 'c');  // 直接初始化
 </code></pre>
 
-<h2 id="string_2">string对象上的操作</h2>
+<h3 id="string_2">string对象上的操作</h3>
 <p>如：</p>
 <p>- <code>os &lt;&lt; s</code>, 将s写入输出流os当中，返回os</p>
 <p>- <code>is &gt;&gt; s</code>，从输入流中读取字符串赋值给s，字符串以空白分隔，返回is</p>
@@ -246,7 +240,7 @@ string s7(10, 'c');  // 直接初始化
 string s2 = s1 + ',';
 </code></pre>
 
-<h2 id="string_3">处理string对象中的字符</h2>
+<h3 id="string_3">处理string对象中的字符</h3>
 <p>字符处理函数的头文件是cctype，它和C的ctype.c一样，只不过前者是C++的命名规范。在书本p82有cctype头文件中的函数说明。</p>
 <p><strong>处理每个字符？使用基于范围的for语句</strong></p>
 <p>如果想对string对象中的每个字符做点儿什么操作，目前最好的办法是使用C++11新标准提供的一种语句：<strong>范围for</strong>（range for）语句。这种语句遍历序列中的每个元素并对序列中的每个值执行某种操作，其语法格式是：</p>
@@ -267,7 +261,7 @@ string s2 = s1 + ',';
 
 <p><strong>使用下标运算符</strong></p>
 <p><code>[ ]</code>符号叫做下标运算符，范围是[0, s.size())，越界的结果是UB（undefined behavior，未定义行为）。</p>
-<h1 id="vector">标准库类型vector</h1>
+<h2 id="vector">标准库类型vector</h2>
 <p>vector是对象的集合，也叫容器（container）。集合中的每个对象都有一个索引，索引用于访问对象。</p>
 <p>vector是一个类模板。模板是为编译器提供的一份生成类或函数的说明。</p>
 <p>vector是模板而非类型，由vector生成的类型必须包含元素的类型，如：</p>
@@ -275,7 +269,7 @@ string s2 = s1 + ',';
 </code></pre>
 
 <p>vector中存放的是对象，而引用不是对象，故不能存储引用。</p>
-<h2 id="vector_1">定义和初始化vector对象</h2>
+<h3 id="vector_1">定义和初始化vector对象</h3>
 <p>vector模板控制着初始化向量的方法。</p>
 <p>定义vector对象的方法有：</p>
 <p>- <code>vector&lt;T&gt; v1</code>，默认初始化，v1是一个空的vector</p>
@@ -288,13 +282,13 @@ string s2 = s1 + ',';
 <p><strong>值初始化</strong></p>
 <p>值初始化（value initialize），是指如果是内置类型，则初始值为0；如果是类类型，执行类默认初始化。</p>
 <p><code>vector&lt;T&gt;(n)</code>中，所有元素将执行值初始化。</p>
-<h2 id="vector_2">向vector中添加元素</h2>
+<h3 id="vector_2">向vector中添加元素</h3>
 <p>push_back函数把一个元素压入vector对象的尾端。</p>
 <p>vector的对象能高效地增长，因此更常见的情况是：创建一个空vector，然后在运行时再利用vector的成员函数push_back向其中添加元素。</p>
 <p><strong>一定不能在遍历vector的时候改变vector对象的大小。</strong></p>
 <p><strong>【关键概念：vector对象能高效增长】</strong></p>
 <p>C++标准要求vector应该能在运行时高效快速地添加元素。因此既然vector对象能高效地增长，那么在定义vector对象的时候设定其大小就没有什么必要了，只有一种例外，即当所有元素的值都一样。一旦元素的值有所不同，更有效的办法是先定义一个空的vector对象，再在运行时向其中添加具体值。</p>
-<h2 id="vector_3">其它vector操作</h2>
+<h3 id="vector_3">其它vector操作</h3>
 <p>如（很多和string类似）：</p>
 <p>- <code>v.empty()</code>，如果v不含有任何元素，返回true</p>
 <p>- <code>v.size()</code>，返回v中的元素个数</p>
@@ -310,10 +304,10 @@ vector::size_type         // 错误
 
 <p>只有当元素的值可比较时，vector对象才能被比较。</p>
 <p>只能对确已存在的元素执行下标操作。</p>
-<h1 id="_1">迭代器介绍</h1>
+<h2 id="_2">迭代器介绍</h2>
 <p>使用迭代器（iterator）是一种通用的访问容器中元素的方法。</p>
 <p>迭代器有有效和无效之分。有效的迭代器指向某个元素，或指向尾元素的下一个位置，其它情况都属于无效。</p>
-<h2 id="_2">使用迭代器</h2>
+<h3 id="_3">使用迭代器</h3>
 <p>有迭代器的类型同时拥有返回迭代器的成员。</p>
 <p>标准库容器都拥有名为begin和end的成员（函数）。其中begin成员负责返回指向第一个元素的迭代器。</p>
 <p>end成员负责返回指向容器“尾元素的下一个位置”的迭代器。叫<strong>尾后迭代器（off-the-end iterator）</strong>。</p>
@@ -351,7 +345,7 @@ vector&lt;int&gt;::const_iterator it2;
 <p><code>(*iter).mem</code>等价于<code>iter-&gt;mem</code>。</p>
 <p><strong>某些对vector对象的操作会使迭代器失效</strong></p>
 <p>任何一种可能改变vector对象容量的操作，比如push_back，都会使该vector对象的迭代器失效。</p>
-<h2 id="_3">迭代器运算</h2>
+<h3 id="_4">迭代器运算</h3>
 <p>递增运算令迭代器每次移动一个元素，所有的标准库容器的迭代器都支持递增运算，也支持==和!=运算。</p>
 <p>string和vector的迭代器提供了额外的运算符，有：</p>
 <p>- <code>iter + n</code>，新迭代器向前移动若干个元素，它指向容器的一个元素，或是尾后迭代器</p>
@@ -361,11 +355,11 @@ vector&lt;int&gt;::const_iterator it2;
 <p><strong>迭代器的算数运算</strong></p>
 <p>迭代器相减的结果的类型是difference_type，表示右侧的迭代器要移动多少个位置才能到达左侧的。</p>
 <p>difference_type是一个带符号的整数，string和vector都定义了这个类型。</p>
-<h1 id="_4">数组</h1>
+<h2 id="_5">数组</h2>
 <p>数组是存放相同类型的对象的容器，这些对象是匿名的。</p>
 <p>数组的大小确定不变。</p>
 <p>数组是一种内置类型。</p>
-<h2 id="_5">定义和初始化内置数组</h2>
+<h3 id="_6">定义和初始化内置数组</h3>
 <p>数组是一种复合类型，其声明形如<code>a[N]</code>。N叫维度，说明了数组中元素的个数，必须大于0，且必须是一个常量表达式，即其值在编译期间已知。</p>
 <p>默认情况下，数组的元素执行默认初始化，这意味着在函数块内定义的执行默认初始化的含内置类型元素的数组，其元素的值未定义。</p>
 <p>定义数组的时候必须指定数组的类型，不允许用auto关键字由初始值的列表推断类型。数组的元素应为对象，所以不存在存储引用的数组。</p>
@@ -402,7 +396,7 @@ int a2[] = a1; // 非法
 </code></pre>
 
 <p>默认情况下，类型修饰符从右向左依次绑定。不过理解数组的复杂声明时，应该由内向外理解。即从数组的名字开始按照由内向外的顺序阅读。</p>
-<h2 id="_6">访问数组元素</h2>
+<h3 id="_7">访问数组元素</h3>
 <p>使用数组下标的时候，通常将其定义为size_t类型，这是一种机器相关的无符号类型。定义在cstddef头文件中，是C标准库stddef.h头文件的C++版本。</p>
 <p>可以使用范围for语句来遍历数组。</p>
 <pre><code>for (auto i : arr)
@@ -413,7 +407,7 @@ cout &lt;&lt; endl;
 <p><strong>检查下标的值</strong></p>
 <p>与string和vector一样，数组的下标是否在合理范围之内由程序员负责检查。</p>
 <p>【WARNING】大多数常见的安全问题都源于缓冲区溢出错误。当数组或其他类似数据结构的下标越界并试图访问非法内存区域时，就会产生此类错误。</p>
-<h2 id="_7">指针和数组</h2>
+<h3 id="_8">指针和数组</h3>
 <p>在很多用到数组名字的地方，编译器都会自动地将其替换为一个<strong>指向数组首元素的指针</strong>。</p>
 <p><strong>decltype</strong></p>
 <p>下面得到一个数组类型：</p>
@@ -453,7 +447,7 @@ i = *(p + 2);     // 等价于i = ia[2]
 
 <p>只要指针指向的是数组中的元素，都可以执行下标运算。</p>
 <p>内置的下标运算符可以处理负值，这和标准库类型的下标不一样（必须是无符号的）。</p>
-<h2 id="c">C风格字符串</h2>
+<h3 id="c">C风格字符串</h3>
 <p>C风格的字符串即是字符串字面量，也是一种字符数组，并以空字符结尾（null terminated）。</p>
 <p>p109列举了C语言标准库提供的一组函数，可以操作C风格字符串，他们定义在cstring头文件中。</p>
 <p><strong>c_str函数</strong></p>
@@ -469,7 +463,7 @@ const char *c_s = s.c_str();
 vector&lt;int&gt; vec(begin(a), end(a));
 </code></pre>
 
-<h1 id="_8">多维数组</h1>
+<h2 id="_9">多维数组</h2>
 <p>多维数组，实际上是数组的数组。</p>
 <p>如：<code>int a[3][4]</code>，可由内而外理解，a是一个含有3个元素的数组，每个元素又是一个含有4个元素的数组。</p>
 <p>对于二维数组，常把第一个维度看作行，第二个维度看作列。</p>
@@ -513,8 +507,11 @@ typedef int int_arr[4];
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -537,7 +534,47 @@ typedef int int_arr[4];
             </div>
         </div>
     </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+
 
     </body>
 </html>
