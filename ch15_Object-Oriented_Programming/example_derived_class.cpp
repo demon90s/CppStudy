@@ -18,6 +18,12 @@ public:
 
 	virtual ~Quote() = default;	// 对析构函数进行动态绑定
 
+	virtual void debug() const
+	{
+		cout << "bookNo: " << bookNo << endl
+		     << "price: " << price << endl;
+	}
+
 private:
 	std::string bookNo;
 
@@ -41,12 +47,35 @@ public:
 			return cnt * price;
 	}
 
+	void debug() const override
+	{
+		Quote::debug();
+		cout << "min_qty: " << min_qty << endl
+		     << "discount: " << discount << endl;
+	}
+
 private:
 	std::size_t min_qty = 0;	// 适用折扣政策的最低购买量
 	double discount = 0.0;		// 以小数表示的折扣额
 };
 
+// 练习15.11
+void func1()
+{
+	Quote *quote = nullptr;
+	Quote base("0-201-70353-X", 5);
+	Bulk_quote derived("0-201-70353-X", 5, 5, 0.5);
+
+	quote = &base;
+	quote->debug();
+
+	quote = &derived;
+	quote->debug();
+}
+
 int main()
 {
+	func1();
+
 	return 0;
 }

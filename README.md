@@ -1,4 +1,4 @@
-学习笔记：https://demon90s.github.io/CppPrimer/
+学习环境：CentOS7 gcc4.8.5
 
 ### [术语表](./defined_terms/terms_index.md)
 
