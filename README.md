@@ -315,7 +315,8 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习15.1](ch15_Object-Oriented_Programming/exercise_15_01.md)|[练习15.2](ch15_Object-Oriented_Programming/exercise_15_02.md)|[练习15.3](ch15_Object-Oriented_Programming/exercise_15_03.md)|[练习15.4](ch15_Object-Oriented_Programming/exercise_15_04.md)|[练习15.5](ch15_Object-Oriented_Programming/exercise_15_05.md)|[练习15.6](ch15_Object-Oriented_Programming/exercise_15_06.cpp)|[练习15.7](ch15_Object-Oriented_Programming/exercise_15_07.cpp)|
+|[练习15.1](ch15_Object-Oriented_Programming/exercise_15_01.md)|[练习15.2](ch15_Object-Oriented_Programming/exercise_15_02.md)|[练习15.3](ch15_Object-Oriented_Programming/exercise_15_03.md)|[练习15.4](ch15_Object-Oriented_Programming/exercise_15_04.md)|[练习15.5](ch15_Object-Oriented_Programming/exercise_15_05.md)|[练习15.6](ch15_Object-Oriented_Programming/exercise_15_06.cpp)|[练习15.7](ch15_Object-Oriented_Programming/exercise_15_07.cpp)|[练习15.8](ch15_Object-Oriented_Programming/exercise_15_08.md)|
+|[练习15.9](ch15_Object-Oriented_Programming/exercise_15_09.md)|[练习15.10](ch15_Object-Oriented_Programming/exercise_15_10.md)|
 
 #### 案例代码
 
