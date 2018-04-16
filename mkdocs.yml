@@ -33,5 +33,6 @@ pages:
     - ch14 操作重载与类型转换: ch14 操作重载与类型转换.md
   - CheatSheet:
     - static的3个用途: cheatsheet/static的3个用途.md
+    - 若干种typedef: cheatsheet/若干种typedef.md
 
 theme: 
