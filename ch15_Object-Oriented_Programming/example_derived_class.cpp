@@ -1,6 +1,8 @@
 // example: 定义派生类（p529）
 
 #include <iostream>
+#include <vector>
+#include <memory>
 
 using namespace std;
 
@@ -73,9 +75,43 @@ void func1()
 	quote->debug();
 }
 
+// 练习15.28
+void func2()
+{
+	vector<Quote> basket = {
+		Bulk_quote("0-201-70353-X", 5, 5, 0.5),
+		Bulk_quote("0-201-70354-X", 6, 5, 0.5),
+		Bulk_quote("0-201-70355-X", 7, 5, 0.5),
+	};
+
+	double total = 0;
+	for (const auto &item : basket)
+		total += item.net_price(10);
+
+	cout << "total: " << total << endl;
+}
+
+// 练习15.29
+void func3()
+{
+	vector<shared_ptr<Quote>> basket = {
+		make_shared<Bulk_quote>("0-201-70353-X", 5, 5, 0.5),
+		make_shared<Bulk_quote>("0-201-70354-X", 6, 5, 0.5),
+		make_shared<Bulk_quote>("0-201-70355-X", 7, 5, 0.5),
+	};
+
+	double total = 0;
+	for (const auto &item : basket)
+		total += item->net_price(10);
+
+	cout << "total: " << total << endl;
+}
+
 int main()
 {
-	func1();
+	//func1();
+	//func2();
+	func3();
 
 	return 0;
 }
