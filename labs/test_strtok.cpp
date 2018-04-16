@@ -1,5 +1,5 @@
 // test: 测试strtok
-// 参加：http://zh.cppreference.com/w/cpp/string/byte/strtok
+// 参考：http://zh.cppreference.com/w/cpp/string/byte/strtok
 
 /*
  * 注意点：
