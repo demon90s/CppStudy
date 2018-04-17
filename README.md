@@ -302,6 +302,8 @@
 
 #### 案例代码
 
+- [定义含有类型转换运算符的类（p514）](ch14_Overloaded_Operations_and_Conversions/example_conversion_operators.cpp)
+
 - [函数调用运算符（p506）](ch14_Overloaded_Operations_and_Conversions/example_function-call_operator.cpp)
 
 - [可调用对象与function（p511）](ch14_Overloaded_Operations_and_Conversions/example_function.cpp)

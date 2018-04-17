@@ -1,4 +1,4 @@
-// 定义含有类型转换运算符的类（p514）
+// example: 定义含有类型转换运算符的类（p514）
 
 #include <iostream>
 #include <stdexcept>
