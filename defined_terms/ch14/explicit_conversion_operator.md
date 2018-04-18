@@ -1,0 +1,1 @@
+显式的类型转换运算符（explicit conversion operator）由关键字explicit限定的类型转换运算符。这样的运算符用于条件中的隐式类型转换。
