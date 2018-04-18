@@ -56,10 +56,19 @@ void test2()
 	
 }
 
+void test3()
+{
+	// 测试类型转换运算符
+	Sales_data sd("0-201-70353-X", 4, 24.99);
+	cout << static_cast<std::string>(sd) << endl;
+	cout << static_cast<double>(sd) << endl;
+}
+
 int main()
 {
 	//test1();
-	test2();
+	//test2();
+	test3();
 
 	return 0;
 }

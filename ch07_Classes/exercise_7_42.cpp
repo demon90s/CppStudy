@@ -24,6 +24,8 @@ public:
 
 	void print() { std::cout << m_no << " " << m_name << " " << m_auther << " " << m_pubdate << std::endl; }
 
+	operator bool() const { return m_no != 0; }
+
 private:
 	unsigned m_no = 0;
 	std::string m_name;
@@ -41,6 +43,10 @@ int main()
 
 	Book b3(std::cin); // 需要使用一个构造函数从标准输入读入数据来初始化类对象
 	b3.print();
+	if (!b3)
+	{
+		cout << "b3 is invalid" << endl;
+	}
 
 	return 0;
 }

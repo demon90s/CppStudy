@@ -36,6 +36,11 @@ public:
 	std::string isbn() const { return bookNo; }
 	Sales_data& combine(const Sales_data&);
 
+	// 类型转换运算符（练习14.45）
+	explicit operator std::string() const { return isbn() + " " + std::to_string(units_sold) + " " + std::to_string(revenue) + " " + std::to_string(avg_price());  }
+
+	explicit operator double() const { return revenue; }
+
 private:
 	double avg_price() const;
 
