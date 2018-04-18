@@ -21,7 +21,7 @@ int main()
 	double dval = 0;
 	calc(dval);		// 哪个calc？ -> calc(int)
 
-	// 没有double 到 LongDouble的转换规则，因此只可能调用calc(int)
+	// class-type conversion is the lowest ranked
 
 	return 0;
 }
