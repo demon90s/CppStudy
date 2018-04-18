@@ -413,4 +413,12 @@
 ### 第14章_操作重载与类型转换
 
 - [调用形式 call signature](./ch14/call_signature.md)
+- [类类型转换 class-type conversion](./ch14/class-type_conversion.md)
+- [类型转换运算符 conversion operator](./ch14/conversion_operator.md)
+- [显式的类型转换运算符 explicit conversion operator](./ch14/explicit_conversion_operator.md)
+- [函数对象 function object](./ch14/function_object.md)
+- [函数表 function table](./ch14/function_table.md)
+- [函数模板 function template](./ch14/function_template.md)
+- [重载的运算符 overloaded operator](./ch14/overloaded_operator.md)
+- [用户定义的类型转换 user-defined conversion](./ch14/user-defined_conversion.md)
 
