@@ -50,9 +50,8 @@ main() {
 	clear_build
 	rm -rf site
 
-	sh ./gen_readme.sh
-
-	if [ "$1" = "-t" ]; then
+	if [ "$1" = "gen" ]; then
+		sh ./gen_readme.sh
 		cd ./defined_terms
 		sh ./gen_index.sh
 		cd ..
