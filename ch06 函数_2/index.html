@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-
-        <script src="../js/jquery-1.10.2.min.js"></script>
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -133,6 +133,10 @@
 </li>
     </ul>
   </li>
+                            
+<li >
+    <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">ch14 操作重载与类型转换</a>
+</li>
                         </ul>
                     </li>
                 </ul>
@@ -154,7 +158,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                        <a href="https://github.com/demon90s/CppPrimer">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
                     </li>
             </ul>
         </div>
@@ -228,9 +234,9 @@ string &amp;shorterString(string &amp;s1, string &amp;s2)
 <p><strong>调用重载的函数</strong></p>
 <p>定义了一组重载函数后，我们需要以合理的实参调用它们。<strong>函数匹配（function matching）</strong>是指一个过程，在这个过程中我们把函数调用与一组重载函数中的某一个关联起来。编译器首先将调用的实参与重载集合中的每一个函数的形参进行比较，然后根据比较的结果决定到底调用哪个函数。</p>
 <p>当调用重载函数时有三种可能的结果：</p>
-<p>- 编译器找到一个与实参<strong>最佳匹配（best match）</strong>的函数，并生成调用该函数的代码。
-- 找不到任何一个函数与调用的实参匹配，此时编译器发出<strong>无匹配（no match）</strong>的错误信息。
-- 有多于一个函数可以匹配，但是每一个都不是明显的最佳选择。此时也将发生错误，称为<strong>二义性调用（ambiguous call）</strong>。</p>
+<p>- 编译器找到一个与实参<strong>最佳匹配（best match）</strong>的函数，并生成调用该函数的代码。</p>
+<p>- 找不到任何一个函数与调用的实参匹配，此时编译器发出<strong>无匹配（no match）</strong>的错误信息。</p>
+<p>- 有多于一个函数可以匹配，但是每一个都不是明显的最佳选择。此时也将发生错误，称为<strong>二义性调用（ambiguous call）</strong>。</p>
 <h3 id="_2">重载与作用域</h3>
 <p>【WARNING】一般来说，将函数声明置于局部作用域内不是一个明智的选择。</p>
 <p>如果我们在内层作用域中声明名字，它将隐藏外层作用域中声明的同名实体。对于函数而言也是如此。</p>
@@ -310,10 +316,10 @@ constexpr int foo = new_sz();
 </code></pre>
 
 <p>编译器为每个函数都定义了<code>__func__</code>，除此之外，预处理器还定义了4个对于调试程序很有用的名字：</p>
-<p>- <code>__FILE__</code>, 存放文件名的字符串字面值。
-- <code>__LINE__</code>, 存放当前行号的整型字面值。
-- <code>__TIME__</code>, 存放文件编译时间的字符串字面值。
-- <code>__DATA__</code>, 存放文件编译日期的字符串字面值。</p>
+<p>- <code>__FILE__</code>, 存放文件名的字符串字面值。</p>
+<p>- <code>__LINE__</code>, 存放当前行号的整型字面值。</p>
+<p>- <code>__TIME__</code>, 存放文件编译时间的字符串字面值。</p>
+<p>- <code>__DATA__</code>, 存放文件编译日期的字符串字面值。</p>
 <h2 id="_6">函数匹配</h2>
 <p>本节(p217)讲述编译器如何确定调用哪个重载函数，并以下述这组函数及其调用为例：</p>
 <pre><code class="c++">void f();
@@ -325,32 +331,32 @@ f(5.6);    // 调用void f(double, double);
 
 <p><strong>确定候选函数和可行函数</strong></p>
 <p>函数匹配的第一步是选定本次调用对应的重载函数集，集合中的函数成为<strong>候选函数（candidate function）</strong>。候选函数具备两个特征：</p>
-<p>0. 与被调用函数同名。
-0. 其声明在调用点可见。</p>
+<p>1. 与被调用函数同名。</p>
+<p>2. 其声明在调用点可见。</p>
 <p>第二步考察本次调用提供的实参，然后从候选函数中选出能被这组实参调用的函数，这些新选出的函数称为<strong>可行函数（viable function）</strong>。可行函数也有两个特征：</p>
-<p>0. 其形参数量与本次调用提供的实参数量相等。
-0. 每个实参的类型与对应的形参类型相同，或者能转换成形参的类型。</p>
+<p>1. 其形参数量与本次调用提供的实参数量相等。</p>
+<p>2. 每个实参的类型与对应的形参类型相同，或者能转换成形参的类型。</p>
 <blockquote>
 <p>my note: 如果没有找到可行函数，编译器将报告无匹配函数的错误。</p>
 </blockquote>
 <p><strong>寻找最佳匹配（如果有的话）</strong></p>
 <p>第三步是从可行函数中选择与本次调用最匹配的函数。在这一过程中，逐一检查函数调用提供的实参，寻找形参类型与实参类型最匹配的那个可行函数。</p>
 <p>如果有且只有一个函数满足下列条件，则匹配成功：</p>
-<p>- 该函数每个实参的匹配都不劣于其他可行函数需要的匹配。
-- 至少有一个实参的匹配优于其他可行函数提供的匹配。</p>
+<p>- 该函数每个实参的匹配都不劣于其他可行函数需要的匹配。</p>
+<p>- 至少有一个实参的匹配优于其他可行函数提供的匹配。</p>
 <blockquote>
 <p>my note: 如果编译器检查了每一个可行函数，没有一个能脱颖而出，则会报告二义性调用错误。</p>
 </blockquote>
 <h3 id="_7">实参类型转换</h3>
 <p>为了确定最佳匹配，编译器将实参类型到形参类型的转换划分成几个等级，具体排序如下所示：</p>
-<p>0. 精确匹配，包括以下情况：
- - 实参类型和形参类型相同。
- - 实参从数组类型或函数类型转换成对应的指针类型。
- - 向实参添加顶层const或者从实参中删除顶层const。</p>
-<p>0. 通过const转换实现的匹配（p143）。</p>
-<p>0. 通过类型提升实现的匹配（p142）。</p>
-<p>0. 通过算数类型转换或指针转换实现的匹配（p142）。</p>
-<p>0. 通过类类型转换实现的匹配（参见14.9节，p514）。</p>
+<p>1. 精确匹配，包括以下情况：</p>
+<p>- 实参类型和形参类型相同。</p>
+<p>- 实参从数组类型或函数类型转换成对应的指针类型。</p>
+<p>- 向实参添加顶层const或者从实参中删除顶层const。</p>
+<p>2. 通过const转换实现的匹配（p143）。</p>
+<p>3. 通过类型提升实现的匹配（p142）。</p>
+<p>4. 通过算数类型转换或指针转换实现的匹配（p142）。</p>
+<p>5. 通过类类型转换实现的匹配（参见14.9节，p514）。</p>
 <blockquote>
 <p>my note: 详细案例解析见书本p220。</p>
 </blockquote>
@@ -411,11 +417,8 @@ using FuncP = bool(*)(int);
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script src="../js/base.js"></script>
-        <script src="../search/require.js"></script>
-        <script src="../search/search.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -438,47 +441,7 @@ using FuncP = bool(*)(int);
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
 </div>
-
 
     </body>
 </html>

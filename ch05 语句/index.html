@@ -18,8 +18,8 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-
-        <script src="../js/jquery-1.10.2.min.js"></script>
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script> 
     </head>
@@ -133,6 +133,10 @@
 </li>
     </ul>
   </li>
+                            
+<li >
+    <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">ch14 操作重载与类型转换</a>
+</li>
                         </ul>
                     </li>
                 </ul>
@@ -154,7 +158,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/demon90s/CppPrimer"><i class="fa fa-github"></i> GitHub</a>
+                        <a href="https://github.com/demon90s/CppPrimer">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
                     </li>
             </ul>
         </div>
@@ -358,8 +364,7 @@ begin:
 <p>当异常被抛出时，首先搜索抛出该异常的函数。如果没找到匹配的catch子句，终止该函数，并在调用该函数的函数中继续寻找。如果还是没找到匹配的catch子句，这个新的函数也被终止，继续搜索调用它的函数。以此类推，直到找到适当类型的catch子句为止。</p>
 <p>如果最终还是没能找到，程序转到名为terminate的标准库函数。该函数的行为与系统有关，一般情况下，执行该函数将导致程序非正常退出。</p>
 <h3 id="_7">标准异常</h3>
-<p>C++标准库定义了一组类，用于报告标准库函数遇到的问题。这些异常类也可以用在用户编写的程序中。这些异常类见书本p176以及下表。</p>
-<p><img alt="" src="../index_files/1508725854336_u6807_u51C6_u5F02_u5E38_u7C7B.png" /></p>
+<p>C++标准库定义了一组类，用于报告标准库函数遇到的问题。这些异常类也可以用在用户编写的程序中。这些异常类见书本p176。</p>
 <p>异常类型只定义了一个名为what的成员函数，该函数没有任何参数，返回值是一个指向C风格字符串的异常说明。</p>
 <p>如果异常类型有一个字符串初始值，则what返回该字符串，否则返回的内容由编译器决定。</p></div>
         </div>
@@ -369,11 +374,8 @@ begin:
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
-        <script src="../js/base.js"></script>
-        <script src="../search/require.js"></script>
-        <script src="../search/search.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -396,47 +398,7 @@ begin:
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
 </div>
-
 
     </body>
 </html>
