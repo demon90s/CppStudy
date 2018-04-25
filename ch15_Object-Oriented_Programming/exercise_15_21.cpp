@@ -9,6 +9,7 @@
  */
 
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ class Shape
 public:
 	Shape(int type) : m_type(type) {}
 	
-	virtual const char* GetName() const = 0;
+	virtual void Print() const = 0;
 
 protected:
 	int m_type;
@@ -35,7 +36,7 @@ class Square : public Shape
 public:
 	Square() : Shape(SHAPE_TYPE_SQUARE), m_height(1), m_width(1) {}
 
-	const char* GetName() const override { return "Square"; }
+	void Print() const override { printf("[Square] height: %g, width: %g\n", m_height, m_width); }
 
 private:
 	double m_height;
@@ -47,7 +48,7 @@ class Circle : public Shape
 public:
 	Circle() : Shape(SHAPE_TYPE_CIRCLE), m_radius(1) {}
 	
-	const char* GetName() const override { return "Circle"; }
+	void Print() const override { printf("[Circle] radius: %g", m_radius); }
 
 private:
 	double m_radius; 
@@ -56,10 +57,10 @@ private:
 int main()
 {
 	Square square;
-	cout << square.GetName() << endl;
+	square.Print();
 
 	Circle circle;
-	cout << circle.GetName() << endl;
+	circle.Print();
 
 	return 0;
 }
