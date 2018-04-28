@@ -18,7 +18,7 @@
 #define ARRAY_ITEM_NUM2(arr) (sizeof(arr) / sizeof(*arr))
 
 // 进行一次无效的变量使用，以忽略GCC下的未使用变量警告
-#define USE_VAR ((void)&(x))
+#define USE_VAR(x) ((void)&(x))
 
 // 使用移位运算符，设置、清除、判断比特位（p138）
 void SetBit(unsigned long *flag, size_t bit);
