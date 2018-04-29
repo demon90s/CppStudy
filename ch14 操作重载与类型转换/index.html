@@ -179,6 +179,7 @@
             <li><a href="#_10">递增和递减运算符</a></li>
             <li><a href="#_11">成员访问运算符</a></li>
             <li><a href="#_12">函数调用运算符</a></li>
+            <li><a href="#_14">重载、类型转换与运算符</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -356,7 +357,114 @@ public:
 };
 </code></pre>
 
-<h2 id="_12">函数调用运算符</h2></div>
+<h2 id="_12">函数调用运算符</h2>
+<p>如果类重载了函数调用运算符，则我们可以像使用函数一样使用该类的对象。因为这样的类同时也能存储状态，所以与普通函数相比它们更灵活。</p>
+<pre><code>struct absInt {
+    int operator()(int val) const {
+        return val &lt; 0 ? -val : val;
+    }
+};
+</code></pre>
+
+<p>这个类只定义了一种操作：函数调用运算符，它负责接受一个int类型的实参，然后返回该实参的绝对值。</p>
+<p>使用调用运算符的方式是令一个absInt对象作用于一个实参列表，这一过程看起来非常像调用函数的过程：</p>
+<pre><code>int i = -42;
+absInt absObj;
+int ui = absObj(i);     // 将i传递给absObj.operator()
+</code></pre>
+
+<p>函数调用运算符必须是成员函数。一个类可以定义多个不同版本的调用运算符，相互之间应该在参数数量或类型上有所区别。</p>
+<p>如果类定义了调用运算符，则该类的对象称作函数对象（function object）。因为可以调用这种对象，所以我们说这些对象的行为像函数一样。</p>
+<h3 id="lambda">lambda是函数对象</h3>
+<p>当我们编写了一个lambda后，编译器将该表达式翻译成一个未命名类的未命名对象。在lambda表达式产生的类中含有一个重载的函数调用运算符，默认情况下，它是一个const成员函数。</p>
+<p>当一个lambda表达式通过引用捕获变量时，将由程序负责确保lambda执行时引用所引用的对象确实存在。因此，编译器可以直接使用该引用而无须在lambda产生的类中将其存储为数据成员。</p>
+<p>通过值捕获的变量被拷贝到lambda中。因此，这种lambda产生的类必须为每个值捕获的变量建立对应的数据成员，同时创建构造函数，令其使用捕获的变量的值来初始化数据成员。</p>
+<h3 id="_13">标准库定义的函数对象</h3>
+<p>标准库定义了一组表示算术运算符、关系运算符和逻辑运算符的类，每个类分别定义了一个执行命名操作的调用运算符。例如，plus类定义了一个函数调用运算符用于对一对运算对象执行+操作。</p>
+<p>这些类都被定义成模板的形式，我们可以为其指定具体的应用类型，这里的类型即调用运算符的形参类型。例如，<code>plus&lt;string&gt;</code>令string的加法运算符作用于string对象。</p>
+<pre><code>plus&lt;int&gt; intAdd;           // 可执行int加法的函数对
+int sum = intAdd(10, 20);   // 使用intAdd::operator(int, int)求10和20的和
+</code></pre>
+
+<p>p510列出了所有这些函数对象类，它们定义在functional头文件中。</p>
+<p><strong>在算法中使用标准库函数对象</strong></p>
+<p>表示运算符的函数对象类常用来替换算法中的默认运算符。比如，默认情况下排序算法使用operator&lt;将序列按照升序排列。如果要执行降序排列的话，我们可以传入一个greater类型的对象。</p>
+<pre><code>// 传入一个临时的函数对象用于执行两个string对象的&gt;比较运算
+sort(svec.begin(), svec.end(), greater&lt;string&gt;());
+</code></pre>
+
+<h3 id="function">可调用对象与function</h3>
+<p>C++语言中有几种可调用的对象：函数、函数指针、lambda表达式、bind创建的对象以及重载了函数调用运算符的类。</p>
+<p>和其他对象一样，可调用对象也有类型。lambda有它自己唯一的未命名的类类型；函数及函数指针的类型由其返回值和实参类型决定。</p>
+<p>然而，两个不同类型的可调用对象却可能共享同一种调用形式（call signature）。调用形式指明了调用返回的类型以及传递给调用的实参类型。一种调用形式对应一个函数类型，例如：</p>
+<pre><code>int(int, int)
+</code></pre>
+
+<p>function是一个模板，当创建一个具体的function类型时我们必须提供额外的信息，此额外信息是指该function类型能够表示的对象的调用形式：</p>
+<pre><code>function&lt;int(int, int)&gt;
+</code></pre>
+
+<p>这里声明的function类型，表示接受两个int、返回一个int的可调用对象：</p>
+<pre><code>function&lt;int(int, int)&gt; f1 = add;           // 函数指针
+function&lt;int(int, int)&gt; f2 = divide();      // 函数对象类的对象
+function&lt;int(int, int)&gt; f3 = [](int i, int j) { return i * j; };    // lambda
+
+cout &lt;&lt; f1(4, 2) &lt;&lt; endl;
+cout &lt;&lt; f2(4, 2) &lt;&lt; endl;
+cout &lt;&lt; f3(4, 2) &lt;&lt; endl;
+</code></pre>
+
+<h2 id="_14">重载、类型转换与运算符</h2>
+<p>在263页中我们看到由一个实参调用的非显示构造函数定义了一种隐式的类型转换，这种构造函数将实参类型的对象转换成类类型。我们同样能定义对于类类型的类型转换，通过定义类型转换运算符可以做到这一点。</p>
+<p>转换构造函数和类型转换运算符共同定义了<strong>类类型转换（class-type conversions）</strong>。</p>
+<h3 id="_15">类型转换运算符</h3>
+<p><strong>类型转换运算符（conversion  operator）</strong>是类的一种特殊成员函数，它负责将一个类类型的值转换成其他类型。其一般形式如下：</p>
+<pre><code>operator type() const;
+</code></pre>
+
+<p>其中type表示某种类型。类型转换运算符可以面向任意类型（除了void之外）进行定义，只要该类型能作为函数的返回类型。</p>
+<p>类型转换运算符既没有显式的返回类型，也没有形参，而且必须定义成类的成员函数。类型转换运算符通常不应该改变待转换对象的内容，因此，一般被定义成const成员。</p>
+<p>举个例子，我们定义一个比较简单的类，令其表示0到255之间的一个整数：</p>
+<pre><code>class SmallInt {
+public:
+    SmallInt(int i = 0) : val(i)
+    {
+        if (i &lt; 0 || i &gt; 255)
+            throw std::out_of_range(&quot;Bad SmallInt value&quot;);
+    }
+
+    operator int() const { return val; }
+private:
+    std::size_t val;
+};
+</code></pre>
+
+<p>SmallInt类的构造函数将算数类型的值转换成SmallInt对象，而类型转换运算符将SmallInt对象转换成int：</p>
+<pre><code>SmallInt si;
+si = 4;         // 4 -&gt; SmallInt, 然后调用赋值运算符
+si + 3;         // si -&gt; int，然后执行整数的加法
+</code></pre>
+
+<p><strong>类型转换运算符可能产生意外结果</strong></p>
+<p>在实践中，类很少提供类型转换运算符。但有一种例外：对于类来说，定义向bool的类型转换还是比较普遍的现象，但这会遇到一个问题：因为bool是一种算术类型，所以类类型的对象转换成bool后就能被用在任何需要算术类型的上下文中（这不是期望的）。</p>
+<p><strong>显式的类型转换运算符</strong></p>
+<p>为了防止上述异常情况的发生，C++新标准引入了显式的类型转换运算符（explicit conversion operator）：</p>
+<pre><code>class SmallInt {
+public:
+    // 编译器不会自动执行这一类型转换
+    explicit operator int() const { return val; }
+};
+</code></pre>
+
+<p>编译器不会将一个显式的类型转换运算符用于隐式类型转换：</p>
+<pre><code>SmallInt si = 3;            // 正确：SmallInt的构造函数不是显式的
+si + 3;                     // 错误：此处需要隐式的类型转换，但类的运算符是显式的
+static_cast&lt;int&gt;(si) + 3;   // 正确：显式地请求类型转换
+</code></pre>
+
+<p>但，如果表达式被用作条件，则编译器会将显示的类型转换自动应用于它。</p>
+<p>【NOTE】向bool的类型转换通常用在条件部分，因此operator bool一般定义成explicit的。</p>
+<p>14.9.2节和14.9.3节讨论了避免二义性的类型转换和函数匹配遇到重载运算符时可选函数的问题，详细见书本p517。</p></div>
         </div>
 
         <footer class="col-md-12">
