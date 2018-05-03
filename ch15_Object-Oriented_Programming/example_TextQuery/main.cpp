@@ -1,4 +1,4 @@
-// example: 文本查询程序(p430始)
+// example: 文本查询程序再探(p562)
 
 #include <fstream>
 #include <iostream>
