@@ -319,7 +319,8 @@
 |[练习15.1](ch15_Object-Oriented_Programming/exercise_15_01.md)|[练习15.2](ch15_Object-Oriented_Programming/exercise_15_02.md)|[练习15.3](ch15_Object-Oriented_Programming/exercise_15_03.md)|[练习15.4](ch15_Object-Oriented_Programming/exercise_15_04.md)|[练习15.5](ch15_Object-Oriented_Programming/exercise_15_05.md)|[练习15.6](ch15_Object-Oriented_Programming/exercise_15_06.cpp)|[练习15.7](ch15_Object-Oriented_Programming/exercise_15_07.cpp)|[练习15.8](ch15_Object-Oriented_Programming/exercise_15_08.md)|
 |[练习15.9](ch15_Object-Oriented_Programming/exercise_15_09.md)|[练习15.10](ch15_Object-Oriented_Programming/exercise_15_10.md)|[练习15.11](ch15_Object-Oriented_Programming/exercise_15_11.md)|[练习15.12](ch15_Object-Oriented_Programming/exercise_15_12.md)|[练习15.13](ch15_Object-Oriented_Programming/exercise_15_13.md)|[练习15.14](ch15_Object-Oriented_Programming/exercise_15_14.md)|[练习15.15](ch15_Object-Oriented_Programming/exercise_15_15.md)|[练习15.16](ch15_Object-Oriented_Programming/exercise_15_16.cpp)|
 |[练习15.17](ch15_Object-Oriented_Programming/exercise_15_17.md)|[练习15.18](ch15_Object-Oriented_Programming/exercise_15_18.cpp)|[练习15.19](ch15_Object-Oriented_Programming/exercise_15_19.cpp)|[练习15.20](ch15_Object-Oriented_Programming/exercise_15_20.md)|[练习15.21](ch15_Object-Oriented_Programming/exercise_15_21.cpp)|[练习15.22](ch15_Object-Oriented_Programming/exercise_15_22.md)|[练习15.23](ch15_Object-Oriented_Programming/exercise_15_23.cpp)|[练习15.24](ch15_Object-Oriented_Programming/exercise_15_24.md)|
-|[练习15.25](ch15_Object-Oriented_Programming/exercise_15_25.md)|[练习15.26](ch15_Object-Oriented_Programming/exercise_15_26.md)|[练习15.27](ch15_Object-Oriented_Programming/exercise_15_27.cpp)|[练习15.28](ch15_Object-Oriented_Programming/exercise_15_28.md)|[练习15.29](ch15_Object-Oriented_Programming/exercise_15_29.md)|[练习15.30](ch15_Object-Oriented_Programming/exercise_15_30.md)|
+|[练习15.25](ch15_Object-Oriented_Programming/exercise_15_25.md)|[练习15.26](ch15_Object-Oriented_Programming/exercise_15_26.md)|[练习15.27](ch15_Object-Oriented_Programming/exercise_15_27.cpp)|[练习15.28](ch15_Object-Oriented_Programming/exercise_15_28.md)|[练习15.29](ch15_Object-Oriented_Programming/exercise_15_29.md)|[练习15.30](ch15_Object-Oriented_Programming/exercise_15_30.md)|[练习15.31](ch15_Object-Oriented_Programming/exercise_15_31.md)|[练习15.32](ch15_Object-Oriented_Programming/exercise_15_32.md)|
+|[练习15.33](ch15_Object-Oriented_Programming/exercise_15_33.md)|
 
 #### 案例代码
 
@@ -332,4 +333,6 @@
 - [派生类的拷贝控制成员（p554）](ch15_Object-Oriented_Programming/example_derived_class_copy_control_members.cpp)
 
 - [定义派生类（p529）](ch15_Object-Oriented_Programming/example_derived_class.cpp)
+
+- [文本查询程序(p430始)](ch15_Object-Oriented_Programming/example_TextQuery)
 
