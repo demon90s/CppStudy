@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,7 +13,7 @@
         
     <url>
      <loc>/ch01 开始/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -25,19 +25,19 @@
         
     <url>
      <loc>/ch03 字符串、向量和数组/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch04 表达式/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch05 语句/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -49,37 +49,37 @@
         
     <url>
      <loc>/ch07 类/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch08 IO库/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch09 顺序容器/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch10 泛型算法/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch11 关联容器/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch12 动态内存/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -91,7 +91,29 @@
         
     <url>
      <loc>/ch14 操作重载与类型转换/</loc>
-     <lastmod>2018-04-30</lastmod>
+     <lastmod>2018-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/cheatsheet/static的3个用途/</loc>
+     <lastmod>2018-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/cheatsheet/若干种typedef/</loc>
+     <lastmod>2018-05-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/cheatsheet/类内初始值/</loc>
+     <lastmod>2018-05-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

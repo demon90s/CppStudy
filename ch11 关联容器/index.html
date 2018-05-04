@@ -139,6 +139,23 @@
 </li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CheatSheet <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../cheatsheet/static%E7%9A%843%E4%B8%AA%E7%94%A8%E9%80%94/">static的3个用途</a>
+</li>
+                            
+<li >
+    <a href="../cheatsheet/%E8%8B%A5%E5%B9%B2%E7%A7%8Dtypedef/">若干种typedef</a>
+</li>
+                            
+<li >
+    <a href="../cheatsheet/%E7%B1%BB%E5%86%85%E5%88%9D%E5%A7%8B%E5%80%BC/">类内初始值</a>
+</li>
+                        </ul>
+                    </li>
                 </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -182,11 +199,23 @@
 <h1 id="_1"><center>关联容器</center></h1>
 <hr />
 <p>关联容器与顺序容器有着根本的不同：</p>
-<p>- 关联容器中的元素是按关键字来保存和访问的。</p>
-<p>- 顺序容器中的元素是按它们在容器中的位置来顺序保存和访问的。</p>
+<ul>
+<li>
+<p>关联容器中的元素是按关键字来保存和访问的。</p>
+</li>
+<li>
+<p>顺序容器中的元素是按它们在容器中的位置来顺序保存和访问的。</p>
+</li>
+</ul>
 <p>关联容器支持高效的关键字查找和访问，有两个主要的关联容器：</p>
-<p>- map，其元素是一些关键字-值对，关键字起到索引作用，值则表示与之相关的数据。</p>
-<p>- set，每个元素只包含一个关键字。</p>
+<ul>
+<li>
+<p>map，其元素是一些关键字-值对，关键字起到索引作用，值则表示与之相关的数据。</p>
+</li>
+<li>
+<p>set，每个元素只包含一个关键字。</p>
+</li>
+</ul>
 <h2 id="_2">使用关联容器</h2>
 <p>map是关键字-值对的集合，通常被称为关联数组。关联数组与“正常”数组类似，不同之处在于其下标不必是整数。我们通过一个关键字而不是位置来查找值。</p>
 <p>set就是关键字的简单集合。</p>
@@ -213,13 +242,13 @@ map&lt;string, string&gt; authors = {
 <h3 id="_5">关键字类型的要求</h3>
 <p>对于有序容器，关键字类型必须定义元素比较的方法，默认情况下，标准库使用关键字类型的&lt;运算符来比较两个关键字。</p>
 <p><strong>使用关键字类型的比较函数</strong></p>
-<p>用来阻止一个容器中元素的操作的类型也是该容器类型的一部分。为了指定使用自定义的操作，必须在定义关联容器类型时提供此操作的类型（比如一个函数指针类型）。</p>
+<p>用来组织一个容器中元素的操作的类型也是该容器类型的一部分。为了指定使用自定义的操作，必须在定义关联容器类型时提供此操作的类型（比如一个函数指针类型）。</p>
 <pre><code>bool compareIsbn(const Sales_data &amp;lhs, const Sales_data &amp;rhs)
 {
     return lhs.isbn() &lt; rhs.isbn();
 }
 
-multiset&lt;Sales_data, decltype(compareIsbn*&gt; bookstore(compareIsbn);
+multiset&lt;Sales_data, decltype(compareIsbn)*&gt; bookstore(compareIsbn);
 </code></pre>
 
 <h3 id="pair">pair类型</h3>
@@ -248,9 +277,17 @@ process(vector&lt;string&gt; &amp;v)
 
 <h2 id="_6">关联容器操作</h2>
 <p>除了表9.2(第295页)中列出的类型，关联容器还定义了这些类型：</p>
-<p>- key_type, 此容器类型的关键字类型</p>
-<p>- mapped_type, 每个关键字关联的类型，只适用于map</p>
-<p>- value_type, 对于set，与key_type相同，对于map, 为<code>pair&lt;const key_type, mapped_type&gt;</code></p>
+<ul>
+<li>
+<p>key_type, 此容器类型的关键字类型</p>
+</li>
+<li>
+<p>mapped_type, 每个关键字关联的类型，只适用于map</p>
+</li>
+<li>
+<p>value_type, 对于set，与key_type相同，对于map, 为<code>pair&lt;const key_type, mapped_type&gt;</code></p>
+</li>
+</ul>
 <h3 id="_7">关联容器迭代器</h3>
 <p>当解引用一个关联容器迭代器时，我们会得到一个类型为容器的value_type的值的引用。对map而言，value_type是一个pair类型。</p>
 <p>【NOTE】必须记住，一个map的value_type是一个pair，我们可以改变pair的值，但不能改变关键字成员的值。</p>
@@ -290,8 +327,14 @@ authors.insert({&quot;Barth, John&quot;}, &quot;Lost in the Funhouse&quot;)
 <p>对允许重复关键字的容器，接受单个元素的insert操作返回一个指向新元素的迭代器。</p>
 <h3 id="_9">删除元素</h3>
 <p>关联容器定义了三个版本的erase：</p>
-<p>- 与顺序容器一样，传递给erase一个迭代器或一个迭代器范围来删除一个元素或一个元素范围。</p>
-<p>- 接受一个key_type参数，删除所有匹配给定关键字的元素（如果存在的话），返回实际删除的元素的数量。</p>
+<ul>
+<li>
+<p>与顺序容器一样，传递给erase一个迭代器或一个迭代器范围来删除一个元素或一个元素范围。</p>
+</li>
+<li>
+<p>接受一个key_type参数，删除所有匹配给定关键字的元素（如果存在的话），返回实际删除的元素的数量。</p>
+</li>
+</ul>
 <p>对于保存不重复关键字的容器，erase的返回值总是0或1。</p>
 <h3 id="map">map的下标操作</h3>
 <p>map和unordered_map容器提供了下标运算符和一个对应的at函数。</p>
