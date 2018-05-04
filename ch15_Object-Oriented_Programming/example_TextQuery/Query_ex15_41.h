@@ -1,3 +1,5 @@
+// 为练习15.41专门定义的文件
+
 #ifndef QUERY_H
 #define QUERY_H
 
@@ -59,8 +61,22 @@ class Query {
 	friend Query operator&(const Query&, const Query&);
 
 public:
-	Query(const std::string &s) : q(new WordQuery(s))	// 构建一个新的WordQuery
+	Query(const std::string &s) : q(new WordQuery(s)), use(new size_t(1))	// 构建一个新的WordQuery
 	{ PrintDebug("Query::Query(const std::string &s)"); }
+
+	Query(const Query &query) : q(query.q), use(query.use) { ++*use; }
+	Query& operator=(const Query &rhs)
+	{
+		++*rhs.use;
+		if (--*use == 0) {
+			delete q;
+			delete use;
+		}
+
+		q = rhs.q;
+		use = rhs.use;
+		return *this;
+	}
 
 	// 接口函数：调用对应的Query_base操作
 	QueryResult eval(const TextQuery &t) const { return q->eval(t); }
@@ -71,10 +87,11 @@ public:
 	}
 
 private:
-	Query(std::shared_ptr<Query_base> query) : q(query)
+	Query(Query_base *query) : q(query)
 	{ PrintDebug("Query::Query(std::shared_ptr<Query_base> query)"); }
 
-	std::shared_ptr<Query_base> q;
+	size_t *use;	// 引用计数
+	Query_base *q;
 };
 
 inline std::ostream& operator<<(std::ostream &os, const Query &query)
@@ -102,7 +119,7 @@ class NotQuery : public Query_base {
 
 inline Query operator~(const Query &operand)
 {
-	return std::shared_ptr<Query_base>(new NotQuery(operand));
+	return new NotQuery(operand);
 }
 
 class BinaryQuery : public Query_base {
@@ -134,7 +151,7 @@ class AndQuery : public BinaryQuery {
 
 inline Query operator&(const Query &lhs, const Query &rhs)
 {
-	return std::shared_ptr<Query_base>(new AndQuery(lhs, rhs));
+	return new AndQuery(lhs, rhs);
 };
 
 class OrQuery : public BinaryQuery {
@@ -148,7 +165,7 @@ class OrQuery : public BinaryQuery {
 
 inline Query operator|(const Query &lhs, const Query &rhs)
 {
-	return std::shared_ptr<Query_base>(new OrQuery(lhs, rhs));
+	return new OrQuery(lhs, rhs);
 }
 
 #endif

@@ -7,10 +7,19 @@
 #include "TextQuery.h"
 #include "QueryResult.h"
 
+#define DEFAULT_EXAMPLE
 //#define TEST_EX15_37
+//#define TEST_EX15_41
+
 #ifdef TEST_EX15_37
 #include "Query_ex15_37.h"
-#else
+#endif
+
+#ifdef TEST_EX15_41
+#include "Query_ex15_41.h"
+#endif
+
+#ifdef DEFAULT_EXAMPLE
 #include "Query.h"
 #endif
 
@@ -53,10 +62,28 @@ void func2()
 	cout << q << endl;
 }
 
+// 练习15.39
+void func3()
+{
+	Query q = (Query("fiery") & Query("bird")) | Query("wind");
+
+	ifstream infile("../../data/little_story.txt");
+	if (!infile)
+	{
+		cout << "Cant open file" << endl;
+		return;
+	}
+
+	TextQuery tq(infile);
+
+	print(cout, q.eval(tq));
+}
+
 int main()
 {
 	//func1();
-	func2();
+	//func2();
+	func3();
 
 	return 0;
 }
