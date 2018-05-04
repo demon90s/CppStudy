@@ -1,3 +1,5 @@
+// 专门为练习15.37定义的文件
+
 #ifndef QUERY_H
 #define QUERY_H
 
@@ -20,6 +22,10 @@ static QueryResult invalid_qr("", 0, 0);
 // 这是一个抽象基类，具体的查询类型从中派生，所有成员都是private的
 class Query_base {
 	friend class Query;
+	friend class NotQuery;
+	friend class AndQuery;
+	friend class OrQuery;
+	friend class BinaryQuery;
 
 protected:
 	using line_no = TextQuery::line_no;
@@ -58,6 +64,11 @@ class Query {
 	friend Query operator|(const Query&, const Query&);
 	friend Query operator&(const Query&, const Query&);
 
+	friend class NotQuery;
+	friend class AndQuery;
+	friend class OrQuery;
+	friend class BinaryQuery;
+
 public:
 	Query(const std::string &s) : q(new WordQuery(s))	// 构建一个新的WordQuery
 	{ PrintDebug("Query::Query(const std::string &s)"); }
@@ -86,18 +97,18 @@ inline std::ostream& operator<<(std::ostream &os, const Query &query)
 class NotQuery : public Query_base {
 	friend Query operator~(const Query&);
 	
-	NotQuery(const Query &q) : query(q)
+	NotQuery(const Query &q) : query(q.q)
 	{ PrintDebug("NotQuery::NotQuery(const Query &q)"); }
 
 	// 具体的类：NotQuery将定义所有继承而来的纯虚函数
 	std::string rep() const
 	{ 
 		PrintDebug("NotQuery::rep");
-		return "~" + query.rep() + ")"; 
+		return "~" + query->rep() + ")"; 
 	}
 
 	QueryResult eval(const TextQuery&) const;
-	Query query;
+	std::shared_ptr<Query_base> query;
 };
 
 inline Query operator~(const Query &operand)
@@ -108,17 +119,17 @@ inline Query operator~(const Query &operand)
 class BinaryQuery : public Query_base {
 protected:
 	BinaryQuery(const Query &l, const Query &r, std::string s) :
-		lhs(l), rhs(r), opSym(s)
+		lhs(l.q), rhs(r.q), opSym(s)
 	{ PrintDebug("BinaryQuery::BinaryQuery(const Query &l, const Query &r, std::string s)"); }
 
 	// 抽象类：BinaryQuery不定义eval
 	std::string rep() const
 	{
 		PrintDebug("BinaryQuery::rep");
-		return "(" + lhs.rep() + " " + opSym + " " + rhs.rep() + ")";
+		return "(" + lhs->rep() + " " + opSym + " " + rhs->rep() + ")";
 	}
 
-	Query lhs, rhs;		// 左侧和右侧的运算对象
+	std::shared_ptr<Query_base> lhs, rhs;		// 左侧和右侧的运算对象
 	std::string opSym;	// 运算符的名字
 };
 

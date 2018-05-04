@@ -7,6 +7,13 @@
 #include "TextQuery.h"
 #include "QueryResult.h"
 
+//#define TEST_EX15_37
+#ifdef TEST_EX15_37
+#include "Query_ex15_37.h"
+#else
+#include "Query.h"
+#endif
+
 using namespace std;
 
 void runQueries(ifstream &infile)
@@ -27,16 +34,29 @@ void runQueries(ifstream &infile)
 	}
 }
 
-int main()
+void func1()
 {
 	ifstream infile("../../data/little_story.txt");
 	if (!infile)
 	{
 		cout << "Cant open file" << endl;
-		return 1;
+		return;
 	}
 
 	runQueries(infile);
+}
+
+// 练习15.36
+void func2()
+{
+	Query q = (Query("fiery") & Query("bird")) | Query("wind");
+	cout << q << endl;
+}
+
+int main()
+{
+	//func1();
+	func2();
 
 	return 0;
 }
