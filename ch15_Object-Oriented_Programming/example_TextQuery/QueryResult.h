@@ -8,7 +8,7 @@
 #include <memory>
 
 class QueryResult {
-	friend std::ostream& print(std::ostream&, const QueryResult&);
+	friend std::ostream& print(std::ostream&, const QueryResult&, std::pair<size_t, size_t>*);
 public:
 	using line_no = std::vector<std::string>::size_type;
 	QueryResult(std::string s,
@@ -27,6 +27,6 @@ private:
 	std::shared_ptr<std::vector<std::string>> file;	// 输入文件
 };
 
-extern std::ostream& print(std::ostream&, const QueryResult&);
+extern std::ostream& print(std::ostream&, const QueryResult&, std::pair<size_t, size_t>* line_range = nullptr);
 
 #endif // QUERY_RESULT_H

@@ -93,7 +93,7 @@ class NotQuery : public Query_base {
 	std::string rep() const
 	{ 
 		PrintDebug("NotQuery::rep");
-		return "~" + query.rep() + ")"; 
+		return "~(" + query.rep() + ")"; 
 	}
 
 	QueryResult eval(const TextQuery&) const;
