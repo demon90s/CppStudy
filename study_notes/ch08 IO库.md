@@ -6,11 +6,11 @@
 
 为了支持不同种类的IO处理操作，标准库定义了这几种类型：
 
-- iostream 定义了用于读写流的基本类型
+- iostream 定义了用于读写流的基本类型
 
-- fstream 定义了读写命名文件的类型
+- fstream 定义了读写命名文件的类型
 
-- sstream 定义了读写内存string对象的类型
+- sstream 定义了读写内存string对象的类型
 
 它们分别定义在同名的头文件中。
 
@@ -58,21 +58,21 @@ os << "please enter a value: ";
 
 导致缓冲区刷新的原因有：
 
-- 程序正常结束
+- 程序正常结束
 
-- 缓冲区满时
+- 缓冲区满时
 
-- 使用操纵符，如endl，来显式刷新缓冲区
+- 使用操纵符，如endl，来显式刷新缓冲区
 
-- 读cin或写cerr，都会导致cout的缓冲区被刷新
+- 读cin或写cerr，都会导致cout的缓冲区被刷新
 
 **刷新输出缓冲区**
 
 IO库还提供了两个操纵符用于刷新缓冲区：
 
-- flush 刷新缓冲区，但不输出任何额外字符
+- flush 刷新缓冲区，但不输出任何额外字符
 
-- ends 向缓冲区插入一个空字符，然后刷新缓冲区
+- ends 向缓冲区插入一个空字符，然后刷新缓冲区
 
 **unitbuf操纵符**
 
@@ -110,11 +110,11 @@ ofstream out;         // 输出文件流未关联到任何文件
 
 每个文件流类型都定义了一个默认的文件模式，当未指定文件模式时，就使用此默认模式。
 
-- 与ifstream关联的文件默认以in模式打开；
+- 与ifstream关联的文件默认以in模式打开；
 
-- 与ofstream关联的文件默认以out模式打开；
+- 与ofstream关联的文件默认以out模式打开；
 
-- 与fstream关联的文件默认以in和out模式打开。
+- 与fstream关联的文件默认以in和out模式打开。
 
 **以out模式打开文件会丢失已有数据**
 
@@ -131,11 +131,11 @@ ofstream app("file2", ofstream::app);    // 保留文件内容，写操�
 
 sstream头文件定义了三个类型来支持内存IO：
 
-- istringstream从string读取数据。
+- istringstream从string读取数据。
 
-- ostringstream向string写入数据。
+- ostringstream向string写入数据。
 
-- stringstream既可以从string读数据，也可以向string写数据。
+- stringstream既可以从string读数据，也可以向string写数据。
 
 sstream增加了一些成员来管理与流相关联的string。见p287。
 
