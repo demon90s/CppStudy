@@ -1,8 +1,11 @@
 site_name: CppPrimer学习笔记
 
+copyright: 'Copyright &copy; 2018 Diwen Liu'
+
 docs_dir: study_notes
 
 repo_url: https://github.com/demon90s/CppPrimer
+edit_uri: "tree/master/study_notes"
 
 pages:
   - Home: index.md
@@ -33,4 +36,15 @@ pages:
     - 若干种typedef: cheatsheet/若干种typedef.md
     - 类内初始值: cheatsheet/类内初始值.md
 
-theme: 
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue grey'
+    accent: 'light blue'
+  font:
+    text: 'Raleway Bold'
+    code: 'Ubuntu Mono'
+
+extra:
+  search:
+    language: 'jp'
