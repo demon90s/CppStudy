@@ -12,4 +12,4 @@
 
 - [print](./example_TextQuery/QueryResult.cpp)
 
-- (func4)(./example_TextQuery/main.cpp)
+- [func4](./example_TextQuery/main.cpp)
