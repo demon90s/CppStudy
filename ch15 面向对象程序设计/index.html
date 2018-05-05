@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>ch08 IO库 - CppPrimer学习笔记</title>
+        <title>ch15 面向对象程序设计 - CppPrimer学习笔记</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -100,8 +100,8 @@
     <a href="../ch07%20%E7%B1%BB/">ch07 类</a>
 </li>
                             
-<li class="active">
-    <a href="./">ch08 IO库</a>
+<li >
+    <a href="../ch08%20IO%E5%BA%93/">ch08 IO库</a>
 </li>
                             
 <li >
@@ -138,8 +138,8 @@
     <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">ch14 操作重载与类型转换</a>
 </li>
                             
-<li >
-    <a href="../ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">ch15 面向对象程序设计</a>
+<li class="active">
+    <a href="./">ch15 面向对象程序设计</a>
 </li>
                         </ul>
                     </li>
@@ -169,12 +169,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../ch07%20%E7%B1%BB/">
+                        <a rel="next" href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/">
+                        <a rel="prev" href="../cheatsheet/static%E7%9A%843%E4%B8%AA%E7%94%A8%E9%80%94/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -191,137 +191,114 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#io">IO库</a></li>
-            <li><a href="#io_1">IO类</a></li>
-            <li><a href="#_3">文件输入输出</a></li>
-            <li><a href="#string">string流</a></li>
+        <li class="main active"><a href="#_1">面向对象程序设计</a></li>
+            <li><a href="#oop">OOP概述</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="io"><center>IO库</center></h1>
+<h1 id="_1"><center>面向对象程序设计</center></h1>
 <hr />
-<h2 id="io_1">IO类</h2>
-<p>为了支持不同种类的IO处理操作，标准库定义了这几种类型：</p>
+<h2 id="oop">OOP概述</h2>
+<p><strong>面向对象程序设计（object-oriented  programming）</strong>的核心思想是数据抽象、继承和动态绑定。</p>
+<p>通过数据抽象，我们可以将类的接口与实现分离。</p>
+<p>使用继承，可以定义相似的类型并对其相似关系建模。</p>
+<p>使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。</p>
+<p><strong>继承</strong></p>
+<p>通过继承（inheritance）联系在一起的类构成一种层次关系。层次关系的根部有一个基类（base class），其他类直接或间接地从基类继承而来，这些继承得到的类称为派生类（derived class）。</p>
+<p>基类负责定义在层次关系中所有类共同拥有的成员，而每个派生类定义各自特有的成员。</p>
+<pre><code class="c++">// 基类的部分定义
+class Quote {
+public:
+    std::string isbn() const;
+    virtual double net_price(std::size_t n) const;
+};
+
+class Bulk_quote : public Quote {
+public:
+    double net_price(std::size_t) const override;
+};
+</code></pre>
+
+<p>对于某些函数，基类希望它的派生类各自定义适合自身的版本，此时基类就将这些函数声明成<strong>虚函数(virtual function)</strong>。</p>
+<p>派生类必须通过使用<strong>类派生列表（class deriveation list）</strong>明确指出它是从哪个基类继承而来的，其形式是：首先一个冒号，后面紧跟以逗号分隔的基类列表，其中每个基类前面可以有访问说明符。</p>
+<p>派生类必须在其内部对所有重新定义的虚函数进行声明，最好在后面加上override关键字，以确保编译器为我们做语法检查。</p>
+<h3 id="_2">定义基类</h3>
+<pre><code class="c++">class Quote {
+public:
+    Quote() = default;
+    Quote(const std::string &amp;book, double sales_price) : bookNo(book), price(sales_price) {}
+
+    std::string isbn() const { return bookNo; }
+
+    virtual ~Quote() = default; // 对析构函数进行动态绑定
+    virtual double net_price(std::size_t n) const { return n * price; }
+
+private:
+    std::string bookNo;
+
+protected:
+    double price = 0.0;
+};
+</code></pre>
+
+<p>【NOTE】基类通常都应该定义一个虚析构函数，即使该函数不执行任何实际操作也是如此。</p>
+<p><strong>成员函数与继承</strong></p>
+<p>派生类可以继承其基类的成员，但遇到像net_price这样的与类型相关的操作时，派生类必须对其重新定义。即，派生类需要对这些操作提供自己的新定义以覆盖（override）从基类继承而来的旧定义。</p>
+<p>在C++语言中，基类必须将它的两种成员函数区分开来：</p>
 <ul>
 <li>
-<p>iostream 定义了用于读写流的基本类型</p>
+<p>一种是基类希望其派生类进行覆盖的函数，则将其定义为虚函数。</p>
 </li>
 <li>
-<p>fstream 定义了读写命名文件的类型</p>
-</li>
-<li>
-<p>sstream 定义了读写内存string对象的类型</p>
+<p>另一种是基类希望派生类直接继承而不要改变的函数。</p>
 </li>
 </ul>
-<p>它们分别定义在同名的头文件中。</p>
-<p><strong>IO类型间的关系</strong></p>
-<p>类型ifstream和istringstream都继承自istream。我们可以像使用istream对象一样来使用它们。对于ostream也是如此。</p>
-<h3 id="io_2">IO对象无拷贝或赋值</h3>
-<p>由于不能拷贝IO对象，因此也不能将形参或返回类型设置为流类型。进行IO操作的函数通常以引用方式传递或返回流。</p>
-<p>读写一个IO对象会改变其状态，因此传递和返回的引用不能是const的。</p>
-<h3 id="_1">条件状态</h3>
-<p>IO类定义了一些函数和标志，可以帮助我们访问和操纵流的条件状态。见p279。</p>
-<p>一个IO错误的例子：</p>
-<pre><code>int ival;
-cin &gt;&gt; ival;
+<p>当我们使用指针或引用调用虚函数时，该调用将被动态绑定。根据引用或指针所绑定的对象类型不同，该调用可能执行基类的版本，也可能执行某个派生类的版本。</p>
+<p><strong>访问控制与继承</strong></p>
+<p>派生类可以继承定义在基类中的成员，但派生类的成员函数不一定有权访问从基类继承而来的成员。</p>
+<p>派生类能访问公有成员、受保护的成员，不能访问私有成员。</p>
+<h3 id="_3">定义派生类</h3>
+<pre><code class="c++">class Bulk_quote : public Quote {
+public:
+    Bulk_quote() = default;
+    Bulk_quote(const std::string &amp;book, double p, std::size_t qty, double disc) : 
+        Quote(book, p), min_qty(qty), discount(disc) {}
+
+    // 覆盖基类的函数版本以实现基于大量购买的折扣政策
+    double net_price(std::size_t) const override;
+
+private:
+    std::size_t min_qty = 0;    // 适用折扣最低购买量
+    double discount = 0.0;      // 折扣
+};
 </code></pre>
 
-<p>如果试图在标准输入上键入Boo，读操作就会失败，cin进入错误状态。</p>
-<p>如果输入一个文件结束符标识，cin也会进入错误状态。</p>
-<p>一个流一旦发生错误，其上后续的IO操作都会失败。确定一个流对象的状态的最简单的方法是将它当作一个条件来使用：</p>
-<pre><code>while (cin &gt;&gt; word)
-    // ok
-</code></pre>
-
-<h3 id="_2">管理输出缓冲</h3>
-<p>每个输出流都管理一个缓冲区，用来保存程序读写的数据。如果执行下面的代码：</p>
-<pre><code>os &lt;&lt; &quot;please enter a value: &quot;;
-</code></pre>
-
-<p>文本串可能立即打印出来，但也有可能被操作系统保存在缓冲区中，随后再打印。这样可以带来很大的性能提升。</p>
-<p>导致缓冲区刷新的原因有：</p>
+<p><strong>派生类中的虚函数</strong></p>
+<p>派生类经常覆盖它继承的虚函数。如果派生类没有覆盖其基类中的某个虚函数，则该虚函数的行为类似于其他的普通成员，派生类会直接继承其在基类中的版本。</p>
+<p>派生类可以在它覆盖的函数前使用virtual关键字，但不是必须的。C++11新标准允许派生类显式地注明它使用某个成员函数覆盖了它继承的虚函数，办法函数后面加一个关键字override。</p>
+<p><strong>派生类对象及派生类向基类的类型转换</strong></p>
+<p>一个派生类对象包含多个组成部分：</p>
 <ul>
 <li>
-<p>程序正常结束</p>
+<p>一个包含派生类自己定义的（非静态）成员的子对象。</p>
 </li>
 <li>
-<p>缓冲区满时</p>
-</li>
-<li>
-<p>使用操纵符，如endl，来显式刷新缓冲区</p>
-</li>
-<li>
-<p>读cin或写cerr，都会导致cout的缓冲区被刷新</p>
+<p>一个与派生类继承的基类对应的子对象，如果有多个基类，那么这样的子对象也有多个。</p>
 </li>
 </ul>
-<p><strong>刷新输出缓冲区</strong></p>
-<p>IO库还提供了两个操纵符用于刷新缓冲区：</p>
-<ul>
-<li>
-<p>flush 刷新缓冲区，但不输出任何额外字符</p>
-</li>
-<li>
-<p>ends 向缓冲区插入一个空字符，然后刷新缓冲区</p>
-</li>
-</ul>
-<p><strong>unitbuf操纵符</strong></p>
-<p>如果想在每次输出操作后都刷新缓冲区，我们可以使用unitbuf操纵符。</p>
-<pre><code>cout &lt;&lt; unitbuf;    // 所有输出操作后都会立即刷新缓冲区
-cout &lt;&lt; nounitbuf;  // 回到正常的缓冲方式
+<p>C++标准并没有明确规定派生类的对象在内存中如何分布。</p>
+<p>我们能把派生类的对象当成基类对象来使用，而且也能将基类的指针或引用绑定到派生类对象的基类部分上。</p>
+<pre><code>Quote item;             // 基类对象
+Bulk_quote bulk;        // 派生类对象
+Quote *p = &amp;item;       // p指向Quote对象
+p = &amp;bulk;              // p指向bulk的Quote部分
 </code></pre>
 
-<p>【警告】如果程序崩溃，输出缓冲区不会刷新</p>
-<h2 id="_3">文件输入输出</h2>
-<p>除了继承自iostream类型的行为之外，fstream中定义的类型还增加了一些新的成员来管理与流关联的文件。见p283。</p>
-<h3 id="_4">使用文件流对象</h3>
-<p>当想要读写一个文件时，可以定义一个文件流对象，并将对象与文件关联起来。</p>
-<p>每个文件流类都定义了一个名为open的成员函数，它完成一些系统相关的操作，来定位给定的文件，并视情况打开为读或写模式。</p>
-<p>创建文件流对象时，如果提供了一个文件名，则open会被自动调用：</p>
-<pre><code>ifstream in(file);    // 构造一个ifstream并打开给定的文件
-ofstream out;         // 输出文件流未关联到任何文件
-</code></pre>
-
-<p>【NOTE】当一个fstream对象被销毁时，close会自动被调用。</p>
-<h3 id="_5">文件模式</h3>
-<p>每个流都有一个关联的文件模式，用来指出如何使用文件。见p286。</p>
-<p>每个文件流类型都定义了一个默认的文件模式，当未指定文件模式时，就使用此默认模式。</p>
-<ul>
-<li>
-<p>与ifstream关联的文件默认以in模式打开；</p>
-</li>
-<li>
-<p>与ofstream关联的文件默认以out模式打开；</p>
-</li>
-<li>
-<p>与fstream关联的文件默认以in和out模式打开。</p>
-</li>
-</ul>
-<p><strong>以out模式打开文件会丢失已有数据</strong></p>
-<p>默认情况下，当我们打开一个ofstream时，文件的内容会被丢弃。</p>
-<p>阻止丢弃的方法是同时指定app模式：</p>
-<pre><code>ofstream out(&quot;file1&quot;);    // 文件被截断
-ofstream app(&quot;file2&quot;, ofstream::app);    // 保留文件内容，写操作在文件末尾进行
-</code></pre>
-
-<h2 id="string">string流</h2>
-<p>sstream头文件定义了三个类型来支持内存IO：</p>
-<ul>
-<li>
-<p>istringstream从string读取数据。</p>
-</li>
-<li>
-<p>ostringstream向string写入数据。</p>
-</li>
-<li>
-<p>stringstream既可以从string读数据，也可以向string写数据。</p>
-</li>
-</ul>
-<p>sstream增加了一些成员来管理与流相关联的string。见p287。</p>
-<h3 id="istringstream">使用istringstream</h3>
-<p>当我们的某些工作是对整行文本进行处理，而其他一些工作是处理行内的单个单词时，通常可以使用istringstream。</p>
-<h3 id="ostringstream">使用ostringstream</h3>
-<p>当我们逐步构造输出，希望最后一期打印时，ostringstream是很有用的。</p></div>
+<p>这种转换称为<strong>派生类到基类的转换(derived-to-base)</strong>，这是一种隐式转换。</p>
+<p><strong>派生类的构造函数</strong></p>
+<p>尽管派生类对象中含有从基类继承而来的成员，但派生类并不能直接初始化这些成员。派生类必须使用基类的构造函数来初始化它的基类部分。</p>
+<p>【NOTE】每个类控制它自己的成员初始化过程。</p></div>
         </div>
 
         <footer class="col-md-12">
