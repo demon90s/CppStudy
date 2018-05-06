@@ -45,3 +45,8 @@ theme:
 markdown_extensions:
   - admonition
   - codehilite
+  - pymdownx.mark
+
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
