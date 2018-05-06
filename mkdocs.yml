@@ -11,24 +11,18 @@ pages:
   - Home: index.md
   - Chapters: 
     - ch01 开始: ch01 开始.md
-    - ch02 变量和基本类型:
-      - 变量和基本类型1: ch02 变量和基本类型_1.md
-      - 变量和基本类型2: ch02 变量和基本类型_2.md
+    - ch02 变量和基本类型: ch02 变量和基本类型.md
     - ch03 字符串、向量和数组: ch03 字符串、向量和数组.md
     - ch04 表达式: ch04 表达式.md
     - ch05 语句: ch05 语句.md
-    - ch06 函数:
-      - 函数1: ch06 函数_1.md
-      - 函数2: ch06 函数_2.md
+    - ch06 函数: ch06 函数.md
     - ch07 类: ch07 类.md
     - ch08 IO库: ch08 IO库.md
     - ch09 顺序容器: ch09 顺序容器.md
     - ch10 泛型算法: ch10 泛型算法.md
     - ch11 关联容器: ch11 关联容器.md
     - ch12 动态内存: ch12 动态内存.md
-    - ch13 拷贝控制:
-      - 拷贝控制1: ch13 拷贝控制_1.md
-      - 拷贝控制2: ch13 拷贝控制_2.md
+    - ch13 拷贝控制: ch13 拷贝控制.md
     - ch14 操作重载与类型转换: ch14 操作重载与类型转换.md
     - ch15 面向对象程序设计: ch15 面向对象程序设计.md
   - CheatSheet:
@@ -44,7 +38,10 @@ theme:
   font:
     text: 'Raleway Bold'
     code: 'Ubuntu Mono'
+  language: 'zh'
+  logo:
+    icon: 'code'
 
-extra:
-  search:
-    language: 'jp'
+markdown_extensions:
+  - admonition
+  - codehilite
