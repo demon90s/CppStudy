@@ -306,9 +306,9 @@
 
 - [定义含有类型转换运算符的类（p514）](ch14_Overloaded_Operations_and_Conversions/example_conversion_operators.cpp)
 
-- [可调用对象与function（p511）](ch14_Overloaded_Operations_and_Conversions/example_function.cpp)
-
 - [函数调用运算符（p506）](ch14_Overloaded_Operations_and_Conversions/example_function-call_operator.cpp)
+
+- [可调用对象与function（p511）](ch14_Overloaded_Operations_and_Conversions/example_function.cpp)
 
 - [标准库定义的函数对象（p509）](ch14_Overloaded_Operations_and_Conversions/example_std_funcobj.cpp)
 
@@ -331,9 +331,19 @@
 
 - [编写Basket类（容器与继承案例，p559）](ch15_Object-Oriented_Programming/example_basket.cpp)
 
-- [定义派生类（p529）](ch15_Object-Oriented_Programming/example_derived_class.cpp)
-
 - [派生类的拷贝控制成员（p554）](ch15_Object-Oriented_Programming/example_derived_class_copy_control_members.cpp)
 
+- [定义派生类（p529）](ch15_Object-Oriented_Programming/example_derived_class.cpp)
+
 - [文本查询程序再探(p562)](ch15_Object-Oriented_Programming/example_TextQuery)
+
+### 第16章_模板与泛型编程
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习16.1](ch16_Templates_and_GenericProgramming/exercise_16_01.md)|[练习16.2](ch16_Templates_and_GenericProgramming/exercise_16_02.md)|[练习16.3](ch16_Templates_and_GenericProgramming/exercise_16_03.cpp)|[练习16.4](ch16_Templates_and_GenericProgramming/exercise_16_04.cpp)|[练习16.5](ch16_Templates_and_GenericProgramming/exercise_16_05.cpp)|[练习16.6](ch16_Templates_and_GenericProgramming/exercise_16_06.cpp)|[练习16.7](ch16_Templates_and_GenericProgramming/exercise_16_07.cpp)|[练习16.8](ch16_Templates_and_GenericProgramming/exercise_16_08.md)|
+
+#### 案例代码
+
+- [函数模板（p578）](ch16_Templates_and_GenericProgramming/example_function_template.cpp)
 
