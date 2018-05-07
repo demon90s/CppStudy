@@ -47,10 +47,10 @@ commit() {
 }
 
 main() {
-	clear_build
 	rm -rf site
 
 	if [ "$1" = "gen" ]; then
+		clear_build
 		sh ./gen_readme.sh
 		cd ./defined_terms
 		sh ./gen_index.sh
