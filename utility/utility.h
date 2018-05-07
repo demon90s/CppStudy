@@ -17,6 +17,10 @@
 // 求数组的元素的数量，得到的是一个constexpr size_t（p140）
 #define ARRAY_ITEM_NUM2(arr) (sizeof(arr) / sizeof(*arr))
 
+// 求数组元素的数量（p583，练习16.7）
+template<typename T, size_t N>
+size_t ArrayItemNum(T (&arr)[N]) { return N; }
+
 // 进行一次无效的变量使用，以忽略GCC下的未使用变量警告
 #define USE_VAR(x) ((void)&(x))
 

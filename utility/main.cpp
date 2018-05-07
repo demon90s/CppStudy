@@ -8,7 +8,9 @@ void test_ARRAY_ITEM_NUM()
 {
 	int arr[7 * 8] = {};
 	//ptrdiff_t sz = ARRAY_ITEM_NUM1(arr);
-	constexpr size_t sz = ARRAY_ITEM_NUM2(arr);
+	//constexpr size_t sz = ARRAY_ITEM_NUM2(arr);
+	auto sz = ArrayItemNum(arr);
+
 	cout << "arr sz: " << sz << endl;
 }
 
@@ -92,7 +94,7 @@ void test_string_to_basetype()
 int main()
 {
 	// 测试求数组元素的数量
-	//test_ARRAY_ITEM_NUM();
+	test_ARRAY_ITEM_NUM();
 
 	// 测试设置、清除、判断比特位
 	//test_bitwise_operator(); 
@@ -101,7 +103,7 @@ int main()
 	
 	//test_read_name();
 	
-	test_string_to_basetype();
+	//test_string_to_basetype();
 
 	return 0;
 }
