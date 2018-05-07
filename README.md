@@ -347,3 +347,5 @@
 
 - [函数模板（p578）](ch16_Templates_and_GenericProgramming/example_function_template.cpp)
 
+- [类模板（p583）](ch16_Templates_and_GenericProgramming/example_template_class)
+
