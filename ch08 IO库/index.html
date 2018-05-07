@@ -1,205 +1,760 @@
+
+
+
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
         <title>ch08 IO库 - CppPrimer学习笔记</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="..">CppPrimer学习笔记</a>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway+Bold:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Raleway Bold","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#io" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="CppPrimer学习笔记" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">code</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                CppPrimer学习笔记
+              </span>
+              <span class="md-header-nav__topic">
+                ch08 IO库
+              </span>
+            
+          
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapters <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../ch01%20%E5%BC%80%E5%A7%8B/">ch01 开始</a>
-</li>
-                            
-  <li class="dropdown-submenu">
-    <a href="#">ch02 变量和基本类型</a>
-    <ul class="dropdown-menu">
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
             
-<li >
-    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B_1/">变量和基本类型1</a>
-</li>
-            
-<li >
-    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B_2/">变量和基本类型2</a>
-</li>
-    </ul>
-  </li>
-                            
-<li >
-    <a href="../ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/">ch03 字符串、向量和数组</a>
-</li>
-                            
-<li >
-    <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/">ch04 表达式</a>
-</li>
-                            
-<li >
-    <a href="../ch05%20%E8%AF%AD%E5%8F%A5/">ch05 语句</a>
-</li>
-                            
-  <li class="dropdown-submenu">
-    <a href="#">ch06 函数</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../ch06%20%E5%87%BD%E6%95%B0_1/">函数1</a>
-</li>
-            
-<li >
-    <a href="../ch06%20%E5%87%BD%E6%95%B0_2/">函数2</a>
-</li>
-    </ul>
-  </li>
-                            
-<li >
-    <a href="../ch07%20%E7%B1%BB/">ch07 类</a>
-</li>
-                            
-<li class="active">
-    <a href="./">ch08 IO库</a>
-</li>
-                            
-<li >
-    <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/">ch09 顺序容器</a>
-</li>
-                            
-<li >
-    <a href="../ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/">ch10 泛型算法</a>
-</li>
-                            
-<li >
-    <a href="../ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/">ch11 关联容器</a>
-</li>
-                            
-<li >
-    <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/">ch12 动态内存</a>
-</li>
-                            
-  <li class="dropdown-submenu">
-    <a href="#">ch13 拷贝控制</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6_1/">拷贝控制1</a>
-</li>
-            
-<li >
-    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6_2/">拷贝控制2</a>
-</li>
-    </ul>
-  </li>
-                            
-<li >
-    <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">ch14 操作重载与类型转换</a>
-</li>
-                            
-<li >
-    <a href="../ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">ch15 面向对象程序设计</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CheatSheet <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../cheatsheet/static%E7%9A%843%E4%B8%AA%E7%94%A8%E9%80%94/">static的3个用途</a>
-</li>
-                            
-<li >
-    <a href="../cheatsheet/%E8%8B%A5%E5%B9%B2%E7%A7%8Dtypedef/">若干种typedef</a>
-</li>
-                            
-<li >
-    <a href="../cheatsheet/%E7%B1%BB%E5%86%85%E5%88%9D%E5%A7%8B%E5%80%BC/">类内初始值</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../ch07%20%E7%B1%BB/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/demon90s/CppPrimer">
-                                <i class="fa fa-github"></i>GitHub
-                        </a>
-                    </li>
-            </ul>
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#io">IO库</a></li>
-            <li><a href="#io_1">IO类</a></li>
-            <li><a href="#_3">文件输入输出</a></li>
-            <li><a href="#string">string流</a></li>
+
+  
+
+
+  <a href="https://github.com/demon90s/CppPrimer/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">code</i>
+      
+    </span>
+    CppPrimer学习笔记
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppPrimer/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Chapters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch01%20%E5%BC%80%E5%A7%8B/" title="ch01 开始" class="md-nav__link">
+      ch01 开始
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="ch02 变量和基本类型" class="md-nav__link">
+      ch02 变量和基本类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" title="ch03 字符串、向量和数组" class="md-nav__link">
+      ch03 字符串、向量和数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="ch04 表达式" class="md-nav__link">
+      ch04 表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch05%20%E8%AF%AD%E5%8F%A5/" title="ch05 语句" class="md-nav__link">
+      ch05 语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch06%20%E5%87%BD%E6%95%B0/" title="ch06 函数" class="md-nav__link">
+      ch06 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch07%20%E7%B1%BB/" title="ch07 类" class="md-nav__link">
+      ch07 类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        ch08 IO库
+      </label>
+    
+    <a href="./" title="ch08 IO库" class="md-nav__link md-nav__link--active">
+      ch08 IO库
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io_1" title="IO类" class="md-nav__link">
+    IO类
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io_2" title="IO对象无拷贝或赋值" class="md-nav__link">
+    IO对象无拷贝或赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="条件状态" class="md-nav__link">
+    条件状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="管理输出缓冲" class="md-nav__link">
+    管理输出缓冲
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="文件输入输出" class="md-nav__link">
+    文件输入输出
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="使用文件流对象" class="md-nav__link">
+    使用文件流对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="文件模式" class="md-nav__link">
+    文件模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" title="string流" class="md-nav__link">
+    string流
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#istringstream" title="使用istringstream" class="md-nav__link">
+    使用istringstream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ostringstream" title="使用ostringstream" class="md-nav__link">
+    使用ostringstream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="io"><center>IO库</center></h1>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" title="ch09 顺序容器" class="md-nav__link">
+      ch09 顺序容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" title="ch10 泛型算法" class="md-nav__link">
+      ch10 泛型算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" title="ch11 关联容器" class="md-nav__link">
+      ch11 关联容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" title="ch12 动态内存" class="md-nav__link">
+      ch12 动态内存
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6/" title="ch13 拷贝控制" class="md-nav__link">
+      ch13 拷贝控制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="ch14 操作重载与类型转换" class="md-nav__link">
+      ch14 操作重载与类型转换
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" title="ch15 面向对象程序设计" class="md-nav__link">
+      ch15 面向对象程序设计
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      CheatSheet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        CheatSheet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/static%E7%9A%843%E4%B8%AA%E7%94%A8%E9%80%94/" title="static的3个用途" class="md-nav__link">
+      static的3个用途
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/%E8%8B%A5%E5%B9%B2%E7%A7%8Dtypedef/" title="若干种typedef" class="md-nav__link">
+      若干种typedef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/%E7%B1%BB%E5%86%85%E5%88%9D%E5%A7%8B%E5%80%BC/" title="类内初始值" class="md-nav__link">
+      类内初始值
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io_1" title="IO类" class="md-nav__link">
+    IO类
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io_2" title="IO对象无拷贝或赋值" class="md-nav__link">
+    IO对象无拷贝或赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="条件状态" class="md-nav__link">
+    条件状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="管理输出缓冲" class="md-nav__link">
+    管理输出缓冲
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="文件输入输出" class="md-nav__link">
+    文件输入输出
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="使用文件流对象" class="md-nav__link">
+    使用文件流对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="文件模式" class="md-nav__link">
+    文件模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" title="string流" class="md-nav__link">
+    string流
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#istringstream" title="使用istringstream" class="md-nav__link">
+    使用istringstream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ostringstream" title="使用ostringstream" class="md-nav__link">
+    使用ostringstream
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/demon90s/CppPrimer/tree/master/study_notes/ch08 IO库.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="io">第八章 IO库</h1>
 <hr />
 <h2 id="io_1">IO类</h2>
 <p>为了支持不同种类的IO处理操作，标准库定义了这几种类型：</p>
@@ -223,21 +778,24 @@
 <h3 id="_1">条件状态</h3>
 <p>IO类定义了一些函数和标志，可以帮助我们访问和操纵流的条件状态。见p279。</p>
 <p>一个IO错误的例子：</p>
-<pre><code>int ival;
-cin &gt;&gt; ival;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">ival</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">ival</span><span class="p">;</span>
+</pre></div>
+
 
 <p>如果试图在标准输入上键入Boo，读操作就会失败，cin进入错误状态。</p>
 <p>如果输入一个文件结束符标识，cin也会进入错误状态。</p>
 <p>一个流一旦发生错误，其上后续的IO操作都会失败。确定一个流对象的状态的最简单的方法是将它当作一个条件来使用：</p>
-<pre><code>while (cin &gt;&gt; word)
-    // ok
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span>
+    <span class="c1">// ok</span>
+</pre></div>
+
 
 <h3 id="_2">管理输出缓冲</h3>
 <p>每个输出流都管理一个缓冲区，用来保存程序读写的数据。如果执行下面的代码：</p>
-<pre><code>os &lt;&lt; &quot;please enter a value: &quot;;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;please enter a value: &quot;</span><span class="p">;</span>
+</pre></div>
+
 
 <p>文本串可能立即打印出来，但也有可能被操作系统保存在缓冲区中，随后再打印。这样可以带来很大的性能提升。</p>
 <p>导致缓冲区刷新的原因有：</p>
@@ -267,22 +825,30 @@ cin &gt;&gt; ival;
 </ul>
 <p><strong>unitbuf操纵符</strong></p>
 <p>如果想在每次输出操作后都刷新缓冲区，我们可以使用unitbuf操纵符。</p>
-<pre><code>cout &lt;&lt; unitbuf;    // 所有输出操作后都会立即刷新缓冲区
-cout &lt;&lt; nounitbuf;  // 回到正常的缓冲方式
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">unitbuf</span><span class="p">;</span>    <span class="c1">// 所有输出操作后都会立即刷新缓冲区</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">nounitbuf</span><span class="p">;</span>  <span class="c1">// 回到正常的缓冲方式</span>
+</pre></div>
 
-<p>【警告】如果程序崩溃，输出缓冲区不会刷新</p>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>如果程序崩溃，输出缓冲区不会刷新</p>
+</div>
 <h2 id="_3">文件输入输出</h2>
 <p>除了继承自iostream类型的行为之外，fstream中定义的类型还增加了一些新的成员来管理与流关联的文件。见p283。</p>
 <h3 id="_4">使用文件流对象</h3>
 <p>当想要读写一个文件时，可以定义一个文件流对象，并将对象与文件关联起来。</p>
 <p>每个文件流类都定义了一个名为open的成员函数，它完成一些系统相关的操作，来定位给定的文件，并视情况打开为读或写模式。</p>
 <p>创建文件流对象时，如果提供了一个文件名，则open会被自动调用：</p>
-<pre><code>ifstream in(file);    // 构造一个ifstream并打开给定的文件
-ofstream out;         // 输出文件流未关联到任何文件
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">ifstream</span> <span class="nf">in</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>    <span class="c1">// 构造一个ifstream并打开给定的文件</span>
+<span class="n">ofstream</span> <span class="n">out</span><span class="p">;</span>         <span class="c1">// 输出文件流未关联到任何文件</span>
+</pre></div>
 
-<p>【NOTE】当一个fstream对象被销毁时，close会自动被调用。</p>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当一个fstream对象被销毁时，close会自动被调用。</p>
+</div>
 <h3 id="_5">文件模式</h3>
 <p>每个流都有一个关联的文件模式，用来指出如何使用文件。见p286。</p>
 <p>每个文件流类型都定义了一个默认的文件模式，当未指定文件模式时，就使用此默认模式。</p>
@@ -300,9 +866,10 @@ ofstream out;         // 输出文件流未关联到任何文件
 <p><strong>以out模式打开文件会丢失已有数据</strong></p>
 <p>默认情况下，当我们打开一个ofstream时，文件的内容会被丢弃。</p>
 <p>阻止丢弃的方法是同时指定app模式：</p>
-<pre><code>ofstream out(&quot;file1&quot;);    // 文件被截断
-ofstream app(&quot;file2&quot;, ofstream::app);    // 保留文件内容，写操作在文件末尾进行
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">ofstream</span> <span class="nf">out</span><span class="p">(</span><span class="s">&quot;file1&quot;</span><span class="p">);</span>    <span class="c1">// 文件被截断</span>
+<span class="n">ofstream</span> <span class="nf">app</span><span class="p">(</span><span class="s">&quot;file2&quot;</span><span class="p">,</span> <span class="n">ofstream</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>    <span class="c1">// 保留文件内容，写操作在文件末尾进行</span>
+</pre></div>
+
 
 <h2 id="string">string流</h2>
 <p>sstream头文件定义了三个类型来支持内存IO：</p>
@@ -321,39 +888,108 @@ ofstream app(&quot;file2&quot;, ofstream::app);    // 保留文件内容�
 <h3 id="istringstream">使用istringstream</h3>
 <p>当我们的某些工作是对整行文本进行处理，而其他一些工作是处理行内的单个单词时，通常可以使用istringstream。</p>
 <h3 id="ostringstream">使用ostringstream</h3>
-<p>当我们逐步构造输出，希望最后一期打印时，ostringstream是很有用的。</p></div>
-        </div>
+<p>当我们逐步构造输出，希望最后一期打印时，ostringstream是很有用的。</p>
+                
+                  
+                
+              
+              
+                
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+
+              
+            </article>
+          </div>
         </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ch07%20%E7%B1%BB/" title="ch07 类" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                ch07 类
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" title="ch09 顺序容器" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                ch09 顺序容器
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
-
-    </body>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Diwen Liu
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
 </html>
