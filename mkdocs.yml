@@ -1,4 +1,5 @@
-site_name: CppPrimer学习笔记
+site_name: C++ Primer 5th Node
+site_description: C++ Primer 5th Node
 
 copyright: 'Copyright &copy; 2018 Diwen Liu'
 
@@ -8,7 +9,7 @@ repo_url: https://github.com/demon90s/CppPrimer
 edit_uri: "tree/master/study_notes"
 
 pages:
-  - Home: index.md
+  - Introduction: index.md
   - Chapters: 
     - ch01 开始: ch01 开始.md
     - ch02 变量和基本类型: ch02 变量和基本类型.md
@@ -32,15 +33,15 @@ pages:
 
 theme:
   name: 'material'
+  logo:
+    icon: 'school'
   palette:
     primary: 'blue grey'
     accent: 'light blue'
   font:
-    text: 'Raleway Bold'
-    code: 'Ubuntu Mono'
+    text: 'Open Sans'
+    code: 'Open Sans Mono'
   language: 'zh'
-  logo:
-    icon: 'code'
 
 markdown_extensions:
   - admonition
