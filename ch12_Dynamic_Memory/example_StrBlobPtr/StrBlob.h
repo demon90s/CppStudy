@@ -30,8 +30,8 @@ public:
 	// 元素访问
 	inline std::string& front();
 	inline std::string& back();
-	inline std::string& front() const;
-	inline std::string& back() const;
+	inline const std::string& front() const;
+	inline const std::string& back() const;
 
 	// 返回指向首元素和尾后元素的StrBlobPtr
 	inline StrBlobPtr begin() { return StrBlobPtr(*this); }
@@ -72,13 +72,13 @@ void StrBlob::pop_back()
 	return data->pop_back();
 }
 
-std::string& StrBlob::front() const
+const std::string& StrBlob::front() const
 {
 	check(0, "front on empty StrBlob");
 	return data->front();
 }
 
-std::string& StrBlob::back() const
+const std::string& StrBlob::back() const
 {
 	check(0, "back on empty StrBlob");
 	return data->back();

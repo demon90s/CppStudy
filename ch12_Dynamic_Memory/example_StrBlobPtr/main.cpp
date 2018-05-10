@@ -14,9 +14,19 @@ void func1()
 	cout << p->size() << endl; // 4，okey长度是4
 }
 
+void func2()
+{
+	// 调用const版本的front
+	const StrBlob a = {"hi", "bye", "now"};
+	const auto &s = a.front();
+
+	cout << s << endl;
+}
+
 int main()
 {
-	func1();
+	//func1();
+	func2();
 
 	return 0;
 }
