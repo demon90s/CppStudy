@@ -343,6 +343,7 @@
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习16.1](ch16_Templates_and_GenericProgramming/exercise_16_01.md)|[练习16.2](ch16_Templates_and_GenericProgramming/exercise_16_02.md)|[练习16.3](ch16_Templates_and_GenericProgramming/exercise_16_03.cpp)|[练习16.4](ch16_Templates_and_GenericProgramming/exercise_16_04.cpp)|[练习16.5](ch16_Templates_and_GenericProgramming/exercise_16_05.cpp)|[练习16.6](ch16_Templates_and_GenericProgramming/exercise_16_06.cpp)|[练习16.7](ch16_Templates_and_GenericProgramming/exercise_16_07.cpp)|[练习16.8](ch16_Templates_and_GenericProgramming/exercise_16_08.md)|
 |[练习16.9](ch16_Templates_and_GenericProgramming/exercise_16_09.md)|[练习16.10](ch16_Templates_and_GenericProgramming/exercise_16_10.md)|[练习16.11](ch16_Templates_and_GenericProgramming/exercise_16_11.cpp)|[练习16.12](ch16_Templates_and_GenericProgramming/exercise_16_12.md)|[练习16.13](ch16_Templates_and_GenericProgramming/exercise_16_13.md)|[练习16.14](ch16_Templates_and_GenericProgramming/exercise_16_14.md)|[练习16.15](ch16_Templates_and_GenericProgramming/exercise_16_15.md)|[练习16.16](ch16_Templates_and_GenericProgramming/exercise_16_16.md)|
+|[练习16.17](ch16_Templates_and_GenericProgramming/exercise_16_17.md)|[练习16.18](ch16_Templates_and_GenericProgramming/exercise_16_18.cpp)|[练习16.19](ch16_Templates_and_GenericProgramming/exercise_16_19.cpp)|[练习16.20](ch16_Templates_and_GenericProgramming/exercise_16_20.cpp)|
 
 #### 案例代码
 

@@ -7,6 +7,7 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <iterator>
@@ -68,6 +69,17 @@ bool basetype_to_string(T &val, std::string &str)
 		return true;
 	}
 	return false;
+}
+
+/*
+ * 打印容器中的元素（p595，练习16.20）
+ */
+template<typename Container>
+void print_container(const Container &container)
+{
+	for (auto it = container.begin(); it != container.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
 }
 
 #endif
