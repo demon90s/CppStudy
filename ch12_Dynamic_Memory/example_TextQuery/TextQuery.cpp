@@ -6,6 +6,7 @@
 using namespace std;
 
 TextQuery::TextQuery(ifstream &is): file(new vector<string>)
+//TextQuery::TextQuery(ifstream &is): file(new vector<string>, DebugDelete())
 {
 	string text;
 	while (getline(is, text)) {		// 对文件中的每一行

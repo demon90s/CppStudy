@@ -24,9 +24,20 @@ void func2()
 	cout << endl;
 }
 
+// 实例化与成员模板
+void func3()
+{
+	int ia[] = {0, 1, 2, 3};
+	Blob<int> a1(begin(ia), end(ia));	
+	for (size_t i = 0; i < a1.size(); ++i)
+		cout << a1[i] << " ";
+	cout << endl;
+}
+
 int main()
 {
-	func2();
+	//func2();
+	func3();
 
 	return 0;
 }
