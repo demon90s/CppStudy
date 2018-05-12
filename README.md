@@ -347,6 +347,8 @@
 
 #### 案例代码
 
+- [控制实例化（597）](ch16_Templates_and_GenericProgramming/example_explicit_instantiation)
+
 - [函数模板（p578）](ch16_Templates_and_GenericProgramming/example_function_template.cpp)
 
 - [成员模板（p595）](ch16_Templates_and_GenericProgramming/example_member_template)
