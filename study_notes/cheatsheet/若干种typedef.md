@@ -1,9 +1,10 @@
 ## 若干种typedef
 
 ```c++
-typedef long long 	Int64;			// 简单的类型别名
-typedef char		Name[32];		// 数组类型别名（char[32]）
-typedef void 		(*Func)(int);	// 函数指针类型
+typedef long long 		Int64;			// 简单的类型别名
+typedef char			Name[32];		// 数组类型别名（char[32]）
+typedef void 			(*Func)(int);	// 函数指针类型
+typedef Blob<string>	StrBlob;		// 模板类型别名
 ```
 
 ## 函数指针在类中
