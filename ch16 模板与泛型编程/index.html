@@ -506,6 +506,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" title="成员模板" class="md-nav__link">
+    成员模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="控制实例化" class="md-nav__link">
+    控制实例化
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -632,6 +646,20 @@
           <li class="md-nav__item">
   <a href="#_5" title="模板参数" class="md-nav__link">
     模板参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="成员模板" class="md-nav__link">
+    成员模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="控制实例化" class="md-nav__link">
+    控制实例化
   </a>
   
 </li>
@@ -795,6 +823,107 @@
 <p>每个Foo实例都有其自己的static成员实例。</p>
 <p>一个static成员函数只有在使用时才会实例化。</p>
 <h3 id="_5">模板参数</h3>
+<p>类似函数参数的名字，一个模板参数的名字没有什么内在的含义。我们可以使用任何名字：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Foo</span><span class="o">&gt;</span> <span class="n">Foo</span> <span class="n">calc</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Foo</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
+
+<p>一个模板参数名的可用范围是在其声明之后，至模板声明或定义结束之前。模板参数会隐藏外层作用域中声明的相同名字。而且，在模版内不能重用模版参数名。</p>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="kt">double</span> <span class="n">A</span><span class="p">;</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">A</span><span class="p">,</span> <span class="k">typename</span> <span class="n">B</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">,</span> <span class="n">B</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>  <span class="c1">// tmp的类型为模版参数A的类型，而非double</span>
+    <span class="kt">double</span> <span class="n">B</span><span class="p">;</span>   <span class="c1">// 错误：重声明模板参数B </span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><strong>模板声明</strong></p>
+<p>模板声明必须包含模板参数：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 声明但不定义compare和Blob</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Blob</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>使用类的类型成员</strong></p>
+<p>当编译器遇到类似T::mem这样的代码时，它不会知道mem是一个类型成员还是一个static数据成员，直到实例化时才会知道。但是，为了处理模板，编译器必须知道名字是否表示一个类型。</p>
+<p>默认情况下，C++语言假定通过作用域运算符访问的名字不是类型。因此，如果我们希望使用一个模板类型参数的类型成员，就必须显式告诉编译器该名字是一个类型。我们通过使用关键字typename来实现这一点：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">typename</span> <span class="n">T</span><span class="o">::</span><span class="n">value</span> <span class="n">top</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</pre></div>
+
+
+<p><strong>默认模板实参</strong></p>
+<p>就像我们能为函数参数提供默认实参一样，我们也可以提供默认模板实参（default template argument）。</p>
+<p>例如，可以重写compare，默认使用标准库的less函数对象模板：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// compare有一个默认模板实参，和一个默认函数实参</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">F</span> <span class="o">=</span> <span class="n">less</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span>
+<span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">,</span> <span class="n">F</span> <span class="n">f</span> <span class="o">=</span> <span class="n">F</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">))</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">v1</span><span class="p">))</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>与函数默认实参一样，对于一个模板参数，只有当它右侧的所有参数都有默认实参时，它才可以有默认实参。</p>
+<p><strong>模板默认实参与类模板</strong></p>
+<p>无论何时使用一个类模板，我们都必须在模板名之后接上尖括号。尖括号指出类必须从一个模板实例化而来。</p>
+<p>如果一个类模板为其所有模版参数都提供了默认实参，且我们希望使用这些默认实参，就必须在模板名之后跟一个尖括号对：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span> <span class="o">=</span> <span class="kt">int</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Numbers</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Numbers</span><span class="p">(</span><span class="n">T</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">{}</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">T</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Numbers</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">ll_n</span><span class="p">;</span>
+<span class="n">Numbers</span><span class="o">&lt;&gt;</span> <span class="n">int_n</span><span class="p">;</span>    <span class="c1">// 空&lt;&gt;表示我们希望使用默认类型</span>
+</pre></div>
+
+
+<h3 id="_6">成员模板</h3>
+<p>一个类（无论是普通类还是类模板）可以包含本身是模板的成员函数。这种成员被称为成员模板（member template）。成员模板不能是虚函数。</p>
+<p><a href="https://github.com/demon90s/CppPrimer/blob/master/ch16_Templates_and_GenericProgramming/example_member_template/DebugDelete.h"><mark>成员模板案例代码</mark></a></p>
+<p>更多内容详见p596。</p>
+<h3 id="_7">控制实例化</h3>
+<p>当模板被使用时才会进行实例化，这一特性意味着，相同的实例可能出现在多个对象文件中。当两个或多个独立编译的源文件使用了相同的模板，并提供了相同的模板参数时，每个文件中就会有该模板的一个实例。</p>
+<p>在大系统中，在多个文件中实例化相同模板的额外开销可能非常严重。在新标准中，我们可以通过显式实例化（explicit instantiation）来避免这种开销。</p>
+<p>一个显式实例化有如下形式：</p>
+<div class="codehilite"><pre><span></span><span class="k">extern</span> <span class="k">template</span> <span class="n">declaration</span><span class="p">;</span>    <span class="c1">// 实例化声明</span>
+<span class="k">template</span> <span class="n">declaration</span><span class="p">;</span>           <span class="c1">// 实例化定义</span>
+</pre></div>
+
+
+<p>declaration是一个类或函数声明，例如：</p>
+<div class="codehilite"><pre><span></span><span class="k">extern</span> <span class="n">tempalte</span> <span class="k">class</span> <span class="nc">Blob</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span> <span class="c1">// 声明而不实例化</span>
+
+<span class="k">template</span> <span class="k">class</span> <span class="nc">Blob</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>        <span class="c1">// 实例化类模板的所有成员</span>
+</pre></div>
+
+
+<p>当编译器遇到extern模板声明时，它不会在本文件中生成实例化代码。将一个实例化声明为extern就表示承诺在程序其他位置有该实例化的一个非extern声明（定义）。对于一个给定的实例化版本，可能有多个extern声明，但必须只有一个定义。</p>
+<blockquote>
+<p><a href="https://github.com/demon90s/CppPrimer/tree/master/ch16_Templates_and_GenericProgramming/example_explicit_instantiation"><mark>显式实例化案例代码</mark></a>，在这个例子中，我将实例化声明放在头文件里，而将显式的实例化定义放在源文件里。</p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>对每个实例化声明，在程序中某个位置必须有其显式的实例化定义。</p>
+</div>
+<p>显式的实例化定义会实例化所有成员。</p>
+<p>关于<strong>效率与灵活性</strong>的详细讨论见p599，书中拿shared_ptr和unique_ptr举例说明，对于shared_ptr，它的删除器需要间接保存（比如为一个指针）；而对于unique_ptr，它的删除器是类类型的一部分，在创建时就必须指定好，可以作为unique_ptr的成员。</p>
+<ul>
+<li>
+<p>效率：unique_ptr在编译时绑定了删除器，避免了间接调用删除器的运行时开销。</p>
+</li>
+<li>
+<p>灵活性：shared_ptr在运行时绑定删除器，使用户重载删除器更为方便。</p>
+</li>
+</ul>
+<p><a href="https://github.com/demon90s/CppPrimer/tree/master/ch16_Templates_and_GenericProgramming/example_SmartPointer"><mark>自定义的智能指针</mark></a>可以更直观地解释上述说明。</p>
                 
                   
                 
