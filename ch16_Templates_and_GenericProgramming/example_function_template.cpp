@@ -42,5 +42,8 @@ int main()
 
 	cout << compare2(5, 6) << endl;
 
+	// 练习16.39，使用显式模板实参
+	cout << compare2<string>("hello", "z") << endl;
+
 	return 0;
 }
