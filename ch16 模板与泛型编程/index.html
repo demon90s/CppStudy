@@ -525,6 +525,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" title="模板实参推断" class="md-nav__link">
+    模板实参推断
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="类型转换与模板类型参数" class="md-nav__link">
+    类型转换与模板类型参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="函数模板显式实参" class="md-nav__link">
+    函数模板显式实参
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="尾置返回类型与类型转换" class="md-nav__link">
+    尾置返回类型与类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="函数指针和实参推断" class="md-nav__link">
+    函数指针和实参推断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="模板实参推断和引用" class="md-nav__link">
+    模板实参推断和引用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdmove" title="理解std::move" class="md-nav__link">
+    理解std::move
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -660,6 +715,61 @@
           <li class="md-nav__item">
   <a href="#_7" title="控制实例化" class="md-nav__link">
     控制实例化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="模板实参推断" class="md-nav__link">
+    模板实参推断
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="类型转换与模板类型参数" class="md-nav__link">
+    类型转换与模板类型参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="函数模板显式实参" class="md-nav__link">
+    函数模板显式实参
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="尾置返回类型与类型转换" class="md-nav__link">
+    尾置返回类型与类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="函数指针和实参推断" class="md-nav__link">
+    函数指针和实参推断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="模板实参推断和引用" class="md-nav__link">
+    模板实参推断和引用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdmove" title="理解std::move" class="md-nav__link">
+    理解std::move
   </a>
   
 </li>
@@ -924,6 +1034,215 @@
 </li>
 </ul>
 <p><a href="https://github.com/demon90s/CppPrimer/tree/master/ch16_Templates_and_GenericProgramming/example_SmartPointer"><mark>自定义的智能指针</mark></a>可以更直观地解释上述说明。</p>
+<h2 id="_8">模板实参推断</h2>
+<p>对于函数模板，编译器利用调用中的函数实参来确定其模板参数。从函数实参来确定模板实参的过程被称为模板实参推断（template argument deduction）。在模板实参推断过程中，编译器使用函数调用中的实参类型来寻找模板实参，用这些模板实参生成的函数版本与给定的函数调用最为匹配。</p>
+<h3 id="_9">类型转换与模板类型参数</h3>
+<p>我们在一次调用中传递给函数模板的实参被用来初始化函数的形参。</p>
+<p>与往常一样，顶层const无论是在形参中还是在实参中，都会被忽略。在其他类型转换中，能在调用中应用于函数模板的包括如下两项：</p>
+<ul>
+<li>
+<p>const转换：可以将一个非const对象的引用（或指针）传递给一个const的引用（或指针）形参。</p>
+</li>
+<li>
+<p>数组或函数指针转换：如果函数形参不是引用类型，则可以对数组或函数类型的实参应用正常的指针转换。一个数组实参可以转换为一个指向其首元素的指针。一个函数实参可以转换为一个该函数类型的指针。</p>
+</li>
+</ul>
+<p>其他类型转换都不能应用于函数模板。编译器通常不是对实参进行类型转换，而是生成一个新的模板实例。</p>
+<p><strong>使用相同模板参数类型的函数形参</strong></p>
+<p>一个模板类型参数可以用作多个函数形参的类型，这时候传递给这些形参的实参必须具有相同的类型。</p>
+<div class="codehilite"><pre><span></span><span class="kt">long</span> <span class="n">lng</span><span class="p">;</span>
+<span class="n">compare</span><span class="p">(</span><span class="n">lng</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span> <span class="c1">// 错误，不能实例化compare(long, int)</span>
+</pre></div>
+
+
+<p><strong>正常类型转换应用于普通函数实参</strong></p>
+<p>函数模板可以有用普通类型定义的参数，这种函数实参不进行特殊处理：它们正常转换为对应形参的类型。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 传递给os的实参会进行正常的类型转换。</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">ostream</span> <span class="o">&amp;</span><span class="n">print</span><span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">obj</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">obj</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_10">函数模板显式实参</h3>
+<p>在某些情况下，编译器无法推断出模板实参的类型。其他一些情况下，我们希望用户控制模板实例化。当函数返回类型与参数列表中任何类型都不同时，这两种情况最常出现。</p>
+<p><strong>指定显式模板实参</strong></p>
+<p>有这样的例子：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 编译器无法推断T1，它未出现在函数参数列表中</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T3</span><span class="o">&gt;</span>
+<span class="n">T1</span> <span class="n">sum</span><span class="p">(</span><span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="p">);</span>
+</pre></div>
+
+
+<p>没有任何函数实参的类型可用来推断T1的类型，每次调用sum时调用者都必须为T1提供一个显式模板实参（explicit template argument）。</p>
+<p>显示模板实参在尖括号中给出，位于函数名之后，实参列表之前：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// T1是显式指定的，T2和T3是从函数实参类型推断而来的</span>
+<span class="k">auto</span> <span class="n">val3</span> <span class="o">=</span> <span class="n">sum</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lng</span><span class="p">);</span> <span class="c1">// long long sum(int, long)</span>
+</pre></div>
+
+
+<p>显式模板实参按由左至右的顺序与对应的模板参数匹配；第一个模板实参与第一个模板参数匹配，第二个实参与第二个参数匹配，以此类推。</p>
+<p><strong>正常类型转换应用于显式指定的实参</strong></p>
+<p>对于模板类型参数已经显式指定了的函数实参，也进行正常的类型转换：</p>
+<div class="codehilite"><pre><span></span><span class="kt">long</span> <span class="n">lng</span><span class="p">;</span>
+<span class="n">compare</span><span class="p">(</span><span class="n">lng</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>         <span class="c1">// 错误，模板参数不匹配</span>
+<span class="n">compare</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">lng</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>   <span class="c1">// 正确，实例化compare(long, long)</span>
+</pre></div>
+
+
+<h3 id="_11">尾置返回类型与类型转换</h3>
+<p>在一些情况下，要求显式指定模板实参会给用户增添额外负担，而且不会带来什么好处。例如：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">It</span><span class="o">&gt;</span>
+<span class="o">???</span> <span class="o">&amp;</span><span class="n">fcn</span><span class="p">(</span><span class="n">It</span> <span class="n">beg</span><span class="p">,</span> <span class="n">It</span> <span class="n">end</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 处理序列</span>
+    <span class="k">return</span> <span class="o">*</span><span class="n">beg</span><span class="p">;</span>    <span class="c1">// 返回序列中一个元素的引用</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>我们知道，返回类型就是<code>decltype(*beg)</code>。但是，在编译器遇到函数的参数列表之前，beg都是不存在的，这时候必须使用尾置返回类型：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 尾置返回允许我们在参数列表之后声明返回类型</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">It</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">fcn</span><span class="p">(</span><span class="n">It</span> <span class="n">beg</span><span class="p">,</span> <span class="n">It</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 处理序列</span>
+    <span class="k">return</span> <span class="o">*</span><span class="n">beg</span><span class="p">;</span>    <span class="c1">// 返回序列中一个元素的引用</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><strong>进行类型转换的标准库模板类</strong></p>
+<p>有时我们无法直接获得所需要的类型，比如，让上面的fcn函数返回一个元素的值而非引用：所有迭代器操作都不会生成元素（的拷贝），只能生成元素的引用。</p>
+<p>为了获得元素类型，我们可以使用标准库的类型转换（type transformation）模板。这些模板定义在头文件type_traits中。这个头文件中的类通常用于所谓的模板元程序设计，这一主题已经超出本书的范围。但，类型转换模板在普通编程中也很有用。</p>
+<p>书本p606列出了所有类型转换模板。</p>
+<p>可以使用remove_reference来获得元素的类型：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 为了使用模板参数的成员，必须用typename</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">It</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">fcn2</span><span class="p">(</span><span class="n">It</span> <span class="n">beg</span><span class="p">,</span> <span class="n">It</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">typename</span> <span class="n">remove_reference</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">type</span>
+<span class="p">{</span>
+    <span class="c1">// 处理序列</span>
+    <span class="k">return</span> <span class="o">*</span><span class="n">beg</span><span class="p">;</span>    <span class="c1">// 返回序列中一个元素的拷贝</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_12">函数指针和实参推断</h3>
+<p>当我们用一个函数模板初始化一个函数指针或为一个函数指针赋值时，编译器使用指针的类型来推断模板实参。</p>
+<p>例如：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="c1">// pf1指向实例int compare(const int&amp;, const int&amp;);</span>
+<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pf1</span><span class="p">)(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="n">compare</span><span class="p">;</span>
+</pre></div>
+
+
+<p>如果不能从函数指针类型确定模板实参，则产生错误。</p>
+<h3 id="_13">模板实参推断和引用</h3>
+<p>有例子：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+
+<p>非常重要的有两点：</p>
+<ul>
+<li>
+<p>编译器会应用正常的引用绑定规则；</p>
+</li>
+<li>
+<p>const是底层的，不是顶层的。</p>
+</li>
+</ul>
+<p><strong>从左值引用函数参数推断类型</strong></p>
+<p>当一个函数参数是模板类型参数的一个普通（左值）引用时，只能传递给它一个左值（一个变量，或者一个返回引用的表达式）。实参可以是const类型，也可以不是。如果实参是const的，则T将被推断为const类型。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f1</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">);</span>        <span class="c1">// 实参必须是一个左值</span>
+
+<span class="c1">// 对f1的调用使用实参所引用的类型作为模板参数类型</span>
+<span class="n">f1</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>      <span class="c1">// i是一个int，模板参数类型T是int</span>
+<span class="n">f1</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>     <span class="c1">// ci是一个const int，模板参数T是const int</span>
+<span class="n">f1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>      <span class="c1">// 错误，传递给一个&amp;参数的实参必须是一个左值</span>
+</pre></div>
+
+
+<p>如果一个函数参数的类型是const T&amp;，可以传递给它任何类型的实参。当函数参数本身是const时，T的类型推断的结果不会是一个const类型。const已经是函数参数类型的一部分。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f2</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>    <span class="c1">// 可以接受一个右值</span>
+<span class="c1">// f2中的参数是const &amp;；实参中的const是无关的</span>
+<span class="c1">// 在每个调用中，f2的函数参数都被推断为const int&amp;</span>
+<span class="n">f2</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>      <span class="c1">// i是一个int，模板参数T是int</span>
+<span class="n">f2</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>     <span class="c1">// ci是一个const int，但模板参数T是int</span>
+<span class="n">f2</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>      <span class="c1">// 一个const &amp;参数可以绑定到一个右值；T是int</span>
+</pre></div>
+
+
+<p><strong>从右值引用函数参数推断类型</strong></p>
+<p>当一个函数参数是一个右值引用时（形如T&amp;&amp;），我们可以传递给它一个右值，当我们传递一个右值时，类型推断过程类似普通的推断过程。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f3</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span>
+<span class="n">f3</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>     <span class="c1">// 实参是一个int类型的右值，版本参数T是int</span>
+</pre></div>
+
+
+<p><strong>引用折叠和右值引用参数</strong></p>
+<p>通常我们不能将一个右值引用绑定到一个左值上。但是i，C++语言定义了两个例外：</p>
+<ul>
+<li>
+<p>一种是move这种标准库设施</p>
+</li>
+<li>
+<p>另一种是，当我们将一个左值（如i）传递给函数的右值引用参数，且此右值引用指向模板类型参数（T&amp;&amp;）时，编译器推断模板类型参数为实参左值引用类型。因此，假如i是一个int对象，调用f3(i)时，编译器推断T的类型为int&amp;，而非int。</p>
+</li>
+</ul>
+<p>这样，就间接创建了一个引用的引用，形成了“折叠”：</p>
+<ul>
+<li>
+<p>x&amp; &amp;, x&amp; &amp;&amp;, x&amp;&amp; &amp;折叠成x&amp;</p>
+</li>
+<li>
+<p>x&amp;&amp; &amp;&amp;折叠成x&amp;&amp;</p>
+</li>
+</ul>
+<p>如果将引用折叠规则和右值引用的特殊类型推断规则组合在一起，则意味着对一个左值调用f3，编译器推断T为一个左值引用类型，从而函数参数间接实例化成一个引用的引用，又通过折叠，变成一个左值引用：</p>
+<div class="codehilite"><pre><span></span><span class="n">f3</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>      <span class="c1">// 实参是一个左值，模版参数T是int&amp;</span>
+
+<span class="c1">// 实例化代码，无效的代码，用于演示</span>
+<span class="kt">void</span> <span class="n">f3</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="o">&amp;&amp;</span><span class="p">);</span> <span class="c1">// 当T是int&amp;时，函数参数为int&amp; &amp;&amp;</span>
+
+<span class="c1">// 实例化代码，最终结果</span>
+<span class="kt">void</span> <span class="n">f3</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">);</span>    <span class="c1">// 当T是int&amp;时，函数参数折叠为int&amp;</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果一个函数参数是指向模版参数类型的右值引用（如，T&amp;&amp;），则可以传递给它任意类型的实参。如果将一个左值传递给这样的参数，则函数参数被实例化为一个普通的左值引用（T&amp;）。</p>
+</div>
+<p>如果不想让一个左值传递给一个参数是右值引用的函数，就需要重载函数模板：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">);</span>      <span class="c1">// 绑定到非const右值</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 绑定到左值和const右值</span>
+</pre></div>
+
+
+<h3 id="stdmove">理解std::move</h3>
+<p>标准库move函数是使用右值引用的模板的一个很好的例子。虽然不能直接将一个右值引用绑定到一个左值上，但可以用move获得一个绑定到左值上的右值引用。</p>
+<p><strong>std::move是如何定义的</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1">// 在返回类型和类型转换中也要用到typename</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">typename</span> <span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&amp;&amp;</span> <span class="n">move</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;&amp;</span><span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&amp;&amp;&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>move的函数参数T&amp;&amp;是一个指向模板类型参数的右值引用。通过引用折叠，此参数可以与任何类型的实参匹配。</p>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="s">&quot;hi!&quot;</span><span class="p">),</span> <span class="n">s2</span><span class="p">;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;bye!&quot;</span><span class="p">));</span>     <span class="c1">// 正确：从一个右值移动数据</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span>                 <span class="c1">// 正确：但在赋值之后，s1的值是不确定的</span>
+</pre></div>
+
+
+<p><strong>从一个左值static_cast到一个右值引用是允许的</strong></p>
+<p>虽然不能隐式地将一个左值转换为右值引用，但我们可以用static_cast显式地将一个左值转换为一个右值引用。</p>
+<p>对于操作右值引用的代码来说，将一个右值引用绑定到一个左值的特性允许它们截断左值。</p>
                 
                   
                 
