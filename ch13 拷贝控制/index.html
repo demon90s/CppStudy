@@ -1056,6 +1056,14 @@
 
 <p><strong>左值持久，右值短暂</strong></p>
 <p>左值与右值的区别：左值有持久的状态，而右值要么是字面常量，要么是在表达式求值过程中创建的临时对象。</p>
+<p><strong>变量是左值</strong></p>
+<p>变量可以看作只有一个运算对象而没有运算符的表达式。类似其他任何表达式，变量表达式也有左值/右值属性。变量表达式都是左值。</p>
+<p>因此，我们不能将一个右值引用绑定到一个右值引用类型的变量上：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr1</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>     <span class="c1">// 正确：字面常量是右值</span>
+<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr2</span> <span class="o">=</span> <span class="n">rr1</span><span class="p">;</span>    <span class="c1">// 错误：表达式rr1是左值！</span>
+</pre></div>
+
+
 <p><strong>标准库move函数</strong></p>
 <p>虽然不能将一个右值引用直接绑定到一个左值上，但我们可以显式地将一个左值转换为对应的右值引用类型。方法是通过调用一个名为move的新标准库函数来获得绑定到左值上的右值引用。</p>
 <div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// OK</span>

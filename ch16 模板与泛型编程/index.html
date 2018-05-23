@@ -575,6 +575,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_14" title="转发" class="md-nav__link">
+    转发
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -770,6 +777,13 @@
           <li class="md-nav__item">
   <a href="#stdmove" title="理解std::move" class="md-nav__link">
     理解std::move
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="转发" class="md-nav__link">
+    转发
   </a>
   
 </li>
@@ -1243,6 +1257,94 @@
 <p><strong>从一个左值static_cast到一个右值引用是允许的</strong></p>
 <p>虽然不能隐式地将一个左值转换为右值引用，但我们可以用static_cast显式地将一个左值转换为一个右值引用。</p>
 <p>对于操作右值引用的代码来说，将一个右值引用绑定到一个左值的特性允许它们截断左值。</p>
+<h3 id="_14">转发</h3>
+<p>某些函数需要将其一个或多个实参连同类型不变地转发给其他函数。在此情况下，我们需要保持被转发实参的所有性质，包括实参类型是否是const的以及实参是左值还是右值。</p>
+<p>书本上给出一个翻转函数的例子：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 接受一个可调用对象和另外两个参数的模板</span>
+<span class="c1">// 对“翻转”的参数调用给定的可调用对象</span>
+<span class="c1">// flip1是一个不完整的实现：顶层const和引用丢失了</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">F</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">flip1</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="n">t2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>如果f定义成这样，就会出现问题：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>如果我们通过flip1调用f，f所做的改变就不会影响实参：</p>
+<div class="codehilite"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>           <span class="c1">// f改变了实参i</span>
+<span class="n">flip1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>    <span class="c1">// 通过flip1调用f不会改变j</span>
+</pre></div>
+
+
+<blockquote>
+<p>my note: 这是因为有这样的传递路径： j -&gt; flip1的形参t1(int) -&gt; f的形参b(int&amp;)，因此，f只是改变了flip1的形参，flip1的形参不会改变它的实参j。</p>
+</blockquote>
+<p><strong>定义能保持类型信息的函数参数</strong></p>
+<p>通过将一个函数参数定义为一个指向模板类型参数的右值引用，我们可以保持其对应实参的所有类型信息。而使用引用参数（无论左值还是右值）使得我们可以保持const属性，因为在引用类型中的const是底层的。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">F</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">flip2</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果一个函数参数是指向模板类型参数的右值引用（如T&amp;&amp;），它对应的实参的const属性和左值/右值属性将得到保持。</p>
+</div>
+<p>这个版本的flip2虽然能接受一个左值引用了，但却不能接受右值引用参数的函数。例如：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">j</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
+
+<p>即使给flip2传递一个右值：</p>
+<div class="codehilite"><pre><span></span><span class="n">flip2</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>    <span class="c1">// 错误：不能从一个左值实例化int&amp;&amp;</span>
+</pre></div>
+
+
+<p>函数参数与其他任何变量一样，都是左值表达式。因此，flip2中对g的调用将传递给g的右值引用参数一个左值。</p>
+<blockquote>
+<p>my note: 虽然由42推断出来的参数类型是int&amp;&amp;，但它作为一个函数参数传递给g，则它就是一个左值。见p471（变量是左值）。</p>
+</blockquote>
+<p><strong>在调用中使用std::forward保持类型信息</strong></p>
+<p>我们可以使用一个名为forward的新标准库设施来传递flip2的参数，它能保持原始实参的类型。forward定义在头文件utility中。forward必须通过显式模板实参来调用。forward返回该显式实参类型的右值引用。即，forward<T>的返回类型是T&amp;&amp;。</p>
+<p>通过返回类型上的引用折叠，forward可以保持给定实参是左值/右值属性：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">Type</span><span class="o">&gt;</span> <span class="n">intermediary</span><span class="p">(</span><span class="n">Type</span> <span class="o">&amp;&amp;</span><span class="n">arg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">finalFcn</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">arg</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p>如果实参是一个右值，则Type是一个普通类型，forward<Type>返回Type&amp;&amp;。</p>
+</li>
+<li>
+<p>如果实参是一个左值，则通过引用折叠，Type本身是一个左值引用类型。在此情况下，返回类型是一个指向左值引用类型的右值引用。再次对forward<Type>的返回类型进行引用折叠，将返回一个左值引用类型。</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当用一个指向模版参数类型的右值引用函数参数时（T&amp;&amp;），forward会保持实参类型的所有细节。</p>
+</div>
+<p>使用forward，我们可以重写翻转函数：</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">F</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">flip</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">T1</span> <span class="o">&amp;&amp;</span><span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">&amp;&amp;</span><span class="n">t2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
