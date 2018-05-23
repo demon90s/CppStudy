@@ -346,7 +346,8 @@
 |[练习16.17](ch16_Templates_and_GenericProgramming/exercise_16_17.md)|[练习16.18](ch16_Templates_and_GenericProgramming/exercise_16_18.cpp)|[练习16.19](ch16_Templates_and_GenericProgramming/exercise_16_19.cpp)|[练习16.20](ch16_Templates_and_GenericProgramming/exercise_16_20.cpp)|[练习16.21](ch16_Templates_and_GenericProgramming/exercise_16_21.md)|[练习16.22](ch16_Templates_and_GenericProgramming/exercise_16_22.md)|[练习16.23](ch16_Templates_and_GenericProgramming/exercise_16_23.md)|[练习16.24](ch16_Templates_and_GenericProgramming/exercise_16_24.md)|
 |[练习16.25](ch16_Templates_and_GenericProgramming/exercise_16_25.md)|[练习16.26](ch16_Templates_and_GenericProgramming/exercise_16_26.cpp)|[练习16.27](ch16_Templates_and_GenericProgramming/exercise_16_27.md)|[练习16.28](ch16_Templates_and_GenericProgramming/exercise_16_28.md)|[练习16.29](ch16_Templates_and_GenericProgramming/exercise_16_29.cpp)|[练习16.30](ch16_Templates_and_GenericProgramming/exercise_16_30.md)|[练习16.31](ch16_Templates_and_GenericProgramming/exercise_16_31.md)|[练习16.32](ch16_Templates_and_GenericProgramming/exercise_16_32.md)|
 |[练习16.33](ch16_Templates_and_GenericProgramming/exercise_16_33.md)|[练习16.34](ch16_Templates_and_GenericProgramming/exercise_16_34.md)|[练习16.35](ch16_Templates_and_GenericProgramming/exercise_16_35.md)|[练习16.36](ch16_Templates_and_GenericProgramming/exercise_16_36.md)|[练习16.37](ch16_Templates_and_GenericProgramming/exercise_16_37.cpp)|[练习16.38](ch16_Templates_and_GenericProgramming/exercise_16_38.md)|[练习16.39](ch16_Templates_and_GenericProgramming/exercise_16_39.md)|[练习16.40](ch16_Templates_and_GenericProgramming/exercise_16_40.cpp)|
-|[练习16.41](ch16_Templates_and_GenericProgramming/exercise_16_41.cpp)|[练习16.42](ch16_Templates_and_GenericProgramming/exercise_16_42.md)|[练习16.43](ch16_Templates_and_GenericProgramming/exercise_16_43.md)|[练习16.44](ch16_Templates_and_GenericProgramming/exercise_16_44.md)|[练习16.45](ch16_Templates_and_GenericProgramming/exercise_16_45.cpp)|[练习16.46](ch16_Templates_and_GenericProgramming/exercise_16_46.md)|[练习16.47](ch16_Templates_and_GenericProgramming/exercise_16_47.cpp)|
+|[练习16.41](ch16_Templates_and_GenericProgramming/exercise_16_41.cpp)|[练习16.42](ch16_Templates_and_GenericProgramming/exercise_16_42.md)|[练习16.43](ch16_Templates_and_GenericProgramming/exercise_16_43.md)|[练习16.44](ch16_Templates_and_GenericProgramming/exercise_16_44.md)|[练习16.45](ch16_Templates_and_GenericProgramming/exercise_16_45.cpp)|[练习16.46](ch16_Templates_and_GenericProgramming/exercise_16_46.md)|[练习16.47](ch16_Templates_and_GenericProgramming/exercise_16_47.cpp)|[练习16.48](ch16_Templates_and_GenericProgramming/exercise_16_48.md)|
+|[练习16.49](ch16_Templates_and_GenericProgramming/exercise_16_49.cpp)|[练习16.50](ch16_Templates_and_GenericProgramming/exercise_16_50.md)|
 
 #### 案例代码
 
@@ -355,6 +356,8 @@
 - [函数模板（p578）](ch16_Templates_and_GenericProgramming/example_function_template.cpp)
 
 - [成员模板（p595）](ch16_Templates_and_GenericProgramming/example_member_template)
+
+- [重载与模板(p615)](ch16_Templates_and_GenericProgramming/example_overload_and_template.cpp)
 
 - [窗口类的设计与实现(练习16.14, 16.15, p592)](ch16_Templates_and_GenericProgramming/example_Screen)
 
