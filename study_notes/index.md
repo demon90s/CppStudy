@@ -25,3 +25,5 @@
 [C++参考手册](http://zh.cppreference.com/w/cpp)
 
 [C++ 在线编译器](http://coliru.stacked-crooked.com/)
+
+[C++ Primer 5th - 术语表](https://github.com/demon90s/CppPrimer/blob/master/defined_terms/terms_index.md)
