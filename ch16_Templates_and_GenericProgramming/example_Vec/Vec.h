@@ -39,6 +39,7 @@ public:
 	inline const elemType& operator[](std::size_t n) const { return elements[n]; }
 
 	inline void push_back(const elemType&);			// 拷贝元素
+	template<typename... Args> inline void emplace_back(Args&&... args);
 	inline size_t size() const { return first_free - elements; }
 	inline size_t capacity() const { return cap - elements; }
 	inline void reserve(size_t n);
@@ -189,6 +190,14 @@ void Vec<elemType>::push_back(const elemType &s)
 	chk_n_alloc(); // 确保有空间容纳新元素
 	// 在first_free指向的元素中构造s的副本
 	alloc.construct(first_free++, s);
+}
+
+template<typename elemType>
+template<typename... Args>
+void Vec<elemType>::emplace_back(Args&&... args)
+{
+	chk_n_alloc();
+	alloc.construct(first_free++, std::forward<Args>(args)...);
 }
 
 template<typename elemType>

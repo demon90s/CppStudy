@@ -32,6 +32,8 @@ public:
 	std::string *begin() const { return elements; }
 	std::string *end() const { return first_free; }
 
+	template <class... Args> void emplace_back(Args&&... args);
+
 private:
 	static std::allocator<std::string> alloc;	// 分配元素
 	// 被添加元素的函数所使用
@@ -48,5 +50,12 @@ private:
 	std::string *cap;							// 指向数组尾后位置的指针
 
 };
+
+template <class... Args> inline
+void StrVec::emplace_back(Args&&... args)
+{
+	chk_n_alloc();	// 如果需要的话重新分配StrVec内存空间
+	alloc.construct(first_free++, std::forward<Args>(args)...);
+}
 
 #endif // STR_VEC_H

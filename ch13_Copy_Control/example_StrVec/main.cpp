@@ -64,11 +64,24 @@ void func3()
 		cout << "v3 < v4" << endl;
 }
 
+// 测试emplace_back，p623
+void func4()
+{
+	StrVec v;
+	v.emplace_back(10, 'c');
+	v.emplace_back("Hello");
+
+	for (auto p = v.begin(); p != v.end(); ++p)
+		cout << *p << " ";
+	cout << endl;
+}
+
 int main()
 {
 	//func1();
 	//func2();
-	func3();
+	//func3();
+	func4();
 
 	return 0;
 }
