@@ -3,6 +3,7 @@
 // ./main < ../data/book_sales
 
 #include <iostream>
+#include <unordered_set>
 #include "Sales_data.h"
 
 using namespace std;
@@ -64,11 +65,25 @@ void test3()
 	cout << static_cast<double>(sd) << endl;
 }
 
+void test4()
+{
+	// 使用特例化版本的hash，p626
+	unordered_set<Sales_data> SDset;	
+	SDset.insert({"0-201-70353-X", 4, 24.99});
+	SDset.insert({"0-201-70354-X", 7, 34.99});
+
+	for (const auto &item : SDset)
+	{
+		cout << item << endl;
+	}
+}
+
 int main()
 {
 	//test1();
 	//test2();
-	test3();
+	//test3();
+	test4();
 
 	return 0;
 }

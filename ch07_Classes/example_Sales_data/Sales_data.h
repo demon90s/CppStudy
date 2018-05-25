@@ -4,15 +4,15 @@
 #include <iostream>
 #include <string>
 
-using std::cout;
-using std::endl;
-using std::cin;
-using std::cerr;
+//--------------------------------------------------------------------------------
+
+// 类的定义
 
 class Sales_data {
 	friend Sales_data add(const Sales_data&, const Sales_data&);
 	friend std::ostream &print(std::ostream&, const Sales_data&);
 	friend std::istream &read(std::istream&, Sales_data&);
+	friend struct std::hash<Sales_data>;	
 	
 	// 重载的运算符（练习14.2, p493）
 	friend std::istream& operator>>(std::istream &is, Sales_data &sd);
@@ -37,7 +37,9 @@ public:
 	Sales_data& combine(const Sales_data&);
 
 	// 类型转换运算符（练习14.45）
-	explicit operator std::string() const { return isbn() + " " + std::to_string(units_sold) + " " + std::to_string(revenue) + " " + std::to_string(avg_price());  }
+	explicit operator std::string() const { 
+		return isbn() + " " + std::to_string(units_sold) + " " + std::to_string(revenue) + " " + std::to_string(avg_price());
+	}
 
 	explicit operator double() const { return revenue; }
 
@@ -50,10 +52,39 @@ private:
 	double revenue = 0.0;
 };
 
+//--------------------------------------------------------------------------------
+
 // Sales_data的非成员接口函数
 Sales_data add(const Sales_data&, const Sales_data&);
 std::ostream &print(std::ostream&, const Sales_data&);
 std::istream &read(std::istream&, Sales_data&);
+
+//--------------------------------------------------------------------------------
+// 类模板特例化（p626）
+
+// 打开std命名空间，以便特例化std::hash
+namespace std {
+
+template <>
+struct hash<Sales_data>
+{
+	// 用来散列一个无序容器的类型必须要定义下列类型
+	typedef size_t result_type;
+	typedef Sales_data argument_type; // 默认情况下，此类型需要==
+	size_t operator()(const Sales_data& s) const;
+};
+
+inline
+size_t hash<Sales_data>::operator()(const Sales_data& s) const
+{
+	return hash<string>()(s.bookNo) ^
+	       hash<unsigned>()(s.units_sold) ^
+		   hash<double>()(s.revenue);
+}
+
+}
+
+//--------------------------------------------------------------------------------成员函数定义BEG
 
 inline
 double Sales_data::avg_price() const
@@ -64,6 +95,7 @@ double Sales_data::avg_price() const
 		return 0;
 }
 
+inline
 Sales_data& Sales_data::combine(const Sales_data &rhs)
 {
 	units_sold += rhs.units_sold;
@@ -72,6 +104,7 @@ Sales_data& Sales_data::combine(const Sales_data &rhs)
 }
 
 // 输入的交易信息包括ISBN、售出总数和售出价格
+inline
 std::istream &read(std::istream &is, Sales_data &item)
 {
 	double price = 0;
@@ -80,11 +113,13 @@ std::istream &read(std::istream &is, Sales_data &item)
 	return is;
 }
 
+inline
 Sales_data::Sales_data(std::istream &is)
 {
 	read(is, *this);
 }
 
+inline
 std::ostream &print(std::ostream &os, const Sales_data &item)
 {
 	os << item.isbn() << " " << item.units_sold << " "
@@ -92,6 +127,7 @@ std::ostream &print(std::ostream &os, const Sales_data &item)
 	return os;
 }
 
+inline
 Sales_data add(const Sales_data &lhs, const Sales_data &rhs)
 {
 	Sales_data sum = lhs;
@@ -99,6 +135,7 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs)
 	return sum;
 }
 
+inline
 std::istream& operator>>(std::istream &is, Sales_data &item)
 {
 	double price = 0;
@@ -110,6 +147,7 @@ std::istream& operator>>(std::istream &is, Sales_data &item)
 	return is;
 }
 
+inline
 std::ostream& operator<<(std::ostream &os, const Sales_data &item)
 {
 	os << item.isbn() << " " << item.units_sold << " "
@@ -117,6 +155,7 @@ std::ostream& operator<<(std::ostream &os, const Sales_data &item)
 	return os;
 }
 
+inline
 Sales_data operator+(const Sales_data &sd1, const Sales_data &sd2)
 {
 	Sales_data sum = sd1;
@@ -124,18 +163,21 @@ Sales_data operator+(const Sales_data &sd1, const Sales_data &sd2)
 	return sum;
 }
 
+inline
 Sales_data& Sales_data::operator=(const std::string &s)
 {
 	*this = Sales_data(s);
 	return *this;
 }
 
+inline
 Sales_data& Sales_data::operator+=(const Sales_data &rhs)
 {
 	combine(rhs);
 	return *this;
 }
 
+inline
 bool operator==(const Sales_data &lhs, const Sales_data &rhs)
 {
 	return lhs.isbn() == rhs.isbn() &&
@@ -143,9 +185,12 @@ bool operator==(const Sales_data &lhs, const Sales_data &rhs)
 		   lhs.revenue == rhs.revenue;
 }
 
+inline
 bool operator!=(const Sales_data &lhs, const Sales_data &rhs)
 {
 	return !(lhs == rhs);
 }
+
+//--------------------------------------------------------------------------------成员函数定义END
 
 #endif // SALES_DATA_H
