@@ -1,6 +1,7 @@
 #include "utility.h"
 #include <iostream>
 #include <cstddef>
+#include "ArrayFuncs.h"
 
 using namespace std;
 
@@ -94,7 +95,7 @@ void test_string_to_basetype()
 int main()
 {
 	// 测试求数组元素的数量
-	test_ARRAY_ITEM_NUM();
+	//test_ARRAY_ITEM_NUM();
 
 	// 测试设置、清除、判断比特位
 	//test_bitwise_operator(); 
@@ -104,6 +105,8 @@ int main()
 	//test_read_name();
 	
 	//test_string_to_basetype();
+	
+	utility::Test_ArrayFuncs();
 
 	return 0;
 }
