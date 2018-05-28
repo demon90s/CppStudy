@@ -379,5 +379,9 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习17.1](ch17_Specialized_Library_Facilities/exercise_17_01.cpp)|[练习17.2](ch17_Specialized_Library_Facilities/exercise_17_02.cpp)|[练习17.3](ch17_Specialized_Library_Facilities/exercise_17_03.cpp)|
+|[练习17.1](ch17_Specialized_Library_Facilities/exercise_17_01.cpp)|[练习17.2](ch17_Specialized_Library_Facilities/exercise_17_02.cpp)|[练习17.3](ch17_Specialized_Library_Facilities/exercise_17_03.cpp)|[练习17.4](ch17_Specialized_Library_Facilities/exercise_17_04.md)|[练习17.5](ch17_Specialized_Library_Facilities/exercise_17_05.cpp)|[练习17.6](ch17_Specialized_Library_Facilities/exercise_17_06.cpp)|[练习17.7](ch17_Specialized_Library_Facilities/exercise_17_07.md)|[练习17.8](ch17_Specialized_Library_Facilities/exercise_17_08.md)|
+
+#### 案例代码
+
+- [使用tuple返回多个值（p638）](ch17_Specialized_Library_Facilities/example_tuple.cpp)
 
