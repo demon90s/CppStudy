@@ -375,3 +375,9 @@
 
 - [动态内存管理类（练习16.16，p592）](ch16_Templates_and_GenericProgramming/example_Vec)
 
+### 第17章_标准库特殊设施
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习17.1](ch17_Specialized_Library_Facilities/exercise_17_01.cpp)|[练习17.2](ch17_Specialized_Library_Facilities/exercise_17_02.cpp)|[练习17.3](ch17_Specialized_Library_Facilities/exercise_17_03.cpp)|
+
