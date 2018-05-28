@@ -587,6 +587,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_15" title="重载与模板" class="md-nav__link">
+    重载与模板
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" title="可变参数模板" class="md-nav__link">
+    可变参数模板
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="编写可变参数函数模板" class="md-nav__link">
+    编写可变参数函数模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="包扩展" class="md-nav__link">
+    包扩展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" title="模板特例化" class="md-nav__link">
+    模板特例化
+  </a>
+  
+</li>
+      
       
       
       
@@ -790,6 +831,47 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" title="重载与模板" class="md-nav__link">
+    重载与模板
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" title="可变参数模板" class="md-nav__link">
+    可变参数模板
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="编写可变参数函数模板" class="md-nav__link">
+    编写可变参数函数模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="包扩展" class="md-nav__link">
+    包扩展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" title="模板特例化" class="md-nav__link">
+    模板特例化
+  </a>
   
 </li>
       
@@ -1345,6 +1427,144 @@
     <span class="n">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
+
+
+<h2 id="_15">重载与模板</h2>
+<p>函数模板可以被另一个模板或一个普通非模板函数重载。并在以下几方面影响函数匹配规则：</p>
+<ul>
+<li>
+<p>对于一个调用，其候选函数包括所有模板实参推断成功的函数模板实例。</p>
+</li>
+<li>
+<p>候选函数总是可行的，因为模板实参推断会排除任何不可行的模板。</p>
+</li>
+<li>
+<p>可行函数按类型转换来排序，当然，可以用于函数模板调用的类型转换是非常有限的。</p>
+</li>
+<li>
+<p>如果一个函数有最好的匹配，则选择此函数，如果有多个函数提供同样好的匹配，则：</p>
+<ul>
+<li>
+<p>如果其中只有一个是非模板函数，则选择此函数。</p>
+</li>
+<li>
+<p>如果只有多个函数模板，且其中一个模板最特例化，则选择此模板。</p>
+</li>
+<li>
+<p>否则，此调用有歧义。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>详细讨论见p615以及<a href="https://github.com/demon90s/CppPrimer/blob/master/ch16_Templates_and_GenericProgramming/example_overload_and_template.cpp"><mark>代码案例</mark></a></p>
+<h2 id="_16">可变参数模板</h2>
+<p>一个可变参数模板（variadic template）就是一个接受可变数目参数的模板函数或模板类。可变数目的参数被称为<strong>参数包</strong>（parameter packet）。存在两种参数包：</p>
+<ul>
+<li>
+<p>模板参数包，表示零个或多个模板参数；</p>
+</li>
+<li>
+<p>函数参数包，表示零个或多个函数参数。</p>
+</li>
+</ul>
+<p>我们用一个省略号来指出一个模板参数或函数参数表示一个包。在一个模板参数列表中，class...或typename...指出接下来的参数表示零个或多个类型的列表；一个类型名后面跟一个省略号表示零个或多个给定类型的非类型参数的列表。在函数参数列表中，如果一个参数的类型是一个模板参数包，则此参数也是一个函数参数包。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Args是一个模板参数包；rest是一个函数参数包</span>
+<span class="c1">// Args表示零个或多个模板类型参数</span>
+<span class="c1">// rest表示零个或多个函数参数</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">foo</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">,</span> <span class="k">const</span> <span class="n">Args</span><span class="o">&amp;</span> <span class="p">...</span> <span class="n">rest</span><span class="p">);</span>
+</pre></div>
+
+
+<p>与往常一样，编译器从函数的实参推断模板参数类型，对于一个可变参数模板，编译器还会推断包中参数的数目。</p>
+<div class="codehilite"><pre><span></span><span class="n">foo</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>       <span class="c1">// 包中有三个参数</span>
+<span class="n">foo</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>              <span class="c1">// 空包</span>
+</pre></div>
+
+
+<p>编译器将实例化出这样的foo版本：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">&amp;</span><span class="p">);</span>
+</pre></div>
+
+
+<p><strong>sizeof运算符</strong></p>
+<p>如果需要知道包中有多少个元素时，可以使用sizeof...运算符，类似sizeof，sizeof...返回一个常量表达式，而且不会对其实参求值。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">g</span><span class="p">(</span><span class="n">Args</span> <span class="p">...</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">...(</span><span class="n">Args</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    <span class="c1">// 类型参数的数目</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">...(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    <span class="c1">// 函数参数的数目</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_17">编写可变参数函数模板</h3>
+<p>我们可以使用一个initializer_list来定义一个可接受可变数目实参的函数。但是i，所有实参必须具有相容的类型。当我们既不知道想要处理的实参的数目也不知道它们的类型时，可变参数函数是很有用的。</p>
+<p>这里给出一个案例print函数来说明如何编写一个可变参数函数。</p>
+<p>可变参数函数通常是递归的。第一步调用处理包中的第一个实参，然后用剩余实参调用自身。为了终止递归，我们还需要定义一个非可变参数的版本。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 用来终止递归并打印最后一个元素的函数</span>
+<span class="c1">// 此函数必须在可变参数版本的print定义之前声明</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">ostream</span> <span class="o">&amp;</span><span class="n">print</span><span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 包中除了最后一个元素之外的其他元素都会调用这个版本的print</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="n">ostream</span> <span class="o">&amp;</span><span class="n">print</span><span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">,</span> <span class="k">const</span> <span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">rest</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">t</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">print</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="n">rest</span><span class="p">...);</span> <span class="c1">// 递归调用，打印其他实参</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>当定义可变参数版本的print时，非可变参数版本的声明必须在作用域中。否则，可变参数版本会无限递归。</p>
+</div>
+<h3 id="_18">包扩展</h3>
+<p>对于一个参数包，除了获取其大小外，我们能对它做的唯一的事情就是扩展（expand）它。当扩展一个包时，我们还要提供用于每个扩展元素的模式（pattern）。扩展一个包就是将它分解为构成的元素，对每个元素应用模式，获得扩展后的列表。我们通过在模式右边放一个省略号（...）来触发扩展操作。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+<span class="n">ostream</span> <span class="o">&amp;</span>
+<span class="n">print</span><span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">,</span> <span class="k">const</span> <span class="n">Args</span><span class="o">&amp;</span><span class="p">...</span> <span class="n">rest</span><span class="p">)</span> <span class="c1">// 扩展Args</span>
+<span class="p">{</span>
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">t</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">print</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="n">rest</span><span class="p">...);</span>                      <span class="c1">// 扩展rest</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>第一个扩展操作扩展模板参数包，为print生成函数参数列表。第二个扩展操作出现在对print的调用中，此模式为print调用生成实参列表。</p>
+<p>对Args的扩展中，模式是const Args&amp;，编译器将它应用到模板参数包Args中的每个元素。</p>
+<p>第二个扩展发生在对print的调用中，模式是函数参数包的名字（rest）。</p>
+<p>关于包扩展和其理解的更多详细的讨论见p621。</p>
+<h2 id="_19">模板特例化</h2>
+<p>在某些情况下，通用模板的定义对特定类型是不合适的：通用定义可能编译失败或做的不正确。当我们不能（或不希望）使用模板版本时，可以定义类或函数模板的一个特例化版本。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 可以比较任意两个类型</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>上面的函数模板可能无法很好的处理字符指针，因此可以为它定义一个模板特例化（template specialization）版本。一个特例化版本就是模板的一个独立的定义，在其中一个或多个模板参数被指定为特定的类型。</p>
+<p><strong>定义函数模板特例化</strong></p>
+<p>当我们特例化一个函数模板时，必须为原模板中的每个模板参数都提供实参。为了指出我们正在实例化一个模板，应使用关键字template后跟一个空尖括号对。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// compare的特殊版本，处理字符数组的指针</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">p2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>当我们定义一个特例化版本时，函数参数类型必须与一个先前声明的模板中对应的类型匹配。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>特例化的本质是实例化一个模板，而非重载它。因此，特例化不影响函数匹配。</p>
+</div>
+<p>我们还可以特例化类模板，这一部分的讨论见p626。</p>
                 
                   
                 
