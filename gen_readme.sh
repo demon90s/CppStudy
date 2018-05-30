@@ -152,6 +152,7 @@ main()
 
 	echo '### C++ Primer第五版学习笔记' >> $readme_file
 	echo '学习环境：CentOS7 gcc4.8.5' >> $readme_file
+	echo 'PS: 第17章正则表达式需要更高版本的gcc支持，我升级到了gcc4.9.2以满足这个要求' >> $readme_file
 	echo >> $readme_file
 
 	echo "### [术语表](./defined_terms/terms_index.md)" >> $readme_file
