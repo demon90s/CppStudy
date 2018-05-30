@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <functional>
 
 using namespace std;
 using namespace std::placeholders;

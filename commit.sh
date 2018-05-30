@@ -2,24 +2,21 @@
 
 # 提交代码到github
 
-get_all_dir() {
-	all_files=`ls`
-	for f in $all_files; do
-		if [ -d $f ]; then
-			echo -e "$f \c"
-		fi
-	done
-}
-
 clear_build() {
-	all_dir=$(get_all_dir)
-	for d in $all_dir; do
+	for d in ./ch*; do
 		cd $d
 			if [ -f build.sh ]; then
 				sh build.sh clear
-			elif [ -f Makefile ]; then
-				make clean
 			fi
+
+			for example_d in ./example*
+			do
+				if [ -d $example_d ]; then
+					cd $example_d
+					make clean
+					cd ..
+				fi
+			done
 		cd ..
 	done
 
