@@ -152,7 +152,7 @@ main()
 
 	echo '## C++ Primer第五版学习笔记' >> $readme_file
 	echo '学习环境：CentOS7 gcc4.8.5' >> $readme_file
-	echo -e '\nPS: 第17章正则表达式需要更高版本的gcc支持，因此我升级到了gcc4.9.2以满足这个要求' >> $readme_file
+	echo -e '\nPS: 第17章正则表达式需要更高版本的gcc支持，因此我升级到了gcc4.9.2以满足这个要求，遗憾的是，我发觉升级了gcc4.9.2还是不完全支持，比如不支持sregex_iterator，所以又临时换了scl的devtoolset-4，才算OK。学习为主，不折腾了，能work就行。' >> $readme_file
 	echo -e '\n---' >> $readme_file
 	echo >> $readme_file
 
