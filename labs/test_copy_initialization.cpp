@@ -18,13 +18,14 @@ private:
 
 int main()
 {
-	Foo f1;
-	Foo f2 = f1;
-	Foo f3 = 10; // 可能不会调用拷贝构造函数，编译器直接优化成直接初始化：Foo f3(10)
+	{
+		Foo f(1);
+		Foo f1 = f;
+		(void)f1;
+	}
 
-	// 避免报warning
-	f2.goo();
-	f3.goo();
+	Foo f2 = 2; // 可能不会调用拷贝构造函数，编译器直接优化成直接初始化：Foo f3(10)
+	(void)f2;
 
 	return 0;
 }
