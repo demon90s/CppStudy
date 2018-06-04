@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstddef>
 #include "ArrayFuncs.h"
+#include "RandFuncs.h"
 
 using namespace std;
 
@@ -106,7 +107,8 @@ int main()
 	
 	//test_string_to_basetype();
 	
-	utility::Test_ArrayFuncs();
+	//utility::Test_ArrayFuncs();
+	utility::Test_RandFuncs();
 
 	return 0;
 }
