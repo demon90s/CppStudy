@@ -1,7 +1,14 @@
 ## C++ Primer第五版学习笔记
+
 学习环境：CentOS7 gcc4.8.5
 
-PS: 第17章正则表达式需要更高版本的gcc支持，因此我升级到了gcc4.9.2以满足这个要求，遗憾的是，我发觉升级了gcc4.9.2还是不完全支持，比如不支持sregex_iterator，所以又临时换了scl的devtoolset-4，才算OK。学习为主，不折腾了，能work就行。
+以下内容需要更高的编译器版本支持:
+
+- 正则表达式库
+
+- 一些IO操纵符，比如hexfloat
+
+可以使用[在线编译器](http://coliru.stacked-crooked.com/)编译运行相关代码。
 
 ---
 
@@ -387,9 +394,11 @@ PS: 第17章正则表达式需要更高版本的gcc支持，因此我升级到�
 |[练习17.9](ch17_Specialized_Library_Facilities/exercise_17_09.cpp)|[练习17.10](ch17_Specialized_Library_Facilities/exercise_17_10.cpp)|[练习17.11](ch17_Specialized_Library_Facilities/exercise_17_11.cpp)|[练习17.12](ch17_Specialized_Library_Facilities/exercise_17_12.cpp)|[练习17.13](ch17_Specialized_Library_Facilities/exercise_17_13.cpp)|[练习17.14](ch17_Specialized_Library_Facilities/exercise_17_14.cpp)|[练习17.15](ch17_Specialized_Library_Facilities/exercise_17_15.cpp)|[练习17.16](ch17_Specialized_Library_Facilities/exercise_17_16.md)|
 |[练习17.17](ch17_Specialized_Library_Facilities/exercise_17_17.md)|[练习17.18](ch17_Specialized_Library_Facilities/exercise_17_18.cpp)|[练习17.19](ch17_Specialized_Library_Facilities/exercise_17_19.md)|[练习17.20](ch17_Specialized_Library_Facilities/exercise_17_20.md)|[练习17.21](ch17_Specialized_Library_Facilities/exercise_17_21.cpp)|[练习17.22](ch17_Specialized_Library_Facilities/exercise_17_22.cpp)|[练习17.23](ch17_Specialized_Library_Facilities/exercise_17_23.cpp)|[练习17.24](ch17_Specialized_Library_Facilities/exercise_17_24.md)|
 |[练习17.25](ch17_Specialized_Library_Facilities/exercise_17_25.cpp)|[练习17.26](ch17_Specialized_Library_Facilities/exercise_17_26.cpp)|[练习17.27](ch17_Specialized_Library_Facilities/exercise_17_27.cpp)|[练习17.28](ch17_Specialized_Library_Facilities/exercise_17_28.cpp)|[练习17.29](ch17_Specialized_Library_Facilities/exercise_17_29.cpp)|[练习17.30](ch17_Specialized_Library_Facilities/exercise_17_30.cpp)|[练习17.31](ch17_Specialized_Library_Facilities/exercise_17_31.md)|[练习17.32](ch17_Specialized_Library_Facilities/exercise_17_32.md)|
-|[练习17.33](ch17_Specialized_Library_Facilities/exercise_17_33.cpp)|
+|[练习17.33](ch17_Specialized_Library_Facilities/exercise_17_33.cpp)|[练习17.34](ch17_Specialized_Library_Facilities/exercise_17_34.md)|[练习17.35](ch17_Specialized_Library_Facilities/exercise_17_35.cpp)|[练习17.36](ch17_Specialized_Library_Facilities/exercise_17_36.cpp)|[练习17.37](ch17_Specialized_Library_Facilities/exercise_17_37.cpp)|[练习17.38](ch17_Specialized_Library_Facilities/exercise_17_38.cpp)|[练习17.39](ch17_Specialized_Library_Facilities/exercise_17_39.md)|
 
 #### 案例代码
+
+- [格式化输入与输出（p666）](ch17_Specialized_Library_Facilities/example_formatted_io.cpp)
 
 - [使用子表达式验证电话号码（p654）](ch17_Specialized_Library_Facilities/example_phone_number.cpp)
 
@@ -398,6 +407,8 @@ PS: 第17章正则表达式需要更高版本的gcc支持，因此我升级到�
 - [指定或使用正则表达式时的错误（p648）](ch17_Specialized_Library_Facilities/example_regex_error.cpp)
 
 - [使用regex_replace（p657）](ch17_Specialized_Library_Facilities/example_regex_replace.cpp)
+
+- [seek和tell函数（p676）](ch17_Specialized_Library_Facilities/example_seek_tell.cpp)
 
 - [匹配与Regex迭代器类型（p650）](ch17_Specialized_Library_Facilities/example_sregex_iterator.cpp)
 
