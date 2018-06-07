@@ -414,6 +414,8 @@
 
 - [使用tuple返回多个值（p638）](ch17_Specialized_Library_Facilities/example_tuple.cpp)
 
+- [未格式化IO（p673）](ch17_Specialized_Library_Facilities/example_unformatted_io.cpp)
+
 - [使用正则表达式库（p646）](ch17_Specialized_Library_Facilities/example_using_regex.cpp)
 
 - [使用子表达式（p653）](ch17_Specialized_Library_Facilities/example_using_subexpression.cpp)
