@@ -29,6 +29,7 @@ cat << !CHAPTERS!
 第15章_面向对象程序设计
 第16章_模板与泛型编程
 第17章_标准库特殊设施
+第18章_用于大型程序的工具
 !CHAPTERS!
 }
 
@@ -154,9 +155,6 @@ main()
 	echo -e '\n学习环境：CentOS7 gcc4.8.5' >> $readme_file
 	echo -e '\n以下内容需要更高的编译器版本支持:\n\n- 正则表达式库\n\n- 一些IO操纵符，比如hexfloat\n\n可以使用[在线编译器](http://coliru.stacked-crooked.com/)编译运行相关代码。' >> $readme_file
 	echo -e '\n---' >> $readme_file
-	echo >> $readme_file
-
-	echo "### [术语表](./defined_terms/terms_index.md)" >> $readme_file
 	echo >> $readme_file
 
 	gen_readme
