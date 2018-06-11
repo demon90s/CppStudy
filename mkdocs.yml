@@ -32,6 +32,7 @@ pages:
     - static的3个用途: cheatsheet/static的3个用途.md
     - 若干种typedef: cheatsheet/若干种typedef.md
     - 类内初始值: cheatsheet/类内初始值.md
+    - 运算符重载: cheatsheet/运算符重载.md
 
 theme:
   name: 'material'

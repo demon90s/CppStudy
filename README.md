@@ -12,8 +12,6 @@
 
 ---
 
-### [术语表](./defined_terms/terms_index.md)
-
 ### 第1章_开始
 
 |E|X|E|R|C|I|S|E|
@@ -419,4 +417,10 @@
 - [使用正则表达式库（p646）](ch17_Specialized_Library_Facilities/example_using_regex.cpp)
 
 - [使用子表达式（p653）](ch17_Specialized_Library_Facilities/example_using_subexpression.cpp)
+
+### 第18章_用于大型程序的工具
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习18.1](ch18_Tools_for_Large_Programs/exercise_18_01.cpp)|[练习18.2](ch18_Tools_for_Large_Programs/exercise_18_02.md)|[练习18.3](ch18_Tools_for_Large_Programs/exercise_18_03.cpp)|
 

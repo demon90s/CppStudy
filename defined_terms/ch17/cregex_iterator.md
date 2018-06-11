@@ -1,0 +1,1 @@
+cregex_iterator 类似sregex_iterator，唯一的差别是此迭代器遍历一个char数组。
