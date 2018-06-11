@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "exceptions.h"
 
 //--------------------------------------------------------------------------------
 
@@ -78,8 +79,8 @@ inline
 size_t hash<Sales_data>::operator()(const Sales_data& s) const
 {
 	return hash<string>()(s.bookNo) ^
-	       hash<unsigned>()(s.units_sold) ^
-		   hash<double>()(s.revenue);
+		hash<unsigned>()(s.units_sold) ^
+		hash<double>()(s.revenue);
 }
 
 }
@@ -98,6 +99,9 @@ double Sales_data::avg_price() const
 inline
 Sales_data& Sales_data::combine(const Sales_data &rhs)
 {
+	if (isbn() != rhs.isbn())
+		throw isbn_mismatch("wrong isbns", isbn(), rhs.isbn());
+
 	units_sold += rhs.units_sold;
 	revenue += rhs.revenue;
 	return *this;
@@ -181,8 +185,8 @@ inline
 bool operator==(const Sales_data &lhs, const Sales_data &rhs)
 {
 	return lhs.isbn() == rhs.isbn() &&
-	       lhs.units_sold == rhs.units_sold &&
-		   lhs.revenue == rhs.revenue;
+		lhs.units_sold == rhs.units_sold &&
+		lhs.revenue == rhs.revenue;
 }
 
 inline

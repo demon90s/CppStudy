@@ -78,12 +78,21 @@ void test4()
 	}
 }
 
+// 测试自定义异常类，见p694
+void test5()
+{
+	Sales_data sd1("0-201-70353-X", 4, 24.99);
+	Sales_data sd2("0-201-70354-X", 7, 34.99);
+	sd1 + sd2;
+}
+
 int main()
 {
 	//test1();
 	//test2();
 	//test3();
-	test4();
+	//test4();
+	test5();
 
 	return 0;
 }

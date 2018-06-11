@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+#include <stdexcept>
 #include "BlobPtr.h"
 
 // 前置声明，在Blob中声明友元所需要的
@@ -57,8 +58,13 @@ private:
 
 template<typename T>
 template<typename It>
-inline Blob<T>::Blob(It beg, It end) : data(std::make_shared<std::vector<T>>(beg, end))
+inline Blob<T>::Blob(It beg, It end) try : data(std::make_shared<std::vector<T>>(beg, end))
 {
+} catch (const std::bad_alloc &e) { 
+	// 构造函数异常处理，见p689
+	// 简单处理，直接异常退出
+	std::cout << "bad_alloc: " << e.what() << std::endl;
+	abort();
 }
 
 template<typename T>
