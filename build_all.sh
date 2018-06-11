@@ -4,9 +4,6 @@
 
 main()
 {
-	echo -e "\n========Make sure gcc version >= 4.9.2========\n\n"
-	sleep 1
-
 	for directory in ./ch*
 	do
 		cd $directory

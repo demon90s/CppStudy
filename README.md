@@ -2,7 +2,7 @@
 
 学习环境：CentOS7 gcc4.8.5
 
-以下内容需要更高的编译器版本支持:
+以下内容需要更高的编译器版本支持：
 
 - 正则表达式库
 
@@ -422,5 +422,5 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习18.1](ch18_Tools_for_Large_Programs/exercise_18_01.cpp)|[练习18.2](ch18_Tools_for_Large_Programs/exercise_18_02.md)|[练习18.3](ch18_Tools_for_Large_Programs/exercise_18_03.cpp)|
+|[练习18.1](ch18_Tools_for_Large_Programs/exercise_18_01.cpp)|[练习18.2](ch18_Tools_for_Large_Programs/exercise_18_02.md)|[练习18.3](ch18_Tools_for_Large_Programs/exercise_18_03.cpp)|[练习18.4](ch18_Tools_for_Large_Programs/exercise_18_04.md)|[练习18.5](ch18_Tools_for_Large_Programs/exercise_18_05.cpp)|[练习18.6](ch18_Tools_for_Large_Programs/exercise_18_06.cpp)|
 

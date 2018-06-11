@@ -153,7 +153,7 @@ main()
 
 	echo '## C++ Primer第五版学习笔记' >> $readme_file
 	echo -e '\n学习环境：CentOS7 gcc4.8.5' >> $readme_file
-	echo -e '\n以下内容需要更高的编译器版本支持:\n\n- 正则表达式库\n\n- 一些IO操纵符，比如hexfloat\n\n可以使用[在线编译器](http://coliru.stacked-crooked.com/)编译运行相关代码。' >> $readme_file
+	echo -e '\n以下内容需要更高的编译器版本支持：\n\n- 正则表达式库\n\n- 一些IO操纵符，比如hexfloat\n\n可以使用[在线编译器](http://coliru.stacked-crooked.com/)编译运行相关代码。' >> $readme_file
 	echo -e '\n---' >> $readme_file
 	echo >> $readme_file
 

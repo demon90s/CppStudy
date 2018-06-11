@@ -22,7 +22,7 @@ void exercise1(int *b, int *e)
 	};
 
 	vector<int> v(b, e);
-	IntList(v.size()); // 改成用类来管理
+	IntList il(v.size()); // 改成用类来管理
 	ifstream in("ints");
 
 	throw runtime_error("test exception");
@@ -34,15 +34,14 @@ void exercise2(int *b, int *e)
 	unique_ptr<int[]> up(new int[v.size()]()); // 使用智能指针管理
 	ifstream in("ints");
 
-
 	throw runtime_error("test exception");
 }
 
 int main()
 {
 	int arr[] = {1, 2, 3};
-	//exercise1(begin(arr), end(arr));
-	exercise2(begin(arr), end(arr));
+	exercise1(begin(arr), end(arr));
+	//exercise2(begin(arr), end(arr));
 
 	return 0;
 }
