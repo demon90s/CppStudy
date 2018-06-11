@@ -27,6 +27,7 @@ pages:
     - ch14 操作重载与类型转换: ch14 操作重载与类型转换.md
     - ch15 面向对象程序设计: ch15 面向对象程序设计.md
     - ch16 模板与泛型编程: ch16 模板与泛型编程.md
+    - ch17 标准库特殊设施: ch17 标准库特殊设施.md
   - CheatSheet:
     - static的3个用途: cheatsheet/static的3个用途.md
     - 若干种typedef: cheatsheet/若干种typedef.md
