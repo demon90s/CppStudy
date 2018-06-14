@@ -42,7 +42,9 @@ chapters=$(get_all_chapters)
 gen_exercise_txt()
 {
 	ch_name=$1				# 章节名
-	ch_dir=$(ls -d $2*)		# 章节路径
+	ch_name=${ch_name/_/ }			# 取消下划线
+
+	ch_dir=$(ls -d $2*)			# 章节路径
 	n_ch=$3					# 第几章
 
 	#echo "$ch_name $ch_dir"

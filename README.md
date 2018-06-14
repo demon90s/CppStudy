@@ -12,7 +12,7 @@
 
 ---
 
-### 第1章_开始
+### 第1章 开始
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -35,7 +35,7 @@
 
 - [while语句（p10）](ch01_Getting_Started/example_while.cpp)
 
-### 第2章_变量和基本类型
+### 第2章 变量和基本类型
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -46,7 +46,7 @@
 |[练习2.33](ch02_Variables_and_Basic_Types/exercise_2_33.txt)|[练习2.34](ch02_Variables_and_Basic_Types/exercise_2_34.cpp)|[练习2.35](ch02_Variables_and_Basic_Types/exercise_2_35.cpp)|[练习2.36](ch02_Variables_and_Basic_Types/exercise_2_36.cpp)|[练习2.37](ch02_Variables_and_Basic_Types/exercise_2_37.txt)|[练习2.38](ch02_Variables_and_Basic_Types/exercise_2_38.md)|[练习2.39](ch02_Variables_and_Basic_Types/exercise_2_39.cpp)|[练习2.40](ch02_Variables_and_Basic_Types/exercise_2_40.cpp)|
 |[练习2.41](ch02_Variables_and_Basic_Types/exercise_2_41.cpp)|[练习2.42](ch02_Variables_and_Basic_Types/exercise_2_42.cpp)|
 
-### 第3章_字符串、向量和数组
+### 第3章 字符串、向量和数组
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -74,7 +74,7 @@
 
 - [使用下标执行迭代（p85）](ch03_Strings_Vectors_and_Arrays/example_using_subscript.cpp)
 
-### 第4章_表达式
+### 第4章 表达式
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -90,7 +90,7 @@
 
 - [在一条语句中混用解引用和递增运算符（p132）](ch04_Expressions/example_increment_operator.cpp)
 
-### 第5章_语句
+### 第5章 语句
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -105,7 +105,7 @@
 
 - [嵌套if语句（p157）](ch05_Statements/example_if_statement.cpp)
 
-### 第6章_函数
+### 第6章 函数
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -143,7 +143,7 @@
 
 - [使用引用形参返回额外信息（p189）](ch06_Functions/example_using_ref_to_return_info.cpp)
 
-### 第7章_类
+### 第7章 类
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -168,7 +168,7 @@
 
 - [窗口类的设计与实现(自p243始)](ch07_Classes/example_Screen)
 
-### 第8章_IO库
+### 第8章 IO库
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -179,7 +179,7 @@
 
 - [使用fstream代替iostream&读取Sales_data（p284）](ch08_The_IO_Library/example_fstream.cpp)
 
-### 第9章_顺序容器
+### 第9章 顺序容器
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -203,7 +203,7 @@
 
 - [迭代器范围iterator range（p296）](ch09_Sequential_Containers/example_iterator_range.cpp)
 
-### 第10章_泛型算法
+### 第10章 泛型算法
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -228,7 +228,7 @@
 
 - [sort和unique函数，消除重复单词（p343）](ch10_Generic_Algorithms/example_unique.cpp)
 
-### 第11章_关联容器
+### 第11章 关联容器
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -252,7 +252,7 @@
 
 - [单词转换程序（p392）](ch11_Associative_Containers/example_word_transform.cpp)
 
-### 第12章_动态内存
+### 第12章 动态内存
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -274,7 +274,7 @@
 
 - [使用我们自己的释放操作（p416）](ch12_Dynamic_Memory/example_using_own_deletion.cpp)
 
-### 第13章_拷贝控制
+### 第13章 拷贝控制
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -299,7 +299,7 @@
 
 - [动态内存管理类（p464）](ch13_Copy_Control/example_StrVec)
 
-### 第14章_操作重载与类型转换
+### 第14章 操作重载与类型转换
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -321,7 +321,7 @@
 
 - [标准库定义的函数对象（p509）](ch14_Overloaded_Operations_and_Conversions/example_std_funcobj.cpp)
 
-### 第15章_面向对象程序设计
+### 第15章 面向对象程序设计
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -346,7 +346,7 @@
 
 - [文本查询程序再探(p562)](ch15_Object-Oriented_Programming/example_TextQuery)
 
-### 第16章_模板与泛型编程
+### 第16章 模板与泛型编程
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -384,7 +384,7 @@
 
 - [动态内存管理类（练习16.16，p592）](ch16_Templates_and_GenericProgramming/example_Vec)
 
-### 第17章_标准库特殊设施
+### 第17章 标准库特殊设施
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -418,7 +418,7 @@
 
 - [使用子表达式（p653）](ch17_Specialized_Library_Facilities/example_using_subexpression.cpp)
 
-### 第18章_用于大型程序的工具
+### 第18章 用于大型程序的工具
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
