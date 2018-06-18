@@ -46,6 +46,10 @@ theme:
     code: 'Open Sans Mono'
   language: 'zh'
 
+extra:
+  search:
+    language: 'en, jp'
+
 markdown_extensions:
   - admonition
   - codehilite
