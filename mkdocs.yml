@@ -34,6 +34,7 @@ pages:
     - 若干种typedef: cheatsheet/若干种typedef.md
     - 类内初始值: cheatsheet/类内初始值.md
     - 运算符重载: cheatsheet/运算符重载.md
+    - 向set中插入自定义类型对象: cheatsheet/向set中插入自定义类型对象.md
 
 theme:
   name: 'material'
