@@ -1,4 +1,8 @@
-## 若干种typedef
+# 若干种typedef
+
+---
+
+## 代码案例
 
 ```c++
 typedef long long 		Int64;			// 简单的类型别名

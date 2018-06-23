@@ -1,9 +1,5 @@
 # 向set中插入自定义类型对象
 
----
-
-## Example
-
 可以使用这些方法：
 
 1. 使用自定义operator<运算符
@@ -11,6 +7,10 @@
 2. 使用自定义比较函数
 
 3. 使用可调用对象（lambda表达式或重载了operator()的类）
+
+---
+
+## 代码案例
 
 ```c++
 struct Item
@@ -55,4 +55,6 @@ int main()
 }
 ```
 
-[==参考代码==](https://github.com/demon90s/CppPrimer/blob/master/labs/test_set_define.cpp)
+## 参考资料
+
+[测试代码](https://github.com/demon90s/CppPrimer/blob/master/labs/test_set_define.cpp)
