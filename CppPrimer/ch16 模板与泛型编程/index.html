@@ -1115,7 +1115,7 @@
 </div>
 <p>当使用模板时，我们（隐式或显式地）指定模板实参（template argument），将其绑定到模板参数上。</p>
 <p>compare函数声明了一个名为T的类型参数。在compare中，我们用名字T表示一个类型。而T表示的实际类型则在编译时根据compare的使用情况来确定。</p>
-<p><a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_function_template.cpp"><mark>函数模板代码案例</mark></a></p>
+<p><a href="https://github.com/demon90s/CppStudy/blob/master/ch16_Templates_and_GenericProgramming/example_function_template.cpp"><mark>函数模板代码案例</mark></a></p>
 <p><strong>实例化函数模板</strong></p>
 <p>当调用一个函数模板时，编译器会用函数实参推断出模板实参。即，当我们调用compare时，编译器使用实参的类型来确定绑定到模板参数T的类型。例如：</p>
 <div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// T为int</span>
@@ -1147,7 +1147,7 @@
 <h3 id="_4">类模板</h3>
 <p>类模板（class template）是用来生成类的蓝图的。与函数模板不同之处是，编译器不能为类模板推断模版参数类型。为了使用类模板，我们必须在模板名后的尖括号中提供额外信息——用来代替模板参数的模板实参列表。</p>
 <p>类似函数模板，类模板以关键字template开始，后跟模板参数列表。在类模板的定义中，我们将模版参数当作替身，代替使用模板时用户需要提供的类型或值。</p>
-<p><a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_template_class/Blob.h"><mark>类模板案例代码</mark></a></p>
+<p><a href="https://github.com/demon90s/CppStudy/blob/master/ch16_Templates_and_GenericProgramming/example_template_class/Blob.h"><mark>类模板案例代码</mark></a></p>
 <p><strong>实例化类模板</strong></p>
 <p>当使用一个类模板时，我们必须提供额外信息。这些额外信息是显式模板实参（explicit template argument）列表，它们被绑定到模版参数。编译器使用这些模板实参来实例化出特定的类。</p>
 <div class="admonition note">
@@ -1287,7 +1287,7 @@
 
 <h3 id="_6">成员模板</h3>
 <p>一个类（无论是普通类还是类模板）可以包含本身是模板的成员函数。这种成员被称为成员模板（member template）。成员模板不能是虚函数。</p>
-<p><a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_member_template/DebugDelete.h"><mark>成员模板案例代码</mark></a></p>
+<p><a href="https://github.com/demon90s/CppStudy/blob/master/ch16_Templates_and_GenericProgramming/example_member_template/DebugDelete.h"><mark>成员模板案例代码</mark></a></p>
 <p>更多内容详见p596。</p>
 <h3 id="_7">控制实例化</h3>
 <p>当模板被使用时才会进行实例化，这一特性意味着，相同的实例可能出现在多个对象文件中。当两个或多个独立编译的源文件使用了相同的模板，并提供了相同的模板参数时，每个文件中就会有该模板的一个实例。</p>
@@ -1650,7 +1650,7 @@
 </ul>
 </li>
 </ul>
-<p>详细讨论见p615以及<a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_overload_and_template.cpp"><mark>代码案例</mark></a></p>
+<p>详细讨论见p615以及<a href="https://github.com/demon90s/CppStudy/blob/master/ch16_Templates_and_GenericProgramming/example_overload_and_template.cpp"><mark>代码案例</mark></a></p>
 <h2 id="_16">可变参数模板</h2>
 <p>一个可变参数模板（variadic template）就是一个接受可变数目参数的模板函数或模板类。可变数目的参数被称为<strong>参数包</strong>（parameter packet）。存在两种参数包：</p>
 <ul>

@@ -95,6 +95,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
+      <a href="#1c" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -701,6 +705,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
     <a href="./" title="条款1：视C++为一个语言联邦" class="md-nav__link md-nav__link--active">
       条款1：视C++为一个语言联邦
@@ -726,6 +732,21 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -734,9 +755,28 @@
                   <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/EffectiveCpp/1 让自己习惯C++/条款1：视C++为一个语言联邦.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>条款1：视C++为一个语言联邦</h1>
-                
-                
+                <h1 id="1c">条款1：视C++为一个语言联邦</h1>
+<hr />
+<p>一个理解C++的方法是：将C++视为一个由相关语言组成的联邦而非单一语言。它有这样几个主要的次语言（sublanguage）：</p>
+<ul>
+<li>
+<p><strong>C</strong>。说到底，C++仍是以C为基础。</p>
+</li>
+<li>
+<p><strong>Object-Oriented C++</strong>。这部分就是 C with Classes 所诉求的：classes（包括构造函数和析构函数）、封装、继承、多态等等。</p>
+</li>
+<li>
+<p><strong>Template C++</strong>。这是C++泛型编程（generic programming）部分。</p>
+</li>
+<li>
+<p><strong>STL</strong>。STL是个template程序库。STL有自己特殊的办事方式，当你伙同STL一起工作，你必须遵守它的规约。</p>
+</li>
+</ul>
+<p>当我们从一个次语言切换到另一个，高效的编程守则要求我们改变策略。比如，对于内置（也就是C-like）类型而言，pass-by-value通常比pass-by-reference高效，但当从C part of C++移往Object-Oriented C++，由于用户自定义（user-defined）构造函数和析构函数的存在，pass-by-reference-to-const往往更好。运用Template C++时尤其如此，因为彼时我们不知道处理对象的类型。然而一旦跨入STL，迭代器和函数对象都是在C指针之上塑造出来的，所以对STL的迭代器和函数对象而言，旧时的C pass-by-value守则再次适用。</p>
+<div class="admonition tip">
+<p class="admonition-title">请记住</p>
+<p>C++高效编程守则视状况而变化，取决于你使用C++哪一部分。</p>
+</div>
                 
                   
                 
