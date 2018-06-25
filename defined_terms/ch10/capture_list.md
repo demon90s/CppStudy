@@ -1,1 +1,0 @@
-捕获列表（capture list）lambda表达式的一部分，指出lambda表达式可以访问所在上下文中哪些变量。

@@ -1,9 +1,0 @@
-练习5.18：说明下列循环的含义并改正其中的错误。
-
-原题代码略多，此处忽略。
-
-(a) do while语句中应该添加语句块。
-
-(b) condition中不能定义变量，ival必须定义在do while语句前。
-
-(c) condition中的变量必须定义在do while语句外面。

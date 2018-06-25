@@ -1,1 +1,0 @@
-size_type 是string和vector定义的类型的名字，能存放下任意string对象或vector对象的大小。在标准库中，size_type被定义为无符号类型。

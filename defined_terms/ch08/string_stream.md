@@ -1,3 +1,0 @@
-字符串流（string stream）用于读写string的流对象。除了普通的iostream操作外，字符串流还定义了一个名为str的重载成员。调用str的无参版本会返回字符串流关联的string。调用时传递给它一个string参数，则会将字符串流与该string的一个拷贝相关联。
-
-见p287。

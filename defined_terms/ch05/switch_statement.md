@@ -1,1 +1,0 @@
-switch语句（switch statement）一种条件语句，首先求switch关键字后面表达式的值，如果某个case标签的值与表达式的值相等，程序直接跨过之前的代码从这个case标签开始执行。当所有case标签都无法匹配时，如果有default标签，从default标签继续执行；如果没有，结束switch语句。

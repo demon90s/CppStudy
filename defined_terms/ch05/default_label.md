@@ -1,1 +1,0 @@
-default标签（default label）是一种特殊的case标签，当switch表达式的值与所有case标签都无法匹配时，程序执行default标签下的内容。

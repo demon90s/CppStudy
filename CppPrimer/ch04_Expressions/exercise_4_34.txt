@@ -1,9 +1,0 @@
-练习4.34：根据本节给出的变量定义，说明在下面的表达式中奖发生什么样的类型转换？
-
-(a) if (fval)	(b) dval = fval + ival;	(c) dval + ival * cval
-
----
-
-(a) fval将转换成bool类型。
-(b) ival将转换成float类型，然后相加结果转换成double。
-(c) cval转换成int，然后ival * cval的结果转换成double。

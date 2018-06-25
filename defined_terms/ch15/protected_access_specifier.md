@@ -1,1 +1,0 @@
-protected访问说明符（protected access specifier）protected关键字之后定义的成员能被派生类的成员和友元访问。但是这些成员只对派生类对象是可访问的，对类的普通用户则是不可访问的。

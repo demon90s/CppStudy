@@ -1,1 +1,0 @@
-weak_ptr 一种智能指针，指向由shared_ptr管理的对象。在确定是否应释放对象时，shared_ptr并不把weak_ptr统计在内。

@@ -1,8 +1,0 @@
-练习3.11：下面的范围for语句合法吗？如果合法，c的类型是什么？
-
-const string s = "Keep out!";
-for (auto &c : s) { /* ... */ }
-
----
-
-如果不改变c的值，就是合法的，c的类型是const char&。

@@ -1,1 +1,0 @@
-break语句（break statement）终止离它最近的循环或switch语句。控制权转移到循环或switch之后的第一条语句。
