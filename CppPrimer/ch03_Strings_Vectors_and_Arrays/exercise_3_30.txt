@@ -1,0 +1,10 @@
+练习3.30：指出下面代码中的索引错误。
+
+constexpr size_t array_size = 10;
+int ia[array_size];
+for (size_t ix = 1; ix <= array_size; ++ix)
+	ia[ix] = ix;
+
+---
+
+出现下标越界的错误，ix不能等于array_size。
