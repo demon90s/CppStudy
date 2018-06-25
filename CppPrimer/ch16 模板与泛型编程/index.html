@@ -1307,7 +1307,7 @@
 
 <p>当编译器遇到extern模板声明时，它不会在本文件中生成实例化代码。将一个实例化声明为extern就表示承诺在程序其他位置有该实例化的一个非extern声明（定义）。对于一个给定的实例化版本，可能有多个extern声明，但必须只有一个定义。</p>
 <blockquote>
-<p><a href="https://github.com/demon90s/CppStudy/tree/master/ch16_Templates_and_GenericProgramming/example_explicit_instantiation"><mark>显式实例化案例代码</mark></a>，在这个例子中，我将实例化声明放在头文件里，而将显式的实例化定义放在源文件里。</p>
+<p><a href="https://github.com/demon90s/CppStudy/tree/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_explicit_instantiation"><mark>显式实例化案例代码</mark></a>，在这个例子中，我将实例化声明放在头文件里，而将显式的实例化定义放在源文件里。</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1323,7 +1323,7 @@
 <p>灵活性：shared_ptr在运行时绑定删除器，使用户重载删除器更为方便。</p>
 </li>
 </ul>
-<p><a href="https://github.com/demon90s/CppStudy/tree/master/ch16_Templates_and_GenericProgramming/example_SmartPointer"><mark>自定义的智能指针</mark></a>可以更直观地解释上述说明。</p>
+<p><a href="https://github.com/demon90s/CppStudy/tree/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_SmartPointer"><mark>自定义的智能指针</mark></a>可以更直观地解释上述说明。</p>
 <h2 id="_8">模板实参推断</h2>
 <p>对于函数模板，编译器利用调用中的函数实参来确定其模板参数。从函数实参来确定模板实参的过程被称为模板实参推断（template argument deduction）。在模板实参推断过程中，编译器使用函数调用中的实参类型来寻找模板实参，用这些模板实参生成的函数版本与给定的函数调用最为匹配。</p>
 <h3 id="_9">类型转换与模板类型参数</h3>
