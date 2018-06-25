@@ -1,0 +1,1 @@
+pair类型，保存名为first和second的public数据成员。pair类型是模板类型，接受两个类型参数，作为其成员的类型。

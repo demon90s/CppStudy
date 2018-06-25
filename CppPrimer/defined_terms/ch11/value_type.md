@@ -1,0 +1,1 @@
+value_type 容器中元素的类型。对于set和multiset，value_type和key_type是一样的。对于map和multimap，此类型是一个pair，其first成员类型为const key_type，second成员类型为mapped_type。

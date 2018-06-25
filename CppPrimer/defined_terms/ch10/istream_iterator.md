@@ -1,0 +1,1 @@
+istream_iterator 读取输入流的流迭代器。

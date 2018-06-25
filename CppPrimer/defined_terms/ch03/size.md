@@ -1,0 +1,1 @@
+size 是string和vector的成员，分别返回字符的数量或元素的数量。返回值的类型是size_type。

@@ -1,0 +1,1 @@
+sregex_iterator 迭代器，使用给定的regex对象遍历一个string来查找匹配子串。其构造函数通过调用regex_search将迭代器定位到第一个匹配。递增迭代器的操作会调用regex_search，从给定string中当前匹配之后的位置开始查找匹配。解引用迭代器返回一个描述当前匹配的smatch对象。
