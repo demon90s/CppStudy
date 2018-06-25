@@ -1,5 +1,5 @@
-site_name: C++ Primer 5th Note
-site_description: C++ Primer 5th Note
+site_name: C++ Study Note
+site_description: C++ Study Note
 
 copyright: 'Copyright &copy; 2018 Diwen Liu'
 
@@ -10,31 +10,36 @@ edit_uri: "tree/master/study_notes"
 
 pages:
   - Introduction: index.md
-  - Chapters: 
-    - ch01 开始: ch01 开始.md
-    - ch02 变量和基本类型: ch02 变量和基本类型.md
-    - ch03 字符串、向量和数组: ch03 字符串、向量和数组.md
-    - ch04 表达式: ch04 表达式.md
-    - ch05 语句: ch05 语句.md
-    - ch06 函数: ch06 函数.md
-    - ch07 类: ch07 类.md
-    - ch08 IO库: ch08 IO库.md
-    - ch09 顺序容器: ch09 顺序容器.md
-    - ch10 泛型算法: ch10 泛型算法.md
-    - ch11 关联容器: ch11 关联容器.md
-    - ch12 动态内存: ch12 动态内存.md
-    - ch13 拷贝控制: ch13 拷贝控制.md
-    - ch14 操作重载与类型转换: ch14 操作重载与类型转换.md
-    - ch15 面向对象程序设计: ch15 面向对象程序设计.md
-    - ch16 模板与泛型编程: ch16 模板与泛型编程.md
-    - ch17 标准库特殊设施: ch17 标准库特殊设施.md
-    - ch18 用于大型程序的工具: ch18 用于大型程序的工具.md
-  - CheatSheet:
-    - static的3个用途: cheatsheet/static的3个用途.md
-    - 若干种typedef: cheatsheet/若干种typedef.md
-    - 类内初始值: cheatsheet/类内初始值.md
-    - 运算符重载: cheatsheet/运算符重载.md
-    - 向set中插入自定义类型对象: cheatsheet/向set中插入自定义类型对象.md
+  - C++ Primer:
+    - Chapters: 
+      - ch01 开始: CppPrimer/ch01 开始.md
+      - ch02 变量和基本类型: CppPrimer/ch02 变量和基本类型.md
+      - ch03 字符串、向量和数组: CppPrimer/ch03 字符串、向量和数组.md
+      - ch04 表达式: CppPrimer/ch04 表达式.md
+      - ch05 语句: CppPrimer/ch05 语句.md
+      - ch06 函数: CppPrimer/ch06 函数.md
+      - ch07 类: CppPrimer/ch07 类.md
+      - ch08 IO库: CppPrimer/ch08 IO库.md
+      - ch09 顺序容器: CppPrimer/ch09 顺序容器.md
+      - ch10 泛型算法: CppPrimer/ch10 泛型算法.md
+      - ch11 关联容器: CppPrimer/ch11 关联容器.md
+      - ch12 动态内存: CppPrimer/ch12 动态内存.md
+      - ch13 拷贝控制: CppPrimer/ch13 拷贝控制.md
+      - ch14 操作重载与类型转换: CppPrimer/ch14 操作重载与类型转换.md
+      - ch15 面向对象程序设计: CppPrimer/ch15 面向对象程序设计.md
+      - ch16 模板与泛型编程: CppPrimer/ch16 模板与泛型编程.md
+      - ch17 标准库特殊设施: CppPrimer/ch17 标准库特殊设施.md
+      - ch18 用于大型程序的工具: CppPrimer/ch18 用于大型程序的工具.md
+    - CheatSheet:
+      - static的3个用途: CppPrimer/cheatsheet/static的3个用途.md
+      - 若干种typedef: CppPrimer/cheatsheet/若干种typedef.md
+      - 类内初始值: CppPrimer/cheatsheet/类内初始值.md
+      - 运算符重载: CppPrimer/cheatsheet/运算符重载.md
+      - 向set中插入自定义类型对象: CppPrimer/cheatsheet/向set中插入自定义类型对象.md
+
+  - Effective C++:
+    - 1 让自己习惯C++: 
+      - 条款1：视C++为一个语言联邦: EffectiveCpp/1 让自己习惯C++/条款1：视C++为一个语言联邦.md
 
 theme:
   name: 'material'
@@ -47,6 +52,8 @@ theme:
     text: 'Open Sans'
     code: 'Open Sans Mono'
   language: 'zh'
+  feature:
+    tabs: true
 
 extra:
   search:
