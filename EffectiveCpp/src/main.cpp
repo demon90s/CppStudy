@@ -5,7 +5,8 @@
 
 int main()
 {
-	Rule01();
+	//Rule01();
+	Rule02();
 
 #ifdef _MSC_VER
 	system("pause");

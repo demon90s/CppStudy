@@ -1,5 +1,3 @@
-// 条款01：视C++为一个语言联邦
-
 #include <vector>
 #include <iostream>
 
