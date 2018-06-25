@@ -9,7 +9,7 @@ struct Foo
 	int i;
 };
 
-int main()
+void Rule01()
 {
 	// 对于内置类型，pass-by-value高效
 	{
@@ -41,6 +41,4 @@ int main()
 		}
 		std::cout << std::endl;
 	}
-
-	return 0;
 }
