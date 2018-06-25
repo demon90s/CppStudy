@@ -19,7 +19,7 @@
       
         <meta name="lang:clipboard.copied" content="已复制">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="en, jp">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -467,6 +467,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" title="ch18 用于大型程序的工具" class="md-nav__link">
+      ch18 用于大型程序的工具
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -516,6 +528,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         若干种typedef
@@ -529,26 +543,28 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#typedef" title="若干种typedef" class="md-nav__link">
-    若干种typedef
+  <a href="#_1" title="代码案例" class="md-nav__link">
+    代码案例
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="函数指针在类中" class="md-nav__link">
+  <a href="#_2" title="函数指针在类中" class="md-nav__link">
     函数指针在类中
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="参考" class="md-nav__link">
+  <a href="#_3" title="参考" class="md-nav__link">
     参考
   </a>
   
@@ -589,6 +605,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%90%91set%E4%B8%AD%E6%8F%92%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%AF%B9%E8%B1%A1/" title="向set中插入自定义类型对象" class="md-nav__link">
+      向set中插入自定义类型对象
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -608,26 +636,28 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#typedef" title="若干种typedef" class="md-nav__link">
-    若干种typedef
+  <a href="#_1" title="代码案例" class="md-nav__link">
+    代码案例
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="函数指针在类中" class="md-nav__link">
+  <a href="#_2" title="函数指针在类中" class="md-nav__link">
     函数指针在类中
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="参考" class="md-nav__link">
+  <a href="#_3" title="参考" class="md-nav__link">
     参考
   </a>
   
@@ -652,9 +682,9 @@
                   <a href="https://github.com/demon90s/CppPrimer/tree/master/study_notes/cheatsheet/若干种typedef.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>若干种typedef</h1>
-                
-                <h2 id="typedef">若干种typedef</h2>
+                <h1 id="typedef">若干种typedef</h1>
+<hr />
+<h2 id="_1">代码案例</h2>
 <div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span>       <span class="n">Int64</span><span class="p">;</span>          <span class="c1">// 简单的类型别名</span>
 <span class="k">typedef</span> <span class="kt">char</span>            <span class="n">Name</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>       <span class="c1">// 数组类型别名（char[32]）</span>
 <span class="k">typedef</span> <span class="nf">void</span>            <span class="p">(</span><span class="o">*</span><span class="n">Func</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>   <span class="c1">// 函数指针类型</span>
@@ -662,7 +692,7 @@
 </pre></div>
 
 
-<h2 id="_1">函数指针在类中</h2>
+<h2 id="_2">函数指针在类中</h2>
 <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Funcs</span><span class="p">;</span>
 <span class="k">typedef</span> <span class="nf">void</span>        <span class="p">(</span><span class="n">Funcs</span><span class="o">::*</span><span class="n">f</span><span class="p">)();</span>  <span class="c1">// Funcs类里面的函数指针类型</span>
 <span class="k">class</span> <span class="nc">Funcs</span> <span class="p">{</span>
@@ -688,7 +718,7 @@
 </pre></div>
 
 
-<h2 id="_2">参考</h2>
+<h2 id="_3">参考</h2>
 <p><a href="https://github.com/demon90s/CppPrimer/blob/master/labs/test_typedef.cpp">测试代码</a></p>
                 
                   
@@ -773,6 +803,8 @@
           <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
+          
+            
               
                 <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
               
@@ -781,6 +813,8 @@
               
             
           
+          
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
           
         
       

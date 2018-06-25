@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,103 +13,109 @@
         
     <url>
      <loc>/ch01 开始/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch02 变量和基本类型/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch03 字符串、向量和数组/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch04 表达式/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch05 语句/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch06 函数/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch07 类/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch08 IO库/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch09 顺序容器/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch10 泛型算法/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch11 关联容器/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch12 动态内存/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch13 拷贝控制/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch14 操作重载与类型转换/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch15 面向对象程序设计/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch16 模板与泛型编程/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ch17 标准库特殊设施/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ch18 用于大型程序的工具/</loc>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -119,25 +125,31 @@
         
     <url>
      <loc>/cheatsheet/static的3个用途/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cheatsheet/若干种typedef/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cheatsheet/类内初始值/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cheatsheet/运算符重载/</loc>
-     <lastmod>2018-06-11</lastmod>
+     <lastmod>2018-06-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/cheatsheet/向set中插入自定义类型对象/</loc>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
