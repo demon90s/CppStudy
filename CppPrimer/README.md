@@ -315,9 +315,9 @@
 
 - [定义含有类型转换运算符的类（p514）](ch14_Overloaded_Operations_and_Conversions/example_conversion_operators.cpp)
 
-- [可调用对象与function（p511）](ch14_Overloaded_Operations_and_Conversions/example_function.cpp)
-
 - [函数调用运算符（p506）](ch14_Overloaded_Operations_and_Conversions/example_function-call_operator.cpp)
+
+- [可调用对象与function（p511）](ch14_Overloaded_Operations_and_Conversions/example_function.cpp)
 
 - [标准库定义的函数对象（p509）](ch14_Overloaded_Operations_and_Conversions/example_std_funcobj.cpp)
 
@@ -340,9 +340,9 @@
 
 - [编写Basket类（容器与继承案例，p559）](ch15_Object-Oriented_Programming/example_basket.cpp)
 
-- [定义派生类（p529）](ch15_Object-Oriented_Programming/example_derived_class.cpp)
-
 - [派生类的拷贝控制成员（p554）](ch15_Object-Oriented_Programming/example_derived_class_copy_control_members.cpp)
+
+- [定义派生类（p529）](ch15_Object-Oriented_Programming/example_derived_class.cpp)
 
 - [文本查询程序再探(p562)](ch15_Object-Oriented_Programming/example_TextQuery)
 
@@ -378,9 +378,9 @@
 
 - [类模板（p583）](ch16_Templates_and_GenericProgramming/example_template_class)
 
-- [可变参数模板（p618）](ch16_Templates_and_GenericProgramming/example_variadic_template.cpp)
-
 - [编写可变参数函数模板（p620）](ch16_Templates_and_GenericProgramming/example_variadic_template2.cpp)
+
+- [可变参数模板（p618）](ch16_Templates_and_GenericProgramming/example_variadic_template.cpp)
 
 - [动态内存管理类（练习16.16，p592）](ch16_Templates_and_GenericProgramming/example_Vec)
 
