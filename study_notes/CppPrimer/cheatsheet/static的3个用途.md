@@ -40,4 +40,4 @@ int Foo::c = 0;			// 3. 静态成员变量定义
 
 数组前加static是什么意思？ - [Milo Yip的回答 - 知乎](https://www.zhihu.com/question/274217344/answer/379696251)
 
-[测试代码](https://github.com/demon90s/CppPrimer/blob/master/labs/test_static.cpp)
+[测试代码](https://github.com/demon90s/CppStudy/blob/master/labs/test_static.cpp)

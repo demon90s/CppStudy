@@ -40,4 +40,4 @@ private:
 
 ## 参考
 
-[测试代码](https://github.com/demon90s/CppPrimer/blob/master/labs/test_typedef.cpp)
+[测试代码](https://github.com/demon90s/CppStudy/blob/master/labs/test_typedef.cpp)
