@@ -39,7 +39,8 @@ pages:
 
   - Effective C++:
     - 1 让自己习惯C++: 
-      - 条款1：视C++为一个语言联邦: EffectiveCpp/1 让自己习惯C++/条款1：视C++为一个语言联邦.md
+      - 条款01：视C++为一个语言联邦: EffectiveCpp/1 让自己习惯C++/条款01：视C++为一个语言联邦.md
+      - 条款02：尽量以const, enum, inline替换#define: EffectiveCpp/1 让自己习惯C++/条款02：尽量以const, enum, inline替换#define.md
 
 theme:
   name: 'material'
