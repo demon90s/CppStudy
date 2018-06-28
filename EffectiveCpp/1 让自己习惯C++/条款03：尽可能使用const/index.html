@@ -907,6 +907,64 @@
 <p>它们使操作const对象成为可能。</p>
 </li>
 </ol>
+<p>如果成员函数只是常量性（constness）不同，可以被重载。调用对象如果是const的，那么会调用常量版本的成员函数。</p>
+<p>成员函数如果是const的意味着什么？</p>
+<ul>
+<li>
+<p>如果以bitwise const的观点看，成员函数只有在不更改对象之任何成员变量（static除外）才可以说是const。bitwise const就是C++常量性的定义，因此成员函数不可以更改对象内任何non-static成员变量。</p>
+</li>
+<li>
+<p>但有这样的情况，它不具备const性质但能通过bitwise const测试，即一个更改了“指针所指物”的成员函数虽然不能算是const的，但把它声明成const编译器也不会报错。</p>
+</li>
+</ul>
+<p>上面的情况导出所谓的logical constness，这个观点主张一个const成员函数可以修改它所处理对象的某些bit，但只有在客户端侦测不出的情况下才得如此。</p>
+<p>可以使用mutable来声明变量，从而释放掉bitwise const的约束。</p>
+<p><strong>在const和non-const成员函数中避免重复</strong></p>
+<p>假如我们的成员函数要做很多操作，那么const版本的和非const版本的函数就会有大量重复代码，应当使非const版本的函数调用const的函数来减少重复。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">CTextBlock</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">)</span> <span class="o">:</span> <span class="n">pText</span><span class="p">(</span><span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]())</span> <span class="p">{</span> <span class="n">strcpy</span><span class="p">(</span><span class="n">pText</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">CTextBlock</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">pText</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">const</span> <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="c1">// ... 边界检查 bounds checking</span>
+        <span class="c1">// ... 日志数据访问 log access data</span>
+        <span class="c1">// ... 检验数据完整性 verify data integrity</span>
+        <span class="k">return</span> <span class="n">pText</span><span class="p">[</span><span class="n">position</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="kt">char</span> <span class="o">&amp;</span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 调用const版本的函数</span>
+        <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&amp;&gt;</span><span class="p">(</span>
+            <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">CTextBlock</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)[</span><span class="n">position</span><span class="p">]</span>
+            <span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">pText</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p><code>const_cast&lt;char&amp;&gt;</code>是安全的，因为只有非const对象才能调用这个函数。</p>
+</li>
+<li>
+<p><code>static_cast&lt;const CTextBlock&amp;&gt;</code>是为了让对象调用const版本的函数，从而达到减少重复代码的目的。</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">请记住</p>
+<ol>
+<li>将某些东西声明为const可帮助编译器侦测出错误用法。const可施加于任何作用域内的对象、函数参数、函数返回类型、成员函数本体。</li>
+<li>编译器强制实施bitwise constness，但你编写程序时应该使用“概念上的常量性”。</li>
+<li>当const和non-const成员函数有着等价的实现时，令non-const版本调用const版本可避免代码重复。</li>
+</ol>
+</div>
                 
                   
                 
