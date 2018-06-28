@@ -2,8 +2,8 @@
 
 function gen
 {
-	mkdir -p proj_linux
-	cd proj_linux
+	mkdir -p proj
+	cd proj
 	cmake ..
 	make
 	cd ..

@@ -61,3 +61,56 @@ if (a * b = c) { /* ... */ }
 1. 它们使class接口比较容易被理解。因为可以方便得知哪些函数会修改对象内容。
 
 2. 它们使操作const对象成为可能。
+
+如果成员函数只是常量性（constness）不同，可以被重载。调用对象如果是const的，那么会调用常量版本的成员函数。
+
+成员函数如果是const的意味着什么？
+
+- 如果以bitwise const的观点看，成员函数只有在不更改对象之任何成员变量（static除外）才可以说是const。bitwise const就是C++常量性的定义，因此成员函数不可以更改对象内任何non-static成员变量。
+
+- 但有这样的情况，它不具备const性质但能通过bitwise const测试，即一个更改了“指针所指物”的成员函数虽然不能算是const的，但把它声明成const编译器也不会报错。
+
+上面的情况导出所谓的logical constness，这个观点主张一个const成员函数可以修改它所处理对象的某些bit，但只有在客户端侦测不出的情况下才得如此。
+
+可以使用mutable来声明变量，从而释放掉bitwise const的约束。
+
+**在const和non-const成员函数中避免重复**
+
+假如我们的成员函数要做很多操作，那么const版本的和非const版本的函数就会有大量重复代码，应当使非const版本的函数调用const的函数来减少重复。
+
+```c++
+class CTextBlock
+{
+public:
+	CTextBlock(const char *text) : pText(new char[strlen(text) + 1]()) { strcpy(pText, text); }
+	~CTextBlock() { delete pText; }
+
+	const char& operator[](std::size_t position) const
+	{
+		// ... 边界检查 bounds checking
+		// ... 日志数据访问 log access data
+		// ... 检验数据完整性 verify data integrity
+		return pText[position];
+	}
+
+	char &operator[](std::size_t position)
+	{
+		// 调用const版本的函数
+		return const_cast<char&>(
+			static_cast<const CTextBlock&>(*this)[position]
+			);
+	}
+
+private:
+	char *pText;
+};
+```
+
+- `const_cast<char&>`是安全的，因为只有非const对象才能调用这个函数。
+
+- `static_cast<const CTextBlock&>`是为了让对象调用const版本的函数，从而达到减少重复代码的目的。
+
+!!!tip "请记住"
+	1. 将某些东西声明为const可帮助编译器侦测出错误用法。const可施加于任何作用域内的对象、函数参数、函数返回类型、成员函数本体。
+	2. 编译器强制实施bitwise constness，但你编写程序时应该使用“概念上的常量性”。
+	3. 当const和non-const成员函数有着等价的实现时，令non-const版本调用const版本可避免代码重复。
