@@ -26,7 +26,7 @@ C++ 学习笔记。
 
 [C++ Primer 5th - 术语表](https://github.com/demon90s/CppStudy/blob/master/defined_terms/terms_index.md)
 
-[Effective C++ 3th](https://book.douban.com/subject/1842426/)
+[Effective C++ 3rd](https://book.douban.com/subject/1842426/)
 
 [C++ 参考手册](http://zh.cppreference.com/w/cpp)
 

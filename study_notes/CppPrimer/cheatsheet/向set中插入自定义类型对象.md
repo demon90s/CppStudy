@@ -57,4 +57,4 @@ int main()
 
 ## 参考资料
 
-[测试代码](https://github.com/demon90s/CppStudy/blob/master/labs/test_set_define.cpp)
+[测试代码](https://github.com/demon90s/CppStudy/blob/master/CppPrimer/labs/test_set_define.cpp)
