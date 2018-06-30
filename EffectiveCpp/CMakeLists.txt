@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 2.8)
+﻿cmake_minimum_required(VERSION 2.8)
 
 PROJECT(EffectiveCpp)
 
 # VS设定
 if (MSVC)
-	ADD_DEFINITIONS(/W3 /wd"4819")
+	ADD_DEFINITIONS(/W3 /wd"4996" /wd"4819")
 endif(MSVC)
 
 # Linux设定

@@ -1,3 +1,5 @@
+#include "rule01.h"
+
 #include <vector>
 #include <iostream>
 
@@ -19,7 +21,6 @@ void Rule01()
 		std::cout << std::endl;
 	}
 	
-
 	// 对于用户自定义的类型，往往pass-by-reference-to-const更好
 	{
 		std::vector<Foo> fvec{1, 2, 3, 4, 5};
