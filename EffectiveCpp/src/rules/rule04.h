@@ -38,7 +38,7 @@ private:
 // 用local static对象代替non-local static对象
 class FileSystem {
 public:
-	std::size_t numDisks() const { return 0;/* ... */ }		// 众多成员函数之一
+	std::size_t numDisks() const { /* ... */return 0; }		// 众多成员函数之一
 };
 
 inline FileSystem& tfs()
