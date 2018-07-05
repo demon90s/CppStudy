@@ -2,6 +2,7 @@
 #define STR_VEC_H
 
 #include <string>
+#include "../../ch19_Specialized_Tools_and_Techniques/example_operator_new_delete.h" // 使用自定义的new和delete表达式，提供给allocator，ex19.2
 
 class StrVec
 {

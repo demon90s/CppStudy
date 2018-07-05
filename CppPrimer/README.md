@@ -427,3 +427,13 @@
 |[练习18.17](ch18_Tools_for_Large_Programs/exercise_18_17.md)|[练习18.18](ch18_Tools_for_Large_Programs/exercise_18_18.cpp)|[练习18.19](ch18_Tools_for_Large_Programs/exercise_18_19.md)|[练习18.20](ch18_Tools_for_Large_Programs/exercise_18_20.cpp)|[练习18.21](ch18_Tools_for_Large_Programs/exercise_18_21.cpp)|[练习18.22](ch18_Tools_for_Large_Programs/exercise_18_22.cpp)|[练习18.23](ch18_Tools_for_Large_Programs/exercise_18_23.cpp)|[练习18.24](ch18_Tools_for_Large_Programs/exercise_18_24.md)|
 |[练习18.25](ch18_Tools_for_Large_Programs/exercise_18_25.cpp)|[练习18.26](ch18_Tools_for_Large_Programs/exercise_18_26.cpp)|[练习18.27](ch18_Tools_for_Large_Programs/exercise_18_27.cpp)|[练习18.28](ch18_Tools_for_Large_Programs/exercise_18_28.cpp)|[练习18.29](ch18_Tools_for_Large_Programs/exercise_18_29.cpp)|[练习18.30](ch18_Tools_for_Large_Programs/exercise_18_30.cpp)|
 
+### 第19章 特殊工具与技术
+
+|E|X|E|R|C|I|S|E|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|[练习19.1](ch19_Specialized_Tools_and_Techniques/exercise_19_01.cpp)|[练习19.2](ch19_Specialized_Tools_and_Techniques/exercise_19_02.md)|
+
+#### 案例代码
+
+- [malloc函数与free函数与new, delete表达式](ch19_Specialized_Tools_and_Techniques/example_operator_new_delete.h)
+

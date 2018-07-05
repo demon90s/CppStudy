@@ -524,7 +524,6 @@
 - [noexcept运算符 noexcept operator](./ch18/noexcept_operator.md)
 - [noexcept说明 noexcept specification](./ch18/noexcept_specification.md)
 - [不抛出说明 nonthrowing specification](./ch18/nonthrowing_specification.md)
-- [作用域运算符 ::operator](./ch18/::operator.md)
 - [引发 raise](./ch18/raise.md)
 - [重新抛出 rethrow](./ch18/rethrow.md)
 - [栈展开 stack unwinding](./ch18/stack_unwinding.md)
