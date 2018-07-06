@@ -431,7 +431,7 @@
 
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|[练习19.1](ch19_Specialized_Tools_and_Techniques/exercise_19_01.cpp)|[练习19.2](ch19_Specialized_Tools_and_Techniques/exercise_19_02.md)|
+|[练习19.1](ch19_Specialized_Tools_and_Techniques/exercise_19_01.cpp)|[练习19.2](ch19_Specialized_Tools_and_Techniques/exercise_19_02.md)|[练习19.3](ch19_Specialized_Tools_and_Techniques/exercise_19_03.cpp)|[练习19.4](ch19_Specialized_Tools_and_Techniques/exercise_19_04.cpp)|[练习19.5](ch19_Specialized_Tools_and_Techniques/exercise_19_05.md)|
 
 #### 案例代码
 
