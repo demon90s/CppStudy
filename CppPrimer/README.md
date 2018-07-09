@@ -432,8 +432,13 @@
 |E|X|E|R|C|I|S|E|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |[练习19.1](ch19_Specialized_Tools_and_Techniques/exercise_19_01.cpp)|[练习19.2](ch19_Specialized_Tools_and_Techniques/exercise_19_02.md)|[练习19.3](ch19_Specialized_Tools_and_Techniques/exercise_19_03.cpp)|[练习19.4](ch19_Specialized_Tools_and_Techniques/exercise_19_04.cpp)|[练习19.5](ch19_Specialized_Tools_and_Techniques/exercise_19_05.md)|[练习19.6](ch19_Specialized_Tools_and_Techniques/exercise_19_06.cpp)|[练习19.7](ch19_Specialized_Tools_and_Techniques/exercise_19_07.cpp)|[练习19.8](ch19_Specialized_Tools_and_Techniques/exercise_19_08.cpp)|
+|[练习19.9](ch19_Specialized_Tools_and_Techniques/exercise_19_09.md)|[练习19.10](ch19_Specialized_Tools_and_Techniques/exercise_19_10.cpp)|
 
 #### 案例代码
 
 - [malloc函数与free函数与new, delete表达式](ch19_Specialized_Tools_and_Techniques/example_operator_new_delete.h)
+
+- [type_info类（p735）](ch19_Specialized_Tools_and_Techniques/example_type_info.cpp)
+
+- [使用RTTI（p733）](ch19_Specialized_Tools_and_Techniques/example_use_RTTI.cpp)
 
