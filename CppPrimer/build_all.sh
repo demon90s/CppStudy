@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# 重新编译所有文件，用于全局检测
+# 编译所有文件，用于全局检测
 
 main()
 {
@@ -8,7 +8,7 @@ main()
 	do
 		cd $directory
 
-		if ! sh build.sh rebuild ; then
+		if ! sh build.sh ; then
 			return 1
 		fi
 
@@ -18,7 +18,6 @@ main()
 			if [ -d $example_d ]; then
 				cd $example_d
 
-				make clean
 				make
 
 				cd ..
