@@ -44,6 +44,8 @@ public:
 
 	explicit operator double() const { return revenue; }
 
+	static const std::string Sales_data::*pbookNo() { return &Sales_data::bookNo; } // 提供给练习19.13
+
 private:
 	double avg_price() const;
 

@@ -1,4 +1,5 @@
-// example: 类成员指针（p739）
+// 练习19.12：定义一个成员指针，令其可以指向Screen类的cursor成员。
+// 通过该指针获得Scene::cursor的值。
 
 #include <string>
 #include <iostream>
@@ -18,6 +19,9 @@ public:
 	static const std::string Screen::*data()
 	{ return &Screen::contents; }
 
+	static const pos Screen::*pcursor()
+	{ return &Screen::cursor; }
+
 private:
 	std::string contents;
 	pos cursor;
@@ -28,14 +32,11 @@ int main()
 {
 	// 数据成员指针
 	{
-		// pdata可以指向一个Screen对象的string成员
-		// 使用类的成员初始化
-		const std::string Screen::*pdata = Screen::data();
+		auto pcursor = Screen::pcursor();
 
 		// 使用
-		Screen myscreen("hello"), *pScreen = &myscreen;
-		std::cout << myscreen.*pdata << std::endl;
-		std::cout << pScreen->*pdata << std::endl;
+		Screen myscreen("hello");
+		std::cout << myscreen.*pcursor << std::endl;
 	}
 
 	return 0;
