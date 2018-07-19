@@ -49,6 +49,9 @@ public:
 private:
 	double avg_price() const;
 
+	// 成员函数类型别名，练习19.16
+	using AvgPrice = double (Sales_data::*)() const;
+
 	// 数据成员
 	std::string bookNo;
 	unsigned units_sold = 0;
