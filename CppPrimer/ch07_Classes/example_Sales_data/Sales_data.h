@@ -46,6 +46,8 @@ public:
 
 	static const std::string Sales_data::*pbookNo() { return &Sales_data::bookNo; } // 提供给练习19.13
 
+	bool AvgPriceMoreThan(double price) const { return avg_price() > price; }
+
 private:
 	double avg_price() const;
 
