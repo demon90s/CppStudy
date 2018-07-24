@@ -1,0 +1,1 @@
+运行时类型识别（run-time type identification）是C++的一种特性，允许在运行时获取指针或引用的动态类型。RTTI运算符包括typeid和dynamic_cast，为含有虚函数的类的指针或引用提供动态类型。当作用于其他类型时，返回的结果是指针或引用的静态类型。

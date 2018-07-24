@@ -1,0 +1,1 @@
+定位new表达式（placement new expression）是new的一种特殊形式，在给定的内存中构造对象。它不分配内存，而是根据实参指定在哪儿构造对象。它是对allocator类的construct成员的行为的一种低级模拟。
