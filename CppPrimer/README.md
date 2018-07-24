@@ -436,9 +436,11 @@
 |[练习19.1](ch19_Specialized_Tools_and_Techniques/exercise_19_01.cpp)|[练习19.2](ch19_Specialized_Tools_and_Techniques/exercise_19_02.md)|[练习19.3](ch19_Specialized_Tools_and_Techniques/exercise_19_03.cpp)|[练习19.4](ch19_Specialized_Tools_and_Techniques/exercise_19_04.cpp)|[练习19.5](ch19_Specialized_Tools_and_Techniques/exercise_19_05.md)|[练习19.6](ch19_Specialized_Tools_and_Techniques/exercise_19_06.cpp)|[练习19.7](ch19_Specialized_Tools_and_Techniques/exercise_19_07.cpp)|[练习19.8](ch19_Specialized_Tools_and_Techniques/exercise_19_08.cpp)|
 |[练习19.9](ch19_Specialized_Tools_and_Techniques/exercise_19_09.md)|[练习19.10](ch19_Specialized_Tools_and_Techniques/exercise_19_10.cpp)|[练习19.11](ch19_Specialized_Tools_and_Techniques/exercise_19_11.md)|[练习19.12](ch19_Specialized_Tools_and_Techniques/exercise_19_12.cpp)|[练习19.13](ch19_Specialized_Tools_and_Techniques/exercise_19_13.cpp)|[练习19.14](ch19_Specialized_Tools_and_Techniques/exercise_19_14.cpp)|[练习19.15](ch19_Specialized_Tools_and_Techniques/exercise_19_15.md)|[练习19.16](ch19_Specialized_Tools_and_Techniques/exercise_19_16.md)|
 |[练习19.17](ch19_Specialized_Tools_and_Techniques/exercise_19_17.md)|[练习19.18](ch19_Specialized_Tools_and_Techniques/exercise_19_18.cpp)|[练习19.19](ch19_Specialized_Tools_and_Techniques/exercise_19_19.cpp)|[练习19.20](ch19_Specialized_Tools_and_Techniques/exercise_19_20.md)|[练习19.21](ch19_Specialized_Tools_and_Techniques/exercise_19_21.md)|[练习19.22](ch19_Specialized_Tools_and_Techniques/exercise_19_22.md)|[练习19.23](ch19_Specialized_Tools_and_Techniques/exercise_19_23.md)|[练习19.24](ch19_Specialized_Tools_and_Techniques/exercise_19_24.md)|
-|[练习19.25](ch19_Specialized_Tools_and_Techniques/exercise_19_25.md)|
+|[练习19.25](ch19_Specialized_Tools_and_Techniques/exercise_19_25.md)|[练习19.26](ch19_Specialized_Tools_and_Techniques/exercise_19_26.cpp)|
 
 #### 案例代码
+
+- [链接指示，extern "C"（758）](ch19_Specialized_Tools_and_Techniques/example_extern_C)
 
 - [成员指针函数表（p743）](ch19_Specialized_Tools_and_Techniques/example_function_table.cpp)
 
