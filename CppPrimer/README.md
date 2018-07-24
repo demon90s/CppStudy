@@ -452,5 +452,7 @@
 
 - [type_info类（p735）](ch19_Specialized_Tools_and_Techniques/example_type_info.cpp)
 
+- [含有类类型成员的union（p750）](ch19_Specialized_Tools_and_Techniques/example_union_with_class.cpp)
+
 - [使用RTTI（p733）](ch19_Specialized_Tools_and_Techniques/example_use_RTTI.cpp)
 

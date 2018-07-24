@@ -1,4 +1,4 @@
-// 含有类类型成员的union（p750）
+// example: 含有类类型成员的union（p750）
 
 #include <iostream>
 #include <string>
