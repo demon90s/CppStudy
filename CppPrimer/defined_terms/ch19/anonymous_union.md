@@ -1,0 +1,1 @@
+匿名union（anonymous union）未命名的union，不能用于定义对象。匿名union的成员也是外层作用域的成员。匿名union不能包含成员函数，也不能包含私有的或受保护的成员。

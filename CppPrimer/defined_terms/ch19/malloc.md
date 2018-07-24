@@ -1,0 +1,1 @@
+malloc 是定义在cstdlib中的低层函数，负责分配内存。malloc分配的内存必须由free释放。

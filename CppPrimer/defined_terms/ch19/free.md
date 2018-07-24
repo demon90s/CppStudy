@@ -1,0 +1,1 @@
+free 是定义在cstdlib中的低层函数，负责释放内存。free只能释放由malloc分配的内存。
