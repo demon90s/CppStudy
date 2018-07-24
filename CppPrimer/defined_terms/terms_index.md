@@ -541,7 +541,7 @@
 - [匿名union anonymous union](./ch19/anonymous_union.md)
 - [位域 bit-field](./ch19/bit-field.md)
 - [判别式 discriminant](./ch19/discriminant.md)
-- [dynamic_cast 是一个运算符，执行从基类向派生类的带检查的强制类型转换。当基类中至少含有一个虚函数时，该运算符负责检查指针或引用所绑定的对象的动态类型。如果对象类型与目标类型 dynamic cast](./ch19/dynamic_cast.md)
+- [dynamic_cast](./ch19/dynamic_cast.md)
 - [枚举类型 enumeration](./ch19/enumeration.md)
 - [枚举成员 enumerator](./ch19/enumerator.md)
 - [free](./ch19/free.md)
