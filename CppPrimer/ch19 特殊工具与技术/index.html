@@ -1,0 +1,1521 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ Study Note">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="en, jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>ch19 特殊工具与技术 - C++ Study Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700|Open+Sans+Mono">
+        <style>body,input{font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Open Sans Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#19" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="C++ Study Note" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                C++ Study Note
+              </span>
+              <span class="md-header-nav__topic">
+                ch19 特殊工具与技术
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ch01%20%E5%BC%80%E5%A7%8B/" title="C++ Primer" class="md-tabs__link md-tabs__link--active">
+          C++ Primer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EffectiveCpp/1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE01%EF%BC%9A%E8%A7%86C%2B%2B%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E8%81%94%E9%82%A6/" title="Effective C++" class="md-tabs__link">
+          Effective C++
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </span>
+    C++ Study Note
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      C++ Primer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        C++ Primer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Chapters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch01%20%E5%BC%80%E5%A7%8B/" title="ch01 开始" class="md-nav__link">
+      ch01 开始
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="ch02 变量和基本类型" class="md-nav__link">
+      ch02 变量和基本类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" title="ch03 字符串、向量和数组" class="md-nav__link">
+      ch03 字符串、向量和数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="ch04 表达式" class="md-nav__link">
+      ch04 表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch05%20%E8%AF%AD%E5%8F%A5/" title="ch05 语句" class="md-nav__link">
+      ch05 语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch06%20%E5%87%BD%E6%95%B0/" title="ch06 函数" class="md-nav__link">
+      ch06 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch07%20%E7%B1%BB/" title="ch07 类" class="md-nav__link">
+      ch07 类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch08%20IO%E5%BA%93/" title="ch08 IO库" class="md-nav__link">
+      ch08 IO库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" title="ch09 顺序容器" class="md-nav__link">
+      ch09 顺序容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" title="ch10 泛型算法" class="md-nav__link">
+      ch10 泛型算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" title="ch11 关联容器" class="md-nav__link">
+      ch11 关联容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" title="ch12 动态内存" class="md-nav__link">
+      ch12 动态内存
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6/" title="ch13 拷贝控制" class="md-nav__link">
+      ch13 拷贝控制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="ch14 操作重载与类型转换" class="md-nav__link">
+      ch14 操作重载与类型转换
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" title="ch15 面向对象程序设计" class="md-nav__link">
+      ch15 面向对象程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch16%20%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" title="ch16 模板与泛型编程" class="md-nav__link">
+      ch16 模板与泛型编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch17%20%E6%A0%87%E5%87%86%E5%BA%93%E7%89%B9%E6%AE%8A%E8%AE%BE%E6%96%BD/" title="ch17 标准库特殊设施" class="md-nav__link">
+      ch17 标准库特殊设施
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" title="ch18 用于大型程序的工具" class="md-nav__link">
+      ch18 用于大型程序的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        ch19 特殊工具与技术
+      </label>
+    
+    <a href="./" title="ch19 特殊工具与技术" class="md-nav__link md-nav__link--active">
+      ch19 特殊工具与技术
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="控制内存分配" class="md-nav__link">
+    控制内存分配
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newdelete" title="重载new和delete" class="md-nav__link">
+    重载new和delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new" title="定位new表达式" class="md-nav__link">
+    定位new表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="运行时类型识别" class="md-nav__link">
+    运行时类型识别
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic_cast" title="dynamic_cast运算符" class="md-nav__link">
+    dynamic_cast运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typeid" title="typeid运算符" class="md-nav__link">
+    typeid运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type_info" title="type_info类" class="md-nav__link">
+    type_info类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="枚举类型" class="md-nav__link">
+    枚举类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="类成员指针" class="md-nav__link">
+    类成员指针
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="数据成员指针" class="md-nav__link">
+    数据成员指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="成员函数指针" class="md-nav__link">
+    成员函数指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="将成员函数用作可调用对象" class="md-nav__link">
+    将成员函数用作可调用对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      CheatSheet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        CheatSheet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/static%E7%9A%843%E4%B8%AA%E7%94%A8%E9%80%94/" title="static的3个用途" class="md-nav__link">
+      static的3个用途
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/%E8%8B%A5%E5%B9%B2%E7%A7%8Dtypedef/" title="若干种typedef" class="md-nav__link">
+      若干种typedef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/%E7%B1%BB%E5%86%85%E5%88%9D%E5%A7%8B%E5%80%BC/" title="类内初始值" class="md-nav__link">
+      类内初始值
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/" title="运算符重载" class="md-nav__link">
+      运算符重载
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/%E5%90%91set%E4%B8%AD%E6%8F%92%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%AF%B9%E8%B1%A1/" title="向set中插入自定义类型对象" class="md-nav__link">
+      向set中插入自定义类型对象
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Effective C++
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Effective C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      1 让自己习惯C++
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        1 让自己习惯C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EffectiveCpp/1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE01%EF%BC%9A%E8%A7%86C%2B%2B%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E8%81%94%E9%82%A6/" title="条款01：视C++为一个语言联邦" class="md-nav__link">
+      条款01：视C++为一个语言联邦
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EffectiveCpp/1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE02%EF%BC%9A%E5%B0%BD%E9%87%8F%E4%BB%A5const%2C%20enum%2C%20inline%E6%9B%BF%E6%8D%A2%23define/" title="条款02：尽量以const, enum, inline替换#define" class="md-nav__link">
+      条款02：尽量以const, enum, inline替换#define
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EffectiveCpp/1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE03%EF%BC%9A%E5%B0%BD%E5%8F%AF%E8%83%BD%E4%BD%BF%E7%94%A8const/" title="条款03：尽可能使用const" class="md-nav__link">
+      条款03：尽可能使用const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EffectiveCpp/1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE04%EF%BC%9A%E7%A1%AE%E5%AE%9A%E5%AF%B9%E8%B1%A1%E8%A2%AB%E4%BD%BF%E7%94%A8%E5%89%8D%E5%B7%B2%E8%A2%AB%E5%88%9D%E5%A7%8B%E5%8C%96/" title="条款04：确定对象被使用前已被初始化" class="md-nav__link">
+      条款04：确定对象被使用前已被初始化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="控制内存分配" class="md-nav__link">
+    控制内存分配
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newdelete" title="重载new和delete" class="md-nav__link">
+    重载new和delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new" title="定位new表达式" class="md-nav__link">
+    定位new表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="运行时类型识别" class="md-nav__link">
+    运行时类型识别
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic_cast" title="dynamic_cast运算符" class="md-nav__link">
+    dynamic_cast运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typeid" title="typeid运算符" class="md-nav__link">
+    typeid运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type_info" title="type_info类" class="md-nav__link">
+    type_info类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="枚举类型" class="md-nav__link">
+    枚举类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="类成员指针" class="md-nav__link">
+    类成员指针
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="数据成员指针" class="md-nav__link">
+    数据成员指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="成员函数指针" class="md-nav__link">
+    成员函数指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="将成员函数用作可调用对象" class="md-nav__link">
+    将成员函数用作可调用对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CppPrimer/ch19 特殊工具与技术.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="19">第19章 特殊工具与技术</h1>
+<hr />
+<h2 id="_1">控制内存分配</h2>
+<p>某些程序需要自定义内存分配的细节，比如使用关键字new将对象放置在特定的内存空间中。为了实现这一目的，应用程序需要重载new运算符和delete运算符以控制内存分配的过程。</p>
+<h3 id="newdelete">重载new和delete</h3>
+<p>当我们使用一条new表达式时：</p>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="o">*</span><span class="n">sp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;a value&quot;</span><span class="p">);</span>
+<span class="n">string</span> <span class="o">*</span><span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</pre></div>
+
+
+<p>实际执行了三步操作。</p>
+<ol>
+<li>
+<p>new表达式调用一个名为operator new(或者operator new[])的标准库函数。该函数分配一块足够大的、原始的、未命名的内存空间以便存储特定类型的对象（或者对象的数组）。</p>
+</li>
+<li>
+<p>编译器运行相应的构造函数以构造这些对象，并为其传入初始值。</p>
+</li>
+<li>
+<p>对象被分配了空间并构造完成，返回一个指向该对象的指针。</p>
+</li>
+</ol>
+<p>当我们使用一条delete表达式删除一个动态分配的对象时：</p>
+<div class="codehilite"><pre><span></span><span class="k">delete</span> <span class="n">sp</span><span class="p">;</span>
+<span class="k">delete</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">;</span>
+</pre></div>
+
+
+<p>实际执行了两步操作。</p>
+<ol>
+<li>
+<p>对sp所指的对象或者arr所指的数组中的元素执行对应的析构函数。</p>
+</li>
+<li>
+<p>编译器调用名为operator delete（或者operator delete[]）的标准库函数释放内存空间。</p>
+</li>
+</ol>
+<p>如果我们定义了自己版本的operator new函数和operator delete函数，编译器将使用我们自定义的版本替换标准库定义的版本。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>当自定义了全局的operator new函数和operator delete函数后，我们就担负起了控制动态内存分配的职责。这两个函数必须是正确的：因为他们是程序整个处理过程中至关重要的一部分。</p>
+</div>
+<p>应用程序可以在全局作用域定义operator new函数和operator delete函数，也可以将它们定义为成员函数。当编译器发现一条new表达式或delete表达式后，将在程序中查找可供调用的operator函数。如果被分配（释放）的对象是类类型，则编译器首先在类及其基类的作用域中查找。如果没有找到，编译器在全局作用域查找，如果找到了用户自定义的版本，则使用该版本执行new表达式或delete表达式；如果没有找到，则使用标准库定义的版本。</p>
+<p><strong>operator new接口和operator delete接口</strong></p>
+<p>标准库定义了operator new和operator delete的8个重载版本，前四个可能会抛出bad_alloc异常，后四个则不会：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 这些版本可能抛出异常</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="nf">new</span><span class="p">(</span><span class="kt">size_t</span><span class="p">);</span>                 <span class="c1">// 分配一个对象</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">new</span><span class="p">[](</span><span class="kt">size_t</span><span class="p">);</span>               <span class="c1">// 分配一个数组</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="nf">delete</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>      <span class="c1">// 释放一个对象</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">delete</span><span class="p">[](</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>    <span class="c1">// 释放一个数组</span>
+
+<span class="c1">// 这些版本承诺不会抛出异常</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="nf">new</span><span class="p">(</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">nothrow_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">new</span><span class="p">[](</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">nothrow_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="nf">delete</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">,</span> <span class="n">nothrow_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">delete</span><span class="p">[](</span><span class="kt">void</span><span class="o">*</span><span class="p">,</span> <span class="n">nothrow_t</span><span class="o">&amp;</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+</pre></div>
+
+
+<p>当我们将上述函数定义成类的成员时，它们是隐式静态的。更多讨论见p728。</p>
+<div class="admonition note">
+<p class="admonition-title">new 表达式与operator new函数</p>
+<p>一条new表达式的执行过程总是先调用operator new函数以获取内存空间，然后在得到的内存空间中构造对象。与之相反，一条delete表达式的执行过程总是先销毁对象，然后调用operator delete函数释放对象所占的空间。</p>
+<p>我们提供新的operator new函数和operator delete函数的目的在于改变内存分配方式，但是不管怎样，我们都不能改变new运算符和delete运算符的基本含义。</p>
+</div>
+<p><strong>malloc函数与free函数</strong></p>
+<p>malloc和free定义在cstdlib头文件中。</p>
+<p>malloc函数接受一个表示待分配字节数的size_t，返回指向分配空间的指针或者返回0以表示分配失败。free函数接受一个void*，它是malloc返回的指针的副本，free将相关内存返回给系统。调用free(0)没有任何意义。</p>
+<p>如下所示是编写operator new和operator delete的一种简单方式，其他版本与之类似：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="nf">new</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">mem</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">mem</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">throw</span> <span class="n">bad_alloc</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="k">operator</span> <span class="nf">delete</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">mem</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="n">free</span><span class="p">(</span><span class="n">mem</span><span class="p">);</span> <span class="p">}</span>
+</pre></div>
+
+
+<h3 id="new">定位new表达式</h3>
+<p>与allocator不同的是，对于operator new分配的内存空间来说我们无法使用construct函数构造对象。我们应该使用new的定位new（placement new）形式构造对象：</p>
+<div class="codehilite"><pre><span></span>new (place_address) type
+new (place_address) type (initializers)
+new (place_address) type [size]
+new (place_address) type [size] { braced initializers list }
+</pre></div>
+
+
+<p>当仅通过一个地址值调用时，定位new使用<code>operator new(size_t, void*)</code>“分配”它的内存。这是一个我们无法自定义的operator new版本。该函数不分配任何内存，它只是简单地返回指针实参；然后由new表达式负责在指定的地址初始化对象以完成整个工作。事实上，定位new允许我们在一个特定的、预先分配的内存地址上构造对象。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当只传入一个指针类型的实参时，定位new表达式构造对象但是不分配内存。</p>
+</div>
+<p><a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch19_Specialized_Tools_and_Techniques/example_placement_new.cpp">参考代码</a></p>
+<p><strong>显式的析构函数调用</strong></p>
+<p>我们既可以通过对象调用析构函数，也可以通过对象的指针或引用调用析构函数，这与调用其它成员函数没什么区别：</p>
+<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="o">*</span><span class="n">sp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;a value&quot;</span><span class="p">);</span>
+<span class="n">sp</span><span class="o">-&gt;~</span><span class="n">string</span><span class="p">();</span>
+</pre></div>
+
+
+<p>箭头运算符解引用指针sp以获得sp所指的对象，然后我们调用析构函数。和调用allocator的destroy类似，调用析构函数可以清除给定的对象但是不会释放该对象所在的空间。如果需要的话，我们可以重新使用该空间。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>调用析构函数会销毁对象，但是不会释放内存。</p>
+</div>
+<h2 id="_2">运行时类型识别</h2>
+<p>运行时类型识别（run-time type identification, RTTI）的功能由两个运算符实现：</p>
+<ul>
+<li>
+<p>typeid运算符，用于返回表达式的类型。</p>
+</li>
+<li>
+<p>dynamic_cast运算符，用于将基类的指针或引用安全地转换成派生类的指针或引用。</p>
+</li>
+</ul>
+<p>当我们将这两个运算符用于某种类型的指针或引用，并且该类型含有虚函数时，运算符将使用指针或引用所绑定对象的动态类型。</p>
+<p>这两个运算符特别适用于以下情况：我们想使用基类对象的指针或引用执行某个派生类操作并且该操作不是虚函数。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>使用RTTI必须加倍小心。在可能的情况下，最好定义虚函数而非直接接管类型管理的重任。</p>
+</div>
+<h3 id="dynamic_cast">dynamic_cast运算符</h3>
+<p>dynamic_cast运算符（dynamic_cast operator）的使用形式如下所示：</p>
+<div class="codehilite"><pre><span></span>dynamic_cast&lt;type*&gt;(e)
+dynamic_cast&lt;type&amp;&gt;(e)
+dynamic_cast&lt;type&amp;&amp;&gt;(e)
+</pre></div>
+
+
+<p>其中，type必须是一个类类型，并且通常情况下该类型应该含有虚函数。第一种情况中，e必须是一个有效的指针。</p>
+<p>如果e的类型是type的公有派生类、e的类型是type的公有基类或者e的类型就是type，则转换可以成功。否则转换失败。如果一条dynamic_cast语句的转换目标是指针类型并且失败了，则结果为0。如果转换目标是引用类型并且失败了，则dynamic_cast运算符将抛出一个bad_cast异常。</p>
+<p><strong>指针类型的dynamic_cast</strong></p>
+<p>举一个简单的例子：</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">Derived</span> <span class="o">*</span><span class="n">dp</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">bp</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">// 使用dp指向的Derived对象</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>    <span class="c1">// bp指向一个Base对象</span>
+    <span class="c1">// 使用bp指向的Base对象</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><strong>引用类型的dynamic_cast</strong></p>
+<p>改写之前的程序：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">Base</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Derived</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+        <span class="c1">// 使用b引用的Derived对象</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">bad_cast</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 处理类型转换失败的情况</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="typeid">typeid运算符</h3>
+<p>typeid运算符允许程序向表达式提问：你的对象是什么类型？</p>
+<p>typeid表达式的形式是typeid(e)，其中e可以是任意表达式或类型的名字。typeid操作的结果是一个常量对象的引用，该对象的类型是标准库类型type_info或者type_info的公有派生类型。type_info类定义在typeinfo头文件中。</p>
+<p>typeid运算符可以用作于任意类型的表达式。其中：</p>
+<ul>
+<li>
+<p>顶层const会被忽略。</p>
+</li>
+<li>
+<p>如果表达式是一个引用，则typeid返回该引用所引对象的类型。</p>
+</li>
+<li>
+<p>当typeid作用于数组或函数时，并不会执行向指针的标准类型转换。</p>
+</li>
+</ul>
+<p>当运算对象不属于类类型或者是一个不包含任何虚函数的类时，typeid运算符指示的是运算对象的静态类型。而当运算对象是定义了至少一个虚函数的类的左值时，typeid的结果直到运行时才会求得。</p>
+<p><strong>使用typeid运算符</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">Derived</span> <span class="o">*</span><span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="p">;</span>
+<span class="n">Base</span> <span class="o">*</span><span class="n">bp</span> <span class="o">=</span> <span class="n">dp</span><span class="p">;</span>          <span class="c1">// 两个指针都指向Derived对象</span>
+
+<span class="c1">// 在运行时比较两个对象的类型</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">dp</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// bp 和 dp 指向同一类型的对象</span>
+<span class="p">}</span>
+
+<span class="c1">// 检查运行时类型是否是某种指定的类型</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="n">Derived</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// bp 实际指向Derived对象</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>typeid是否需要运行时检查决定了表达式是否会被求值。只有当类型含有虚函数时，编译器才会对表达式求值。如果类型不含虚函数，则typeid返回表达式的静态类型。</p>
+<p>如果p是一个指向了有虚函数的类的空指针，则typeid(*p)将抛出一个名为bad_typeid的异常。</p>
+<h3 id="type_info">type_info类</h3>
+<p>type_info类的精确定义随着编译器的不同而略有差异。不过，C++标准规定type_info类必须定义在typeinfo头文件中，并至少提供下面的操作：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t1 == t2</td>
+<td>如果type_info对象t1和t2表示同一种类型，返回true，否则返回false</td>
+</tr>
+<tr>
+<td>t1 != t2</td>
+<td>和上面相反</td>
+</tr>
+<tr>
+<td>t.name()</td>
+<td>返回一个C风格字符串，表示类型名字的可打印形式。类型名字的生成方式因系统而异</td>
+</tr>
+<tr>
+<td>t.before(t2)</td>
+<td>返回一个bool值，表示t1是否位于t2之前。before所采用的顺序关系是依赖于编译器的</td>
+</tr>
+</tbody>
+</table>
+<p>我们只能通过typeid运算符创建type_info对象。</p>
+<h2 id="_3">枚举类型</h2>
+<p>枚举类型（enumeration）使我们可以将一组整型常量组织在一起。和类一样，每个枚举类型定义了一种新的类型。枚举属于字面值常量类型。</p>
+<p>C++包含两种枚举：限定作用域的和不限定作用域的。</p>
+<div class="codehilite"><pre><span></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">open_modes</span> <span class="p">{</span> <span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">append</span> <span class="p">};</span>        <span class="c1">// 限定作用域的枚举类型</span>
+<span class="k">enum</span> <span class="n">color</span> <span class="p">{</span> <span class="n">red</span><span class="p">,</span> <span class="n">yellow</span><span class="p">,</span> <span class="n">green</span> <span class="p">};</span>                      <span class="c1">// 不限定作用域的枚举类型</span>
+<span class="k">enum</span> <span class="p">{</span> <span class="n">floatPrec</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">doublePrec</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">};</span>                <span class="c1">// 未命名的、不限定作用域的枚举类型</span>
+</pre></div>
+
+
+<p><strong>枚举成员</strong></p>
+<p>如果是对于限定作用域的枚举类型，我们需要通过作用域运算符在外部显式地访问枚举成员。而对于不限定作用域的枚举类型，则没有这个要求。</p>
+<p>默认情况下，枚举值从0开始，依次加1。不过我们也能为一个或几个枚举成员指定专门的值，而且值可以重复（不唯一）。</p>
+<p>更多关于枚举的讨论见p738。</p>
+<h2 id="_4">类成员指针</h2>
+<p>成员指针（pointer to member）指的是可以指向类的非静态成员的指针。对于指向静态成员的指针和普通的指针没有什么区别。</p>
+<p>当初始化一个成员指针时，我们令其指向类的某个成员，但是不指定该成员所属的对象；直到使用成员指针时，才提供成员所属的对象。</p>
+<p>为了解释本节的概念，使用下面这个类作为例子：</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">pos</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="nf">get_cursor</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">contents</span><span class="p">[</span><span class="n">cursor</span><span class="p">];</span> <span class="p">}</span>
+    <span class="kt">char</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">contents</span><span class="p">;</span>
+    <span class="n">pos</span> <span class="n">cursor</span><span class="p">;</span>
+    <span class="n">pos</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<h3 id="_5">数据成员指针</h3>
+<p>我们必须在*之前添加classname::以表示当前定义的指针可以指向classname的成员。例如：</p>
+<div class="codehilite"><pre><span></span><span class="k">const</span> <span class="n">string</span> <span class="n">Screen</span><span class="o">::*</span><span class="n">pdata</span><span class="p">;</span>
+</pre></div>
+
+
+<p>初始化的方式：</p>
+<div class="codehilite"><pre><span></span><span class="n">pdata</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">contents</span><span class="p">;</span>
+</pre></div>
+
+
+<p>在C++11中声明成员指针最简单的方式是使用auto或decltype：</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">pdata</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">contetns</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>使用数据成员指针</strong></p>
+<p>必须清楚的一点是：当我们初始化一个成员指针或为成员指针赋值时，该指针并没有指向任何数据。只有当解引用成员指针时我们才提供对象的信息。</p>
+<div class="codehilite"><pre><span></span><span class="n">Screen</span> <span class="n">myScreen</span><span class="p">,</span> <span class="o">*</span><span class="n">pScreen</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">myScreen</span><span class="p">;</span>
+
+<span class="k">auto</span> <span class="n">s</span> <span class="o">=</span> <span class="n">myScreen</span><span class="p">.</span><span class="o">*</span><span class="n">pdata</span><span class="p">;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pScreen</span><span class="o">-&gt;*</span><span class="n">pdata</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>返回数据成员指针的函数</strong></p>
+<p>因为数据成员一般情况下是私有的，所以我们通常不能直接获得数据成员的指针。如果一个像Screen这样的类希望我们可以访问它的contents成员，最好定义一个函数，令其返回值是指向该成员的指针：</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Screen</span><span class="o">::*</span><span class="n">data</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">contents</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>当我们调用data函数时，将获得一个成员指针：</p>
+<div class="codehilite"><pre><span></span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Screen</span><span class="o">::*</span><span class="n">pdata</span> <span class="o">=</span> <span class="n">Screen</span><span class="o">::</span><span class="n">data</span><span class="p">();</span>
+
+<span class="c1">// 获得myScreen对象的contents成员</span>
+<span class="k">auto</span> <span class="n">s</span> <span class="o">=</span> <span class="n">myScreen</span><span class="p">.</span><span class="o">*</span><span class="n">pdata</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="_6">成员函数指针</h3>
+<p>定义成员函数指针最简单的方法是使用auto：</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">pmf</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">get_cursor</span><span class="p">;</span>
+</pre></div>
+
+
+<p>和指向数据成员的指针意义，我们使用classname::*的形式声明一个指向成员函数的指针。</p>
+<p>如果成员存在重载的问题，我们必须显式地声明函数类型以明确指出我们想要使用哪个函数。例如，我们可以声明一个指针，令其指向含有两个形参的get：</p>
+<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="p">(</span><span class="n">Screen</span><span class="o">::*</span><span class="n">pmf2</span><span class="p">)(</span><span class="n">Screen</span><span class="o">::</span><span class="n">pos</span><span class="p">,</span> <span class="n">Screen</span><span class="o">::</span><span class="n">pos</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">pmf2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">get</span><span class="p">;</span>
+</pre></div>
+
+
+<p>和普通指针不同的是，在成员函数和指向该成员的指针之间不存在自动转换规则：</p>
+<div class="codehilite"><pre><span></span><span class="n">pmf</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">get</span><span class="p">;</span>         <span class="c1">// 必须显式地使用取地址运算符</span>
+<span class="n">pmf</span> <span class="o">=</span> <span class="n">Screen</span><span class="o">::</span><span class="n">get</span><span class="p">;</span>          <span class="c1">// 错误，在成员函数和指针之间不存在自动转换规则</span>
+</pre></div>
+
+
+<p><strong>使用成员函数指针</strong></p>
+<p>和使用指向数据成员的指针一样，我们使用<code>.*</code>或者<code>-&gt;*</code>运算符作用于指向成员函数的指针，以调用类的成员函数：</p>
+<div class="codehilite"><pre><span></span><span class="n">Screen</span> <span class="n">myScreen</span><span class="p">,</span> <span class="o">*</span><span class="n">pScreen</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">myScreen</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">c1</span> <span class="o">=</span> <span class="p">(</span><span class="n">pScreen</span><span class="o">-&gt;*</span><span class="n">pmf</span><span class="p">)();</span>
+<span class="kt">char</span> <span class="n">c2</span> <span class="o">=</span> <span class="p">(</span><span class="n">myScreen</span><span class="p">.</span><span class="o">*</span><span class="n">pmf</span><span class="p">)(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+
+<p>之所以上面使用成员指针两边的括号必不可少，是因为调用运算符的优先级更高。</p>
+<p><strong>使用成员指针的类型别名</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Action</span> <span class="o">=</span> <span class="kt">char</span> <span class="p">(</span><span class="n">Screen</span><span class="o">::*</span><span class="p">)(</span><span class="n">Screen</span><span class="o">::</span><span class="n">pos</span><span class="p">,</span> <span class="n">Screen</span><span class="o">::</span><span class="n">pos</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+
+<span class="n">Action</span> <span class="n">get</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Screen</span><span class="o">::</span><span class="n">get</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>成员指针函数表</strong></p>
+<p>对于普通函数指针和指向成员函数的指针来说，一种常见的用法是将其存入一个函数表当中。</p>
+<p>可以参考例子：<a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch19_Specialized_Tools_and_Techniques/example_function_table.cpp">成员指针函数表</a></p>
+<h3 id="_7">将成员函数用作可调用对象</h3>
+<p>要想通过一个指向成员函数的指针进行函数调用，必须首先利用<code>.*</code>或<code>-&gt;*</code>将该指针绑定到一个对象上。因此，成员指针不是一个可调用对象，这样的指针不支持函数调用运算符。</p>
+<p><strong>使用function生成一个可调用对象</strong></p>
+<p>一种方法是使用标准库模板function：</p>
+<div class="codehilite"><pre><span></span><span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">fcn</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">string</span><span class="p">.</span><span class="n">empty</span><span class="p">;</span>
+<span class="n">find_if</span><span class="p">(</span><span class="n">svec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">svec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">fcn</span><span class="p">);</span>
+</pre></div>
+
+
+<p>我们告诉function一个事实：即empty是一个接受string参数并返回bool值的函数。通常情况下，指向成员函数的对象将被传给隐式的this形参。当我们想要使用function为成员函数生成一个可调用对象时，必须首先“翻译”该代码，使隐式的形参变成显式的。</p>
+<p>我们提供给function的形式中还必须指明对象是否以指针或引用的形式传入。</p>
+<div class="codehilite"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">*&gt;</span> <span class="n">pvec</span><span class="p">;</span>
+<span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span> <span class="p">(</span><span class="n">string</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">fp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">string</span><span class="o">::</span><span class="n">empty</span><span class="p">;</span>
+<span class="n">find_if</span><span class="p">(</span><span class="n">pvec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">pvec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">fp</span><span class="p">);</span>
+</pre></div>
+
+
+<p><strong>使用mem_fn生成一个可调用对象</strong></p>
+<p>要想使用function，我们必须提供成员的调用形式。我们也可以采取另外一种方法，通过使用标准库功能mem_fcn来让编译器负责推断成员的类型。mem_fcn也定义在functional头文件中，并且可以从成员指针生成一个可调用对象。</p>
+<div class="codehilite"><pre><span></span><span class="n">find_if</span><span class="p">(</span><span class="n">svec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">svec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">mem_fcn</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string</span><span class="o">::</span><span class="n">empty</span><span class="p">));</span>
+</pre></div>
+
+
+<p>我们使用mem_fcn(&amp;string::empty)生成一个可调用对象，该对象接受一个string实参，返回一个bool值。</p>
+<p>mem_fcn生成的可调用对象既可以通过对象调用，也可以通过指针调用：</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="n">mem_fcn</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string</span><span class="o">::</span><span class="n">empty</span><span class="p">);</span>
+<span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="n">f</span><span class="p">(</span><span class="n">ps</span><span class="p">);</span>
+</pre></div>
+
+
+<p><strong>使用bind生成一个可调用对象</strong></p>
+<p>我们还可以使用bind从成员函数生成一个可调用对象：</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">find_if</span><span class="p">(</span><span class="n">svec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">svec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string</span><span class="o">::</span><span class="n">empty</span><span class="p">,</span> <span class="n">_1</span><span class="p">));</span>
+</pre></div>
+
+
+<p>和function类似的地方是，当我们使用bind时，必须将函数中用于表示执行对象的隐式形参转换成显式的。和mem_fcn类型的是，bind生成的可调用对象的第一个实参可以是对象，也可以是指针。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" title="ch18 用于大型程序的工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                ch18 用于大型程序的工具
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../cheatsheet/static%E7%9A%843%E4%B8%AA%E7%94%A8%E9%80%94/" title="static的3个用途" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                static的3个用途
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Diwen Liu
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
