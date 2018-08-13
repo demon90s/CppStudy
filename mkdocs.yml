@@ -30,6 +30,7 @@ pages:
       - ch16 模板与泛型编程: CppPrimer/ch16 模板与泛型编程.md
       - ch17 标准库特殊设施: CppPrimer/ch17 标准库特殊设施.md
       - ch18 用于大型程序的工具: CppPrimer/ch18 用于大型程序的工具.md
+      - ch19 特殊工具与技术: CppPrimer/ch19 特殊工具与技术.md
     - CheatSheet:
       - static的3个用途: CppPrimer/cheatsheet/static的3个用途.md
       - 若干种typedef: CppPrimer/cheatsheet/若干种typedef.md
