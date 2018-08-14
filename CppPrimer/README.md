@@ -438,6 +438,8 @@
 
 - [malloc函数与free函数与new, delete表达式](ch19_Specialized_Tools_and_Techniques/example_operator_new_delete.h)
 
+- [定位new表达式（p729）](ch19_Specialized_Tools_and_Techniques/example_placement_new.cpp)
+
 - [type_info类（p735）](ch19_Specialized_Tools_and_Techniques/example_type_info.cpp)
 
 - [使用RTTI（p733）](ch19_Specialized_Tools_and_Techniques/example_use_RTTI.cpp)
