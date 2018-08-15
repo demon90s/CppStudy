@@ -9,7 +9,7 @@ endif(MSVC)
 
 # Linux设定
 if (CMAKE_COMPILER_IS_GNUCXX)
-	SET(CMAKE_CXX_FLAGS "-g -Wall -std=c++11 -Wno-unused-variable")
+	SET(CMAKE_CXX_FLAGS "-g -Wall -std=c++11 -Wno-unused-variable -Wno-unknown-pragmas")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 INCLUDE_DIRECTORIES(src/rules)
