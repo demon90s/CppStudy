@@ -7,3 +7,4 @@
 #include "rule07.h"
 #include "rule08.h"
 #include "rule09.h"
+#include "rule10.h"
