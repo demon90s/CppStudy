@@ -16,7 +16,7 @@ int main()
 {
 	//Rule01();
 	//Rule02();
-	//Rule03();
+	Rule03();
 	//Rule04();
 	//Rule05();
 	//Rule06();
@@ -24,7 +24,7 @@ int main()
 	//Rule08();
 	//Rule09();
 	//Rule10();
-	Rule11();
+	//Rule11();
 
 #ifdef _MSC_VER
 	system("pause");

@@ -66,7 +66,7 @@ class CTextBlock
 {
 public:
 	CTextBlock(const char *text) : pText(new char[strlen(text) + 1]()) { strcpy(pText, text); }
-	~CTextBlock() { delete pText; }
+	~CTextBlock() { delete []pText; }
 
 	const char& operator[](std::size_t position) const
 	{
