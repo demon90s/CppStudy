@@ -38,7 +38,7 @@
     
     
       
-        <title>条款03：尽可能使用const - C++ Study Note</title>
+        <title>条款07：为多态基类声明virtual析构函数 - C++ Study Note</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#03const" tabindex="1" class="md-skip">
+      <a href="#07virtual" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -121,7 +121,7 @@
                 C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                条款03：尽可能使用const
+                条款07：为多态基类声明virtual析构函数
               </span>
             
           
@@ -237,7 +237,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../%E6%9D%A1%E6%AC%BE01%EF%BC%9A%E8%A7%86C%2B%2B%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E8%81%94%E9%82%A6/" title="Effective C++" class="md-tabs__link md-tabs__link--active">
+        <a href="../../1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE01%EF%BC%9A%E8%A7%86C%2B%2B%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E8%81%94%E9%82%A6/" title="Effective C++" class="md-tabs__link">
           Effective C++
         </a>
       
@@ -689,12 +689,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
     <label class="md-nav__link" for="nav-3-1">
       1 让自己习惯C++
@@ -712,7 +710,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE01%EF%BC%9A%E8%A7%86C%2B%2B%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E8%81%94%E9%82%A6/" title="条款01：视C++为一个语言联邦" class="md-nav__link">
+    <a href="../../1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE01%EF%BC%9A%E8%A7%86C%2B%2B%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%AF%AD%E8%A8%80%E8%81%94%E9%82%A6/" title="条款01：视C++为一个语言联邦" class="md-nav__link">
       条款01：视C++为一个语言联邦
     </a>
   </li>
@@ -724,8 +722,82 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE02%EF%BC%9A%E5%B0%BD%E9%87%8F%E4%BB%A5const%2C%20enum%2C%20inline%E6%9B%BF%E6%8D%A2%23define/" title="条款02：尽量以const, enum, inline替换#define" class="md-nav__link">
+    <a href="../../1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE02%EF%BC%9A%E5%B0%BD%E9%87%8F%E4%BB%A5const%2C%20enum%2C%20inline%E6%9B%BF%E6%8D%A2%23define/" title="条款02：尽量以const, enum, inline替换#define" class="md-nav__link">
       条款02：尽量以const, enum, inline替换#define
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE03%EF%BC%9A%E5%B0%BD%E5%8F%AF%E8%83%BD%E4%BD%BF%E7%94%A8const/" title="条款03：尽可能使用const" class="md-nav__link">
+      条款03：尽可能使用const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1%20%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B9%A0%E6%83%AFC%2B%2B/%E6%9D%A1%E6%AC%BE04%EF%BC%9A%E7%A1%AE%E5%AE%9A%E5%AF%B9%E8%B1%A1%E8%A2%AB%E4%BD%BF%E7%94%A8%E5%89%8D%E5%B7%B2%E8%A2%AB%E5%88%9D%E5%A7%8B%E5%8C%96/" title="条款04：确定对象被使用前已被初始化" class="md-nav__link">
+      条款04：确定对象被使用前已被初始化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      2 构造、析构、赋值运算
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        2 构造、析构、赋值运算
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%9D%A1%E6%AC%BE05%EF%BC%9A%E4%BA%86%E8%A7%A3C%2B%2B%E9%BB%98%E9%BB%98%E7%BC%96%E5%86%99%E5%B9%B6%E8%B0%83%E7%94%A8%E5%93%AA%E4%BA%9B%E5%87%BD%E6%95%B0/" title="条款05：了解C++默默编写并调用哪些函数" class="md-nav__link">
+      条款05：了解C++默默编写并调用哪些函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%9D%A1%E6%AC%BE06%EF%BC%9A%E8%8B%A5%E4%B8%8D%E6%83%B3%E4%BD%BF%E7%94%A8%E7%BC%96%E8%AF%91%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B0%B1%E8%AF%A5%E6%98%8E%E7%A1%AE%E6%8B%92%E7%BB%9D/" title="条款06：若不想使用编译器自动生成的函数，就该明确拒绝" class="md-nav__link">
+      条款06：若不想使用编译器自动生成的函数，就该明确拒绝
     </a>
   </li>
 
@@ -745,11 +817,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        条款03：尽可能使用const
+        条款07：为多态基类声明virtual析构函数
       </label>
     
-    <a href="./" title="条款03：尽可能使用const" class="md-nav__link md-nav__link--active">
-      条款03：尽可能使用const
+    <a href="./" title="条款07：为多态基类声明virtual析构函数" class="md-nav__link md-nav__link--active">
+      条款07：为多态基类声明virtual析构函数
     </a>
     
       
@@ -763,22 +835,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#const" title="const与指针" class="md-nav__link">
-    const与指针
+  <a href="#1non-virtual" title="问题1：多态基类将析构函数声明成non-virtual" class="md-nav__link">
+    问题1：多态基类将析构函数声明成non-virtual
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#const_1" title="const与迭代器" class="md-nav__link">
-    const与迭代器
+  <a href="#2virtual" title="问题2：非多态基类声明了一个virtual函数" class="md-nav__link">
+    问题2：非多态基类声明了一个virtual函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#const_2" title="const与函数" class="md-nav__link">
-    const与函数
+  <a href="#pure-virtual" title="pure virtual析构函数" class="md-nav__link">
+    pure virtual析构函数
   </a>
   
 </li>
@@ -800,79 +872,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE04%EF%BC%9A%E7%A1%AE%E5%AE%9A%E5%AF%B9%E8%B1%A1%E8%A2%AB%E4%BD%BF%E7%94%A8%E5%89%8D%E5%B7%B2%E8%A2%AB%E5%88%9D%E5%A7%8B%E5%8C%96/" title="条款04：确定对象被使用前已被初始化" class="md-nav__link">
-      条款04：确定对象被使用前已被初始化
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
-    
-    <label class="md-nav__link" for="nav-3-2">
-      2 构造、析构、赋值运算
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        2 构造、析构、赋值运算
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE05%EF%BC%9A%E4%BA%86%E8%A7%A3C%2B%2B%E9%BB%98%E9%BB%98%E7%BC%96%E5%86%99%E5%B9%B6%E8%B0%83%E7%94%A8%E5%93%AA%E4%BA%9B%E5%87%BD%E6%95%B0/" title="条款05：了解C++默默编写并调用哪些函数" class="md-nav__link">
-      条款05：了解C++默默编写并调用哪些函数
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE06%EF%BC%9A%E8%8B%A5%E4%B8%8D%E6%83%B3%E4%BD%BF%E7%94%A8%E7%BC%96%E8%AF%91%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B0%B1%E8%AF%A5%E6%98%8E%E7%A1%AE%E6%8B%92%E7%BB%9D/" title="条款06：若不想使用编译器自动生成的函数，就该明确拒绝" class="md-nav__link">
-      条款06：若不想使用编译器自动生成的函数，就该明确拒绝
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE07%EF%BC%9A%E4%B8%BA%E5%A4%9A%E6%80%81%E5%9F%BA%E7%B1%BB%E5%A3%B0%E6%98%8Evirtual%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款07：为多态基类声明virtual析构函数" class="md-nav__link">
-      条款07：为多态基类声明virtual析构函数
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE08%EF%BC%9A%E5%88%AB%E8%AE%A9%E5%BC%82%E5%B8%B8%E9%80%83%E7%A6%BB%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款08：别让异常逃离析构函数" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE08%EF%BC%9A%E5%88%AB%E8%AE%A9%E5%BC%82%E5%B8%B8%E9%80%83%E7%A6%BB%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款08：别让异常逃离析构函数" class="md-nav__link">
       条款08：别让异常逃离析构函数
     </a>
   </li>
@@ -884,7 +884,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE09%EF%BC%9A%E7%BB%9D%E4%B8%8D%E5%9C%A8%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8virtual%E5%87%BD%E6%95%B0/" title="条款09：绝不在构造和析构过程中调用virtual函数" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE09%EF%BC%9A%E7%BB%9D%E4%B8%8D%E5%9C%A8%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8virtual%E5%87%BD%E6%95%B0/" title="条款09：绝不在构造和析构过程中调用virtual函数" class="md-nav__link">
       条款09：绝不在构造和析构过程中调用virtual函数
     </a>
   </li>
@@ -896,7 +896,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE10%EF%BC%9A%E4%BB%A4operator%3D%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AAreference%20to%20this/" title="条款10：令operator=返回一个reference to this" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE10%EF%BC%9A%E4%BB%A4operator%3D%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AAreference%20to%20this/" title="条款10：令operator=返回一个reference to this" class="md-nav__link">
       条款10：令operator=返回一个reference to this
     </a>
   </li>
@@ -908,7 +908,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE11%EF%BC%9A%E5%9C%A8operator%3D%E4%B8%AD%E5%A4%84%E7%90%86%E2%80%9C%E8%87%AA%E6%88%91%E8%B5%8B%E5%80%BC%E2%80%9D/" title="条款11：在operator=中处理“自我赋值”" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE11%EF%BC%9A%E5%9C%A8operator%3D%E4%B8%AD%E5%A4%84%E7%90%86%E2%80%9C%E8%87%AA%E6%88%91%E8%B5%8B%E5%80%BC%E2%80%9D/" title="条款11：在operator=中处理“自我赋值”" class="md-nav__link">
       条款11：在operator=中处理“自我赋值”
     </a>
   </li>
@@ -945,22 +945,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#const" title="const与指针" class="md-nav__link">
-    const与指针
+  <a href="#1non-virtual" title="问题1：多态基类将析构函数声明成non-virtual" class="md-nav__link">
+    问题1：多态基类将析构函数声明成non-virtual
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#const_1" title="const与迭代器" class="md-nav__link">
-    const与迭代器
+  <a href="#2virtual" title="问题2：非多态基类声明了一个virtual函数" class="md-nav__link">
+    问题2：非多态基类声明了一个virtual函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#const_2" title="const与函数" class="md-nav__link">
-    const与函数
+  <a href="#pure-virtual" title="pure virtual析构函数" class="md-nav__link">
+    pure virtual析构函数
   </a>
   
 </li>
@@ -981,120 +981,71 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/EffectiveCpp/1 让自己习惯C++/条款03：尽可能使用const.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/EffectiveCpp/2 构造、析构、赋值运算/条款07：为多态基类声明virtual析构函数.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="03const">条款03：尽可能使用const</h1>
-<p>const允许你指定一个语义约束，而编译器会强制实施这项约束。</p>
+                <h1 id="07virtual">条款07：为多态基类声明virtual析构函数</h1>
 <hr />
-<h2 id="const">const与指针</h2>
-<p>对于指针类型的变量，如果关键字const出现在星号左边，表示被指物是常量；如果出现在星号右边，表示指针自身是常量；如果出现在星号两边，表示被指物和指针两者都是常量。</p>
-<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="n">greeting</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
-
-<span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span>                 <span class="c1">// non-const pointer, non-const data</span>
-<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">lcp</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span>         <span class="c1">// non-const pointer, const data(low-level const)</span>
-<span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">tcp</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span>         <span class="c1">// const pointer, non-const data(top-level const)</span>
-<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="n">cp</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">;</span>    <span class="c1">// const pointer, const data</span>
+<h2 id="1non-virtual">问题1：多态基类将析构函数声明成non-virtual</h2>
+<p>当我们使用一个heap上的对象后，为了避免泄漏内存和其他资源，需要对其进行delete。</p>
+<div class="codehilite"><pre><span></span><span class="n">TimeKeeper</span> <span class="o">*</span><span class="n">ptk</span> <span class="o">=</span> <span class="n">getTimeKeeper</span><span class="p">();</span>      <span class="c1">// 获得一个动态分配的对象（派生类对象）</span>
+<span class="c1">//...</span>
+<span class="k">delete</span> <span class="n">ptk</span><span class="p">;</span>                             <span class="c1">// 释放它，避免泄漏资源</span>
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>low-level const（底层const），是指指针所指物为常量；top-level const（顶层const），是指指针自身是常量。</p>
-</div>
-<h2 id="const_1">const与迭代器</h2>
-<p>STL迭代器以指针为根据塑模出来，所以迭代器的作用就像个T*指针。声明迭代器为const表示这个迭代器不得指向别的东西，但它所指的东西可以改变。如果你希望迭代器所指的值东西不可被改动，你需要的是const_iterator：</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
-
-<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>    <span class="c1">// iter的作用像个T *const</span>
-<span class="o">*</span><span class="n">iter</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>             <span class="c1">// 没问题，改变iter所指物</span>
-<span class="c1">///++iter;              // 错误！iter是const</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span> <span class="n">citer</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>   <span class="c1">// iter的作用像个const T*</span>
-<span class="c1">//*citer = 10;          // 错误！*citer是const</span>
-<span class="o">++</span><span class="n">citer</span><span class="p">;</span>                <span class="c1">// 没问题，改变citer</span>
-</pre></div>
-
-
-<h2 id="const_2">const与函数</h2>
-<p>在一个函数声明式内，const可以和函数返回值、参数、函数自身（如果是成员函数）产生关联。</p>
-<p>令函数返回一个常量值，往往可以降低因客户错误而造成的意外。比如，有这样的operator*声明式：</p>
-<div class="codehilite"><pre><span></span><span class="k">const</span> <span class="n">Rational</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">Rational</span><span class="o">&amp;</span> <span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Rational</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">);</span>
-</pre></div>
-
-
-<p>返回一个const临时对象的原因是，客户可能出现这样的打字错误：</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
-</pre></div>
-
-
-<p>如果operator*返回一个const，那么就可以完全阻止这样的错误。使用const参数同样出于这样的原因。</p>
-<p><strong>const成员函数</strong></p>
-<p>将const实施于成员函数的目的，是为了确认该成员函数可以作用于const对象身上。这一类成员函数之所以重要，基于两个理由：</p>
-<ol>
-<li>
-<p>它们使class接口比较容易被理解。因为可以方便得知哪些函数会修改对象内容。</p>
-</li>
-<li>
-<p>它们使操作const对象成为可能。</p>
-</li>
-</ol>
-<p>如果成员函数只是常量性（constness）不同，可以被重载。调用对象如果是const的，那么会调用常量版本的成员函数。</p>
-<p>成员函数如果是const的意味着什么？</p>
-<ul>
-<li>
-<p>如果以bitwise const的观点看，成员函数只有在不更改对象之任何成员变量（static除外）才可以说是const。bitwise const就是C++常量性的定义，因此成员函数不可以更改对象内任何non-static成员变量。</p>
-</li>
-<li>
-<p>但有这样的情况，它不具备const性质但能通过bitwise const测试，即一个更改了“指针所指物”的成员函数虽然不能算是const的，但把它声明成const编译器也不会报错。</p>
-</li>
-</ul>
-<p>上面的情况导出所谓的logical constness，这个观点主张一个const成员函数可以修改它所处理对象的某些bit，但只有在客户端侦测不出的情况下才得如此。</p>
-<p>可以使用mutable来声明变量，从而释放掉bitwise const的约束。</p>
-<p><strong>在const和non-const成员函数中避免重复</strong></p>
-<p>假如我们的成员函数要做很多操作，那么const版本的和非const版本的函数就会有大量重复代码，应当使非const版本的函数调用const的函数来减少重复。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">CTextBlock</span>
+<p>假如TimeKeeper有一个non-virtual的析构函数，那么这就会引发灾难。因为C++明白指出，当derived class对象经由一个base class指针被删除，而该bass class带着一个non-virtual析构函数，其结果未定义。</p>
+<p>实际执行时通常发生的是对象的derived成分没被销毁。然而其base class成分通常会被销毁，于是造成一个“局部销毁”对象。</p>
+<p>消除这个问题的做法很简单：给base class一个virtual析构函数。此后删除derived class对象就会如你想要的那般，销毁整个对象。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">TimeKeeper</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">CTextBlock</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">)</span> <span class="o">:</span> <span class="n">pText</span><span class="p">(</span><span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]())</span> <span class="p">{</span> <span class="n">strcpy</span><span class="p">(</span><span class="n">pText</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span> <span class="p">}</span>
-    <span class="o">~</span><span class="n">CTextBlock</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">pText</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="k">const</span> <span class="kt">char</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span>
-    <span class="p">{</span>
-        <span class="c1">// ... 边界检查 bounds checking</span>
-        <span class="c1">// ... 日志数据访问 log access data</span>
-        <span class="c1">// ... 检验数据完整性 verify data integrity</span>
-        <span class="k">return</span> <span class="n">pText</span><span class="p">[</span><span class="n">position</span><span class="p">];</span>
-    <span class="p">}</span>
-
-    <span class="kt">char</span> <span class="o">&amp;</span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">position</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// 调用const版本的函数</span>
-        <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&amp;&gt;</span><span class="p">(</span>
-            <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">CTextBlock</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)[</span><span class="n">position</span><span class="p">]</span>
-            <span class="p">);</span>
-    <span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">pText</span><span class="p">;</span>
+    <span class="n">TimeKeeper</span><span class="p">();</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">TimeKeeper</span><span class="p">();</span>
 <span class="p">};</span>
 </pre></div>
 
 
-<ul>
-<li>
-<p><code>const_cast&lt;char&amp;&gt;</code>是安全的，因为只有非const对象才能调用这个函数。</p>
-</li>
-<li>
-<p><code>static_cast&lt;const CTextBlock&amp;&gt;</code>是为了让对象调用const版本的函数，从而达到减少重复代码的目的。</p>
-</li>
-</ul>
+<p>任何class只要带有virtual函数几乎确定应该也有一个virtual析构函数。</p>
+<h2 id="2virtual">问题2：非多态基类声明了一个virtual函数</h2>
+<p>如果class不含virtual函数，通常表示它并不意图被用做一个base class。这个时候，令其析构函数为virtual往往是个馊主意。比如：</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Point</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">xCoord</span><span class="p">,</span> <span class="kt">int</span> <span class="n">yCoord</span><span class="p">);</span>
+    <span class="o">~</span><span class="n">Point</span><span class="p">();</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>如果int占用32bits，那么Point对象可塞入一个64-bit缓存器中。</p>
+<p>欲实现出virtual函数，对象必须携带某些信息，主要用来在运行期决定哪一个virtual函数该被调用。这份信息通常是由一个所谓vptr(virtual table pointer)指针指出。vptr指向一个由函数指针构成的数组，称为vtbl(virtual table)；每一个带有virtual函数的class都有一个相应的vtbl。当对象调用某一virtual函数，实际被调用的函数取决于该对象的vptr所指的那个vtbl。</p>
+<p>如果Point class内含virtual函数，其对象的体积会增加：32bit - 64bit。因此，无端地将所有classes的析构函数声明为virtual，是错误的。</p>
+<p>如果你企图继承一个标准库容器或任何其他“带有non-virtual析构函数”的class，拒绝诱惑！</p>
+<h2 id="pure-virtual">pure virtual析构函数</h2>
+<p>pure virtual函数导致abstract classes，也就是不能被实体化的class。有时候你希望拥有抽象class，但手上没有任何pure virtual函数怎么办？很简单：为它声明一个pure virtual析构函数：</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">AWOV</span>                          <span class="c1">// AWOV = &quot;Abstract w/o Virtuals&quot;</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">AWOV</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>            <span class="c1">// 声明pure virtual析构函数</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>你必须为这个pure virtual析构函数提供一份定义：</p>
+<div class="codehilite"><pre><span></span><span class="n">AWOV</span><span class="o">::~</span><span class="n">AWOV</span><span class="p">()</span> <span class="p">{}</span>
+</pre></div>
+
+
+<p>析构函数的运作方式是，最深层派生（most derived）的那个class其析构函数最先被调用，然后是其每一个base class的析构函数被调用。编译器会在AWOV的derived classes的析构函数中创建一个对<code>~AWOV</code>的调用动作，所以你必须为这个函数提供一份定义。</p>
 <div class="admonition tip">
 <p class="admonition-title">请记住</p>
 <ul>
-<li>将某些东西声明为const可帮助编译器侦测出错误用法。const可施加于任何作用域内的对象、函数参数、函数返回类型、成员函数本体。</li>
-<li>编译器强制实施bitwise constness，但你编写程序时应该使用“概念上的常量性”。</li>
-<li>当const和non-const成员函数有着等价的实现时，令non-const版本调用const版本可避免代码重复。</li>
+<li>polymorphic（带有多态性质的）base classes应该声明一个virtual析构函数。如果class带有任何virtual函数，它就应该拥有一个virtual析构函数。</li>
+<li>Classes的设计目的如果不是作为base classes使用，或不是为了具备多态性，就不该声明virtual析构函数。</li>
 </ul>
 </div>
                 
@@ -1117,7 +1068,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../%E6%9D%A1%E6%AC%BE02%EF%BC%9A%E5%B0%BD%E9%87%8F%E4%BB%A5const%2C%20enum%2C%20inline%E6%9B%BF%E6%8D%A2%23define/" title="条款02：尽量以const, enum, inline替换#define" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../%E6%9D%A1%E6%AC%BE06%EF%BC%9A%E8%8B%A5%E4%B8%8D%E6%83%B3%E4%BD%BF%E7%94%A8%E7%BC%96%E8%AF%91%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B0%B1%E8%AF%A5%E6%98%8E%E7%A1%AE%E6%8B%92%E7%BB%9D/" title="条款06：若不想使用编译器自动生成的函数，就该明确拒绝" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1126,19 +1077,19 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                条款02：尽量以const, enum, inline替换#define
+                条款06：若不想使用编译器自动生成的函数，就该明确拒绝
               </span>
             </div>
           </a>
         
         
-          <a href="../%E6%9D%A1%E6%AC%BE04%EF%BC%9A%E7%A1%AE%E5%AE%9A%E5%AF%B9%E8%B1%A1%E8%A2%AB%E4%BD%BF%E7%94%A8%E5%89%8D%E5%B7%B2%E8%A2%AB%E5%88%9D%E5%A7%8B%E5%8C%96/" title="条款04：确定对象被使用前已被初始化" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E6%9D%A1%E6%AC%BE08%EF%BC%9A%E5%88%AB%E8%AE%A9%E5%BC%82%E5%B8%B8%E9%80%83%E7%A6%BB%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款08：别让异常逃离析构函数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                条款04：确定对象被使用前已被初始化
+                条款08：别让异常逃离析构函数
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
