@@ -52,6 +52,7 @@ pages:
       - 条款09：绝不在构造和析构过程中调用virtual函数: EffectiveCpp/2 构造、析构、赋值运算/条款09：绝不在构造和析构过程中调用virtual函数.md
       - 条款10：令operator=返回一个reference to this: EffectiveCpp/2 构造、析构、赋值运算/条款10：令operator=返回一个reference to this.md
       - 条款11：在operator=中处理“自我赋值”: EffectiveCpp/2 构造、析构、赋值运算/条款11：在operator=中处理“自我赋值”.md
+      - 条款12：复制对象时勿忘其每一个成分: EffectiveCpp/2 构造、析构、赋值运算/条款12：复制对象时勿忘其每一个成分.md
 
 theme:
   name: 'material'

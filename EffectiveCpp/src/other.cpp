@@ -1,3 +1,4 @@
+// ÓÃÓÚÅÅ³ıÁ´½Ó´íÎó
 #include "rule01.h"
 #include "rule02.h"
 #include "rule03.h"
@@ -9,3 +10,4 @@
 #include "rule09.h"
 #include "rule10.h"
 #include "rule11.h"
+#include "rule12.h"
