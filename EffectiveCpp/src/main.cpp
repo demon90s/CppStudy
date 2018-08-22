@@ -13,6 +13,7 @@
 #include "rule11.h"
 #include "rule12.h"
 #include "rule13.h"
+#include "rule14.h"
 
 int main()
 {
@@ -28,7 +29,8 @@ int main()
 	//Rule10();
 	//Rule11();
 	//Rule12();
-	Rule13();
+	//Rule13();
+	Rule14();
 
 #ifdef _MSC_VER
 	system("pause");

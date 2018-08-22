@@ -55,6 +55,7 @@ pages:
       - 条款12：复制对象时勿忘其每一个成分: EffectiveCpp/2 构造、析构、赋值运算/条款12：复制对象时勿忘其每一个成分.md
     - 3 资源管理:
       - 条款13：以对象管理资源: EffectiveCpp/3 资源管理/条款13：以对象管理资源.md
+      - 条款14：在资源管理类中小心 copying 行为: EffectiveCpp/3 资源管理/条款14：在资源管理类中小心 copying 行为.md
 
 theme:
   name: 'material'
