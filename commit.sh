@@ -1,4 +1,6 @@
 show_status() {
+	git config core.quotepath false
+
 	if git status | grep 'nothing to commit'; then
 		return 1
 	else

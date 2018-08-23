@@ -44,6 +44,8 @@ pages:
       - 条款02：尽量以const, enum, inline替换#define: EffectiveCpp/1 让自己习惯C++/条款02：尽量以const, enum, inline替换#define.md
       - 条款03：尽可能使用const: EffectiveCpp/1 让自己习惯C++/条款03：尽可能使用const.md
       - 条款04：确定对象被使用前已被初始化: EffectiveCpp/1 让自己习惯C++/条款04：确定对象被使用前已被初始化.md
+    - 2 构造、析构、赋值运算:
+      - 条款05：了解C++默默编写并调用哪些函数: EffectiveCpp/2 构造、析构、赋值运算/条款05：了解C++默默编写并调用哪些函数.md
 
 theme:
   name: 'material'
