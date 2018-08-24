@@ -23,7 +23,7 @@ protected:
 	~Uncopyable() {}
 
 private:
-	Uncopyable(const Uncopyable&);		// ×éÖ¯copying
+	Uncopyable(const Uncopyable&);		// ×èÖ¹copying
 	Uncopyable& operator=(const Uncopyable&);
 };
 
