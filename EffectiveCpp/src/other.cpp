@@ -4,3 +4,4 @@
 #include "rule04.h"
 #include "rule05.h"
 #include "rule06.h"
+#include "rule07.h"
