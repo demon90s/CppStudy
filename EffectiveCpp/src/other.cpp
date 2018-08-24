@@ -5,3 +5,4 @@
 #include "rule05.h"
 #include "rule06.h"
 #include "rule07.h"
+#include "rule08.h"
