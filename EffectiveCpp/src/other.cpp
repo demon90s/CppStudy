@@ -6,3 +6,4 @@
 #include "rule06.h"
 #include "rule07.h"
 #include "rule08.h"
+#include "rule09.h"

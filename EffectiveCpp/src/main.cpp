@@ -8,6 +8,7 @@
 #include "rule06.h"
 #include "rule07.h"
 #include "rule08.h"
+#include "rule09.h"
 
 int main()
 {
@@ -18,7 +19,8 @@ int main()
 	//Rule05();
 	//Rule06();
 	//Rule07();
-	Rule08();
+	//Rule08();
+	Rule09();
 
 #ifdef _MSC_VER
 	system("pause");
