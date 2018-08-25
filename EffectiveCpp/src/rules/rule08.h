@@ -12,6 +12,7 @@ extern void Rule08();
 class Widget
 {
 public:
+	// 错误！析构函数不应该抛出并传播异常
 	~Widget() { throw std::runtime_error("exception occured on destructor"); }
 };
 
@@ -44,9 +45,12 @@ public:
 	~DBConn()			// 确保数据库连接总是会被关闭
 	{
 		// 如果close抛出异常，捕获并记录
-		try { db.close(); }
-		catch (std::runtime_error e) {
-			std::cout << e.what() << std::endl;
+		if (!closed)
+		{
+			try { db.close(); }
+			catch (std::runtime_error e) {
+				std::cout << "~DBConn: " << e.what() << std::endl;
+			}
 		}
 	}
 

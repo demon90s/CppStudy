@@ -24,7 +24,7 @@ extern void Rule08()
 		catch (std::runtime_error e)
 		{
 			std::cout << "dbc.close: " << e.what() << std::endl;
-			std::abort();
+			//std::abort();
 		}
 	}
 }
