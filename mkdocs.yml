@@ -10,6 +10,11 @@ edit_uri: "tree/master/study_notes"
 
 pages:
   - Introduction: index.md
+
+  - C语言程序设计:
+    - Chapters:
+      - ch01 C语言概述: CProgramming/ch01 C语言概述.md
+
   - C++ Primer:
     - Chapters: 
       - ch01 开始: CppPrimer/ch01 开始.md
