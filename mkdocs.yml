@@ -14,6 +14,7 @@ pages:
   - C语言程序设计:
     - Chapters:
       - ch01 C语言概述: CProgramming/ch01 C语言概述.md
+      - ch02 C语言基本概念: CProgramming/ch02 C语言基本概念.md
 
   - C++ Primer:
     - Chapters: 
