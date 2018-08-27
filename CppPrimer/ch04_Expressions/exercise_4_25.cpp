@@ -18,5 +18,7 @@ int main()
 	// 输出结果是：-7296
 	cout << (~'q' << 6) << endl;
 
+	cout << (int)0xFFFFE380 << endl;
+
 	return 0;
 }
