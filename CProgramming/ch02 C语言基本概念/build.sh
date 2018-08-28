@@ -33,7 +33,7 @@ main() {
 		fi
 
 		echo "[BUILDING] $c_file -> $exe_file"
-		gcc -g -Wall $c_file -o $exe_file
+		gcc $c_file -o $exe_file
 
 		if [ "$?" != "0" ]; then
 			return 1
