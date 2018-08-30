@@ -62,6 +62,7 @@ pages:
     - 3 资源管理:
       - 条款13：以对象管理资源: EffectiveCpp/3 资源管理/条款13：以对象管理资源.md
       - 条款14：在资源管理类中小心 copying 行为: EffectiveCpp/3 资源管理/条款14：在资源管理类中小心 copying 行为.md
+      - 条款15：在资源管理类中提供对原始资源的访问: EffectiveCpp/3 资源管理/条款15：在资源管理类中提供对原始资源的访问.md
 
 theme:
   name: 'material'
