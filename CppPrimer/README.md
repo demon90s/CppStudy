@@ -224,6 +224,8 @@
 
 - [ostream_iterator操作（p361）](ch10_Generic_Algorithms/example_ostream_iterator.cpp)
 
+- [stable_partition，将序列分为两组，满足谓词的放在前面一组](ch10_Generic_Algorithms/example_stable_partition.cpp)
+
 - [stable_sort（p345）](ch10_Generic_Algorithms/example_stable_sort.cpp)
 
 - [sort和unique函数，消除重复单词（p343）](ch10_Generic_Algorithms/example_unique.cpp)
