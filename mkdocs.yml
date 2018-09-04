@@ -65,6 +65,7 @@ pages:
       - 条款14：在资源管理类中小心 copying 行为: EffectiveCpp/3 资源管理/条款14：在资源管理类中小心 copying 行为.md
       - 条款15：在资源管理类中提供对原始资源的访问: EffectiveCpp/3 资源管理/条款15：在资源管理类中提供对原始资源的访问.md
       - 条款16：成对使用 new 和 delete 时要采取相同形式: EffectiveCpp/3 资源管理/条款16：成对使用 new 和 delete 时要采取相同形式.md
+      - 条款17：以独立语句将 newed 对象置入智能指针: EffectiveCpp/3 资源管理/条款17：以独立语句将 newed 对象置入智能指针.md
 
 theme:
   name: 'material'
