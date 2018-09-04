@@ -11,6 +11,8 @@ show_status() {
 }
 
 commit() {
+	rm -fr site
+
 	git add *
 	git commit -m "commit"
 
