@@ -1,4 +1,4 @@
-// Ìõ¿î07£ºÎª¶àÌ¬»ùÀàÉùÃ÷virtualÎö¹¹º¯Êı
+// æ¡æ¬¾07ï¼šä¸ºå¤šæ€åŸºç±»å£°æ˜virtualææ„å‡½æ•°
 #ifndef __RULE07_H__
 #define __RULE07_H__
 
@@ -10,28 +10,28 @@ class TimeKeeper
 {
 public:
 	TimeKeeper() {}
-	//~TimeKeeper() {}		// ÕâÀï²»Ó¦¸ÃÓĞ non-virtual Îö¹¹º¯Êı£¬Èç¹ûdelete derived class£¬½á¹ûÎ´¶¨Òå
-	virtual ~TimeKeeper() {}// ÕıÈ·£¬»áÏú»ÙÕû¸ö¶ÔÏó
+	//~TimeKeeper() {}		// è¿™é‡Œä¸åº”è¯¥æœ‰ non-virtual ææ„å‡½æ•°ï¼Œå¦‚æœdelete derived classï¼Œç»“æœæœªå®šä¹‰
+	virtual ~TimeKeeper() {}// æ­£ç¡®ï¼Œä¼šé”€æ¯æ•´ä¸ªå¯¹è±¡
 
 	virtual time_t GetCurrentTime() { return 0; }
 };
 
-class AtomicClock : public TimeKeeper {};			// Ô­×ÓÖÓ
-class WaterClock : public TimeKeeper {};			// Ë®ÖÓ
-class WristWatch : public TimeKeeper {};			// Íó±í
+class AtomicClock : public TimeKeeper {};			// åŸå­é’Ÿ
+class WaterClock : public TimeKeeper {};			// æ°´é’Ÿ
+class WristWatch : public TimeKeeper {};			// è…•è¡¨
 
-// ·µ»ØÒ»¸öÖ¸Õë£¬Ö¸ÏòÒ»¸öTimeKeeperÅÉÉúÀàµÄ¶¯Ì¬·ÖÅä¶ÔÏó
+// è¿”å›ä¸€ä¸ªæŒ‡é’ˆï¼ŒæŒ‡å‘ä¸€ä¸ªTimeKeeperæ´¾ç”Ÿç±»çš„åŠ¨æ€åˆ†é…å¯¹è±¡
 inline TimeKeeper* getTimerKeeper()
 {
 	return new AtomicClock;
 }
 
-// Èç¹ûclass²»º¬virtualº¯Êı£¬ÁîÆäÎö¹¹º¯ÊıÎªvirtualÍùÍùÊÇ¸öâÈÖ÷Òâ
+// å¦‚æœclassä¸å«virtualå‡½æ•°ï¼Œä»¤å…¶ææ„å‡½æ•°ä¸ºvirtualå¾€å¾€æ˜¯ä¸ªé¦Šä¸»æ„
 class Point {
 public:
 	Point(int xCoord, int yCoord) : x(xCoord), y(yCoord) {}
 	~Point() {}
-	//virtual ~Point() {}	// âÈÖ÷Òâ£¬¶ÔÏó´óĞ¡Ôö¼Ó32bit ~ 64bit£¬ÒòÌí¼ÓÁËÒ»¸övptrÖ¸Õë
+	//virtual ~Point() {}	// é¦Šä¸»æ„ï¼Œå¯¹è±¡å¤§å°å¢åŠ 32bit ~ 64bitï¼Œå› æ·»åŠ äº†ä¸€ä¸ªvptræŒ‡é’ˆ
 
 private:
 	int x, y;

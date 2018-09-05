@@ -8,7 +8,7 @@ void Rule15()
 	{
 		std::shared_ptr<Investment> pInv(createInvestment());
 
-		//int days = daysHeld(pInv);	// ´íÎó£¡ĞèÒªÔ­Ê¼Ö¸Õë
+		//int days = daysHeld(pInv);	// é”™è¯¯ï¼éœ€è¦åŸå§‹æŒ‡é’ˆ
 		int days = daysHeld(pInv.get());
 	}
 
@@ -20,8 +20,8 @@ void Rule15()
 
 		changeFontSize(f, newFontSize);
 
-		// ÒşÊ½×ª»»ÊÇÎ£ÏÕµÄ
+		// éšå¼è½¬æ¢æ˜¯å±é™©çš„
 		f2 = f;
 	}
-	// f2 ±» dangle £¬Òò f Îö¹¹Ê±ÊÍ·ÅÁËµ×²ã×ÊÔ´
+	// f2 è¢« dangle ï¼Œå›  f ææ„æ—¶é‡Šæ”¾äº†åº•å±‚èµ„æº
 }

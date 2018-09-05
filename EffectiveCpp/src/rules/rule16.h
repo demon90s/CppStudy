@@ -1,4 +1,4 @@
-// Ìõ¿î16£º³É¶ÔÊ¹ÓÃ new ºÍ delete Ê±Òª²ÉÈ¡ÏàÍ¬µÄĞÎÊ½
+// æ¡æ¬¾16ï¼šæˆå¯¹ä½¿ç”¨ new å’Œ delete æ—¶è¦é‡‡å–ç›¸åŒçš„å½¢å¼
 #ifndef __RULE16_H__
 #define __RULE16_H__
 
@@ -11,10 +11,10 @@ namespace rule16
 {
 	inline void bug1()
 	{
-		// ³ÌĞòĞĞÎªÎ´ÓĞ¶¨Òå£¬Êµ¼ÊÉÏÔÚ vs ÏÂ±ÀÀ£
+		// ç¨‹åºè¡Œä¸ºæœªæœ‰å®šä¹‰ï¼Œå®é™…ä¸Šåœ¨ vs ä¸‹å´©æºƒ
 		std::string* stringArray = new std::string[100];
 
-		int *np = (int*)stringArray - 1;	// Ç°Ò»¸ö×Ö£¬´æ·ÅÊı×é³¤¶È
+		int *np = (int*)stringArray - 1;	// å‰ä¸€ä¸ªå­—ï¼Œå­˜æ”¾æ•°ç»„é•¿åº¦
 		std::cout << *np << std::endl;
 
 		delete stringArray;
@@ -25,18 +25,18 @@ namespace rule16
 		std::string* stringPtr1 = new std::string;
 		std::string* stringPtr2 = new std::string[100];
 
-		delete stringPtr1;		// É¾³ıÒ»¸ö¶ÔÏó
-		delete[] stringPtr2;	// É¾³ıÒ»¸öÓÖ¶ÔÏó×é³ÉµÄÊı×é
+		delete stringPtr1;		// åˆ é™¤ä¸€ä¸ªå¯¹è±¡
+		delete[] stringPtr2;	// åˆ é™¤ä¸€ä¸ªåˆå¯¹è±¡ç»„æˆçš„æ•°ç»„
 	}
 
 	inline void case_typedef()
 	{
-		// Èç¹û typedef ÁËÒ»¸öÊı×é£¬ÄÇÃ´Ò²ÒªÊ¹ÓÃ delete[] É¾³ı¶¯Ì¬Êı×é
+		// å¦‚æœ typedef äº†ä¸€ä¸ªæ•°ç»„ï¼Œé‚£ä¹ˆä¹Ÿè¦ä½¿ç”¨ delete[] åˆ é™¤åŠ¨æ€æ•°ç»„
 		typedef std::string AddressLines[4];
 		std::string *pal = new AddressLines;
 
-		//delete pal;	// ĞĞÎªÎ´ÓĞ¶¨Òå£¡
-		delete[] pal;	// ÕıÈ·
+		//delete pal;	// è¡Œä¸ºæœªæœ‰å®šä¹‰ï¼
+		delete[] pal;	// æ­£ç¡®
 	}
 }
 

@@ -1,4 +1,4 @@
-// Ìõ¿î03£º¾¡¿ÉÄÜÊ¹ÓÃconst
+// æ¡æ¬¾03ï¼šå°½å¯èƒ½ä½¿ç”¨const
 
 #ifndef __RULE03_H__
 #define __RULE03_H__
@@ -10,7 +10,7 @@
 
 extern void Rule03();
 
-// constÓëÖ¸Õë
+// constä¸æŒ‡é’ˆ
 inline void Const_And_Pointer()
 {
 	char greeting[] = "Hello";
@@ -21,29 +21,29 @@ inline void Const_And_Pointer()
 	const char* const cp = greeting;	// const pointer, const data
 }
 
-// constÓëµü´úÆ÷
+// constä¸è¿­ä»£å™¨
 inline void Const_And_Iterator()
 {
 	std::vector<int> vec{1, 2, 3, 4};
 
-	const std::vector<int>::iterator iter = vec.begin();	// iterµÄ×÷ÓÃÏñ¸öT *const
-	*iter = 10;				// Ã»ÎÊÌâ£¬¸Ä±äiterËùÖ¸Îï
-	///++iter;				// ´íÎó£¡iterÊÇconst
+	const std::vector<int>::iterator iter = vec.begin();	// iterçš„ä½œç”¨åƒä¸ªT *const
+	*iter = 10;				// æ²¡é—®é¢˜ï¼Œæ”¹å˜iteræ‰€æŒ‡ç‰©
+	///++iter;				// é”™è¯¯ï¼iteræ˜¯const
 
-	std::vector<int>::const_iterator citer = vec.begin();	// iterµÄ×÷ÓÃÏñ¸öconst T*
-	//*citer = 10;			// ´íÎó£¡*citerÊÇconst
-	++citer;				// Ã»ÎÊÌâ£¬¸Ä±äciter
+	std::vector<int>::const_iterator citer = vec.begin();	// iterçš„ä½œç”¨åƒä¸ªconst T*
+	//*citer = 10;			// é”™è¯¯ï¼*citeræ˜¯const
+	++citer;				// æ²¡é—®é¢˜ï¼Œæ”¹å˜citer
 }
 
-// const³ÉÔ±º¯Êı
+// constæˆå‘˜å‡½æ•°
 class TextBlock {
 public:
 	TextBlock(const char* _text) : text(_text) {}
 
-	const char& operator[](std::size_t position) const		// operator[] for const¶ÔÏó
+	const char& operator[](std::size_t position) const		// operator[] for constå¯¹è±¡
 	{ return text[position]; }
 
-	char& operator[](std::size_t position)					// operator[] for non-const¶ÔÏó
+	char& operator[](std::size_t position)					// operator[] for non-constå¯¹è±¡
 	{ return text[position]; }
 
 private:
@@ -53,15 +53,15 @@ private:
 inline void Use_TextBlock()
 {
 	TextBlock tb("Hello");
-	std::cout << tb[0];		// µ÷ÓÃnon-const TextBlock::operator[]
-	tb[0] = 'x';			// Ã»ÎÊÌâ£ºĞ´Ò»¸önon-const TextBlock
+	std::cout << tb[0];		// è°ƒç”¨non-const TextBlock::operator[]
+	tb[0] = 'x';			// æ²¡é—®é¢˜ï¼šå†™ä¸€ä¸ªnon-const TextBlock
 
 	const TextBlock ctb("Hello");
-	std::cout << ctb[0];	// µ÷ÓÃconst TextBlock::operator[]
-	//ctb[0] = 'x';			// ´íÎó£¡Ğ´Ò»¸öconst TextBlock£¨ÆóÍ¼¶ÔÒ»¸öconst char&¸³Öµ£©
+	std::cout << ctb[0];	// è°ƒç”¨const TextBlock::operator[]
+	//ctb[0] = 'x';			// é”™è¯¯ï¼å†™ä¸€ä¸ªconst TextBlockï¼ˆä¼å›¾å¯¹ä¸€ä¸ªconst char&èµ‹å€¼ï¼‰
 }
 
-// ÔÚconstºÍnon-const³ÉÔ±º¯ÊıÖĞ±ÜÃâÖØ¸´
+// åœ¨constå’Œnon-constæˆå‘˜å‡½æ•°ä¸­é¿å…é‡å¤
 class CTextBlock
 {
 public:
@@ -70,15 +70,15 @@ public:
 
 	const char& operator[](std::size_t position) const
 	{
-		// ... ±ß½ç¼ì²é bounds checking
-		// ... ÈÕÖ¾Êı¾İ·ÃÎÊ log access data
-		// ... ¼ìÑéÊı¾İÍêÕûĞÔ verify data integrity
+		// ... è¾¹ç•Œæ£€æŸ¥ bounds checking
+		// ... æ—¥å¿—æ•°æ®è®¿é—® log access data
+		// ... æ£€éªŒæ•°æ®å®Œæ•´æ€§ verify data integrity
 		return pText[position];
 	}
 
 	char &operator[](std::size_t position)
 	{
-		// µ÷ÓÃconst°æ±¾µÄº¯Êı
+		// è°ƒç”¨constç‰ˆæœ¬çš„å‡½æ•°
 		return const_cast<char&>(
 			static_cast<const CTextBlock&>(*this)[position]
 			);

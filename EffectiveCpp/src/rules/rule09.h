@@ -1,3 +1,4 @@
+// æ¡æ¬¾09ï¼šç»ä¸åœ¨æ„é€ å’Œææ„è¿‡ç¨‹ä¸­è°ƒç”¨virtualå‡½æ•°
 #ifndef __RULE09_H__
 #define __RULE09_H__
 
@@ -8,22 +9,22 @@ extern void Rule09();
 
 namespace bug
 {
-	// ËùÓĞ½»Ò×µÄbase class
+	// æ‰€æœ‰äº¤æ˜“çš„base class
 	class Trasaction
 	{
 	public:
 		Trasaction()
 		{
 			// ...
-			logTransaction();	// ´íÎó£¡Ã»ÓĞ°ì·¨µ÷ÓÃÅÉÉúÀàÖØĞ´µÄº¯Êı£¬C++²»ÔÊĞí
+			logTransaction();	// é”™è¯¯ï¼æ²¡æœ‰åŠæ³•è°ƒç”¨æ´¾ç”Ÿç±»é‡å†™çš„å‡½æ•°ï¼ŒC++ä¸å…è®¸
 		}
-		virtual void logTransaction() const = 0;		// ×ö³öÒ»·İÒòÀàĞÍ²»Í¬¶ø²»Í¬µÄÈÕÖ¾¼ÇÂ¼£¨log entry£©
+		virtual void logTransaction() const = 0;		// åšå‡ºä¸€ä»½å› ç±»å‹ä¸åŒè€Œä¸åŒçš„æ—¥å¿—è®°å½•ï¼ˆlog entryï¼‰
 	};
 
 	class BuyTransaction : public Trasaction
 	{
 	public:
-		virtual void logTransaction() const { std::cout << "BuyTransaction::logTransaction" << std::endl; }		// Log´ËĞÍ½»Ò×
+		virtual void logTransaction() const { std::cout << "BuyTransaction::logTransaction" << std::endl; }		// Logæ­¤å‹äº¤æ˜“
 	};
 
 	inline void Trasaction::logTransaction() const { std::cout << "Trasaction::logTransaction" << std::endl; }
@@ -36,10 +37,10 @@ namespace correct
 	public:
 		explicit Transaction(const std::string& log_info)
 		{
-			logTransaction(log_info); // Èç½ñÊÇ¸önon-virtualµ÷ÓÃ
+			logTransaction(log_info); // å¦‚ä»Šæ˜¯ä¸ªnon-virtualè°ƒç”¨
 		}
 
-		void logTransaction(const std::string& log_info) const // Èç½ñÊÇ¸önon-virtualº¯Êı
+		void logTransaction(const std::string& log_info) const // å¦‚ä»Šæ˜¯ä¸ªnon-virtualå‡½æ•°
 		{
 			std::cout << log_info << std::endl;
 		}
@@ -48,7 +49,7 @@ namespace correct
 	class BuyTransaction : public Transaction
 	{
 	public:
-		BuyTransaction() : Transaction(createLogString("Construct")) {} // ½«LogĞÅÏ¢´«µİ¸øbase class¹¹Ôìº¯Êı
+		BuyTransaction() : Transaction(createLogString("Construct")) {} // å°†Logä¿¡æ¯ä¼ é€’ç»™base classæ„é€ å‡½æ•°
 
 	private:
 		static std::string createLogString(const char* log) { return std::string("BuyTransaction_") + log; }

@@ -5,7 +5,7 @@ using namespace rule11;
 extern void Rule11()
 {
 	Widget w(42);
-	w = w;				// �Ը�ֵ
+	w = w;				// 自赋值
 
 	w.print();
 }

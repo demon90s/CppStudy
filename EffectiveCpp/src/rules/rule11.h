@@ -1,4 +1,4 @@
-// Ìõ¿î11£ºÔÚoperator=ÖĞ´¦Àí¡°×ÔÎÒ¸³Öµ¡±
+// æ¡æ¬¾11ï¼šåœ¨operator=ä¸­å¤„ç†â€œè‡ªæˆ‘èµ‹å€¼â€
 #ifndef __RULE11_H__
 #define __RULE11_H__
 
@@ -30,7 +30,7 @@ namespace rule11
 
 	inline Widget& Widget::operator=(const Widget& rhs)
 	{
-		// ´íÎóµÄÀı×Ó£¬ÎŞ·¨´¦Àí×Ô¸³Öµ
+		// é”™è¯¯çš„ä¾‹å­ï¼Œæ— æ³•å¤„ç†è‡ªèµ‹å€¼
 		if (bool bug = false)
 		{
 			delete ip;
@@ -38,7 +38,7 @@ namespace rule11
 			return *this;
 		}
 
-		// Ö¤Í¬²âÊÔ£¬¿ÉÒÔ×Ô¸³Öµ£¬µ«²»¾ß±¸Òì³£°²È«ĞÔ£¨¼´newÅ×³öÁËÒì³£ÔòÎŞ·¨»¹Ô­£©
+		// è¯åŒæµ‹è¯•ï¼Œå¯ä»¥è‡ªèµ‹å€¼ï¼Œä½†ä¸å…·å¤‡å¼‚å¸¸å®‰å…¨æ€§ï¼ˆå³newæŠ›å‡ºäº†å¼‚å¸¸åˆ™æ— æ³•è¿˜åŸï¼‰
 		if (bool identity_test = false)
 		{
 			if (this == &rhs) return *this;
@@ -48,7 +48,7 @@ namespace rule11
 			return *this;
 		}
 
-		// ÕıÈ·µÄ×ö·¨£¬±£´æÖ¸ÕëµÄ¸±±¾£¬³É¹¦newºó£¬ÔÙdelete
+		// æ­£ç¡®çš„åšæ³•ï¼Œä¿å­˜æŒ‡é’ˆçš„å‰¯æœ¬ï¼ŒæˆåŠŸnewåï¼Œå†delete
 		if (bool correct = false)
 		{
 			int *tmp = ip;
@@ -57,10 +57,10 @@ namespace rule11
 			return *this;
 		}
 
-		// copy and swap¼¼Êõ£¬Ò²ÓµÓĞÒì³£°²È«£¬ĞèÒª¸ü¶àµÄ´úÂë£¨Ò»¸öcopy¹¹Ôìº¯Êı¡¢Ò»¸ö×Ô¶¨ÒåµÄswapº¯Êı£©
+		// copy and swapæŠ€æœ¯ï¼Œä¹Ÿæ‹¥æœ‰å¼‚å¸¸å®‰å…¨ï¼Œéœ€è¦æ›´å¤šçš„ä»£ç ï¼ˆä¸€ä¸ªcopyæ„é€ å‡½æ•°ã€ä¸€ä¸ªè‡ªå®šä¹‰çš„swapå‡½æ•°ï¼‰
 		if (bool copy_and_swap = true)
 		{
-			Widget tmp(rhs);	// ÁÙÊ±µÄ¸±±¾ÊÇ°²È«µÄ£¬Ëü»á×Ô¶¯Ïú»Ù
+			Widget tmp(rhs);	// ä¸´æ—¶çš„å‰¯æœ¬æ˜¯å®‰å…¨çš„ï¼Œå®ƒä¼šè‡ªåŠ¨é”€æ¯
 			swap(tmp);
 			return *this;
 		}

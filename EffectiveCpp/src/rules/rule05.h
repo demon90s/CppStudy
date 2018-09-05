@@ -1,4 +1,4 @@
-// Ìõ¿î05£ºÁË½âC++Ä¬Ä¬±àĞ´²¢µ÷ÓÃÄÄĞ©º¯Êı
+// æ¡æ¬¾05ï¼šäº†è§£C++é»˜é»˜ç¼–å†™å¹¶è°ƒç”¨å“ªäº›å‡½æ•°
 
 #ifndef __RULE05_H__
 #define __RULE05_H__
@@ -7,28 +7,28 @@
 
 extern void Rule05();
 
-// class Empty {}; ¼¸ºõµÈ¼ÛÓÚÏÂÃæµÄĞ´·¨£¨µ±º¯ÊıĞèÒª±»µ÷ÓÃÊ±±àÒëÆ÷»á´´½¨£©
+// class Empty {}; å‡ ä¹ç­‰ä»·äºä¸‹é¢çš„å†™æ³•ï¼ˆå½“å‡½æ•°éœ€è¦è¢«è°ƒç”¨æ—¶ç¼–è¯‘å™¨ä¼šåˆ›å»ºï¼‰
 
 class Empty {};
 
 class EmptyCustom {
 public:
-	EmptyCustom() {}								// default¹¹Ôìº¯Êı
-	EmptyCustom(const EmptyCustom&) {}				// copy¹¹Ôìº¯Êı
-	~EmptyCustom() {}								// Îö¹¹º¯Êı£¬Ö»ÓĞµ±base classÉùÃ÷ÎªĞéÊ±²ÅÊÇĞéµÄ
-	EmptyCustom& operator=(const EmptyCustom&)		// copy assignment²Ù×÷·û
+	EmptyCustom() {}								// defaultæ„é€ å‡½æ•°
+	EmptyCustom(const EmptyCustom&) {}				// copyæ„é€ å‡½æ•°
+	~EmptyCustom() {}								// ææ„å‡½æ•°ï¼Œåªæœ‰å½“base classå£°æ˜ä¸ºè™šæ—¶æ‰æ˜¯è™šçš„
+	EmptyCustom& operator=(const EmptyCustom&)		// copy assignmentæ“ä½œç¬¦
 	{ /* ... */return *this; }
 };
 
-// ±àÒëÆ÷Îª²ú³öEmpty³ÉÔ±º¯Êı
+// ç¼–è¯‘å™¨ä¸ºäº§å‡ºEmptyæˆå‘˜å‡½æ•°
 inline void Empty_Gen()
 {
-	Empty et1;							// default¹¹Ôìº¯Êı¡¢Îö¹¹º¯Êı
-	Empty et2(et1);						// copy¹¹Ôìº¯Êı
-	et2 = et1;							// copy assignment²Ù×÷·û
+	Empty et1;							// defaultæ„é€ å‡½æ•°ã€ææ„å‡½æ•°
+	Empty et2(et1);						// copyæ„é€ å‡½æ•°
+	et2 = et1;							// copy assignmentæ“ä½œç¬¦
 }
 
-// ±àÒëÆ÷¿ÉÄÜ»á¾Ü¾øÎªclass²ú³öoperator=£¨°üº¬ÁËÃ»ÓĞ¸³Öµ²Ù×÷µÄÒıÓÃÀàĞÍºÍconstÀàĞÍ£©
+// ç¼–è¯‘å™¨å¯èƒ½ä¼šæ‹’ç»ä¸ºclassäº§å‡ºoperator=ï¼ˆåŒ…å«äº†æ²¡æœ‰èµ‹å€¼æ“ä½œçš„å¼•ç”¨ç±»å‹å’Œconstç±»å‹ï¼‰
 template<class T>
 class NamedObject {
 public:
@@ -45,7 +45,7 @@ inline void NoCopyAssign()
 	NamedObject<int> no1(name, 0);
 	NamedObject<int> no2(name, 0);
 	
-	//no2 = no1; ÎŞ·¨¸³Öµ£¬º¯ÊıÒÑÉ¾³ı
+	//no2 = no1; æ— æ³•èµ‹å€¼ï¼Œå‡½æ•°å·²åˆ é™¤
 }
 
 #endif // __RULE05_H__

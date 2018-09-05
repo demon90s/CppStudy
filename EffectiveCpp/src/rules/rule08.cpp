@@ -3,7 +3,7 @@
 
 extern void Rule08()
 {
-	// Widget的析构函数抛出了异常，外部没办法捕获
+	// Widget鐨勬瀽鏋勫嚱鏁版姏鍑轰簡寮傚父锛屽閮ㄦ病鍔炴硶鎹曡幏
 	/*try
 	{
 		std::vector<Widget> v;

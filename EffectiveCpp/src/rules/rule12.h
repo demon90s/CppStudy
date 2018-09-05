@@ -1,4 +1,4 @@
-// Ìõ¿î12£º¸´ÖÆ¶ÔÏóÊ±ÎğÍüÆäÃ¿Ò»¸ö³É·Ö
+// æ¡æ¬¾12ï¼šå¤åˆ¶å¯¹è±¡æ—¶å‹¿å¿˜å…¶æ¯ä¸€ä¸ªæˆåˆ†
 #ifndef __RULE12_H__
 #define __RULE12_H__
 
@@ -9,7 +9,7 @@ extern void Rule12();
 
 namespace rule12
 {
-	inline void LogCall(const std::string& funcName) { std::cout << funcName << std::endl; }	// ÖÆÔìÒ»¸ölog entry
+	inline void LogCall(const std::string& funcName) { std::cout << funcName << std::endl; }	// åˆ¶é€ ä¸€ä¸ªlog entry
 	class Customer
 	{
 	public:
@@ -31,7 +31,7 @@ namespace rule12
 		std::string name;
 	};
 
-	// ¼ÇµÃÊ¹ÓÃ»ùÀàµÄ¿½±´º¯Êı¿½±´»ùÀàµÄ³É·Ö
+	// è®°å¾—ä½¿ç”¨åŸºç±»çš„æ‹·è´å‡½æ•°æ‹·è´åŸºç±»çš„æˆåˆ†
 	class PriorityCustomer : public Customer
 	{
 	public:

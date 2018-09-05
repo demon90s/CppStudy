@@ -1,4 +1,4 @@
-// Ìõ¿î17£ºÒÔ¶ÀÁ¢Óï¾ä½« newed ¶ÔÏóÖÃÈëÖÇÄÜÖ¸Õë
+// æ¡æ¬¾17ï¼šä»¥ç‹¬ç«‹è¯­å¥å°† newed å¯¹è±¡ç½®å…¥æ™ºèƒ½æŒ‡é’ˆ
 #ifndef __RULE17_H__
 #define __RULE17_H__
 
@@ -11,16 +11,16 @@ namespace rule17
 {
 	class Widget
 	{
-		char buffer[1024 * 1024];	// ²âÊÔÄÚ´æĞ¹Â©µÄbuffer£¬ vs2015 ÏÂ¹Û²ì
+		char buffer[1024 * 1024];	// æµ‹è¯•å†…å­˜æ³„æ¼çš„bufferï¼Œ vs2015 ä¸‹è§‚å¯Ÿ
 	};
 
 	inline int priority()
 	{
-		// »áÅ×³öÒ»¸öÒì³£µÄº¯Êı
+		// ä¼šæŠ›å‡ºä¸€ä¸ªå¼‚å¸¸çš„å‡½æ•°
 		throw std::runtime_error("exception");
 	}
 
-	// Ò»¸ö¿ÉÄÜ»á·¢ÉúÄÚ´æĞ¹Â©µÄº¯Êı£¬¼®ÓÉ´íÎóµÄ³õÊ¼»¯ pw
+	// ä¸€ä¸ªå¯èƒ½ä¼šå‘ç”Ÿå†…å­˜æ³„æ¼çš„å‡½æ•°ï¼Œç±ç”±é”™è¯¯çš„åˆå§‹åŒ– pw
 	inline void processWidget(std::shared_ptr<Widget> pw, int priority) {}
 }
 

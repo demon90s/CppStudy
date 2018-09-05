@@ -1,7 +1,7 @@
 #include "rule02.h"
 #include <iostream>
 
-const int GamePlayer::NumTurns;		// NumTurnsµÄ¶¨Òå
+const int GamePlayer::NumTurns;		// NumTurnsçš„å®šä¹‰
 
 extern void rule02_f(int i)
 {

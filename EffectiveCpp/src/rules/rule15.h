@@ -1,4 +1,4 @@
-// Ìõ¿î15£ºÔÚ×ÊÔ´¹ÜÀíÀàÖĞÌá¹©¶ÔÔ­Ê¼×ÊÔ´µÄ·ÃÎÊ
+// æ¡æ¬¾15ï¼šåœ¨èµ„æºç®¡ç†ç±»ä¸­æä¾›å¯¹åŸå§‹èµ„æºçš„è®¿é—®
 #ifndef __RULE15_H__
 #define __RULE15_H__
 
@@ -8,7 +8,7 @@ extern void Rule15();
 
 namespace rule15
 {
-	// ¡°Í¶×ÊÀàĞÍ¡±¼Ì³ĞÌåÏµÖĞµÄroot class
+	// â€œæŠ•èµ„ç±»å‹â€ç»§æ‰¿ä½“ç³»ä¸­çš„root class
 	class Investment
 	{
 	public:
@@ -16,7 +16,7 @@ namespace rule15
 		~Investment() { std::cout << "~Investment()" << std::endl; }
 	};
 
-	// Í¨¹ı¹¤³§º¯Êı·ÖÅä¶¯Ì¬¶ÔÏó
+	// é€šè¿‡å·¥å‚å‡½æ•°åˆ†é…åŠ¨æ€å¯¹è±¡
 	inline Investment* createInvestment()
 	{
 		return new Investment();
@@ -27,7 +27,7 @@ namespace rule15
 		return 0;
 	}
 
-	// Ò»×é C API , inline Ö»ÊÇÎªÁË·½±ã¶¨Òå
+	// ä¸€ç»„ C API , inline åªæ˜¯ä¸ºäº†æ–¹ä¾¿å®šä¹‰
 	typedef int* FontHandle;
 	inline FontHandle getFont() { return new int(42); }
 	inline void releaseFont(FontHandle fh) { delete fh; }
@@ -39,12 +39,12 @@ namespace rule15
 		explicit Font(FontHandle fh) : f(fh) {}
 		~Font() { releaseFont(f); }
 
-		// ÎÒÃÇ¿ÉÄÜĞèÒª½« Font ×ª»»³ÉÆäÔ­Ê¼×ÊÔ´ FontHandler ÒÔÊÊÓ¦ C API
-		FontHandle get() const { return f; }		// ÏÔÊ½×ª»»
-		operator FontHandle() const { return f; }	// ÒşÊ½×ª»»£¬²»°²È«µÄ×ö·¨
+		// æˆ‘ä»¬å¯èƒ½éœ€è¦å°† Font è½¬æ¢æˆå…¶åŸå§‹èµ„æº FontHandler ä»¥é€‚åº” C API
+		FontHandle get() const { return f; }		// æ˜¾å¼è½¬æ¢
+		operator FontHandle() const { return f; }	// éšå¼è½¬æ¢ï¼Œä¸å®‰å…¨çš„åšæ³•
 
 	private:
-		FontHandle f;			// Ô­Ê¼×ÊÔ´
+		FontHandle f;			// åŸå§‹èµ„æº
 	};
 }
 

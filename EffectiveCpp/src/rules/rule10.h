@@ -1,4 +1,4 @@
-// Ìõ¿î10£º
+// æ¡æ¬¾10ï¼šä»¤operator=è¿”å›ä¸€ä¸ªreference to this
 #ifndef __RULE10_H__
 #define __RULE10_H__
 
@@ -6,8 +6,8 @@
 
 extern void Rule10();
 
-// ÎªÁËÊµÏÖ¡°Á¬Ëø¸³Öµ¡±£¬¸³Öµ²Ù×÷·û±ØĞë·µ»ØÒ»¸öreferenceÖ¸Ïò²Ù×÷·û×ó²àÊµ²Î
-// ÕâÊÇÄãÎªclassesÊµÏÖ¸³Öµ²Ù×÷Ê±Ó¦¸Ã×ñÑ­µÄĞ­Òé
+// ä¸ºäº†å®ç°â€œè¿é”èµ‹å€¼â€ï¼Œèµ‹å€¼æ“ä½œç¬¦å¿…é¡»è¿”å›ä¸€ä¸ªreferenceæŒ‡å‘æ“ä½œç¬¦å·¦ä¾§å®å‚
+// è¿™æ˜¯ä½ ä¸ºclasseså®ç°èµ‹å€¼æ“ä½œæ—¶åº”è¯¥éµå¾ªçš„åè®®
 namespace rule10
 {
 	class Widget
@@ -21,13 +21,13 @@ namespace rule10
 			return *this;
 		}
 
-		Widget& operator+=(const Widget& rhs)	// ÊÊÓÃÓÚ+=, -=, *=, µÈµÈ
+		Widget& operator+=(const Widget& rhs)	// é€‚ç”¨äº+=, -=, *=, ç­‰ç­‰
 		{
 			i += rhs.i;
 			return *this;
 		}
 
-		Widget& operator=(int rhs)	// Ò²ÊÊÓÃ£¬¼´Ê¹²ÎÊıÀàĞÍ²»·ûºÏĞ­¶¨
+		Widget& operator=(int rhs)	// ä¹Ÿé€‚ç”¨ï¼Œå³ä½¿å‚æ•°ç±»å‹ä¸ç¬¦åˆåå®š
 		{
 			i = rhs;
 			return *this;

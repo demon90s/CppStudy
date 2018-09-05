@@ -8,13 +8,13 @@ extern void Rule14()
 	{
 		Lock m1(&m);
 
-		// Ö´ÐÐ critical section ÄÚµÄ²Ù×÷
-		// ÔÚÇø¿é×îÄ©Î²£¬×Ô¶¯½â³ý»¥³âÆ÷Ëø¶¨
+		// æ‰§è¡Œ critical section å†…çš„æ“ä½œ
+		// åœ¨åŒºå—æœ€æœ«å°¾ï¼Œè‡ªåŠ¨è§£é™¤äº’æ–¥å™¨é”å®š
 	}
 
 	{
 		Lock2 m2(&m);
 
-		// Çø¿é×îÄ©Î²£¬×Ô¶¯½â³ýËø¶¨
+		// åŒºå—æœ€æœ«å°¾ï¼Œè‡ªåŠ¨è§£é™¤é”å®š
 	}
 }

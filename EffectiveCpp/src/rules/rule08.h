@@ -1,4 +1,4 @@
-// Ìõ¿î08£º±ğÈÃÒì³£ÌÓÀëÎö¹¹º¯Êı
+// æ¡æ¬¾08ï¼šåˆ«è®©å¼‚å¸¸é€ƒç¦»ææ„å‡½æ•°
 #ifndef __RULE08_H__
 #define __RULE08_H__
 
@@ -12,7 +12,7 @@ extern void Rule08();
 class Widget
 {
 public:
-	// ´íÎó£¡Îö¹¹º¯Êı²»Ó¦¸ÃÅ×³ö²¢´«²¥Òì³£
+	// é”™è¯¯ï¼ææ„å‡½æ•°ä¸åº”è¯¥æŠ›å‡ºå¹¶ä¼ æ’­å¼‚å¸¸
 	~Widget() { throw std::runtime_error("exception occured on destructor"); }
 };
 
@@ -21,13 +21,13 @@ public:
 class DBConnection
 {
 public:
-	static DBConnection create()	// Õâ¸öº¯Êı·µ»ØDBConnection¶ÔÏó
+	static DBConnection create()	// è¿™ä¸ªå‡½æ•°è¿”å›DBConnectionå¯¹è±¡
 	{
 		static DBConnection db;
 		return db;
 	}
 
-	// ¹Ø±ÕÁª»ú£ºÊ§°ÜÔòÅ×³öÒì³£
+	// å…³é—­è”æœºï¼šå¤±è´¥åˆ™æŠ›å‡ºå¼‚å¸¸
 	void close()
 	{
 		int is_succ = false;
@@ -42,9 +42,9 @@ class DBConn
 {
 public:
 	DBConn(const DBConnection& _db) : db(_db), closed(false) {}
-	~DBConn()			// È·±£Êı¾İ¿âÁ¬½Ó×ÜÊÇ»á±»¹Ø±Õ
+	~DBConn()			// ç¡®ä¿æ•°æ®åº“è¿æ¥æ€»æ˜¯ä¼šè¢«å…³é—­
 	{
-		// Èç¹ûcloseÅ×³öÒì³££¬²¶»ñ²¢¼ÇÂ¼
+		// å¦‚æœcloseæŠ›å‡ºå¼‚å¸¸ï¼Œæ•è·å¹¶è®°å½•
 		if (!closed)
 		{
 			try { db.close(); }
@@ -54,7 +54,7 @@ public:
 		}
 	}
 
-	// ¹©¿Í»§Ê¹ÓÃµÄĞÂº¯Êı
+	// ä¾›å®¢æˆ·ä½¿ç”¨çš„æ–°å‡½æ•°
 	void close()
 	{
 		db.close();

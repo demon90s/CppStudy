@@ -23,7 +23,7 @@ static void sleep(int second)
 
 void Rule17()
 {
-	// ����ĵ��ã������쳣�׳�ǰ��newed ָ��δ�ܳ�ʼ��������ָ�룬�Ӷ������ڴ�й©
+	// 错误的调用，籍由异常抛出前，newed 指针未能初始化给智能指针，从而产生内存泄漏
 	/*for (int i = 0; i < 100; ++i)
 	{
 		try
@@ -35,7 +35,7 @@ void Rule17()
 		sleep(1);
 	}*/
 
-	// ��ȷ���������ö������� newed ����洢������ָ����
+	// 正确的做法，用独立语句把 newed 对象存储于智能指针内
 	for (int i = 0; i < 100; ++i)
 	{
 		try

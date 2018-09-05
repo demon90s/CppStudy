@@ -4,7 +4,7 @@ extern void Rule09()
 {
 	{
 		using namespace bug;
-		BuyTransaction b; // ²»»áµ÷ÓÃÅÉÉúÀàµÄlogTransaction£¬ÒòÆä»¹Î´¹¹Ôì
+		BuyTransaction b; // ä¸ä¼šè°ƒç”¨æ´¾ç”Ÿç±»çš„logTransactionï¼Œå› å…¶è¿˜æœªæ„é€ 
 	}
 
 	{

@@ -1,4 +1,4 @@
-// Ìõ¿î04£ºÈ·¶¨¶ÔÏó±»Ê¹ÓÃÇ°ÒÑ±»³õÊ¼»¯
+// æ¡æ¬¾04ï¼šç¡®å®šå¯¹è±¡è¢«ä½¿ç”¨å‰å·²è¢«åˆå§‹åŒ–
 
 #ifndef __RULE04_H__
 #define __RULE04_H__
@@ -7,17 +7,17 @@
 #include <string>
 #include <list>
 
-// ³õÊ¼»¯ÄÚÖÃÀàĞÍ
+// åˆå§‹åŒ–å†…ç½®ç±»å‹
 inline void Init_BuiltinTyoe()
 {
-	int x = 0;				// ÊÖ¹¤³õÊ¼»¯
+	int x = 0;				// æ‰‹å·¥åˆå§‹åŒ–
 	const char* text = "A C-style string";
 
 	double d;
-	std::cin >> d;			// ÒÔ¶ÁÈ¡input streamµÄ·½Ê½Íê³É³õÊ¼»¯
+	std::cin >> d;			// ä»¥è¯»å–input streamçš„æ–¹å¼å®Œæˆåˆå§‹åŒ–
 }
 
-// ÓÃ¹¹Ôìº¯Êı³õÊ¼»¯ÁĞ±í³õÊ¼»¯Êı¾İ³ÉÔ±
+// ç”¨æ„é€ å‡½æ•°åˆå§‹åŒ–åˆ—è¡¨åˆå§‹åŒ–æ•°æ®æˆå‘˜
 class PhoneNumber { /* ... */ };
 class ABEntry {				// ABEntry = "Address Book Entry"
 public:
@@ -35,10 +35,10 @@ private:
 	int numTimesConsulted;
 };
 
-// ÓÃlocal static¶ÔÏó´úÌænon-local static¶ÔÏó
+// ç”¨local staticå¯¹è±¡ä»£æ›¿non-local staticå¯¹è±¡
 class FileSystem {
 public:
-	std::size_t numDisks() const { /* ... */return 0; }		// ÖÚ¶à³ÉÔ±º¯ÊıÖ®Ò»
+	std::size_t numDisks() const { /* ... */return 0; }		// ä¼—å¤šæˆå‘˜å‡½æ•°ä¹‹ä¸€
 };
 
 inline FileSystem& tfs()

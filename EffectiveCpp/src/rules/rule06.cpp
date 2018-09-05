@@ -3,8 +3,8 @@
 void Rule06()
 {
 	HomeForSale hs;
-	//HomeForSale hs2(hs); // ²»¿É·ÃÎÊcopy¹¹Ôìº¯Êý
+	//HomeForSale hs2(hs); // ä¸å¯è®¿é—®copyæž„é€ å‡½æ•°
 
 	HomeForSale2 hfs;
-	//HomeForSale2 hfs2(hfs);	// copy¹¹Ôìº¯ÊýÒÑÉ¾³ý
+	//HomeForSale2 hfs2(hfs);	// copyæž„é€ å‡½æ•°å·²åˆ é™¤
 }

@@ -1,4 +1,4 @@
-// Ìõ¿î13£ºÒÔ¶ÔÏó¹ÜÀí×ÊÔ´
+// æ¡æ¬¾13ï¼šä»¥å¯¹è±¡ç®¡ç†èµ„æº
 #ifndef __RULE13_H__
 #define __RULE13_H__
 
@@ -9,7 +9,7 @@ extern void Rule13();
 
 namespace rule13
 {
-	// ¡°Í¶×ÊÀàĞÍ¡±¼Ì³ĞÌåÏµÖĞµÄroot class
+	// â€œæŠ•èµ„ç±»å‹â€ç»§æ‰¿ä½“ç³»ä¸­çš„root class
 	class Investment
 	{
 	public:
@@ -17,7 +17,7 @@ namespace rule13
 		~Investment() { std::cout << "~Investment()" << std::endl; }
 	};
 
-	// Í¨¹ı¹¤³§º¯Êı·ÖÅä¶¯Ì¬¶ÔÏó
+	// é€šè¿‡å·¥å‚å‡½æ•°åˆ†é…åŠ¨æ€å¯¹è±¡
 	inline Investment* createInvestment()
 	{
 		return new Investment();
@@ -31,31 +31,31 @@ namespace rule13
 	inline void bug()
 	{
 		Investment *pInv = createInvestment();
-		return; // ÓÉÓÚÄ³ÖÖÔ­Òò²»Ğ¡ĞÄreturnÁË£¬ÔòÔì³ÉÁËÄÚ´æĞ¹Â©
+		return; // ç”±äºæŸç§åŸå› ä¸å°å¿ƒreturnäº†ï¼Œåˆ™é€ æˆäº†å†…å­˜æ³„æ¼
 		delete pInv;
 	}
 
 	inline void use_auto_ptr()
 	{
-		// auto_ptrµÄÎö¹¹º¯Êı»á¶Ô¶ÔÏóÖ´ĞĞdelete
+		// auto_ptrçš„ææ„å‡½æ•°ä¼šå¯¹å¯¹è±¡æ‰§è¡Œdelete
 		std::auto_ptr<Investment> pInv(createInvestment());
 
-		std::auto_ptr<Investment> pInv2(pInv);	// ÏÖÔÚpInv2Ö¸Ïò¶ÔÏó£¬pInvÎªnullptr
+		std::auto_ptr<Investment> pInv2(pInv);	// ç°åœ¨pInv2æŒ‡å‘å¯¹è±¡ï¼ŒpInvä¸ºnullptr
 
-		pInv = pInv2;							// ÏÖÔÚpInvÖ¸Ïò¶ÔÏó£¬pInv2Îªnullptr
+		pInv = pInv2;							// ç°åœ¨pInvæŒ‡å‘å¯¹è±¡ï¼ŒpInv2ä¸ºnullptr
 	}
 
 	inline void use_shared_ptr()
 	{
-		// shared_ptr¿ÉÒÔÁî¶à¸öÖ¸ÕëÖ¸ÏòÍ¬Ò»¸ö¶ÔÏó
+		// shared_ptrå¯ä»¥ä»¤å¤šä¸ªæŒ‡é’ˆæŒ‡å‘åŒä¸€ä¸ªå¯¹è±¡
 		std::shared_ptr<Investment> pInv(createInvestment());
 
-		std::shared_ptr<Investment> pInv2(pInv);	// pInvºÍpInv2Ö¸ÏòÍ¬Ò»¸ö¶ÔÏó
+		std::shared_ptr<Investment> pInv2(pInv);	// pInvå’ŒpInv2æŒ‡å‘åŒä¸€ä¸ªå¯¹è±¡
 	}
 
 	inline void use_unique_ptr()
 	{
-		// unique_ptr¿ÉÒÔÓÃÓÚ·ÖÅä¶¯Ì¬Êı×é
+		// unique_ptrå¯ä»¥ç”¨äºåˆ†é…åŠ¨æ€æ•°ç»„
 		std::unique_ptr<Investment[]> pInv(createInvestmentList(3));
 	}
 }

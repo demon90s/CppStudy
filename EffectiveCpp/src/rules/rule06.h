@@ -1,10 +1,10 @@
-// Ìõ¿î06£ºÈô²»ÏëÊ¹ÓÃ±àÒëÆ÷×Ô¶¯Éú³ÉµÄº¯Êı£¬¾Í¸ÃÃ÷È·¾Ü¾ø
+// æ¡æ¬¾06ï¼šè‹¥ä¸æƒ³ä½¿ç”¨ç¼–è¯‘å™¨è‡ªåŠ¨ç”Ÿæˆçš„å‡½æ•°ï¼Œå°±è¯¥æ˜ç¡®æ‹’ç»
 #ifndef __RULE06_H__
 #define __RULE06_H__
 
 extern void Rule06();
 
-// ³£ÓÃµÄ·½·¨£º½«³ÉÔ±ÉùÃ÷³ÉË½ÓĞÇÒ²»¶¨Òå
+// å¸¸ç”¨çš„æ–¹æ³•ï¼šå°†æˆå‘˜å£°æ˜æˆç§æœ‰ä¸”ä¸å®šä¹‰
 class HomeForSale
 {
 public:
@@ -15,15 +15,15 @@ private:
 	HomeForSale& operator=(const HomeForSale&);
 };
 
-// ÁíÒ»ÖÖ·½·¨£ºµ¥¶À¶¨ÒåÒ»¸ö²»¿É¿½±´µÄempty base class£¬ÁîÆäËûÀà¼Ì³Ğ
+// å¦ä¸€ç§æ–¹æ³•ï¼šå•ç‹¬å®šä¹‰ä¸€ä¸ªä¸å¯æ‹·è´çš„empty base classï¼Œä»¤å…¶ä»–ç±»ç»§æ‰¿
 class Uncopyable
 {
 protected:
-	Uncopyable() {}			// ÔÊĞíderived¶ÔÏó¹¹ÔìºÍÎö¹¹
+	Uncopyable() {}			// å…è®¸derivedå¯¹è±¡æ„é€ å’Œææ„
 	~Uncopyable() {}
 
 private:
-	Uncopyable(const Uncopyable&);		// ×èÖ¹copying
+	Uncopyable(const Uncopyable&);		// é˜»æ­¢copying
 	Uncopyable& operator=(const Uncopyable&);
 };
 

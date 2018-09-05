@@ -1,4 +1,4 @@
-// Ìõ¿î14£ºÔÚ×ÊÔ´¹ÜÀíÀàÖĞĞ¡ĞÄ copying ĞĞÎª
+// æ¡æ¬¾14ï¼šåœ¨èµ„æºç®¡ç†ç±»ä¸­å°å¿ƒ copying è¡Œä¸º
 #ifndef __RULE14_H__
 #define __RULE14_H__
 
@@ -31,8 +31,8 @@ namespace rule14
 		std::cout << __FUNCTION__ << std::endl;
 	}
 
-	// ÎªÁËÈ·±£½âËø£¬ĞèÒª½¨Á¢Ò»¸öRAII class¹ÜÀí
-	class Lock : private Uncopyable // RAII ¶ÔÏó±»¸´ÖÆÒ²Ğí²¢²»ºÏÀí£¬Òò´Ë¾Ü¾ø
+	// ä¸ºäº†ç¡®ä¿è§£é”ï¼Œéœ€è¦å»ºç«‹ä¸€ä¸ªRAII classç®¡ç†
+	class Lock : private Uncopyable // RAII å¯¹è±¡è¢«å¤åˆ¶ä¹Ÿè®¸å¹¶ä¸åˆç†ï¼Œå› æ­¤æ‹’ç»
 	{
 	public:
 		explicit Lock(Mutex *pm) : mutexPtr(pm) { lock(pm); }
@@ -42,7 +42,7 @@ namespace rule14
 		Mutex *mutexPtr;
 	};
 
-	// Ê¹ÓÃ shared_ptr µÄÉ¾³ıÆ÷¹ÜÀíÒıÓÃ¼ÆÊıÀàĞÍµÄ×ÊÔ´
+	// ä½¿ç”¨ shared_ptr çš„åˆ é™¤å™¨ç®¡ç†å¼•ç”¨è®¡æ•°ç±»å‹çš„èµ„æº
 	class Lock2
 	{
 	public:
