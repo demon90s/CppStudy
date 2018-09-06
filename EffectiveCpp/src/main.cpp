@@ -17,6 +17,7 @@
 #include "rule15.h"
 #include "rule16.h"
 #include "rule17.h"
+#include "rule18.h"
 
 int main()
 {
@@ -36,7 +37,8 @@ int main()
 	//Rule14();
 	//Rule15();
 	//Rule16();
-	Rule17();
+	//Rule17();
+	Rule18();
 
 #ifdef _MSC_VER
 	system("pause");
