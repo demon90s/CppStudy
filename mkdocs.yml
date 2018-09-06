@@ -16,6 +16,7 @@ pages:
       - ch01 C语言概述: CProgramming/ch01 C语言概述.md
       - ch02 C语言基本概念: CProgramming/ch02 C语言基本概念.md
       - ch03 格式化输入输出: CProgramming/ch03 格式化输入输出.md
+      - ch04 表达式: CProgramming/ch04 表达式.md
 
   - C++ Primer:
     - Chapters: 
