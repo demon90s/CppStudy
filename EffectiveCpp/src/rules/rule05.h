@@ -45,7 +45,7 @@ inline void NoCopyAssign()
 	NamedObject<int> no1(name, 0);
 	NamedObject<int> no2(name, 0);
 	
-	//no2 = no1; 无法赋值，函数已删除
+	//no2 = no1; // 无法赋值，函数已删除
 }
 
 #endif // __RULE05_H__

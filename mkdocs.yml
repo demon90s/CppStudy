@@ -72,6 +72,7 @@ pages:
       - 条款17：以独立语句将 newed 对象置入智能指针: EffectiveCpp/3 资源管理/条款17：以独立语句将 newed 对象置入智能指针.md
     - 4 设计与声明:
       - 条款18：让接口容易被正确使用，不易被误用: EffectiveCpp/4 设计与声明/条款18：让接口容易被正确使用，不易被误用.md
+      - 条款19：设计 class 犹如设计 type: EffectiveCpp/4 设计与声明/条款19：设计 class 犹如设计 type.md
 
 theme:
   name: 'material'
