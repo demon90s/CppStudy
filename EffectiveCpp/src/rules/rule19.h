@@ -1,4 +1,4 @@
-// Ìõ¿î19£ºÉè¼Æ class ÓÌÈçÉè¼Æ type
+// æ¡æ¬¾19ï¼šè®¾è®¡ class çŠ¹å¦‚è®¾è®¡ type
 #ifndef __RULE19_H__
 #define __RULE19_H__
 

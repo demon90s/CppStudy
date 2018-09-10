@@ -1,4 +1,4 @@
-// Ìõ¿î18£ºÈÃ½Ó¿ÚÈİÒ×±»ÕıÈ·Ê¹ÓÃ£¬²»Ò×±»ÎóÓÃ
+// æ¡æ¬¾18ï¼šè®©æ¥å£å®¹æ˜“è¢«æ­£ç¡®ä½¿ç”¨ï¼Œä¸æ˜“è¢«è¯¯ç”¨
 #ifndef __RULE18_H__
 #define __RULE18_H__
 
@@ -6,7 +6,7 @@ extern void Rule18();
 
 namespace rule18
 {
-	// Õâ¸öÀàĞÍµÄ½Ó¿Ú¿ÉÄÜ»á±»ÎóÓÃ£¬¼®ÓÉ´«Èë´íÎóµÄ²ÎÊı£¬ int ÎŞ·¨Ê¶±ğ²ÎÊıµÄÊµ¼ÊÀàĞÍ
+	// è¿™ä¸ªç±»å‹çš„æ¥å£å¯èƒ½ä¼šè¢«è¯¯ç”¨ï¼Œç±ç”±ä¼ å…¥é”™è¯¯çš„å‚æ•°ï¼Œ int æ— æ³•è¯†åˆ«å‚æ•°çš„å®é™…ç±»å‹
 	class Date1 {
 	public:
 		Date1(int month, int day, int year) : month_(month), day_(day), year_(year) {}
@@ -15,7 +15,7 @@ namespace rule18
 		int month_, day_, year_;
 	};
 
-	// Ê¹ÓÃÀàĞÍÏµÍ³
+	// ä½¿ç”¨ç±»å‹ç³»ç»Ÿ
 	struct Day {
 		explicit Day(int d) : val(d) {}
 		int	val;
@@ -23,12 +23,12 @@ namespace rule18
 
 	struct Month {
 	public:
-		static Month Jan() { return Month(1); }	// ÒÔº¯ÊıÌæ»»¶ÔÏó£¬±íÏÖÄ³¸öÌØ¶¨ÔÂ·İ
+		static Month Jan() { return Month(1); }	// ä»¥å‡½æ•°æ›¿æ¢å¯¹è±¡ï¼Œè¡¨ç°æŸä¸ªç‰¹å®šæœˆä»½
 		static Month Feb() { return Month(2); }
 		//...
 		static Month Dec() { return Month(12); }
 	private:
-		explicit Month(int m) : val(m) {}		// ×èÖ¹Éú³ÉĞÂµÄÔÂ·İ
+		explicit Month(int m) : val(m) {}		// é˜»æ­¢ç”Ÿæˆæ–°çš„æœˆä»½
 		int val;
 	};
 

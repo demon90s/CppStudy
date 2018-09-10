@@ -54,3 +54,9 @@
 
 [条款17：以独立语句将 newed 对象置入智能指针](./src/rules/rule17.h)
 
+
+[条款18：让接口容易被正确使用，不易被误用](./src/rules/rule18.h)
+
+
+[条款19：设计 class 犹如设计 type](./src/rules/rule19.h)
+
