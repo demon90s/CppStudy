@@ -1,5 +1,7 @@
 /* Sums a serias of numbers */
 
+#include <stdio.h>
+
 int main()
 {
 	int n, sum = 0;

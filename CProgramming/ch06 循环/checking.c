@@ -1,5 +1,7 @@
 /* Balances a checkbook */
 
+#include <stdio.h>
+
 int main()
 {
 	int cmd;
