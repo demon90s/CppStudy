@@ -17,9 +17,9 @@ int main()
 	scanf("%d:%d", &hh, &mm);
 
 	if (hh <= 12)
-		printf("Equivalent 12-hour time: %d:%d AM", hh, mm);
+		printf("Equivalent 12-hour time: %d:%d AM\n", hh, mm);
 	else
-		printf("Equivalent 12-hour time: %d:%d PM", hh - 12, mm);
+		printf("Equivalent 12-hour time: %d:%d PM\n", hh - 12, mm);
 
 	return 0;
 }
