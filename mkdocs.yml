@@ -18,6 +18,7 @@ pages:
       - ch03 格式化输入输出: CProgramming/ch03 格式化输入输出.md
       - ch04 表达式: CProgramming/ch04 表达式.md
       - ch05 选择语句: CProgramming/ch05 选择语句.md
+      - ch06 循环: CProgramming/ch06 循环.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
