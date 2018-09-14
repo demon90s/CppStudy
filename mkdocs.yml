@@ -74,6 +74,8 @@ pages:
     - 4 设计与声明:
       - 条款18：让接口容易被正确使用，不易被误用: EffectiveCpp/4 设计与声明/条款18：让接口容易被正确使用，不易被误用.md
       - 条款19：设计 class 犹如设计 type: EffectiveCpp/4 设计与声明/条款19：设计 class 犹如设计 type.md
+      - 条款20：宁以 pass-by-reference-to-const 替换 pass-by-value: EffectiveCpp/4 设计与声明/条款20：宁以 pass-by-reference-to-const 替换 pass-by-value.md
+      - 条款21：必须返回对象时，别妄想返回其 reference: EffectiveCpp/4 设计与声明/条款21：必须返回对象时，别妄想返回其 reference.md
 
 theme:
   name: 'material'
