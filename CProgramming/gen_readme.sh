@@ -37,7 +37,7 @@ main()
 		local num=0 # 第几个练习
 		for ex_file in $ex_files; do
 			num=$((num + 1))
-			echo -e "|[$num](./$chapter_dir/$ex_file)\c" >> ../$filename
+			echo -e "|[练习$num](./$chapter_dir/$ex_file)\c" >> ../$filename
 
 			# 8列一行
 			if [ $((num % 8)) = "0" ]; then
