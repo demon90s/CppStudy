@@ -19,6 +19,7 @@ main()
 	local i=2
 	while [ $i -le $chapters ]; do
 		local chapter_prefix=ch$(printf "%.2d\n" $i)
+		local chapter_num=$i
 		i=$((i+1))
 
 		local chapter_dir=$(ls -d $chapter_prefix* 2>/dev/null)
@@ -29,7 +30,9 @@ main()
 		cd "$chapter_dir"
 
 		local ex_files=$(ls -f ex_*)
-		echo -e "### $chapter_dir\n" >> ../$filename
+
+		local chapter_name="第${chapter_num}章 ${chapter_dir##*_}"
+		echo -e "### $chapter_name\n" >> ../$filename
 
 		echo "|E|X|E|R|C|I|S|E|" >> ../$filename
 		echo "| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |" >> ../$filename
