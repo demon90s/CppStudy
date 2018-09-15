@@ -7,7 +7,7 @@
 
 int main()
 {
-	char c;
+	int c;
 
 	c = 'X';
 	putchar(c);
