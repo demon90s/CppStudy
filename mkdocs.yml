@@ -19,6 +19,7 @@ pages:
       - ch04 表达式: CProgramming/ch04 表达式.md
       - ch05 选择语句: CProgramming/ch05 选择语句.md
       - ch06 循环: CProgramming/ch06 循环.md
+      - ch07 基本类型: CProgramming/ch07 基本类型.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
