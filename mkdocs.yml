@@ -77,6 +77,7 @@ pages:
       - 条款19：设计 class 犹如设计 type: EffectiveCpp/4 设计与声明/条款19：设计 class 犹如设计 type.md
       - 条款20：宁以 pass-by-reference-to-const 替换 pass-by-value: EffectiveCpp/4 设计与声明/条款20：宁以 pass-by-reference-to-const 替换 pass-by-value.md
       - 条款21：必须返回对象时，别妄想返回其 reference: EffectiveCpp/4 设计与声明/条款21：必须返回对象时，别妄想返回其 reference.md
+      - 条款22：将成员变量声明为 private: EffectiveCpp/4 设计与声明/条款22：将成员变量声明为 private.md
 
 theme:
   name: 'material'
