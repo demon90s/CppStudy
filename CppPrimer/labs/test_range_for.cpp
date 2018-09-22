@@ -11,6 +11,9 @@ public:
 		delete[] list_;
 	}
 
+	IntArr(const IntArr&) = delete;
+	IntArr& operator=(const IntArr&) = delete;
+
 	int& operator[](int i)
 	{ return list_[i]; }
 
