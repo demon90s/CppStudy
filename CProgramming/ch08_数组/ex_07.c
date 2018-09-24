@@ -14,6 +14,7 @@
  */
 
 #include <stdio.h>
+#include <ctype.h>
 
 #define MESSAGE_LEN 32
 

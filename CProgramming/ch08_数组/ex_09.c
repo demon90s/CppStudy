@@ -32,5 +32,7 @@ int main()
 		{1, 1, 1, 1, 0, 1, 1}
 	};
 
+	(void)segments;
+
 	return 0;
 }

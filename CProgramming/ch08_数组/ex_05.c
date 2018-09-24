@@ -21,7 +21,7 @@ int main()
 {
 	int a[N], i;
 
-	printf("Enter %d numbers: ", ARR_LEN);
+	printf("Enter %lu numbers: ", ARR_LEN);
 	for (i = 0; i < ARR_LEN; ++i)
 		scanf("%d", &a[i]);
 
