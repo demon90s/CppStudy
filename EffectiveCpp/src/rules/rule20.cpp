@@ -11,7 +11,7 @@
 unsigned long PITime()
 {
 #ifdef __unix
-	timezone tz = { 0, 0 };
+	struct timezone tz = { 0, 0 };
 	timeval time;
 	gettimeofday(&time, &tz);
 	return (time.tv_sec * 1000 + time.tv_usec / 1000);
