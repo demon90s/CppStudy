@@ -38,7 +38,7 @@
     
     
       
-        <title>条款08：别让异常逃离析构函数 - C++ Study Note</title>
+        <title>条款23：宁以 non-member, non-friend 替换 member 函数 - C++ Study Note</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#08" tabindex="1" class="md-skip">
+      <a href="#23-non-member-non-friend-member" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -121,7 +121,7 @@
                 C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                条款08：别让异常逃离析构函数
+                条款23：宁以 non-member, non-friend 替换 member 函数
               </span>
             
           
@@ -972,12 +972,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
     <label class="md-nav__link" for="nav-4-2">
       2 构造、析构、赋值运算
@@ -995,7 +993,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE05%EF%BC%9A%E4%BA%86%E8%A7%A3C%2B%2B%E9%BB%98%E9%BB%98%E7%BC%96%E5%86%99%E5%B9%B6%E8%B0%83%E7%94%A8%E5%93%AA%E4%BA%9B%E5%87%BD%E6%95%B0/" title="条款05：了解C++默默编写并调用哪些函数" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE05%EF%BC%9A%E4%BA%86%E8%A7%A3C%2B%2B%E9%BB%98%E9%BB%98%E7%BC%96%E5%86%99%E5%B9%B6%E8%B0%83%E7%94%A8%E5%93%AA%E4%BA%9B%E5%87%BD%E6%95%B0/" title="条款05：了解C++默默编写并调用哪些函数" class="md-nav__link">
       条款05：了解C++默默编写并调用哪些函数
     </a>
   </li>
@@ -1007,7 +1005,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE06%EF%BC%9A%E8%8B%A5%E4%B8%8D%E6%83%B3%E4%BD%BF%E7%94%A8%E7%BC%96%E8%AF%91%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B0%B1%E8%AF%A5%E6%98%8E%E7%A1%AE%E6%8B%92%E7%BB%9D/" title="条款06：若不想使用编译器自动生成的函数，就该明确拒绝" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE06%EF%BC%9A%E8%8B%A5%E4%B8%8D%E6%83%B3%E4%BD%BF%E7%94%A8%E7%BC%96%E8%AF%91%E5%99%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B0%B1%E8%AF%A5%E6%98%8E%E7%A1%AE%E6%8B%92%E7%BB%9D/" title="条款06：若不想使用编译器自动生成的函数，就该明确拒绝" class="md-nav__link">
       条款06：若不想使用编译器自动生成的函数，就该明确拒绝
     </a>
   </li>
@@ -1019,7 +1017,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE07%EF%BC%9A%E4%B8%BA%E5%A4%9A%E6%80%81%E5%9F%BA%E7%B1%BB%E5%A3%B0%E6%98%8Evirtual%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款07：为多态基类声明virtual析构函数" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE07%EF%BC%9A%E4%B8%BA%E5%A4%9A%E6%80%81%E5%9F%BA%E7%B1%BB%E5%A3%B0%E6%98%8Evirtual%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款07：为多态基类声明virtual析构函数" class="md-nav__link">
       条款07：为多态基类声明virtual析构函数
     </a>
   </li>
@@ -1029,20 +1027,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="条款08：别让异常逃离析构函数" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE08%EF%BC%9A%E5%88%AB%E8%AE%A9%E5%BC%82%E5%B8%B8%E9%80%83%E7%A6%BB%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款08：别让异常逃离析构函数" class="md-nav__link">
       条款08：别让异常逃离析构函数
     </a>
-    
   </li>
 
         
@@ -1052,7 +1041,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE09%EF%BC%9A%E7%BB%9D%E4%B8%8D%E5%9C%A8%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8virtual%E5%87%BD%E6%95%B0/" title="条款09：绝不在构造和析构过程中调用virtual函数" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE09%EF%BC%9A%E7%BB%9D%E4%B8%8D%E5%9C%A8%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8virtual%E5%87%BD%E6%95%B0/" title="条款09：绝不在构造和析构过程中调用virtual函数" class="md-nav__link">
       条款09：绝不在构造和析构过程中调用virtual函数
     </a>
   </li>
@@ -1064,7 +1053,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE10%EF%BC%9A%E4%BB%A4operator%3D%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AAreference%20to%20this/" title="条款10：令operator=返回一个reference to this" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE10%EF%BC%9A%E4%BB%A4operator%3D%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AAreference%20to%20this/" title="条款10：令operator=返回一个reference to this" class="md-nav__link">
       条款10：令operator=返回一个reference to this
     </a>
   </li>
@@ -1076,7 +1065,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE11%EF%BC%9A%E5%9C%A8operator%3D%E4%B8%AD%E5%A4%84%E7%90%86%E2%80%9C%E8%87%AA%E6%88%91%E8%B5%8B%E5%80%BC%E2%80%9D/" title="条款11：在operator=中处理“自我赋值”" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE11%EF%BC%9A%E5%9C%A8operator%3D%E4%B8%AD%E5%A4%84%E7%90%86%E2%80%9C%E8%87%AA%E6%88%91%E8%B5%8B%E5%80%BC%E2%80%9D/" title="条款11：在operator=中处理“自我赋值”" class="md-nav__link">
       条款11：在operator=中处理“自我赋值”
     </a>
   </li>
@@ -1088,7 +1077,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%9D%A1%E6%AC%BE12%EF%BC%9A%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%97%B6%E5%8B%BF%E5%BF%98%E5%85%B6%E6%AF%8F%E4%B8%80%E4%B8%AA%E6%88%90%E5%88%86/" title="条款12：复制对象时勿忘其每一个成分" class="md-nav__link">
+    <a href="../../2%20%E6%9E%84%E9%80%A0%E3%80%81%E6%9E%90%E6%9E%84%E3%80%81%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/%E6%9D%A1%E6%AC%BE12%EF%BC%9A%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%97%B6%E5%8B%BF%E5%BF%98%E5%85%B6%E6%AF%8F%E4%B8%80%E4%B8%AA%E6%88%90%E5%88%86/" title="条款12：复制对象时勿忘其每一个成分" class="md-nav__link">
       条款12：复制对象时勿忘其每一个成分
     </a>
   </li>
@@ -1187,10 +1176,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" checked>
     
     <label class="md-nav__link" for="nav-4-4">
       4 设计与声明
@@ -1208,7 +1199,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE18%EF%BC%9A%E8%AE%A9%E6%8E%A5%E5%8F%A3%E5%AE%B9%E6%98%93%E8%A2%AB%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%8D%E6%98%93%E8%A2%AB%E8%AF%AF%E7%94%A8/" title="条款18：让接口容易被正确使用，不易被误用" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE18%EF%BC%9A%E8%AE%A9%E6%8E%A5%E5%8F%A3%E5%AE%B9%E6%98%93%E8%A2%AB%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%8D%E6%98%93%E8%A2%AB%E8%AF%AF%E7%94%A8/" title="条款18：让接口容易被正确使用，不易被误用" class="md-nav__link">
       条款18：让接口容易被正确使用，不易被误用
     </a>
   </li>
@@ -1220,7 +1211,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE19%EF%BC%9A%E8%AE%BE%E8%AE%A1%20class%20%E7%8A%B9%E5%A6%82%E8%AE%BE%E8%AE%A1%20type/" title="条款19：设计 class 犹如设计 type" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE19%EF%BC%9A%E8%AE%BE%E8%AE%A1%20class%20%E7%8A%B9%E5%A6%82%E8%AE%BE%E8%AE%A1%20type/" title="条款19：设计 class 犹如设计 type" class="md-nav__link">
       条款19：设计 class 犹如设计 type
     </a>
   </li>
@@ -1232,7 +1223,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE20%EF%BC%9A%E5%AE%81%E4%BB%A5%20pass-by-reference-to-const%20%E6%9B%BF%E6%8D%A2%20pass-by-value/" title="条款20：宁以 pass-by-reference-to-const 替换 pass-by-value" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE20%EF%BC%9A%E5%AE%81%E4%BB%A5%20pass-by-reference-to-const%20%E6%9B%BF%E6%8D%A2%20pass-by-value/" title="条款20：宁以 pass-by-reference-to-const 替换 pass-by-value" class="md-nav__link">
       条款20：宁以 pass-by-reference-to-const 替换 pass-by-value
     </a>
   </li>
@@ -1244,7 +1235,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE21%EF%BC%9A%E5%BF%85%E9%A1%BB%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1%E6%97%B6%EF%BC%8C%E5%88%AB%E5%A6%84%E6%83%B3%E8%BF%94%E5%9B%9E%E5%85%B6%20reference/" title="条款21：必须返回对象时，别妄想返回其 reference" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE21%EF%BC%9A%E5%BF%85%E9%A1%BB%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1%E6%97%B6%EF%BC%8C%E5%88%AB%E5%A6%84%E6%83%B3%E8%BF%94%E5%9B%9E%E5%85%B6%20reference/" title="条款21：必须返回对象时，别妄想返回其 reference" class="md-nav__link">
       条款21：必须返回对象时，别妄想返回其 reference
     </a>
   </li>
@@ -1256,7 +1247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE22%EF%BC%9A%E5%B0%86%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%BA%20private/" title="条款22：将成员变量声明为 private" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE22%EF%BC%9A%E5%B0%86%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%BA%20private/" title="条款22：将成员变量声明为 private" class="md-nav__link">
       条款22：将成员变量声明为 private
     </a>
   </li>
@@ -1266,11 +1257,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE23%EF%BC%9A%E5%AE%81%E4%BB%A5%20non-member%2C%20non-friend%20%E6%9B%BF%E6%8D%A2%20member%20%E5%87%BD%E6%95%B0/" title="条款23：宁以 non-member, non-friend 替换 member 函数" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="条款23：宁以 non-member, non-friend 替换 member 函数" class="md-nav__link md-nav__link--active">
       条款23：宁以 non-member, non-friend 替换 member 函数
     </a>
+    
   </li>
 
         
@@ -1280,7 +1280,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE24%EF%BC%9A%E8%8B%A5%E6%89%80%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%86%E9%9C%80%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%8C%E8%AF%B7%E4%B8%BA%E6%AD%A4%E9%87%87%E7%94%A8%20non-member%20%E5%87%BD%E6%95%B0/" title="条款24：若所有参数皆需类型转换，请为此采用 non-member 函数" class="md-nav__link">
+    <a href="../%E6%9D%A1%E6%AC%BE24%EF%BC%9A%E8%8B%A5%E6%89%80%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%86%E9%9C%80%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%8C%E8%AF%B7%E4%B8%BA%E6%AD%A4%E9%87%87%E7%94%A8%20non-member%20%E5%87%BD%E6%95%B0/" title="条款24：若所有参数皆需类型转换，请为此采用 non-member 函数" class="md-nav__link">
       条款24：若所有参数皆需类型转换，请为此采用 non-member 函数
     </a>
   </li>
@@ -1323,63 +1323,64 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/EffectiveCpp/2 构造、析构、赋值运算/条款08：别让异常逃离析构函数.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/EffectiveCpp/4 设计与声明/条款23：宁以 non-member, non-friend 替换 member 函数.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="08">条款08：别让异常逃离析构函数</h1>
+                <h1 id="23-non-member-non-friend-member">条款23：宁以 non-member, non-friend 替换 member 函数</h1>
 <hr />
-<p>C++并不禁止析构函数吐出异常，但它不鼓励你这样做。因为这可能造成同时存在多个异常，C++认为这太多了。因此只要析构函数吐出了异常，程序可能过早结束或出现不明确的行文。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>在CentOS7和VS2015上面测试，都没有办法捕获析构函数吐出的异常，程序结束。</p>
-</div>
-<p>但如果析构函数必须执行一个动作，而该动作可能会在失败时抛出异常，怎么办？这时候可以在析构函数内将异常捕获并处理。</p>
-<p>比如：</p>
-<div class="codehilite"><pre><span></span><span class="n">DBConn</span><span class="o">::~</span><span class="n">DBConn</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">try</span> <span class="p">{</span> <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">();</span> <span class="p">}</span>
-    <span class="k">catch</span> <span class="p">(...)</span> <span class="p">{</span>
-        <span class="c1">// 制作运转记录，记下对close的调用失败</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">abort</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>一般而言，将异常吞掉是个坏主意，因为它压制了“某些动作失败”的重要信息！然而有时吞下异常也比负担“草率结束程序”或“不明确行为带来的风险”好。</p>
-<p>还有一个较佳的策略是重新设计DBConn接口，使其客户有机会对可能出现的问题作出反应。比如提供一个close函数，赋予客户一个机会得以处理“因该操作而发生的异常”。DBConn也可以在析构函数中调用close。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">DBConn</span>
-<span class="p">{</span>
+<p>有一些函数，可能用 non-member, non-friend 来实现会更好。</p>
+<p>以此为例：</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">WebBrowser</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="n">close</span><span class="p">()</span>        <span class="c1">// 供客户使用的新函数</span>
+    <span class="kt">void</span> <span class="n">clearCache</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-        <span class="n">closed</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">cache</span><span class="p">));</span>
     <span class="p">}</span>
 
-    <span class="o">~</span><span class="n">DBConn</span><span class="p">()</span>
+    <span class="kt">void</span> <span class="n">clearHistory</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">closed</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">try</span> <span class="p">{</span> <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">();</span> <span class="p">}</span>
-            <span class="k">catch</span> <span class="p">(...)</span> <span class="p">{</span>
-                <span class="c1">// 制作运转记录，记下对close的调用失败</span>
-                <span class="n">std</span><span class="o">::</span><span class="n">abort</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">history</span><span class="p">));</span>
     <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">removeCookies</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">cookies</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">cookies</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 一个执行所有清理工作的方式</span>
+    <span class="c1">// 但这种方式的封装性低：越多函数可访问封装数据，封装性就越低</span>
+    <span class="kt">void</span> <span class="n">clearEverthing</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">clearCache</span><span class="p">();</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">clearHistory</span><span class="p">();</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">removeCookies</span><span class="p">();</span>
+    <span class="p">}</span>
+
 <span class="k">private</span><span class="o">:</span>
-    <span class="n">DBConnection</span> <span class="n">db</span><span class="p">;</span>
-    <span class="kt">bool</span> <span class="n">closed</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">cache</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">history</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">cookies</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>如果 clearEverthing 是一个 member 函数，它可能会降低封装性。如果提供一个 non-member 函数，比如：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 另一种执行所有清理工作的方式</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">clearBrowser</span><span class="p">(</span><span class="n">WebBrowser</span> <span class="o">&amp;</span><span class="n">wb</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">clearCache</span><span class="p">();</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">clearHistory</span><span class="p">();</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">removeCookies</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 
 
+<p>这样的函数允许对 WebBrowser 相关机能有较大的包裹弹性（ packaging flexibility ），而那最终导致较低的编译相依度，增加 WebBrowser 的可延伸性。 </p>
+<p>C++中比较自然的做法是让 clearBrowser 成为一个 non-member 函数并且位于 WebBrowser 所在的同一个 namespace 内。</p>
+<p>namespace 和 classes 不同，前者可以跨越多个源码文件而后者不能。</p>
 <div class="admonition tip">
 <p class="admonition-title">请记住</p>
-<ul>
-<li>析构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该捕捉任何异常，然后吞下它们（不传播）或结束程序。</li>
-<li>如果客户需要对某个操作函数运行期间抛出的异常做出反应，那么class应该提供一个普通函数（而非在析构函数中）执行该操作。</li>
-</ul>
+<p>宁可拿 non-member non-friend 函数替换 member 函数。这样做可以增加封装性、包裹弹性和机能扩充性。</p>
 </div>
                 
                   
@@ -1401,7 +1402,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../%E6%9D%A1%E6%AC%BE07%EF%BC%9A%E4%B8%BA%E5%A4%9A%E6%80%81%E5%9F%BA%E7%B1%BB%E5%A3%B0%E6%98%8Evirtual%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="条款07：为多态基类声明virtual析构函数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../%E6%9D%A1%E6%AC%BE22%EF%BC%9A%E5%B0%86%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%BA%20private/" title="条款22：将成员变量声明为 private" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1410,19 +1411,19 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                条款07：为多态基类声明virtual析构函数
+                条款22：将成员变量声明为 private
               </span>
             </div>
           </a>
         
         
-          <a href="../%E6%9D%A1%E6%AC%BE09%EF%BC%9A%E7%BB%9D%E4%B8%8D%E5%9C%A8%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B0%83%E7%94%A8virtual%E5%87%BD%E6%95%B0/" title="条款09：绝不在构造和析构过程中调用virtual函数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E6%9D%A1%E6%AC%BE24%EF%BC%9A%E8%8B%A5%E6%89%80%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%86%E9%9C%80%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%8C%E8%AF%B7%E4%B8%BA%E6%AD%A4%E9%87%87%E7%94%A8%20non-member%20%E5%87%BD%E6%95%B0/" title="条款24：若所有参数皆需类型转换，请为此采用 non-member 函数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                条款09：绝不在构造和析构过程中调用virtual函数
+                条款24：若所有参数皆需类型转换，请为此采用 non-member 函数
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

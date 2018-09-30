@@ -447,6 +447,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ch08%20%E6%95%B0%E7%BB%84/" title="ch08 数组" class="md-nav__link">
+      ch08 数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ch09%20%E5%87%BD%E6%95%B0/" title="ch09 函数" class="md-nav__link">
+      ch09 函数
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1226,6 +1250,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../EffectiveCpp/4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE22%EF%BC%9A%E5%B0%86%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%BA%20private/" title="条款22：将成员变量声明为 private" class="md-nav__link">
+      条款22：将成员变量声明为 private
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../EffectiveCpp/4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE23%EF%BC%9A%E5%AE%81%E4%BB%A5%20non-member%2C%20non-friend%20%E6%9B%BF%E6%8D%A2%20member%20%E5%87%BD%E6%95%B0/" title="条款23：宁以 non-member, non-friend 替换 member 函数" class="md-nav__link">
+      条款23：宁以 non-member, non-friend 替换 member 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../EffectiveCpp/4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE24%EF%BC%9A%E8%8B%A5%E6%89%80%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%86%E9%9C%80%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%8C%E8%AF%B7%E4%B8%BA%E6%AD%A4%E9%87%87%E7%94%A8%20non-member%20%E5%87%BD%E6%95%B0/" title="条款24：若所有参数皆需类型转换，请为此采用 non-member 函数" class="md-nav__link">
+      条款24：若所有参数皆需类型转换，请为此采用 non-member 函数
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1309,6 +1369,19 @@
 <p><strong>跳过无限数量的空格字符（p87）</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">())</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="p">);</span> <span class="cm">/* skips blanks */</span>
 </pre></div>
+
+
+<p><strong>数组和 for 循环（p99）</strong></p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>           <span class="cm">/* clear a */</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>     <span class="cm">/* reads data into a */</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>            <span class="cm">/* sums the elements of a */</span>
+</pre></div>
                 
                   
                 
@@ -1329,7 +1402,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="ch07 基本类型" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../ch09%20%E5%87%BD%E6%95%B0/" title="ch09 函数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1338,7 +1411,7 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ch07 基本类型
+                ch09 函数
               </span>
             </div>
           </a>
