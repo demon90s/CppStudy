@@ -22,3 +22,4 @@
 #include "rule21.h"
 #include "rule22.h"
 #include "rule23.h"
+#include "rule24.h"

@@ -23,6 +23,7 @@
 #include "rule21.h"
 #include "rule22.h"
 #include "rule23.h"
+#include "rule24.h"
 
 int main()
 {
@@ -48,7 +49,8 @@ int main()
 	//Rule20();
 	//Rule21();
 	//Rule22();
-	Rule23();
+	//Rule23();
+	Rule24();
 
 #ifdef _MSC_VER
 	system("pause");
