@@ -22,6 +22,7 @@ pages:
       - ch07 基本类型: CProgramming/ch07 基本类型.md
       - ch08 数组: CProgramming/ch08 数组.md
       - ch09 函数: CProgramming/ch09 函数.md
+      - ch10 程序结构: CProgramming/ch10 程序结构.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
