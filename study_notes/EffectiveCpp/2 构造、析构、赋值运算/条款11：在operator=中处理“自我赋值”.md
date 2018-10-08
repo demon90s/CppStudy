@@ -56,6 +56,9 @@ delete tmp;
 return *this;
 ```
 
+!!!note "my note"
+	即先 new ，然后 delete ，保证 new 成功。
+
 ## copy and swap技术
 
 这也是一个正确的做法：

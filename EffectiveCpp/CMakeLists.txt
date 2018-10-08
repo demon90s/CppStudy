@@ -15,9 +15,11 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 INCLUDE_DIRECTORIES(src/rules)
 
 AUX_SOURCE_DIRECTORY(src SRC_FILES)
+SET(SRC_FILES ${SRC_FILES} "src/pitime.h")
+
 FILE(GLOB_RECURSE RULE_FILES "src/rules/*.cpp" "src/rules/*.h")
 
 source_group(src FILES ${SRC_FILES})
 source_group(rules FILES ${RULE_FILES})
 
-ADD_EXECUTABLE(main ${SRC_FILES} ${RULE_FILES})
+ADD_EXECUTABLE(main ${SRC_FILES} ${RULE_FILES} ${HEADER_FILES})
