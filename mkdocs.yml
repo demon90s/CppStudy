@@ -83,6 +83,7 @@ pages:
       - 条款22：将成员变量声明为 private: EffectiveCpp/4 设计与声明/条款22：将成员变量声明为 private.md
       - 条款23：宁以 non-member, non-friend 替换 member 函数: EffectiveCpp/4 设计与声明/条款23：宁以 non-member, non-friend 替换 member 函数.md
       - 条款24：若所有参数皆需类型转换，请为此采用 non-member 函数: EffectiveCpp/4 设计与声明/条款24：若所有参数皆需类型转换，请为此采用 non-member 函数.md
+      - 条款25：考虑写出一个不抛异常的 swap 函数: EffectiveCpp/4 设计与声明/条款25：考虑写出一个不抛异常的 swap 函数.md
 
 theme:
   name: 'material'

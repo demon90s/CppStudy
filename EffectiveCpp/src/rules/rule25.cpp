@@ -16,7 +16,9 @@ void Rule25()
 		 采用自定义的 swap 操作，直接交换指针，而不拷贝具体的内容， HUGE SPEED 提升
 		*/
 		//std::swap(w1, w2);
-		WidgetStuff::swap(w1, w2);
+
+		using namespace std;
+		swap(w1, w2);	// 尽管有 using 声明式，但仍会调用正确的版本
 	}
 	unsigned long end_time = PITime();
 

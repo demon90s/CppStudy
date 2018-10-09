@@ -48,11 +48,9 @@ namespace rule25
 		WidgetImpl *pImpl;		// 指针，所指对象含 Widget 数据
 	};
 
-	namespace WidgetStuff {
-		inline void swap(Widget& a, Widget& b)
-		{
-			a.swap(b);
-		}
+	inline void swap(Widget& a, Widget& b)
+	{
+		a.swap(b);
 	}
 }
 
