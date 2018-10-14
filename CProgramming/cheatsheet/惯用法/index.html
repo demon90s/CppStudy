@@ -483,6 +483,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ch11%20%E6%8C%87%E9%92%88/" title="ch11 指针" class="md-nav__link">
+      ch11 指针
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" title="ch12 指针和数组" class="md-nav__link">
+      ch12 指针和数组
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1298,6 +1322,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../EffectiveCpp/4%20%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%A3%B0%E6%98%8E/%E6%9D%A1%E6%AC%BE25%EF%BC%9A%E8%80%83%E8%99%91%E5%86%99%E5%87%BA%E4%B8%80%E4%B8%AA%E4%B8%8D%E6%8A%9B%E5%BC%82%E5%B8%B8%E7%9A%84%20swap%20%E5%87%BD%E6%95%B0/" title="条款25：考虑写出一个不抛异常的 swap 函数" class="md-nav__link">
+      条款25：考虑写出一个不抛异常的 swap 函数
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1394,6 +1430,18 @@
 <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
     <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>            <span class="cm">/* sums the elements of a */</span>
 </pre></div>
+
+
+<p><strong>数组名作为指针（p160）</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">N</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>定义字符串变量</strong></p>
+<div class="codehilite"><pre><span></span><span class="cp">#define STR_LEN 80</span>
+<span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="n">STR_LEN</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</pre></div>
                 
                   
                 
@@ -1414,7 +1462,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" title="ch10 程序结构" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" title="ch12 指针和数组" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1423,7 +1471,7 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ch10 程序结构
+                ch12 指针和数组
               </span>
             </div>
           </a>

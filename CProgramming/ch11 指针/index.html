@@ -38,7 +38,7 @@
     
     
       
-        <title>ch03 格式化输入输出 - C++ Study Note</title>
+        <title>ch11 指针 - C++ Study Note</title>
       
     
     
@@ -121,7 +121,7 @@
                 C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                ch03 格式化输入输出
+                ch11 指针
               </span>
             
           
@@ -393,96 +393,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        ch03 格式化输入输出
-      </label>
-    
-    <a href="./" title="ch03 格式化输入输出" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch03%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="ch03 格式化输入输出" class="md-nav__link">
       ch03 格式化输入输出
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#printf" title="printf 函数" class="md-nav__link">
-    printf 函数
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="转换说明" class="md-nav__link">
-    转换说明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="转义序列" class="md-nav__link">
-    转义序列
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scanf" title="scanf 函数" class="md-nav__link">
-    scanf 函数
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scanf_1" title="scanf 函数的工作方法" class="md-nav__link">
-    scanf 函数的工作方法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="格式串中的普通字符" class="md-nav__link">
-    格式串中的普通字符
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -574,11 +489,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch11%20%E6%8C%87%E9%92%88/" title="ch11 指针" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        ch11 指针
+      </label>
+    
+    <a href="./" title="ch11 指针" class="md-nav__link md-nav__link--active">
       ch11 指针
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="指针变量" class="md-nav__link">
+    指针变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="取地址运算符和间接寻址运算符" class="md-nav__link">
+    取地址运算符和间接寻址运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="取地址运算符" class="md-nav__link">
+    取地址运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="间接寻址运算符" class="md-nav__link">
+    间接寻址运算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="指针赋值" class="md-nav__link">
+    指针赋值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="指针作为参数" class="md-nav__link">
+    指针作为参数
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1441,23 +1435,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#printf" title="printf 函数" class="md-nav__link">
-    printf 函数
+  <a href="#_2" title="指针变量" class="md-nav__link">
+    指针变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="取地址运算符和间接寻址运算符" class="md-nav__link">
+    取地址运算符和间接寻址运算符
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="转换说明" class="md-nav__link">
-    转换说明
+  <a href="#_4" title="取地址运算符" class="md-nav__link">
+    取地址运算符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="转义序列" class="md-nav__link">
-    转义序列
+  <a href="#_5" title="间接寻址运算符" class="md-nav__link">
+    间接寻址运算符
   </a>
   
 </li>
@@ -1468,29 +1469,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scanf" title="scanf 函数" class="md-nav__link">
-    scanf 函数
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scanf_1" title="scanf 函数的工作方法" class="md-nav__link">
-    scanf 函数的工作方法
+  <a href="#_6" title="指针赋值" class="md-nav__link">
+    指针赋值
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="格式串中的普通字符" class="md-nav__link">
-    格式串中的普通字符
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="指针作为参数" class="md-nav__link">
+    指针作为参数
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1510,62 +1498,62 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch03 格式化输入输出.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch11 指针.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">第三章 格式化输入输出</h1>
-<p>scanf 函数和 printf 函数是C语言使用最频繁的两个函数，它们用来支持格式化的读和写。</p>
+                <h1 id="_1">第十一章 指针</h1>
 <hr />
-<h2 id="printf">printf 函数</h2>
-<p>printf 函数被设计用来显示格式串（ format string ）的内容，并且在字符串指定位置插入可能的值。</p>
-<div class="codehilite"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="err">格式串</span><span class="p">,</span> <span class="err">表达式</span><span class="mi">1</span><span class="p">,</span> <span class="err">表达式</span><span class="mi">2</span><span class="p">,</span> <span class="p">...);</span>
+<h2 id="_2">指针变量</h2>
+<p>现代计算机把<strong>内存分隔为字节（byte）</strong>。每个字节都有唯一的地址（address）。</p>
+<p>变量占有一个或多个字节的内存，把第一个字节的地址称为变量的地址。</p>
+<p>地址是一个整数，用指针类型（pointer）的变量来存储。</p>
+<p><strong>指针变量的声明</strong></p>
+<p>在变量名前加星号，来声明一个指针变量。如：</p>
+<div class="codehilite"><pre><span></span>int *p;
 </pre></div>
 
 
-<p>格式串包含普通字符和转换说明（ conversion specification ），其中转换说明以字符%开头。</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>C语言编译器不会检测格式串中转换说明的数量是否和输出项的数量相匹配。</p>
-</div>
-<h3 id="_2">转换说明</h3>
-<p>在通用的情况下，转换说明可以有%m.pX格式或%-m.pX格式，这里的m和p都是整型常量，X是字母。m和p都是可选项。</p>
-<p>在转换说明%10.2f中，m是10，p是2，X是f。</p>
-<p><strong>最小字段宽度（ minimum field width ）</strong> m指定了要显示的最小字符数量。如果要打印的数值比m个字符少，那么值在字段内是右对齐的。如果要多，那么字段宽度会自动扩展为需要的尺寸。</p>
-<p><strong>精度（ precision ）</strong> p的含义依赖于<strong>转换说明符X（ conversion specifier ）</strong>的选择。对数来说，最常用的转换说明符有：</p>
-<ul>
+<p>此声明说明p是指向int类型的对象。</p>
+<h2 id="_3">取地址运算符和间接寻址运算符</h2>
+<h3 id="_4">取地址运算符</h3>
+<p>得到一个变量的地址在它前面加'&amp;'（取地址）。如：</p>
+<div class="codehilite"><pre><span></span>int i;
+int *p = &amp;i;
+</pre></div>
+
+
+<h3 id="_5">间接寻址运算符</h3>
+<p>获取指针变量指向的存储空间首地址在它前面加<code>*</code>（间接寻址）。如：</p>
+<div class="codehilite"><pre><span></span>*p = 10;
+</pre></div>
+
+
+<p>这个操作（*p）得到的就是变量的<strong>别名</strong>。该操作会修改变量的值。</p>
+<h2 id="_6">指针赋值</h2>
+<p>只要是相同类型的指针，就可以相互赋值。这样它们就指向了相同的对象。</p>
+<h2 id="_7">指针作为参数</h2>
+<p>指针可以做为函数的参数或返回值。</p>
+<p>这些情况，可能会用到指针类型的形参：</p>
+<ol>
 <li>
-<p>d，表示十进制形式的整数。p说明可以显示的数字的最少个数（如果需要，就在数前加上额外的零）；如果忽略掉p，默认它的值为1。</p>
+<p>需要得到多个结果，故而用指针传出去</p>
 </li>
 <li>
-<p>e，表示指数形式的浮点数。p说明小数点后应该出现的数字的个数（默认为6）。如果p为0，则不显示小数点。</p>
+<p>传入的对象太大，没有必要执行拷贝操作</p>
+</li>
+</ol>
+<p>一般只有这些情况，返回一个指针类型才是安全的：</p>
+<ol>
+<li>
+<p>返回的是指针类型的参数</p>
 </li>
 <li>
-<p>f，表示“定点十进制”形式的浮点数，没有指数。p的含义与在说明符e中的一员。</p>
+<p>返回的是一个全局变量地址</p>
 </li>
 <li>
-<p>g，表示指数形式或者定点十进制形式的浮点数，形式的选择根据数的大小决定。p可以说明显示的有效数字的最大数量。与转换说明符f不同，g的转换将不显示尾随零。</p>
+<p>返回的是一个static变量的地址</p>
 </li>
-</ul>
-<h3 id="_3">转义序列</h3>
-<p>我们经常把在格式串中用的代码<code>\n</code>称为转义序列（ escape sequence ）。转义序列使字符串包含一些特殊字符而又不会使编译器引发问题。</p>
-<h2 id="scanf">scanf 函数</h2>
-<p>scanf 函数也根据特定的格式读取输入， scanf 函数转换说明符的用法和 printf 函数转换说明符的用法本质上是一样的。</p>
-<p>scanf 函数有一些不易察觉的陷阱。使用 scanf 时，程序员必须检查转换说明的数量是否与输入变量的数量相匹配，并且检查每个转换是否适合相对应的变量。另一个陷阱涉及符号&amp;，通常把符号&amp;放在 scanf 函数调用的每个变量的前面。</p>
-<p>调用 scanf 函数是读取数据的一种有效但不理想的方法。许多专业C程序员避免用 scanf 函数，而是采用字符格式读取所有数据，然后再把它们转换成数值形式。</p>
-<h3 id="scanf_1">scanf 函数的工作方法</h3>
-<p>scanf 函数本质上是一种“模式匹配”函数，也就是试图把输入的字符组与转换说明匹配成组。</p>
-<p>scanf 调用时，从左边开始处理字符串中的信息。对于格式串中的每一个转换说明， scanf 函数努力从输入的数据中定位适当类型的项，并且跳过必要的空格。然后， scanf 函数读入数据项，并且在遇到不可能属于此项的字符时停止。</p>
-<p>在寻找数的起始位置时， scanf 函数会忽略空白（ white-space ）字符（空格符、横向和纵向制表符、换页符、换行符）。</p>
-<h3 id="_4">格式串中的普通字符</h3>
-<p>处理格式串中普通字符时， scanf 函数采取的动作依赖于这个字符是否为空白字符。</p>
-<ul>
-<li>
-<p>空白字符。当在格式串中遇到一个或多个连续的空白字符时， scanf 函数从输入中重复读空白字符直到遇到一个非空白字符（把该字符“放回原处”）为止。</p>
-</li>
-<li>
-<p>其他字符。当在格式串中遇到一个非空白字符时， scanf 函数将把它与下一个输入字符进行比较。如果两个字符相匹配，那么 scanf 函数会放弃输入字符而继续处理格式串。如果两个字符不匹配，那么 scanf 函数会把不匹配的字符放回输入中，然后异常退出。</p>
-</li>
-</ul>
+</ol>
                 
                   
                 
@@ -1586,7 +1574,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02%20C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="ch02 C语言基本概念" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" title="ch10 程序结构" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1595,19 +1583,19 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ch02 C语言基本概念
+                ch10 程序结构
               </span>
             </div>
           </a>
         
         
-          <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="ch04 表达式" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" title="ch12 指针和数组" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                ch04 表达式
+                ch12 指针和数组
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
