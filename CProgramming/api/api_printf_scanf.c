@@ -20,6 +20,10 @@ void example1()
 	printf("Enter float: ");
 	scanf("%f", &f);
 	printf("%f\n", f);
+
+	printf("Enter integer(至多两位整数): ");
+	scanf("%2d", &i);
+	printf("%d\n", i);
 }
 
 /*
@@ -85,11 +89,11 @@ void example5()
 
 int main()
 {
-	//example1();
+	example1();
 	//example2();
 	//example3();
 	//example4();
-	example5();
+	//example5();
 
 	return 0;
 }
