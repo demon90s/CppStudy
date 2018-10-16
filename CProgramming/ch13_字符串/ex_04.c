@@ -45,6 +45,8 @@ int main()
 
 	len = read_line(str, LEN);
 	printf("read %d charactors: %s\n", len, str);
+	len = read_line(str, LEN);
+	printf("read %d charactors: %s\n", len, str);
 
 	return 0;
 }
