@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-size_t strlen(const char *s)
+size_t strlen_(const char *s)
 {
 	const char *p = s;
 
@@ -17,7 +17,7 @@ int main()
 {
 	char str[] = "Hello world";
 
-	printf("len of str(%s) is: %lu\n", str, strlen(str));
+	printf("len of str(%s) is: %lu\n", str, strlen_(str));
 
 	return 0;
 }

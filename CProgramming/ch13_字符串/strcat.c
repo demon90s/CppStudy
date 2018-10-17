@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-char *strcat(char *s1, const char *s2)
+char *strcat_(char *s1, const char *s2)
 {
 	char *p = s1;
 
@@ -18,7 +18,7 @@ int main()
 {
 	char str[20] = "Hello";
 
-	printf("str: %s\n", strcat(str, " World"));
+	printf("str: %s\n", strcat_(str, " World"));
 
 	return 0;
 }
