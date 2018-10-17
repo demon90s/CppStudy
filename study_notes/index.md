@@ -22,6 +22,8 @@ C++ 学习笔记。
 
 我还加入了一本C语言的学习书籍：《C语言程序设计：现代方法》。因为C++是C语言的延续，其中有很多设计思想都追溯至C语言，而且在实际开发中，C语言的写法不在少数，有必要学习整理一下。
 
+工作中，我经常会面试一些人，深感自己作为面试官能力之不足，因此开始学习前辈编写的《剑指Offer》，我发现这本书可以随意翻看，不必闷头苦啃。在拿下了C++ Primer后非常适合休闲阅读。我不打算为这本书写笔记，而是直接写代码练习，在代码中简要的把知识点总结出来。
+
 ## 资料
 
 [C语言程序设计：现代方法](https://book.douban.com/subject/4279678/)
@@ -29,6 +31,8 @@ C++ 学习笔记。
 [C++ Primer 5th](https://book.douban.com/subject/25708312/)
 
 [Effective C++ 3rd](https://book.douban.com/subject/1842426/)
+
+[剑指Offer](https://book.douban.com/subject/27008702/)
 
 [C++ Primer 5th - 术语表](https://github.com/demon90s/CppStudy/blob/master/CppPrimer/defined_terms/terms_index.md)
 
