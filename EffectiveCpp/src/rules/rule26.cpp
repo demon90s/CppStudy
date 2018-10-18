@@ -1,0 +1,1 @@
+#include "rule26.h"

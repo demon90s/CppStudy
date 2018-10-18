@@ -25,6 +25,7 @@
 #include "rule23.h"
 #include "rule24.h"
 #include "rule25.h"
+#include "rule26.h"
 
 int main()
 {
