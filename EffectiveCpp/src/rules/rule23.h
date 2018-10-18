@@ -1,3 +1,4 @@
+// æ¡æ¬¾23ï¼šå®ä»¥ non-member, non-friend æ›¿æ¢ member å‡½æ•°
 #ifndef __RULE23_H__
 #define __RULE23_H__
 
@@ -24,8 +25,8 @@ namespace rule23
 			memset(cookies, 0, sizeof(cookies));
 		}
 
-		// Ò»¸öÖ´ĞĞËùÓĞÇåÀí¹¤×÷µÄ·½Ê½
-		// µ«ÕâÖÖ·½Ê½µÄ·â×°ĞÔµÍ£ºÔ½¶àº¯Êı¿É·ÃÎÊ·â×°Êı¾İ£¬·â×°ĞÔ¾ÍÔ½µÍ
+		// ä¸€ä¸ªæ‰§è¡Œæ‰€æœ‰æ¸…ç†å·¥ä½œçš„æ–¹å¼
+		// ä½†è¿™ç§æ–¹å¼çš„å°è£…æ€§ä½ï¼šè¶Šå¤šå‡½æ•°å¯è®¿é—®å°è£…æ•°æ®ï¼Œå°è£…æ€§å°±è¶Šä½
 		void clearEverthing()
 		{
 			this->clearCache();
@@ -39,7 +40,7 @@ namespace rule23
 		char cookies[1024];
 	};
 
-	// ÁíÒ»ÖÖÖ´ĞĞËùÓĞÇåÀí¹¤×÷µÄ·½Ê½
+	// å¦ä¸€ç§æ‰§è¡Œæ‰€æœ‰æ¸…ç†å·¥ä½œçš„æ–¹å¼
 	inline void clearBrowser(WebBrowser &wb)
 	{
 		wb.clearCache();

@@ -6,7 +6,7 @@ using namespace rule20;
 
 void Rule20()
 {
-	// ÓÃ´«ÒıÓÃµÄ·½Ê½±ÜÃâ¿½±´£¬´Ó¶øÌá¸ßĞ§ÂÊ
+	// ç”¨ä¼ å¼•ç”¨çš„æ–¹å¼é¿å…æ‹·è´ï¼Œä»è€Œæé«˜æ•ˆç‡
 	{
 		Student s;
 
@@ -27,7 +27,7 @@ void Rule20()
 		printf("pass-by-reference-to-const cost time: %lu ms\n", end_time - beg_time);
 	}
 
-	// ÓÃ´«ÒıÓÃµÄ·½Ê½±ÜÃâ slicing ÎÊÌâ
+	// ç”¨ä¼ å¼•ç”¨çš„æ–¹å¼é¿å… slicing é—®é¢˜
 	{
 		WindowWithScrollBars wsb("WindowWithScrollBars");
 		printNameAndDisplay(wsb);

@@ -1,4 +1,4 @@
-// Ìõ¿î26£º¾¡¿ÉÄÜÑÓºó±äÁ¿¶¨ÒåÊ½µÄ³öÏÖÊ±¼ä
+// æ¡æ¬¾26ï¼šå°½å¯èƒ½å»¶åŽå˜é‡å®šä¹‰å¼çš„å‡ºçŽ°æ—¶é—´
 #ifndef __RULE26_H__
 #define __RULE26_H__
 
@@ -7,9 +7,9 @@
 
 inline void Rule26()
 {
-	// ¶ÔÓÚÑ­»·£¬¿¼ÂÇ±äÁ¿µÄ¶¨ÒåÎ»ÖÃ£¨Í¨³£ÓÃµÚ¶þÖÖ£¬µÚÒ»ÖÖ³ÌÐòµÄ¿ÉÀí½âÐÔºÍ¿ÉÎ¬»¤ÐÔ²»ºÃ£©
+	// å¯¹äºŽå¾ªçŽ¯ï¼Œè€ƒè™‘å˜é‡çš„å®šä¹‰ä½ç½®ï¼ˆé€šå¸¸ç”¨ç¬¬äºŒç§ï¼Œç¬¬ä¸€ç§ç¨‹åºçš„å¯ç†è§£æ€§å’Œå¯ç»´æŠ¤æ€§ä¸å¥½ï¼‰
 
-	// 1¸öÎö¹¹º¯Êý + 1¸ö¹¹Ôìº¯Êý + n¸ö¸³Öµ²Ù×÷
+	// 1ä¸ªæžæž„å‡½æ•° + 1ä¸ªæž„é€ å‡½æ•° + nä¸ªèµ‹å€¼æ“ä½œ
 	{
 		std::string s;
 		for (int i = 0; i < 10; ++i) {
@@ -17,7 +17,7 @@ inline void Rule26()
 		}
 	}
 	
-	// n¸ö¹¹Ôìº¯Êý + n¸öÎö¹¹º¯Êý
+	// nä¸ªæž„é€ å‡½æ•° + nä¸ªæžæž„å‡½æ•°
 	{
 		for (int i = 0; i < 10; ++i) {
 			std::string s = std::to_string(i);
@@ -29,8 +29,8 @@ namespace rule26
 {
 	const int MinimumPasswordLength = 10;
 
-	// Õâ¸öº¯Êý¹ýÔçµØ¶¨Òå±äÁ¿¡°encrypted¡±
-	// Èç¹ûÒì³£±»Å×³ö£¬ÈÔÒª¸¶³ö encrypted µÄ¹¹ÔìºÍÎö¹¹³É±¾
+	// è¿™ä¸ªå‡½æ•°è¿‡æ—©åœ°å®šä¹‰å˜é‡â€œencryptedâ€
+	// å¦‚æžœå¼‚å¸¸è¢«æŠ›å‡ºï¼Œä»è¦ä»˜å‡º encrypted çš„æž„é€ å’Œæžæž„æˆæœ¬
 	inline std::string encryptPassword_bad(const std::string& password)
 	{
 		using namespace std;
@@ -39,11 +39,11 @@ namespace rule26
 			throw logic_error("password is too short");
 		}
 
-		// ¼ÓÃÜ ...
+		// åŠ å¯† ...
 		return encrypted;
 	}
 
-	// ÑÓºó encrypted µÄ¶¨Òå£¬Ö±µ½ÕæÕýÐèÒªËü
+	// å»¶åŽ encrypted çš„å®šä¹‰ï¼Œç›´åˆ°çœŸæ­£éœ€è¦å®ƒ
 	inline std::string encryptPassword_good(const std::string& password)
 	{
 		using namespace std;
@@ -51,8 +51,8 @@ namespace rule26
 			throw logic_error("password is too short");
 		}
 
-		string encrypted(password); // ¿½±´³õÊ¼»¯ ±È defalut-construct + ¸³Öµ²Ù×÷ Ð§ÂÊ¸ß
-		// ¼ÓÃÜ ...
+		string encrypted(password); // æ‹·è´åˆå§‹åŒ– æ¯” defalut-construct + èµ‹å€¼æ“ä½œ æ•ˆçŽ‡é«˜
+		// åŠ å¯† ...
 		return encrypted;
 	}
 }

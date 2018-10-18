@@ -1,4 +1,4 @@
-// Ìõ¿î24£ºÈôËùÓĞ²ÎÊı½ÔĞèÀàĞÍ×ª»»£¬ÇëÎª´Ë²ÉÓÃ non-member º¯Êı
+// æ¡æ¬¾24ï¼šè‹¥æ‰€æœ‰å‚æ•°çš†éœ€ç±»å‹è½¬æ¢ï¼Œè¯·ä¸ºæ­¤é‡‡ç”¨ non-member å‡½æ•°
 #ifndef __RULE24_H__
 #define __RULE24_H__
 
@@ -8,16 +8,16 @@ extern void Rule24();
 
 namespace rule24
 {
-	// Ò»¸öÓĞÀíÊıÀàĞÍ
+	// ä¸€ä¸ªæœ‰ç†æ•°ç±»å‹
 	class Rational {
 	public:
-		// ¹¹Ôìº¯Êı¿ÌÒâ²»Îª explicit £¬´Ó¶øÔÊĞí int-to-Rational ÒşÊ½×ª»»
+		// æ„é€ å‡½æ•°åˆ»æ„ä¸ä¸º explicit ï¼Œä»è€Œå…è®¸ int-to-Rational éšå¼è½¬æ¢
 		Rational(int numberator = 0, int denominator = 1) : numberator_(numberator), denominator_(denominator) {}
 
 		int numerator() const { return numberator_; }
 		int denominator() const { return denominator_; }
 
-		// ½«³Ë·¨ÔËËã¶¨Òå³É member £¬µ«ÕâÑù×öÊÊÓÃĞÔ²»Ç¿
+		// å°†ä¹˜æ³•è¿ç®—å®šä¹‰æˆ member ï¼Œä½†è¿™æ ·åšé€‚ç”¨æ€§ä¸å¼º
 		/*const Rational operator* (const Rational& rhs) const
 		{
 			return Rational(numberator_ * rhs.numberator_, denominator_ * rhs.denominator_);
@@ -27,7 +27,7 @@ namespace rule24
 		int numberator_, denominator_;
 	};
 
-	// Ó¦¸Ã½«³Ë·¨²Ù×÷¶¨Òå³É non-member º¯Êı
+	// åº”è¯¥å°†ä¹˜æ³•æ“ä½œå®šä¹‰æˆ non-member å‡½æ•°
 	inline const Rational operator*(const Rational &lhs, const Rational &rhs)
 	{
 		return Rational(lhs.numerator() * rhs.numerator(), lhs.denominator() * rhs.denominator());

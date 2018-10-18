@@ -1,24 +1,26 @@
 #include "rule25.h"
 #include "../pitime.h"
 
+#include <cstdio>
+
 using namespace rule25;
 
 void Rule25()
 {
-	// ½»»»Èô¸É´Î£¬²é¿´Ğ§¹û
+	// äº¤æ¢è‹¥å¹²æ¬¡ï¼ŒæŸ¥çœ‹æ•ˆæœ
 	Widget w1, w2;
 
 	unsigned long beg_time = PITime();
 	for (int i = 0; i < 10000; i++)
 	{
 		/*
-		 Èô²ÉÓÃÄ¬ÈÏµÄ swap ²Ù×÷£¬½«³ĞÊÜ¸³ÖµµÄ´ú¼Û
-		 ²ÉÓÃ×Ô¶¨ÒåµÄ swap ²Ù×÷£¬Ö±½Ó½»»»Ö¸Õë£¬¶ø²»¿½±´¾ßÌåµÄÄÚÈİ£¬ HUGE SPEED ÌáÉı
+		 è‹¥é‡‡ç”¨é»˜è®¤çš„ swap æ“ä½œï¼Œå°†æ‰¿å—èµ‹å€¼çš„ä»£ä»·
+		 é‡‡ç”¨è‡ªå®šä¹‰çš„ swap æ“ä½œï¼Œç›´æ¥äº¤æ¢æŒ‡é’ˆï¼Œè€Œä¸æ‹·è´å…·ä½“çš„å†…å®¹ï¼Œ HUGE SPEED æå‡
 		*/
 		//std::swap(w1, w2);
 
 		using namespace std;
-		swap(w1, w2);	// ¾¡¹ÜÓĞ using ÉùÃ÷Ê½£¬µ«ÈÔ»áµ÷ÓÃÕıÈ·µÄ°æ±¾
+		swap(w1, w2);	// å°½ç®¡æœ‰ using å£°æ˜å¼ï¼Œä½†ä»ä¼šè°ƒç”¨æ­£ç¡®çš„ç‰ˆæœ¬
 	}
 	unsigned long end_time = PITime();
 

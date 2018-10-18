@@ -1,4 +1,4 @@
-// Ìõ¿î21£º±ØĞë·µ»Ø¶ÔÏóÊ±£¬±ğÍıÏë·µ»ØÆä reference
+// æ¡æ¬¾21ï¼šå¿…é¡»è¿”å›å¯¹è±¡æ—¶ï¼Œåˆ«å¦„æƒ³è¿”å›å…¶ reference
 #ifndef __RULE21_H__
 #define __RULE21_H__
 
@@ -16,7 +16,7 @@ namespace rule21
 		friend const Rational operator* (const Rational& lhs, const Rational &rhs);
 	};
 
-	// ÕâÀïÓ¦¸Ã·µ»ØÒ»¸öÖµ£¬¶ø²»ÊÇ reference
+	// è¿™é‡Œåº”è¯¥è¿”å›ä¸€ä¸ªå€¼ï¼Œè€Œä¸æ˜¯ reference
 	inline const Rational operator* (const Rational& lhs, const Rational &rhs)
 	{
 		return Rational(lhs.n * rhs.n, lhs.d * rhs.d);

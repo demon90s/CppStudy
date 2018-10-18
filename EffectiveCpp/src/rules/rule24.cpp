@@ -6,7 +6,7 @@ void Rule24()
 {
 	Rational oneEight(1, 8);
 	Rational result = oneEight * 2; // OK
-	result = 2 * oneEight;			// Èç¹û³Ë·¨²Ù×÷ÊÇ member º¯Êı£¬ÄÇÃ´²» OK
+	result = 2 * oneEight;			// å¦‚æœä¹˜æ³•æ“ä½œæ˜¯ member å‡½æ•°ï¼Œé‚£ä¹ˆä¸ OK
 
 	std::cout << result << std::endl;
 }

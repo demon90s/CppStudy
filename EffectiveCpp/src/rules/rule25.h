@@ -1,4 +1,4 @@
-// Ìõ¿î25£º¿¼ÂÇĞ´³öÒ»¸ö²»Å×Òì³£µÄ swap º¯Êı
+// æ¡æ¬¾25ï¼šè€ƒè™‘å†™å‡ºä¸€ä¸ªä¸æŠ›å¼‚å¸¸çš„ swap å‡½æ•°
 #ifndef __RULE25_H__
 #define __RULE25_H__
 
@@ -12,21 +12,21 @@ namespace rule25
 	public:
 		WidgetImpl() 
 		{
-			// ¹ÊÒâ´´½¨Ò»¶ÑÊı¾İ
+			// æ•…æ„åˆ›å»ºä¸€å †æ•°æ®
 			for (int i = 0; i < 100000; i++) v.push_back(3.14);
 		}
 
 	private:
-		int a, b, c;			// ¿ÉÄÜÓĞºÜ¶àÊı¾İ
-		std::vector<double> v;	// ÒâÎ¶×Å¸´ÖÆÊ±¼äºÜ³¤
+		int a, b, c;			// å¯èƒ½æœ‰å¾ˆå¤šæ•°æ®
+		std::vector<double> v;	// æ„å‘³ç€å¤åˆ¶æ—¶é—´å¾ˆé•¿
 	};
 
-	class Widget {				// Õâ¸ö class Ê¹ÓÃ pimpl ÊÖ·¨
+	class Widget {				// è¿™ä¸ª class ä½¿ç”¨ pimpl æ‰‹æ³•
 	public:
 		Widget() : pImpl(new WidgetImpl) {}
 		~Widget() { delete pImpl; }
 
-		Widget(const Widget& rhs)	// ¸´ÖÆ Widget Ê±£¬ÁîËü¸´ÖÆÆä WidghtImpl ¶ÔÏó
+		Widget(const Widget& rhs)	// å¤åˆ¶ Widget æ—¶ï¼Œä»¤å®ƒå¤åˆ¶å…¶ WidghtImpl å¯¹è±¡
 			: pImpl(new WidgetImpl(*rhs.pImpl))
 		{}
 
@@ -45,7 +45,7 @@ namespace rule25
 		}
 
 	private:
-		WidgetImpl *pImpl;		// Ö¸Õë£¬ËùÖ¸¶ÔÏóº¬ Widget Êı¾İ
+		WidgetImpl *pImpl;		// æŒ‡é’ˆï¼Œæ‰€æŒ‡å¯¹è±¡å« Widget æ•°æ®
 	};
 
 	inline void swap(Widget& a, Widget& b)

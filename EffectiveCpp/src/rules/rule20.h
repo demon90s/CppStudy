@@ -1,4 +1,4 @@
-// Ìõ¿î20£ºÄşÒÔ pass-by-reference-to-const Ìæ»» pass-by-value
+// æ¡æ¬¾20ï¼šå®ä»¥ pass-by-reference-to-const æ›¿æ¢ pass-by-value
 #ifndef __RULE20_H__
 #define __RULE20_H__
 
@@ -9,7 +9,7 @@ extern void Rule20();
 
 namespace rule20
 {
-	// ÏÂÃæµÄÀàĞÍÓÃÓÚ²âÊÔ¿½±´£¬Ó¦µ±Ê¹ÓÃ pass-by-reference-to-const
+	// ä¸‹é¢çš„ç±»å‹ç”¨äºæµ‹è¯•æ‹·è´ï¼Œåº”å½“ä½¿ç”¨ pass-by-reference-to-const
 	class Person
 	{
 	public:
@@ -32,7 +32,7 @@ namespace rule20
 		std::string schoolAddress = "DefaultSchoolAddr";
 	};
 
-	inline bool validateStudent(Student s) { return false; } // º¯ÊıÒÔ by-value	·½Ê½´«µİ²ÎÊı
+	inline bool validateStudent(Student s) { return false; } // å‡½æ•°ä»¥ by-value	æ–¹å¼ä¼ é€’å‚æ•°
 	inline bool validateStudent2(const Student& s) { return false; } // pass=by-reference-to-const
 
 	class Window
@@ -54,14 +54,14 @@ namespace rule20
 		int type = 1;
 	};
 
-	// ²»ÕıÈ·£¬²ÎÊı¿ÉÄÜ±»ÇĞ¸î£¨´«ÈëÊµ²ÎÀàĞÍÊÇ WindowWithScrollBars £©
+	// ä¸æ­£ç¡®ï¼Œå‚æ•°å¯èƒ½è¢«åˆ‡å‰²ï¼ˆä¼ å…¥å®å‚ç±»å‹æ˜¯ WindowWithScrollBars ï¼‰
 	inline void printNameAndDisplay(Window w)
 	{
 		std::cout << w.name() << std::endl;
 		w.display();
 	}
 
-	// ²ÎÊı²»»á±»ÇĞ¸î
+	// å‚æ•°ä¸ä¼šè¢«åˆ‡å‰²
 	inline void printNameAndDisplay2(const Window& w)
 	{
 		std::cout << w.name() << std::endl;

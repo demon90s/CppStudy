@@ -60,3 +60,24 @@
 
 [条款19：设计 class 犹如设计 type](./src/rules/rule19.h)
 
+
+[条款20：宁以 pass-by-reference-to-const 替换 pass-by-value](./src/rules/rule20.h)
+
+
+[条款21：必须返回对象时，别妄想返回其 reference](./src/rules/rule21.h)
+
+
+[条款22：将成员变量声明为 private](./src/rules/rule22.h)
+
+
+[条款23：宁以 non-member, non-friend 替换 member 函数](./src/rules/rule23.h)
+
+
+[条款24：若所有参数皆需类型转换，请为此采用 non-member 函数](./src/rules/rule24.h)
+
+
+[条款25：考虑写出一个不抛异常的 swap 函数](./src/rules/rule25.h)
+
+
+[条款26：尽可能延后变量定义式的出现时间](./src/rules/rule26.h)
+
