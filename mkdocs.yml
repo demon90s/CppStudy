@@ -86,7 +86,7 @@ pages:
       - 条款23：宁以 non-member, non-friend 替换 member 函数: EffectiveCpp/4 设计与声明/条款23：宁以 non-member, non-friend 替换 member 函数.md
       - 条款24：若所有参数皆需类型转换，请为此采用 non-member 函数: EffectiveCpp/4 设计与声明/条款24：若所有参数皆需类型转换，请为此采用 non-member 函数.md
       - 条款25：考虑写出一个不抛异常的 swap 函数: EffectiveCpp/4 设计与声明/条款25：考虑写出一个不抛异常的 swap 函数.md
-    - 5 实现
+    - 5 实现:
       - 条款26：尽可能延后变量定义式的出现时间: EffectiveCpp/5 实现/条款26：尽可能延后变量定义式的出现时间.md
 
 theme:

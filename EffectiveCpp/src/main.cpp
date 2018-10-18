@@ -53,7 +53,8 @@ int main()
 	//Rule22();
 	//Rule23();
 	//Rule24();
-	Rule25();
+	//Rule25();
+	Rule26();
 
 #ifdef _MSC_VER
 	system("pause");
