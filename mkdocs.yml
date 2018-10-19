@@ -25,6 +25,7 @@ pages:
       - ch10 程序结构: CProgramming/ch10 程序结构.md
       - ch11 指针: CProgramming/ch11 指针.md
       - ch12 指针和数组: CProgramming/ch12 指针和数组.md
+      - ch13 字符串: CProgramming/ch13 字符串.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
