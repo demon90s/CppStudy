@@ -10,10 +10,10 @@
 
 ---
 
-[C语言程序设计：现代方法](./CProgramming)
+- [ ] [C语言程序设计：现代方法](./CProgramming)
 
-[C++ Primer 5th](./CppPrimer)
+- [x] [C++ Primer 5th](./CppPrimer)
 
-[Effective C++ 3rd](./EffectiveCpp)
+- [ ] [Effective C++ 3rd](./EffectiveCpp)
 
-[剑指Offer](./CodingInterview)
+- [ ] [剑指Offer](./CodingInterview)
