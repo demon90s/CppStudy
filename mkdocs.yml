@@ -26,6 +26,7 @@ pages:
       - ch11 指针: CProgramming/ch11 指针.md
       - ch12 指针和数组: CProgramming/ch12 指针和数组.md
       - ch13 字符串: CProgramming/ch13 字符串.md
+      - ch14 预处理器: CProgramming/ch14 预处理器.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
