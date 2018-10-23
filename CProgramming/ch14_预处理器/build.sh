@@ -3,7 +3,7 @@
 # 自动编译源文件的脚本，使用方法：sh build.sh [rebuild | clear]
 
 all_c_files=`ls *.c`
-exclude_files=""
+exclude_files="ex_12.c"
 
 is_exclude_file() {
 	for file in $exclude_files; do
