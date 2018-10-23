@@ -90,6 +90,7 @@ pages:
       - 条款25：考虑写出一个不抛异常的 swap 函数: EffectiveCpp/4 设计与声明/条款25：考虑写出一个不抛异常的 swap 函数.md
     - 5 实现:
       - 条款26：尽可能延后变量定义式的出现时间: EffectiveCpp/5 实现/条款26：尽可能延后变量定义式的出现时间.md
+      - 条款27：尽量少做转型动作: EffectiveCpp/5 实现/条款27：尽量少做转型动作.md
 
 theme:
   name: 'material'
