@@ -4,10 +4,10 @@ using namespace rule27;
 
 void Rule27()
 {
-	// 一个函数风格的转型动作
+	// 涓�涓嚱鏁伴鏍肩殑杞瀷鍔ㄤ綔
 	doSomeWork(Widget(15));
 
-	// 一个C++风格的转型动作，更常用的应该是上面的
+	// 涓�涓狢++椋庢牸鐨勮浆鍨嬪姩浣滐紝鏇村父鐢ㄧ殑搴旇鏄笂闈㈢殑
 	doSomeWork(static_cast<Widget>(15));
 
 	Test2();

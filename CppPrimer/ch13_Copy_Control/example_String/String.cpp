@@ -222,8 +222,8 @@ void String::resize(size_t n)
 	if (n > size())
 	{
 		do {
-			if (capacity() < n)
-				reallocate();
+			chk_n_alloc();
+
 			alloc.construct(first_free++);
 		} while (first_free != elements + n);
 
