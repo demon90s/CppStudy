@@ -1,8 +1,6 @@
 #ifndef STRING_H
 #define STRING_H
 
-#include <iostream>
-
 class String
 {
 	friend std::ostream& operator<<(std::ostream &os, String &rhs);

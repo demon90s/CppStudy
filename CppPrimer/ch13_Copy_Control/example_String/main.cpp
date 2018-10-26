@@ -34,6 +34,11 @@ void func1()
 	v.resize(0);
 	cout << "v.size(): " << v.size() << endl;
 	cout << "v.capacity(): " << v.capacity() << endl;
+
+	cout << "resize to 97 ..." << endl;
+	v.resize(97);
+	cout << "v.size(): " << v.size() << endl;
+	cout << "v.capacity(): " << v.capacity() << endl;
 }
 
 void func2()
@@ -90,11 +95,11 @@ void func5()
 
 int main()
 {
-	//func1();
+	func1();
 	//func2();
 	//func3();
 	//func4();
-	func5();
+	//func5();
 
 	return 0;
 }

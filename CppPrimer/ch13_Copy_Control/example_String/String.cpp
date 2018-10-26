@@ -1,5 +1,6 @@
 #include <cstring>
 
+#include <iostream>
 #include <memory>
 #include <utility>
 #include <algorithm>
@@ -220,9 +221,9 @@ void String::resize(size_t n)
 
 	if (n > size())
 	{
-		reallocate();
-
 		do {
+			if (capacity() < n)
+				reallocate();
 			alloc.construct(first_free++);
 		} while (first_free != elements + n);
 
