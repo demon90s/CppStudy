@@ -116,9 +116,9 @@ void StrVec::resize(size_t n)
 
 	if (n > size())
 	{
-		reallocate();
-
 		do {
+			chk_n_alloc();
+
 			alloc.construct(first_free++);
 		} while (first_free != elements + n);
 

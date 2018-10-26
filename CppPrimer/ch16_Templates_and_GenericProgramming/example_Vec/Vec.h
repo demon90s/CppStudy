@@ -283,6 +283,8 @@ void Vec<elemType>::resize(size_t n)
 		reallocate();
 
 		do {
+			chk_n_alloc();
+
 			alloc.construct(first_free++);
 		} while (first_free != elements + n);
 
