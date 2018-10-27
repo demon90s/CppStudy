@@ -27,6 +27,7 @@
 #include "rule25.h"
 #include "rule26.h"
 #include "rule27.h"
+#include "rule28.h"
 
 int main()
 {
@@ -56,7 +57,8 @@ int main()
 	//Rule24();
 	//Rule25();
 	//Rule26();
-	Rule27();
+	//Rule27();
+	Rule28();
 
 #ifdef _MSC_VER
 	system("pause");

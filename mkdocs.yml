@@ -91,6 +91,7 @@ pages:
     - 5 实现:
       - 条款26：尽可能延后变量定义式的出现时间: EffectiveCpp/5 实现/条款26：尽可能延后变量定义式的出现时间.md
       - 条款27：尽量少做转型动作: EffectiveCpp/5 实现/条款27：尽量少做转型动作.md
+      - 条款28：避免返回 handles 指向对象内部成分: EffectiveCpp/5 实现/条款28：避免返回 handles 指向对象内部成分.md
 
 theme:
   name: 'material'
