@@ -27,7 +27,7 @@ pages:
       - ch12 指针和数组: CProgramming/ch12 指针和数组.md
       - ch13 字符串: CProgramming/ch13 字符串.md
       - ch14 预处理器: CProgramming/ch14 预处理器.md
-      - ch15 编写大规模程序: CProgramming/ch15v 编写大规模程序.md
+      - ch15 编写大规模程序: CProgramming/ch15 编写大规模程序.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
