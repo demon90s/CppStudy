@@ -53,6 +53,29 @@ void write_line(void)
 	putchar('\n');
 }
 
+// 练习5：在靠近末尾处的的单词之间放置较大的空隙 ，在行开始处的单词之间放置一般空隙
+void write_line_ex5(void)
+{
+	int extra_spaces, i, j;
+	extra_spaces = MAX_LINE_LEN - line_len;
+	for (i = 0; i < line_len; i++) {
+		if (line[i] != ' ')
+			putchar(line[i]);
+		else {
+			if (num_words != 2) {
+				putchar(' ');
+			}
+			else {
+				for (j = 1; j < extra_spaces + 1; j++)
+					putchar(' ');
+			}
+			num_words--;
+		}
+	}
+
+	putchar('\n');
+}
+
 void flush_line(void)
 {
 	if (line_len > 0)

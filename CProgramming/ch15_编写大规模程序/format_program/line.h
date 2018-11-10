@@ -30,4 +30,9 @@ void write_line(void);
  */
 void flush_line(void);
 
+/*
+ * 练习5改写的 write_line ,要求靠近末尾处的的单词之间放置较大的空隙 ，在行开始处的单词之间放置一般空隙
+ */
+void write_line_ex5(void);
+
 #endif

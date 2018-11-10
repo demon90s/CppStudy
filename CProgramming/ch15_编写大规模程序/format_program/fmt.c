@@ -24,7 +24,8 @@ int main()
 			word[MAX_WORD_LEN] = '*';
 
 		if (word_len + 1 > space_remaining()) {
-			write_line();
+			//write_line();
+			write_line_ex5();
 			clear_line();
 		}
 		add_word(word);
