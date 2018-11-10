@@ -17,7 +17,7 @@ int main()
 {
 	char str[] = "Hello world";
 
-	printf("len of str(%s) is: %lu\n", str, strlen_(str));
+	printf("len of str(%s) is: %d\n", str, (int)strlen_(str));
 
 	return 0;
 }

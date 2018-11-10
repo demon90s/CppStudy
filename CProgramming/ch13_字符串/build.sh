@@ -17,7 +17,7 @@ is_exclude_file() {
 
 main() {
 	for c_file in $all_c_files; do
-		exe_file=${c_file%%.c*}
+		exe_file=${c_file%%.c*}.exe
 
 		if [ "$1" == "clear" ]; then
 			rm -f $exe_file
