@@ -3,6 +3,7 @@
 #include <string>
 #include <cctype>
 #include <vector>
+#include <iterator>
 
 /*
  * std::transform
