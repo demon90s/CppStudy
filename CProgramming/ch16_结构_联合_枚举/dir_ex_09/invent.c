@@ -13,6 +13,7 @@ struct part {
     int number;
     char name[NAME_LEN + 1];
     int on_hand;
+    int price;
 } inventory[MAX_PARTS];
 
 int num_parts = 0;      /* number of parts currently stored */
@@ -21,8 +22,8 @@ int find_part(int number);
 void insert(void);
 void search(void);
 void update(void);
+void update_price(void);
 void print(void);
-void print_ex07(void);
 
 /*
     main: Prompts the user to enter an operator code,
@@ -44,7 +45,8 @@ int main(int argc, char const *argv[])
             case 'i': insert(); break;
             case 's': search(); break;
             case 'u': update(); break;
-            case 'p': print_ex07(); break;
+            case 'j': update_price(); break;
+            case 'p': print(); break;
             case 'q': printf("bye\n"); return 0;
             default: printf("Illegal code\n"); break;
         }
@@ -99,6 +101,9 @@ void insert(void)
     
     printf("Enter quantity on hand: ");
     scanf("%d", &inventory[num_parts].on_hand);
+
+    printf("Enter part price: ");
+    scanf("%d", &inventory[num_parts].price);
     
     num_parts++;
 }
@@ -118,6 +123,7 @@ void search(void)
     if (i >= 0) {
         printf("Part name: %s\n", inventory[i].name);
         printf("Quantity on hand: %d\n", inventory[i].on_hand);
+        printf("Part price: %d\n", inventory[i].price);
     }
     else {
         printf("Part not found.\n");
@@ -149,6 +155,24 @@ void update(void)
     }
 }
 
+void update_price(void)
+{
+    int i, number, change;
+
+    printf("Enter part number: ");
+    scanf("%d", &number);
+    
+    i = find_part(number);
+    if (i >= 0) {
+        printf("Enter new price: ");
+        scanf("%d", &change);
+        inventory[i].price = change;
+    }
+    else {
+        printf("Part not found.\n");
+    }
+}
+
 /*
     print: Prints a listing of all parts in the database,
             showing the part number, part name, and
@@ -159,22 +183,8 @@ void update(void)
 void print(void)
 {
     int i;
-    printf("Part number    Part Name          Quantity on Hand\n");
+    printf("Part number    Part Name          Quantity on Hand\tprice\n");
     for (i = 0; i < num_parts; i++) {
-        printf("%7d     %-25s%11d\n", inventory[i].number, inventory[i].name, inventory[i].on_hand);
-    }
-}
-
-void print_ex07(void)
-{
-    int i;
-    int number;
-    printf("Enter min on_hand number: ");
-    scanf("%d", &number);
-
-    printf("Part number    Part Name          Quantity on Hand\n");
-    for (i = 0; i < num_parts; i++) {
-        if (inventory[i].on_hand >= number)
-            printf("%7d     %-25s%11d\n", inventory[i].number, inventory[i].name, inventory[i].on_hand);
+        printf("%7d     %-25s%11d\t%d\n", inventory[i].number, inventory[i].name, inventory[i].on_hand, inventory[i].price);
     }
 }
