@@ -28,6 +28,7 @@ pages:
       - ch13 字符串: CProgramming/ch13 字符串.md
       - ch14 预处理器: CProgramming/ch14 预处理器.md
       - ch15 编写大规模程序: CProgramming/ch15 编写大规模程序.md
+      - ch16 结构、联合和枚举: CProgramming/ch16 结构、联合和枚举.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
