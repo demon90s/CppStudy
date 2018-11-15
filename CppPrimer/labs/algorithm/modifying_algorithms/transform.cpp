@@ -8,10 +8,12 @@
 /*
  * std::transform
  *
- * transform(first, last, d_first, unary_op);
+ * transform(first, last, d_first, unary_op)
+ * transform(first1, last1, first2, d_first, binary_op)
  *
  * 应用给定的范围并存储结果于始于d_first的范围。此范围可以是：
  * (1) 应用一元函数 unary_op 到 [first, last) 所定义的范围。
+ * (2) 应用二元函数 bianry_op 到来自两个范围的元素对：一个以[first1, last1)定义，而另一个始于 first2
  */
 
 void Test1()
@@ -37,10 +39,24 @@ void Test2()
 	std::cout << std::endl;
 }
 
+void Test3()
+{
+	std::vector<int> vec1 {1, 2, 3, 4};
+	std::vector<int> vec2 {10, 20, 30, 40};
+	std::vector<int> vec3(vec1.size());
+
+	std::transform(vec1.begin(), vec1.end(), vec2.begin(), vec3.begin(), [](int x, int y) { return x + y; });
+
+	for (auto i : vec3)
+		std::cout << i << " ";
+	std::cout << std::endl;
+}
+
 int main()
 {
 	Test1();
 	Test2();
+	Test3();
 
 	return 0;
 }
