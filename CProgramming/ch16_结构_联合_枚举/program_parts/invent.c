@@ -4,6 +4,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "readline.h"
 
 #define NAME_LEN 25
@@ -23,6 +24,7 @@ void search(void);
 void update(void);
 void print(void);
 void print_ex07(void);
+void print_ch17_ex16(void);
 
 /*
     main: Prompts the user to enter an operator code,
@@ -44,7 +46,7 @@ int main(int argc, char const *argv[])
             case 'i': insert(); break;
             case 's': search(); break;
             case 'u': update(); break;
-            case 'p': print_ex07(); break;
+            case 'p': print_ch17_ex16(); break;
             case 'q': printf("bye\n"); return 0;
             default: printf("Illegal code\n"); break;
         }
@@ -176,5 +178,22 @@ void print_ex07(void)
     for (i = 0; i < num_parts; i++) {
         if (inventory[i].on_hand >= number)
             printf("%7d     %-25s%11d\n", inventory[i].number, inventory[i].name, inventory[i].on_hand);
+    }
+}
+
+int compare_parts(const void *p, const void *q)
+{
+    return ((struct part*)q)->number - ((struct part*)p)->number;
+}
+
+void print_ch17_ex16(void)
+{
+    int i;
+
+    qsort(inventory, num_parts, sizeof(*inventory), compare_parts);
+
+    printf("Part number    Part Name          Quantity on Hand\n");
+    for (i = 0; i < num_parts; i++) {
+        printf("%7d     %-25s%11d\n", inventory[i].number, inventory[i].name, inventory[i].on_hand);
     }
 }

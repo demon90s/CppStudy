@@ -50,10 +50,15 @@ void delete(struct node **list)
     scanf("%d", &n);
 
     /* *list = delete_from_list(*list, n); */
+    
+    /*
     node = delete_from_list_ex_07(*list, n);
     if (node != NULL) {
         *list = node;
     }
+    */
+
+   delete_from_list_ex_11(list, n);
 }
 
 int main(int argc, char const *argv[])
