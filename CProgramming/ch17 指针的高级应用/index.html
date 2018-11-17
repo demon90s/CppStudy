@@ -38,7 +38,7 @@
     
     
       
-        <title>ch06 循环 - C++ Study Note</title>
+        <title>ch17 指针的高级应用 - C++ Study Note</title>
       
     
     
@@ -121,7 +121,7 @@
                 C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                ch06 循环
+                ch17 指针的高级应用
               </span>
             
           
@@ -429,117 +429,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        ch06 循环
-      </label>
-    
-    <a href="./" title="ch06 循环" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch06%20%E5%BE%AA%E7%8E%AF/" title="ch06 循环" class="md-nav__link">
       ch06 循环
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#while" title="while 语句" class="md-nav__link">
-    while 语句
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#do" title="do 语句" class="md-nav__link">
-    do 语句
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for" title="for 语句" class="md-nav__link">
-    for 语句
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="逗号运算符" class="md-nav__link">
-    逗号运算符
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="退出循环" class="md-nav__link">
-    退出循环
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#break" title="break 语句" class="md-nav__link">
-    break 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#continue" title="continue 语句" class="md-nav__link">
-    continue 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#goto" title="goto 语句" class="md-nav__link">
-    goto 语句
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="空语句" class="md-nav__link">
-    空语句
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -667,11 +561,163 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch17%20%E6%8C%87%E9%92%88%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" title="ch17 指针的高级应用" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        ch17 指针的高级应用
+      </label>
+    
+    <a href="./" title="ch17 指针的高级应用" class="md-nav__link md-nav__link--active">
       ch17 指针的高级应用
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="动态存储分配" class="md-nav__link">
+    动态存储分配
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="空指针" class="md-nav__link">
+    空指针
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="动态分配字符串" class="md-nav__link">
+    动态分配字符串
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc" title="使用malloc函数为字符串分配内存" class="md-nav__link">
+    使用malloc函数为字符串分配内存
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="动态分配数组" class="md-nav__link">
+    动态分配数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc_1" title="使用malloc函数为数组分配存储空间" class="md-nav__link">
+    使用malloc函数为数组分配存储空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calloc" title="calloc函数" class="md-nav__link">
+    calloc函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realloc" title="realloc函数" class="md-nav__link">
+    realloc函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="释放存储" class="md-nav__link">
+    释放存储
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="“悬空指针”问题" class="md-nav__link">
+    “悬空指针”问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="指向函数的指针" class="md-nav__link">
+    指向函数的指针
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="函数指针" class="md-nav__link">
+    函数指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="函数入口地址" class="md-nav__link">
+    函数入口地址
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1582,30 +1628,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#while" title="while 语句" class="md-nav__link">
-    while 语句
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#do" title="do 语句" class="md-nav__link">
-    do 语句
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for" title="for 语句" class="md-nav__link">
-    for 语句
+  <a href="#_2" title="动态存储分配" class="md-nav__link">
+    动态存储分配
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="逗号运算符" class="md-nav__link">
-    逗号运算符
+  <a href="#_3" title="空指针" class="md-nav__link">
+    空指针
   </a>
   
 </li>
@@ -1616,30 +1648,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="退出循环" class="md-nav__link">
-    退出循环
+  <a href="#_4" title="动态分配字符串" class="md-nav__link">
+    动态分配字符串
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#break" title="break 语句" class="md-nav__link">
-    break 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#continue" title="continue 语句" class="md-nav__link">
-    continue 语句
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#goto" title="goto 语句" class="md-nav__link">
-    goto 语句
+  <a href="#malloc" title="使用malloc函数为字符串分配内存" class="md-nav__link">
+    使用malloc函数为字符串分配内存
   </a>
   
 </li>
@@ -1650,9 +1668,83 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="空语句" class="md-nav__link">
-    空语句
+  <a href="#_5" title="动态分配数组" class="md-nav__link">
+    动态分配数组
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc_1" title="使用malloc函数为数组分配存储空间" class="md-nav__link">
+    使用malloc函数为数组分配存储空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calloc" title="calloc函数" class="md-nav__link">
+    calloc函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realloc" title="realloc函数" class="md-nav__link">
+    realloc函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="释放存储" class="md-nav__link">
+    释放存储
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="“悬空指针”问题" class="md-nav__link">
+    “悬空指针”问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="指向函数的指针" class="md-nav__link">
+    指向函数的指针
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="函数指针" class="md-nav__link">
+    函数指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="函数入口地址" class="md-nav__link">
+    函数入口地址
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1672,46 +1764,179 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch06 循环.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch17 指针的高级应用.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">第六章 循环</h1>
-<p>循环（ loop ）是重复执行某些语句（循环体）的一种语句。在C语言中，每个循环都有一个控制表达式（ controlling expression ）。每次执行循环体时都要对控制表达式进行计算。如果表达式为真，也就是值不为零，那么继续执行循环。</p>
-<p>C语言提供了3种循环语句： while 语句、 do 语句和 for 语句。</p>
+                <h1 id="_1">第十七章 指针的高级应用</h1>
 <hr />
-<h2 id="while">while 语句</h2>
-<p>while 语句的格式如下所示：</p>
-<p>while (表达式) 语句</p>
-<p>执行 while 语句时，首先计算控制表达式的值。如果值不为零（即真值），那么执行循环体，接着再次判定表达式。</p>
-<h2 id="do">do 语句</h2>
-<p>do 语句的格式如下所示：</p>
-<p>do 语句 while (表达式);</p>
-<p>和处理 while 语句一样， do 语句的循环体也必须是一条语句（当然可以用复合语句）。</p>
-<p>执行 do 语句时，先执行循环体，再计算控制表达式的值。如果表达式的值是非零的，那么再次执行循环体。</p>
-<h2 id="for">for 语句</h2>
-<p>for 语句的格式如下所示：</p>
-<p>for (表达式1; 表达式2; 表达式3) 语句</p>
-<p>循环开始执行前，表达式1是初始化步骤，并且只执行一次，表达式2用来控制循环的终止（只要表达式2不为零，那么将继续执行循环），而表达式3是在每次循环的最后被执行的一个操作。</p>
-<h3 id="_2">逗号运算符</h3>
-<p>有些时候，我们可能喜欢编写有两个（或更多个）初始表达式的 for 语句，或者希望在每次循环时一次对几个变量进行自增操作。使用逗号表达式（ comma expression ）作为 for 语句中的第一个或第三个表达式可以实现这些想法。</p>
-<p>逗号表达式的格式如下所示：</p>
-<p>表达式1, 表达式2</p>
-<p>逗号表达式的计算要通过两步来实现：第一步，计算表达式1并且扔掉计算出的值。第二步，计算表达式2，把这个值作为整个表达式的值。计算表达式1始终会有副作用；如果没有，那么表达式1就没有了存在的意义。</p>
-<p>逗号运算符的优先级低于所有其他运算符。</p>
-<h2 id="_3">退出循环</h2>
-<h3 id="break">break 语句</h3>
-<p>break 语句还可以用于跳出 while、 do 或 for 循环。</p>
-<h3 id="continue">continue 语句</h3>
-<p>continue 语句无法跳出循环，它把程序控制正好转移到循环体结束之前的一点。 break 语句可以用于 switch 语句，而 continue 语句只能用于循环。</p>
-<h3 id="goto">goto 语句</h3>
-<p>goto 语句可以跳转到函数中任何有标号的语句处。</p>
-<p>标号只是放置在语句开始处的标识符：</p>
-<p>标识符: 语句</p>
-<p>goto 语句自身的格式如下：</p>
-<p>goto 标识符;</p>
-<p>执行 goto 语句可以把控制转移到标号后的语句上，而且这些语句必须和 goto 语句本身在同一个函数中。</p>
-<h2 id="_4">空语句</h2>
-<p>语句可以为空，也就是除了末尾处的分号以外什么符号也没有。</p>
+<h2 id="_2">动态存储分配</h2>
+<p>任何单纯的数据结构（各种内置类型，数组，结构体），其大小在程序开始时已经确定了，且不能改变。而一些数据结构可能需要动态的改变其数据长度，比如链表。这就要用到<strong>动态存储分配</strong>（dynamic storage allocation）。</p>
+<p>使用动态存储分配的数据块存放在“堆”上，和其它存储区域不同的是，“堆”里的数据应该让程序员来控制释放（free）时机。</p>
+<p>为了动态地分配存储空间，将需要调用3种内存分配函数中的一种，这些函数都是声明在stdlib.h中的：</p>
+<ol>
+<li>
+<p>malloc，分配内存块，但是不初始化它</p>
+</li>
+<li>
+<p>calloc，分配内存块，并对其清零</p>
+</li>
+<li>
+<p>realloc，调整先前分配的内存块</p>
+</li>
+</ol>
+<p>由于malloc函数不需要对分配的内存块进行清除，所以它比calloc函数更高效。</p>
+<h3 id="_3">空指针</h3>
+<p>当调用内存分配函数时，无法定位满足我们需要的足够大的内存块，这种问题始终可能出现。如果真的发生了这类问题，函数会返回空指针。</p>
+<p><strong>空指针</strong>（null pointer）是指一个区别于所有有效指针的特殊值。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>程序员的责任是测试任意内存分配函数的返回值，并且在返回空指针时采取适当的操作。通过空指针试图访问内存的效果是未定义的，程序可能会崩溃或者出现不可预测的行为。</p>
+</div>
+<p>用名为NULL的宏来表示空指针，可用下列方式测试malloc函数的返回值：</p>
+<div class="codehilite"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* allocation failed; take appropriate action */</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="_4">动态分配字符串</h2>
+<p>动态内存分配经常用于字符串操作。字符串始终存储在固定长度的数组中，而且可能很难预测这些数组需要的长度。通过动态地分配字符串，可以推迟到程序运行时才作决定。</p>
+<h3 id="malloc">使用malloc函数为字符串分配内存</h3>
+<p>函数原型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+
+
+<p>size_t是无符号整型，malloc分配了一段size个字节的连续空间，并返回该空间首地址。如果分配失败就返回NULL。</p>
+<p>因为C语言保证char型值确切需要一个字节的内存，为了给n个字符的字符串分配内存空间，可以写成：</p>
+<div class="codehilite"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+
+
+<p>通常情况下，可以把void*型值赋给任何指针类型的变量。然而，一些程序员喜欢强制转换malloc函数的返回值：</p>
+<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+
+
+<p>由于使用malloc函数分配内存不需要清除或者以任何方式初始化，所以p指向带有n+1个字符的未初始化的数组。</p>
+<p>可以调用strcpy函数对上述数组进行初始化：</p>
+<div class="codehilite"><pre><span></span><span class="n">strcpy</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s">&quot;abc&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>数组中前4个字符分别为a, b, c和空字符。</p>
+<h2 id="_5">动态分配数组</h2>
+<p>编写程序时，常常为难数组估计合适的大小。较方便的做法是等到程序运行时再来确定数组的实际大小。</p>
+<p>虽然malloc函数可以为数组分配内存空间，但calloc函数确实是最常用的一种选择。因为calloc函数对分配的内存进行初始化。realloc函数允许根据需要对数组进行“扩展”或“缩减”。</p>
+<h3 id="malloc_1">使用malloc函数为数组分配存储空间</h3>
+<p>当使用malloc函数为数组分配存储空间时，需要使用sizeof运算符来计算出每个元素所需要的空间数量。</p>
+<p>使用sizeof计算是必须的，因为这样计算的结果在不同平台下都是正确的。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+
+
+<p>这里的n可以在程序执行期间计算出来。</p>
+<p>一旦a指向了动态分配的内存块，就可以把它用作数组的名字。这都要感谢C语言中数组和指针的紧密关系。可以使用下列循环对此数组进行初始化：</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="calloc">calloc函数</h3>
+<p>函数原型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="nf">calloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">nmemb</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+
+
+<p>nmemb是数据单元的个数， size是一个数据单元的大小。返回成功申请的数据块首地址，失败返回NULL。</p>
+<p>calloc不仅会从“堆”申请存储区域，还会把这段区域清零。也因此其执行效率没有malloc高。</p>
+<p>下列calloc函数的调用为n个整数的数组分配存储空间，并且保证全部初始为0：</p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">calloc</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+
+
+<p>通过调用以1作为第一个实际参数的calloc函数，可以为任何类型的数据项分配空间：</p>
+<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">point</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="p">}</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">calloc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">point</span><span class="p">));</span>
+</pre></div>
+
+
+<p>此语句执行后，p指向结构，且此结构的成员x和y都会被设置为0。</p>
+<h3 id="realloc">realloc函数</h3>
+<p>一旦为数组分配完内存，稍后可能会发现数组过大或过小。realloc函数可以调整数组的大小使它更适合需要。</p>
+<p>函数原型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="nf">realloc</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+
+
+<p>ptr必须指向内存块，且此内存块一定是先通过malloc函数、calloc函数或realloc函数的调用获得的。size表示内存块的新尺寸，新尺寸可能会大于或小于原有尺寸。</p>
+<p>C标准列出几条关于realloc函数的规则：</p>
+<ul>
+<li>
+<p>当扩展内存块时，realloc函数不会对添加进内存块的字节进行初始化。</p>
+</li>
+<li>
+<p>如果realloc函数不能按要求扩大内存块，那么它会返回空指针，并且在原有内存块中的数据不会发生改变。</p>
+</li>
+<li>
+<p>如果realloc函数调用时以空指针作为第一个实际参数，那么它的行为就像malloc函数一样。</p>
+</li>
+<li>
+<p>如果realloc函数调用时以0作为第二个实际参数，那么它会释放掉内存块。</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>一旦realloc函数返回，请一定要对指向内存块的所有指针进行更新，因为可能realloc函数移动了其他地方的内存块。</p>
+</div>
+<p>实际使用时，realloc应该始终对ptr指向的存储区域进行扩展。</p>
+<p>realloc不是一个好用的函数，要很小心才行。这是因为原来的存储区域会被释放掉（虽然新的存储区域会可能和原来的重叠），其指针很可能都变的无效。</p>
+<h2 id="_6">释放存储</h2>
+<p>malloc函数和其他内存分配函数所获得的内存块都来自一个称为<strong>堆</strong>（heap）的存储池。调用这些函数经常会耗尽堆，或者要求大的内存块也可能耗尽堆，这会导致函数返回空指针。</p>
+<p>更糟的是，程序可能分配了内存块，然后又丢失了这些块的追踪路径，因而浪费了空间。如下例子：</p>
+<div class="codehilite"><pre><span></span>p = malloc(...);
+q = malloc(...);
+p = q;
+</pre></div>
+
+
+<p>由于没有指针指向第一个内存块，所以再也不能使用此内存块了。</p>
+<p>对于程序而言，不再访问到的内存块被称为是<strong>垃圾</strong>（garbage）。在后边留有垃圾的程序有<strong>内存泄漏</strong>（memory leak）。一些语言提供了<strong>垃圾收集器</strong>（garbage collector），但C语言不提供。每个C程序负责回收各自的垃圾，方法是调用free函数来释放不需要的内存。</p>
+<p>如上例子，就是一个内存泄漏。第一块内存再也访问不到了，这应该就是上文所说的留有垃圾。</p>
+<p><strong>free</strong></p>
+<p>只有一个方法释放由动态存储分配函数分配的内存空间。就是使用free函数，如果不释放，那么这块资源就一直放在“堆”里，直到程序退出。</p>
+<p>函数原型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">free</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</pre></div>
+
+
+<p>使用free函数很容易，只是简单地把指向不再需要的内存块的指针传递给free函数就可以了：</p>
+<div class="codehilite"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(...);</span>
+<span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+
+<p>调用free函数来释放p所指向的内存块。然后会把这个释放的内存返回给堆，使此内存块可以被复用。</p>
+<h3 id="_7">“悬空指针”问题</h3>
+<p>free操作会生成<strong>悬空指针</strong>（dangling pointer）。即调用free(p)函数会释放p指向的内存块，但是不会改变p本身。如果忘记了p不再指向有效内存块（而使用它），后果很严重。</p>
+<p>悬空指针是很难发现的，因为几个指针可能指向相同的内存块。在释放内存块时，全部的指针都会留有悬空。</p>
+<h2 id="_8">指向函数的指针</h2>
+<p>函数也有地址，所以就可以有指针指向。一些功能强大的函数（像模板一样）都是通过函数指针和<code>void*</code>实现的。</p>
+<h3 id="_9">函数指针</h3>
+<p>函数指针主要被存放在：</p>
+<ul>
+<li>数组里，方便日后调用</li>
+<li>形参，成为模板函数的实现，比如qsort</li>
+</ul>
+<p>定义一个函数指针类型的例子：</p>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">Func</span><span class="p">)();</span>
+</pre></div>
+
+
+<h3 id="_10">函数入口地址</h3>
+<p>函数名就是函数地址，但通常会对函数名做&amp;运算，其实得到的结果是一样的。同样对函数指针做<code>*</code>运算（解引用）和直接拿函数指针用也是一样的，都是代表了函数的入口地址。</p>
+<p>一般会对函数名做&amp;操作，对函数指针做<code>*</code>操作，让它们看上去比较像指针的使用。</p>
                 
                   
                 
@@ -1732,7 +1957,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch05%20%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" title="ch05 选择语句" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" title="ch16 结构、联合和枚举" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1741,19 +1966,19 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ch05 选择语句
+                ch16 结构、联合和枚举
               </span>
             </div>
           </a>
         
         
-          <a href="../ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" title="ch07 基本类型" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../cheatsheet/%E6%83%AF%E7%94%A8%E6%B3%95/" title="惯用法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                ch07 基本类型
+                惯用法
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
