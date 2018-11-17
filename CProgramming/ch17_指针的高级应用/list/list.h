@@ -33,6 +33,9 @@ struct node* search_list(struct node *list, int n);
 */
 struct node* delete_from_list(struct node *list, int n);
 
+/* 返回 NULL 代表没有修改首节点，否则返回首节点 */
+struct node* delete_from_list_ex_07(struct node *list, int n);
+
 /*
     销毁链表
 */

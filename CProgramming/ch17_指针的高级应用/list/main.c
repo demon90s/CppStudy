@@ -41,7 +41,7 @@ void search(struct node *list)
     }
 }
 
-void delete(struct node *list)
+void delete(struct node **list)
 {
     int n;
     struct node *node;
@@ -49,7 +49,11 @@ void delete(struct node *list)
     printf("Enter number to delete: ");
     scanf("%d", &n);
 
-    delete_from_list(list, n);
+    /* *list = delete_from_list(*list, n); */
+    node = delete_from_list_ex_07(*list, n);
+    if (node != NULL) {
+        *list = node;
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -58,7 +62,7 @@ int main(int argc, char const *argv[])
     print_list(list);
 
     search(list);
-    delete(list);
+    delete(&list);
 
     print_list(list);
 

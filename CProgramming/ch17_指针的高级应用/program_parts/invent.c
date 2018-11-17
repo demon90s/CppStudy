@@ -17,14 +17,22 @@ struct part {
     struct part *next;
 };
 
+struct part_pointer_pair {
+    struct part* prev;
+    struct part* cur;
+};
+
 struct part *inventory = NULL; /* point to first part */
 
 int num_parts = 0;      /* number of parts currently stored */
 
 struct part* find_part(int number);
+struct part_pointer_pair find_part2(int number);
+
 void insert(void);
 void search(void);
 void update(void);
+void erase(void);
 void print(void);
 
 /*
@@ -47,6 +55,7 @@ int main(int argc, char const *argv[])
             case 'i': insert(); break;
             case 's': search(); break;
             case 'u': update(); break;
+            case 'e': erase(); break;
             case 'p': print(); break;
             case 'q': printf("bye\n"); return 0;
             default: printf("Illegal code\n"); break;
@@ -72,6 +81,22 @@ struct part* find_part(int number)
         return p;
 
     return NULL;
+}
+
+struct part_pointer_pair find_part2(int number)
+{
+    struct part *p, *prev = NULL;
+    struct part_pointer_pair ppp = {NULL, NULL};
+
+    for (p = inventory; p != NULL && number > p->number;
+        prev = p, p = p->next);
+    
+    if (p != NULL && number == p->number) {
+        ppp.prev = prev;
+        ppp.cur = p;
+    }
+
+    return ppp;
 }
 
 /*
@@ -160,6 +185,35 @@ void update(void)
         printf("Enter change in quantity on hand: ");
         scanf("%d", &change);
         p->on_hand += change;
+    }
+    else {
+        printf("Part not found.\n");
+    }
+}
+
+/*
+    for ex_09
+*/
+void erase(void)
+{
+    int number;
+    struct part *p;
+    struct part_pointer_pair ppp;
+
+    printf("Enter part number to delete: ");
+    scanf("%d", &number);
+
+    ppp = find_part2(number);
+    if (ppp.cur != NULL) {
+        if (ppp.prev != NULL) {
+            ppp.prev->next = ppp.cur->next;
+            free(ppp.cur);
+        }
+        else {
+            /* erase header */
+            free(ppp.cur);
+            inventory = NULL;
+        }
     }
     else {
         printf("Part not found.\n");

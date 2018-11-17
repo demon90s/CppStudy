@@ -48,6 +48,31 @@ struct node* delete_from_list(struct node *list, int n)
     return list;
 }
 
+struct node* delete_from_list_ex_07(struct node *list, int n)
+{
+    struct node *prev;
+
+    for (prev = NULL;
+        list != NULL && list->value != n;
+        prev = list, list = list->next);
+
+    if (list == NULL)
+        return NULL;             /* n was not found */
+
+    if (prev == NULL) {
+        prev = list;
+        list = list->next;      /* n is in the first node */
+        free(prev);
+        return list;
+    }
+    else {
+        prev->next = list->next; /* n is in some other node */
+        prev = list;
+        free(prev);
+        return NULL;
+    }
+}
+
 void destroy_list(struct node *list)
 {
     struct node *tmp;
