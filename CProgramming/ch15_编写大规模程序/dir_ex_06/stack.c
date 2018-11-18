@@ -17,7 +17,7 @@ int stack_is_empty()
 	return 0 == top;
 }
 
-int stack_is_full()
+PRIVATE int stack_is_full()
 {
 	return STACK_SIZE == top;
 }
