@@ -28,8 +28,16 @@ PUBLIC void init_queue()
 */
 PUBLIC void destroy_queue()
 {
-    if (first) free(first);
-    if (last) free(last);
+    struct node *tmp;
+    while (first != last) {
+        tmp = first->next;
+        free(first);
+        first = tmp;
+    }
+
+    if (last)
+        free(last);
+
     return;
 }
 
