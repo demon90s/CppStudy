@@ -31,7 +31,7 @@ main()
 
 		local ex_files=$(ls -f ex_*)
 
-		local chapter_name="第${chapter_num}章 ${chapter_dir##*_}"
+		local chapter_name="第${chapter_num}章 ${chapter_dir#*_}"
 		echo -e "### $chapter_name\n" >> ../$filename
 
 		echo "|E|X|E|R|C|I|S|E|" >> ../$filename
