@@ -24,8 +24,10 @@ int main(int argc, char const *argv[])
         exit(EXIT_FAILURE);
     }
 
-    while ((ch = getc(source_fp)) != EOF)
+    while ((ch = getc(source_fp)) != EOF) {
         putc(ch, dest_fp);
+        /*printf("out: %c:%d\n", ch, ch);*/
+    }
 
     fclose(source_fp);
     fclose(dest_fp);
