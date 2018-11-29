@@ -34,6 +34,7 @@ pages:
       - ch19 程序设计: CProgramming/ch19 程序设计.md
       - ch20 低级程序设计: CProgramming/ch20 低级程序设计.md
       - ch21 标准库: CProgramming/ch21 标准库.md
+      - ch22 输入输出: CProgramming/ch22 输入_输出.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 
