@@ -1,6 +1,6 @@
 function main
 {
-	python -m mkdocs gh-deploy --force
+	python36 -m mkdocs gh-deploy --force
 }
 
 main $@
