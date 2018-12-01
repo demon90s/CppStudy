@@ -81,6 +81,8 @@ int main(int argc, char const *argv[])
 
     Fraction f2(2, 5);
     printf("%s + %s = %s\n", f1.get(), f2.get(), (f1 + f2).get());
+    printf("%s - %s = %s\n", f1.get(), f2.get(), (f1 - f2).get());
+    printf("%s / %s = %s\n", f1.get(), f2.get(), (f1 / f2).get());
 
     return 0;
 }

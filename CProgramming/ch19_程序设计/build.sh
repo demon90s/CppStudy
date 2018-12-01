@@ -3,7 +3,7 @@
 # 自动编译源文件的脚本，使用方法：sh build.sh [rebuild | clear]
 
 all_c_files=`ls *.c`
-exclude_files="ex_07.cpp"
+exclude_files=""
 
 is_exclude_file() {
 	for file in $exclude_files; do
@@ -40,7 +40,24 @@ main() {
 		fi
 	done
 
-	g++ -g -Wall -std=c++11 ex_07.cpp -o ex_07
+	# for cpp files
+	arr_cpp_files=(ex_07.cpp)
+	local i=0
+	while [ "$i" != ${#arr_cpp_files[@]} ]
+	do
+		local cpp_file=${arr_cpp_files[$i]}
+		local exe_file=${cpp_file%%.cpp*}.exe
+
+		if [ "$1" == "clear" ]; then
+			rm -f $exe_file
+		else
+			echo "[BUILDING] $cpp_file -> $exe_file"
+			g++ -g -Wall -std=c++11 $cpp_file -o $exe_file
+		fi
+		
+		i=$((i + 1))
+	done
+	
 
 	return 0
 }
