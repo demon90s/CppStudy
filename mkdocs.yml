@@ -31,6 +31,7 @@ pages:
       - ch16 结构、联合和枚举: CProgramming/ch16 结构、联合和枚举.md
       - ch17 指针的高级应用: CProgramming/ch17 指针的高级应用.md
       - ch18 声明: CProgramming/ch18 声明.md
+      - ch19 程序设计: CProgramming/ch19 程序设计.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 

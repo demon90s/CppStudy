@@ -11,7 +11,7 @@ main()
 	touch $filename
 
 	echo -e "# C语言程序设计：现代方法\n" >> $filename
-	echo -e "学习环境：CentOS 7\n" >> $filename
+	echo -e "学习环境：CentOS 7, VS Code & MinGW\n" >> $filename
 	echo -e "---\n" >> $filename
 
 	# gen exercises
