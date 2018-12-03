@@ -12,6 +12,7 @@ main()
 
 	echo -e "# C语言程序设计：现代方法\n" >> $filename
 	echo -e "学习环境：CentOS 7, VS Code & MinGW & Git-Bash\n" >> $filename
+	echo -e "第25章 测试多字符与宽字符采取的环境是 CentOS7 ，在 Windows 下测试会出现问题\n" >> $filename
 	echo -e "---\n" >> $filename
 
 	# gen exercises

@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
 	wchar_t pwc;
 	int n = 0;
 
-	mbtowc(&pwc, NULL, 0);
+	mbtowc(NULL, NULL, 0);
 	while ((n = mbtowc(&pwc, p, MB_CUR_MAX)) > 0) {
 		wprintf(L"multi_bytes: %d, character: %lc\n", n, pwc);
 		p += n;
