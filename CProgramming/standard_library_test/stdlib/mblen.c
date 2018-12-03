@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <limits.h>
 
 /* 检测 s 是否是有效的多字节字符串 */
 int mbcheck(const char *s)
@@ -26,8 +27,12 @@ int mbcheck(const char *s)
 
 int main()
 {
-    printf("Is 'Hello' multibyte character? %s\n", mbcheck("Hello") == 0 ? "yes" : "no");
+	/* 对于多字节的中文测试，需要设置成以下的本地环境 */
+	setlocale(LC_ALL, "zh_CN.UTF-8");
 
-    printf("Is '苹果是apple' multibyte character? %s\n", mbcheck("苹果是apple") == 0 ? "yes" : "no");
+    printf("Is 'Hello' multibyte string? %s\n", mbcheck("Hello") == 0 ? "yes" : "no");
+
+    printf("Is '你好啊' multibyte string? %s\n", mbcheck("你好啊") == 0 ? "yes" : "no");
+
     return 0;
 }

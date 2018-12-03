@@ -17,25 +17,20 @@
 #include <stdlib.h>
 #include <wchar.h>
 
-// 打印多字节字符串到宽面向的 stdout
-// 等价于 wprintf(L"%s\n", ptr);
-void print_mb(const char *ptr)
-{
-    mbtowc(NULL, 0, 0); // 重置初始转换状态
-    const char *end = ptr + strlen(ptr);
-    int ret;
-    for (wchar_t wc; (ret = mbtowc(&wc, ptr, end-ptr)) > 0; ptr += ret) {
-        wprintf(L"%lc", wc);
-    }
-    wprintf(L"\n");
-}
-
 int main(int argc, char const *argv[])
 {
-    setlocale(LC_ALL, "en_US.utf8");
+	setlocale(LC_ALL, "zh_CN.UTF-8");
 
-    // UTF-8 窄多字节编码
-    print_mb(u8"z\u00df\u6c34\U0001F34C");
-    
+	const char multi_bytes_str[] = "你好啊";
+	const char *p = multi_bytes_str;
+	wchar_t pwc;
+	int n = 0;
+
+	mbtowc(&pwc, NULL, 0);
+	while ((n = mbtowc(&pwc, p, MB_CUR_MAX)) > 0) {
+		wprintf(L"multi_bytes: %d, character: %lc\n", n, pwc);
+		p += n;
+	}
+
     return 0;
 }
