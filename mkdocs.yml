@@ -70,41 +70,6 @@ pages:
       - 运算符重载: CppPrimer/cheatsheet/运算符重载.md
       - 向set中插入自定义类型对象: CppPrimer/cheatsheet/向set中插入自定义类型对象.md
 
-  - Effective C++:
-    - 1 让自己习惯C++: 
-      - 条款01：视C++为一个语言联邦: EffectiveCpp/1 让自己习惯C++/条款01：视C++为一个语言联邦.md
-      - 条款02：尽量以const, enum, inline替换#define: EffectiveCpp/1 让自己习惯C++/条款02：尽量以const, enum, inline替换#define.md
-      - 条款03：尽可能使用const: EffectiveCpp/1 让自己习惯C++/条款03：尽可能使用const.md
-      - 条款04：确定对象被使用前已被初始化: EffectiveCpp/1 让自己习惯C++/条款04：确定对象被使用前已被初始化.md
-    - 2 构造、析构、赋值运算:
-      - 条款05：了解C++默默编写并调用哪些函数: EffectiveCpp/2 构造、析构、赋值运算/条款05：了解C++默默编写并调用哪些函数.md
-      - 条款06：若不想使用编译器自动生成的函数，就该明确拒绝: EffectiveCpp/2 构造、析构、赋值运算/条款06：若不想使用编译器自动生成的函数，就该明确拒绝.md
-      - 条款07：为多态基类声明virtual析构函数: EffectiveCpp/2 构造、析构、赋值运算/条款07：为多态基类声明virtual析构函数.md
-      - 条款08：别让异常逃离析构函数: EffectiveCpp/2 构造、析构、赋值运算/条款08：别让异常逃离析构函数.md
-      - 条款09：绝不在构造和析构过程中调用virtual函数: EffectiveCpp/2 构造、析构、赋值运算/条款09：绝不在构造和析构过程中调用virtual函数.md
-      - 条款10：令operator=返回一个reference to this: EffectiveCpp/2 构造、析构、赋值运算/条款10：令operator=返回一个reference to this.md
-      - 条款11：在operator=中处理“自我赋值”: EffectiveCpp/2 构造、析构、赋值运算/条款11：在operator=中处理“自我赋值”.md
-      - 条款12：复制对象时勿忘其每一个成分: EffectiveCpp/2 构造、析构、赋值运算/条款12：复制对象时勿忘其每一个成分.md
-    - 3 资源管理:
-      - 条款13：以对象管理资源: EffectiveCpp/3 资源管理/条款13：以对象管理资源.md
-      - 条款14：在资源管理类中小心 copying 行为: EffectiveCpp/3 资源管理/条款14：在资源管理类中小心 copying 行为.md
-      - 条款15：在资源管理类中提供对原始资源的访问: EffectiveCpp/3 资源管理/条款15：在资源管理类中提供对原始资源的访问.md
-      - 条款16：成对使用 new 和 delete 时要采取相同形式: EffectiveCpp/3 资源管理/条款16：成对使用 new 和 delete 时要采取相同形式.md
-      - 条款17：以独立语句将 newed 对象置入智能指针: EffectiveCpp/3 资源管理/条款17：以独立语句将 newed 对象置入智能指针.md
-    - 4 设计与声明:
-      - 条款18：让接口容易被正确使用，不易被误用: EffectiveCpp/4 设计与声明/条款18：让接口容易被正确使用，不易被误用.md
-      - 条款19：设计 class 犹如设计 type: EffectiveCpp/4 设计与声明/条款19：设计 class 犹如设计 type.md
-      - 条款20：宁以 pass-by-reference-to-const 替换 pass-by-value: EffectiveCpp/4 设计与声明/条款20：宁以 pass-by-reference-to-const 替换 pass-by-value.md
-      - 条款21：必须返回对象时，别妄想返回其 reference: EffectiveCpp/4 设计与声明/条款21：必须返回对象时，别妄想返回其 reference.md
-      - 条款22：将成员变量声明为 private: EffectiveCpp/4 设计与声明/条款22：将成员变量声明为 private.md
-      - 条款23：宁以 non-member, non-friend 替换 member 函数: EffectiveCpp/4 设计与声明/条款23：宁以 non-member, non-friend 替换 member 函数.md
-      - 条款24：若所有参数皆需类型转换，请为此采用 non-member 函数: EffectiveCpp/4 设计与声明/条款24：若所有参数皆需类型转换，请为此采用 non-member 函数.md
-      - 条款25：考虑写出一个不抛异常的 swap 函数: EffectiveCpp/4 设计与声明/条款25：考虑写出一个不抛异常的 swap 函数.md
-    - 5 实现:
-      - 条款26：尽可能延后变量定义式的出现时间: EffectiveCpp/5 实现/条款26：尽可能延后变量定义式的出现时间.md
-      - 条款27：尽量少做转型动作: EffectiveCpp/5 实现/条款27：尽量少做转型动作.md
-      - 条款28：避免返回 handles 指向对象内部成分: EffectiveCpp/5 实现/条款28：避免返回 handles 指向对象内部成分.md
-
 theme:
   name: 'material'
   logo:

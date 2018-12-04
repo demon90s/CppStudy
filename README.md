@@ -1,19 +1,13 @@
-# C++ 学习笔记
+# C/C++ 学习笔记
 
-曾经一直零零碎碎看着《C++ Primer》 ，学习效果却不是很明显，因此决定重新整理好笔记和练习，系统性地提高自己的C++编程水平。也期望把这份笔记当成一份 cheatsheet ，方便日后查阅。
+这是为本人学习C/C++的笔记，内容包括了：
 
-笔记分为两个部分：
+- 读书笔记
 
-- 代码练习
+- 课后练习
 
-- markdown 笔记
-
----
+- 有关语法、概念、API的测试代码
 
 - [x] [C语言程序设计：现代方法](./CProgramming)
 
 - [x] [C++ Primer 5th](./CppPrimer)
-
-- [ ] [Effective C++ 3rd](./EffectiveCpp)
-
-- [ ] [剑指Offer](./CodingInterview)
