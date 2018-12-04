@@ -38,7 +38,7 @@
     
     
       
-        <title>ch04 表达式 - C++ Study Note</title>
+        <title>ch25 国际化特性 - C++ Study Note</title>
       
     
     
@@ -127,7 +127,7 @@
                 C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                ch04 表达式
+                ch25 国际化特性
               </span>
             
           
@@ -392,110 +392,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ch04 表达式
-      </label>
-    
-    <a href="./" title="ch04 表达式" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch04 表达式/" title="ch04 表达式" class="md-nav__link">
       ch04 表达式
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="算术运算符" class="md-nav__link">
-    算术运算符
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="运算符的优先级和结合性" class="md-nav__link">
-    运算符的优先级和结合性
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="赋值运算符" class="md-nav__link">
-    赋值运算符
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="简单赋值" class="md-nav__link">
-    简单赋值
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" title="左值" class="md-nav__link">
-    左值
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" title="复合赋值" class="md-nav__link">
-    复合赋值
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" title="自增运算符和自减运算符" class="md-nav__link">
-    自增运算符和自减运算符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" title="表达式求值" class="md-nav__link">
-    表达式求值
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -743,11 +644,124 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ch25 国际化特性
+      </label>
+    
+    <a href="./" title="ch25 国际化特性" class="md-nav__link md-nav__link--active">
       ch25 国际化特性
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#localeh" title="locale.h 本地化" class="md-nav__link">
+    locale.h 本地化
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="类别" class="md-nav__link">
+    类别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlocale" title="setlocale函数" class="md-nav__link">
+    setlocale函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localeconv" title="localeconv函数" class="md-nav__link">
+    localeconv函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="多字节字符和宽字符" class="md-nav__link">
+    多字节字符和宽字符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="多字节字符" class="md-nav__link">
+    多字节字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="宽字符" class="md-nav__link">
+    宽字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="多字节字符函数" class="md-nav__link">
+    多字节字符函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="多字节字符串函数" class="md-nav__link">
+    多字节字符串函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="三字符序列" class="md-nav__link">
+    三字符序列
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1190,16 +1204,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="算术运算符" class="md-nav__link">
-    算术运算符
+  <a href="#localeh" title="locale.h 本地化" class="md-nav__link">
+    locale.h 本地化
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="运算符的优先级和结合性" class="md-nav__link">
-    运算符的优先级和结合性
+  <a href="#_2" title="类别" class="md-nav__link">
+    类别
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlocale" title="setlocale函数" class="md-nav__link">
+    setlocale函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localeconv" title="localeconv函数" class="md-nav__link">
+    localeconv函数
   </a>
   
 </li>
@@ -1210,30 +1238,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="赋值运算符" class="md-nav__link">
-    赋值运算符
+  <a href="#_3" title="多字节字符和宽字符" class="md-nav__link">
+    多字节字符和宽字符
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" title="简单赋值" class="md-nav__link">
-    简单赋值
+  <a href="#_4" title="多字节字符" class="md-nav__link">
+    多字节字符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" title="左值" class="md-nav__link">
-    左值
+  <a href="#_5" title="宽字符" class="md-nav__link">
+    宽字符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="复合赋值" class="md-nav__link">
-    复合赋值
+  <a href="#_6" title="多字节字符函数" class="md-nav__link">
+    多字节字符函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="多字节字符串函数" class="md-nav__link">
+    多字节字符串函数
   </a>
   
 </li>
@@ -1244,15 +1279,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="自增运算符和自减运算符" class="md-nav__link">
-    自增运算符和自减运算符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" title="表达式求值" class="md-nav__link">
-    表达式求值
+  <a href="#_8" title="三字符序列" class="md-nav__link">
+    三字符序列
   </a>
   
 </li>
@@ -1273,160 +1301,105 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch04 表达式.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch25 国际化特性.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">第四章 表达式</h1>
-<p>表达式是显示如何计算值的公式。最简单的表达式是变量和常量。变量表示程序运行时计算出的值；常量表示不变的值。</p>
-<p>运算符是构建表达式的基本工具。C语言提供了基本的运算符：</p>
-<ul>
-<li>算术运算符。</li>
-<li>关系运算符。</li>
-<li>逻辑运算符。</li>
-</ul>
+                <h1 id="_1">第二十五章 国际化特性</h1>
 <hr />
-<h2 id="_2">算术运算符</h2>
-<p>算术运算符有：</p>
-<table>
-<thead>
-<tr>
-<th align="center">一元运算符</th>
-<th align="center">二元运算符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">+ -</td>
-<td align="center">+ - * / %</td>
-</tr>
-</tbody>
-</table>
-<p>二元运算符要求有两个操作数，而一元运算符只要有一个操作数。</p>
-<p>一元运算符+无任何操作，它主要是为了强调某数值常量是正的。</p>
-<p>%被称之为 mod （求模）或 rem （取余）。 i % j 的数值是i除以j后的余数。</p>
-<p>除了%，二元运算符既允许操作数是整数也允许操作数是浮点数，或者允许两者的混合。当把 int 型操作数和 float 型操作数混合在一起时，运算结果是 float 型的。</p>
-<p>运算符/和%需要特别注意：</p>
+<h2 id="localeh">locale.h 本地化</h2>
+<p>locale.h提供的函数用于控制提供的函数用于控制标准库中对于不同的地区会不一样的部分。</p>
+<p>地区通常指一个国家，或者一个国家的不同区域。</p>
+<p>在标准库中，依赖地区的部分包括：</p>
 <ul>
-<li>/可能产生意外的结果。当两个操作数都是整数时，运算符/通过丢掉分数部分的方法截取结果，因此1/2的结果是0。</li>
-<li>%要求整数操作数；如果两个操作数中有一个不是整数，那么程序将无法通过编译。</li>
-<li>当/和%用于负数时，其结果与具体实现有关。如果操作数中有一个为负数，那么除法的结果既可以向上取整也可以向下取整。</li>
+<li>
+<p>数值的格式。比如一些地区的小数点是用逗号表示</p>
+</li>
+<li>
+<p>货币的格式。不同国家的货币符号不同。</p>
+</li>
+<li>
+<p>字符集。字符集依赖于地区使用的语言。亚洲国家通常比西方国家需要更大的字符集。</p>
+</li>
+<li>
+<p>日期和时间的表示格式。</p>
+</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">由实现定义</p>
-<p>术语由实现定义（ implementation-defined ）出现频率很高，意思是指软件在特定的平台上编译、链接和执行。根据实现的不同，程序的行为可能会稍有差异。
-C语言的目的之一是达到高效率，这经常意味着要与硬件行为相匹配。当-9除以7时，一些机器可能产生的结果是-1，而另一些机器的结果为-2，C标准简单地反映了这一现实。
-最好避免编写与实现定义的行为相关的程序。</p>
-</div>
-<h3 id="_3">运算符的优先级和结合性</h3>
-<p>C语言允许在所有表达式中用圆括号进行分组。但如果不使用圆括号，就采用运算符优先级（ operator precedence ）的规则来解决问题。算术运算符有下列相对优先级：</p>
+<h3 id="_2">类别</h3>
+<p>通过修改地区，程序可以改变它的行为来适应不同地区。</p>
+<p>可以使用一些宏来指定一个<strong>类型</strong>：</p>
 <ul>
-<li>最高优先级：+ -（一元运算符）</li>
-<li>中级优先级：* / %</li>
-<li>最低优先级：+ -（二元运算符）</li>
+<li>
+<p>LC_COLLATE。影响两个字符串比较函数的行为（strcoll和strxfm）。</p>
+</li>
+<li>
+<p>LC_CTYPE。影响ctype.h中函数的行为，除了isdigit和isxdigit。同时还影响stdlib.h中的多字节函数。</p>
+</li>
+<li>
+<p>LC_MONETRAY。影响由localeconv函数返回的货币格式信息。</p>
+</li>
+<li>
+<p>LC_NUMERIC。影响格式化输入/输出函数使用的小数点字符以及stdlib.h中的字符串转换函数（atof和strtod），还会影响localeconv函数返回的非货币格式信息。</p>
+</li>
+<li>
+<p>LC_TIME。影响strftime函数的行为，该函数将时间转换成字符串。</p>
+</li>
 </ul>
-<p>例如：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="n">k</span><span class="p">;</span>    <span class="c1">// 等价于 i + (j * k)</span>
+<h3 id="setlocale">setlocale函数</h3>
+<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="nf">setlocale</span><span class="p">(</span><span class="kt">int</span> <span class="n">category</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">locale</span><span class="p">);</span>
 </pre></div>
 
 
-<p>当一个表达式包含两个以上相同优先级的运算符时，单独的运算符优先级的规则是不够的。这种情况下，运算符的结合性（ associativity ）开始发挥作用。如果运算符是从左向右结合的，那么称这种运算符是左结合的（ left associative ）。二元算术运算符都是左结合的，所以：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span>    <span class="c1">// 等价于 (i - j) - k</span>
+<p>setlocale函数修改当前的地区。如果第一个参数是LC_ALL，就会影响所有的类型。C语言标准对第二个参数仅定义了两种可能值："c"和""。其余的由实现定义，比如， gcc 对于简体中文的地区，可以是"zh_CN.UTF-8"</p>
+<p>程序执行开始时，都会隐含调用：<code>setlocale(LC_ALL, "C");</code></p>
+<p>如果用""作为第二个参数，就切换到了本地模式（native locale），这种模式下程序会适应本地的环境。</p>
+<p>如果调用成功，返回一个关于地区名字的字符串指针。如果调用失败，返回空指针。</p>
+<p>setlocale函数也可以当作搜索函数使用，如果第二个参数是空指针，setlocale函数会返回一个指向字符串的指针，这个字符串与当前地区类型的设置相关联。</p>
+<h3 id="localeconv">localeconv函数</h3>
+<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">lconv</span> <span class="o">*</span><span class="nf">localeconv</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </pre></div>
 
 
-<p>如果运算符是从右向左结合的，那么称为右结合的（ right associative ）。一元运算符都是右结合的。</p>
-<h2 id="_4">赋值运算符</h2>
-<p>一旦计算出表达式的值就常常需要把这个值存储在变量中，以便后面使用。C语言的=运算符（assignment）可以用于此目的。</p>
-<h3 id="_5">简单赋值</h3>
-<p>表达式v = e的赋值效果是求出表达式e的值，并把此值复制给v。e可以是常量、变量或较为复杂的表达式：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
-</pre></div>
-
-
-<p>如果v和e的类型不同，那么赋值运算发生时会把e的值转化为v的类型：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mf">72.99</span><span class="p">;</span> <span class="cm">/* i is now 72 */</span>
-</pre></div>
-
-
-<p>赋值操作产生结果，赋值表达式v=e的值就是赋值运算后v的值。因此，表达式i = 72.99的值是72。</p>
+<p>函数返回的struct lconv结构包含了当前地区的详细信息，此结构具有静态存储期限。</p>
+<p>详细信息参考书本。</p>
+<h2 id="_3">多字节字符和宽字符</h2>
+<p>因为定义已经把char型值的大小限制为一个字节，所以通过改变char类型的含义来处理更大的字符集显然是不可能的。</p>
+<p>C语言提供了两种可扩展字符集的编码：<strong>多字节字符</strong>（multibyte character）和<strong>宽字符</strong>（wide character）。</p>
+<p>C标准要求0字节始终用来表示空字符。</p>
+<h3 id="_4">多字节字符</h3>
+<p>在多字节字符编码中，一个或多个字节表示一个可扩展字符。C语言要求的基本字符是单字节的。</p>
+<p>一些多字节字符集依靠<strong>依赖状态编码</strong>（state-dependent encoding）。在这类编码中，每个多字节字符序列都以<strong>初始移位状态</strong>（initial shift state）开始。序列中稍后遇到的一些多字节字符会改变移位状态，并且影响后续字节的含义。</p>
+<p>MB_LEN_MAX和MB_CUR_MAX说明了多字节字符中字节的最大数量。MB_LEN_MAX定义在limits.h中，给出了任意支持地区的最大值。MB_CUR_MAX定义在stdlib.h中，给出了当前地区的最大值。</p>
+<h3 id="_5">宽字符</h3>
+<p>宽字符是一种其值表示字符的整数，所有宽字符要求相同的字节数。</p>
+<p>宽字符具有wchar_t类型。</p>
+<p>一个宽字符常量可以写成：<code>L'a'</code></p>
+<p>一个宽字符字符串可以写成：<code>L"abc"</code></p>
+<p>即在普通字符常量前用字母L作为前缀。</p>
 <div class="admonition note">
-<p class="admonition-title">副作用</p>
-<p>大多数C语言运算符不会改变操作数的值，但是也有一些会改变。由于这类运算符所做的不再仅仅是计算出值，所以称它们有副作用（ side effect ）。简单的赋值运算符就是一个有副作用的运算符，它改变了运算符左边的操作数。表达式i=0产生的结果为0，作为副作用，把0赋值给i。</p>
+<p class="admonition-title">my note</p>
+<p>注意，在使用宽字符前，需要设置好本地环境，比如，要使用简体中文的宽字符，那么要先执行 <code>setlocale(LC_ALL, "zh_CN.UTF-8")</code> ，这样才能正确地解析宽字符。</p>
 </div>
-<p>运算符=是右结合的。所以：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">));</span> <span class="c1">// 等价</span>
+<h3 id="_6">多字节字符函数</h3>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">mblen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">n</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">mbtowc</span><span class="p">(</span><span class="kt">wchar_t</span> <span class="o">*</span><span class="n">pwc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">n</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">wctomb</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="kt">wchar_t</span> <span class="n">wc</span><span class="p">);</span>
 </pre></div>
 
 
-<h3 id="_6">左值</h3>
-<p>大多数C语言运算符允许它们的操作数是变量、常量或者包含其他运算符的表达式。然而，赋值运算符要求它左边的操作数必须是左值（ lvalue ）。左值表示存储在计算机内存中的对象，而不是常量或计算结果。变量是左值，而诸如10或2*i这样的表达式则不是左值。</p>
-<h3 id="_7">复合赋值</h3>
-<p>利用变量原有值计算出新值并重新赋值给这个变量在C语言程序中是非常普遍的。例如：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<h3 id="_7">多字节字符串函数</h3>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="kt">size_t</span> <span class="nf">mbstowcs</span><span class="p">(</span><span class="kt">wchar_t</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">src</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">n</span><span class="p">);</span>
+<span class="kt">size_t</span> <span class="nf">wcstombs</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">src</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">n</span><span class="p">);</span>
 </pre></div>
 
 
-<p>C语言的复合赋值运算符（ compound assignment operator ）允许缩短这种语句和其他类似的语句。</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
-</pre></div>
-
-
-<p>+=运算符把右侧操作数的值加上左侧的变量，并把结果赋值给左侧的变量。还有另外的9种复合赋值运算符，包括：</p>
-<p>-= *= /= %=</p>
-<h2 id="_8">自增运算符和自减运算符</h2>
-<p>++表示操作数加1，--表示操作数减1。++和--既可以作为前缀（ prefix ）运算符，也可以作为后缀（ postfix ）运算符使用。</p>
-<p>++和--也有副作用，它们会改变操作数的值。计算表达式++i的结果是i+1，副作用是自增i。计算表达式i++的结果是i，副作用是自增i。</p>
-<p>这个自增操作一定会在下一条语句执行前完成。</p>
-<h2 id="_9">表达式求值</h2>
-<p>上述总结的运算符在下表列出了其优先级、结合性。更多讨论见书本p39。</p>
-<table>
-<thead>
-<tr>
-<th>优先级</th>
-<th>类型名称</th>
-<th>符号</th>
-<th>结合性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>后缀自增、自减</td>
-<td>++ --</td>
-<td>左结合</td>
-</tr>
-<tr>
-<td>2</td>
-<td>前缀自增、自减，一元正负</td>
-<td>++ -- + -</td>
-<td>右结合</td>
-</tr>
-<tr>
-<td>3</td>
-<td>乘法类</td>
-<td>* / %</td>
-<td>左结合</td>
-</tr>
-<tr>
-<td>4</td>
-<td>加法类</td>
-<td>+ -</td>
-<td>左结合</td>
-</tr>
-<tr>
-<td>5</td>
-<td>赋值</td>
-<td>= *= /= %= += -=</td>
-<td>右结合</td>
-</tr>
-</tbody>
-</table>
-<p><strong>子表达式的求值顺序</strong></p>
-<p>C语言没有定义子表达式的求值顺序（除了含有逻辑与运算符及逻辑或运算符、条件运算符以及逗号运算符的子表达式）。</p>
+<h2 id="_8">三字符序列</h2>
+<p>见书本简要介绍。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这就是一种字符替换方式，由于某些国家不支持C语言的标准的字符书写方式。</p>
+</div>
                 
                   
                 
@@ -1447,7 +1420,7 @@ C语言的目的之一是达到高效率，这经常意味着要与硬件行为�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch24 错误处理/" title="ch24 错误处理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1456,19 +1429,19 @@ C语言的目的之一是达到高效率，这经常意味着要与硬件行为�
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ch03 格式化输入输出
+                ch24 错误处理
               </span>
             </div>
           </a>
         
         
-          <a href="../ch05 选择语句/" title="ch05 选择语句" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch26 其他库函数/" title="ch26 其他库函数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                ch05 选择语句
+                ch26 其他库函数
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

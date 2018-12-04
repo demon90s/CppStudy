@@ -38,7 +38,7 @@
     
     
       
-        <title>ch04 表达式 - C++ Study Note</title>
+        <title>ch26 其他库函数 - C++ Study Note</title>
       
     
     
@@ -127,7 +127,7 @@
                 C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                ch04 表达式
+                ch26 其他库函数
               </span>
             
           
@@ -392,110 +392,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ch04 表达式
-      </label>
-    
-    <a href="./" title="ch04 表达式" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch04 表达式/" title="ch04 表达式" class="md-nav__link">
       ch04 表达式
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="算术运算符" class="md-nav__link">
-    算术运算符
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="运算符的优先级和结合性" class="md-nav__link">
-    运算符的优先级和结合性
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="赋值运算符" class="md-nav__link">
-    赋值运算符
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="简单赋值" class="md-nav__link">
-    简单赋值
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" title="左值" class="md-nav__link">
-    左值
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" title="复合赋值" class="md-nav__link">
-    复合赋值
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" title="自增运算符和自减运算符" class="md-nav__link">
-    自增运算符和自减运算符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" title="表达式求值" class="md-nav__link">
-    表达式求值
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -755,11 +656,124 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ch26 其他库函数
+      </label>
+    
+    <a href="./" title="ch26 其他库函数" class="md-nav__link md-nav__link--active">
       ch26 其他库函数
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stdargh" title="stdarg.h 可变长度实参" class="md-nav__link">
+    stdarg.h 可变长度实参
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="调用带有可变实参列表的函数" class="md-nav__link">
+    调用带有可变实参列表的函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vprintf" title="v...printf类函数" class="md-nav__link">
+    v...printf类函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdlibh" title="stdlib.h 通用的实用工具" class="md-nav__link">
+    stdlib.h 通用的实用工具
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="字符串转换函数" class="md-nav__link">
+    字符串转换函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="伪随机生成函数" class="md-nav__link">
+    伪随机生成函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="与环境的通信" class="md-nav__link">
+    与环境的通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="搜索和排序工具" class="md-nav__link">
+    搜索和排序工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="整数算术运算函数" class="md-nav__link">
+    整数算术运算函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeh" title="time.h 日期和时间" class="md-nav__link">
+    time.h 日期和时间
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1190,16 +1204,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="算术运算符" class="md-nav__link">
-    算术运算符
+  <a href="#stdargh" title="stdarg.h 可变长度实参" class="md-nav__link">
+    stdarg.h 可变长度实参
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="运算符的优先级和结合性" class="md-nav__link">
-    运算符的优先级和结合性
+  <a href="#_2" title="调用带有可变实参列表的函数" class="md-nav__link">
+    调用带有可变实参列表的函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vprintf" title="v...printf类函数" class="md-nav__link">
+    v...printf类函数
   </a>
   
 </li>
@@ -1210,30 +1231,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="赋值运算符" class="md-nav__link">
-    赋值运算符
+  <a href="#stdlibh" title="stdlib.h 通用的实用工具" class="md-nav__link">
+    stdlib.h 通用的实用工具
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" title="简单赋值" class="md-nav__link">
-    简单赋值
+  <a href="#_3" title="字符串转换函数" class="md-nav__link">
+    字符串转换函数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" title="左值" class="md-nav__link">
-    左值
+  <a href="#_4" title="伪随机生成函数" class="md-nav__link">
+    伪随机生成函数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="复合赋值" class="md-nav__link">
-    复合赋值
+  <a href="#_5" title="与环境的通信" class="md-nav__link">
+    与环境的通信
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="搜索和排序工具" class="md-nav__link">
+    搜索和排序工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="整数算术运算函数" class="md-nav__link">
+    整数算术运算函数
   </a>
   
 </li>
@@ -1244,15 +1279,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="自增运算符和自减运算符" class="md-nav__link">
-    自增运算符和自减运算符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" title="表达式求值" class="md-nav__link">
-    表达式求值
+  <a href="#timeh" title="time.h 日期和时间" class="md-nav__link">
+    time.h 日期和时间
   </a>
   
 </li>
@@ -1273,160 +1301,264 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch04 表达式.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/study_notes/CProgramming/ch26 其他库函数.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">第四章 表达式</h1>
-<p>表达式是显示如何计算值的公式。最简单的表达式是变量和常量。变量表示程序运行时计算出的值；常量表示不变的值。</p>
-<p>运算符是构建表达式的基本工具。C语言提供了基本的运算符：</p>
-<ul>
-<li>算术运算符。</li>
-<li>关系运算符。</li>
-<li>逻辑运算符。</li>
-</ul>
+                <h1 id="_1">其他库函数</h1>
 <hr />
-<h2 id="_2">算术运算符</h2>
-<p>算术运算符有：</p>
+<h2 id="stdargh">stdarg.h 可变长度实参</h2>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">va_start</span><span class="p">(</span><span class="kt">va_list</span> <span class="n">ap</span><span class="p">,</span> <span class="n">last</span><span class="p">);</span>
+<span class="n">type</span> <span class="nf">va_arg</span><span class="p">(</span><span class="kt">va_list</span> <span class="n">ap</span><span class="p">,</span> <span class="n">type</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">va_end</span><span class="p">(</span><span class="kt">va_list</span> <span class="n">ap</span><span class="p">);</span>
+</pre></div>
+
+
+<p>stdarg.h提供了一种工具可以让我们自行编写的函数具有可变长的参数列表（varying number of arguments of varying types）。stdarg.h定义了一种va_list类型和三种宏，名为va_start, va_arg, va_end, 可以把这些宏看成是带有上述原型的函数。</p>
+<p>书中使用了此例进行讲解：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">max_int</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="p">...)</span>    <span class="c1">// n must be at least 1</span>
+<span class="p">{</span>
+    <span class="kt">va_list</span> <span class="n">ap</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">largest</span><span class="p">;</span>
+
+    <span class="n">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="n">largest</span> <span class="o">=</span> <span class="n">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">)</span>
+            <span class="n">largest</span> <span class="o">=</span> <span class="n">current</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">largest</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>函数的第一个实参n说明了跟随其后的其他参数的数量。</p>
+<p>形参列表中的...符号表示可变数量的参数。带有可变参数的函数必须至少有一个“正常的”形参，在最后一个正常的参数后边始终会有省略号出现在参数列表的末尾。</p>
+<p><code>va_list ap</code>声明了一个变量，使得函数可以访问到可变参数。</p>
+<p><code>va_start(ap, n)</code>指出了实参列表中可变长度开始的位置。</p>
+<p><code>va_arg(ap, int)</code>把获取当前的可变参数，然后自动前进到下一个可变参数处。int说明希望此参数是int类型的。</p>
+<p>函数返回前，使用语句<code>va_end(ap)</code>进行清扫。</p>
+<h3 id="_2">调用带有可变实参列表的函数</h3>
+<p>调用带有可变实参列表的函数是一个固有的风险提议。</p>
+<p>这里主要的难点就是带有可变实参列表的函数很难确定传递过来的参数的数量或类型。所以必须把这个信息传递给函数，并且函数假设知道了这个信息。上述max_int函数依靠第一个实参来指明跟随其后的其他参数的数量，并且它还设定参数是int类型的。</p>
+<p>另一个问题就是不得不处理NULL作为参数的情况，具体见书本。</p>
+<h3 id="vprintf">v...printf类函数</h3>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">vprintf</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">format</span><span class="p">,</span> <span class="kt">va_list</span> <span class="n">ap</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">vfprintf</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">format</span><span class="p">,</span> <span class="kt">va_list</span> <span class="n">ap</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">vsprintf</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">format</span><span class="p">,</span> <span class="kt">va_list</span> <span class="n">ap</span><span class="p">);</span>
+</pre></div>
+
+
+<p>不同于printf等函数，v...printf类函数具有固定数量的实参，每个v...printf类函数的最后一个实参都是一个va_list型值。这个类型的值意味着此函数可以由带有可变实参列表的函数调用。</p>
+<p>实际上，v...printf类函数主要用于编写“包装”函数。包装函数接收可变数量的实参，并稍后把这些参数传递给v...printf类函数（通过va_list）。</p>
+<p>这种包装函数的核心内容是：</p>
+<ul>
+<li>
+<p>va_start(ap, arg)</p>
+</li>
+<li>
+<p>把ap传递给v...printf</p>
+</li>
+<li>
+<p>va_end(ap)</p>
+</li>
+</ul>
+<h2 id="stdlibh">stdlib.h 通用的实用工具</h2>
+<h3 id="_3">字符串转换函数</h3>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">atoi</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nptr</span><span class="p">);</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">atoll</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nptr</span><span class="p">);</span>
+
+<span class="kt">long</span> <span class="kt">int</span> <span class="nf">strtol</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nptr</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">endptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span><span class="p">);</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="nf">strtoll</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nptr</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">endptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="_4">伪随机生成函数</h3>
+<p>伪随机数的生成方法是：</p>
+<ul>
+<li>
+<p>先设置一个随机种子（srand）</p>
+</li>
+<li>
+<p>调用rand函数根据随机种子生成一个伪随机数</p>
+</li>
+</ul>
+<p>如果每次程序运行的随机种子都一样，那么rand出来的数就会一样。因此通常采用当前时间戳作为随机种子（但如果两次启动间隔不足一秒，时间戳也是一样滴）。</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">srand</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">seed</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">rand</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="_5">与环境的通信</h3>
+<p>与外部通信的标准库函数可以：</p>
+<ul>
+<li>
+<p>为操作系统返回一个程序结束的状态码</p>
+</li>
+<li>
+<p>获取环境变量</p>
+</li>
+<li>
+<p>执行操作系统的命令</p>
+</li>
+</ul>
+<p><strong>返回状态码</strong></p>
+<p>在main中执行return语句，即返回了一个状态码给操作系统；或者在程序的任意处执行exit函数，也可以终止程序并返回一个状态码给操作系统。</p>
+<p>exit是正常性质的结束程序，可以清理程序打开的资源。</p>
+<p>atexit函数还可以注册一个函数，在程序正常结束前，执行这个注册函数。可以注册多个atexit函数，调用顺序和注册顺序一致。</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="kt">int</span> <span class="n">status</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">atexit</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</pre></div>
+
+
+<p><strong>获取环境变量</strong></p>
+<p>环境变量是一组存放到静态存储区的字符串，描述了操作系统的环境，比如PATH。使用getenv就可以获取它的值。</p>
+<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="nf">getenv</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+
+
+<p><strong>执行命令</strong></p>
+<p>主要是通过system函数执行一个外部的命令。system函数返回该命令的终止状态码。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">system</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">command</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="_6">搜索和排序工具</h3>
+<p>用于搜索的工具是：bsearch（实现为二分查找），用于排序的工具是：qsort（实现为快速排序）。</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">qsort</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">nmemb</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span>
+                  <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">compar</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">));</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">bsearch</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">nmemb</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span>
+                     <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">compar</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">));</span>
+</pre></div>
+
+
+<h3 id="_7">整数算术运算函数</h3>
+<p><strong>abs求绝对值</strong></p>
+<p>函数原型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">abs</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="p">);</span>
+</pre></div>
+
+
+<p><strong>div求除法运算结果</strong></p>
+<p>函数原型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">div_t</span> <span class="nf">div</span><span class="p">(</span><span class="kt">int</span> <span class="n">numerator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">denominator</span><span class="p">);</span>
+</pre></div>
+
+
+<p>结果是第一个实参除以第二个实参。结果是一个div_t类型，它包含了商和余数，定义如下：</p>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">quot</span><span class="p">;</span>    <span class="cm">/* Quotient.  */</span>
+    <span class="kt">int</span> <span class="n">rem</span><span class="p">;</span>     <span class="cm">/* Remainder. */</span>
+<span class="p">}</span> <span class="kt">div_t</span><span class="p">;</span>
+</pre></div>
+
+
+<p>但第二个实参一定不能为0，不然就会出现段错误。因此判断除数是否合法的责任就交给了程序员。</p>
+<h2 id="timeh">time.h 日期和时间</h2>
+<p>标准库提供了三种表示时间的类型：</p>
+<ol>
+<li>
+<p>clock_t：按照“时钟滴答”进行测量的时间值</p>
+</li>
+<li>
+<p>time_t：日历时间（时间戳），由于这个类型在不同平台下定义不同（unsigned int or long），因此输出的时候应当做一个强制转换。</p>
+</li>
+<li>
+<p>struct tm：分解时间，一种适合人类理解的时间格式</p>
+</li>
+</ol>
+<p>clock_t和time_t是支持算术运算的，但是它们具体是整型还是浮点型并没有被C标准说明。但struct tm的类型定义很清楚：</p>
 <table>
 <thead>
 <tr>
-<th align="center">一元运算符</th>
-<th align="center">二元运算符</th>
+<th>成员</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">+ -</td>
-<td align="center">+ - * / %</td>
+<td>tm_sec</td>
+<td>分后的秒，[0, 61]，允许两个额外的闰秒</td>
+</tr>
+<tr>
+<td>tm_min</td>
+<td>时后面的分，[0, 59]</td>
+</tr>
+<tr>
+<td>tm_hour</td>
+<td>午夜后的时，0到23</td>
+</tr>
+<tr>
+<td>tm_mday</td>
+<td>月份中的第几天，[1,31]</td>
+</tr>
+<tr>
+<td>tm_mon</td>
+<td>一月份以后的月，[0,11]</td>
+</tr>
+<tr>
+<td>tm_year</td>
+<td>从1900年开始的年</td>
+</tr>
+<tr>
+<td>tm_wday</td>
+<td>星期日以后的天，[0,6]</td>
+</tr>
+<tr>
+<td>tm_yday</td>
+<td>一月一日后的天，[0,365]</td>
+</tr>
+<tr>
+<td>tm_isdst</td>
+<td>夏令时标记，夏令时有效为正数，否则为0，如果未知，可为-1</td>
 </tr>
 </tbody>
 </table>
-<p>二元运算符要求有两个操作数，而一元运算符只要有一个操作数。</p>
-<p>一元运算符+无任何操作，它主要是为了强调某数值常量是正的。</p>
-<p>%被称之为 mod （求模）或 rem （取余）。 i % j 的数值是i除以j后的余数。</p>
-<p>除了%，二元运算符既允许操作数是整数也允许操作数是浮点数，或者允许两者的混合。当把 int 型操作数和 float 型操作数混合在一起时，运算结果是 float 型的。</p>
-<p>运算符/和%需要特别注意：</p>
+<p><strong>时钟滴答</strong></p>
+<div class="codehilite"><pre><span></span><span class="kt">clock_t</span> <span class="nf">clock</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+
+
+<p>clock函数返回处理器的时间（时钟滴答），即程序开始运行到执行到此的消耗的时间。但它的单位不是秒，为了将它转换成秒，可以给它除以宏CLOCK_PER_SEC。</p>
+<p>clock_t不能表示日期，只是善于表示时间区间（两个clock_t相减获得比较精准的时间差）。</p>
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="n">clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_clock</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">CLOCK_PER_SEC</span>
+</pre></div>
+
+
+<p>加double强制转换的理由是，标准C没有指明宏CLOCK_PER_SEC的类型，也没有说明clock_t的类型，所以必须用强制转换明确一下类型。</p>
+<p><strong>日历时间</strong></p>
+<div class="codehilite"><pre><span></span><span class="kt">time_t</span> <span class="nf">time</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="kt">double</span> <span class="nf">difftime</span><span class="p">(</span><span class="kt">time_t</span> <span class="n">time1</span><span class="p">,</span> <span class="kt">time_t</span> <span class="n">time0</span><span class="p">);</span>
+</pre></div>
+
+
+<p>time用来获取时间戳（UNIX从1970年为纪元），difftime获取两个时间戳的间隔，但这种计算间隔的方式没有用clock_t计算精准。</p>
+<p><strong>分解时间</strong></p>
+<div class="codehilite"><pre><span></span><span class="kt">time_t</span> <span class="nf">mktime</span><span class="p">(</span><span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="nf">localtime</span><span class="p">(</span><span class="k">const</span> <span class="kt">time_t</span> <span class="o">*</span><span class="n">timep</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="nf">asctime</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+</pre></div>
+
+
 <ul>
-<li>/可能产生意外的结果。当两个操作数都是整数时，运算符/通过丢掉分数部分的方法截取结果，因此1/2的结果是0。</li>
-<li>%要求整数操作数；如果两个操作数中有一个不是整数，那么程序将无法通过编译。</li>
-<li>当/和%用于负数时，其结果与具体实现有关。如果操作数中有一个为负数，那么除法的结果既可以向上取整也可以向下取整。</li>
+<li>
+<p>mktime将分解时间转换成日历时间（时间戳）。但它有一个很好得到地方，除了转换成日历时间，它还会先修正分解时间，如果分解时间中的某些值不正确的话。修正的规则就是“进位”，把溢出的时间补给高位的时间。比如tm_mday超过了31，那么tm_mon就会增加至少1。可以利用这一个修正的规则来计算未来的日期。见代码案例。</p>
+</li>
+<li>
+<p>localtime根据日历时间，获得本地的分解时间</p>
+</li>
+<li>
+<p>asctime获取分解时间的字符串格式，末尾还会有一个换行符</p>
+</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">由实现定义</p>
-<p>术语由实现定义（ implementation-defined ）出现频率很高，意思是指软件在特定的平台上编译、链接和执行。根据实现的不同，程序的行为可能会稍有差异。
-C语言的目的之一是达到高效率，这经常意味着要与硬件行为相匹配。当-9除以7时，一些机器可能产生的结果是-1，而另一些机器的结果为-2，C标准简单地反映了这一现实。
-最好避免编写与实现定义的行为相关的程序。</p>
-</div>
-<h3 id="_3">运算符的优先级和结合性</h3>
-<p>C语言允许在所有表达式中用圆括号进行分组。但如果不使用圆括号，就采用运算符优先级（ operator precedence ）的规则来解决问题。算术运算符有下列相对优先级：</p>
-<ul>
-<li>最高优先级：+ -（一元运算符）</li>
-<li>中级优先级：* / %</li>
-<li>最低优先级：+ -（二元运算符）</li>
-</ul>
-<p>例如：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="n">k</span><span class="p">;</span>    <span class="c1">// 等价于 i + (j * k)</span>
-</pre></div>
-
-
-<p>当一个表达式包含两个以上相同优先级的运算符时，单独的运算符优先级的规则是不够的。这种情况下，运算符的结合性（ associativity ）开始发挥作用。如果运算符是从左向右结合的，那么称这种运算符是左结合的（ left associative ）。二元算术运算符都是左结合的，所以：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span>    <span class="c1">// 等价于 (i - j) - k</span>
-</pre></div>
-
-
-<p>如果运算符是从右向左结合的，那么称为右结合的（ right associative ）。一元运算符都是右结合的。</p>
-<h2 id="_4">赋值运算符</h2>
-<p>一旦计算出表达式的值就常常需要把这个值存储在变量中，以便后面使用。C语言的=运算符（assignment）可以用于此目的。</p>
-<h3 id="_5">简单赋值</h3>
-<p>表达式v = e的赋值效果是求出表达式e的值，并把此值复制给v。e可以是常量、变量或较为复杂的表达式：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
-</pre></div>
-
-
-<p>如果v和e的类型不同，那么赋值运算发生时会把e的值转化为v的类型：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mf">72.99</span><span class="p">;</span> <span class="cm">/* i is now 72 */</span>
-</pre></div>
-
-
-<p>赋值操作产生结果，赋值表达式v=e的值就是赋值运算后v的值。因此，表达式i = 72.99的值是72。</p>
-<div class="admonition note">
-<p class="admonition-title">副作用</p>
-<p>大多数C语言运算符不会改变操作数的值，但是也有一些会改变。由于这类运算符所做的不再仅仅是计算出值，所以称它们有副作用（ side effect ）。简单的赋值运算符就是一个有副作用的运算符，它改变了运算符左边的操作数。表达式i=0产生的结果为0，作为副作用，把0赋值给i。</p>
-</div>
-<p>运算符=是右结合的。所以：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">));</span> <span class="c1">// 等价</span>
-</pre></div>
-
-
-<h3 id="_6">左值</h3>
-<p>大多数C语言运算符允许它们的操作数是变量、常量或者包含其他运算符的表达式。然而，赋值运算符要求它左边的操作数必须是左值（ lvalue ）。左值表示存储在计算机内存中的对象，而不是常量或计算结果。变量是左值，而诸如10或2*i这样的表达式则不是左值。</p>
-<h3 id="_7">复合赋值</h3>
-<p>利用变量原有值计算出新值并重新赋值给这个变量在C语言程序中是非常普遍的。例如：</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
-</pre></div>
-
-
-<p>C语言的复合赋值运算符（ compound assignment operator ）允许缩短这种语句和其他类似的语句。</p>
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
-</pre></div>
-
-
-<p>+=运算符把右侧操作数的值加上左侧的变量，并把结果赋值给左侧的变量。还有另外的9种复合赋值运算符，包括：</p>
-<p>-= *= /= %=</p>
-<h2 id="_8">自增运算符和自减运算符</h2>
-<p>++表示操作数加1，--表示操作数减1。++和--既可以作为前缀（ prefix ）运算符，也可以作为后缀（ postfix ）运算符使用。</p>
-<p>++和--也有副作用，它们会改变操作数的值。计算表达式++i的结果是i+1，副作用是自增i。计算表达式i++的结果是i，副作用是自增i。</p>
-<p>这个自增操作一定会在下一条语句执行前完成。</p>
-<h2 id="_9">表达式求值</h2>
-<p>上述总结的运算符在下表列出了其优先级、结合性。更多讨论见书本p39。</p>
-<table>
-<thead>
-<tr>
-<th>优先级</th>
-<th>类型名称</th>
-<th>符号</th>
-<th>结合性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>后缀自增、自减</td>
-<td>++ --</td>
-<td>左结合</td>
-</tr>
-<tr>
-<td>2</td>
-<td>前缀自增、自减，一元正负</td>
-<td>++ -- + -</td>
-<td>右结合</td>
-</tr>
-<tr>
-<td>3</td>
-<td>乘法类</td>
-<td>* / %</td>
-<td>左结合</td>
-</tr>
-<tr>
-<td>4</td>
-<td>加法类</td>
-<td>+ -</td>
-<td>左结合</td>
-</tr>
-<tr>
-<td>5</td>
-<td>赋值</td>
-<td>= *= /= %= += -=</td>
-<td>右结合</td>
-</tr>
-</tbody>
-</table>
-<p><strong>子表达式的求值顺序</strong></p>
-<p>C语言没有定义子表达式的求值顺序（除了含有逻辑与运算符及逻辑或运算符、条件运算符以及逗号运算符的子表达式）。</p>
+<p><strong>时间转换函数</strong></p>
+<p>有 ctime strftime 等。</p>
                 
                   
                 
@@ -1447,7 +1579,7 @@ C语言的目的之一是达到高效率，这经常意味着要与硬件行为�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch25 国际化特性/" title="ch25 国际化特性" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1456,19 +1588,19 @@ C语言的目的之一是达到高效率，这经常意味着要与硬件行为�
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ch03 格式化输入输出
+                ch25 国际化特性
               </span>
             </div>
           </a>
         
         
-          <a href="../ch05 选择语句/" title="ch05 选择语句" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../cheatsheet/惯用法/" title="惯用法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                ch05 选择语句
+                惯用法
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
