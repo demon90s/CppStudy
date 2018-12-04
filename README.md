@@ -10,7 +10,7 @@
 
 ---
 
-- [ ] [C语言程序设计：现代方法](./CProgramming)
+- [x] [C语言程序设计：现代方法](./CProgramming)
 
 - [x] [C++ Primer 5th](./CppPrimer)
 

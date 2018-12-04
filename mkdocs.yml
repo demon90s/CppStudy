@@ -38,6 +38,7 @@ pages:
       - ch23 库对数值和字符数据的支持: CProgramming/ch23 库对数值和字符数据的支持.md
       - ch24 错误处理: CProgramming/ch24 错误处理.md
       - ch25 国际化特性: CProgramming/ch25 国际化特性.md
+      - ch26 其他库函数: CProgramming/ch26 其他库函数.md
     - CheatSheet:
       - 惯用法: CProgramming/cheatsheet/惯用法.md
 

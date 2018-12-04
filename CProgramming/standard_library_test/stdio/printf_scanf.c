@@ -1,6 +1,9 @@
 /*
  * printf scanf
  * 格式化输入输出
+ * 
+ * printf 返回写入的字符数，不包括空字符
+ * scanf 返回成功匹配的个数
  */
 
 #include <stdio.h>
