@@ -1,0 +1,11 @@
+练习2.24：下面哪些句子是合法的？如果有不合法的句子，请说明为什么？
+
+(a) const int buf;		(b) int cnt = 0;
+(c) const int sz = cnt;	(d) ++cnt; ++sz;
+
+---
+
+(a) 不合法，必须初始化一个const变量。
+(b) 合法。
+(c) 合法。
+(d) 不合法，不能修改一个const变量（sz）。

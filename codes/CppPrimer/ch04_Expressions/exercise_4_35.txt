@@ -1,0 +1,11 @@
+练习4.35：假如有如下的定义：
+
+char cval;	int ival;	unsigned int ui;
+flaot fval;	double dval;
+
+请回答在下面的表达式中发生了隐式类型转换吗？如果有，指出来。
+
+(a) cval = 'a' + 3;			// 'a'提升为int，然后加法结果再转换成char
+(b) fval = ui - ival * 1.0;	// ival转换成double，ui也转换成double，结果再转换成float
+(c) dval = ui * fval;		// ui转换成float，结果再转换成double
+(d) cval = ival + fval + dval;	// ival转换成float，相加结果再转换成double，结果再转换成char

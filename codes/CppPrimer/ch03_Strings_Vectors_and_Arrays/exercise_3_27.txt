@@ -1,0 +1,12 @@
+练习3.27：假设txt_size是一个无参数的函数，它的返回值是int。请问下列哪个定义是非法的？为什么？
+
+unsigned buf_size = 1024;
+(a) ia[buf_size];		(b) int ia[4 * 7 - 14];
+(c) int ia[txt_size()];	(d) char str[11] = "fundamental";
+
+---
+
+(a) 非法，因为buf_size不是常量表达式，不能作为数组的维度。
+(b) 合法。
+(c) 只有当txt_size的返回值是一个constexpr时才合法。
+(d) 非法，没有剩余的空间存储空字符。

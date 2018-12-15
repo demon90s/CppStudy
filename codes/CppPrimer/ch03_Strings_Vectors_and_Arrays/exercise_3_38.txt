@@ -1,0 +1,3 @@
+练习3.38：在本节中我们提到，将两个指针相加不但是非法的，而且也没什么意义。请问为什么两个指针相加没什么意义？
+
+因为没有办法解释这样的行为。见：https://stackoverflow.com/questions/2935038/why-cant-i-add-pointers

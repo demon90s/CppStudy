@@ -1,0 +1,1835 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C/C++ Study Note">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="en, jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>ch17 标准库特殊设施 - C/C++ Study Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:300,400,400i,700|PT+Sans">
+        <style>body,input{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Sans","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#17" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="C/C++ Study Note" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                C/C++ Study Note
+              </span>
+              <span class="md-header-nav__topic">
+                ch17 标准库特殊设施
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../codes/CProgramming/" title="C语言程序设计" class="md-tabs__link">
+          C语言程序设计
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../codes/CppPrimer/" title="C++ Primer" class="md-tabs__link md-tabs__link--active">
+          C++ Primer
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="C/C++ Study Note" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    C/C++ Study Note
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      C语言程序设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        C语言程序设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../codes/CProgramming/" title="README" class="md-nav__link">
+      README
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Chapters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
+      ch01 C语言概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
+      ch02 C语言基本概念
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
+      ch03 格式化输入输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+      ch04 表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
+      ch05 选择语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch06 循环/" title="ch06 循环" class="md-nav__link">
+      ch06 循环
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
+      ch07 基本类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch08 数组/" title="ch08 数组" class="md-nav__link">
+      ch08 数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch09 函数/" title="ch09 函数" class="md-nav__link">
+      ch09 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
+      ch10 程序结构
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch11 指针/" title="ch11 指针" class="md-nav__link">
+      ch11 指针
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
+      ch12 指针和数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch13 字符串/" title="ch13 字符串" class="md-nav__link">
+      ch13 字符串
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
+      ch14 预处理器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch15 编写大规模程序/" title="ch15 编写大规模程序" class="md-nav__link">
+      ch15 编写大规模程序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
+      ch16 结构、联合和枚举
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
+      ch17 指针的高级应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch18 声明/" title="ch18 声明" class="md-nav__link">
+      ch18 声明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
+      ch19 程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
+      ch20 低级程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch21 标准库/" title="ch21 标准库" class="md-nav__link">
+      ch21 标准库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
+      ch22 输入输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
+      ch23 库对数值和字符数据的支持
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
+      ch24 错误处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
+      ch25 国际化特性
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
+      ch26 其他库函数
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      CheatSheet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        CheatSheet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
+      惯用法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      C++ Primer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        C++ Primer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../codes/CppPrimer/" title="README" class="md-nav__link">
+      README
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Chapters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch01 开始/" title="ch01 开始" class="md-nav__link">
+      ch01 开始
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
+      ch02 变量和基本类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
+      ch03 字符串、向量和数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+      ch04 表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch05 语句/" title="ch05 语句" class="md-nav__link">
+      ch05 语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch06 函数/" title="ch06 函数" class="md-nav__link">
+      ch06 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch07 类/" title="ch07 类" class="md-nav__link">
+      ch07 类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch08 IO库/" title="ch08 IO库" class="md-nav__link">
+      ch08 IO库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
+      ch09 顺序容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
+      ch10 泛型算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
+      ch11 关联容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch12 动态内存/" title="ch12 动态内存" class="md-nav__link">
+      ch12 动态内存
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch13 拷贝控制/" title="ch13 拷贝控制" class="md-nav__link">
+      ch13 拷贝控制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
+      ch14 操作重载与类型转换
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
+      ch15 面向对象程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
+      ch16 模板与泛型编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ch17 标准库特殊设施
+      </label>
+    
+    <a href="./" title="ch17 标准库特殊设施" class="md-nav__link md-nav__link--active">
+      ch17 标准库特殊设施
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuple" title="tuple类型" class="md-nav__link">
+    tuple类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuple_1" title="定义和初始化tuple" class="md-nav__link">
+    定义和初始化tuple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitset" title="bitset类型" class="md-nav__link">
+    bitset类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bitset_1" title="定义和初始化bitset" class="md-nav__link">
+    定义和初始化bitset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitset_2" title="bitset操作" class="md-nav__link">
+    bitset操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="正则表达式" class="md-nav__link">
+    正则表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="随机数" class="md-nav__link">
+    随机数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="随机数引擎和分布" class="md-nav__link">
+    随机数引擎和分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" title="IO库再探" class="md-nav__link">
+    IO库再探
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="格式化输入与输出" class="md-nav__link">
+    格式化输入与输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="未格式化的输入/输出操作" class="md-nav__link">
+    未格式化的输入/输出操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="流随机访问" class="md-nav__link">
+    流随机访问
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
+      ch18 用于大型程序的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
+      ch19 特殊工具与技术
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      CheatSheet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        CheatSheet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
+      static的3个用途
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
+      若干种typedef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
+      类内初始值
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
+      运算符重载
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
+      向set中插入自定义类型对象
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuple" title="tuple类型" class="md-nav__link">
+    tuple类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuple_1" title="定义和初始化tuple" class="md-nav__link">
+    定义和初始化tuple
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitset" title="bitset类型" class="md-nav__link">
+    bitset类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bitset_1" title="定义和初始化bitset" class="md-nav__link">
+    定义和初始化bitset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitset_2" title="bitset操作" class="md-nav__link">
+    bitset操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="正则表达式" class="md-nav__link">
+    正则表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="随机数" class="md-nav__link">
+    随机数
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="随机数引擎和分布" class="md-nav__link">
+    随机数引擎和分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" title="IO库再探" class="md-nav__link">
+    IO库再探
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="格式化输入与输出" class="md-nav__link">
+    格式化输入与输出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="未格式化的输入/输出操作" class="md-nav__link">
+    未格式化的输入/输出操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="流随机访问" class="md-nav__link">
+    流随机访问
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/markdowns/CppPrimer/ch17 标准库特殊设施.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="17">第17章 标准库特殊设施</h1>
+<hr />
+<h2 id="tuple">tuple类型</h2>
+<p>tuple是类似pair的模板，但一个tuple可以有任意数量的成员。</p>
+<p>当我们希望将一些数据组合成单一对象，但又不想麻烦地定义一个新数据结构来表示这些数据时，tuple是非常有用的。</p>
+<p>tuple的一个常见用途是从一个函数返回多个值。书中给出的案例见p638。</p>
+<h3 id="tuple_1">定义和初始化tuple</h3>
+<p>当我们定义一个tuple时，需要指出每个成员的类型：</p>
+<div class="codehilite"><pre><span></span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">threeD</span><span class="p">;</span>   <span class="c1">// 三个成员都设置为0</span>
+<span class="n">tuple</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">someVal</span><span class="p">(</span><span class="s">&quot;constants&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+</pre></div>
+
+
+<p>当我们创建一个tuple对象时，可以使用tuple的默认构造函数，它会对每个成员进行值初始化。也可以为每个成员提供一个初始值。tuple的构造函数是explicit的，必须使用直接初始化语法。</p>
+<p>类似make_pair，标准库定义了make_tuple函数，用来生成tuple对象：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 表示书店交易记录的tuple，包含: ISBN, 数量和每册书的价格</span>
+<span class="k">auto</span> <span class="n">item</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;0-999-78345-X&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">);</span>
+</pre></div>
+
+
+<p>make_tuple函数使用初始值的类型来推断tuple类型。本例中，item类型是<code>tuple&lt;const char*, int, double&gt;</code>。</p>
+<p><strong>访问tuple的成员</strong></p>
+<p>tuple的成员都是未命名的，要访问它们，就要使用get标准库函数模板，我们传递给get一个tuple对象，它返回指定成员的引用。</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">book</span> <span class="o">=</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>           <span class="c1">// 返回item的第一个成员</span>
+<span class="k">auto</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>            <span class="c1">// 返回item的第二个成员</span>
+</pre></div>
+
+
+<blockquote>
+<p>my note: 如果引用索引超出范围，那么编译阶段会报错。</p>
+</blockquote>
+<p>可以通过两个辅助类模板来查询tuple成员的数量和类型：</p>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="nf">decltype</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="n">trans</span><span class="p">;</span>       <span class="c1">// trans是itme的类型</span>
+
+<span class="c1">// 返回trans类型对象中成员的数量</span>
+<span class="kt">size_t</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">tuple_size</span><span class="o">&lt;</span><span class="n">trans</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span> <span class="c1">// 返回3</span>
+
+<span class="c1">// cnt的类型与item中第二个成员相同</span>
+<span class="n">tuple_element</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">trans</span><span class="o">&gt;::</span><span class="n">type</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>   <span class="c1">// cnt是一个int</span>
+</pre></div>
+
+
+<p><strong>关系和相等运算符</strong></p>
+<p>tuple的关系和相等运算符的行为类似容器的对应操作，这些运算符逐对比较左侧tuple和右侧tuple的成员。只有两个tuple具有相同数量的成员时并且成员也支持比较操作时，我们才能比较它们。</p>
+<h2 id="bitset">bitset类型</h2>
+<p>标准库定义了bitset类，使得位运算的使用更为容易，并且能够处理超过最长整型类型大小的位集合。bitset类定义在头文件bitset中。</p>
+<h3 id="bitset_1">定义和初始化bitset</h3>
+<p>bitset类是一个类模板，它类似array类，具有固定的大小。当我们定义一个bitset时，需要声明它包含多少个二进制位。</p>
+<div class="codehilite"><pre><span></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span> <span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span>  <span class="c1">// 32位；低位为1，其他位为0</span>
+</pre></div>
+
+
+<p>二进制位的位置是从0开始编号的，因此，bitvec包含编号从0到31的32个二进制位。编号从0开始的二进制位被称为低位（low-order），编号到31结束的二进制位被称为高位（high-order）。</p>
+<p>p641页列出了初始化一个bitset的方法。</p>
+<p><strong>使用unsigned值初始化bitset</strong></p>
+<p>当我们使用一个整型值来初始化bitset时，此值将被转换为unsigned long long类型并被当作位模式来处理。bitset中的二进制位将是此模式的一个副本。如果bitset的大小大于unsigned long long的位数，则剩余高位被置为0。如果小于，则只使用给定值中的低位，超出bitset大小的高位被丢弃。</p>
+<p><strong>从一个string初始化bitset</strong></p>
+<p>我们可以从一个string或一个字符数组指针来初始化bitset。两种情况下，字符都直接表示位模式。当我们使用字符串表示数时，字符串中下标最小的字符对应高位：</p>
+<div class="codehilite"><pre><span></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span> <span class="n">bitvec4</span><span class="p">(</span><span class="s">&quot;1100&quot;</span><span class="p">);</span> <span class="c1">// 2、3两位为1，剩余两位为0</span>
+</pre></div>
+
+
+<p>如果string包含的字符数比bitset少，则bitset的高位被置为0。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>string的下标编号习惯于bitset恰好相反：string中下标最大的字符（最右）用来初始化bitset中的低位。</p>
+</div>
+<h3 id="bitset_2">bitset操作</h3>
+<p>bitset操作定义了多种检测或设置一个或多个二进制位的方法。见p643。</p>
+<div class="codehilite"><pre><span></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span> <span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">is_set</span> <span class="o">=</span> <span class="n">bitvec</span><span class="p">.</span><span class="n">any</span><span class="p">();</span>         <span class="c1">// true，因为有1位置位</span>
+<span class="kt">bool</span> <span class="n">is_not_set</span> <span class="o">=</span> <span class="n">bitvec</span><span class="p">.</span><span class="n">none</span><span class="p">();</span>    <span class="c1">// false，因为有1位置位了</span>
+<span class="kt">bool</span> <span class="n">all_set</span> <span class="o">=</span> <span class="n">bitvec</span><span class="p">.</span><span class="n">all</span><span class="p">();</span>        <span class="c1">// false，因为只有1位置位了</span>
+<span class="kt">size_t</span> <span class="n">onBits</span> <span class="o">=</span> <span class="n">bitvec</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>     <span class="c1">// 返回1</span>
+<span class="kt">size_t</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">bitvec</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>          <span class="c1">// 返回32</span>
+<span class="n">bitvec</span><span class="p">.</span><span class="n">flip</span><span class="p">();</span>                      <span class="c1">// 翻转bitvec中的所有位</span>
+<span class="n">bitvec</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>                     <span class="c1">// 将所有位复位</span>
+<span class="n">bitvec</span><span class="p">.</span><span class="n">set</span><span class="p">();</span>                       <span class="c1">// 将所有位置位</span>
+
+<span class="n">bitvec</span><span class="p">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                     <span class="c1">// 翻转第一位</span>
+<span class="n">bitvec</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                      <span class="c1">// 置位第一位</span>
+<span class="n">bitvec</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>                    <span class="c1">// 复位第i位</span>
+<span class="n">bitvec</span><span class="p">.</span><span class="n">test</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                     <span class="c1">// 返回false，因为第一位已复位</span>
+
+<span class="n">bitvec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                      <span class="c1">// 将第一位复位</span>
+<span class="n">bitvec</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="o">=</span> <span class="n">bitvec</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>             <span class="c1">// 将最后一位设置为与第一位一样</span>
+<span class="o">~</span><span class="n">bitvec</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>                         <span class="c1">// 翻转第一位</span>
+</pre></div>
+
+
+<p><strong>提取bitset的值</strong></p>
+<p>to_ulong和to_ullong操作都返回一个值，保存了与bitset对象相同的位模式，只有当bitset的大小小于等于对应的大小时，我们才能使用这两个操作，否则将会抛出overflow_error异常。</p>
+<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">ulong</span> <span class="o">=</span> <span class="n">bitvec3</span><span class="p">.</span><span class="n">to_ulong</span><span class="p">();</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ulong = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ulong</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>bitset的IO运算符</strong></p>
+<p>输入运算符从一个输入流读取字符，保存到一个临时的string对象中。直到读取的字符数达到对应bitset的大小时，或是遇到不是1或0的字符时，或是遇到文件尾或输入错误时，读取过程才停止。随即用临时string对象来初始化bitset。如果读取的字符数小于bitset的大小，高位被置为0。</p>
+<div class="codehilite"><pre><span></span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span> <span class="n">bits</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">bits</span><span class="p">;</span>        <span class="c1">// 从cin读取最多16个0或1</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;bits: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">bits</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+
+
+<h2 id="_1">正则表达式</h2>
+<p>正则表达式（regular expression）是一种描述字符序列的方法，是一种极其强大的计算工具。本章节主要是介绍如何使用C++正则表达式库（RE库），它定义在头文件regex中，它包含多个组件：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>regex</td>
+<td>表示有一个正则表达式的类</td>
+</tr>
+<tr>
+<td>regex_match</td>
+<td>将一个字符序列与一个正则表达式匹配</td>
+</tr>
+<tr>
+<td>regex_search</td>
+<td>寻找第一个与正则表达式匹配的子序列</td>
+</tr>
+<tr>
+<td>regex_replace</td>
+<td>使用给定格式替换一个正则表达式</td>
+</tr>
+<tr>
+<td>sregex_iterator</td>
+<td>迭代器适配器，调用regex_search来遍历一个string中所有匹配的子串</td>
+</tr>
+<tr>
+<td>smatch</td>
+<td>容器类，保存在string中搜索的结果</td>
+</tr>
+<tr>
+<td>ssub_match</td>
+<td>string中匹配的子表达式的结果</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>my note: 正则表达式库需要高级的gcc版本支持，我使用gcc5.3.1可以通过测试。</p>
+</blockquote>
+<p>函数regex_match和regex_search确定一个给定字符序列与一个给定regex是否匹配。如果整个输入序列与表达式匹配，则regex_match返回true；如果输入一个序列中一个子串与表达式匹配，则regex_search返回true。</p>
+<p>见书本p646更详细的讨论。</p>
+<h2 id="_2">随机数</h2>
+<p>程序通常需要一个随机数源。在新标准出现之前，C和C++都依赖于一个简单的C库函数rand来生成随机数。此函数生成均匀分布的伪随机整数，每个随机数的范围在0和一个系统相关的最大值（至少为32767）之间。</p>
+<p>rand函数有一些问题：即使不是大多数，也有很多程序员需要不同范围的随机数。一些应用需要随机浮点数。一些程序需要非均匀分布的数。而程序员为了解决这些问题而试图转换rand生成的随机数的范围、类型或分布时，常常会引入非随机性。</p>
+<p>定义在头文件random中的随机数库通过一组协作的类来解决这些问题：随机数引擎（random-number engines）和随机数分布类（random-number distribution）。</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引擎</td>
+<td>类型，生成随机unsigned整数序列</td>
+</tr>
+<tr>
+<td>分布</td>
+<td>类型，使用引擎返回服从特定概率分布的随机数</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>C++程序不应该使用库函数rand，而应使用default_random_engine类和恰当的分布类对象。</p>
+</div>
+<h3 id="_3">随机数引擎和分布</h3>
+<p>随机数引擎是函数对象类，它们定义了一个调用运算符，该运算符不接受参数并返回一个随机unsigned整数。我们可以通过调用一个随机数引擎对象来生成原始随机数。</p>
+<div class="codehilite"><pre><span></span><span class="n">default_random_engine</span> <span class="n">e</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>        <span class="c1">// 生成一个随机无符号数</span>
+</pre></div>
+
+
+<p>标准库定义了多个随机数引擎类，区别在于性能和随机质量不同。</p>
+<p><strong>分布类型和引擎</strong></p>
+<p>为了得到一个指定范围内的数，我们使用一个分布类型的对象：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 生成0到9之间（包含）均匀分布的随机数</span>
+<span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span> <span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>
+<span class="n">default_random_engine</span> <span class="n">e</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+
+
+<p>分布类型也是函数对象类。分布类型定义了一个调用运算符，它接受一个随机数引擎作为参数。分布对象使用它的引擎参数生成随机数，并将其映射到指定的分布。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当我们说随机数发生器时，是指分布对象和引擎对象的组合。</p>
+</div>
+<p><strong>引擎生成一个数值序列</strong></p>
+<p>随机数发生器有一个特性经常会使新手迷惑：即使生成的数看起来是随机的，但对于一个给定的发生器，每次运行程序它都会返回相同的数值序列。一个函数如果定义了局部的随机数发生器，应该将其（包括引擎和分布对象）定义为static的。否则，每次调用函数都会生成相同的序列。</p>
+<blockquote>
+<p>my note: 但是我实验发现，使用random_device引擎，如果不定义成static的，仍然可以生成不同的序列。而且分布类型不定义成static的，也可以生成不同的序列。</p>
+</blockquote>
+<p><strong>设置随机数发生器种子</strong></p>
+<p>我们通常希望每次运行程序都会生成不同的随机结果，可以通过提供一个种子（seed）来达到这一目的。种子就是一个数值，引擎可以利用它从序列中一个新位置重新开始生成随机数。</p>
+<div class="codehilite"><pre><span></span><span class="n">default_random_engine</span> <span class="n">e1</span><span class="p">;</span>       <span class="c1">// 使用默认种子</span>
+<span class="n">e1</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>                    <span class="c1">// 调用seed设置一个种子值</span>
+<span class="n">default_random_engine</span> <span class="nf">e2</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>   <span class="c1">// 使用给定的种子值</span>
+</pre></div>
+
+
+<p>如果引擎种子相同，将生成相同的序列。</p>
+<p>选择一个好种子，是极其困难的，可能最常用的方法是调用系统函数time。它定义在头文件ctime中，它返回从一个特定时刻到当前经过了多少秒。</p>
+<div class="codehilite"><pre><span></span><span class="n">default_random_engine</span> <span class="nf">e</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>   <span class="c1">// 稍微随机些的种子</span>
+</pre></div>
+
+
+<blockquote>
+<p>my note: 使用random_device引擎为另一个引擎创建一个种子也是一种方法。</p>
+</blockquote>
+<p>后续内容讨论了其他随机数的分布，比如：生成随机实数、生成非均匀分布随机数等。</p>
+<h2 id="io">IO库再探</h2>
+<h3 id="_4">格式化输入与输出</h3>
+<p>除了条件状态外，每个iostream对象还维护一个格式状态来控制IO如何格式化的细节。格式状态控制格式化的某些方面，如整型是几进制、浮点值的精度、一个输出元素的宽度等。</p>
+<p>标准库定义了一组操纵符来修改流的格式状态。一个操纵符是一个函数或是一个对象，会影响流的状态。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>当操纵符改变流的格式状态时，通常改变后的状态对所有后续IO都生效。</p>
+</div>
+<p><strong>控制布尔值的格式</strong></p>
+<p>默认情况下，bool值打印为1或0，通过对流使用boolalpha操纵符来修改原有格式：</p>
+<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">boolalpha</span> <span class="o">&lt;&lt;</span> <span class="nb">true</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="nb">false</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 输出：true false</span>
+</pre></div>
+
+
+<p>一旦向cout“写入”了boolalpha，我们就改变了cout打印bool值的方式。后续打印bool值的操作都会打印true或false，为了取消格式的改变，noboolalpha：</p>
+<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">noboolalpha</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>指定整型值的进制</strong></p>
+<p>默认情况下，整型值的输入输出使用十进制。我们可以使用操纵符hex、oct、dec将其改为十六进制、八进制或是改回十进制。</p>
+<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;default: &quot;</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;octal: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">oct</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hex: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">hex</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;decimal: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">dec</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+</pre></div>
+
+
+<p><strong>在输出中指出进制</strong></p>
+<p>当对流应用showbase操纵符时，会在输出结果中显示进制：</p>
+<ul>
+<li>
+<p>前导0x表示十六进制。</p>
+</li>
+<li>
+<p>前导0表示八进制。</p>
+</li>
+<li>
+<p>无前导字符串表示十进制。</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">showbase</span><span class="p">;</span>   <span class="c1">// 打印整型值时显示进制</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;default: &quot;</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;octal: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">oct</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hex: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">hex</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;decimal: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">dec</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">noshowbase</span><span class="p">;</span> <span class="c1">// 恢复流状态 </span>
+</pre></div>
+
+
+<p><strong>指定打印精度</strong></p>
+<p>setprecision操纵符接受一个参数，用来设置精度。它定义在头文件iomanip中。</p>
+<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// 输出：1.41</span>
+</pre></div>
+
+
+<p>更多操纵符见p669。</p>
+<h3 id="_5">未格式化的输入/输出操作</h3>
+<p>标准库提供了一组低层操作，支持未格式化IO（unformatted IO）。这组操作允许我们将一个流当作一个无解释的字节序列来处理。</p>
+<p><strong>单字节操作</strong></p>
+<p>有几个未格式化操作每次一个字节地处理流，它们会读取而不是忽略空白符。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 读写一个字符</span>
+<span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+    <span class="n">cout</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is.get(ch)</td>
+<td>从istream is读取下一个字节存入字符ch中。返回is</td>
+</tr>
+<tr>
+<td>os.put(ch)</td>
+<td>将字符ch输出到ostream os。返回os</td>
+</tr>
+<tr>
+<td>is.get()</td>
+<td>将is的下一个字节作为int返回</td>
+</tr>
+<tr>
+<td>is.putback(ch)</td>
+<td>将字符ch放回is。返回is</td>
+</tr>
+<tr>
+<td>is.unget()</td>
+<td>将is向后移动一个字节。返回is</td>
+</tr>
+<tr>
+<td>is.peek()</td>
+<td>将下一个字节作为int返回，但不从流中删除它</td>
+</tr>
+</tbody>
+</table>
+<p>详细讨论见p673。</p>
+<p><strong>多字节操作</strong></p>
+<p>一些未格式化IO操作一次处理大块数据。如果速度是要考虑的重点问题的话，这些操作是很重要的，这些操作要求我们自己分配并管理用来保存和提取数据的字符数组。</p>
+<p>书中未给出代码案例讲解，具体操作见p674。</p>
+<h3 id="_6">流随机访问</h3>
+<p>标准库提供了一对函数，来定位（seek）到流中给定的位置，以及告诉（tell）我们当前的位置。</p>
+<p>在大多数系统中，绑定到cin、cout、cerr和clog的流不支持随机访问，因为这种操作对它们没有意义。对这些流调用seek和tell会导致运行时出错，将流置于一个无效状态。</p>
+<p><strong>seek和tell函数</strong></p>
+<p>为了支持随机访问，IO类型维护一个标记来确定下一个读写操作要在哪里进行。标准库实际上定义了两对seek和tell函数，差别在于名字的后缀是g还是p，g版本表示我们正在读取数据，而p版本表示我们正在写入数据。</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tellg() tellp()</td>
+<td>返回一个输入流中（tellg）或输出流中（tellp）标记的当前位置</td>
+</tr>
+<tr>
+<td>seekg(pos) seekp(pos)</td>
+<td>在一个输入流或输出流中奖标记重定位到给定的绝对地址。pos通常是前一个tell返回的值</td>
+</tr>
+<tr>
+<td>seekp(off, from) seekg(off, from)</td>
+<td>在一个输入流或输出流中，奖标记定位到from之前或之后off个字符，from可以是：beg（流开始位置）, cur（流当前位置）, end（流结尾位置）</td>
+</tr>
+</tbody>
+</table>
+<p>从逻辑上讲，我们只能对istream使用g版本，对ostream使用p版本。iostream则可以使用g版本又可以使用p版本。</p>
+<p>详细案例及讨论见书本p677。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                ch16 模板与泛型编程
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                ch18 用于大型程序的工具
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Diwen Liu
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,11 @@
+练习3.12：下列vector对象的定义有不正确的吗？如果有，请指出来。对于正确的，描述其执行结果；对于不正确的，说明其错误原因。
+
+(a) vector<vector<int>> ivec;
+(b) vector<string> svec = ivec;
+(c) vector<string> svec(10, "null");
+
+---
+
+(a) 正确，定义一个空的vector，其元素类型是vector<int>。
+(b) 错误，ivec和svec的类型不一样，不能拷贝初始化。
+(c) 正确，svec是一个有10个元素的vector，其元素类型是string，内容都是"null"。
