@@ -8,6 +8,6 @@
 
 - 有关语法、概念、API的测试代码
 
-- [x] [C语言程序设计：现代方法](./CProgramming)
+- [x] [C语言程序设计：现代方法](./notes/codes/CProgramming)
 
-- [x] [C++ Primer 5th](./CppPrimer)
+- [x] [C++ Primer 5th](./notes/codes/CppPrimer)
