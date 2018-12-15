@@ -1,74 +1,76 @@
-site_name: C++ Study Note
-site_description: C++ Study Note
+site_name: C/C++ Study Note
+site_description: C/C++ Study Note
 
 copyright: 'Copyright &copy; 2018 Diwen Liu'
 
-docs_dir: study_notes
+docs_dir: notes
 
 repo_url: https://github.com/demon90s/CppStudy
-edit_uri: "tree/master/study_notes"
+edit_uri: "tree/master/notes"
 
-pages:
+nav:
   - Introduction: index.md
 
   - C语言程序设计:
+    - README: codes/CProgramming/README.md
     - Chapters:
-      - ch01 C语言概述: CProgramming/ch01 C语言概述.md
-      - ch02 C语言基本概念: CProgramming/ch02 C语言基本概念.md
-      - ch03 格式化输入输出: CProgramming/ch03 格式化输入输出.md
-      - ch04 表达式: CProgramming/ch04 表达式.md
-      - ch05 选择语句: CProgramming/ch05 选择语句.md
-      - ch06 循环: CProgramming/ch06 循环.md
-      - ch07 基本类型: CProgramming/ch07 基本类型.md
-      - ch08 数组: CProgramming/ch08 数组.md
-      - ch09 函数: CProgramming/ch09 函数.md
-      - ch10 程序结构: CProgramming/ch10 程序结构.md
-      - ch11 指针: CProgramming/ch11 指针.md
-      - ch12 指针和数组: CProgramming/ch12 指针和数组.md
-      - ch13 字符串: CProgramming/ch13 字符串.md
-      - ch14 预处理器: CProgramming/ch14 预处理器.md
-      - ch15 编写大规模程序: CProgramming/ch15 编写大规模程序.md
-      - ch16 结构、联合和枚举: CProgramming/ch16 结构、联合和枚举.md
-      - ch17 指针的高级应用: CProgramming/ch17 指针的高级应用.md
-      - ch18 声明: CProgramming/ch18 声明.md
-      - ch19 程序设计: CProgramming/ch19 程序设计.md
-      - ch20 低级程序设计: CProgramming/ch20 低级程序设计.md
-      - ch21 标准库: CProgramming/ch21 标准库.md
-      - ch22 输入输出: CProgramming/ch22 输入_输出.md
-      - ch23 库对数值和字符数据的支持: CProgramming/ch23 库对数值和字符数据的支持.md
-      - ch24 错误处理: CProgramming/ch24 错误处理.md
-      - ch25 国际化特性: CProgramming/ch25 国际化特性.md
-      - ch26 其他库函数: CProgramming/ch26 其他库函数.md
+      - ch01 C语言概述: markdowns/CProgramming/ch01 C语言概述.md
+      - ch02 C语言基本概念: markdowns/CProgramming/ch02 C语言基本概念.md
+      - ch03 格式化输入输出: markdowns/CProgramming/ch03 格式化输入输出.md
+      - ch04 表达式: markdowns/CProgramming/ch04 表达式.md
+      - ch05 选择语句: markdowns/CProgramming/ch05 选择语句.md
+      - ch06 循环: markdowns/CProgramming/ch06 循环.md
+      - ch07 基本类型: markdowns/CProgramming/ch07 基本类型.md
+      - ch08 数组: markdowns/CProgramming/ch08 数组.md
+      - ch09 函数: markdowns/CProgramming/ch09 函数.md
+      - ch10 程序结构: markdowns/CProgramming/ch10 程序结构.md
+      - ch11 指针: markdowns/CProgramming/ch11 指针.md
+      - ch12 指针和数组: markdowns/CProgramming/ch12 指针和数组.md
+      - ch13 字符串: markdowns/CProgramming/ch13 字符串.md
+      - ch14 预处理器: markdowns/CProgramming/ch14 预处理器.md
+      - ch15 编写大规模程序: markdowns/CProgramming/ch15 编写大规模程序.md
+      - ch16 结构、联合和枚举: markdowns/CProgramming/ch16 结构、联合和枚举.md
+      - ch17 指针的高级应用: markdowns/CProgramming/ch17 指针的高级应用.md
+      - ch18 声明: markdowns/CProgramming/ch18 声明.md
+      - ch19 程序设计: markdowns/CProgramming/ch19 程序设计.md
+      - ch20 低级程序设计: markdowns/CProgramming/ch20 低级程序设计.md
+      - ch21 标准库: markdowns/CProgramming/ch21 标准库.md
+      - ch22 输入输出: markdowns/CProgramming/ch22 输入_输出.md
+      - ch23 库对数值和字符数据的支持: markdowns/CProgramming/ch23 库对数值和字符数据的支持.md
+      - ch24 错误处理: markdowns/CProgramming/ch24 错误处理.md
+      - ch25 国际化特性: markdowns/CProgramming/ch25 国际化特性.md
+      - ch26 其他库函数: markdowns/CProgramming/ch26 其他库函数.md
     - CheatSheet:
-      - 惯用法: CProgramming/cheatsheet/惯用法.md
+      - 惯用法: markdowns/CProgramming/cheatsheet/惯用法.md
 
   - C++ Primer:
+    - README: codes/CppPrimer/README.md
     - Chapters: 
-      - ch01 开始: CppPrimer/ch01 开始.md
-      - ch02 变量和基本类型: CppPrimer/ch02 变量和基本类型.md
-      - ch03 字符串、向量和数组: CppPrimer/ch03 字符串、向量和数组.md
-      - ch04 表达式: CppPrimer/ch04 表达式.md
-      - ch05 语句: CppPrimer/ch05 语句.md
-      - ch06 函数: CppPrimer/ch06 函数.md
-      - ch07 类: CppPrimer/ch07 类.md
-      - ch08 IO库: CppPrimer/ch08 IO库.md
-      - ch09 顺序容器: CppPrimer/ch09 顺序容器.md
-      - ch10 泛型算法: CppPrimer/ch10 泛型算法.md
-      - ch11 关联容器: CppPrimer/ch11 关联容器.md
-      - ch12 动态内存: CppPrimer/ch12 动态内存.md
-      - ch13 拷贝控制: CppPrimer/ch13 拷贝控制.md
-      - ch14 操作重载与类型转换: CppPrimer/ch14 操作重载与类型转换.md
-      - ch15 面向对象程序设计: CppPrimer/ch15 面向对象程序设计.md
-      - ch16 模板与泛型编程: CppPrimer/ch16 模板与泛型编程.md
-      - ch17 标准库特殊设施: CppPrimer/ch17 标准库特殊设施.md
-      - ch18 用于大型程序的工具: CppPrimer/ch18 用于大型程序的工具.md
-      - ch19 特殊工具与技术: CppPrimer/ch19 特殊工具与技术.md
+      - ch01 开始: markdowns/CppPrimer/ch01 开始.md
+      - ch02 变量和基本类型: markdowns/CppPrimer/ch02 变量和基本类型.md
+      - ch03 字符串、向量和数组: markdowns/CppPrimer/ch03 字符串、向量和数组.md
+      - ch04 表达式: markdowns/CppPrimer/ch04 表达式.md
+      - ch05 语句: markdowns/CppPrimer/ch05 语句.md
+      - ch06 函数: markdowns/CppPrimer/ch06 函数.md
+      - ch07 类: markdowns/CppPrimer/ch07 类.md
+      - ch08 IO库: markdowns/CppPrimer/ch08 IO库.md
+      - ch09 顺序容器: markdowns/CppPrimer/ch09 顺序容器.md
+      - ch10 泛型算法: markdowns/CppPrimer/ch10 泛型算法.md
+      - ch11 关联容器: markdowns/CppPrimer/ch11 关联容器.md
+      - ch12 动态内存: markdowns/CppPrimer/ch12 动态内存.md
+      - ch13 拷贝控制: markdowns/CppPrimer/ch13 拷贝控制.md
+      - ch14 操作重载与类型转换: markdowns/CppPrimer/ch14 操作重载与类型转换.md
+      - ch15 面向对象程序设计: markdowns/CppPrimer/ch15 面向对象程序设计.md
+      - ch16 模板与泛型编程: markdowns/CppPrimer/ch16 模板与泛型编程.md
+      - ch17 标准库特殊设施: markdowns/CppPrimer/ch17 标准库特殊设施.md
+      - ch18 用于大型程序的工具: markdowns/CppPrimer/ch18 用于大型程序的工具.md
+      - ch19 特殊工具与技术: markdowns/CppPrimer/ch19 特殊工具与技术.md
     - CheatSheet:
-      - static的3个用途: CppPrimer/cheatsheet/static的3个用途.md
-      - 若干种typedef: CppPrimer/cheatsheet/若干种typedef.md
-      - 类内初始值: CppPrimer/cheatsheet/类内初始值.md
-      - 运算符重载: CppPrimer/cheatsheet/运算符重载.md
-      - 向set中插入自定义类型对象: CppPrimer/cheatsheet/向set中插入自定义类型对象.md
+      - static的3个用途: markdowns/CppPrimer/cheatsheet/static的3个用途.md
+      - 若干种typedef: markdowns/CppPrimer/cheatsheet/若干种typedef.md
+      - 类内初始值: markdowns/CppPrimer/cheatsheet/类内初始值.md
+      - 运算符重载: markdowns/CppPrimer/cheatsheet/运算符重载.md
+      - 向set中插入自定义类型对象: markdowns/CppPrimer/cheatsheet/向set中插入自定义类型对象.md
 
 theme:
   name: 'material'
@@ -78,8 +80,8 @@ theme:
     primary: 'blue grey'
     accent: 'light blue'
   font:
-    text: 'Open Sans'
-    code: 'Open Sans Mono'
+    text: 'PT Sans'
+    code: 'PT Sans'
   language: 'zh'
   feature:
     tabs: true
