@@ -90,13 +90,27 @@ void example5()
 	printf("%c", ch);
 }
 
+/*
+ * 写字符串
+ */
+void example6()
+{
+	printf("%s\n", "Hello World");
+
+	// %*s 代表字符串宽度是*
+	// 这里就是6的宽度，因此输出 ###bar ，#代表空格
+	int depth = 6;
+	printf("%*s\n", depth, "bar");
+}
+
 int main()
 {
-	example1();
+	//example1();
 	//example2();
 	//example3();
 	//example4();
 	//example5();
+	example6();
 
 	return 0;
 }
