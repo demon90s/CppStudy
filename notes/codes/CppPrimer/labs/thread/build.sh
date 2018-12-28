@@ -33,7 +33,7 @@ main() {
 		fi
 
 		echo "[BUILDING] $cpp_file -> $exe_file"
-		g++ -g -rdynamic -Wall -std=c++11 $cpp_file -o $exe_file
+		g++ -g -Wall -std=c++11 $cpp_file -o $exe_file -lpthread
 
 		if [ "$?" != "0" ]; then
 			return 1
