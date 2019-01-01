@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1364,13 +1364,13 @@
 <p>这些类型定义在memory头文件中。</p>
 <h3 id="shared_ptr">shared_ptr类</h3>
 <p>智能指针也是模板，当创建一个智能指针时，必须提供指向的类型：</p>
-<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">p1</span><span class="p">;</span> <span class="c1">// shared_ptr, 可以指向string</span>
+<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p1</span><span class="p">;</span><span class="err"> </span><span class="c1">// shared_ptr, 可以指向string</span>
 </pre></div>
 
 
 <p>默认初始化的智能指针中保存着一个空指针。</p>
 <p>解引用一个智能指针返回它指向的对象。如果在一个条件判断中使用智能指针，效果就是检测它是否为空：</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="s">&quot;hi&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="err"> </span><span class="o">*</span><span class="n">p1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1378,18 +1378,18 @@
 <p><strong>make_shared函数</strong></p>
 <p>最安全的分配和使用动态内存的方法是调用标准库函数make_shared。此函数在动态内存中分配一个对象并初始化它，返回指向此对象的shared_ptr。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 指向一个值为42的int的shared_ptr</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p3</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
 
 <span class="c1">// p6指向一个动态分配的空vector&lt;string&gt;</span>
-<span class="k">auto</span> <span class="n">p6</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+<span class="k">auto</span><span class="err"> </span><span class="n">p6</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">();</span>
 </pre></div>
 
 
 <p>类似顺序容器的emplace成员，make_shared用其参数来构造给定类型的对象。如果我们不传递任何参数，对象就会进行值初始化。</p>
 <p><strong>shared_ptr的拷贝和赋值</strong></p>
 <p>每个shared_ptr都会记录有多少个其他shared_ptr指向相同的对象：</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// p指向的对象只有p一个引用者</span>
-<span class="k">auto</span> <span class="nf">q</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="c1">// p和q指向相同的对象，此对象有两个引用者</span>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">p</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="err"> </span><span class="c1">// p指向的对象只有p一个引用者</span>
+<span class="k">auto</span><span class="err"> </span><span class="n">q</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="err"> </span><span class="c1">// p和q指向相同的对象，此对象有两个引用者</span>
 </pre></div>
 
 
@@ -1410,21 +1410,21 @@
 <p>相对于智能指针，使用这两个运算符管理内存非常容易出错。</p>
 <p><strong>使用new动态分配和初始化对象</strong></p>
 <p>在自由空间分配的内存是无名的，因此new无法为其分配的对象命名，而是返回一个指向该对象的指针：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">pi</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">;</span> <span class="c1">// pi指向一个动态分配的、未初始化的无名对象</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pi</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">;</span><span class="err"> </span><span class="c1">// pi指向一个动态分配的、未初始化的无名对象</span>
 </pre></div>
 
 
 <p>默认情况下，动态分配的对象是默认初始化的，这意味着内置类型或组合类型的对象的值将是未定义的，而类类型将使用默认构造函数进行初始化。</p>
 <p>可以使用直接初始化方式来初始化一个动态分配的对象：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">pi</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pi</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
 
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">pv</span> <span class="o">=</span> <span class="k">new</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="o">*</span><span class="n">pv</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="err"> </span><span class="mi">2</span><span class="p">,</span><span class="err"> </span><span class="mi">3</span><span class="p">};</span>
 </pre></div>
 
 
 <p><strong>动态分配的const对象</strong></p>
 <p>用new分配const对象是合法的：</p>
-<div class="codehilite"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pci</span> <span class="o">=</span> <span class="k">new</span> <span class="k">const</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pci</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1433,14 +1433,14 @@
 <p>一旦一个程序用光了它所有可用的内存，new表达式就会失败（并返回一个空指针）。默认情况下，如果new不能分配所要求的内存空间，它会抛出一个类型为bad_alloc的异常。</p>
 <p>我们可以改变使用new的方式来阻止它抛出异常：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 如果分配失败，new返回一个空指针</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">;</span> <span class="c1">// 如果分配失败，new抛出std::bad_alloc</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="n">nothrow</span><span class="p">)</span> <span class="kt">int</span><span class="p">;</span> <span class="c1">// 如果分配失败，new返回一个空指针</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">p1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">;</span><span class="err"> </span><span class="c1">// 如果分配失败，new抛出std::bad_alloc</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">p2</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="p">(</span><span class="n">nothrow</span><span class="p">)</span><span class="err"> </span><span class="kt">int</span><span class="p">;</span><span class="err"> </span><span class="c1">// 如果分配失败，new返回一个空指针</span>
 </pre></div>
 
 
 <p><strong>释放动态内存</strong></p>
 <p>为了防止内存耗尽，在动态内存使用完毕后，必须将其归还给系统。我们通过delete表达式（delete expression）来将动态内存归还给系统。</p>
-<div class="codehilite"><pre><span></span><span class="k">delete</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// p必须指向一个动态分配的对象或是一个空指针</span>
+<div class="codehilite"><pre><span></span><span class="k">delete</span><span class="err"> </span><span class="n">p</span><span class="p">;</span><span class="err"> </span><span class="c1">// p必须指向一个动态分配的对象或是一个空指针</span>
 </pre></div>
 
 
@@ -1448,13 +1448,13 @@
 <p>更多有关使用原生指针管理动态内存的危险的讨论见书本p409。</p>
 <h3 id="shared_ptrnew">shared_ptr和new结合使用</h3>
 <p>如果不初始化一个智能指针，它就会被初始化为一个空指针。还可以用new返回的指针来初始化智能指针：</p>
-<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span> <span class="c1">// p2指向一个值为42的int</span>
+<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p2</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="err"> </span><span class="c1">// p2指向一个值为42的int</span>
 </pre></div>
 
 
 <p>接受指针参数的智能指针构造函数是explicit的，因此必须使用直接初始化形式来初始化一个智能指针：</p>
-<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span> <span class="c1">// 错误：必须使用直接初始化形式</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">));</span>  <span class="c1">// 正确：使用了直接初始化形式</span>
+<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span><span class="err"> </span><span class="c1">// 错误：必须使用直接初始化形式</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p2</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">));</span><span class="err">  </span><span class="c1">// 正确：使用了直接初始化形式</span>
 </pre></div>
 
 
@@ -1462,21 +1462,21 @@
 <p>更多关于智能指针使用的讨论见p412。</p>
 <h3 id="_4">智能指针和异常</h3>
 <p>程序需要确保在异常发生后资源能被正确地释放。一个简单的确保资源被释放的方法是使用智能指针：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span> <span class="c1">// 分配一个对象</span>
-    <span class="c1">// 这段代码抛出一个异常，且在f中未被捕获</span>
-<span class="p">}</span> <span class="c1">// 函数结束时shared_ptr自动释放内存</span>
+<span class="err">    </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">sp</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="err"> </span><span class="c1">// 分配一个对象</span>
+<span class="err">    </span><span class="c1">// 这段代码抛出一个异常，且在f中未被捕获</span>
+<span class="p">}</span><span class="err"> </span><span class="c1">// 函数结束时shared_ptr自动释放内存</span>
 </pre></div>
 
 
 <p>无论是否发生了异常，局部对象都会被销毁，sp是指向这块内存的唯一指针，因此内存会被释放掉。</p>
 <p>如果使用了内置指针管理内存，且在new之后在对应的delete之前发生了异常，则内存不会被释放：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="o">*</span><span class="n">ip</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> <span class="c1">// 动态分配一个新对象</span>
-    <span class="c1">// 这段代码抛出一个异常，且在f中未被捕获</span>
-    <span class="k">delete</span> <span class="n">ip</span><span class="p">;</span> <span class="c1">// 在退出以前释放内存</span>
+<span class="err">    </span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">ip</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="err"> </span><span class="c1">// 动态分配一个新对象</span>
+<span class="err">    </span><span class="c1">// 这段代码抛出一个异常，且在f中未被捕获</span>
+<span class="err">    </span><span class="k">delete</span><span class="err"> </span><span class="n">ip</span><span class="p">;</span><span class="err"> </span><span class="c1">// 在退出以前释放内存</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1497,8 +1497,8 @@
 <h3 id="unique_ptr">unique_ptr</h3>
 <p>与shared_ptr不同，某个时刻只能有一个unique_ptr指向一个给定对象。当unique_ptr被销毁时，它所指向的对象也被销毁。</p>
 <p>与shared_ptr不同，没有类似make_shared的标准库函数返回一个unique_ptr。当我们定义一个unique_ptr时，需要将其绑定到一个new返回的指针上。</p>
-<div class="codehilite"><pre><span></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">p1</span><span class="p">;</span> <span class="c1">// 可以指向一个double的unique_ptr</span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span> <span class="c1">// p2指向一个值为42的int</span>
+<div class="codehilite"><pre><span></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p1</span><span class="p">;</span><span class="err"> </span><span class="c1">// 可以指向一个double的unique_ptr</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p2</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="err"> </span><span class="c1">// p2指向一个值为42的int</span>
 </pre></div>
 
 
@@ -1507,14 +1507,14 @@
 <h3 id="weak_ptr">weak_ptr</h3>
 <p>weak_ptr是一种不控制所指对象生存期的智能指针，它指向一个shared_ptr管理的对象。将一个weak_ptr绑定到一个shared_ptr不会改变shared_ptr的引用计数。一旦最后一个指向对象的shared_ptr被销毁，对象就会被释放。即使有weak_ptr指向对象，对象还是会被释放。</p>
 <p>当我们创建一个weak_ptr时，要用一个shared_ptr来初始化它：</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
-<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">wp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="c1">// wp若共享p；p的引用计数未改变</span>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">p</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">wp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="err"> </span><span class="c1">// wp若共享p；p的引用计数未改变</span>
 </pre></div>
 
 
 <p>由于对象可能不存在，我们不能使用weak_ptr直接访问对象，而必须调用lock。如果存在，lock返回一个指向共享对象的shared_ptr。否则返回一个空shared_ptr。</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">np</span> <span class="o">=</span> <span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 如果np不为空则条件成立</span>
-    <span class="c1">// 在if中，np与p共享对象</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">np</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="c1">// 如果np不为空则条件成立</span>
+<span class="err">    </span><span class="c1">// 在if中，np与p共享对象</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1536,7 +1536,7 @@
 <h3 id="new">new和数组</h3>
 <p>为了让new分配一个对象数组，我们要在类型名之后跟一对方括号，在其中指明要分配的对象的数目：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 调用get_size确定分配多少个int</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">pia</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">get_size</span><span class="p">()];</span> <span class="c1">// pia指向第一个int</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="n">get_size</span><span class="p">()];</span><span class="err"> </span><span class="c1">// pia指向第一个int</span>
 </pre></div>
 
 
@@ -1549,21 +1549,21 @@
 </div>
 <p><strong>初始化动态分配对象的数组</strong></p>
 <p>默认情况下，new分配的对象，不管是单个分配的还是数组中的，都是默认初始化的。可以对数组中的元素进行值初始化，方法是在大小之后跟一对空括号：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">pia</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span> <span class="c1">// 10个未初始化的int</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">pia2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]();</span> <span class="c1">// 10个值初始化为0的int</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="err"> </span><span class="c1">// 10个未初始化的int</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia2</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]();</span><span class="err"> </span><span class="c1">// 10个值初始化为0的int</span>
 </pre></div>
 
 
 <p>新标准中，我们还可以提供一个元素初始化器的花括号列表：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 10个int分别用列表中对应的初始化器初始化</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">pia3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia3</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
 </pre></div>
 
 
 <p><strong>释放动态数组</strong></p>
 <p>为了释放动态数组，我们使用一种特殊形式的delete——在指针前加上一个空方括号对：</p>
-<div class="codehilite"><pre><span></span><span class="k">delete</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// p必须指向一个动态分配的对象或为空</span>
-<span class="k">delete</span> <span class="p">[]</span> <span class="n">pa</span><span class="p">;</span> <span class="c1">// pa必须指向一个动态分配的数组或为空</span>
+<div class="codehilite"><pre><span></span><span class="k">delete</span><span class="err"> </span><span class="n">p</span><span class="p">;</span><span class="err"> </span><span class="c1">// p必须指向一个动态分配的对象或为空</span>
+<span class="k">delete</span><span class="err"> </span><span class="p">[]</span><span class="err"> </span><span class="n">pa</span><span class="p">;</span><span class="err"> </span><span class="c1">// pa必须指向一个动态分配的数组或为空</span>
 </pre></div>
 
 
@@ -1571,8 +1571,8 @@
 <p><strong>智能指针和动态数组</strong></p>
 <p>标准库提供了一个可以管理new分配的数组的unique_ptr版本：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// up指向一个包含10个未初始化int的数组</span>
-<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span> <span class="n">up</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
-<span class="n">up</span><span class="p">.</span><span class="n">release</span><span class="p">();</span> <span class="c1">// 自动用delete[]销毁其指针</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span><span class="err"> </span><span class="n">up</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
+<span class="n">up</span><span class="p">.</span><span class="n">release</span><span class="p">();</span><span class="err"> </span><span class="c1">// 自动用delete[]销毁其指针</span>
 </pre></div>
 
 
@@ -1594,28 +1594,28 @@
 <p><strong>allocator类</strong></p>
 <p>标准库allocator类定义在头文件memory中，它帮助我们将内存分配和对象构造分离开来。它分配的内存是原始的、未构造的。</p>
 <p>allocator也是模板，为了定义一个allocator对象，我们必须指明这个allocator可以分配的对象类型。当一个allocator对象分配内存时，它会根据给定对象类型来确定恰当的内存大小和对齐位置：</p>
-<div class="codehilite"><pre><span></span><span class="n">allocator</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">alloc</span><span class="p">;</span> <span class="c1">// 可以分配string的allocator对象</span>
-<span class="k">auto</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="c1">// 分配n个未初始化的string</span>
+<div class="codehilite"><pre><span></span><span class="n">allocator</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">alloc</span><span class="p">;</span><span class="err"> </span><span class="c1">// 可以分配string的allocator对象</span>
+<span class="k">auto</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="n">p</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="err"> </span><span class="c1">// 分配n个未初始化的string</span>
 </pre></div>
 
 
 <p><strong>allocator分配未构造的内存</strong></p>
 <p>allocator分配的内存是未构造的（unconstructed）。我们按需要在此内存中构造对象。</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// q指向最后构造元素之后的位置</span>
-<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">);</span> <span class="c1">// *q为空字符串</span>
-<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">,</span> <span class="s">&quot;hi&quot;</span><span class="p">);</span> <span class="c1">// *q为hi!</span>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">q</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">p</span><span class="p">;</span><span class="err"> </span><span class="c1">// q指向最后构造元素之后的位置</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">);</span><span class="err"> </span><span class="c1">// *q为空字符串</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;hi&quot;</span><span class="p">);</span><span class="err"> </span><span class="c1">// *q为hi!</span>
 </pre></div>
 
 
 <p>还未构造对象的情况下就使用原始内存是错误的。</p>
 <p>当我们用完对象后，必须对每个构造的元素调用destroy来销毁它们。</p>
-<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">q</span> <span class="o">!=</span> <span class="n">p</span><span class="p">)</span>
-    <span class="n">alloc</span><span class="p">.</span><span class="n">destroy</span><span class="p">(</span><span class="o">--</span><span class="n">q</span><span class="p">);</span> <span class="c1">// 释放我们真正构造的string</span>
+<div class="codehilite"><pre><span></span><span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">q</span><span class="err"> </span><span class="o">!=</span><span class="err"> </span><span class="n">p</span><span class="p">)</span>
+<span class="err">    </span><span class="n">alloc</span><span class="p">.</span><span class="n">destroy</span><span class="p">(</span><span class="o">--</span><span class="n">q</span><span class="p">);</span><span class="err"> </span><span class="c1">// 释放我们真正构造的string</span>
 </pre></div>
 
 
 <p>一旦元素被销毁后，就可以重新用这部分内存来保存其他string，也可以将其归还给系统。释放内存通过调用deallocate来完成：</p>
-<div class="codehilite"><pre><span></span><span class="n">alloc</span><span class="p">.</span><span class="n">deallocate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="n">alloc</span><span class="p">.</span><span class="n">deallocate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="err"> </span><span class="n">n</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1679,7 +1679,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -1697,7 +1697,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1725,7 +1725,8 @@
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

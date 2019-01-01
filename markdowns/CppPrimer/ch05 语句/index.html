@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1456,14 +1456,14 @@
 <hr />
 <h2 id="_2">简单语句</h2>
 <p>C++语言中的大多数语句都以分号结束，一个表达式，比如ival+5，末尾加上分号就变成了<strong>表达式语句</strong>(expression statement)，表达式语句的作用是执行表达式并丢弃掉求值结果：</p>
-<div class="codehilite"><pre><span></span><span class="n">ival</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>    <span class="c1">// 无意义的表达式语句</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ival</span><span class="p">;</span><span class="c1">// 有意义的表达式语句</span>
+<div class="codehilite"><pre><span></span><span class="n">ival</span><span class="err"> </span><span class="o">+</span><span class="err"> </span><span class="mi">5</span><span class="p">;</span><span class="err">    </span><span class="c1">// 无意义的表达式语句</span>
+<span class="n">cout</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">ival</span><span class="p">;</span><span class="c1">// 有意义的表达式语句</span>
 </pre></div>
 
 
 <p><strong>空语句</strong></p>
 <p>最简单的语句是<strong>空语句</strong>（null statement），它只有一个分号：</p>
-<div class="codehilite"><pre><span></span><span class="p">;</span> <span class="c1">// 空语句</span>
+<div class="codehilite"><pre><span></span><span class="p">;</span><span class="err"> </span><span class="c1">// 空语句</span>
 </pre></div>
 
 
@@ -1472,16 +1472,16 @@
 <p>复合语句（compound statement）是指用花括号括起来的语句和声明的序列，复合语句也被称作<strong>块</strong>（block）。一个块就是一个作用域。</p>
 <p>如果在程序的某个地方，语法上需要一条语句，但是逻辑上需要多条语句，则应该使用复合语句。</p>
 <p>所谓空块，是指内部没有任何语句的一对花括号。空块的作用等价于空语句：</p>
-<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">sought</span><span class="p">)</span>
-<span class="p">{}</span>  <span class="c1">// 空块</span>
+<div class="codehilite"><pre><span></span><span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">cin</span><span class="err"> </span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">s</span><span class="err"> </span><span class="o">&amp;&amp;</span><span class="err"> </span><span class="n">s</span><span class="err"> </span><span class="o">!=</span><span class="err"> </span><span class="n">sought</span><span class="p">)</span>
+<span class="p">{}</span><span class="err">  </span><span class="c1">// 空块</span>
 </pre></div>
 
 
 <h2 id="_3">语句作用域</h2>
 <p>可以在if、switch、while和for语句的控制结构内定义变量。定义在控制结构当中的变量只在相应语句的内部可见，一旦语句结束，变量也就超出其作用范围了：</p>
-<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">get_num</span><span class="p">())</span> <span class="c1">// 每次迭代时创建并初始化</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// 错误，在循环外部无法访问</span>
+<div class="codehilite"><pre><span></span><span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">get_num</span><span class="p">())</span><span class="err"> </span><span class="c1">// 每次迭代时创建并初始化</span>
+<span class="err">    </span><span class="n">cout</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">i</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="n">i</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">0</span><span class="p">;</span><span class="err">    </span><span class="c1">// 错误，在循环外部无法访问</span>
 </pre></div>
 
 
@@ -1501,12 +1501,12 @@
 <p><strong>my note</strong></p>
 <p>switch语句我已经很熟悉了，故不做更多笔记。</p>
 <p>在switch内部定义变量，一个好的办法是：在case分支下，通过使用块把变量定义在块内，从而确保后面所有case标签都在变量的作用域之外。具体的原因见p163。</p>
-<div class="codehilite"><pre><span></span><span class="k">case</span> <span class="nb">true</span><span class="o">:</span>
-    <span class="p">{</span>
-        <span class="c1">// 正确：声明语句位于语句块内部</span>
-        <span class="n">string</span> <span class="n">file_name</span> <span class="o">=</span> <span class="n">get_file_name</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">case</span><span class="err"> </span><span class="nb">true</span><span class="o">:</span>
+<span class="err">    </span><span class="p">{</span>
+<span class="err">        </span><span class="c1">// 正确：声明语句位于语句块内部</span>
+<span class="err">        </span><span class="n">string</span><span class="err"> </span><span class="n">file_name</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">get_file_name</span><span class="p">();</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="err">    </span><span class="k">break</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1542,8 +1542,8 @@
 <h3 id="do-while">do while语句</h3>
 <p>do while语句和while语句非常相似，唯一的区别是，do while语句先执行循环体后检查条件。不管条件的值如何，我们都至少会执行一次循环。do while语句的语法形式如下：</p>
 <div class="codehilite"><pre><span></span><span class="k">do</span>
-    <span class="n">statement</span>
-<span class="nf">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+<span class="err">    </span><span class="n">statement</span>
+<span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1563,33 +1563,33 @@
 <p>my note: 书上建议不要使用goto语句。我认为它应该有其合适的应用场景，只不过对于初学者并不需要。</p>
 </blockquote>
 <p>goto语句的语法形式是：</p>
-<div class="codehilite"><pre><span></span><span class="k">goto</span> <span class="nl">lable</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><span class="k">goto</span><span class="err"> </span><span class="nl">lable</span><span class="p">:</span>
 </pre></div>
 
 
 <p>label是用于标识一条语句的标示符。<strong>带标签的语句</strong>（labeled statement）是一种特殊的语句，在它之前有一个标示符以及一个冒号：</p>
-<div class="codehilite"><pre><span></span><span class="nl">end</span><span class="p">:</span> <span class="k">return</span><span class="p">;</span> <span class="c1">// 带标签的语句，可以作为goto的目标</span>
+<div class="codehilite"><pre><span></span><span class="nl">end</span><span class="p">:</span><span class="err"> </span><span class="k">return</span><span class="p">;</span><span class="err"> </span><span class="c1">// 带标签的语句，可以作为goto的目标</span>
 </pre></div>
 
 
 <p>标签标示符独立于变量或其他标示符的名字，因此，标签标示符可以和程序中其他实体的标示符使用同一个名字而不会相互干扰。</p>
 <p>和switch语句类似，goto语句也不能将程序的控制权从变量的作用域之外转移到作用域之内。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// ...</span>
-<span class="k">goto</span> <span class="nl">end</span><span class="p">:</span>
-    <span class="kt">int</span> <span class="n">ix</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 错误，goto语句绕过了一个带初始化的变量定义</span>
+<span class="k">goto</span><span class="err"> </span><span class="nl">end</span><span class="p">:</span>
+<span class="err">    </span><span class="kt">int</span><span class="err"> </span><span class="n">ix</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">10</span><span class="p">;</span><span class="err"> </span><span class="c1">// 错误，goto语句绕过了一个带初始化的变量定义</span>
 
 <span class="nl">end</span><span class="p">:</span>
-    <span class="c1">// 错误，goto绕过了ix的声明</span>
-    <span class="n">ix</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="err">    </span><span class="c1">// 错误，goto绕过了ix的声明</span>
+<span class="err">    </span><span class="n">ix</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">12</span><span class="p">;</span>
 </pre></div>
 
 
 <p>跳回到变量定义之前意味着系统将销毁该变量，然后重新创建它：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 向后跳过一个带初始化的变量定义是合法的</span>
 <span class="nl">begin</span><span class="p">:</span>
-    <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">get_size</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">sz</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="k">goto</span> <span class="n">begin</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">int</span><span class="err"> </span><span class="n">sz</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">get_size</span><span class="p">();</span>
+<span class="err">    </span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="n">sz</span><span class="err"> </span><span class="o">&lt;=</span><span class="err"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="err">        </span><span class="k">goto</span><span class="err"> </span><span class="n">begin</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1614,7 +1614,7 @@
 </blockquote>
 <h3 id="throw">throw表达式</h3>
 <p>抛出异常的一个例子是：</p>
-<div class="codehilite"><pre><span></span><span class="k">throw</span> <span class="nf">runtime_error</span><span class="p">(</span><span class="s">&quot;Data must refer to same ISBN&quot;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="k">throw</span><span class="err"> </span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;Data must refer to same ISBN&quot;</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1624,26 +1624,26 @@
 </blockquote>
 <h3 id="try_1">try语句块</h3>
 <p>try语句块的通用语法形式是：</p>
-<div class="codehilite"><pre><span></span><span class="k">try</span> <span class="p">{</span>
-    <span class="n">program</span><span class="o">-</span><span class="n">statements</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">exception</span><span class="o">-</span><span class="n">declaration</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">handler</span><span class="o">-</span><span class="n">statements</span>
-<span class="p">}</span> <span class="c1">// ...</span>
+<div class="codehilite"><pre><span></span><span class="k">try</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="n">program</span><span class="o">-</span><span class="n">statements</span>
+<span class="p">}</span><span class="err"> </span><span class="k">catch</span><span class="err"> </span><span class="p">(</span><span class="n">exception</span><span class="o">-</span><span class="n">declaration</span><span class="p">)</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="n">handler</span><span class="o">-</span><span class="n">statements</span>
+<span class="p">}</span><span class="err"> </span><span class="c1">// ...</span>
 </pre></div>
 
 
 <p>当选中了某个catch子句处理异常之后，执行与之对应的块。catch一旦完成，程序跳转到try语句块最后一个catch子句之后的那条语句继续执行。</p>
 <p>try语句块内声明的变量在catch子句内无法访问。</p>
 <p>一个简要的例子（摘自书本）：</p>
-<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">item1</span> <span class="o">&gt;&gt;</span> <span class="n">item2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="c1">// ... 可能抛出一个异常的代码</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">runtime_error</span> <span class="n">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">Try Again? Enter y or n&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-        <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">cin</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;n&#39;</span><span class="p">)</span>
-            <span class="k">break</span><span class="p">;</span> <span class="c1">// 跳出while循环</span>
+<div class="codehilite"><pre><span></span><span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">cin</span><span class="err"> </span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">item1</span><span class="err"> </span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">item2</span><span class="p">)</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="k">try</span><span class="err"> </span><span class="p">{</span>
+    <span class="err">    </span><span class="c1">// ... 可能抛出一个异常的代码</span>
+    <span class="p">}</span><span class="err"> </span><span class="k">catch</span><span class="err"> </span><span class="p">(</span><span class="n">runtime_error</span><span class="err"> </span><span class="n">err</span><span class="p">)</span><span class="err"> </span><span class="p">{</span>
+    <span class="err">    </span><span class="n">cout</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">err</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Try Again? Enter y or n&quot;</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">endl</span><span class="p">;</span>
+        <span class="kt">char</span><span class="err"> </span><span class="n">c</span><span class="p">;</span>
+        <span class="n">cin</span><span class="err"> </span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">c</span><span class="p">;</span>
+        <span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="o">!</span><span class="n">cin</span><span class="err"> </span><span class="o">||</span><span class="err"> </span><span class="n">c</span><span class="err"> </span><span class="o">==</span><span class="err"> </span><span class="sc">&#39;n&#39;</span><span class="p">)</span>
+        <span class="err">    </span><span class="k">break</span><span class="p">;</span><span class="err"> </span><span class="c1">// 跳出while循环</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1716,7 +1716,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -1734,7 +1734,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1762,7 +1762,8 @@
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

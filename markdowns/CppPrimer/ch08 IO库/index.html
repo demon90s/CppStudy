@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1352,22 +1352,22 @@
 <h3 id="_1">条件状态</h3>
 <p>IO类定义了一些函数和标志，可以帮助我们访问和操纵流的条件状态。见p279。</p>
 <p>一个IO错误的例子：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">ival</span><span class="p">;</span>
-<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">ival</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="n">ival</span><span class="p">;</span>
+<span class="n">cin</span><span class="err"> </span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">ival</span><span class="p">;</span>
 </pre></div>
 
 
 <p>如果试图在标准输入上键入Boo，读操作就会失败，cin进入错误状态。</p>
 <p>如果输入一个文件结束符标识，cin也会进入错误状态。</p>
 <p>一个流一旦发生错误，其上后续的IO操作都会失败。确定一个流对象的状态的最简单的方法是将它当作一个条件来使用：</p>
-<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span>
-    <span class="c1">// ok</span>
+<div class="codehilite"><pre><span></span><span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">cin</span><span class="err"> </span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">word</span><span class="p">)</span>
+<span class="err">    </span><span class="c1">// ok</span>
 </pre></div>
 
 
 <h3 id="_2">管理输出缓冲</h3>
 <p>每个输出流都管理一个缓冲区，用来保存程序读写的数据。如果执行下面的代码：</p>
-<div class="codehilite"><pre><span></span><span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;please enter a value: &quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="s">&quot;please enter a value: &quot;</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1399,8 +1399,8 @@
 </ul>
 <p><strong>unitbuf操纵符</strong></p>
 <p>如果想在每次输出操作后都刷新缓冲区，我们可以使用unitbuf操纵符。</p>
-<div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">unitbuf</span><span class="p">;</span>    <span class="c1">// 所有输出操作后都会立即刷新缓冲区</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">nounitbuf</span><span class="p">;</span>  <span class="c1">// 回到正常的缓冲方式</span>
+<div class="codehilite"><pre><span></span><span class="n">cout</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">unitbuf</span><span class="p">;</span><span class="err">    </span><span class="c1">// 所有输出操作后都会立即刷新缓冲区</span>
+<span class="n">cout</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">nounitbuf</span><span class="p">;</span><span class="err">  </span><span class="c1">// 回到正常的缓冲方式</span>
 </pre></div>
 
 
@@ -1414,8 +1414,8 @@
 <p>当想要读写一个文件时，可以定义一个文件流对象，并将对象与文件关联起来。</p>
 <p>每个文件流类都定义了一个名为open的成员函数，它完成一些系统相关的操作，来定位给定的文件，并视情况打开为读或写模式。</p>
 <p>创建文件流对象时，如果提供了一个文件名，则open会被自动调用：</p>
-<div class="codehilite"><pre><span></span><span class="n">ifstream</span> <span class="nf">in</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>    <span class="c1">// 构造一个ifstream并打开给定的文件</span>
-<span class="n">ofstream</span> <span class="n">out</span><span class="p">;</span>         <span class="c1">// 输出文件流未关联到任何文件</span>
+<div class="codehilite"><pre><span></span><span class="n">ifstream</span><span class="err"> </span><span class="n">in</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="err">    </span><span class="c1">// 构造一个ifstream并打开给定的文件</span>
+<span class="n">ofstream</span><span class="err"> </span><span class="n">out</span><span class="p">;</span><span class="err">         </span><span class="c1">// 输出文件流未关联到任何文件</span>
 </pre></div>
 
 
@@ -1440,8 +1440,8 @@
 <p><strong>以out模式打开文件会丢失已有数据</strong></p>
 <p>默认情况下，当我们打开一个ofstream时，文件的内容会被丢弃。</p>
 <p>阻止丢弃的方法是同时指定app模式：</p>
-<div class="codehilite"><pre><span></span><span class="n">ofstream</span> <span class="nf">out</span><span class="p">(</span><span class="s">&quot;file1&quot;</span><span class="p">);</span>    <span class="c1">// 文件被截断</span>
-<span class="n">ofstream</span> <span class="nf">app</span><span class="p">(</span><span class="s">&quot;file2&quot;</span><span class="p">,</span> <span class="n">ofstream</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>    <span class="c1">// 保留文件内容，写操作在文件末尾进行</span>
+<div class="codehilite"><pre><span></span><span class="n">ofstream</span><span class="err"> </span><span class="n">out</span><span class="p">(</span><span class="s">&quot;file1&quot;</span><span class="p">);</span><span class="err">    </span><span class="c1">// 文件被截断</span>
+<span class="n">ofstream</span><span class="err"> </span><span class="n">app</span><span class="p">(</span><span class="s">&quot;file2&quot;</span><span class="p">,</span><span class="err"> </span><span class="n">ofstream</span><span class="o">::</span><span class="n">app</span><span class="p">);</span><span class="err">    </span><span class="c1">// 保留文件内容，写操作在文件末尾进行</span>
 </pre></div>
 
 
@@ -1520,7 +1520,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -1538,7 +1538,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1566,7 +1566,8 @@
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

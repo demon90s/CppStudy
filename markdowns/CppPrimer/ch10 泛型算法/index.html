@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1482,7 +1482,7 @@
 <p><strong>操作两个序列的算法</strong></p>
 <p>举一个列子：equal算法，它比较两个序列中的元素。此算法接受三个迭代器：前两个表示第一个序列中的元素的范围，第三个表示第二个序列的首元素：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// roster2中的元素数目应该至少与roster1一样多</span>
-<span class="n">equal</span><span class="p">(</span><span class="n">roster1</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span> <span class="n">roster1</span><span class="p">.</span><span class="n">cend</span><span class="p">(),</span> <span class="n">roster2</span><span class="p">.</span><span class="n">cbegin</span><span class="p">());</span>
+<span class="n">equal</span><span class="p">(</span><span class="n">roster1</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span><span class="err"> </span><span class="n">roster1</span><span class="p">.</span><span class="n">cend</span><span class="p">(),</span><span class="err"> </span><span class="n">roster2</span><span class="p">.</span><span class="n">cbegin</span><span class="p">());</span>
 </pre></div>
 
 
@@ -1515,13 +1515,13 @@
 <p>我们可以向一个算法传递任何类别的可调用对象，对于一个对象或一个表达式，如果可以对其使用可调用运算符，则称它为可调用的。</p>
 <p>一个lambda表达式表示一个可调用的代码单元。可以将其理解为一个未命名的内联函数。一个lambda表达式具有一个返回类型、一个参数列表和一个函数体。但与函数不同，lambda可以定义在函数内部。</p>
 <p>一个lambda表达式具有如下形式：</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">capture</span> <span class="n">list</span><span class="p">](</span><span class="n">parameter</span> <span class="n">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="n">type</span> <span class="p">{</span> <span class="n">function</span> <span class="n">body</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">capture</span><span class="err"> </span><span class="n">list</span><span class="p">](</span><span class="n">parameter</span><span class="err"> </span><span class="n">list</span><span class="p">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="n">type</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="n">function</span><span class="err"> </span><span class="n">body</span><span class="err"> </span><span class="p">}</span>
 </pre></div>
 
 
 <p>其中，capture list是一个lambda所在函数中定义的局部变量的列表。</p>
 <p>可以忽略返回类型，这时会自动推断返回类型。</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">func</span> <span class="o">=</span> <span class="p">[](){</span> <span class="k">return</span> <span class="mi">42</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">func</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="p">[](){</span><span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="mi">42</span><span class="p">;</span><span class="err"> </span><span class="p">};</span>
 </pre></div>
 
 
@@ -1538,21 +1538,21 @@
 <p>可以让编译器根据lambda体中的代码来推断要使用哪些变量。为了指示编译器推断捕获列表，应在捕获列表中写一个&amp;或=。&amp;告诉编译器采用捕获引用方式，=则表示采用值捕获方式。</p>
 <p>如：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// sz为隐式捕获，值捕获方式</span>
-<span class="n">wc</span> <span class="o">=</span> <span class="n">find_if</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
-             <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">sz</span><span class="p">;</span> <span class="p">}</span> <span class="p">);</span>
+<span class="n">wc</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">find_if</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="err"> </span><span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+<span class="err">             </span><span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="err"> </span><span class="o">&gt;=</span><span class="err"> </span><span class="n">sz</span><span class="p">;</span><span class="err"> </span><span class="p">}</span><span class="err"> </span><span class="p">);</span>
 </pre></div>
 
 
 <p>详见lambda捕获列表，p352。</p>
 <p><strong>可变lambda</strong></p>
 <p>默认情况下，对于一个值拷贝的变量，lambda不会改变其值。如果希望改变，必须在参数列表后加上关键字mutable。</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">fcn3</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">fcn3</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kt">size_t</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-    <span class="c1">// f可以改变它捕获的变量的值</span>
-    <span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">v1</span><span class="p">]()</span> <span class="k">mutable</span> <span class="p">{</span> <span class="k">return</span> <span class="o">++</span><span class="n">v1</span><span class="p">;</span> <span class="p">};</span>
-    <span class="n">v1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span> <span class="c1">// j为43</span>
+<span class="err">    </span><span class="kt">size_t</span><span class="err"> </span><span class="n">v1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">42</span><span class="p">;</span>
+<span class="err">    </span><span class="c1">// f可以改变它捕获的变量的值</span>
+<span class="err">    </span><span class="k">auto</span><span class="err"> </span><span class="n">f</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="p">[</span><span class="n">v1</span><span class="p">]()</span><span class="err"> </span><span class="k">mutable</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="o">++</span><span class="n">v1</span><span class="p">;</span><span class="err"> </span><span class="p">};</span>
+<span class="err">    </span><span class="n">v1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="err">    </span><span class="k">auto</span><span class="err"> </span><span class="n">j</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">f</span><span class="p">();</span><span class="err"> </span><span class="c1">// j为43</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1562,7 +1562,7 @@
 <p>如果lambda的捕获列表为空，通常可以用函数来代替它。但如果捕获列表不为空就不能直接代替了。</p>
 <p><strong>标准库bind函数</strong></p>
 <p>为了解决这个问题，可以使用一个新的名为bind的标准库函数，它定义在头文件functional中。它接受一个可调用对象，生成一个新的可调用对象来“适应”原对象的参数列表。</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">newCallable</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">callable</span><span class="p">,</span> <span class="n">arg_list</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">newCallable</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">bind</span><span class="p">(</span><span class="n">callable</span><span class="p">,</span><span class="err"> </span><span class="n">arg_list</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1571,12 +1571,12 @@
 <p><strong>使用placeholders名字</strong></p>
 <p>名字<code>_n</code>都定义在一个名为placeholders的命名空间中，这个命名空间本身定义在std命名空间中。</p>
 <p>一种简单的using语句是：</p>
-<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">namespace_name</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">using</span><span class="err"> </span><span class="k">namespace</span><span class="err"> </span><span class="n">namespace_name</span><span class="p">;</span>
 </pre></div>
 
 
 <p>这种形式说明希望所有来自namespace_name的名字都可以在我们的程序中直接使用。如：</p>
-<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">using</span><span class="err"> </span><span class="k">namespace</span><span class="err"> </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1599,7 +1599,7 @@
 </ul>
 <h3 id="_11">插入迭代器</h3>
 <p>插入器是一种迭代器适配器，它接受一个容器，生成一个迭代器，能实现向给定容器添加元素。当我们通过一个插入迭代器进行赋值时，该迭代器调用容器操作来向给定容器的指定位置插入一个元素。</p>
-<div class="codehilite"><pre><span></span><span class="n">it</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span> <span class="c1">// 在it指定的当前位置插入值t。</span>
+<div class="codehilite"><pre><span></span><span class="n">it</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">t</span><span class="p">;</span><span class="err"> </span><span class="c1">// 在it指定的当前位置插入值t。</span>
 </pre></div>
 
 
@@ -1758,7 +1758,7 @@ reverse_copy(beg, end, dest);
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -1776,7 +1776,7 @@ reverse_copy(beg, end, dest);
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1804,7 +1804,8 @@ reverse_copy(beg, end, dest);
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1373,14 +1373,14 @@
 <p>除了与顺序容器相同的操作之外，关联容器还支持一些顺序容器不支持的操作（见p388）和类型别名（见p381）。</p>
 <p>关联容器的迭代器都是双向的。</p>
 <h3 id="_4">定义关联容器</h3>
-<div class="codehilite"><pre><span></span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">word_count</span><span class="p">;</span> <span class="c1">// 空容器</span>
-<span class="n">set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">exclude</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;the&quot;</span><span class="p">,</span> <span class="s">&quot;but&quot;</span><span class="p">,</span> <span class="s">&quot;and&quot;</span><span class="p">};</span> <span class="c1">// 列表初始化</span>
+<div class="codehilite"><pre><span></span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="err"> </span><span class="n">word_count</span><span class="p">;</span><span class="err"> </span><span class="c1">// 空容器</span>
+<span class="n">set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">exclude</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="p">{</span><span class="s">&quot;the&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;but&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;and&quot;</span><span class="p">};</span><span class="err"> </span><span class="c1">// 列表初始化</span>
 
 <span class="c1">// 三个元素；authors将姓映射为名</span>
-<span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">authors</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">{</span><span class="s">&quot;Joyce&quot;</span><span class="p">,</span> <span class="s">&quot;James&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s">&quot;Austen&quot;</span><span class="p">,</span> <span class="s">&quot;Jane&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s">&quot;Dickens&quot;</span><span class="p">,</span> <span class="s">&quot;Charles&quot;</span><span class="p">}</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">authors</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="p">{</span><span class="s">&quot;Joyce&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;James&quot;</span><span class="p">},</span>
+<span class="err">    </span><span class="p">{</span><span class="s">&quot;Austen&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;Jane&quot;</span><span class="p">},</span>
+<span class="err">    </span><span class="p">{</span><span class="s">&quot;Dickens&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;Charles&quot;</span><span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
 
@@ -1392,38 +1392,38 @@
 <p>对于有序容器，关键字类型必须定义元素比较的方法，默认情况下，标准库使用关键字类型的&lt;运算符来比较两个关键字。</p>
 <p><strong>使用关键字类型的比较函数</strong></p>
 <p>用来组织一个容器中元素的操作的类型也是该容器类型的一部分。为了指定使用自定义的操作，必须在定义关联容器类型时提供此操作的类型（比如一个函数指针类型）。</p>
-<div class="codehilite"><pre><span></span><span class="kt">bool</span> <span class="nf">compareIsbn</span><span class="p">(</span><span class="k">const</span> <span class="n">Sales_data</span> <span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Sales_data</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="kt">bool</span><span class="err"> </span><span class="n">compareIsbn</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Sales_data</span><span class="err"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="n">Sales_data</span><span class="err"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="n">lhs</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="p">.</span><span class="n">isbn</span><span class="p">();</span>
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="n">lhs</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span><span class="err"> </span><span class="o">&lt;</span><span class="err"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">isbn</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="n">multiset</span><span class="o">&lt;</span><span class="n">Sales_data</span><span class="p">,</span> <span class="k">decltype</span><span class="p">(</span><span class="n">compareIsbn</span><span class="p">)</span><span class="o">*&gt;</span> <span class="n">bookstore</span><span class="p">(</span><span class="n">compareIsbn</span><span class="p">);</span>
+<span class="n">multiset</span><span class="o">&lt;</span><span class="n">Sales_data</span><span class="p">,</span><span class="err"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">compareIsbn</span><span class="p">)</span><span class="o">*&gt;</span><span class="err"> </span><span class="n">bookstore</span><span class="p">(</span><span class="n">compareIsbn</span><span class="p">);</span>
 </pre></div>
 
 
 <h3 id="pair">pair类型</h3>
 <p>pair类型定义在头文件utility中。</p>
 <p>一个pair保存两个数据成员，pair是一个用来生成特定类型的模板。</p>
-<div class="codehilite"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">anon</span><span class="p">;</span> <span class="c1">// 保存两个string</span>
-<span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">line</span><span class="p">;</span> <span class="c1">// 保存string和vector&lt;int&gt;</span>
+<div class="codehilite"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">anon</span><span class="p">;</span><span class="err"> </span><span class="c1">// 保存两个string</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="err"> </span><span class="n">line</span><span class="p">;</span><span class="err"> </span><span class="c1">// 保存string和vector&lt;int&gt;</span>
 </pre></div>
 
 
 <p>pair的默认构造函数对数据成员进行值初始化。也可以为每个成员提供初始化器：</p>
-<div class="codehilite"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">author</span><span class="p">{</span><span class="s">&quot;James&quot;</span><span class="p">,</span> <span class="s">&quot;Joyce&quot;</span><span class="p">};</span>
+<div class="codehilite"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">author</span><span class="p">{</span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;Joyce&quot;</span><span class="p">};</span>
 </pre></div>
 
 
 <p>pair的数据成员是public的，两个成员分别是first，second。</p>
 <p><strong>创建pair对象的函数</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span>
-<span class="n">process</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="kt">int</span><span class="o">&gt;</span>
+<span class="n">process</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="o">&amp;</span><span class="n">v</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// 处理v</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">v</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">v</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">size</span><span class="p">()};</span> <span class="c1">// 列表初始化</span>
-    <span class="k">else</span>
-        <span class="k">return</span> <span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// 隐式构造返回值</span>
+<span class="err">    </span><span class="c1">// 处理v</span>
+<span class="err">    </span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="o">!</span><span class="n">v</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="err">        </span><span class="k">return</span><span class="err"> </span><span class="p">{</span><span class="n">v</span><span class="p">.</span><span class="n">back</span><span class="p">(),</span><span class="err"> </span><span class="n">v</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">size</span><span class="p">()};</span><span class="err"> </span><span class="c1">// 列表初始化</span>
+<span class="err">    </span><span class="k">else</span>
+<span class="err">        </span><span class="k">return</span><span class="err"> </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span><span class="err"> </span><span class="c1">// 隐式构造返回值</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1451,10 +1451,10 @@
 <p>与不能改名map元素的关键字一样，一个set中的关键字也是const的。可以用一个set迭代器来读取元素的值，但不能修改。</p>
 <p><strong>遍历关联容器</strong></p>
 <p>map和set类型都支持begin和end操作，我们可以利用这些函数获取迭代器，然后用迭代器来遍历容器。</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">map_it</span> <span class="o">=</span> <span class="n">word_count</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">map_it</span> <span class="o">!=</span> <span class="n">word_count</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-    <span class="o">++</span><span class="n">map_it</span><span class="p">;</span> <span class="c1">// 递增迭代器，移动到下一个元素</span>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">map_it</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>
+<span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">map_it</span><span class="err"> </span><span class="o">!=</span><span class="err"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="c1">// ...</span>
+    <span class="o">++</span><span class="n">map_it</span><span class="p">;</span><span class="err"> </span><span class="c1">// 递增迭代器，移动到下一个元素</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1469,20 +1469,20 @@
 <p>关联容器的insert成员向容器中添加一个元素或一个元素范围。由于map和set包含不重复的关键字，因此插入一个已存在的元素对容器没有任何影响。</p>
 <p><strong>向map添加元素</strong></p>
 <p>对一个map进行insert操作时，必须记住元素类型是pair。</p>
-<div class="codehilite"><pre><span></span><span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
-<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+<div class="codehilite"><pre><span></span><span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">word</span><span class="p">,</span><span class="err"> </span><span class="mi">1</span><span class="p">});</span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="err"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="err"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="err"> </span><span class="mi">1</span><span class="p">));</span>
 </pre></div>
 
 
 <p><strong>向multiset或multimap添加元素</strong></p>
 <p>由于一个multi容器中的关键字不必唯一，在这些类型上调用insert总会插入一个元素：</p>
-<div class="codehilite"><pre><span></span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">authors</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="err"> </span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">authors</span><span class="p">;</span>
 <span class="c1">// 插入第一个元素</span>
-<span class="n">authors</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Barth, John&quot;</span><span class="p">,</span> <span class="s">&quot;Sot-Weed Factor&quot;</span><span class="p">});</span>
+<span class="n">authors</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Barth, John&quot;</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;Sot-Weed Factor&quot;</span><span class="p">});</span>
 <span class="c1">// 正确，添加第二个元素</span>
-<span class="n">authors</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Barth, John&quot;</span><span class="p">},</span> <span class="s">&quot;Lost in the Funhouse&quot;</span><span class="p">);</span>
+<span class="n">authors</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Barth, John&quot;</span><span class="p">},</span><span class="err"> </span><span class="s">&quot;Lost in the Funhouse&quot;</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1573,7 +1573,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -1591,7 +1591,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1619,7 +1619,8 @@
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

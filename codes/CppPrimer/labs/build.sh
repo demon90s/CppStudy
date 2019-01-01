@@ -19,7 +19,7 @@ main() {
 	for cpp_file in $all_cpp_files; do
 		exe_file=${cpp_file%%.cpp*}
 
-		if [ "$1" == "clear" ]; then
+		if [ "$1" = "clear" ]; then
 			rm -f $exe_file
 			continue
 		fi

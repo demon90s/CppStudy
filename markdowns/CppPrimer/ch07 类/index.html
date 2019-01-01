@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1542,7 +1542,7 @@
 <p>成员函数体可以随意使用类中的成员，无须在意成员出现的顺序，这是因为编译器分两步处理类：首先编译成员的声明，然后才轮到成员函数体。</p>
 <p><strong>定义一个返回this对象的函数</strong></p>
 <p>可以使用如下语句返回this对象：</p>
-<div class="codehilite"><pre><span></span><span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">return</span><span class="err"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1584,7 +1584,7 @@
 </ul>
 <p><strong>=default</strong></p>
 <p>C++11中，使用这种语句来让编译器生成一个默认构造函数：</p>
-<div class="codehilite"><pre><span></span><span class="n">SalesData</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="n">SalesData</span><span class="p">()</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">default</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1677,13 +1677,13 @@
 <p>要创建一个类的对象，则必须已经定义好了这个类，这是因为编译器需要知道类的存储空间大小。</p>
 <p>只有被定义，才能访问其成员。</p>
 <p>声明一个前置类型的方法：</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="n">class</span><span class="err"> </span><span class="n">A</span><span class="p">;</span>
 
-<span class="k">struct</span> <span class="n">B</span><span class="p">;</span>
+<span class="k">struct</span><span class="err"> </span><span class="n">B</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="n">game</span>
+<span class="k">namespace</span><span class="err"> </span><span class="n">game</span>
 <span class="p">{</span>
-    <span class="k">class</span> <span class="nc">C</span><span class="p">;</span>    <span class="c1">// 前置声明一个在命名空间中的类</span>
+<span class="err">    </span><span class="n">class</span><span class="err"> </span><span class="n">C</span><span class="p">;</span><span class="err">    </span><span class="c1">// 前置声明一个在命名空间中的类</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1807,7 +1807,7 @@
 <p><strong>定义静态成员</strong></p>
 <p>static只能出现在类的内部，不能出现在外部。</p>
 <p>静态数据成员不属于类的对象，不是有构造函数初始化的。静态数据成员定义在函数体之外，一旦定义，就一直存在于程序的整个生命周期中。</p>
-<div class="codehilite"><pre><span></span><span class="kt">double</span> <span class="n">T</span><span class="o">::</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 定义并初始化一个静态成员</span>
+<div class="codehilite"><pre><span></span><span class="kt">double</span><span class="err"> </span><span class="n">T</span><span class="o">::</span><span class="n">a</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">1</span><span class="p">;</span><span class="err"> </span><span class="c1">// 定义并初始化一个静态成员</span>
 </pre></div>
 
 
@@ -1871,7 +1871,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -1889,7 +1889,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1917,7 +1917,8 @@
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

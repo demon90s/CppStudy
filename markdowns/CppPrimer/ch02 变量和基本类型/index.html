@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -2029,10 +2029,10 @@ decltype(i) e; // 正确，e是一个int。
 <p>C++语言允许用户以类的形式自定义数据类型，而库类型string、istream、ostream等也都是以类的形式定义的，就像第1章的Sales_item类型一样。</p>
 <h3 id="sales_data">定义Sales_data类型</h3>
 <p>Sales_data初步定义如下：</p>
-<div class="codehilite"><pre><span></span><span class="nt">struct</span> <span class="nt">Sales_data</span> <span class="p">{</span>
-    <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
-    <span class="err">unsigned</span> <span class="err">units_sold</span> <span class="err">=</span> <span class="err">0</span><span class="p">;</span>
-    <span class="err">double</span> <span class="err">revenue</span> <span class="err">=</span> <span class="err">0.0</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="nt">struct</span><span class="err"> </span><span class="nt">Sales_data</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">string</span><span class="err"> </span><span class="n">bookNo</span><span class="p">;</span>
+<span class="err">    unsigned units_sold = 0</span><span class="p">;</span>
+<span class="err">    double revenue = 0.0</span><span class="p">;</span>
 <span class="p">}</span><span class="o">;</span>
 </pre></div>
 
@@ -2048,13 +2048,13 @@ decltype(i) e; // 正确，e是一个int。
 <p><strong>预处理器概述</strong></p>
 <p>确保头文件多次包含仍能安全工作的常用技术是<strong>预处理器</strong>（preprocessor）。</p>
 <p>C++程序使用<strong>头文件保护符</strong>（header guard）来避免头文件重复包含。</p>
-<div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">ifndef</span> <span class="nt">SALES_DATA_H</span>
-<span class="p">#</span><span class="nn">define</span> <span class="nt">SALES_DATA_H</span>
+<div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">ifndef</span><span class="err"> </span><span class="nt">SALES_DATA_H</span>
+<span class="p">#</span><span class="nn">define</span><span class="err"> </span><span class="nt">SALES_DATA_H</span>
 
-<span class="nt">struct</span> <span class="nt">Sales_data</span> <span class="p">{</span>
-    <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
-    <span class="err">unsigned</span> <span class="err">units_sold</span> <span class="err">=</span> <span class="err">0</span><span class="p">;</span>
-    <span class="err">double</span> <span class="err">revenue</span> <span class="err">=</span> <span class="err">0.0</span><span class="p">;</span>
+<span class="nt">struct</span><span class="err"> </span><span class="nt">Sales_data</span><span class="err"> </span><span class="p">{</span>
+<span class="err">    </span><span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">string</span><span class="err"> </span><span class="n">bookNo</span><span class="p">;</span>
+<span class="err">    unsigned units_sold = 0</span><span class="p">;</span>
+<span class="err">    double revenue = 0.0</span><span class="p">;</span>
 <span class="p">}</span><span class="o">;</span>
 
 <span class="p">#</span><span class="nn">endif</span>
@@ -2116,7 +2116,7 @@ decltype(i) e; // 正确，e是一个int。
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -2134,7 +2134,7 @@ decltype(i) e; // 正确，e是一个int。
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -2162,7 +2162,8 @@ decltype(i) e; // 正确，e是一个int。
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

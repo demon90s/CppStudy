@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -1584,10 +1584,10 @@
 <p><strong>局部静态对象（local static object）</strong>在程序的执行路径第一次经过对象定义语句时初始化，并且直到程序终止才被销毁。</p>
 <p>一个例子（其解释见书本p185）：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 统计函数被调用了多少次</span>
-<span class="kt">size_t</span> <span class="nf">count_calls</span><span class="p">()</span>
+<span class="kt">size_t</span><span class="err"> </span><span class="n">count_calls</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">static</span> <span class="kt">size_t</span> <span class="n">ctr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 调用结束后，这个值仍然有效</span>
-    <span class="k">return</span> <span class="o">++</span><span class="n">ctr</span><span class="p">;</span>
+<span class="err">    </span><span class="k">static</span><span class="err"> </span><span class="kt">size_t</span><span class="err"> </span><span class="n">ctr</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">0</span><span class="p">;</span><span class="err"> </span><span class="c1">// 调用结束后，这个值仍然有效</span>
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="o">++</span><span class="n">ctr</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1634,8 +1634,8 @@
 <p>当形参是const时，必须注意关于顶层const的讨论（p57）。</p>
 <p>当用实参初始化形参时会忽略形参的顶层const。即当形参有顶层const时，传递给它常量对象或者非常量对象都是可以的。</p>
 <p>忽略形参的顶层const可能产生意想不到的结果：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{}</span>
-<span class="kt">void</span> <span class="nf">fcn</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{}</span>    <span class="c1">// 错误：重复定义</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">fcn</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">)</span><span class="err"> </span><span class="p">{}</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">fcn</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">)</span><span class="err"> </span><span class="p">{}</span><span class="err">    </span><span class="c1">// 错误：重复定义</span>
 </pre></div>
 
 
@@ -1646,9 +1646,9 @@
 <p>把函数不会改变的形参定义成（普通的）引用是一种常见错误，这么做给函数的调用者一种误导，即函数可以修改它的实参的值。此外，使用引用而非常量引用也会极大地限制函数所能接受的实参类型（比如无法传入一个常量对象了）。</p>
 <p>比如下面这个例子将导致编译错误（p192）：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 不良设计，第一个形参的类型应该是const string&amp;</span>
-<span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">find_char</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">,</span> <span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="o">&amp;</span><span class="n">occurs</span><span class="p">);</span>
+<span class="n">string</span><span class="o">::</span><span class="n">size_type</span><span class="err"> </span><span class="n">find_char</span><span class="p">(</span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span><span class="err"> </span><span class="kt">char</span><span class="err"> </span><span class="n">c</span><span class="p">,</span><span class="err"> </span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span><span class="err"> </span><span class="o">&amp;</span><span class="n">occurs</span><span class="p">);</span>
 <span class="c1">//...</span>
-<span class="n">find_char</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="n">ctr</span><span class="p">);</span> <span class="c1">// 无法编译通过</span>
+<span class="n">find_char</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="err"> </span><span class="sc">&#39;o&#39;</span><span class="p">,</span><span class="err"> </span><span class="n">ctr</span><span class="p">);</span><span class="err"> </span><span class="c1">// 无法编译通过</span>
 </pre></div>
 
 
@@ -1656,9 +1656,9 @@
 <p>当我们为函数传递一个数组时，实际上传递的是指向数组首元素的指针。</p>
 <p>尽管不能以值传递的方式传递数组，但是我们可以把形参写成类似数组的形式：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 每个函数都有一个const int*类型的形参</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="p">[]);</span>    <span class="c1">// 可以看出来，函数的意图是作用于一个数组</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>  <span class="c1">// 这里的维度表示我们期望数组含有多少元素，实际不一定</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="o">*</span><span class="p">);</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="p">[]);</span><span class="err">    </span><span class="c1">// 可以看出来，函数的意图是作用于一个数组</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span><span class="err">  </span><span class="c1">// 这里的维度表示我们期望数组含有多少元素，实际不一定</span>
 </pre></div>
 
 
@@ -1678,10 +1678,10 @@
 <p><strong>数组引用形参</strong></p>
 <p>C++语言允许将变量定义成数组的引用，基于同样的道理，形参也可以是数组的引用。此时，引用形参绑定到对应的实参上，也就是绑定到数组上。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 正确，形参是数组的引用，维度是类型的一部分</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span>
 <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">elem</span> <span class="p">:</span> <span class="n">arr</span><span class="p">)</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">elem</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="err">    </span><span class="k">for</span><span class="err"> </span><span class="p">(</span><span class="k">auto</span><span class="err"> </span><span class="n">elem</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="n">arr</span><span class="p">)</span>
+<span class="err">        </span><span class="n">cout</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">elem</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1690,37 +1690,37 @@
 <p><strong>传递多维数组</strong></p>
 <p>和所有数组一样，当将多维数组传递给函数时，真正传递的是指向数组首元素的指针，也就是一个指向数组的指针。数组第二维（以及后面所有维度）的大小都是数组类型的一部分，不能省略：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// matrix指向数组的首元素，该数组的元素是由10个整数构成的数组</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">matrix</span><span class="p">)[</span><span class="mi">10</span><span class="p">],</span> <span class="kt">int</span> <span class="n">rowSize</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="p">(</span><span class="o">*</span><span class="n">matrix</span><span class="p">)[</span><span class="mi">10</span><span class="p">],</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">rowSize</span><span class="p">)</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="cm">/* ... */</span><span class="err"> </span><span class="p">}</span>
 </pre></div>
 
 
 <p>也可以使用数组的语法定义函数，此时编译器会一如既往地忽略掉第一个维度：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 等价定义</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">matrix</span><span class="p">[][</span><span class="mi">10</span><span class="p">],</span> <span class="kt">int</span> <span class="n">rowSize</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">matrix</span><span class="p">[][</span><span class="mi">10</span><span class="p">],</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">rowSize</span><span class="p">)</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="cm">/* ... */</span><span class="err"> </span><span class="p">}</span>
 </pre></div>
 
 
 <p>matrix的声明看起来是一个二维数组，实际上形参是指向含有10个整数的数组的指针。</p>
 <h3 id="main">main: 处理命令行选项</h3>
 <p>有时候我们需要给main函数传递实参。一种常见的情况是用户通过设置一组选项来确定函数所要执行的操作。例如：</p>
-<div class="codehilite"><pre><span></span><span class="n">prog</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">o</span> <span class="n">ofile</span> <span class="n">data0</span>
+<div class="codehilite"><pre><span></span><span class="n">prog</span><span class="err"> </span><span class="o">-</span><span class="n">d</span><span class="err"> </span><span class="o">-</span><span class="n">o</span><span class="err"> </span><span class="n">ofile</span><span class="err"> </span><span class="n">data0</span>
 </pre></div>
 
 
 <p>这些命令行选项通过两个（可选的）形参传递给main函数。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">argc</span><span class="p">,</span><span class="err"> </span><span class="kt">char</span><span class="err"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="p">...</span><span class="err"> </span><span class="p">}</span>
 </pre></div>
 
 
 <p>第二个形参argv是一个数组，它的元素是指向C风格字符串的指针；第一个参数argc表示数组中字符串的数量；argc至少为1。</p>
 <p>当实参传给main函数之后，argv的第一个元素指向程序的名字或者一个空字符串，接下来的元素依次传递命令行提供的实参。最后一个指针之后的元素值保证为0。</p>
 <p>以上面的为例，argc应该等于5，argv应该包含如下的C风格字符串：</p>
-<div class="codehilite"><pre><span></span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;prog&quot;</span><span class="p">;</span>    <span class="c1">// 或者argv[0]也可以指向一个空字符串</span>
-<span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;-d&quot;</span><span class="p">;</span>
-<span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;-o&quot;</span><span class="p">;</span>
-<span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;ofile&quot;</span><span class="p">;</span>
-<span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;data0&quot;</span><span class="p">;</span>
-<span class="n">argv</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;prog&quot;</span><span class="p">;</span><span class="err">    </span><span class="c1">// 或者argv[0]也可以指向一个空字符串</span>
+<span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;-d&quot;</span><span class="p">;</span>
+<span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;-o&quot;</span><span class="p">;</span>
+<span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;ofile&quot;</span><span class="p">;</span>
+<span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;data0&quot;</span><span class="p">;</span>
+<span class="n">argv</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1749,8 +1749,8 @@
 <p>省略符形参应该仅仅用于C和C++通用的类型。特别应该注意的是，大多数类类型的对象在传递给省略符形参时都无法正确拷贝。</p>
 </div>
 <p>省略符形参只能出现在形参列表的最后一个位置，它的形式无外乎以下两种：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param_list</span><span class="p">,</span> <span class="p">...);</span>
-<span class="kt">void</span> <span class="nf">foo</span><span class="p">(...);</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">foo</span><span class="p">(</span><span class="n">param_list</span><span class="p">,</span><span class="err"> </span><span class="p">...);</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">foo</span><span class="p">(...);</span>
 </pre></div>
 
 
@@ -1758,7 +1758,7 @@
 <p>return语句终止当前正在执行的函数并将控制权返回到调用该函数的地方。</p>
 <p>return语句有两种形式：</p>
 <div class="codehilite"><pre><span></span><span class="k">return</span><span class="p">;</span>
-<span class="k">return</span> <span class="n">expression</span><span class="p">;</span>
+<span class="k">return</span><span class="err"> </span><span class="n">expression</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1776,12 +1776,12 @@
 <p><strong>主函数main的返回值</strong></p>
 <p>我们允许main函数没有return语句直接结束，这样编译器将隐式地插入一条返回0的return语句，表示执行成功。</p>
 <p>为了使返回值与机器无关，cstdlib头文件定义了两个预处理变量，可以用来表示成功与失败：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="n">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">some_failure</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">EXIT_FAILURE</span><span class="p">;</span>
-    <span class="k">else</span>
-        <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+<span class="err">    </span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="n">some_failure</span><span class="p">)</span>
+<span class="err">        </span><span class="k">return</span><span class="err"> </span><span class="n">EXIT_FAILURE</span><span class="p">;</span>
+<span class="err">    </span><span class="k">else</span>
+<span class="err">        </span><span class="k">return</span><span class="err"> </span><span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1792,21 +1792,21 @@
 <p>main函数不能调用它自己。</p>
 <h3 id="_13">返回数组的指针</h3>
 <p>因为数组不能被拷贝，所以函数不能返回数组。不过，函数可以返回数组的指针或引用。使用<strong>类型别名</strong>（p60）可以简化这种返回类型：</p>
-<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="kt">int</span> <span class="n">arrT</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>    <span class="c1">// arrT是一个类型别名，表示含有10个整数的数组</span>
-<span class="k">using</span> <span class="n">arrT</span> <span class="o">=</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>    <span class="c1">// arrT的等价声明</span>
-<span class="n">arrT</span><span class="o">*</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>       <span class="c1">// func返回一个指向含有10个整数的数组的指针</span>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">arrT</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="err">    </span><span class="c1">// arrT是一个类型别名，表示含有10个整数的数组</span>
+<span class="k">using</span><span class="err"> </span><span class="n">arrT</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="err">    </span><span class="c1">// arrT的等价声明</span>
+<span class="n">arrT</span><span class="o">*</span><span class="err"> </span><span class="n">func</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">);</span><span class="err">       </span><span class="c1">// func返回一个指向含有10个整数的数组的指针</span>
 </pre></div>
 
 
 <p><strong>声明一个返回数组指针的函数</strong></p>
 <p>形式如下：</p>
-<div class="codehilite"><pre><span></span><span class="n">Type</span> <span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">(</span><span class="n">param_list</span><span class="p">))[</span><span class="n">dimension</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><span class="n">Type</span><span class="err"> </span><span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">(</span><span class="n">param_list</span><span class="p">))[</span><span class="n">dimension</span><span class="p">]</span>
 </pre></div>
 
 
 <p>类似于其他数组的声明，Type表示元素的类型，dimension表示数组的大小。（*表示返回的是一个指针。）</p>
 <p>举一个例子：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">))[</span><span class="mi">10</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">))[</span><span class="mi">10</span><span class="p">];</span>
 </pre></div>
 
 
@@ -1829,20 +1829,20 @@
 <p>C++新标准提供了另一种简化上述func声明的方法，就是使用<strong>尾置返回类型（trailing return type）</strong>。任何函数的定义都能使用尾置返回，但是这种形式对于返回类型比较复杂的函数最有效。</p>
 <p>尾置返回类型跟在形参列表后面并以一个-&gt;符号开头。为了表示函数真正的返回类型跟在形参列表之后，我们在本应该出现返回类型的地方放置一个auto：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// func接受一个int类型的实参，返回一个指针，该指针指向含有10个整数的数组</span>
-<span class="k">auto</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span>
+<span class="k">auto</span><span class="err"> </span><span class="n">func</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span>
 </pre></div>
 
 
 <p><strong>使用decltype</strong></p>
 <p>如果我们知道函数返回的指针将指向哪个数组，就可以使用decltype关键字声明返回类型（即获得一个数组类型）。</p>
 <p>案例：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">odd</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
-<span class="kt">int</span> <span class="n">even</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="n">odd</span><span class="p">[]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="err"> </span><span class="mi">3</span><span class="p">,</span><span class="err"> </span><span class="mi">5</span><span class="p">,</span><span class="err"> </span><span class="mi">7</span><span class="p">,</span><span class="err"> </span><span class="mi">9</span><span class="p">};</span>
+<span class="kt">int</span><span class="err"> </span><span class="n">even</span><span class="p">[]</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="err"> </span><span class="mi">2</span><span class="p">,</span><span class="err"> </span><span class="mi">4</span><span class="p">,</span><span class="err"> </span><span class="mi">6</span><span class="p">,</span><span class="err"> </span><span class="mi">8</span><span class="p">};</span>
 
 <span class="c1">// 返回一个指针，该指针指向含有5个整数的数组</span>
-<span class="k">decltype</span><span class="p">(</span><span class="n">odd</span><span class="p">)</span> <span class="o">*</span><span class="n">arrPtr</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">odd</span><span class="p">)</span><span class="err"> </span><span class="o">*</span><span class="n">arrPtr</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">?</span> <span class="o">&amp;</span><span class="nl">odd</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">even</span><span class="p">;</span>
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="p">(</span><span class="n">i</span><span class="err"> </span><span class="o">%</span><span class="err"> </span><span class="mi">2</span><span class="p">)</span><span class="err"> </span><span class="o">?</span><span class="err"> </span><span class="o">&amp;</span><span class="n">odd</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="o">&amp;</span><span class="n">even</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1852,9 +1852,9 @@
 </blockquote>
 <h2 id="_14">函数重载</h2>
 <p>如果同一作用域内的几个函数名字相同但形参列表不同，我们称之为<strong>重载（overload）函数</strong>。比如：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">cp</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">beg</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">end</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">ia</span><span class="p">[],</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">char</span><span class="err"> </span><span class="o">*</span><span class="n">cp</span><span class="p">);</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">beg</span><span class="p">,</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">end</span><span class="p">);</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">ia</span><span class="p">[],</span><span class="err"> </span><span class="kt">size_t</span><span class="err"> </span><span class="n">size</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1862,8 +1862,8 @@
 <p>函数的名字仅仅是让编译器知道它调用的是哪个函数，而函数重载可以在一定程度上减轻程序员起名字、记名字的负担。</p>
 <p>main函数不能重载。</p>
 <p>不允许两个函数除了返回类型以外其他所有的要素都相同。比如：</p>
-<div class="codehilite"><pre><span></span><span class="n">Record</span> <span class="nf">lookup</span><span class="p">(</span><span class="k">const</span> <span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span>
-<span class="kt">bool</span> <span class="nf">lookup</span><span class="p">(</span><span class="k">const</span> <span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span>    <span class="c1">// 错误，与上一个函数相比只有返回类型不同</span>
+<div class="codehilite"><pre><span></span><span class="n">Record</span><span class="err"> </span><span class="n">lookup</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">bool</span><span class="err"> </span><span class="n">lookup</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span><span class="err">    </span><span class="c1">// 错误，与上一个函数相比只有返回类型不同</span>
 </pre></div>
 
 
@@ -1872,14 +1872,14 @@
 </blockquote>
 <p><strong>重载和const形参</strong></p>
 <p>顶层const不影响传入函数的对象。一个拥有顶层const的形参无法和另一个没有顶层const的形参区分开来：</p>
-<div class="codehilite"><pre><span></span><span class="n">Record</span> <span class="nf">lookup</span><span class="p">(</span><span class="n">Phone</span><span class="p">);</span>
-<span class="n">Record</span> <span class="nf">lookup</span><span class="p">(</span><span class="k">const</span> <span class="n">Phone</span><span class="p">);</span>    <span class="c1">// 重复声明</span>
+<div class="codehilite"><pre><span></span><span class="n">Record</span><span class="err"> </span><span class="n">lookup</span><span class="p">(</span><span class="n">Phone</span><span class="p">);</span>
+<span class="n">Record</span><span class="err"> </span><span class="n">lookup</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Phone</span><span class="p">);</span><span class="err">    </span><span class="c1">// 重复声明</span>
 </pre></div>
 
 
 <p>如果形参是某种类型的指针或引用，则通过区分其指向的是常量对象还是非常量对象可以实现函数重载，此时的const是底层的：</p>
-<div class="codehilite"><pre><span></span><span class="n">Record</span> <span class="nf">lookup</span><span class="p">(</span><span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span>       <span class="c1">// 此函数作用于Account的引用</span>
-<span class="n">Record</span> <span class="nf">lookup</span><span class="p">(</span><span class="k">const</span> <span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span> <span class="c1">// 新函数，作用于常量引用</span>
+<div class="codehilite"><pre><span></span><span class="n">Record</span><span class="err"> </span><span class="n">lookup</span><span class="p">(</span><span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span><span class="err">       </span><span class="c1">// 此函数作用于Account的引用</span>
+<span class="n">Record</span><span class="err"> </span><span class="n">lookup</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Account</span><span class="o">&amp;</span><span class="p">);</span><span class="err"> </span><span class="c1">// 新函数，作用于常量引用</span>
 </pre></div>
 
 
@@ -1887,16 +1887,16 @@
 <p><strong>const_cast和重载</strong></p>
 <p>const_cast在重载函数的情境中最有用。比如这两个重载函数：</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 比较两个string对象的长度，返回较短的那个引用</span>
-<span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">shorterString</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span>
+<span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">shorterString</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="n">s1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">s2</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">?</span> <span class="nl">s1</span> <span class="p">:</span> <span class="n">s2</span><span class="p">;</span> 
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="n">s1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="err"> </span><span class="o">&lt;=</span><span class="err"> </span><span class="n">s2</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="err"> </span><span class="o">?</span><span class="err"> </span><span class="n">s1</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="n">s2</span><span class="p">;</span><span class="err"> </span>
 <span class="p">}</span>
 
 <span class="c1">// 重载</span>
-<span class="n">string</span> <span class="o">&amp;</span><span class="n">shorterString</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span>
+<span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">shorterString</span><span class="p">(</span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span><span class="err"> </span><span class="n">string</span><span class="err"> </span><span class="o">&amp;</span><span class="n">s2</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">auto</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="n">shorterString</span><span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span>
-    <span class="k">return</span> <span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+<span class="err">    </span><span class="k">auto</span><span class="err"> </span><span class="o">&amp;</span><span class="n">r</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">shorterString</span><span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span><span class="err"> </span><span class="k">const_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span>
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="k">const_cast</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1928,17 +1928,17 @@
 <h2 id="_16">特殊用途语言特性</h2>
 <h3 id="_17">默认实参</h3>
 <p>这样一种形参，在函数的很多次调用中它们都被赋予一个相同的值，此时，我们把这个反复出现的值称为函数的<strong>默认实参</strong>（default argument）。调用含有默认实参的函数时，可以包含该实参，也可以省略该实参。如：</p>
-<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">sz</span><span class="p">;</span>
-<span class="n">string</span> <span class="nf">screen</span><span class="p">(</span><span class="n">sz</span> <span class="n">ht</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="n">sz</span> <span class="n">wid</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="kt">char</span> <span class="n">backrnd</span> <span class="o">=</span> <span class="sc">&#39; &#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span><span class="err"> </span><span class="n">string</span><span class="o">::</span><span class="n">size_type</span><span class="err"> </span><span class="n">sz</span><span class="p">;</span>
+<span class="n">string</span><span class="err"> </span><span class="n">screen</span><span class="p">(</span><span class="n">sz</span><span class="err"> </span><span class="n">ht</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">24</span><span class="p">,</span><span class="err"> </span><span class="n">sz</span><span class="err"> </span><span class="n">wid</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">80</span><span class="p">,</span><span class="err"> </span><span class="kt">char</span><span class="err"> </span><span class="n">backrnd</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="sc">&#39; &#39;</span><span class="p">);</span>
 </pre></div>
 
 
 <p>一旦某个形参被赋予了默认值，它后面的所有形参都必须有默认值。</p>
 <p><strong>使用默认实参调用函数</strong></p>
 <p>如果我们想使用默认实参，只要在调用函数的时候省略该实参就可以了。如：</p>
-<div class="codehilite"><pre><span></span><span class="n">string</span> <span class="n">window</span><span class="p">;</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">screen</span><span class="p">();</span>    <span class="c1">// 等价于screen(24, 80, &#39; &#39;);</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">stcreen</span><span class="p">(</span><span class="mi">66</span><span class="p">);</span> <span class="c1">// 等价于screen(66, 80, &#39; &#39;);</span>
+<div class="codehilite"><pre><span></span><span class="n">string</span><span class="err"> </span><span class="n">window</span><span class="p">;</span>
+<span class="n">window</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">screen</span><span class="p">();</span><span class="err">    </span><span class="c1">// 等价于screen(24, 80, &#39; &#39;);</span>
+<span class="n">window</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">stcreen</span><span class="p">(</span><span class="mi">66</span><span class="p">);</span><span class="err"> </span><span class="c1">// 等价于screen(66, 80, &#39; &#39;);</span>
 </pre></div>
 
 
@@ -1947,8 +1947,8 @@
 <p><strong>默认实参初始值</strong></p>
 <p>局部变量不可以作为默认实参。另外只要表达式的类型可以转换成形参类型，该表达式就可以作为默认实参。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">g_a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">g_a</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="n">g_a</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">g_a</span><span class="p">);</span>
 </pre></div>
 
 
@@ -1962,8 +1962,8 @@
 <p>是指能用于<strong>常量表达式</strong>的函数。</p>
 <p>函数的返回类型及所有形参都得是字面值类型，且函数体内必须有且只有一条return语句。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">new_sz</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">8</span><span class="p">;</span> <span class="p">}</span>
-<span class="k">constexpr</span> <span class="kt">int</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">new_sz</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="k">constexpr</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">new_sz</span><span class="p">()</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="mi">8</span><span class="p">;</span><span class="err"> </span><span class="p">}</span>
+<span class="k">constexpr</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">foo</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">new_sz</span><span class="p">();</span>
 </pre></div>
 
 
@@ -1984,7 +1984,7 @@
 <p><strong>NDEBUG预处理变量</strong></p>
 <p>assert的行为依赖于一个名为NDEBUG的预处理变量的状态。如果定义了NDEBUG，则assert什么也不做。默认状态下没有定义NDEBUG，此时assert将执行运行时检查。</p>
 <p>我们可以使用一个#define语句定义NDEBUG，从而关闭调试状态。或者使用编译器提供的命令行选项定义预处理变量：</p>
-<div class="codehilite"><pre><span></span><span class="err">$</span> <span class="n">CC</span> <span class="o">-</span><span class="n">D</span> <span class="n">NDEBUG</span> <span class="n">main</span><span class="p">.</span><span class="n">c</span>
+<div class="codehilite"><pre><span></span><span class="err">$ </span><span class="n">CC</span><span class="err"> </span><span class="o">-</span><span class="n">D</span><span class="err"> </span><span class="n">NDEBUG</span><span class="err"> </span><span class="n">main</span><span class="p">.</span><span class="n">c</span>
 </pre></div>
 
 
@@ -1992,11 +1992,11 @@
 <p>我们可以把assert当成调试程序的一种辅助手段，但是不能用它代替真正的运行时逻辑检查，也不能代替程序本身应该包含的错误检查。</p>
 <p>除了用于assert，也可以使用NDEBUG编写自己的调试代码。</p>
 <p>比如：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">ia</span><span class="p">[],</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">ia</span><span class="p">[],</span><span class="err"> </span><span class="kt">size_t</span><span class="err"> </span><span class="n">size</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="cp">#ifndef NDEBUG</span>
-    <span class="c1">// __func__是编译器定义的一个局部静态变量，用于存放函数的名字</span>
-    <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&quot;</span><span class="o">:</span> <span class="n">array</span> <span class="n">size</span> <span class="nl">is</span><span class="p">:</span> <span class="s">&quot; &lt;&lt; size &lt;&lt; endl;</span>
+<span class="err">    </span><span class="c1">// __func__是编译器定义的一个局部静态变量，用于存放函数的名字</span>
+<span class="err">    </span><span class="n">cerr</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="n">__func__</span><span class="err"> </span><span class="o">&lt;&lt;</span><span class="err"> </span><span class="s">&quot;&quot;</span><span class="o">:</span><span class="err"> </span><span class="n">array</span><span class="err"> </span><span class="n">size</span><span class="err"> </span><span class="nl">is</span><span class="p">:</span><span class="err"> </span><span class="s">&quot; &lt;&lt; size &lt;&lt; endl;</span>
 <span class="cp">#endif</span>
 
 <span class="c1">// ...</span>
@@ -2021,11 +2021,11 @@
 </ul>
 <h2 id="_19">函数匹配</h2>
 <p>本节(p217)讲述编译器如何确定调用哪个重载函数，并以下述这组函数及其调用为例：</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">();</span>
-<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">);</span>
-<span class="n">f</span><span class="p">(</span><span class="mf">5.6</span><span class="p">);</span>    <span class="c1">// 调用void f(double, double);</span>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">();</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="err"> </span><span class="kt">int</span><span class="p">);</span>
+<span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="err"> </span><span class="kt">double</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mf">3.14</span><span class="p">);</span>
+<span class="n">f</span><span class="p">(</span><span class="mf">5.6</span><span class="p">);</span><span class="err">    </span><span class="c1">// 调用void f(double, double);</span>
 </pre></div>
 
 
@@ -2070,22 +2070,22 @@
 </blockquote>
 <h2 id="_21">函数指针</h2>
 <p>函数指针指向的是函数而非对象。函数的类型由它的返回类型和形参类型共同决定，与函数名无关。例如：</p>
-<div class="codehilite"><pre><span></span><span class="kt">bool</span> <span class="nf">lengthCompare</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kt">bool</span><span class="err"> </span><span class="n">lengthCompare</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="o">&amp;</span><span class="p">,</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
 </pre></div>
 
 
 <p>该函数的类型是：<code>bool (const string&amp;, const string&amp;);</code></p>
 <p>要想声明一个指向该函数的指针，只需要将函数名替换成指针即可：</p>
-<div class="codehilite"><pre><span></span><span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kt">bool</span><span class="err"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)(</span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="o">&amp;</span><span class="p">,</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
 </pre></div>
 
 
 <p><strong>使用函数指针</strong></p>
 <p>当我们把函数名作为一个值使用的时候，该函数名自动转换成指针（指向该函数的）。</p>
 <p>例如，可以这样给把函数地址赋值给指针：</p>
-<div class="codehilite"><pre><span></span><span class="n">pf</span> <span class="o">=</span> <span class="n">lengthCompare</span><span class="p">;</span> <span class="c1">// pf指向名为lengthCompare的函数</span>
+<div class="codehilite"><pre><span></span><span class="n">pf</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">lengthCompare</span><span class="p">;</span><span class="err"> </span><span class="c1">// pf指向名为lengthCompare的函数</span>
 
-<span class="n">pf</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lengthCompare</span><span class="p">;</span> <span class="c1">// 等价的赋值语句，取地址符是可选的</span>
+<span class="n">pf</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="o">&amp;</span><span class="n">lengthCompare</span><span class="p">;</span><span class="err"> </span><span class="c1">// 等价的赋值语句，取地址符是可选的</span>
 </pre></div>
 
 
@@ -2106,8 +2106,8 @@ bool b3 = lengthCompare(&quot;Hello&quot;, &quot;Hi&quot;); // 等价调�
 <ul>
 <li>typedef</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="kt">bool</span> <span class="nf">Func</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span> <span class="c1">// Func是函数类型</span>
-<span class="k">typedef</span> <span class="nf">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">FuncP</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span> <span class="c1">// FuncP是函数指针类型</span>
+<div class="codehilite"><pre><span></span><span class="k">typedef</span><span class="err"> </span><span class="kt">bool</span><span class="err"> </span><span class="n">Func</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="err"> </span><span class="c1">// Func是函数类型</span>
+<span class="k">typedef</span><span class="err"> </span><span class="kt">bool</span><span class="err"> </span><span class="p">(</span><span class="o">*</span><span class="n">FuncP</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span><span class="err"> </span><span class="c1">// FuncP是函数指针类型</span>
 </pre></div>
 
 
@@ -2115,16 +2115,16 @@ bool b3 = lengthCompare(&quot;Hello&quot;, &quot;Hi&quot;); // 等价调�
 <li>decltype</li>
 </ul>
 <p>假如已经有了一个函数：<code>bool Foo(int);</code></p>
-<div class="codehilite"><pre><span></span><span class="k">decltype</span><span class="p">(</span><span class="n">Foo</span><span class="p">)</span> <span class="n">Func</span><span class="p">;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="n">Foo</span><span class="p">)</span> <span class="o">*</span><span class="n">FuncP</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="k">decltype</span><span class="p">(</span><span class="n">Foo</span><span class="p">)</span><span class="err"> </span><span class="n">Func</span><span class="p">;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">Foo</span><span class="p">)</span><span class="err"> </span><span class="o">*</span><span class="n">FuncP</span><span class="p">;</span>
 </pre></div>
 
 
 <ul>
 <li>using</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Func</span> <span class="o">=</span> <span class="kt">bool</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
-<span class="k">using</span> <span class="n">FuncP</span> <span class="o">=</span> <span class="kt">bool</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="k">using</span><span class="err"> </span><span class="n">Func</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="kt">bool</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="k">using</span><span class="err"> </span><span class="n">FuncP</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="kt">bool</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
 </pre></div>
 
 
@@ -2188,7 +2188,7 @@ bool b3 = lengthCompare(&quot;Hello&quot;, &quot;Hi&quot;); // 等价调�
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018 Diwen Liu
+            Copyright &copy; since 2018 Diwen Liu
           </div>
         
         powered by
@@ -2206,7 +2206,7 @@ bool b3 = lengthCompare(&quot;Hello&quot;, &quot;Hi&quot;); // 等价调�
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -2234,7 +2234,8 @@ bool b3 = lengthCompare(&quot;Hello&quot;, &quot;Hi&quot;); // 等价调�
     
     
       
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
