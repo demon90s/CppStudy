@@ -1645,7 +1645,7 @@
 <h3 id="_13">标准库定义的函数对象</h3>
 <p>标准库定义了一组表示算术运算符、关系运算符和逻辑运算符的类，每个类分别定义了一个执行命名操作的调用运算符。例如，plus类定义了一个函数调用运算符用于对一对运算对象执行+操作。</p>
 <p>这些类都被定义成模板的形式，我们可以为其指定具体的应用类型，这里的类型即调用运算符的形参类型。例如，<code>plus&lt;string&gt;</code>令string的加法运算符作用于string对象。</p>
-<div class="codehilite"><pre><span></span><span class="n">plus</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">intAdd</span><span class="p">;</span>           <span class="c1">// 可执行int加法的函数对</span>
+<div class="codehilite"><pre><span></span><span class="n">plus</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">intAdd</span><span class="p">;</span>           <span class="c1">// 可执行int加法的函数对象</span>
 <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">intAdd</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>   <span class="c1">// 使用intAdd::operator(int, int)求10和20的和</span>
 </pre></div>
 
