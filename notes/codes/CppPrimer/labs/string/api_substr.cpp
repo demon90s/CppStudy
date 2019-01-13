@@ -3,6 +3,8 @@
 
 int main()
 {
+	// s.substr(pos, n)
+	
 	// 返回一个 string ，包含s中从 pos 开始的 n 个字符的拷贝。 pos 的默认值为0。
 	// n 的默认值为 s.size() - pos ，即拷贝从 pos 开始的所有字符。
 	//
