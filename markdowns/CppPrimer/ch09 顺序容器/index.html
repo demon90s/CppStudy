@@ -991,6 +991,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#string" title="额外的 string 操作" class="md-nav__link">
+    额外的 string 操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string_1" title="构造 string 的其他方法" class="md-nav__link">
+    构造 string 的其他方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_2" title="改变 string 的其他方法" class="md-nav__link">
+    改变 string 的其他方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_3" title="string 搜索操作" class="md-nav__link">
+    string 搜索操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare" title="compare 函数" class="md-nav__link">
+    compare 函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="数值转换" class="md-nav__link">
+    数值转换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1339,6 +1387,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#string" title="额外的 string 操作" class="md-nav__link">
+    额外的 string 操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string_1" title="构造 string 的其他方法" class="md-nav__link">
+    构造 string 的其他方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_2" title="改变 string 的其他方法" class="md-nav__link">
+    改变 string 的其他方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_3" title="string 搜索操作" class="md-nav__link">
+    string 搜索操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare" title="compare 函数" class="md-nav__link">
+    compare 函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="数值转换" class="md-nav__link">
+    数值转换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1478,7 +1574,7 @@
 <p>可以使用resize来增大或缩小容器。如果当前大小大于所要求的大小，容器后部的元素会被删除；如果当前大小小于新大小，会将新元素添加到容器后部。</p>
 <p>resize接受一个可选的元素指参数，用来初始化新添加的元素。如果未提供，新元素进行值初始化。</p>
 <h3 id="_14">容器操作可能使迭代器失效</h3>
-<p>使用失效的迭代器、引用、或指针式一种严重的错误。</p>
+<p>使用失效的迭代器、引用、或指针是一种严重的错误。</p>
 <p>向容器添加元素后：</p>
 <ul>
 <li>
@@ -1498,6 +1594,80 @@
 </li>
 </ul>
 <p>详细见书本p315。</p>
+<h2 id="string">额外的 string 操作</h2>
+<p>除了顺序容器共同的操作之外， string 类型还提供了一些额外的操作。</p>
+<h3 id="string_1">构造 string 的其他方法</h3>
+<p>使用下面这些方法可以构造 string ：</p>
+<p>以下 n, len2, pos2 都是无符号值。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string s(cp, n)</td>
+<td>s是cp指向的数组中前n个字符的拷贝</td>
+</tr>
+<tr>
+<td>string s(s2, pos2)</td>
+<td>s是 string s2 从下标 pos2 开始的字符拷贝</td>
+</tr>
+<tr>
+<td>string s(s2, pos2, len2)</td>
+<td>s是 string s2 从下标 pos2 开始 len2 个字符的拷贝，不管 len2 的值是多少，构造函数至多拷贝 s2.size() - pos2 个字符</td>
+</tr>
+</tbody>
+</table>
+<p><a href="../../../codes/CppPrimer/labs/string/construct.cpp">参考代码</a></p>
+<p><strong>substr 操作</strong></p>
+<p>substr 返回一个 string ，它是原始 string 的一部分或全部的拷贝。</p>
+<p><code>s.substr(pos, n)</code> 返回一个 string ，包含s中从pos开始的n个字符的拷贝。pos默认为0,n默认为 s.size() - pos ，即拷贝从 pos 开始的所有字符。</p>
+<p><a href="../../../codes/CppPrimer/labs/string/api_substr.cpp">参考代码</a></p>
+<h3 id="string_2">改变 string 的其他方法</h3>
+<p>string 类型支持顺序容器的赋值运算符以及 assign, insert, erase 操作。除此之外，它还定义了额外的 insert 和 erase 版本。即使用下标的版本。</p>
+<p>这些函数都拥有许多重载的版本。</p>
+<p>参见：</p>
+<ul>
+<li><a href="../../../codes/CppPrimer/labs/string/api_insert.cpp">insert</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_erase.cpp">erase</a></li>
+</ul>
+<p>assign 版本还接受C风格字符串：</p>
+<ul>
+<li><a href="../../../codes/CppPrimer/labs/string/api_assign.cpp">assign</a></li>
+</ul>
+<p>append 和 replace 是额外的成员函数， append 在 string 末尾进行插入操作， replace 替换内容，它是调用 erase 和 insert 的一种简写形式：</p>
+<ul>
+<li><a href="../../../codes/CppPrimer/labs/string/api_append.cpp">append</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_replace.cpp">replace</a></li>
+</ul>
+<h3 id="string_3">string 搜索操作</h3>
+<p>string 提供了6个搜索函数，它们都有4个重载版本。它们都返回一个 string::size_type 的值作为匹配位置（下标）。如果搜索失败，返回 string::npos ，其值为 -1 。</p>
+<ul>
+<li><a href="../../../codes/CppPrimer/labs/string/api_find.cpp">find</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_rfind.cpp">rfind</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_find_first_of.cpp">find_first_of</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_find_last_of.cpp">find_last_of</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_find_first_not_of.cpp">find_first_not_of</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/api_find_last_not_of.cpp">find_last_not_of</a></li>
+</ul>
+<p>可以给函数一个搜索的起始位置 pos ，它默认值是0：</p>
+<p><code>auto pos = s.find_first_of(numbers, pos);</code></p>
+<h3 id="compare">compare 函数</h3>
+<p>这是字符串比较函数，和C标准库的 strcmp 很相似。</p>
+<ul>
+<li><a href="../../../codes/CppPrimer/labs/string/api_compare.cpp">compare</a></li>
+</ul>
+<h3 id="_15">数值转换</h3>
+<p>标准库提供了数值转换的函数。</p>
+<p>如果 string 不能转换成一个数值，那么会抛出一个 invalid_argument 的异常。如果转换得到的数值无法用任何类型来表示，则抛出一个 out_of_range 异常。</p>
+<p>这些函数有：</p>
+<ul>
+<li><a href="../../codes/CppPrimer/labs/string/api_to_string.cpp">to_string</a></li>
+<li><a href="../../../codes/CppPrimer/labs/string/stoi_stol_stoul_stof.cpp">stoi, stol, stoul, stof等</a></li>
+</ul>
                 
                   
                 
