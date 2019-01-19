@@ -66,6 +66,7 @@ nav:
       - ch18 用于大型程序的工具: markdowns/CppPrimer/ch18 用于大型程序的工具.md
       - ch19 特殊工具与技术: markdowns/CppPrimer/ch19 特殊工具与技术.md
     - CheatSheet:
+      - auto可能的适用场景: markdowns/CppPrimer/cheatsheet/auto可能的适用场景.md
       - static的3个用途: markdowns/CppPrimer/cheatsheet/static的3个用途.md
       - 若干种typedef: markdowns/CppPrimer/cheatsheet/若干种typedef.md
       - 类内初始值: markdowns/CppPrimer/cheatsheet/类内初始值.md
