@@ -1192,6 +1192,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
+      auto可能的适用场景
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
       static的3个用途
     </a>
@@ -1901,6 +1913,17 @@ dynamic_cast&lt;type&amp;&amp;&gt;(e)
 </pre></div>
 
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>有时候可能使用C编译器或C++编译器编译同一个源文件，这时候可以使用预处理器宏 <code>__cplusplus</code> 来条件引入 extern "C" 指示。比如：</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
+<span class="cp">#endif</span>
+<span class="kt">int</span> <span class="n">strlen_custom</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span>
+</pre></div>
+
+
 <p>更多讨论见书本p759。</p>
                 
                   
@@ -1937,13 +1960,13 @@ dynamic_cast&lt;type&amp;&amp;&gt;(e)
           </a>
         
         
-          <a href="../cheatsheet/static的3个用途/" title="static的3个用途" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                static的3个用途
+                auto可能的适用场景
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -29,9 +29,10 @@ void test_localtime()
     time_t now = time(NULL);
     struct tm *now_tm = localtime(&now);
 
-    printf("local date: %d-%02d-%02d %02d:%02d:%02d\n", 
+    printf("local date: %d-%02d-%02d %02d:%02d:%02d weekday: %d\n", 
         now_tm->tm_year + 1900, now_tm->tm_mon + 1, now_tm->tm_mday,
-        now_tm->tm_hour, now_tm->tm_min, now_tm->tm_sec);
+        now_tm->tm_hour, now_tm->tm_min, now_tm->tm_sec,
+        now_tm->tm_wday);
 }
 
 void test_gmtime()

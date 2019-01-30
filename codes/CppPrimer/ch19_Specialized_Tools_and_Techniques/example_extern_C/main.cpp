@@ -1,14 +1,17 @@
 // example: 链接指示，extern "C"（758）
 
-#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
-extern "C" int strlen_custom(const char *str);
+#ifdef __cplusplus
+extern "C"
+#endif 
+int strlen_custom(const char *str);
 
 int main()
 {
-	cout << strlen_custom("Hello World") << endl;
+	printf("%d\n", strlen_custom("Hello World"));
 
 	return 0;
 }
