@@ -36,7 +36,8 @@
 #include <stdio.h>
 #include <time.h>
 
-int main(int argc, char const *argv[])
+// CST HH:MM:SS
+void test1()
 {
     time_t now = time(NULL);
     struct tm *tmp_now = localtime(&now);
@@ -44,6 +45,24 @@ int main(int argc, char const *argv[])
     char date[1024];
     strftime(date, 1024, "%Z %X", tmp_now);
     printf("%s\n", date);
+}
+
+// YY-MM-DD HH:MM:SS
+void test2()
+{
+    time_t now = time(NULL);
+    struct tm *tmp_now = localtime(&now);
+
+    char date[1024];
+    strftime(date, 1024, "%Y-%m-%d %H:%M:%S", tmp_now);
+    printf("%s\n", date);
+}
+
+int main(int argc, char const *argv[])
+{
+    test1();
+
+    test2();
 
     return 0;
 }
