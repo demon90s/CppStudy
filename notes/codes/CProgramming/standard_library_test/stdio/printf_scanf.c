@@ -103,6 +103,14 @@ void example6()
 	printf("%*s\n", depth, "bar");
 }
 
+/*
+ * 写 size_t
+ */
+void example7()
+{
+	printf("sizeof int: %zu\n", sizeof(int));
+}
+
 int main()
 {
 	//example1();
@@ -110,7 +118,8 @@ int main()
 	//example3();
 	//example4();
 	//example5();
-	example6();
+	//example6();
+	example7();
 
 	return 0;
 }
