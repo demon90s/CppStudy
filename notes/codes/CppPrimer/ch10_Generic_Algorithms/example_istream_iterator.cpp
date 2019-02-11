@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main()
+void test1()
 {
 	istream_iterator<int> int_it(cin);	// 从cin读取int
 	istream_iterator<int> int_eof;		// 尾后迭代器
@@ -20,6 +20,22 @@ int main()
 	for (auto i : vec)
 		cout << i << " ";
 	cout << endl;
+}
+
+// 使用 istream_iterator 快速地读取元素入容器
+void test2()
+{
+	vector<int> vec {istream_iterator<int>(cin), istream_iterator<int>()};
+
+	for (auto i : vec)
+		cout << i << " ";
+	cout << endl;
+}
+
+int main()
+{
+	//test1();
+	test2();
 
 	return 0;
 }
