@@ -1,5 +1,8 @@
 /*
     std::copy std::copy_if
+
+    OutputIt copy(first, last, d_first)
+
     复制[first, last)所定义的范围中的元素到始于d_first的另一范围。
 
     返回值：指向目标范围最后复制元素的下个元素的输出迭代器。
