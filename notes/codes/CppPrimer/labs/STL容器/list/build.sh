@@ -16,6 +16,16 @@ is_exclude_file() {
 }
 
 main() {
+	if [ "$1" != "" ]; then
+		if [ "$1" != "clear" ] && [ "$1" != "rebuild" ]; then
+			cpp_file=$1
+			exe_file=${cpp_file%%.cpp*}
+			echo "[BUILDING] $cpp_file -> $exe_file"
+			g++ -g -Wall -std=c++11 $cpp_file -o $exe_file
+			return $?
+		fi
+	fi
+
 	for cpp_file in $all_cpp_files; do
 		exe_file=${cpp_file%%.cpp*}
 
@@ -33,7 +43,7 @@ main() {
 		fi
 
 		echo "[BUILDING] $cpp_file -> $exe_file"
-		g++ -g -rdynamic -Wall -std=c++11 $cpp_file -o $exe_file
+		g++ -g -Wall -std=c++11 $cpp_file -o $exe_file
 
 		if [ "$?" != "0" ]; then
 			return 1
