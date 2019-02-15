@@ -55,8 +55,21 @@ void test()
 	std::cout << " capacity(): " << sentence.capacity() << std::endl;
 }
 
+// c++11 中顺序容器提供了 emplace 操作，它使用参数在容器管理的内存上直接构造出对象，而非像 push insert 那样拷贝一个对象
+void test_emplace()
+{
+	std::vector<std::string> vec;
+
+	vec.emplace_back("World");			// 功能对应 push_back
+	vec.emplace(vec.begin(), "Hello");	// 功能对应 insert
+
+	std::copy(vec.begin(), vec.end(), std::ostream_iterator<std::string>(std::cout, " "));
+	std::cout << std::endl;
+}
+
 int main()
 {
-	test();
+	//test();
+	test_emplace();
 	return 0;
 }
