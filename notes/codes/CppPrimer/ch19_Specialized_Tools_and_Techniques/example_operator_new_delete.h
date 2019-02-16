@@ -18,3 +18,18 @@ inline void operator delete(void *mem) noexcept
 	std::cout << "[DEBUG] call custom delete, ptr: " << mem << std::endl;
 	free(mem);
 }
+
+inline void *operator new[](size_t sz) {
+	if (void *mem = malloc(sz)) {
+		std::cout << "[DEBUG] call custom new[], sz: " << sz << " ptr: " << mem << std::endl;
+		return mem;
+	}
+	else
+		throw std::bad_alloc();
+}
+
+inline void operator delete[](void *mem) noexcept
+{
+	std::cout << "[DEBUG] call custom delete[], ptr: " << mem << std::endl;
+	free(mem);
+}
