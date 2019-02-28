@@ -36,6 +36,8 @@ bool operator==(const Foo&, const Foo&) { /**/return false/* you got real logic 
 bool operator!=(const Foo &lhs, const Foo &rhs) { return !(lhs == rhs); }
 bool operator<(const Foo&, const Foo&);
 
+// 使用 non-member 函数的理由: 可支持混合式算术运算
+// 参考 Effective C++ 条款24
 Foo operator+(const Foo &lhs, const Foo &rhs)
 {
 	Foo sum = lhs;

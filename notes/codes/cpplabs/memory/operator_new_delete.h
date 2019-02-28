@@ -1,4 +1,7 @@
 // example: malloc函数与free函数与new, delete表达式
+// 当使用 new 操作的时候, 会调用一个 operator new 的函数, 它用来给对象分配内存, 然后在这块内存上构造对象
+// 如果申请不了内存, operator new 就要抛出一个 bad_alloc 的异常
+
 // 如果是类类型，那么先到类中的作用域查找 operator new 和 operator delete 操作符，然后到外层作用域中查找
 
 #include <iostream>
