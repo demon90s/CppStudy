@@ -5,6 +5,8 @@
     __FILE__ 文件名
     __DATE__ 文件编译时的日期
     __TIME__ 文件编译时的时间
+
+    __FUNCTIONS__ 函数名字, 但在C++中, Linux 下测试, 无法输出其作用域
 */
 
 /*
@@ -25,11 +27,18 @@ void print_compile_info()
     printf("Compiled on %s at %s\n", __DATE__, __TIME__);
 }
 
+void test_FUNCTIONS()
+{
+    printf("this function name is: %s\n", __FUNCTION__);
+}
+
 int main()
 {
     CHECK_ZERO(0);
 
     print_compile_info();
+
+    test_FUNCTIONS();
 
     return 0;
 }
