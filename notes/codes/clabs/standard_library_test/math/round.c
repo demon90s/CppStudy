@@ -1,6 +1,6 @@
 /*
     double round(double x);
-    返回离x最近的整数。
+    返回离x最近的整数（就近取整，四舍五入???）
 */
 
 #include <stdio.h>
@@ -8,11 +8,11 @@
 
 int main()
 {
-    printf("round(3.3): %f\n", round(3.3));
-    printf("round(3.6): %f\n", round(3.6));
+    printf("round(3.3): %.1f\n", round(3.3));               // 3.0
+    printf("round(3.6): %.1f\n", round(3.6));               // 4.0
 
-    printf("round(-3.3): %f\n", round(-3.3));
-    printf("round(-3.6): %f\n", round(-3.6));
+    printf("round(-3.3): %.1f\n", round(-3.3));             // -3.0
+    printf("round(-3.6): %.1f\n", round(-3.6));             // -4.0
 
     return 0;
 }

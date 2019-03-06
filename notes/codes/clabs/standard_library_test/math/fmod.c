@@ -8,7 +8,8 @@
 
 int main(int argc, char const *argv[])
 {
-    printf("fmod(5.5, 2.2) = %f\n", fmod(5.5, 2.2));
+    printf("fmod(5.5, 2.2) = %f\n", fmod(5.5, 2.2));        // 1.100000
+    printf("fmod(5, 2) = %f\n", fmod(5, 2));                // 1.000000
     
     return 0;
 }

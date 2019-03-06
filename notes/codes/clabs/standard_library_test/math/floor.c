@@ -8,8 +8,8 @@
 
 int main(int argc, char const *argv[])
 {
-    printf("floor(+2.7) = %+.1f\n", floor(2.7));
-    printf("floor(-2.7) = %+.1f\n", floor(-2.7));
+    printf("floor(+2.7) = %+.1f\n", floor(2.7));            // +2.0
+    printf("floor(-2.7) = %+.1f\n", floor(-2.7));           // -3.0
 
     return 0;
 }

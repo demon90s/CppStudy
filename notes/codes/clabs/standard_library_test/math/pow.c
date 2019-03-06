@@ -8,7 +8,7 @@
 
 int main(int argc, char const *argv[])
 {
-    printf("pow(1.5, 2) = %f\n", pow(1.5, 2));
+    printf("pow(1.5, 2) = %.2f\n", pow(1.5, 2));          // 2.25
     
     return 0;
 }
