@@ -2,6 +2,16 @@
  * printf scanf
  * 格式化输入输出
  * 
+ * d  	->	int
+ * ld 	->	long int
+ * lld	->	long long int
+ * u	->	unsigned int
+ * o	->	8进制整数
+ * x	->	16进制整数
+ * f	->  float or double, not for scanf double
+ * lf	->	double for scanf
+ * s	-> 	const char *
+ * 
  * printf 返回写入的字符数，不包括空字符
  * scanf 返回成功匹配的个数
  */
