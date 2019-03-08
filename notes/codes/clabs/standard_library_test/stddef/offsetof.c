@@ -17,11 +17,11 @@ struct s {
 
 int main(int argc, char const *argv[])
 {
-    printf("offset a: %u\n", offsetof(struct s, a));  /* 一定是0，因为第一个成员的地址与自身地址相同 */
+    printf("offset a: %zu\n", offsetof(struct s, a));  /* 一定是0，因为第一个成员的地址与自身地址相同 */
 
-    printf("offset b: %u\n", offsetof(struct s, b));
+    printf("offset b: %zu\n", offsetof(struct s, b));
 
-    printf("offset c: %u\n", offsetof(struct s, c));
+    printf("offset c: %zu\n", offsetof(struct s, c));
     
     return 0;
 }

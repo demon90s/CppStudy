@@ -21,7 +21,7 @@
 
 /*
     序列化内置类型到 buffer, buffer 的大小为 sz
-    序列号格式由 format 和变长参数列表提供，其中
+    序列化格式由 format 和变长参数列表提供，其中
     i - int
     d - double
     s - C风格字符串
@@ -78,8 +78,8 @@ end:
 }
 
 /*
-    反序列化内置类型到 buffer, buffer 的大小为 sz
-    序列号格式由 format 和变长参数列表提供，其中
+    从 buffer 中反序列化内置类型的数据出来, buffer 的大小为 sz
+    序列号化格式由 format 和变长参数列表提供，其中
     i - int
     d - double
     s - C风格字符串
