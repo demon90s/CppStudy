@@ -1,7 +1,7 @@
 /*
     double difftime(time_t time1, time_t time2);
 
-    返回 time1 和 time2 之间按秒衡量的差值。
+    返回 time1 和 time2 之间按秒衡量的差值。经过测试, 尽管返回类型是 double , 但是实际是一个整数值
 */
 
 #include <time.h>

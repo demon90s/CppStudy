@@ -36,7 +36,7 @@ void test1()
 
 void test2()
 {
-    /* 获取一年的开始时间 */
+    /* 获取某一年的开始时间, 要大于格林尼治时间1970年0点0分0秒 */
     int year;
     printf("Enter year: ");
     scanf("%d", &year);
@@ -44,10 +44,10 @@ void test2()
     struct tm t;
     t.tm_mday = 1;
     t.tm_mon = 0;
-    t.tm_year = year - 1900;
+    t.tm_year = year - 1900;    /* 可取值 >= 1970 */
     t.tm_sec = 0;
     t.tm_min = 0;
-    t.tm_hour = 0;
+    t.tm_hour = 8/*0*/;         /* 我在中国, 比格林尼治时间早8小时 */
     t.tm_isdst = -1;
 
     unsigned long next_year = (unsigned long)mktime(&t);

@@ -10,9 +10,9 @@
         int tm_min;        // minutes
         int tm_hour;       // hours
         int tm_mday;       // day of the month
-        int tm_mon;        // month
-        int tm_year;       // year
-        int tm_wday;       // day of the week
+        int tm_mon;        // month since 0, 因此实际月份要 +1
+        int tm_year;       // year since 1990, 因此实际年要 +1990
+        int tm_wday;       // day of the week [0,6] 星期天是0
         int tm_yday;       // day in the year
         int tm_isdst;      // daylight saving time
     };
