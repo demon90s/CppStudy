@@ -1,12 +1,17 @@
 /*
-    测试预定义宏
+    预定义宏
 
     __LINE__ 行号，十进制常数
     __FILE__ 文件名
     __DATE__ 文件编译时的日期
     __TIME__ 文件编译时的时间
 
-    __FUNCTIONS__ 函数名字, 但在C++中, Linux 下测试, 无法输出其作用域
+    __FUNCTIONS__ 函数名字, 但在g++下测试, 无法输出其作用域
+    __PRETTY_FUNCTION__ 返回值 函数名(参数列表), 适用于g++
+
+    关于平台的预定义宏:
+    unix: __unix
+    windows: _WIN32
 */
 
 /*
@@ -32,6 +37,13 @@ void test_FUNCTIONS()
     printf("this function name is: %s\n", __FUNCTION__);
 }
 
+namespace detail {
+void test_PRETTY_FUNCTION(int i, double d)
+{
+    printf("this function detail is: %s\n", __PRETTY_FUNCTION__);
+}
+}
+
 int main()
 {
     CHECK_ZERO(0);
@@ -39,6 +51,8 @@ int main()
     print_compile_info();
 
     test_FUNCTIONS();
+
+    detail::test_PRETTY_FUNCTION(0, 0);
 
     return 0;
 }
