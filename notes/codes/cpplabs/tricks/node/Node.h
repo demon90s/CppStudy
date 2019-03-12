@@ -2,6 +2,8 @@
 
 // 一个可以存放多种类型的类, 采用 union 实现
 
+#include <cstring>
+
 enum class NodeType {
     Char,
     Short,
@@ -11,6 +13,8 @@ enum class NodeType {
 };
 
 class Node {
+    friend bool operator==(const Node&, const Node&);
+    friend bool operator!=(const Node&, const Node&);
 public:
     Node();
     ~Node();
@@ -47,3 +51,32 @@ private:
         char *str;
     } value_;
 };
+
+inline bool operator==(const Node& lhs, const Node& rhs)
+{
+    switch (lhs.type_)
+    {
+    case NodeType::Char:
+        return lhs.GetChar() == rhs.GetChar();
+
+    case NodeType::Short:
+        return lhs.GetShort() == rhs.GetShort();
+
+    case NodeType::Int:
+        return lhs.GetInt() == rhs.GetInt();
+
+    case NodeType::LongLong:
+        return lhs.GetLongLong() == rhs.GetLongLong();
+
+    case NodeType::String:
+        return strcmp(lhs.GetString(), rhs.GetString()) == 0;
+
+    default:
+        return false;
+    }
+}
+
+inline bool operator!=(const Node& lhs, const Node& rhs)
+{
+    return !(lhs == rhs);
+}
