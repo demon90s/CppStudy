@@ -4,7 +4,8 @@
 
 struct Foo
 {
-	Foo(int _a, int _b) : a(_a), b(_b) {}
+	Foo(int _a, int _b) : a(_a), b(_b) { std::cout << "Foo::Foo()\n"; }
+	~Foo() { std::cout << "Foo::~Foo()\n"; }
 	int a, b;
 };
 
@@ -17,6 +18,8 @@ int main()
 
 	std::cout << "foo address: " << foo << std::endl;
 	std::cout << "buffer address: " << (void*)buffer << std::endl;
+
+	foo->~Foo();					  // 手动调用析构函数
 
 	delete []buffer;
 
