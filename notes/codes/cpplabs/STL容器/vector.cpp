@@ -67,9 +67,35 @@ void test_emplace()
 	std::cout << std::endl;
 }
 
+// 测试增长机制
+void test_increase()
+{
+	struct Foo {
+		Foo() { std::cout << "Foo::Foo()\n"; }
+		~Foo() { std::cout << "Foo::~Foo()\n"; }
+		Foo(const Foo&) { std::cout << "Foo::Foo(const Foo&)\n"; }
+	};
+
+	Foo tmp;
+
+	std::cout << "test begin--------------------\n";
+
+	std::vector<Foo> foo_vec;
+	foo_vec.reserve(1);
+
+	foo_vec.push_back(tmp);
+
+	std::cout << "will increase now...\n";
+	foo_vec.push_back(tmp);			// 增长后, 会调用析构函数析构掉之前的元素
+
+	std::cout << "test end  --------------------\n";
+}
+
 int main()
 {
 	//test();
-	test_emplace();
+	//test_emplace();
+
+	test_increase();
 	return 0;
 }
