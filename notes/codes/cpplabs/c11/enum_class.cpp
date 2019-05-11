@@ -25,14 +25,16 @@ void foo(Color c) { std::cout << static_cast<int>(c) << std::endl; }
 
 int main()
 {
-	//Color color = 2; // 非法
+	//Color color = 2; // 隐式转换, 非法
 	Color color = Color::red; // OK
 
-	//int i = color;	// 非法
+	//int i = color;	// 隐式转换, 非法
 	char c = static_cast<char>(color); // OK
 	
-	//foo(c); // 非法
+	//foo(c); // 隐式转换, 非法
 	foo(static_cast<Color>(c)); // OK
+
+	foo(static_cast<Color>(1000));	// OK but overflow
 
 	return 0;
 }
