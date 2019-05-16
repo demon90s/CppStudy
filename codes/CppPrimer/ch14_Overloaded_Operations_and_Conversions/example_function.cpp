@@ -1,5 +1,8 @@
 // example: 可调用对象与function（p511）
 
+// function 是一个模板类型, 它有一个调用模式的额外信息, 比如 int(int, int) 代表参数是 (int, int) 返回值是 int 的可调用对象
+// 可以使用这样的可调用对象的实例来初始化 function 对象
+
 #include <iostream>
 #include <map>
 #include <functional>

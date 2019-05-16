@@ -1397,7 +1397,7 @@
 <p>注释可以与指令放在同一行。</p>
 </li>
 </ul>
-<p><a href="../../../codes/CProgramming/lab/test_precompiled_command.c">测试代码</a></p>
+<p><a href="../../codes/CProgramming/lab/test_precompiled_command.c">测试代码</a></p>
 <h2 id="_4">宏定义</h2>
 <p>宏定义的作用范围从定义处开始到本文件末尾。</p>
 <h3 id="_5">简单宏定义</h3>
@@ -1530,7 +1530,7 @@
 </li>
 </ul>
 <p>这种预定义宏配合条件编译就可以做到跨平台编译代码。</p>
-<p><a href="../../../codes/CProgramming/lab/test_precompiled_macros.c">测试代码</a></p>
+<p><a href="../../codes/CProgramming/lab/test_precompiled_macros.c">测试代码</a></p>
 <p><strong>特殊的预定义宏<code>__VA_ARGS__</code></strong></p>
 <p>C99标准中，有一个特殊的预定义宏，它的作用是替换可变参数列表（...），但它要和##符号配合使用，此时##的意义不再是连接，而是：当可变参数列表为空的时候，去除<code>__VA_ARGS__</code>前面的逗号，从而避免编译错误。</p>
 <p>一个典型的例子：</p>
@@ -1599,7 +1599,7 @@
 </pre></div>
 
 
-<p>这里字节对齐的意思是，将结构体中最大内置类型的成员的长度与4对比，如果谁小，那么就按谁来对齐。</p>
+<p>这里字节对齐的意思是，将结构体中最大内置类型的成员的长度与默认字节对齐数（比如是4）对比，如果谁小，那么就按谁来对齐。</p>
                 
                   
                 

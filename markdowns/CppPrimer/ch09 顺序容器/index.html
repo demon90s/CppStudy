@@ -1633,52 +1633,52 @@
 </tr>
 </tbody>
 </table>
-<p><a href="../../../codes/CppPrimer/labs/string/construct.cpp">参考代码</a></p>
+<p><a href="../../codes/CppPrimer/labs/string/construct.cpp">参考代码</a></p>
 <p><strong>substr 操作</strong></p>
 <p>substr 返回一个 string ，它是原始 string 的一部分或全部的拷贝。</p>
 <p><code>s.substr(pos, n)</code> 返回一个 string ，包含s中从pos开始的n个字符的拷贝。pos默认为0,n默认为 s.size() - pos ，即拷贝从 pos 开始的所有字符。</p>
-<p><a href="../../../codes/CppPrimer/labs/string/api_substr.cpp">参考代码</a></p>
+<p><a href="../../codes/CppPrimer/labs/string/api_substr.cpp">参考代码</a></p>
 <h3 id="string_2">改变 string 的其他方法</h3>
 <p>string 类型支持顺序容器的赋值运算符以及 assign, insert, erase 操作。除此之外，它还定义了额外的 insert 和 erase 版本。即使用下标的版本。</p>
 <p>这些函数都拥有许多重载的版本。</p>
 <p>参见：</p>
 <ul>
-<li><a href="../../../codes/CppPrimer/labs/string/api_insert.cpp">insert</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_erase.cpp">erase</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_insert.cpp">insert</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_erase.cpp">erase</a></li>
 </ul>
 <p>assign 版本还接受C风格字符串：</p>
 <ul>
-<li><a href="../../../codes/CppPrimer/labs/string/api_assign.cpp">assign</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_assign.cpp">assign</a></li>
 </ul>
 <p>append 和 replace 是额外的成员函数， append 在 string 末尾进行插入操作， replace 替换内容，它是调用 erase 和 insert 的一种简写形式：</p>
 <ul>
-<li><a href="../../../codes/CppPrimer/labs/string/api_append.cpp">append</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_replace.cpp">replace</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_append.cpp">append</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_replace.cpp">replace</a></li>
 </ul>
 <h3 id="string_3">string 搜索操作</h3>
 <p>string 提供了6个搜索函数，它们都有4个重载版本。它们都返回一个 string::size_type 的值作为匹配位置（下标）。如果搜索失败，返回 string::npos ，其值为 -1 。</p>
 <ul>
-<li><a href="../../../codes/CppPrimer/labs/string/api_find.cpp">find</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_rfind.cpp">rfind</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_find_first_of.cpp">find_first_of</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_find_last_of.cpp">find_last_of</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_find_first_not_of.cpp">find_first_not_of</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/api_find_last_not_of.cpp">find_last_not_of</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_find.cpp">find</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_rfind.cpp">rfind</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_find_first_of.cpp">find_first_of</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_find_last_of.cpp">find_last_of</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_find_first_not_of.cpp">find_first_not_of</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_find_last_not_of.cpp">find_last_not_of</a></li>
 </ul>
 <p>可以给函数一个搜索的起始位置 pos ，它默认值是0：</p>
 <p><code>auto pos = s.find_first_of(numbers, pos);</code></p>
 <h3 id="compare">compare 函数</h3>
 <p>这是字符串比较函数，和C标准库的 strcmp 很相似。</p>
 <ul>
-<li><a href="../../../codes/CppPrimer/labs/string/api_compare.cpp">compare</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/api_compare.cpp">compare</a></li>
 </ul>
 <h3 id="_15">数值转换</h3>
 <p>标准库提供了数值转换的函数。</p>
 <p>如果 string 不能转换成一个数值，那么会抛出一个 invalid_argument 的异常。如果转换得到的数值无法用任何类型来表示，则抛出一个 out_of_range 异常。</p>
 <p>这些函数有：</p>
 <ul>
-<li><a href="../../../codes/CppPrimer/labs/string/to_string.cpp">to_string</a></li>
-<li><a href="../../../codes/CppPrimer/labs/string/stoi_stol_stoul_stof.cpp">stoi, stol, stoul, stof等</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/to_string.cpp">to_string</a></li>
+<li><a href="../../codes/CppPrimer/labs/string/stoi_stol_stoul_stof.cpp">stoi, stol, stoul, stof等</a></li>
 </ul>
                 
                   
