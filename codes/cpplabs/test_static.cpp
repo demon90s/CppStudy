@@ -6,6 +6,14 @@
 
 using namespace std;
 
+class Bar
+{
+public:
+	Bar() { std::cout << "Bar()\n"; }
+	~Bar() { std::cout << "~Bar()\n"; }
+};
+static Bar bar;			// 1. 内部链接，全局静态变量，在 main 函数前初始化(执行构造函数), 在 main 函数结束后析构
+
 static int a = 0;		// 1. 内部链接的变量
 
 static void f() {		// 1. 内部链接的函数
@@ -32,8 +40,11 @@ int Foo::c = 0;			// 3. 静态成员变量定义
 
 int main()
 {
+	std::cout << "main begin\n";
+
 	USE_VAR(a);
 	USE_VAR(f);
 
+	std::cout << "main end\n";
 	return 0;
 }

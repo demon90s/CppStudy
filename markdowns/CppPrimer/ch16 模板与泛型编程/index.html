@@ -1493,7 +1493,6 @@
 </div>
 <p>当使用模板时，我们（隐式或显式地）指定模板实参（template argument），将其绑定到模板参数上。</p>
 <p>compare函数声明了一个名为T的类型参数。在compare中，我们用名字T表示一个类型。而T表示的实际类型则在编译时根据compare的使用情况来确定。</p>
-<p><a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch16_Templates_and_GenericProgramming/example_function_template.cpp"><mark>函数模板代码案例</mark></a></p>
 <p><strong>实例化函数模板</strong></p>
 <p>当调用一个函数模板时，编译器会用函数实参推断出模板实参。即，当我们调用compare时，编译器使用实参的类型来确定绑定到模板参数T的类型。例如：</p>
 <div class="codehilite"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">compare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// T为int</span>
@@ -1665,7 +1664,6 @@
 
 <h3 id="_6">成员模板</h3>
 <p>一个类（无论是普通类还是类模板）可以包含本身是模板的成员函数。这种成员被称为成员模板（member template）。成员模板不能是虚函数。</p>
-<p><a href="../../codes/CppPrimer/labs/template/member_template.cpp"><mark>成员模板案例代码</mark></a></p>
 <p>更多内容详见p596。</p>
 <h3 id="_7">控制实例化</h3>
 <p>当模板被使用时才会进行实例化，这一特性意味着，相同的实例可能出现在多个对象文件中。当两个或多个独立编译的源文件使用了相同的模板，并提供了相同的模板参数时，每个文件中就会有该模板的一个实例。</p>
