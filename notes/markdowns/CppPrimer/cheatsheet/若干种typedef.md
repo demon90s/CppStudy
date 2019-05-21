@@ -40,4 +40,4 @@ private:
 
 ## 参考
 
-[测试代码](../../../codes/CppPrimer/labs/test_typedef.cpp)
+[测试代码](../../../codes/cpplabs/test_typedef.cpp)

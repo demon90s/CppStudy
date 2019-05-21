@@ -4,6 +4,4 @@
 
 见：
 
-- [example_operator_new_delete](./example_operator_new_delete.h)
-
 - [StrVec](../ch13_Copy_Control/example_StrVec/StrVec.h)
