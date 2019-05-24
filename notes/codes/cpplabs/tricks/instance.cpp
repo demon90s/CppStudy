@@ -2,6 +2,8 @@
     单例模式的一种简单实现
 */
 
+#include <iostream>
+
 class SomeMgr {
 public:
     static SomeMgr& Instance();
@@ -9,7 +11,7 @@ public:
     int GetSomeValue() const { return some_value_; }
 private:
     SomeMgr() : some_value_(42) {}
-    ~SomeMgr() {}
+    ~SomeMgr() { std::cout << "~SomeMgr()\n"; }
 
     int some_value_;
 };
@@ -21,7 +23,6 @@ SomeMgr& SomeMgr::Instance()
 }
 
 //----------------------------------------------------------------
-#include <iostream>
 int main()
 {
     std::cout << SomeMgr::Instance().GetSomeValue() << std::endl;
