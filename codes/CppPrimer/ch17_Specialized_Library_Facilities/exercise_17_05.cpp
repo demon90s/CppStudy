@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 #include "../ch07_Classes/example_Sales_data/Sales_data.h"
 
 using namespace std;

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 #include <tuple>
 #include "../ch07_Classes/example_Sales_data/Sales_data.h"
 

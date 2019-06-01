@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 #include <iterator>
 
 #include "../ch01_Getting_Started/Sales_item.h"
