@@ -1,5 +1,0 @@
-练习4.38：说明下面这条表达式的含义。
-
-double slope = static_cast<double>(j/i);
-
-把j/i的结果转换成double，实际上编译器可以自动进行转换。

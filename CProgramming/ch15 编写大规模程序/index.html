@@ -33,18 +33,18 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
-        <title>C/C++ Study Note</title>
+        <title>ch15 编写大规模程序 - C/C++ Study Note</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -62,7 +62,7 @@
         <style>body,input{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Sans","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#cc" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -110,7 +110,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="." title="C/C++ Study Note" class="md-header-nav__button md-logo">
+        <a href="../.." title="C/C++ Study Note" class="md-header-nav__button md-logo">
           
             <i class="md-icon">school</i>
           
@@ -127,7 +127,7 @@
                 C/C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                Introduction
+                ch15 编写大规模程序
               </span>
             
           
@@ -199,14 +199,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="." title="Introduction" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Introduction" class="md-tabs__link">
         Introduction
       </a>
     
@@ -222,7 +224,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="CProgramming/ch01 C语言概述/" title="C语言程序设计" class="md-tabs__link">
+        <a href="../ch01 C语言概述/" title="C语言程序设计" class="md-tabs__link md-tabs__link--active">
           C语言程序设计
         </a>
       
@@ -241,7 +243,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="CppPrimer/ch01 开始/" title="C++ Primer" class="md-tabs__link">
+        <a href="../../CppPrimer/ch01 开始/" title="C++ Primer" class="md-tabs__link">
           C++ Primer
         </a>
       
@@ -264,7 +266,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="." title="C/C++ Study Note" class="md-nav__button md-logo">
+    <a href="../.." title="C/C++ Study Note" class="md-nav__button md-logo">
       
         <i class="md-icon">school</i>
       
@@ -300,56 +302,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduction
-      </label>
-    
-    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
       Introduction
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="简单介绍" class="md-nav__link">
-    简单介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="学习资料" class="md-nav__link">
-    学习资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -357,10 +314,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       C语言程序设计
@@ -376,10 +335,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
     
     <label class="md-nav__link" for="nav-2-1">
       Chapters
@@ -397,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
+    <a href="../ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
       ch01 C语言概述
     </a>
   </li>
@@ -409,7 +370,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
+    <a href="../ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
       ch02 C语言基本概念
     </a>
   </li>
@@ -421,7 +382,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
+    <a href="../ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
       ch03 格式化输入输出
     </a>
   </li>
@@ -433,7 +394,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+    <a href="../ch04 表达式/" title="ch04 表达式" class="md-nav__link">
       ch04 表达式
     </a>
   </li>
@@ -445,7 +406,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
+    <a href="../ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
       ch05 选择语句
     </a>
   </li>
@@ -457,7 +418,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch06 循环/" title="ch06 循环" class="md-nav__link">
+    <a href="../ch06 循环/" title="ch06 循环" class="md-nav__link">
       ch06 循环
     </a>
   </li>
@@ -469,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
+    <a href="../ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
       ch07 基本类型
     </a>
   </li>
@@ -481,7 +442,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch08 数组/" title="ch08 数组" class="md-nav__link">
+    <a href="../ch08 数组/" title="ch08 数组" class="md-nav__link">
       ch08 数组
     </a>
   </li>
@@ -493,7 +454,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch09 函数/" title="ch09 函数" class="md-nav__link">
+    <a href="../ch09 函数/" title="ch09 函数" class="md-nav__link">
       ch09 函数
     </a>
   </li>
@@ -505,7 +466,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
+    <a href="../ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
       ch10 程序结构
     </a>
   </li>
@@ -517,7 +478,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch11 指针/" title="ch11 指针" class="md-nav__link">
+    <a href="../ch11 指针/" title="ch11 指针" class="md-nav__link">
       ch11 指针
     </a>
   </li>
@@ -529,7 +490,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
+    <a href="../ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
       ch12 指针和数组
     </a>
   </li>
@@ -541,7 +502,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch13 字符串/" title="ch13 字符串" class="md-nav__link">
+    <a href="../ch13 字符串/" title="ch13 字符串" class="md-nav__link">
       ch13 字符串
     </a>
   </li>
@@ -553,7 +514,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
+    <a href="../ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
       ch14 预处理器
     </a>
   </li>
@@ -563,11 +524,131 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="CProgramming/ch15 编写大规模程序/" title="ch15 编写大规模程序" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ch15 编写大规模程序
+      </label>
+    
+    <a href="./" title="ch15 编写大规模程序" class="md-nav__link md-nav__link--active">
       ch15 编写大规模程序
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="源文件" class="md-nav__link">
+    源文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="头文件" class="md-nav__link">
+    头文件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include" title="include 指令" class="md-nav__link">
+    include 指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="共享宏定义和类型定义" class="md-nav__link">
+    共享宏定义和类型定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="共享函数原型" class="md-nav__link">
+    共享函数原型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="共享变量的声明" class="md-nav__link">
+    共享变量的声明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="保护头文件" class="md-nav__link">
+    保护头文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error" title="头文件中的#error指令" class="md-nav__link">
+    头文件中的#error指令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="构建多文件程序" class="md-nav__link">
+    构建多文件程序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#makefile" title="makefile" class="md-nav__link">
+    makefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="在程序外定义宏" class="md-nav__link">
+    在程序外定义宏
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -577,7 +658,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
+    <a href="../ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
       ch16 结构、联合和枚举
     </a>
   </li>
@@ -589,7 +670,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
+    <a href="../ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
       ch17 指针的高级应用
     </a>
   </li>
@@ -601,7 +682,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch18 声明/" title="ch18 声明" class="md-nav__link">
+    <a href="../ch18 声明/" title="ch18 声明" class="md-nav__link">
       ch18 声明
     </a>
   </li>
@@ -613,7 +694,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
+    <a href="../ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
       ch19 程序设计
     </a>
   </li>
@@ -625,7 +706,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
+    <a href="../ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
       ch20 低级程序设计
     </a>
   </li>
@@ -637,7 +718,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch21 标准库/" title="ch21 标准库" class="md-nav__link">
+    <a href="../ch21 标准库/" title="ch21 标准库" class="md-nav__link">
       ch21 标准库
     </a>
   </li>
@@ -649,7 +730,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
+    <a href="../ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
       ch22 输入输出
     </a>
   </li>
@@ -661,7 +742,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
+    <a href="../ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
       ch23 库对数值和字符数据的支持
     </a>
   </li>
@@ -673,7 +754,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
+    <a href="../ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
       ch24 错误处理
     </a>
   </li>
@@ -685,7 +766,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
+    <a href="../ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
       ch25 国际化特性
     </a>
   </li>
@@ -697,7 +778,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
+    <a href="../ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
       ch26 其他库函数
     </a>
   </li>
@@ -733,7 +814,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
+    <a href="../cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
       惯用法
     </a>
   </li>
@@ -793,7 +874,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch01 开始/" title="ch01 开始" class="md-nav__link">
+    <a href="../../CppPrimer/ch01 开始/" title="ch01 开始" class="md-nav__link">
       ch01 开始
     </a>
   </li>
@@ -805,7 +886,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
+    <a href="../../CppPrimer/ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
       ch02 变量和基本类型
     </a>
   </li>
@@ -817,7 +898,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
+    <a href="../../CppPrimer/ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
       ch03 字符串、向量和数组
     </a>
   </li>
@@ -829,7 +910,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+    <a href="../../CppPrimer/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
       ch04 表达式
     </a>
   </li>
@@ -841,7 +922,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch05 语句/" title="ch05 语句" class="md-nav__link">
+    <a href="../../CppPrimer/ch05 语句/" title="ch05 语句" class="md-nav__link">
       ch05 语句
     </a>
   </li>
@@ -853,7 +934,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch06 函数/" title="ch06 函数" class="md-nav__link">
+    <a href="../../CppPrimer/ch06 函数/" title="ch06 函数" class="md-nav__link">
       ch06 函数
     </a>
   </li>
@@ -865,7 +946,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch07 类/" title="ch07 类" class="md-nav__link">
+    <a href="../../CppPrimer/ch07 类/" title="ch07 类" class="md-nav__link">
       ch07 类
     </a>
   </li>
@@ -877,7 +958,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch08 IO库/" title="ch08 IO库" class="md-nav__link">
+    <a href="../../CppPrimer/ch08 IO库/" title="ch08 IO库" class="md-nav__link">
       ch08 IO库
     </a>
   </li>
@@ -889,7 +970,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
+    <a href="../../CppPrimer/ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
       ch09 顺序容器
     </a>
   </li>
@@ -901,7 +982,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
+    <a href="../../CppPrimer/ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
       ch10 泛型算法
     </a>
   </li>
@@ -913,7 +994,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
+    <a href="../../CppPrimer/ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
       ch11 关联容器
     </a>
   </li>
@@ -925,7 +1006,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch12 动态内存/" title="ch12 动态内存" class="md-nav__link">
+    <a href="../../CppPrimer/ch12 动态内存/" title="ch12 动态内存" class="md-nav__link">
       ch12 动态内存
     </a>
   </li>
@@ -937,7 +1018,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch13 拷贝控制/" title="ch13 拷贝控制" class="md-nav__link">
+    <a href="../../CppPrimer/ch13 拷贝控制/" title="ch13 拷贝控制" class="md-nav__link">
       ch13 拷贝控制
     </a>
   </li>
@@ -949,7 +1030,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
+    <a href="../../CppPrimer/ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
       ch14 操作重载与类型转换
     </a>
   </li>
@@ -961,7 +1042,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
+    <a href="../../CppPrimer/ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
       ch15 面向对象程序设计
     </a>
   </li>
@@ -973,7 +1054,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
+    <a href="../../CppPrimer/ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
       ch16 模板与泛型编程
     </a>
   </li>
@@ -985,7 +1066,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch17 标准库特殊设施/" title="ch17 标准库特殊设施" class="md-nav__link">
+    <a href="../../CppPrimer/ch17 标准库特殊设施/" title="ch17 标准库特殊设施" class="md-nav__link">
       ch17 标准库特殊设施
     </a>
   </li>
@@ -997,7 +1078,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
+    <a href="../../CppPrimer/ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
       ch18 用于大型程序的工具
     </a>
   </li>
@@ -1009,7 +1090,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
+    <a href="../../CppPrimer/ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
       ch19 特殊工具与技术
     </a>
   </li>
@@ -1045,7 +1126,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
       auto可能的适用场景
     </a>
   </li>
@@ -1057,7 +1138,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
       static的3个用途
     </a>
   </li>
@@ -1069,7 +1150,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
       若干种typedef
     </a>
   </li>
@@ -1081,7 +1162,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
       类内初始值
     </a>
   </li>
@@ -1093,7 +1174,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
       运算符重载
     </a>
   </li>
@@ -1105,7 +1186,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
       向set中插入自定义类型对象
     </a>
   </li>
@@ -1142,16 +1223,91 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="简单介绍" class="md-nav__link">
-    简单介绍
+  <a href="#_2" title="源文件" class="md-nav__link">
+    源文件
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="学习资料" class="md-nav__link">
-    学习资料
+  <a href="#_3" title="头文件" class="md-nav__link">
+    头文件
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include" title="include 指令" class="md-nav__link">
+    include 指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="共享宏定义和类型定义" class="md-nav__link">
+    共享宏定义和类型定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="共享函数原型" class="md-nav__link">
+    共享函数原型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="共享变量的声明" class="md-nav__link">
+    共享变量的声明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="保护头文件" class="md-nav__link">
+    保护头文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error" title="头文件中的#error指令" class="md-nav__link">
+    头文件中的#error指令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="构建多文件程序" class="md-nav__link">
+    构建多文件程序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#makefile" title="makefile" class="md-nav__link">
+    makefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="在程序外定义宏" class="md-nav__link">
+    在程序外定义宏
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1171,29 +1327,131 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/index.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CProgramming/ch15 编写大规模程序.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="cc">C/C++ 学习笔记</h1>
+                <h1 id="_1">第十五章 编写大规模程序</h1>
+<p>源文件包含函数的定义和外部变量，而头文件包含可以在源文件之间共享的信息。</p>
 <hr />
-<h2 id="_1">简单介绍</h2>
-<p>曾经一直零零碎碎看着《C++ Primer》，学习效果却不是很明显，因此决定重新整理好笔记和练习，系统性地提高自己的C++编程水平。也期望把这份笔记当成一份 cheatsheet ，方便日后查阅。</p>
-<p>笔记分为两个部分：</p>
+<h2 id="_2">源文件</h2>
+<p>可以把程序分割成一定数量的源文件，源文件的扩展名为<code>.c</code>。源文件主要包含函数的定义和变量。其中一个源文件必须包含名为 main 的函数，作为程序的起始点。</p>
+<p>把程序分成多个源文件有许多显著的优点：</p>
 <ul>
 <li>
-<p>代码练习</p>
+<p>把相关的函数和变量集合在单独一个文件中可以帮助明了程序的结构。</p>
 </li>
 <li>
-<p>markdown 笔记</p>
+<p>可以单独对每一个源文件进行编译。如果程序规模很大而且需要频繁改变的话，这种方法可以极大地节约时间。</p>
+</li>
+<li>
+<p>利于复用。</p>
 </li>
 </ul>
-<p>笔记使用 Github 来做内容管理。</p>
-<p>曾无意中看到 mkdocs ，觉得非常适合我这样的情况，于是舍弃了之前的为知笔记，把全部内容搬到了 Github 仓库，然后使用 mkdocs 生成了在线文档并推送至 Github page 。</p>
-<p>这个页面就是这样被呈现的。</p>
-<p>我还加入了一本C语言的学习书籍：《C语言程序设计：现代方法》。因为C++是C语言的延续，其中有很多设计思想都追溯至C语言，而且在实际开发中，C语言的写法不在少数，有必要学习整理一下。</p>
-<h2 id="_2">学习资料</h2>
-<p><a href="https://book.douban.com/subject/4279678/">C语言程序设计：现代方法</a></p>
-<p><a href="https://book.douban.com/subject/25708312/">C++ Primer 5th</a></p>
+<h2 id="_3">头文件</h2>
+<p>当把程序分割成几个源文件时，问题也随之产生：某文件的函数如何能调用定义在其他文件中的函数？函数如何能访问其他文件中的外部变量？两个文件如何能共享同一个宏定义或类型定义？答案取决于<code>#include</code>指令。</p>
+<p><code>#include</code>指令告诉预处理器打开指定的文件，并且把此文件的内容插入到当前文件中。这种打开的文件称为头文件，其扩展名为<code>.h</code>。</p>
+<h3 id="include">include 指令</h3>
+<p><code>#include</code>指令有两种书写格式：</p>
+<ul>
+<li>
+<p><code>#include &lt;文件名&gt;</code> 搜索系统头文件所在目录，比如在 UNIX 系统中，通常是在 /usr/include</p>
+</li>
+<li>
+<p><code>#include "文件名"</code> 搜索当前目录，然后搜索系统目录</p>
+</li>
+</ul>
+<p>利用加上诸如-I这样的命令行选项可以添加搜索头文件的位置。</p>
+<h3 id="_4">共享宏定义和类型定义</h3>
+<p>大规模的程序包含用于几个源文件共享的宏定义和类型定义，这些定义应该放在头文件中。</p>
+<p>比如下图的例子：</p>
+<p><img alt="宏定义和类型定义" src="../images/宏定义和类型定义.png" /></p>
+<p>有两个源文件包含了 boolean.h</p>
+<p>把宏定义和类型定义放到头文件中有如下的好处：</p>
+<ol>
+<li>
+<p>不必把定义复制到需要的源文件，节约时间。</p>
+</li>
+<li>
+<p>程序变得更加容易修改，改变定义只需要改变头文件。</p>
+</li>
+<li>
+<p>不用担心源文件包含了相同的宏或类型而其定义不同。</p>
+</li>
+</ol>
+<h3 id="_5">共享函数原型</h3>
+<p>没有原型依赖的函数调用是很危险的，编译器的假设可能是错误的。当调用定义在其他文件中的函数时，要始终确保编译器在调用之前看到函数f的原型。</p>
+<p>解决办法就是把函数的原型放进头文件中，然后在所有调用函数f的地方包含头文件。</p>
+<p>其包含的方式可能如图所示：</p>
+<p><img alt="共享函数原型" src="../images/共享函数原型.png" /></p>
+<h3 id="_6">共享变量的声明</h3>
+<p>变量可以在文件中共享。</p>
+<p>为了声明变量而不定义，需要在变量声明的开始处放置关键字 extern :</p>
+<div class="codehilite"><pre><span></span><span class="cm">/* in heaeder file */</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</pre></div>
+
+
+<p>为了共享i，需要在一个源文件中定义i:</p>
+<div class="codehilite"><pre><span></span><span class="cm">/* in source file */</span>
+<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="_7">保护头文件</h3>
+<p>如果一个源文件同时包含一个头文件两次，那么可能产生编译错误（比如包含了两次相同的类型定义）。</p>
+<p>因此要用到一种保护头文件的方法：</p>
+<div class="codehilite"><pre><span></span><span class="cp">#ifndef BOOLEAN_H</span>
+<span class="cp">#define BOOLEAN_H</span>
+
+<span class="cm">/*</span>
+<span class="cm"> real content</span>
+<span class="cm">*/</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+
+
+<p>如果再次包含此头文件，预处理器就不会再扩展真实的内容。</p>
+<h3 id="error">头文件中的#error指令</h3>
+<p>经常把#error指令放置在头文件中是用来检查不应该包含头文件的条件。例如：</p>
+<div class="codehilite"><pre><span></span><span class="cp">#ifndef DOS</span>
+<span class="cp">#error Graphics supported only under DOS</span>
+<span class="cp">#endif</span>
+</pre></div>
+
+
+<p>如果非DOS的程序试图包含此头文件，那么编译将在#error指令处终止。</p>
+<h2 id="_8">构建多文件程序</h2>
+<p>构建大程序的基本步骤：</p>
+<ul>
+<li>
+<p>编译，必须对每一个源文件进行编译。不需要编译头文件。编译器产生一个文件，此文件包含来自源文件的目标代码，称为目标文件（object file）。</p>
+</li>
+<li>
+<p>链接，链接器把目标文件和库文件结合在一起生成一个可执行程序。</p>
+</li>
+</ul>
+<p>大多数编译器允许用单独一步来构建程序：</p>
+<div class="codehilite"><pre><span></span><span class="n">cc</span> <span class="o">-</span><span class="n">m</span> <span class="n">fmt</span> <span class="n">fmt</span><span class="p">.</span><span class="n">c</span> <span class="n">line</span><span class="p">.</span><span class="n">c</span> <span class="n">word</span><span class="p">.</span><span class="n">c</span>
+</pre></div>
+
+
+<h3 id="makefile">makefile</h3>
+<p>使用 makefile 更易于构建大型程序。 makefile 列出了作为程序的部分文件，并描述了它们之间的依赖性。</p>
+<p>更多讨论见书本。</p>
+<div class="admonition note">
+<p class="admonition-title">my note</p>
+<p>一种自动生成依赖性的说明的方法是键入命令：<code>gcc -MM *.c</code></p>
+</div>
+<h3 id="_9">在程序外定义宏</h3>
+<p>大多数 UNIX 编译器支持-D选项，允许在命令行指定一个宏定义：</p>
+<div class="codehilite"><pre><span></span><span class="n">cc</span> <span class="o">-</span><span class="n">DDEBUG</span><span class="o">=</span><span class="mi">1</span> <span class="n">foo</span><span class="p">.</span><span class="n">c</span>
+</pre></div>
+
+
+<p>定义了宏 Debug ，在 foo.c 程序中，且值为1。如同在 foo.c 中的开始出现：</p>
+<div class="codehilite"><pre><span></span><span class="cp">#define DEBUG 1</span>
+</pre></div>
                 
                   
                 
@@ -1214,14 +1472,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../ch14 预处理器/" title="ch14 预处理器" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                ch14 预处理器
+              </span>
+            </div>
+          </a>
         
-          <a href="CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                ch01 C语言概述
+                ch16 结构、联合和枚举
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1255,30 +1527,30 @@
       
     </div>
     
-      <script src="assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
           
-          <script src="assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
           
             
               
-                <script src="assets/javascripts/lunr/tinyseg.js"></script>
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           
           
-            <script src="assets/javascripts/lunr/lunr.multi.js"></script>
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     

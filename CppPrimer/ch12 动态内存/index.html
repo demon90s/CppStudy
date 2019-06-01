@@ -1,0 +1,1733 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C/C++ Study Note">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="en, jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>ch12 动态内存 - C/C++ Study Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:300,400,400i,700|PT+Sans">
+        <style>body,input{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Sans","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="C/C++ Study Note" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                C/C++ Study Note
+              </span>
+              <span class="md-header-nav__topic">
+                ch12 动态内存
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../CProgramming/ch01 C语言概述/" title="C语言程序设计" class="md-tabs__link">
+          C语言程序设计
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ch01 开始/" title="C++ Primer" class="md-tabs__link md-tabs__link--active">
+          C++ Primer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="C/C++ Study Note" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    C/C++ Study Note
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      C语言程序设计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        C语言程序设计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Chapters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
+      ch01 C语言概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
+      ch02 C语言基本概念
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
+      ch03 格式化输入输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+      ch04 表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
+      ch05 选择语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch06 循环/" title="ch06 循环" class="md-nav__link">
+      ch06 循环
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
+      ch07 基本类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch08 数组/" title="ch08 数组" class="md-nav__link">
+      ch08 数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch09 函数/" title="ch09 函数" class="md-nav__link">
+      ch09 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
+      ch10 程序结构
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch11 指针/" title="ch11 指针" class="md-nav__link">
+      ch11 指针
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
+      ch12 指针和数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch13 字符串/" title="ch13 字符串" class="md-nav__link">
+      ch13 字符串
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
+      ch14 预处理器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch15 编写大规模程序/" title="ch15 编写大规模程序" class="md-nav__link">
+      ch15 编写大规模程序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
+      ch16 结构、联合和枚举
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
+      ch17 指针的高级应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch18 声明/" title="ch18 声明" class="md-nav__link">
+      ch18 声明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
+      ch19 程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
+      ch20 低级程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch21 标准库/" title="ch21 标准库" class="md-nav__link">
+      ch21 标准库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
+      ch22 输入输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
+      ch23 库对数值和字符数据的支持
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
+      ch24 错误处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
+      ch25 国际化特性
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
+      ch26 其他库函数
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      CheatSheet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        CheatSheet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CProgramming/cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
+      惯用法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      C++ Primer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        C++ Primer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Chapters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch01 开始/" title="ch01 开始" class="md-nav__link">
+      ch01 开始
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
+      ch02 变量和基本类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
+      ch03 字符串、向量和数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+      ch04 表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch05 语句/" title="ch05 语句" class="md-nav__link">
+      ch05 语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch06 函数/" title="ch06 函数" class="md-nav__link">
+      ch06 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch07 类/" title="ch07 类" class="md-nav__link">
+      ch07 类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch08 IO库/" title="ch08 IO库" class="md-nav__link">
+      ch08 IO库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
+      ch09 顺序容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
+      ch10 泛型算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
+      ch11 关联容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ch12 动态内存
+      </label>
+    
+    <a href="./" title="ch12 动态内存" class="md-nav__link md-nav__link--active">
+      ch12 动态内存
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="动态内存与智能指针" class="md-nav__link">
+    动态内存与智能指针
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptr" title="shared_ptr类" class="md-nav__link">
+    shared_ptr类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="直接管理内存" class="md-nav__link">
+    直接管理内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptrnew" title="shared_ptr和new结合使用" class="md-nav__link">
+    shared_ptr和new结合使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="智能指针和异常" class="md-nav__link">
+    智能指针和异常
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique_ptr" title="unique_ptr" class="md-nav__link">
+    unique_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak_ptr" title="weak_ptr" class="md-nav__link">
+    weak_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="动态数组" class="md-nav__link">
+    动态数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new" title="new和数组" class="md-nav__link">
+    new和数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocator" title="allocator类" class="md-nav__link">
+    allocator类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch13 拷贝控制/" title="ch13 拷贝控制" class="md-nav__link">
+      ch13 拷贝控制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
+      ch14 操作重载与类型转换
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
+      ch15 面向对象程序设计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
+      ch16 模板与泛型编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch17 标准库特殊设施/" title="ch17 标准库特殊设施" class="md-nav__link">
+      ch17 标准库特殊设施
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
+      ch18 用于大型程序的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
+      ch19 特殊工具与技术
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      CheatSheet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        CheatSheet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
+      auto可能的适用场景
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
+      static的3个用途
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
+      若干种typedef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
+      类内初始值
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
+      运算符重载
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
+      向set中插入自定义类型对象
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="动态内存与智能指针" class="md-nav__link">
+    动态内存与智能指针
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptr" title="shared_ptr类" class="md-nav__link">
+    shared_ptr类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="直接管理内存" class="md-nav__link">
+    直接管理内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared_ptrnew" title="shared_ptr和new结合使用" class="md-nav__link">
+    shared_ptr和new结合使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="智能指针和异常" class="md-nav__link">
+    智能指针和异常
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique_ptr" title="unique_ptr" class="md-nav__link">
+    unique_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak_ptr" title="weak_ptr" class="md-nav__link">
+    weak_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="动态数组" class="md-nav__link">
+    动态数组
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new" title="new和数组" class="md-nav__link">
+    new和数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocator" title="allocator类" class="md-nav__link">
+    allocator类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CppPrimer/ch12 动态内存.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">第十二章 动态内存</h1>
+<p>我们的程序到目前为止只使用过静态内存或栈内存。</p>
+<ul>
+<li>
+<p>静态内存用来保存局部static对象、类static数据成员以及定义在任何函数之外的变量。</p>
+</li>
+<li>
+<p>栈内存用来保存定义在函数内的非static对象。</p>
+</li>
+</ul>
+<p>分配在静态或栈内存中的对象由编译器自动创建和销毁。</p>
+<ul>
+<li>
+<p>对于栈对象，仅在其定义的程序块运行时才存在。</p>
+</li>
+<li>
+<p>static对象在使用之前分配，在程序结束时销毁。</p>
+</li>
+</ul>
+<p>除了静态内存和栈内存，每个程序还拥有一个内存池，这部分内存被称作自由空间或堆（heap）。程序用堆来存储动态分配（dynamically allocate）的对象。</p>
+<p>动态对象的生存周期由程序来控制，当动态对象不再使用时，我们的代码必须显示地销毁它们。</p>
+<hr />
+<h2 id="_2">动态内存与智能指针</h2>
+<p>C++中，动态内存的管理是通过一对运算符来完成的：</p>
+<ul>
+<li>
+<p>new，在动态内存中为对象分配空间并返回一个指向该对象的指针。</p>
+</li>
+<li>
+<p>delete，接受一个动态对象的指针，销毁该对象，并释放与之关联的内存。</p>
+</li>
+</ul>
+<p>为了更容易（同时也更安全）地使用动态内存，新的标准提供了两种智能指针（smart pointer）类型来管理动态对象。</p>
+<p>智能指针的行为类似常规指针，重要的区别是它负责自动释放所指向的对象。两种智能指针的区别在于管理底层指针的方式：</p>
+<ul>
+<li>
+<p>shared_ptr允许多个指针指向同一个对象；</p>
+</li>
+<li>
+<p>unique_ptr则“独占”所指向的对象。</p>
+</li>
+<li>
+<p>标准库还定义了一个名为weak_ptr的伴随类，它是一种弱引用，指向shared_ptr所管理的对象。</p>
+</li>
+</ul>
+<p>这些类型定义在memory头文件中。</p>
+<h3 id="shared_ptr">shared_ptr类</h3>
+<p>智能指针也是模板，当创建一个智能指针时，必须提供指向的类型：</p>
+<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p1</span><span class="p">;</span><span class="err"> </span><span class="c1">// shared_ptr, 可以指向string</span>
+</pre></div>
+
+
+<p>默认初始化的智能指针中保存着一个空指针。</p>
+<p>解引用一个智能指针返回它指向的对象。如果在一个条件判断中使用智能指针，效果就是检测它是否为空：</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="err"> </span><span class="o">*</span><span class="n">p1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>更多的操作见p401。</p>
+<p><strong>make_shared函数</strong></p>
+<p>最安全的分配和使用动态内存的方法是调用标准库函数make_shared。此函数在动态内存中分配一个对象并初始化它，返回指向此对象的shared_ptr。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 指向一个值为42的int的shared_ptr</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p3</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+
+<span class="c1">// p6指向一个动态分配的空vector&lt;string&gt;</span>
+<span class="k">auto</span><span class="err"> </span><span class="n">p6</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+</pre></div>
+
+
+<p>类似顺序容器的emplace成员，make_shared用其参数来构造给定类型的对象。如果我们不传递任何参数，对象就会进行值初始化。</p>
+<p><strong>shared_ptr的拷贝和赋值</strong></p>
+<p>每个shared_ptr都会记录有多少个其他shared_ptr指向相同的对象：</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">p</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="err"> </span><span class="c1">// p指向的对象只有p一个引用者</span>
+<span class="k">auto</span><span class="err"> </span><span class="n">q</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="err"> </span><span class="c1">// p和q指向相同的对象，此对象有两个引用者</span>
+</pre></div>
+
+
+<p>可以认为每个shared_ptr都有一个关联的计数器，通常称其为<strong>引用计数</strong>(reference count)。无论何时我们拷贝一个shared_ptr，计数器都会递增。当我们给shared_ptr赋予一个新值或是shared_ptr被销毁时，计数器就会递减。</p>
+<p>一旦一个shared_ptr的计数器变为0，它就会自动释放自己所管理的对象。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>到底是由一个计数器还是其他数据结构来记录有多少指针共享对象，完全由标准库的具体实现决定。关键是智能指针类能记录有多少个shared_ptr指向相同的对象，并能在恰当的时候自动释放对象。</p>
+</div>
+<p><strong>使用了动态生存期的资源的类</strong></p>
+<p>程序使用动态内存出于以下三种原因之一：</p>
+<p>1. 程序不知道自己需要多少对象</p>
+<p>2. 程序不知道所需对象的准确类型</p>
+<p>3. 程序需要在多个对象间共享数据</p>
+<p>容器类是出于第一种原因而使用动态内存的典型例子，我们将在第15章看到出于第二种原因的例子。本章介绍出于第三种原因的例子。</p>
+<h3 id="_3">直接管理内存</h3>
+<p>C++提供了new运算符分配内存，delete运算符释放new分配的内存。</p>
+<p>相对于智能指针，使用这两个运算符管理内存非常容易出错。</p>
+<p><strong>使用new动态分配和初始化对象</strong></p>
+<p>在自由空间分配的内存是无名的，因此new无法为其分配的对象命名，而是返回一个指向该对象的指针：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pi</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">;</span><span class="err"> </span><span class="c1">// pi指向一个动态分配的、未初始化的无名对象</span>
+</pre></div>
+
+
+<p>默认情况下，动态分配的对象是默认初始化的，这意味着内置类型或组合类型的对象的值将是未定义的，而类类型将使用默认构造函数进行初始化。</p>
+<p>可以使用直接初始化方式来初始化一个动态分配的对象：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pi</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="o">*</span><span class="n">pv</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="err"> </span><span class="mi">2</span><span class="p">,</span><span class="err"> </span><span class="mi">3</span><span class="p">};</span>
+</pre></div>
+
+
+<p><strong>动态分配的const对象</strong></p>
+<p>用new分配const对象是合法的：</p>
+<div class="codehilite"><pre><span></span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pci</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
+</pre></div>
+
+
+<p>类似其他任何const对象，一个动态分配的const对象必须进行初始化。</p>
+<p><strong>内存耗尽</strong></p>
+<p>一旦一个程序用光了它所有可用的内存，new表达式就会失败（并返回一个空指针）。默认情况下，如果new不能分配所要求的内存空间，它会抛出一个类型为bad_alloc的异常。</p>
+<p>我们可以改变使用new的方式来阻止它抛出异常：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 如果分配失败，new返回一个空指针</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">p1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">;</span><span class="err"> </span><span class="c1">// 如果分配失败，new抛出std::bad_alloc</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">p2</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="p">(</span><span class="n">nothrow</span><span class="p">)</span><span class="err"> </span><span class="kt">int</span><span class="p">;</span><span class="err"> </span><span class="c1">// 如果分配失败，new返回一个空指针</span>
+</pre></div>
+
+
+<p><strong>释放动态内存</strong></p>
+<p>为了防止内存耗尽，在动态内存使用完毕后，必须将其归还给系统。我们通过delete表达式（delete expression）来将动态内存归还给系统。</p>
+<div class="codehilite"><pre><span></span><span class="k">delete</span><span class="err"> </span><span class="n">p</span><span class="p">;</span><span class="err"> </span><span class="c1">// p必须指向一个动态分配的对象或是一个空指针</span>
+</pre></div>
+
+
+<p>释放一块并非new分配的内存，或者将相同的指针值释放多次，其行为是未定义的。</p>
+<p>更多有关使用原生指针管理动态内存的危险的讨论见书本p409。</p>
+<h3 id="shared_ptrnew">shared_ptr和new结合使用</h3>
+<p>如果不初始化一个智能指针，它就会被初始化为一个空指针。还可以用new返回的指针来初始化智能指针：</p>
+<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p2</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="err"> </span><span class="c1">// p2指向一个值为42的int</span>
+</pre></div>
+
+
+<p>接受指针参数的智能指针构造函数是explicit的，因此必须使用直接初始化形式来初始化一个智能指针：</p>
+<div class="codehilite"><pre><span></span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span><span class="err"> </span><span class="c1">// 错误：必须使用直接初始化形式</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p2</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">));</span><span class="err">  </span><span class="c1">// 正确：使用了直接初始化形式</span>
+</pre></div>
+
+
+<p>默认情况下，一个用来初始化智能指针的普通指针必须指向动态内存，因为智能指针默认使用delete释放它所关联的对象（可以提供自己的操作来替代delete）。</p>
+<p>更多关于智能指针使用的讨论见p412。</p>
+<h3 id="_4">智能指针和异常</h3>
+<p>程序需要确保在异常发生后资源能被正确地释放。一个简单的确保资源被释放的方法是使用智能指针：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="err">    </span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">sp</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="err"> </span><span class="c1">// 分配一个对象</span>
+<span class="err">    </span><span class="c1">// 这段代码抛出一个异常，且在f中未被捕获</span>
+<span class="p">}</span><span class="err"> </span><span class="c1">// 函数结束时shared_ptr自动释放内存</span>
+</pre></div>
+
+
+<p>无论是否发生了异常，局部对象都会被销毁，sp是指向这块内存的唯一指针，因此内存会被释放掉。</p>
+<p>如果使用了内置指针管理内存，且在new之后在对应的delete之前发生了异常，则内存不会被释放：</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span><span class="err"> </span><span class="n">f</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="err">    </span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">ip</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="err"> </span><span class="c1">// 动态分配一个新对象</span>
+<span class="err">    </span><span class="c1">// 这段代码抛出一个异常，且在f中未被捕获</span>
+<span class="err">    </span><span class="k">delete</span><span class="err"> </span><span class="n">ip</span><span class="p">;</span><span class="err"> </span><span class="c1">// 在退出以前释放内存</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>如果在new和delete之间发生了异常，且异常未在f中被捕获，则内存就永远不会被释放了。</p>
+<p><strong>使用我们自己的释放操作</strong></p>
+<p>这里给一个简单的定义删除器的例子，而具体的讨论见书本p416。</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">deleter</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>   
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;delete data: &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>
+<span class="p">};</span>  
+
+<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span> <span class="n">deleter</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="unique_ptr">unique_ptr</h3>
+<p>与shared_ptr不同，某个时刻只能有一个unique_ptr指向一个给定对象。当unique_ptr被销毁时，它所指向的对象也被销毁。</p>
+<p>与shared_ptr不同，没有类似make_shared的标准库函数返回一个unique_ptr。当我们定义一个unique_ptr时，需要将其绑定到一个new返回的指针上。</p>
+<div class="codehilite"><pre><span></span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p1</span><span class="p">;</span><span class="err"> </span><span class="c1">// 可以指向一个double的unique_ptr</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">p2</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span><span class="err"> </span><span class="c1">// p2指向一个值为42的int</span>
+</pre></div>
+
+
+<p>由于一个unique_ptr拥有它指向的对象，因此unique_ptr不支持普通的拷贝或赋值操作。</p>
+<p>更多有关unique_ptr操作的讨论见p418。</p>
+<h3 id="weak_ptr">weak_ptr</h3>
+<p>weak_ptr是一种不控制所指对象生存期的智能指针，它指向一个shared_ptr管理的对象。将一个weak_ptr绑定到一个shared_ptr不会改变shared_ptr的引用计数。一旦最后一个指向对象的shared_ptr被销毁，对象就会被释放。即使有weak_ptr指向对象，对象还是会被释放。</p>
+<p>当我们创建一个weak_ptr时，要用一个shared_ptr来初始化它：</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">p</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">wp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="err"> </span><span class="c1">// wp若共享p；p的引用计数未改变</span>
+</pre></div>
+
+
+<p>由于对象可能不存在，我们不能使用weak_ptr直接访问对象，而必须调用lock。如果存在，lock返回一个指向共享对象的shared_ptr。否则返回一个空shared_ptr。</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err"> </span><span class="n">np</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="c1">// 如果np不为空则条件成立</span>
+<span class="err">    </span><span class="c1">// 在if中，np与p共享对象</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="_5">动态数组</h2>
+<p>C++语言和标准库提供了两种一次分配一个对象数组的方法：</p>
+<ul>
+<li>
+<p>一种new表达式语法，可以分配并初始化一个对象数组。</p>
+</li>
+<li>
+<p>标准库中包含一个名为allocator的类，允许我们将分配和初始化分离。使用allocator通常会提供更好的性能和更灵活的内存管理能力。</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>大多数应用应该使用标准库容器而不是动态分配的数组。使用容器更为简单、更不容易出现内存管理错误并且可能有更好的性能。</p>
+</div>
+<h3 id="new">new和数组</h3>
+<p>为了让new分配一个对象数组，我们要在类型名之后跟一对方括号，在其中指明要分配的对象的数目：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 调用get_size确定分配多少个int</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="n">get_size</span><span class="p">()];</span><span class="err"> </span><span class="c1">// pia指向第一个int</span>
+</pre></div>
+
+
+<p>方括号中的大小必须是整型，但不必是常量。</p>
+<p><strong>分配一个数组会得到一个元素类型的指针</strong></p>
+<p>当用new分配一个数组时，我们并未得到一个数组类型的对象，而是得到一个数组元素类型的指针。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>要记住我们所说的动态数组并不是数组类型，这是很重要的。</p>
+</div>
+<p><strong>初始化动态分配对象的数组</strong></p>
+<p>默认情况下，new分配的对象，不管是单个分配的还是数组中的，都是默认初始化的。可以对数组中的元素进行值初始化，方法是在大小之后跟一对空括号：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="err"> </span><span class="c1">// 10个未初始化的int</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia2</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]();</span><span class="err"> </span><span class="c1">// 10个值初始化为0的int</span>
+</pre></div>
+
+
+<p>新标准中，我们还可以提供一个元素初始化器的花括号列表：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 10个int分别用列表中对应的初始化器初始化</span>
+<span class="kt">int</span><span class="err"> </span><span class="o">*</span><span class="n">pia3</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+</pre></div>
+
+
+<p><strong>释放动态数组</strong></p>
+<p>为了释放动态数组，我们使用一种特殊形式的delete——在指针前加上一个空方括号对：</p>
+<div class="codehilite"><pre><span></span><span class="k">delete</span><span class="err"> </span><span class="n">p</span><span class="p">;</span><span class="err"> </span><span class="c1">// p必须指向一个动态分配的对象或为空</span>
+<span class="k">delete</span><span class="err"> </span><span class="p">[]</span><span class="err"> </span><span class="n">pa</span><span class="p">;</span><span class="err"> </span><span class="c1">// pa必须指向一个动态分配的数组或为空</span>
+</pre></div>
+
+
+<p>数组的元素按逆序销毁，即，最后一个元素首先被销毁，然后是倒数第二个，依此类推。</p>
+<p><strong>智能指针和动态数组</strong></p>
+<p>标准库提供了一个可以管理new分配的数组的unique_ptr版本：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// up指向一个包含10个未初始化int的数组</span>
+<span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span><span class="err"> </span><span class="n">up</span><span class="p">(</span><span class="k">new</span><span class="err"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
+<span class="n">up</span><span class="p">.</span><span class="n">release</span><span class="p">();</span><span class="err"> </span><span class="c1">// 自动用delete[]销毁其指针</span>
+</pre></div>
+
+
+<blockquote>
+<p>my note: 这里似乎有错误，release方法据p418介绍，是放弃对指针的控制权，返回指针。并不销毁原来指向的对象。另一个事例见：http://zh.cppreference.com/w/cpp/memory/unique_ptr/release</p>
+</blockquote>
+<p>当unique_ptr销毁时，会自动销毁其指向的对象。</p>
+<h3 id="allocator">allocator类</h3>
+<p>new和delete有一些灵活性上的局限：</p>
+<ul>
+<li>
+<p>new将内存分配和对象构造组合在了一起。</p>
+</li>
+<li>
+<p>delete将对象析构和内存释放组合在了一起。</p>
+</li>
+</ul>
+<p>当分配一大块内存时，我们通常计划在这块内存上按需构造对象。在此情况下，我们希望将内存分配和对象构造分离。这意味着我们可以分配大块内存，但只在真正需要时才真正执行对象创建操作。</p>
+<p><strong>allocator类</strong></p>
+<p>标准库allocator类定义在头文件memory中，它帮助我们将内存分配和对象构造分离开来。它分配的内存是原始的、未构造的。</p>
+<p>allocator也是模板，为了定义一个allocator对象，我们必须指明这个allocator可以分配的对象类型。当一个allocator对象分配内存时，它会根据给定对象类型来确定恰当的内存大小和对齐位置：</p>
+<div class="codehilite"><pre><span></span><span class="n">allocator</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="err"> </span><span class="n">alloc</span><span class="p">;</span><span class="err"> </span><span class="c1">// 可以分配string的allocator对象</span>
+<span class="k">auto</span><span class="err"> </span><span class="k">const</span><span class="err"> </span><span class="n">p</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="err"> </span><span class="c1">// 分配n个未初始化的string</span>
+</pre></div>
+
+
+<p><strong>allocator分配未构造的内存</strong></p>
+<p>allocator分配的内存是未构造的（unconstructed）。我们按需要在此内存中构造对象。</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span><span class="err"> </span><span class="n">q</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">p</span><span class="p">;</span><span class="err"> </span><span class="c1">// q指向最后构造元素之后的位置</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">);</span><span class="err"> </span><span class="c1">// *q为空字符串</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">,</span><span class="err"> </span><span class="s">&quot;hi&quot;</span><span class="p">);</span><span class="err"> </span><span class="c1">// *q为hi!</span>
+</pre></div>
+
+
+<p>还未构造对象的情况下就使用原始内存是错误的。</p>
+<p>当我们用完对象后，必须对每个构造的元素调用destroy来销毁它们。</p>
+<div class="codehilite"><pre><span></span><span class="k">while</span><span class="err"> </span><span class="p">(</span><span class="n">q</span><span class="err"> </span><span class="o">!=</span><span class="err"> </span><span class="n">p</span><span class="p">)</span>
+<span class="err">    </span><span class="n">alloc</span><span class="p">.</span><span class="n">destroy</span><span class="p">(</span><span class="o">--</span><span class="n">q</span><span class="p">);</span><span class="err"> </span><span class="c1">// 释放我们真正构造的string</span>
+</pre></div>
+
+
+<p>一旦元素被销毁后，就可以重新用这部分内存来保存其他string，也可以将其归还给系统。释放内存通过调用deallocate来完成：</p>
+<div class="codehilite"><pre><span></span><span class="n">alloc</span><span class="p">.</span><span class="n">deallocate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="err"> </span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+
+
+<p>我们传递给deallocate的指针不能为空，它必须指向由allocate分配的内存。而且，传递给deallocate的大小参数必须与调用allocated分配内存时提供的大小参数具有一样的值。</p>
+<p><strong>拷贝和填充未初始化内存的算法</strong></p>
+<p>标准库为allocator类定义了两个伴随算法，可以在未初始化内存中创建对象。见p429。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ch11 关联容器/" title="ch11 关联容器" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                ch11 关联容器
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ch13 拷贝控制/" title="ch13 拷贝控制" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                ch13 拷贝控制
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; since 2018 Diwen Liu
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+  </body>
+</html>

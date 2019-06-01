@@ -33,18 +33,18 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
-        <title>C/C++ Study Note</title>
+        <title>ch04 表达式 - C/C++ Study Note</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -62,7 +62,7 @@
         <style>body,input{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Sans","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#cc" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -110,7 +110,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="." title="C/C++ Study Note" class="md-header-nav__button md-logo">
+        <a href="../.." title="C/C++ Study Note" class="md-header-nav__button md-logo">
           
             <i class="md-icon">school</i>
           
@@ -127,7 +127,7 @@
                 C/C++ Study Note
               </span>
               <span class="md-header-nav__topic">
-                Introduction
+                ch04 表达式
               </span>
             
           
@@ -199,14 +199,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="." title="Introduction" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Introduction" class="md-tabs__link">
         Introduction
       </a>
     
@@ -222,7 +224,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="CProgramming/ch01 C语言概述/" title="C语言程序设计" class="md-tabs__link">
+        <a href="../ch01 C语言概述/" title="C语言程序设计" class="md-tabs__link md-tabs__link--active">
           C语言程序设计
         </a>
       
@@ -241,7 +243,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="CppPrimer/ch01 开始/" title="C++ Primer" class="md-tabs__link">
+        <a href="../../CppPrimer/ch01 开始/" title="C++ Primer" class="md-tabs__link">
           C++ Primer
         </a>
       
@@ -264,7 +266,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="." title="C/C++ Study Note" class="md-nav__button md-logo">
+    <a href="../.." title="C/C++ Study Note" class="md-nav__button md-logo">
       
         <i class="md-icon">school</i>
       
@@ -300,56 +302,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduction
-      </label>
-    
-    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
       Introduction
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="简单介绍" class="md-nav__link">
-    简单介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="学习资料" class="md-nav__link">
-    学习资料
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -357,10 +314,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       C语言程序设计
@@ -376,10 +335,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
     
     <label class="md-nav__link" for="nav-2-1">
       Chapters
@@ -397,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
+    <a href="../ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
       ch01 C语言概述
     </a>
   </li>
@@ -409,7 +370,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
+    <a href="../ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
       ch02 C语言基本概念
     </a>
   </li>
@@ -421,7 +382,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
+    <a href="../ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
       ch03 格式化输入输出
     </a>
   </li>
@@ -431,11 +392,110 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="CProgramming/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ch04 表达式
+      </label>
+    
+    <a href="./" title="ch04 表达式" class="md-nav__link md-nav__link--active">
       ch04 表达式
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="算术运算符" class="md-nav__link">
+    算术运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="运算符的优先级和结合性" class="md-nav__link">
+    运算符的优先级和结合性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="赋值运算符" class="md-nav__link">
+    赋值运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="简单赋值" class="md-nav__link">
+    简单赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="左值" class="md-nav__link">
+    左值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="复合赋值" class="md-nav__link">
+    复合赋值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="自增运算符和自减运算符" class="md-nav__link">
+    自增运算符和自减运算符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="表达式求值" class="md-nav__link">
+    表达式求值
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -445,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
+    <a href="../ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
       ch05 选择语句
     </a>
   </li>
@@ -457,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch06 循环/" title="ch06 循环" class="md-nav__link">
+    <a href="../ch06 循环/" title="ch06 循环" class="md-nav__link">
       ch06 循环
     </a>
   </li>
@@ -469,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
+    <a href="../ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
       ch07 基本类型
     </a>
   </li>
@@ -481,7 +541,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch08 数组/" title="ch08 数组" class="md-nav__link">
+    <a href="../ch08 数组/" title="ch08 数组" class="md-nav__link">
       ch08 数组
     </a>
   </li>
@@ -493,7 +553,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch09 函数/" title="ch09 函数" class="md-nav__link">
+    <a href="../ch09 函数/" title="ch09 函数" class="md-nav__link">
       ch09 函数
     </a>
   </li>
@@ -505,7 +565,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
+    <a href="../ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
       ch10 程序结构
     </a>
   </li>
@@ -517,7 +577,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch11 指针/" title="ch11 指针" class="md-nav__link">
+    <a href="../ch11 指针/" title="ch11 指针" class="md-nav__link">
       ch11 指针
     </a>
   </li>
@@ -529,7 +589,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
+    <a href="../ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
       ch12 指针和数组
     </a>
   </li>
@@ -541,7 +601,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch13 字符串/" title="ch13 字符串" class="md-nav__link">
+    <a href="../ch13 字符串/" title="ch13 字符串" class="md-nav__link">
       ch13 字符串
     </a>
   </li>
@@ -553,7 +613,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
+    <a href="../ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
       ch14 预处理器
     </a>
   </li>
@@ -565,7 +625,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch15 编写大规模程序/" title="ch15 编写大规模程序" class="md-nav__link">
+    <a href="../ch15 编写大规模程序/" title="ch15 编写大规模程序" class="md-nav__link">
       ch15 编写大规模程序
     </a>
   </li>
@@ -577,7 +637,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
+    <a href="../ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
       ch16 结构、联合和枚举
     </a>
   </li>
@@ -589,7 +649,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
+    <a href="../ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
       ch17 指针的高级应用
     </a>
   </li>
@@ -601,7 +661,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch18 声明/" title="ch18 声明" class="md-nav__link">
+    <a href="../ch18 声明/" title="ch18 声明" class="md-nav__link">
       ch18 声明
     </a>
   </li>
@@ -613,7 +673,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
+    <a href="../ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
       ch19 程序设计
     </a>
   </li>
@@ -625,7 +685,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
+    <a href="../ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
       ch20 低级程序设计
     </a>
   </li>
@@ -637,7 +697,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch21 标准库/" title="ch21 标准库" class="md-nav__link">
+    <a href="../ch21 标准库/" title="ch21 标准库" class="md-nav__link">
       ch21 标准库
     </a>
   </li>
@@ -649,7 +709,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
+    <a href="../ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
       ch22 输入输出
     </a>
   </li>
@@ -661,7 +721,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
+    <a href="../ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
       ch23 库对数值和字符数据的支持
     </a>
   </li>
@@ -673,7 +733,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
+    <a href="../ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
       ch24 错误处理
     </a>
   </li>
@@ -685,7 +745,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
+    <a href="../ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
       ch25 国际化特性
     </a>
   </li>
@@ -697,7 +757,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
+    <a href="../ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
       ch26 其他库函数
     </a>
   </li>
@@ -733,7 +793,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CProgramming/cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
+    <a href="../cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
       惯用法
     </a>
   </li>
@@ -793,7 +853,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch01 开始/" title="ch01 开始" class="md-nav__link">
+    <a href="../../CppPrimer/ch01 开始/" title="ch01 开始" class="md-nav__link">
       ch01 开始
     </a>
   </li>
@@ -805,7 +865,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
+    <a href="../../CppPrimer/ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
       ch02 变量和基本类型
     </a>
   </li>
@@ -817,7 +877,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
+    <a href="../../CppPrimer/ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
       ch03 字符串、向量和数组
     </a>
   </li>
@@ -829,7 +889,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
+    <a href="../../CppPrimer/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
       ch04 表达式
     </a>
   </li>
@@ -841,7 +901,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch05 语句/" title="ch05 语句" class="md-nav__link">
+    <a href="../../CppPrimer/ch05 语句/" title="ch05 语句" class="md-nav__link">
       ch05 语句
     </a>
   </li>
@@ -853,7 +913,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch06 函数/" title="ch06 函数" class="md-nav__link">
+    <a href="../../CppPrimer/ch06 函数/" title="ch06 函数" class="md-nav__link">
       ch06 函数
     </a>
   </li>
@@ -865,7 +925,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch07 类/" title="ch07 类" class="md-nav__link">
+    <a href="../../CppPrimer/ch07 类/" title="ch07 类" class="md-nav__link">
       ch07 类
     </a>
   </li>
@@ -877,7 +937,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch08 IO库/" title="ch08 IO库" class="md-nav__link">
+    <a href="../../CppPrimer/ch08 IO库/" title="ch08 IO库" class="md-nav__link">
       ch08 IO库
     </a>
   </li>
@@ -889,7 +949,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
+    <a href="../../CppPrimer/ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
       ch09 顺序容器
     </a>
   </li>
@@ -901,7 +961,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
+    <a href="../../CppPrimer/ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
       ch10 泛型算法
     </a>
   </li>
@@ -913,7 +973,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
+    <a href="../../CppPrimer/ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
       ch11 关联容器
     </a>
   </li>
@@ -925,7 +985,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch12 动态内存/" title="ch12 动态内存" class="md-nav__link">
+    <a href="../../CppPrimer/ch12 动态内存/" title="ch12 动态内存" class="md-nav__link">
       ch12 动态内存
     </a>
   </li>
@@ -937,7 +997,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch13 拷贝控制/" title="ch13 拷贝控制" class="md-nav__link">
+    <a href="../../CppPrimer/ch13 拷贝控制/" title="ch13 拷贝控制" class="md-nav__link">
       ch13 拷贝控制
     </a>
   </li>
@@ -949,7 +1009,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
+    <a href="../../CppPrimer/ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
       ch14 操作重载与类型转换
     </a>
   </li>
@@ -961,7 +1021,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
+    <a href="../../CppPrimer/ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
       ch15 面向对象程序设计
     </a>
   </li>
@@ -973,7 +1033,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
+    <a href="../../CppPrimer/ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
       ch16 模板与泛型编程
     </a>
   </li>
@@ -985,7 +1045,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch17 标准库特殊设施/" title="ch17 标准库特殊设施" class="md-nav__link">
+    <a href="../../CppPrimer/ch17 标准库特殊设施/" title="ch17 标准库特殊设施" class="md-nav__link">
       ch17 标准库特殊设施
     </a>
   </li>
@@ -997,7 +1057,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
+    <a href="../../CppPrimer/ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
       ch18 用于大型程序的工具
     </a>
   </li>
@@ -1009,7 +1069,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
+    <a href="../../CppPrimer/ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
       ch19 特殊工具与技术
     </a>
   </li>
@@ -1045,7 +1105,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
       auto可能的适用场景
     </a>
   </li>
@@ -1057,7 +1117,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
       static的3个用途
     </a>
   </li>
@@ -1069,7 +1129,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
       若干种typedef
     </a>
   </li>
@@ -1081,7 +1141,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
       类内初始值
     </a>
   </li>
@@ -1093,7 +1153,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
       运算符重载
     </a>
   </li>
@@ -1105,7 +1165,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CppPrimer/cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
+    <a href="../../CppPrimer/cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
       向set中插入自定义类型对象
     </a>
   </li>
@@ -1142,15 +1202,69 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="简单介绍" class="md-nav__link">
-    简单介绍
+  <a href="#_2" title="算术运算符" class="md-nav__link">
+    算术运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="运算符的优先级和结合性" class="md-nav__link">
+    运算符的优先级和结合性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="赋值运算符" class="md-nav__link">
+    赋值运算符
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="简单赋值" class="md-nav__link">
+    简单赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="左值" class="md-nav__link">
+    左值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="复合赋值" class="md-nav__link">
+    复合赋值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="自增运算符和自减运算符" class="md-nav__link">
+    自增运算符和自减运算符
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="学习资料" class="md-nav__link">
-    学习资料
+  <a href="#_9" title="表达式求值" class="md-nav__link">
+    表达式求值
   </a>
   
 </li>
@@ -1171,29 +1285,160 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/index.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CProgramming/ch04 表达式.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="cc">C/C++ 学习笔记</h1>
-<hr />
-<h2 id="_1">简单介绍</h2>
-<p>曾经一直零零碎碎看着《C++ Primer》，学习效果却不是很明显，因此决定重新整理好笔记和练习，系统性地提高自己的C++编程水平。也期望把这份笔记当成一份 cheatsheet ，方便日后查阅。</p>
-<p>笔记分为两个部分：</p>
+                <h1 id="_1">第四章 表达式</h1>
+<p>表达式是显示如何计算值的公式。最简单的表达式是变量和常量。变量表示程序运行时计算出的值；常量表示不变的值。</p>
+<p>运算符是构建表达式的基本工具。C语言提供了基本的运算符：</p>
 <ul>
-<li>
-<p>代码练习</p>
-</li>
-<li>
-<p>markdown 笔记</p>
-</li>
+<li>算术运算符。</li>
+<li>关系运算符。</li>
+<li>逻辑运算符。</li>
 </ul>
-<p>笔记使用 Github 来做内容管理。</p>
-<p>曾无意中看到 mkdocs ，觉得非常适合我这样的情况，于是舍弃了之前的为知笔记，把全部内容搬到了 Github 仓库，然后使用 mkdocs 生成了在线文档并推送至 Github page 。</p>
-<p>这个页面就是这样被呈现的。</p>
-<p>我还加入了一本C语言的学习书籍：《C语言程序设计：现代方法》。因为C++是C语言的延续，其中有很多设计思想都追溯至C语言，而且在实际开发中，C语言的写法不在少数，有必要学习整理一下。</p>
-<h2 id="_2">学习资料</h2>
-<p><a href="https://book.douban.com/subject/4279678/">C语言程序设计：现代方法</a></p>
-<p><a href="https://book.douban.com/subject/25708312/">C++ Primer 5th</a></p>
+<hr />
+<h2 id="_2">算术运算符</h2>
+<p>算术运算符有：</p>
+<table>
+<thead>
+<tr>
+<th align="center">一元运算符</th>
+<th align="center">二元运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">+ -</td>
+<td align="center">+ - * / %</td>
+</tr>
+</tbody>
+</table>
+<p>二元运算符要求有两个操作数，而一元运算符只要有一个操作数。</p>
+<p>一元运算符+无任何操作，它主要是为了强调某数值常量是正的。</p>
+<p>%被称之为 mod （求模）或 rem （取余）。 i % j 的数值是i除以j后的余数。</p>
+<p>除了%，二元运算符既允许操作数是整数也允许操作数是浮点数，或者允许两者的混合。当把 int 型操作数和 float 型操作数混合在一起时，运算结果是 float 型的。</p>
+<p>运算符/和%需要特别注意：</p>
+<ul>
+<li>/可能产生意外的结果。当两个操作数都是整数时，运算符/通过丢掉分数部分的方法截取结果，因此1/2的结果是0。</li>
+<li>%要求整数操作数；如果两个操作数中有一个不是整数，那么程序将无法通过编译。</li>
+<li>当/和%用于负数时，其结果与具体实现有关。如果操作数中有一个为负数，那么除法的结果既可以向上取整也可以向下取整。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">由实现定义</p>
+<p>术语由实现定义（ implementation-defined ）出现频率很高，意思是指软件在特定的平台上编译、链接和执行。根据实现的不同，程序的行为可能会稍有差异。
+C语言的目的之一是达到高效率，这经常意味着要与硬件行为相匹配。当-9除以7时，一些机器可能产生的结果是-1，而另一些机器的结果为-2，C标准简单地反映了这一现实。
+最好避免编写与实现定义的行为相关的程序。</p>
+</div>
+<h3 id="_3">运算符的优先级和结合性</h3>
+<p>C语言允许在所有表达式中用圆括号进行分组。但如果不使用圆括号，就采用运算符优先级（ operator precedence ）的规则来解决问题。算术运算符有下列相对优先级：</p>
+<ul>
+<li>最高优先级：+ -（一元运算符）</li>
+<li>中级优先级：* / %</li>
+<li>最低优先级：+ -（二元运算符）</li>
+</ul>
+<p>例如：</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="n">k</span><span class="p">;</span>    <span class="c1">// 等价于 i + (j * k)</span>
+</pre></div>
+
+
+<p>当一个表达式包含两个以上相同优先级的运算符时，单独的运算符优先级的规则是不够的。这种情况下，运算符的结合性（ associativity ）开始发挥作用。如果运算符是从左向右结合的，那么称这种运算符是左结合的（ left associative ）。二元算术运算符都是左结合的，所以：</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="n">k</span><span class="p">;</span>    <span class="c1">// 等价于 (i - j) - k</span>
+</pre></div>
+
+
+<p>如果运算符是从右向左结合的，那么称为右结合的（ right associative ）。一元运算符都是右结合的。</p>
+<h2 id="_4">赋值运算符</h2>
+<p>一旦计算出表达式的值就常常需要把这个值存储在变量中，以便后面使用。C语言的=运算符（assignment）可以用于此目的。</p>
+<h3 id="_5">简单赋值</h3>
+<p>表达式v = e的赋值效果是求出表达式e的值，并把此值复制给v。e可以是常量、变量或较为复杂的表达式：</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+</pre></div>
+
+
+<p>如果v和e的类型不同，那么赋值运算发生时会把e的值转化为v的类型：</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mf">72.99</span><span class="p">;</span> <span class="cm">/* i is now 72 */</span>
+</pre></div>
+
+
+<p>赋值操作产生结果，赋值表达式v=e的值就是赋值运算后v的值。因此，表达式i = 72.99的值是72。</p>
+<div class="admonition note">
+<p class="admonition-title">副作用</p>
+<p>大多数C语言运算符不会改变操作数的值，但是也有一些会改变。由于这类运算符所做的不再仅仅是计算出值，所以称它们有副作用（ side effect ）。简单的赋值运算符就是一个有副作用的运算符，它改变了运算符左边的操作数。表达式i=0产生的结果为0，作为副作用，把0赋值给i。</p>
+</div>
+<p>运算符=是右结合的。所以：</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">));</span> <span class="c1">// 等价</span>
+</pre></div>
+
+
+<h3 id="_6">左值</h3>
+<p>大多数C语言运算符允许它们的操作数是变量、常量或者包含其他运算符的表达式。然而，赋值运算符要求它左边的操作数必须是左值（ lvalue ）。左值表示存储在计算机内存中的对象，而不是常量或计算结果。变量是左值，而诸如10或2*i这样的表达式则不是左值。</p>
+<h3 id="_7">复合赋值</h3>
+<p>利用变量原有值计算出新值并重新赋值给这个变量在C语言程序中是非常普遍的。例如：</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+
+
+<p>C语言的复合赋值运算符（ compound assignment operator ）允许缩短这种语句和其他类似的语句。</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+
+
+<p>+=运算符把右侧操作数的值加上左侧的变量，并把结果赋值给左侧的变量。还有另外的9种复合赋值运算符，包括：</p>
+<p>-= *= /= %=</p>
+<h2 id="_8">自增运算符和自减运算符</h2>
+<p>++表示操作数加1，--表示操作数减1。++和--既可以作为前缀（ prefix ）运算符，也可以作为后缀（ postfix ）运算符使用。</p>
+<p>++和--也有副作用，它们会改变操作数的值。计算表达式++i的结果是i+1，副作用是自增i。计算表达式i++的结果是i，副作用是自增i。</p>
+<p>这个自增操作一定会在下一条语句执行前完成。</p>
+<h2 id="_9">表达式求值</h2>
+<p>上述总结的运算符在下表列出了其优先级、结合性。更多讨论见书本p39。</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>类型名称</th>
+<th>符号</th>
+<th>结合性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>后缀自增、自减</td>
+<td>++ --</td>
+<td>左结合</td>
+</tr>
+<tr>
+<td>2</td>
+<td>前缀自增、自减，一元正负</td>
+<td>++ -- + -</td>
+<td>右结合</td>
+</tr>
+<tr>
+<td>3</td>
+<td>乘法类</td>
+<td>* / %</td>
+<td>左结合</td>
+</tr>
+<tr>
+<td>4</td>
+<td>加法类</td>
+<td>+ -</td>
+<td>左结合</td>
+</tr>
+<tr>
+<td>5</td>
+<td>赋值</td>
+<td>= *= /= %= += -=</td>
+<td>右结合</td>
+</tr>
+</tbody>
+</table>
+<p><strong>子表达式的求值顺序</strong></p>
+<p>C语言没有定义子表达式的求值顺序（除了含有逻辑与运算符及逻辑或运算符、条件运算符以及逗号运算符的子表达式）。</p>
                 
                   
                 
@@ -1214,14 +1459,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                ch03 格式化输入输出
+              </span>
+            </div>
+          </a>
         
-          <a href="CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../ch05 选择语句/" title="ch05 选择语句" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                ch01 C语言概述
+                ch05 选择语句
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1255,30 +1514,30 @@
       
     </div>
     
-      <script src="assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
           
-          <script src="assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
           
             
               
-                <script src="assets/javascripts/lunr/tinyseg.js"></script>
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           
           
-            <script src="assets/javascripts/lunr/lunr.multi.js"></script>
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
