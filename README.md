@@ -7,4 +7,4 @@
   - [C语言程序设计:现代方法](./codes/CProgramming)
   - [C++ Primer 5th](./codes/CppPrimer)
 
-测试环境：g++4.8.5 && （CentOS7 || Ubuntu18.04）
+测试环境：g++4.8.5 && (CentOS7 || Ubuntu18.04）
