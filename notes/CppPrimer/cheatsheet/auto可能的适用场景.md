@@ -26,3 +26,16 @@ auto first = v.begin();
 // 使用 auto 得到一个 lambda 对象的类型
 auto l = [](int x)->bool { /* some code... */ };
 ```
+
+在模板编程中，有一种情况也需要使用auto：
+
+```c++
+template<typename P>
+auto Print(P v) -> decltype(*v)
+{
+    std::cout << *v << std::endl;
+    return *v; 
+}
+```
+
+模板参数是一个指针（或迭代器），没有办法直接获得它所指向的类型，只能用尾后返回类型配合auto关键字进行推导。
