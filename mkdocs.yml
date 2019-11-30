@@ -63,13 +63,6 @@ nav:
       - ch17 标准库特殊设施: CppPrimer/ch17 标准库特殊设施.md
       - ch18 用于大型程序的工具: CppPrimer/ch18 用于大型程序的工具.md
       - ch19 特殊工具与技术: CppPrimer/ch19 特殊工具与技术.md
-    - CheatSheet:
-      - auto可能的适用场景: CppPrimer/cheatsheet/auto可能的适用场景.md
-      - static的3个用途: CppPrimer/cheatsheet/static的3个用途.md
-      - 若干种typedef: CppPrimer/cheatsheet/若干种typedef.md
-      - 类内初始值: CppPrimer/cheatsheet/类内初始值.md
-      - 运算符重载: CppPrimer/cheatsheet/运算符重载.md
-      - 向set中插入自定义类型对象: CppPrimer/cheatsheet/向set中插入自定义类型对象.md
 
 theme:
   name: 'material'
