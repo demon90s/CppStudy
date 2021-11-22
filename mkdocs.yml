@@ -64,6 +64,10 @@ nav:
       - ch18 用于大型程序的工具: CppPrimer/ch18 用于大型程序的工具.md
       - ch19 特殊工具与技术: CppPrimer/ch19 特殊工具与技术.md
 
+  - Effective Modern C++:
+    - ch01:
+      - 条款1_理解模板型别推导: EffectiveModernCpp/ch01/条款1_理解模板型别推导.md
+
 theme:
   name: 'material'
   logo:
