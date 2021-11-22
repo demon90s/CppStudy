@@ -1436,7 +1436,6 @@ new (place_address) type [size] { braced initializers list }
 <p class="admonition-title">Note</p>
 <p>当只传入一个指针类型的实参时，定位new表达式构造对象但是不分配内存。</p>
 </div>
-<p><a href="https://github.com/demon90s/CppStudy/blob/master/CppPrimer/ch19_Specialized_Tools_and_Techniques/example_placement_new.cpp">参考代码</a></p>
 <p><strong>显式的析构函数调用</strong></p>
 <p>我们既可以通过对象调用析构函数，也可以通过对象的指针或引用调用析构函数，这与调用其它成员函数没什么区别：</p>
 <div class="codehilite"><pre><span></span><span class="n">string</span> <span class="o">*</span><span class="n">sp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="s">&quot;a value&quot;</span><span class="p">);</span>
