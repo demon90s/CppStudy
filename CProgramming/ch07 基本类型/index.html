@@ -2,7 +2,7 @@
 
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.2, mkdocs-material-3.0.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
       
@@ -53,17 +53,16 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:300,400,400i,700|PT+Sans">
         <style>body,input{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Sans","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
-    
     
     
   </head>
@@ -101,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="../../#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -1134,102 +1133,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
-    
-    <label class="md-nav__link" for="nav-3-2">
-      CheatSheet
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        CheatSheet
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CppPrimer/cheatsheet/auto可能的适用场景/" title="auto可能的适用场景" class="md-nav__link">
-      auto可能的适用场景
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CppPrimer/cheatsheet/static的3个用途/" title="static的3个用途" class="md-nav__link">
-      static的3个用途
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CppPrimer/cheatsheet/若干种typedef/" title="若干种typedef" class="md-nav__link">
-      若干种typedef
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CppPrimer/cheatsheet/类内初始值/" title="类内初始值" class="md-nav__link">
-      类内初始值
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CppPrimer/cheatsheet/运算符重载/" title="运算符重载" class="md-nav__link">
-      运算符重载
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CppPrimer/cheatsheet/向set中插入自定义类型对象/" title="向set中插入自定义类型对象" class="md-nav__link">
-      向set中插入自定义类型对象
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -1400,8 +1303,10 @@
 <hr />
 <h2 id="_2">整型</h2>
 <p>C语言支持两种根本不同的数值类型：整型和浮点型。整型的值都是数，而浮点型可能还有小数部分。整型还分为有符号的和无符号的。</p>
-<p>!!!note “有符号整数和无符号整数”
-    在有符号数中，如果数为正数或零，那么最左边的位（符号位）为0，如果是负数，符号位则为1。默认情况下，C语言中的整型变量都是有符号的。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在有符号数中，如果数为正数或零，那么最左边的位（符号位）为0，如果是负数，符号位则为1。默认情况下，C语言中的整型变量都是有符号的。</p>
+</div>
 <p>C语言提供了不同尺寸的整型， int 是正常的尺寸。可以指明变量是 long 型或 short 型， signed 型或 unsigned 型。可以有这些类型组合：</p>
 <p>short int, unsigned short int, int, unsigned int, long int, unsigned long int</p>
 <p>可以把 int 省略掉，即 short int 可以写成 short 。</p>
@@ -1484,6 +1389,10 @@
 <p>表达式 sizeof(char) 的值始终为1。</p>
 <p>通常情况下， sizeof 运算符也可以应用于常量、变量和表达式。</p>
 <p>既然 sizeof 返回的是无符号的整型，所以最安全的做法是把 sizeof 表达式转换成 unsigned long 型。然后用转换说明符 %lu 进行。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>或者用%z来输出sizeof的结果。</p>
+</div>
 <h2 id="_12">类型转换</h2>
 <p>为了让计算机执行算术运算，通常要求操作数有相同的大小（即位的数量相同），并且要求存储的方式也相同。</p>
 <p>C语言允许表达式中混合使用基本数据类型，这种情况下编译器可能需要生成一些指令将某些操作数转换成不同类型，使得硬件可以对表达式进行计算。这类转换是隐式转换（ implicit conversion ）。C语言还允许程序员通过强制运算符执行显式转换（ explicit conversion ）。</p>
@@ -1579,7 +1488,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
         
         
@@ -1602,13 +1511,12 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.2",url:{base:"../.."}})</script>
       
     
     
       
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>
