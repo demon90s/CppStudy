@@ -1212,9 +1212,15 @@
 </pre></div>
 
 
-<p>型别推导会这样做：
-1. 若expr具有引用型别，先将引用部分忽略。
-2. 尔后，对expr的型别和ParamType的型别执行模式匹配，来决定T的型别。</p>
+<p>型别推导会这样做：</p>
+<ol>
+<li>
+<p>若expr具有引用型别，先将引用部分忽略。</p>
+</li>
+<li>
+<p>尔后，对expr的型别和ParamType的型别执行模式匹配，来决定T的型别。</p>
+</li>
+</ol>
 <h2 id="2-paramtype">情况2 ParamType是万能引用</h2>
 <p>即如下：</p>
 <div class="codehilite"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
@@ -1237,6 +1243,10 @@
 <li>若expr具有引用型别，则忽略其引用部分。</li>
 <li>之后，若expr是个const对象，也忽略之。</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这里说的const对象是指顶层const，即如果是<code>const char *const</code>，那么会推导成<code>const char *</code>。</p>
+</div>
 <h2 id="_1">数组实参</h2>
 <p>由于数组到指针的退化规则的存在，如果模板函数如：</p>
 <div class="codehilite"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
