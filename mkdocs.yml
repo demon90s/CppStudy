@@ -66,7 +66,8 @@ nav:
 
   - Effective Modern C++:
     - ch01_型别推导:
-      - 条款1_理解模板型别推导: EffectiveModernCpp/ch01/条款1_理解模板型别推导.md
+      - 条款1_理解模板型别推导: EffectiveModernCpp/ch01_型别推导/条款1_理解模板型别推导.md
+      - 条款2_理解auto型别推导: EffectiveModernCpp/ch01_型别推导/条款2_理解auto型别推导.md
 
 theme:
   name: 'material'
