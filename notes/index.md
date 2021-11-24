@@ -25,3 +25,5 @@
 [C语言程序设计：现代方法](https://book.douban.com/subject/4279678/)
 
 [C++ Primer 5th](https://book.douban.com/subject/25708312/)
+
+[Effective Modern C++](https://book.douban.com/subject/30178902/)

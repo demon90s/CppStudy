@@ -1,7 +1,7 @@
-site_name: C/C++ Study Note
-site_description: C/C++ Study Note
+site_name: C/C++学习笔记
+site_description: C/C++学习笔记
 
-copyright: 'Copyright &copy; since 2018 Diwen Liu'
+copyright: 'Copyright &copy; 2018-2021 Diwen Liu'
 
 docs_dir: notes
 
@@ -9,7 +9,7 @@ repo_url: https://github.com/demon90s/CppStudy
 edit_uri: "tree/master/notes"
 
 nav:
-  - Introduction: index.md
+  - 简介: index.md
 
   - C语言程序设计:
     - Chapters:
