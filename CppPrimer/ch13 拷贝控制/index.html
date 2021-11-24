@@ -1,40 +1,18 @@
 
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="C/C++学习笔记">
       
       
       
       
-        <meta name="lang:clipboard.copy" content="复制">
-      
-        <meta name="lang:clipboard.copied" content="已复制">
-      
-        <meta name="lang:search.language" content="en, jp">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
-      
-        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
-      
-        <meta name="lang:search.result.other" content="# 个符合条件的结果">
-      
-        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.2, mkdocs-material-3.0.3">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -42,116 +20,116 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
-        <meta name="theme-color" content="#2196f3">
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
-    
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:300,400,400i,700|PT+Sans">
-        <style>body,input{font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"PT Sans","Courier New",Courier,monospace}</style>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+
+
     
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="../../#_1" tabindex="1" class="md-skip">
-        跳转至
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="C/C++学习笔记" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon">school</i>
-          
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="C/C++学习笔记" class="md-header__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C/C++学习笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
-              <span class="md-header-nav__topic">
-                C/C++学习笔记
-              </span>
-              <span class="md-header-nav__topic">
-                ch13 拷贝控制
-              </span>
+              ch13 拷贝控制
             
-          
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            键入以开始搜索
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -159,74 +137,64 @@
     </div>
   </div>
 </div>
-          
+    
+    
+      <div class="md-header__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+<a href="https://github.com/demon90s/CppStudy/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
     
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
       </div>
     
-    <div class="md-source__repository">
-      GitHub
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
   </nav>
+  
 </header>
     
-    <div class="md-container">
-      
-        
+    <div class="md-container" data-md-component="container">
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
+  
+  
+
+
   <li class="md-tabs__item">
-    
-      <a href="../.." title="简介" class="md-tabs__link">
-        简介
-      </a>
-    
+    <a href="../.." class="md-tabs__link">
+      简介
+    </a>
   </li>
 
       
         
   
   
+
+
+  
+  
+  
     
-    
+
+  
   
   
     <li class="md-tabs__item">
-      
-        <a href="../../CProgramming/ch01 C语言概述/" title="C语言程序设计" class="md-tabs__link">
-          C语言程序设计
-        </a>
-      
+      <a href="../../CProgramming/ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-tabs__link">
+        C语言程序设计
+      </a>
     </li>
   
 
@@ -237,15 +205,21 @@
   
   
     
+  
+
+
+  
+  
+  
     
+
+  
   
   
     <li class="md-tabs__item">
-      
-        <a href="../ch01 开始/" title="C++ Primer" class="md-tabs__link md-tabs__link--active">
-          C++ Primer
-        </a>
-      
+      <a href="../ch01%20%E5%BC%80%E5%A7%8B/" class="md-tabs__link md-tabs__link--active">
+        C++ Primer
+      </a>
     </li>
   
 
@@ -255,16 +229,20 @@
         
   
   
+
+
+  
+  
+  
     
-    
+
+  
   
   
     <li class="md-tabs__item">
-      
-        <a href="../../EffectiveModernCpp/ch01_型别推导/条款1_理解模板型别推导/" title="Effective Modern C++" class="md-tabs__link">
-          Effective Modern C++
-        </a>
-      
+      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-tabs__link">
+        Effective Modern C++
+      </a>
     </li>
   
 
@@ -274,44 +252,44 @@
     </ul>
   </div>
 </nav>
+          
+        
       
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="C/C++学习笔记" class="md-nav__button md-logo">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="C/C++学习笔记" class="md-nav__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
       
-        <i class="md-icon">school</i>
-      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
     </a>
     C/C++学习笔记
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-
-  <a href="https://github.com/demon90s/CppStudy/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+<a href="https://github.com/demon90s/CppStudy/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
     
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
-    </div>
-  </a>
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -320,408 +298,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../.." title="简介" class="md-nav__link">
-      简介
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      C语言程序设计
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        C语言程序设计
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
-    
-    <label class="md-nav__link" for="nav-2-1">
-      Chapters
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-1">
-        Chapters
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch01 C语言概述/" title="ch01 C语言概述" class="md-nav__link">
-      ch01 C语言概述
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch02 C语言基本概念/" title="ch02 C语言基本概念" class="md-nav__link">
-      ch02 C语言基本概念
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch03 格式化输入输出/" title="ch03 格式化输入输出" class="md-nav__link">
-      ch03 格式化输入输出
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch04 表达式/" title="ch04 表达式" class="md-nav__link">
-      ch04 表达式
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch05 选择语句/" title="ch05 选择语句" class="md-nav__link">
-      ch05 选择语句
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch06 循环/" title="ch06 循环" class="md-nav__link">
-      ch06 循环
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch07 基本类型/" title="ch07 基本类型" class="md-nav__link">
-      ch07 基本类型
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch08 数组/" title="ch08 数组" class="md-nav__link">
-      ch08 数组
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch09 函数/" title="ch09 函数" class="md-nav__link">
-      ch09 函数
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch10 程序结构/" title="ch10 程序结构" class="md-nav__link">
-      ch10 程序结构
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch11 指针/" title="ch11 指针" class="md-nav__link">
-      ch11 指针
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch12 指针和数组/" title="ch12 指针和数组" class="md-nav__link">
-      ch12 指针和数组
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch13 字符串/" title="ch13 字符串" class="md-nav__link">
-      ch13 字符串
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch14 预处理器/" title="ch14 预处理器" class="md-nav__link">
-      ch14 预处理器
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch15 编写大规模程序/" title="ch15 编写大规模程序" class="md-nav__link">
-      ch15 编写大规模程序
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch16 结构、联合和枚举/" title="ch16 结构、联合和枚举" class="md-nav__link">
-      ch16 结构、联合和枚举
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch17 指针的高级应用/" title="ch17 指针的高级应用" class="md-nav__link">
-      ch17 指针的高级应用
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch18 声明/" title="ch18 声明" class="md-nav__link">
-      ch18 声明
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch19 程序设计/" title="ch19 程序设计" class="md-nav__link">
-      ch19 程序设计
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch20 低级程序设计/" title="ch20 低级程序设计" class="md-nav__link">
-      ch20 低级程序设计
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch21 标准库/" title="ch21 标准库" class="md-nav__link">
-      ch21 标准库
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch22 输入_输出/" title="ch22 输入输出" class="md-nav__link">
-      ch22 输入输出
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch23 库对数值和字符数据的支持/" title="ch23 库对数值和字符数据的支持" class="md-nav__link">
-      ch23 库对数值和字符数据的支持
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch24 错误处理/" title="ch24 错误处理" class="md-nav__link">
-      ch24 错误处理
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch25 国际化特性/" title="ch25 国际化特性" class="md-nav__link">
-      ch25 国际化特性
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/ch26 其他库函数/" title="ch26 其他库函数" class="md-nav__link">
-      ch26 其他库函数
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
-    
-    <label class="md-nav__link" for="nav-2-2">
-      CheatSheet
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        CheatSheet
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CProgramming/cheatsheet/惯用法/" title="惯用法" class="md-nav__link">
-      惯用法
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
 
     
       
@@ -729,264 +314,790 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          C语言程序设计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="C语言程序设计" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C语言程序设计
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-3">
-      C++ Primer
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        C++ Primer
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Chapters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapters" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Chapters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
-          
-          
-
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        ch01 C语言概述
+      </a>
+    </li>
   
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
-    
-    <label class="md-nav__link" for="nav-3-1">
-      Chapters
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
-        Chapters
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch01 开始/" title="ch01 开始" class="md-nav__link">
-      ch01 开始
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02 变量和基本类型/" title="ch02 变量和基本类型" class="md-nav__link">
-      ch02 变量和基本类型
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch03 字符串、向量和数组/" title="ch03 字符串、向量和数组" class="md-nav__link">
-      ch03 字符串、向量和数组
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch04 表达式/" title="ch04 表达式" class="md-nav__link">
-      ch04 表达式
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch05 语句/" title="ch05 语句" class="md-nav__link">
-      ch05 语句
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch06 函数/" title="ch06 函数" class="md-nav__link">
-      ch06 函数
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch07 类/" title="ch07 类" class="md-nav__link">
-      ch07 类
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch08 IO库/" title="ch08 IO库" class="md-nav__link">
-      ch08 IO库
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch09 顺序容器/" title="ch09 顺序容器" class="md-nav__link">
-      ch09 顺序容器
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch10 泛型算法/" title="ch10 泛型算法" class="md-nav__link">
-      ch10 泛型算法
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch11 关联容器/" title="ch11 关联容器" class="md-nav__link">
-      ch11 关联容器
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch12 动态内存/" title="ch12 动态内存" class="md-nav__link">
-      ch12 动态内存
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch02%20C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
+        ch02 C语言基本概念
+      </a>
+    </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch03%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        ch03 格式化输入输出
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+        ch04 表达式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch05%20%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        ch05 选择语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch06%20%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+        ch06 循环
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        ch07 基本类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch08%20%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        ch08 数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch09%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        ch09 函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        ch10 程序结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch11%20%E6%8C%87%E9%92%88/" class="md-nav__link">
+        ch11 指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        ch12 指针和数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch13%20%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+        ch13 字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch14%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="md-nav__link">
+        ch14 预处理器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch15%20%E7%BC%96%E5%86%99%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        ch15 编写大规模程序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" class="md-nav__link">
+        ch16 结构、联合和枚举
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch17%20%E6%8C%87%E9%92%88%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        ch17 指针的高级应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch18%20%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+        ch18 声明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch19%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        ch19 程序设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch20%20%E4%BD%8E%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        ch20 低级程序设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch21%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
+        ch21 标准库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch22%20%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        ch22 输入输出
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch23%20%E5%BA%93%E5%AF%B9%E6%95%B0%E5%80%BC%E5%92%8C%E5%AD%97%E7%AC%A6%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%AF%E6%8C%81/" class="md-nav__link">
+        ch23 库对数值和字符数据的支持
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch24%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="md-nav__link">
+        ch24 错误处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch25%20%E5%9B%BD%E9%99%85%E5%8C%96%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ch25 国际化特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/ch26%20%E5%85%B6%E4%BB%96%E5%BA%93%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        ch26 其他库函数
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          CheatSheet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CheatSheet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          CheatSheet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CProgramming/cheatsheet/%E6%83%AF%E7%94%A8%E6%B3%95/" class="md-nav__link">
+        惯用法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
     
       
+      
+      
+
+  
+  
     
+  
+  
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          C++ Primer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="C++ Primer" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          C++ Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Chapters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapters" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Chapters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01%20%E5%BC%80%E5%A7%8B/" class="md-nav__link">
+        ch01 开始
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        ch02 变量和基本类型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        ch03 字符串、向量和数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+        ch04 表达式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05%20%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        ch05 语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        ch06 函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07%20%E7%B1%BB/" class="md-nav__link">
+        ch07 类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08%20IO%E5%BA%93/" class="md-nav__link">
+        ch08 IO库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+        ch09 顺序容器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        ch10 泛型算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+        ch11 关联容器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" class="md-nav__link">
+        ch12 动态内存
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ch13 拷贝控制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ch13 拷贝控制
-      </label>
-    
-    <a href="./" title="ch13 拷贝控制" class="md-nav__link md-nav__link--active">
-      ch13 拷贝控制
-    </a>
-    
+      </a>
       
-<nav class="md-nav md-nav--secondary">
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="拷贝、赋值与销毁" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     拷贝、赋值与销毁
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="拷贝、赋值与销毁">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="拷贝构造函数" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     拷贝构造函数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="拷贝赋值运算符" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     拷贝赋值运算符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="析构函数" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     析构函数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" title="三/五法则" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     三/五法则
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#default" title="使用=default" class="md-nav__link">
+  <a href="#default" class="md-nav__link">
     使用=default
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="阻止拷贝" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     阻止拷贝
   </a>
   
@@ -998,22 +1109,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="拷贝控制和资源管理" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     拷贝控制和资源管理
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="拷贝控制和资源管理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" title="行为像值的类" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     行为像值的类
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" title="定义行为像指针的类" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     定义行为像指针的类
   </a>
   
@@ -1025,29 +1136,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" title="交换操作" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     交换操作
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" title="对象移动" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     对象移动
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="对象移动">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" title="右值引用" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     右值引用
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" title="移动构造函数和移动赋值运算符" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     移动构造函数和移动赋值运算符
   </a>
   
@@ -1059,175 +1170,211 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" title="右值引用和成员函数" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     右值引用和成员函数
   </a>
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        ch14 操作重载与类型转换
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        ch15 面向对象程序设计
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch16%20%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        ch16 模板与泛型编程
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-nav__link">
-      ch14 操作重载与类型转换
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17%20%E6%A0%87%E5%87%86%E5%BA%93%E7%89%B9%E6%AE%8A%E8%AE%BE%E6%96%BD/" class="md-nav__link">
+        ch17 标准库特殊设施
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        ch18 用于大型程序的工具
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19%20%E7%89%B9%E6%AE%8A%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF/" class="md-nav__link">
+        ch19 特殊工具与技术
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../ch15 面向对象程序设计/" title="ch15 面向对象程序设计" class="md-nav__link">
-      ch15 面向对象程序设计
-    </a>
-  </li>
-
-        
+            
           
+        </ul>
+      </nav>
+    </li>
+  
+
+            
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch16 模板与泛型编程/" title="ch16 模板与泛型编程" class="md-nav__link">
-      ch16 模板与泛型编程
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch17 标准库特殊设施/" title="ch17 标准库特殊设施" class="md-nav__link">
-      ch17 标准库特殊设施
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch18 用于大型程序的工具/" title="ch18 用于大型程序的工具" class="md-nav__link">
-      ch18 用于大型程序的工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch19 特殊工具与技术/" title="ch19 特殊工具与技术" class="md-nav__link">
-      ch19 特殊工具与技术
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Effective Modern C++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Effective Modern C++" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Effective Modern C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Effective Modern C++
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Effective Modern C++
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          ch01_型别推导
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ch01_型别推导" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          ch01_型别推导
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
+        条款1_理解模板型别推导
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE2_%E7%90%86%E8%A7%A3auto%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
+        条款2_理解auto型别推导
+      </a>
+    </li>
+  
+
+            
           
+        </ul>
+      </nav>
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
-    
-    <label class="md-nav__link" for="nav-4-1">
-      ch01_型别推导
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-1">
-        ch01_型别推导
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../EffectiveModernCpp/ch01_型别推导/条款1_理解模板型别推导/" title="条款1_理解模板型别推导" class="md-nav__link">
-      条款1_理解模板型别推导
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../EffectiveModernCpp/ch01_型别推导/条款2_理解auto型别推导/" title="条款2_理解auto型别推导" class="md-nav__link">
-      条款2_理解auto型别推导
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1237,64 +1384,71 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="拷贝、赋值与销毁" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     拷贝、赋值与销毁
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="拷贝、赋值与销毁">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="拷贝构造函数" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     拷贝构造函数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="拷贝赋值运算符" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     拷贝赋值运算符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="析构函数" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     析构函数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" title="三/五法则" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     三/五法则
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#default" title="使用=default" class="md-nav__link">
+  <a href="#default" class="md-nav__link">
     使用=default
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="阻止拷贝" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     阻止拷贝
   </a>
   
@@ -1306,22 +1460,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" title="拷贝控制和资源管理" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     拷贝控制和资源管理
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="拷贝控制和资源管理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" title="行为像值的类" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     行为像值的类
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" title="定义行为像指针的类" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     定义行为像指针的类
   </a>
   
@@ -1333,29 +1487,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" title="交换操作" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     交换操作
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" title="对象移动" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     对象移动
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="对象移动">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" title="右值引用" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     右值引用
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" title="移动构造函数和移动赋值运算符" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     移动构造函数和移动赋值运算符
   </a>
   
@@ -1367,15 +1521,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" title="右值引用和成员函数" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     右值引用和成员函数
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -1385,11 +1535,13 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CppPrimer/ch13 拷贝控制.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CppPrimer/ch13 拷贝控制.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
                 
                 
                 <h1 id="_1">第十三章 拷贝控制</h1>
@@ -1400,13 +1552,12 @@
 <h2 id="_2">拷贝、赋值与销毁</h2>
 <h3 id="_3">拷贝构造函数</h3>
 <p>如果一个构造函数的第一个参数是自身类类型的引用，且任何额外参数都有默认值，则此构造函数是拷贝构造函数。</p>
-<div class="codehilite"><pre><span></span><span class="n">class</span><span class="err"> </span><span class="n">Foo</span><span class="err"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="err">    </span><span class="n">Foo</span><span class="p">();</span><span class="err">               </span><span class="c1">// 默认构造函数</span>
-<span class="err">    </span><span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="err">     </span><span class="c1">// 拷贝构造函数</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Foo</span><span class="p">();</span><span class="w">               </span><span class="c1">// 默认构造函数</span>
+<span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="w">     </span><span class="c1">// 拷贝构造函数</span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <p><strong>合成拷贝构造函数</strong></p>
 <p>如果我们没有为一个类定义拷贝构造函数，编译器会为我们定义一个。合成拷贝构造函数（synthesized copy constructor）会将其参数的成员逐个拷贝到正在创建的对象中。</p>
@@ -1427,33 +1578,30 @@
 <p>某些类类型还会对它们所分配的对象使用拷贝初始化，如调用标准库容器的insert或push成员时。</p>
 <h3 id="_4">拷贝赋值运算符</h3>
 <p>类可以控制其对象如何赋值：</p>
-<div class="codehilite"><pre><span></span><span class="n">Sales_data</span><span class="err"> </span><span class="n">trans</span><span class="p">,</span><span class="err"> </span><span class="n">accum</span><span class="p">;</span>
-<span class="n">trans</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">accum</span><span class="p">;</span><span class="err">    </span><span class="c1">// 使用Sales_data的拷贝赋值运算符</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">Sales_data</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="n">accum</span><span class="p">;</span><span class="w"></span>
+<span class="n">trans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accum</span><span class="p">;</span><span class="w">    </span><span class="c1">// 使用Sales_data的拷贝赋值运算符</span>
+</code></pre></div>
 
 <p><strong>重载赋值运算符</strong></p>
 <p>重载运算符（overloaded operator）本质上是函数，其名字是由operator关键字后接运算符符号组成。因此，赋值运算符就是一个名为operator=的函数。</p>
 <p>重载运算符的参数表示运算符的运算对象。某些运算符，包括赋值运算符，必须定义为成员函数。如果一个运算符是一个成员函数，其左侧运算对象就绑定到隐式的this参数。对于二元运算符，例如赋值运算符，其右侧运算对象作为显式参数传递。</p>
 <p>拷贝赋值运算符接受一个与其所在类相同类型的参数：</p>
-<div class="codehilite"><pre><span></span><span class="n">class</span><span class="err"> </span><span class="n">Foo</span><span class="err"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="err">    </span><span class="n">Foo</span><span class="o">&amp;</span><span class="err"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="err">    </span><span class="c1">// 赋值运算符</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Foo</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="w">    </span><span class="c1">// 赋值运算符</span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <p><strong>合成拷贝赋值运算符</strong></p>
 <p>如果一个类未定义自己的拷贝赋值运算符，编译器会为它合成一个。合成的版本会将右侧运算对象的每个非static成员赋予左侧运算符对象的对应成员。对于数组类型的成员，逐个赋值数组元素。</p>
 <h3 id="_5">析构函数</h3>
 <p>析构函数执行与构造函数相反的操作：构造函数初始化对象的非static数据成员，还可能做一些其他工作；析构函数释放对象使用的资源，并销毁对象的非static数据成员。</p>
 <p>析构函数是一个类的成员函数，名字由一个波浪号接类名构成。它没有返回值，也不接受参数：</p>
-<div class="codehilite"><pre><span></span><span class="n">class</span><span class="err"> </span><span class="n">Foo</span><span class="err"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="err">    </span><span class="o">~</span><span class="n">Foo</span><span class="p">();</span><span class="err">    </span><span class="c1">// 析构函数</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">Foo</span><span class="p">();</span><span class="w">    </span><span class="c1">// 析构函数</span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <p>由于析构函数不接受参数，因此它不能被重载。一个类只能有一个析构函数。</p>
 <p><strong>析构函数完成什么工作</strong></p>
@@ -1497,12 +1645,11 @@
 <p>在新标准下，可以通过将拷贝构造函数和拷贝赋值运算符定义为<strong>删除的函数（deleted function）</strong>来阻止拷贝。</p>
 <p>删除的函数是这样一种函数：我们虽然声明了它们，但不能以任何方式使用它们。</p>
 <p>在函数的参数列表后接=delete来通知编译器，将它定义为删除的：</p>
-<div class="codehilite"><pre><span></span><span class="k">struct</span><span class="err"> </span><span class="n">NoCopy</span><span class="err"> </span><span class="p">{</span>
-<span class="err">    </span><span class="n">NoCopy</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="p">)</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">delete</span><span class="p">;</span><span class="err">    </span><span class="c1">// 阻止拷贝</span>
-<span class="err">    </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="err"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="err"> </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="p">)</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">delete</span><span class="p">;</span><span class="err">    </span><span class="c1">// 阻止赋值</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">NoCopy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">NoCopy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w">    </span><span class="c1">// 阻止拷贝</span>
+<span class="w">    </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w">    </span><span class="c1">// 阻止赋值</span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <p>还可以对任何函数指定=delete。</p>
 <p><strong>析构函数不能是删除的成员</strong></p>
@@ -1519,15 +1666,14 @@
 <p>类的行为像一个指针，意味着拷贝一个对象时，副本和原对象使用相同的底层数据。改变副本也会改变原对象，反之亦然。</p>
 <p>详细讨论见书本和代码案例。</p>
 <p>使用这样的例子解释：</p>
-<div class="codehilite"><pre><span></span><span class="n">class</span><span class="err"> </span><span class="n">HasPtr</span><span class="err"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="err">     </span><span class="c1">// 准备定义构造函数、拷贝构造函数、拷贝赋值运算符、析构函数</span>
-<span class="k">private</span><span class="o">:</span>
-<span class="err">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="err"> </span><span class="o">*</span><span class="n">ps</span><span class="p">;</span><span class="err">    </span><span class="c1">// 管理的类外资源</span>
-<span class="err">    </span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HasPtr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">     </span><span class="c1">// 准备定义构造函数、拷贝构造函数、拷贝赋值运算符、析构函数</span>
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">ps</span><span class="p">;</span><span class="w">    </span><span class="c1">// 管理的类外资源</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <h3 id="_9">行为像值的类</h3>
 <p>对于类管理的资源，每个对象都应该拥有一份自己的拷贝。</p>
@@ -1570,29 +1716,26 @@
 <h2 id="_11">交换操作</h2>
 <p>管理资源的类通常还定义一个名为swap的函数。一些算法会在需要交换两个元素时调用swap。</p>
 <p>如果一个类定义了自己的swap，那么算法将使用类自定义的版本。否则算法将使用标准库定义的swap。标准库定义的版本可能像这样：</p>
-<div class="codehilite"><pre><span></span><span class="n">HasPtr</span><span class="err"> </span><span class="n">temp</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">v1</span><span class="p">;</span>
-<span class="n">v1</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">v2</span><span class="p">;</span>
-<span class="n">v2</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">temp</span><span class="p">;</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">HasPtr</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">;</span><span class="w"></span>
+<span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
+<span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
 
 <p>但对于HasPtr这样管理外部资源的类，可以直接交换指针，而不是分配多一个副本。</p>
-<div class="codehilite"><pre><span></span><span class="n">string</span><span class="err"> </span><span class="o">*</span><span class="n">temp</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span>
-<span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">v2</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span>
-<span class="n">v2</span><span class="p">.</span><span class="n">ps</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">temp</span><span class="p">;</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span><span class="w"></span>
+<span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span><span class="w"></span>
+<span class="n">v2</span><span class="p">.</span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
 
 <p>swap函数的存在是为了优化代码。详细定义方法见书本。</p>
 <p><strong>在赋值运算符中使用swap</strong></p>
 <p>定义swap的类通常用swap来定义它们的赋值运算符。这些运算符使用了一种名为<strong>拷贝并交换（copy and swap）</strong>的技术。</p>
-<div class="codehilite"><pre><span></span><span class="n">HasPtr</span><span class="err"> </span><span class="o">&amp;</span><span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">HasPtr</span><span class="err"> </span><span class="n">rhs</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="err">    </span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span><span class="err"> </span><span class="n">rhs</span><span class="p">);</span>
-<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">HasPtr</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>rhs是右侧运算对象的一个副本，它会在赋值运算符结束时被自动销毁。</p>
 <p>这种技术自动处理了自赋值的情况且天然就是异常安全的。</p>
@@ -1601,43 +1744,39 @@
 <p>使用移动而不是拷贝的另一个原因源于IO类或unique_ptr这样的类。这些类都包含不能被共享的资源（指针或IO缓冲）。因此，这些类的对象不能拷贝但可以移动。</p>
 <h3 id="_13">右值引用</h3>
 <p>为了支持移动操作，新标准引入了一种新的类型——<strong>右值引用（rvalue reference）</strong>。右值引用必须绑定到右值——一个将要销毁的对象。因此，我们可以自由地将一个右值引用的资源移动到另一个对象中。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="n">i</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">42</span><span class="p">;</span>
-<span class="kt">int</span><span class="err"> </span><span class="o">&amp;</span><span class="n">r</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">i</span><span class="p">;</span><span class="err">    </span><span class="c1">// 正确：r引用i</span>
-<span class="kt">int</span><span class="err"> </span><span class="o">&amp;&amp;</span><span class="n">rr</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">i</span><span class="p">;</span><span class="err">  </span><span class="c1">// 错误：不能将一个右值引用绑定到一个左值上</span>
-<span class="kt">int</span><span class="err"> </span><span class="o">&amp;&amp;</span><span class="n">r2</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">i</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="mi">42</span><span class="p">;</span><span class="err"> </span><span class="c1">// 正确：将rr2绑定到乘法结果上</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">    </span><span class="c1">// 正确：r引用i</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误：不能将一个右值引用绑定到一个左值上</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// 正确：将rr2绑定到乘法结果上</span>
+</code></pre></div>
 
 <p><strong>左值持久，右值短暂</strong></p>
 <p>左值与右值的区别：左值有持久的状态，而右值要么是字面常量，要么是在表达式求值过程中创建的临时对象。</p>
 <p><strong>变量是左值</strong></p>
 <p>变量可以看作只有一个运算对象而没有运算符的表达式。类似其他任何表达式，变量表达式也有左值/右值属性。变量表达式都是左值。</p>
 <p>因此，我们不能将一个右值引用绑定到一个右值引用类型的变量上：</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr1</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>     <span class="c1">// 正确：字面常量是右值</span>
-<span class="kt">int</span> <span class="o">&amp;&amp;</span><span class="n">rr2</span> <span class="o">=</span> <span class="n">rr1</span><span class="p">;</span>    <span class="c1">// 错误：表达式rr1是左值！</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">     </span><span class="c1">// 正确：字面常量是右值</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr1</span><span class="p">;</span><span class="w">    </span><span class="c1">// 错误：表达式rr1是左值！</span>
+</code></pre></div>
 
 <p><strong>标准库move函数</strong></p>
 <p>虽然不能将一个右值引用直接绑定到一个左值上，但我们可以显式地将一个左值转换为对应的右值引用类型。方法是通过调用一个名为move的新标准库函数来获得绑定到左值上的右值引用。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="err"> </span><span class="o">&amp;&amp;</span><span class="n">rr3</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="err"> </span><span class="c1">// OK</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
+</code></pre></div>
 
 <p>move调用告诉编译器：我们有一个左值，但我们希望像一个右值一样处理它。调用move就意味着承诺：除了对i赋值或销毁它外，我们将不再使用它。</p>
 <h3 id="_14">移动构造函数和移动赋值运算符</h3>
 <p>移动的版本从给定对象“窃取”资源而不是拷贝资源。</p>
 <p>移动构造函数的第一个参数是该类型的一个右值引用。与拷贝构造函数一样，任何额外的参数都必须有默认实参。</p>
 <p>除了完成资源的移动，移动构造函数还必须确保移后源对象处于这样一个状态——销毁它是无害的。</p>
-<div class="codehilite"><pre><span></span><span class="n">StrVec</span><span class="o">::</span><span class="n">StrVec</span><span class="p">(</span><span class="n">StrVec</span><span class="err"> </span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">)</span><span class="err"> </span><span class="n">noexcpet</span><span class="err"> </span><span class="c1">// 移动构造函数不应抛出异常</span>
-<span class="err"> </span><span class="c1">// 成员初始化器接管s中的资源</span>
-<span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="n">elements</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">elements</span><span class="p">),</span><span class="err"> </span><span class="n">first_free</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">first_free</span><span class="p">),</span><span class="err"> </span><span class="n">cap</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">cap</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="err">    </span><span class="c1">// 令s进入这样的状态——对其运行析构函数是安全的</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">elements</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">s</span><span class="p">.</span><span class="n">first_free</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">s</span><span class="p">.</span><span class="n">cap</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">nullptr</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">StrVec</span><span class="o">::</span><span class="n">StrVec</span><span class="p">(</span><span class="n">StrVec</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">noexcpet</span><span class="w"> </span><span class="c1">// 移动构造函数不应抛出异常</span>
+<span class="w"> </span><span class="c1">// 成员初始化器接管s中的资源</span>
+<span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">elements</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">elements</span><span class="p">),</span><span class="w"> </span><span class="n">first_free</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">first_free</span><span class="p">),</span><span class="w"> </span><span class="n">cap</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">cap</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 令s进入这样的状态——对其运行析构函数是安全的</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">first_free</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p><strong>移动操作、标准库容器和异常</strong></p>
 <p>移动操作通常不分配资源，因此通常不会抛出异常，我们应当将此事通知标准库。除非标准库知道我们的移动构造函数不会抛出异常，否则它会认为移动我们的类对象时可能会抛出异常，并且为了处理这种可能性而做一些额外的工作。</p>
@@ -1645,21 +1784,20 @@
 <p>详细的解释见书本p474。</p>
 <p><strong>移动赋值运算符</strong></p>
 <p>移动赋值运算符执行与析构函数和移动构造函数相同的工作。类似拷贝赋值运算符，移动赋值运算符必须正确处理自赋值：</p>
-<div class="codehilite"><pre><span></span><span class="n">StrVec</span><span class="o">&amp;</span><span class="err"> </span><span class="n">StrVec</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">StrVec</span><span class="err"> </span><span class="o">&amp;&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="err"> </span><span class="k">noexcept</span>
-<span class="p">{</span>
-<span class="err">    </span><span class="c1">// 直接检测自赋值</span>
-    <span class="k">if</span><span class="err"> </span><span class="p">(</span><span class="k">this</span><span class="err"> </span><span class="o">!=</span><span class="err"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="err"> </span><span class="p">{</span>
-    <span class="err">    </span><span class="n">free</span><span class="p">();</span><span class="err">    </span><span class="c1">// 释放已有资源</span>
-        <span class="n">elements</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">elements</span><span class="p">;</span><span class="err"> </span><span class="c1">// 接管资源</span>
-        <span class="n">first_free</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">first_free</span><span class="p">;</span>
-        <span class="n">cap</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">cap</span><span class="p">;</span>
-        <span class="c1">// 将rhs置于可析构状态</span>
-        <span class="n">rhs</span><span class="p">.</span><span class="n">elements</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">first_free</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">cap</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">nullptr</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span><span class="err"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">StrVec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">StrVec</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">StrVec</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 直接检测自赋值</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">free</span><span class="p">();</span><span class="w">    </span><span class="c1">// 释放已有资源</span>
+<span class="w">        </span><span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">elements</span><span class="p">;</span><span class="w"> </span><span class="c1">// 接管资源</span>
+<span class="w">        </span><span class="n">first_free</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">first_free</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">cap</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 将rhs置于可析构状态</span>
+<span class="w">        </span><span class="n">rhs</span><span class="p">.</span><span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">first_free</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p><strong>移后源对象必须可析构</strong></p>
 <p>从一个对象移动数据并不会销毁此对象，但有时在移动操作完成后，源对象会被销毁。因此，当我们编写一个移动操作时，必须确保移后源对象进入一个可析构的状态。</p>
@@ -1673,35 +1811,30 @@
 <p>如果类定义了一个移动构造函数或一个移动赋值运算符，则该类的拷贝版本会被定义为删除的。</p>
 <p><strong>移动右值，拷贝左值</strong></p>
 <p>如果一个类既有移动构造函数，也有拷贝构造函数，编译器使用普通的函数匹配规则来确定使用哪个构造函数。赋值操作的情况类似。</p>
-<div class="codehilite"><pre><span></span><span class="n">StrVec</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">;</span>
-<span class="n">v1</span> <span class="o">=</span> <span class="n">v2</span><span class="p">;</span>                    <span class="c1">// v2是左值，使用拷贝赋值</span>
-<span class="n">StrVec</span> <span class="nf">getVec</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">);</span>    <span class="c1">// getVec返回一个右值</span>
-<span class="n">v2</span> <span class="o">=</span> <span class="n">getVec</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>           <span class="c1">// getVec(cin)是一个右值；使用移动赋值</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="n">StrVec</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
+<span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w">                    </span><span class="c1">// v2是左值，使用拷贝赋值</span>
+<span class="n">StrVec</span><span class="w"> </span><span class="nf">getVec</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">);</span><span class="w">    </span><span class="c1">// getVec返回一个右值</span>
+<span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getVec</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span><span class="w">           </span><span class="c1">// getVec(cin)是一个右值；使用移动赋值</span>
+</code></pre></div>
 
 <p><strong>更新三/五法则</strong></p>
 <p>所有五个拷贝控制成员应该看作一个整体：一般来说，如果一个类定义了任何一个拷贝操作，它就应该定义所有五个操作。这些类通常拥有一个资源，而拷贝成员必须拷贝此资源。一般来说，拷贝一个资源会导致一些额外开销。在这种拷贝并非必要的情况下，定义了移动构造函数和移动赋值运算符的类就可以避免此问题。</p>
 <h2 id="_15">右值引用和成员函数</h2>
 <p>除了构造函数和赋值运算符之外，成员函数也可以提供拷贝和移动的版本：一个版本有一个右值引用参数，而另一个版本有一个const左值引用。</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">push_back</span><span class="p">(</span><span class="k">const</span> <span class="n">X</span><span class="o">&amp;</span><span class="p">);</span>   <span class="c1">// 拷贝：绑定到任意类型的X</span>
-<span class="kt">void</span> <span class="nf">push_back</span><span class="p">(</span><span class="n">X</span><span class="o">&amp;&amp;</span><span class="p">);</span>        <span class="c1">// 移动：只能绑定到类型X的可修改的右值</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">X</span><span class="o">&amp;</span><span class="p">);</span><span class="w">   </span><span class="c1">// 拷贝：绑定到任意类型的X</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="n">X</span><span class="o">&amp;&amp;</span><span class="p">);</span><span class="w">        </span><span class="c1">// 移动：只能绑定到类型X的可修改的右值</span>
+</code></pre></div>
 
 <p><strong>右值和左值引用成员函数</strong></p>
 <p>我们可以强制左侧运算对象是一个左值。</p>
 <p>我们指出this的左值/右值属性的方式与定义const成员函数相同，即，在参数列表后放置一个<strong>引用限定符（reference qualifier）</strong>。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Foo</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">&amp;</span><span class="p">;</span>   <span class="c1">// 只能向可修改的左值赋值</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="p">;</span><span class="w">   </span><span class="c1">// 只能向可修改的左值赋值</span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <p>引用限定符可以是&amp;或&amp;&amp;，分别指出this可以指向一个左值或右值。如果存在const限定符，引用限定符必须跟随在const限定符之后。</p>
-                
-                  
                 
               
               
@@ -1712,45 +1845,46 @@
             </article>
           </div>
         </div>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
         
-          <a href="../ch12 动态内存/" title="ch12 动态内存" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  后退
-                </span>
-                ch12 动态内存
+        <a href="../ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ch12 动态内存" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
               </span>
+              ch12 动态内存
             </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="../ch14 操作重载与类型转换/" title="ch14 操作重载与类型转换" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  前进
-                </span>
-                ch14 操作重载与类型转换
+        <a href="../ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-footer__link md-footer__link--next" aria-label="下一页: ch14 操作重载与类型转换" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
               </span>
+              ch14 操作重载与类型转换
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1760,50 +1894,27 @@
             Copyright &copy; 2018-2021 Diwen Liu
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
         
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
       
     </div>
   </div>
 </footer>
       
     </div>
-    
-      <script src="../../assets/javascripts/application.583bbe55.js"></script>
-      
-        
-        
-          
-          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
-          
-            
-          
-            
-              
-                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
-              
-            
-          
-          
-            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
-          
-        
-      
-      <script>app.initialize({version:"1.0.2",url:{base:"../.."}})</script>
-      
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
