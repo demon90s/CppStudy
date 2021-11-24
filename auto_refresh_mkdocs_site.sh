@@ -3,8 +3,10 @@
 while true; do
 	sleep 3
 
-	git pull origin master
+	if git pull origin master | grep '^Updating' ; then
 
-	echo "[$(date)] mkdocs gh-deploy"
-	mkdocs gh-deploy
+		echo "[$(date)] mkdocs gh-deploy"
+		python -m mkdocs gh-deploy
+
+	fi
 done
