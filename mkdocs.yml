@@ -72,7 +72,8 @@ nav:
 theme:
   name: material
   palette:
-    scheme: slate
+    #scheme: slate
+    scheme: default 
   features:
     - navigation.tabs
   #logo:
