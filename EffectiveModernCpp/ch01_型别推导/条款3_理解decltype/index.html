@@ -11,19 +11,19 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>ch15 编写大规模程序 - C/C++学习笔记</title>
+        <title>条款3_理解decltype - C/C++学习笔记</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -55,7 +55,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#3-decltype" class="md-skip">
           跳转至
         </a>
       
@@ -76,7 +76,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="C/C++学习笔记" class="md-header__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
+    <a href="../../.." title="C/C++学习笔记" class="md-header__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ch15 编写大规模程序
+              条款3_理解decltype
             
           </span>
         </div>
@@ -172,7 +172,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       简介
     </a>
   </li>
@@ -180,8 +180,6 @@
       
         
   
-  
-    
   
 
 
@@ -194,7 +192,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../CProgramming/ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-tabs__link">
         C语言程序设计
       </a>
     </li>
@@ -217,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-tabs__link">
+      <a href="../../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-tabs__link">
         C++ Primer
       </a>
     </li>
@@ -228,6 +226,8 @@
       
         
   
+  
+    
   
 
 
@@ -240,7 +240,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-tabs__link">
+      <a href="../%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-tabs__link md-tabs__link--active">
         Effective Modern C++
       </a>
     </li>
@@ -270,7 +270,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="C/C++学习笔记" class="md-nav__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
+    <a href="../../.." title="C/C++学习笔记" class="md-nav__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -302,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         简介
       </a>
     </li>
@@ -315,14 +315,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -343,14 +341,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
       
       
@@ -373,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      <a href="../../../CProgramming/ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         ch01 C语言概述
       </a>
     </li>
@@ -387,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch02%20C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
+      <a href="../../../CProgramming/ch02%20C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
         ch02 C语言基本概念
       </a>
     </li>
@@ -401,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../../CProgramming/ch03%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
         ch03 格式化输入输出
       </a>
     </li>
@@ -415,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../CProgramming/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         ch04 表达式
       </a>
     </li>
@@ -429,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch05%20%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../../../CProgramming/ch05%20%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         ch05 选择语句
       </a>
     </li>
@@ -443,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch06%20%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+      <a href="../../../CProgramming/ch06%20%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
         ch06 循环
       </a>
     </li>
@@ -457,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../CProgramming/ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         ch07 基本类型
       </a>
     </li>
@@ -471,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch08%20%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../CProgramming/ch08%20%E6%95%B0%E7%BB%84/" class="md-nav__link">
         ch08 数组
       </a>
     </li>
@@ -485,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch09%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../CProgramming/ch09%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
         ch09 函数
       </a>
     </li>
@@ -499,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../CProgramming/ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" class="md-nav__link">
         ch10 程序结构
       </a>
     </li>
@@ -513,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch11%20%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../../CProgramming/ch11%20%E6%8C%87%E9%92%88/" class="md-nav__link">
         ch11 指针
       </a>
     </li>
@@ -527,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../CProgramming/ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
         ch12 指针和数组
       </a>
     </li>
@@ -541,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch13%20%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+      <a href="../../../CProgramming/ch13%20%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
         ch13 字符串
       </a>
     </li>
@@ -555,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch14%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="md-nav__link">
+      <a href="../../../CProgramming/ch14%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="md-nav__link">
         ch14 预处理器
       </a>
     </li>
@@ -567,135 +563,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ch15 编写大规模程序
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../CProgramming/ch15%20%E7%BC%96%E5%86%99%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
         ch15 编写大规模程序
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    源文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    头文件
-  </a>
-  
-    <nav class="md-nav" aria-label="头文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#include" class="md-nav__link">
-    include 指令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    共享宏定义和类型定义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    共享函数原型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    共享变量的声明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    保护头文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error" class="md-nav__link">
-    头文件中的#error指令
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    构建多文件程序
-  </a>
-  
-    <nav class="md-nav" aria-label="构建多文件程序">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#makefile" class="md-nav__link">
-    makefile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    在程序外定义宏
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -707,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" class="md-nav__link">
+      <a href="../../../CProgramming/ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" class="md-nav__link">
         ch16 结构、联合和枚举
       </a>
     </li>
@@ -721,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch17%20%E6%8C%87%E9%92%88%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" class="md-nav__link">
+      <a href="../../../CProgramming/ch17%20%E6%8C%87%E9%92%88%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" class="md-nav__link">
         ch17 指针的高级应用
       </a>
     </li>
@@ -735,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch18%20%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+      <a href="../../../CProgramming/ch18%20%E5%A3%B0%E6%98%8E/" class="md-nav__link">
         ch18 声明
       </a>
     </li>
@@ -749,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch19%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../CProgramming/ch19%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         ch19 程序设计
       </a>
     </li>
@@ -763,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch20%20%E4%BD%8E%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../CProgramming/ch20%20%E4%BD%8E%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         ch20 低级程序设计
       </a>
     </li>
@@ -777,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch21%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
+      <a href="../../../CProgramming/ch21%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
         ch21 标准库
       </a>
     </li>
@@ -791,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch22%20%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../../CProgramming/ch22%20%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA/" class="md-nav__link">
         ch22 输入输出
       </a>
     </li>
@@ -805,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch23%20%E5%BA%93%E5%AF%B9%E6%95%B0%E5%80%BC%E5%92%8C%E5%AD%97%E7%AC%A6%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%AF%E6%8C%81/" class="md-nav__link">
+      <a href="../../../CProgramming/ch23%20%E5%BA%93%E5%AF%B9%E6%95%B0%E5%80%BC%E5%92%8C%E5%AD%97%E7%AC%A6%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%AF%E6%8C%81/" class="md-nav__link">
         ch23 库对数值和字符数据的支持
       </a>
     </li>
@@ -819,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch24%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="md-nav__link">
+      <a href="../../../CProgramming/ch24%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="md-nav__link">
         ch24 错误处理
       </a>
     </li>
@@ -833,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch25%20%E5%9B%BD%E9%99%85%E5%8C%96%E7%89%B9%E6%80%A7/" class="md-nav__link">
+      <a href="../../../CProgramming/ch25%20%E5%9B%BD%E9%99%85%E5%8C%96%E7%89%B9%E6%80%A7/" class="md-nav__link">
         ch25 国际化特性
       </a>
     </li>
@@ -847,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch26%20%E5%85%B6%E4%BB%96%E5%BA%93%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../CProgramming/ch26%20%E5%85%B6%E4%BB%96%E5%BA%93%E5%87%BD%E6%95%B0/" class="md-nav__link">
         ch26 其他库函数
       </a>
     </li>
@@ -894,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheatsheet/%E6%83%AF%E7%94%A8%E6%B3%95/" class="md-nav__link">
+      <a href="../../../CProgramming/cheatsheet/%E6%83%AF%E7%94%A8%E6%B3%95/" class="md-nav__link">
         惯用法
       </a>
     </li>
@@ -975,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-nav__link">
         ch01 开始
       </a>
     </li>
@@ -989,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         ch02 变量和基本类型
       </a>
     </li>
@@ -1003,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
         ch03 字符串、向量和数组
       </a>
     </li>
@@ -1017,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         ch04 表达式
       </a>
     </li>
@@ -1031,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch05%20%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch05%20%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         ch05 语句
       </a>
     </li>
@@ -1045,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch06%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch06%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
         ch06 函数
       </a>
     </li>
@@ -1059,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch07%20%E7%B1%BB/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch07%20%E7%B1%BB/" class="md-nav__link">
         ch07 类
       </a>
     </li>
@@ -1073,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch08%20IO%E5%BA%93/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch08%20IO%E5%BA%93/" class="md-nav__link">
         ch08 IO库
       </a>
     </li>
@@ -1087,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         ch09 顺序容器
       </a>
     </li>
@@ -1101,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" class="md-nav__link">
         ch10 泛型算法
       </a>
     </li>
@@ -1115,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         ch11 关联容器
       </a>
     </li>
@@ -1129,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" class="md-nav__link">
         ch12 动态内存
       </a>
     </li>
@@ -1143,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6/" class="md-nav__link">
         ch13 拷贝控制
       </a>
     </li>
@@ -1157,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
         ch14 操作重载与类型转换
       </a>
     </li>
@@ -1171,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         ch15 面向对象程序设计
       </a>
     </li>
@@ -1185,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch16%20%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch16%20%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" class="md-nav__link">
         ch16 模板与泛型编程
       </a>
     </li>
@@ -1199,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch17%20%E6%A0%87%E5%87%86%E5%BA%93%E7%89%B9%E6%AE%8A%E8%AE%BE%E6%96%BD/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch17%20%E6%A0%87%E5%87%86%E5%BA%93%E7%89%B9%E6%AE%8A%E8%AE%BE%E6%96%BD/" class="md-nav__link">
         ch17 标准库特殊设施
       </a>
     </li>
@@ -1213,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         ch18 用于大型程序的工具
       </a>
     </li>
@@ -1227,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch19%20%E7%89%B9%E6%AE%8A%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch19%20%E7%89%B9%E6%AE%8A%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF/" class="md-nav__link">
         ch19 特殊工具与技术
       </a>
     </li>
@@ -1254,12 +1126,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -1280,12 +1154,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
       
       
       
@@ -1308,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
+      <a href="../%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
         条款1_理解模板型别推导
       </a>
     </li>
@@ -1322,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE2_%E7%90%86%E8%A7%A3auto%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
+      <a href="../%E6%9D%A1%E6%AC%BE2_%E7%90%86%E8%A7%A3auto%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
         条款2_理解auto型别推导
       </a>
     </li>
@@ -1334,11 +1210,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE3_%E7%90%86%E8%A7%A3decltype/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         条款3_理解decltype
       </a>
+      
     </li>
   
 
@@ -1378,103 +1264,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    源文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    头文件
-  </a>
-  
-    <nav class="md-nav" aria-label="头文件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#include" class="md-nav__link">
-    include 指令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    共享宏定义和类型定义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    共享函数原型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    共享变量的声明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    保护头文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error" class="md-nav__link">
-    头文件中的#error指令
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    构建多文件程序
-  </a>
-  
-    <nav class="md-nav" aria-label="构建多文件程序">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#makefile" class="md-nav__link">
-    makefile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    在程序外定义宏
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1485,127 +1274,89 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CProgramming/ch15 编写大规模程序.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/EffectiveModernCpp/ch01_型别推导/条款3_理解decltype.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">第十五章 编写大规模程序</h1>
-<p>源文件包含函数的定义和外部变量，而头文件包含可以在源文件之间共享的信息。</p>
+                <h1 id="3-decltype">条款3: 理解decltype</h1>
 <hr />
-<h2 id="_2">源文件</h2>
-<p>可以把程序分割成一定数量的源文件，源文件的扩展名为<code>.c</code>。源文件主要包含函数的定义和变量。其中一个源文件必须包含名为 main 的函数，作为程序的起始点。</p>
-<p>把程序分成多个源文件有许多显著的优点：</p>
-<ul>
-<li>
-<p>把相关的函数和变量集合在单独一个文件中可以帮助明了程序的结构。</p>
-</li>
-<li>
-<p>可以单独对每一个源文件进行编译。如果程序规模很大而且需要频繁改变的话，这种方法可以极大地节约时间。</p>
-</li>
-<li>
-<p>利于复用。</p>
-</li>
-</ul>
-<h2 id="_3">头文件</h2>
-<p>当把程序分割成几个源文件时，问题也随之产生：某文件的函数如何能调用定义在其他文件中的函数？函数如何能访问其他文件中的外部变量？两个文件如何能共享同一个宏定义或类型定义？答案取决于<code>#include</code>指令。</p>
-<p><code>#include</code>指令告诉预处理器打开指定的文件，并且把此文件的内容插入到当前文件中。这种打开的文件称为头文件，其扩展名为<code>.h</code>。</p>
-<h3 id="include">include 指令</h3>
-<p><code>#include</code>指令有两种书写格式：</p>
-<ul>
-<li>
-<p><code>#include &lt;文件名&gt;</code> 搜索系统头文件所在目录，比如在 UNIX 系统中，通常是在 /usr/include</p>
-</li>
-<li>
-<p><code>#include "文件名"</code> 搜索当前目录，然后搜索系统目录</p>
-</li>
-</ul>
-<p>利用加上诸如-I这样的命令行选项可以添加搜索头文件的位置。</p>
-<h3 id="_4">共享宏定义和类型定义</h3>
-<p>大规模的程序包含用于几个源文件共享的宏定义和类型定义，这些定义应该放在头文件中。</p>
-<p>比如下图的例子：</p>
-<p><img alt="宏定义和类型定义" src="../images/%E5%AE%8F%E5%AE%9A%E4%B9%89%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89.png" /></p>
-<p>有两个源文件包含了 boolean.h</p>
-<p>把宏定义和类型定义放到头文件中有如下的好处：</p>
-<ol>
-<li>
-<p>不必把定义复制到需要的源文件，节约时间。</p>
-</li>
-<li>
-<p>程序变得更加容易修改，改变定义只需要改变头文件。</p>
-</li>
-<li>
-<p>不用担心源文件包含了相同的宏或类型而其定义不同。</p>
-</li>
-</ol>
-<h3 id="_5">共享函数原型</h3>
-<p>没有原型依赖的函数调用是很危险的，编译器的假设可能是错误的。当调用定义在其他文件中的函数时，要始终确保编译器在调用之前看到函数f的原型。</p>
-<p>解决办法就是把函数的原型放进头文件中，然后在所有调用函数f的地方包含头文件。</p>
-<p>其包含的方式可能如图所示：</p>
-<p><img alt="共享函数原型" src="../images/%E5%85%B1%E4%BA%AB%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B.png" /></p>
-<h3 id="_6">共享变量的声明</h3>
-<p>变量可以在文件中共享。</p>
-<p>为了声明变量而不定义，需要在变量声明的开始处放置关键字 extern :</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">/* in heaeder file */</span><span class="w"></span>
-<span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<p>对于给定的名字或表达式，decltype能告诉你该名字或表达式的型别。</p>
+<p>如：</p>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                </span><span class="c1">// decltype(i) 是 const int</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">w</span><span class="p">);</span><span class="w">        </span><span class="c1">// decltype(w) 是 const Widget&amp;</span>
+<span class="w">                                </span><span class="c1">// decltype(f) 是 bool(const Widget&amp;)</span>
+
+<span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w">                   </span><span class="c1">// decltype(Point::x) 是 int</span>
+<span class="p">};</span><span class="w">                              </span><span class="c1">// decltype(Point::y) 是 int</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">w</span><span class="p">))</span><span class="w"> </span><span class="p">...</span><span class="w">                   </span><span class="c1">// decltype(f(w)) 是 bool</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">vector</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">index</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w">                  </span><span class="c1">// decltype(v) 是 vector&lt;int&gt;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">...</span><span class="w">               </span><span class="c1">// decltype(v[0]) 是 int&amp;</span>
 </code></pre></div>
 
-<p>为了共享i，需要在一个源文件中定义i:</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">/* in source file */</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<p>C++11中，decltype主要用处大概在于声明那些返回值型别依赖于形参型别的函数模板。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">authenticateUser</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
-<h3 id="_7">保护头文件</h3>
-<p>如果一个源文件同时包含一个头文件两次，那么可能产生编译错误（比如包含了两次相同的类型定义）。</p>
-<p>因此要用到一种保护头文件的方法：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef BOOLEAN_H</span>
-<span class="cp">#define BOOLEAN_H</span>
-
-<span class="cm">/*</span>
-<span class="cm"> real content</span>
-<span class="cm">*/</span><span class="w"></span>
-
-<span class="cp">#endif</span>
+<p>这里的auto和型别推导没有关系，这是C++11中的返回值型别尾序语法。</p>
+<p>C++14中可以去掉返回值型别尾序语法，只保留auto。此时auto会发生型别推导。</p>
+<p>请看下面<strong>错误</strong>的示范：</p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">authenticateUser</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
-<p>如果再次包含此头文件，预处理器就不会再扩展真实的内容。</p>
-<h3 id="error">头文件中的#error指令</h3>
-<p>经常把#error指令放置在头文件中是用来检查不应该包含头文件的条件。例如：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef DOS</span>
-<span class="cp">#error Graphics supported only under DOS</span>
-<span class="cp">#endif</span>
+<p>由于在模板型别推导中，上述表达式引用性会被忽略，于是：</p>
+<div class="codehilite"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="n">authAndAccess</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">       </span><span class="c1">// 返回 d[5] 但无法通过编译</span>
 </code></pre></div>
 
-<p>如果非DOS的程序试图包含此头文件，那么编译将在#error指令处终止。</p>
-<h2 id="_8">构建多文件程序</h2>
-<p>构建大程序的基本步骤：</p>
-<ul>
-<li>
-<p>编译，必须对每一个源文件进行编译。不需要编译头文件。编译器产生一个文件，此文件包含来自源文件的目标代码，称为目标文件（object file）。</p>
-</li>
-<li>
-<p>链接，链接器把目标文件和库文件结合在一起生成一个可执行程序。</p>
-</li>
-</ul>
-<p>大多数编译器允许用单独一步来构建程序：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">fmt</span><span class="w"> </span><span class="n">fmt</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="n">word</span><span class="p">.</span><span class="n">c</span><span class="w"></span>
+<p>上述函数返回值型别为int，作为函数的返回值，它是一个右值，所以无法将10赋给它。</p>
+<p>如何修补？在C++14中通过decltype(auto)解决。即：</p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"> </span><span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">authenticateUser</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
-<h3 id="makefile">makefile</h3>
-<p>使用 makefile 更易于构建大型程序。 makefile 列出了作为程序的部分文件，并描述了它们之间的依赖性。</p>
-<p>更多讨论见书本。</p>
-<div class="admonition note">
-<p class="admonition-title">my note</p>
-<p>一种自动生成依赖性的说明的方法是键入命令：<code>gcc -MM *.c</code></p>
-</div>
-<h3 id="_9">在程序外定义宏</h3>
-<p>大多数 UNIX 编译器支持-D选项，允许在命令行指定一个宏定义：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">DDEBUG</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">foo</span><span class="p">.</span><span class="n">c</span><span class="w"></span>
+<p>此时推导规则采用的是decltype的规则。</p>
+<p>上述函数无法传递一个右值的容器对象，如何做到？采用万能引用。同时在调用<code>operator[]</code>时使用<code>std::forward</code>保持其型别。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"></span>
+<span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">authenticateUser</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Container</span><span class="o">&gt;</span><span class="p">(</span><span class="n">c</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
-<p>定义了宏 Debug ，在 foo.c 程序中，且值为1。如同在 foo.c 中的开始出现：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define DEBUG 1</span>
+<p>如果decltype应用于复杂的左值表达式（非单纯只是一个名字）的话，decltype就保证得出的型别总是左值引用。</p>
+<p>请看：</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
+
+<p>decltype(x)结果是int。但如果<code>decltype((x))</code>的话，结果就成了<code>int&amp;</code>。</p>
                 
               
               
@@ -1625,7 +1376,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch14%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ch14 预处理器" rel="prev">
+        <a href="../%E6%9D%A1%E6%AC%BE2_%E7%90%86%E8%A7%A3auto%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 条款2_理解auto型别推导" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1634,26 +1385,11 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              ch14 预处理器
+              条款2_理解auto型别推导
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" class="md-footer__link md-footer__link--next" aria-label="下一页: ch16 结构、联合和枚举" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              ch16 结构、联合和枚举
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -1682,10 +1418,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
