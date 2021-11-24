@@ -70,18 +70,22 @@ nav:
       - 条款2_理解auto型别推导: EffectiveModernCpp/ch01_型别推导/条款2_理解auto型别推导.md
 
 theme:
-  name: 'material'
-  logo:
-    icon: 'school'
+  name: material
   palette:
-    primary: 'blue'
-    accent: 'blue'
-  font:
-    text: 'PT Sans'
-    code: 'PT Sans'
+    scheme: slate
+  features:
+    - navigation.tabs
+  #logo:
+  #  icon: 'school'
+  #palette:
+  #  primary: 'blue'
+  #  accent: 'blue'
+  #font:
+  #  text: 'PT Sans'
+  #  code: 'PT Sans'
   language: 'zh'
-  feature:
-    tabs: true
+  #feature:
+  #  tabs: true
 
 extra:
   search:
@@ -91,7 +95,3 @@ markdown_extensions:
   - admonition
   - codehilite
   - pymdownx.mark
-
-google_analytics:
-  - 'UA-XXXXXXXX-X'
-  - 'auto'

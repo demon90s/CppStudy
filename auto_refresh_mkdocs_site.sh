@@ -6,7 +6,7 @@ while true; do
 	if git pull origin master | grep '^Updating' ; then
 
 		echo "[$(date)] mkdocs gh-deploy"
-		python -m mkdocs gh-deploy
+		mkdocs gh-deploy
 
 	fi
 done
