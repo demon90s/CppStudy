@@ -2031,7 +2031,7 @@
 
 <p>编译器将实例化出这样的foo版本：</p>
 <div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]);</span>
 </pre></div>
 
 
@@ -2046,7 +2046,7 @@
 
 
 <h3 id="_17">编写可变参数函数模板</h3>
-<p>我们可以使用一个initializer_list来定义一个可接受可变数目实参的函数。但是i，所有实参必须具有相容的类型。当我们既不知道想要处理的实参的数目也不知道它们的类型时，可变参数函数是很有用的。</p>
+<p>我们可以使用一个initializer_list来定义一个可接受可变数目实参的函数。但是，所有实参必须具有相容的类型。当我们既不知道想要处理的实参的数目也不知道它们的类型时，可变参数函数是很有用的。</p>
 <p>这里给出一个案例print函数来说明如何编写一个可变参数函数。</p>
 <p>可变参数函数通常是递归的。第一步调用处理包中的第一个实参，然后用剩余实参调用自身。为了终止递归，我们还需要定义一个非可变参数的版本。</p>
 <div class="codehilite"><pre><span></span><span class="c1">// 用来终止递归并打印最后一个元素的函数</span>
