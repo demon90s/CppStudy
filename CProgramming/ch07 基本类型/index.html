@@ -1598,40 +1598,34 @@
 <p>转换说明符 %e %f 和 %g 用于读写单精度浮点数，当读取 double 时，需要用 %lf ，而写 double 时，不需要加l。</p>
 <h2 id="_8">字符型</h2>
 <p>给 char 类型的变量赋值：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
 <span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>C语言会按小整数的方式处理字符。</p>
 <h3 id="_9">转义序列</h3>
 <p>一些特殊的符号无法书写，比如换行符，这时候需要用C语言提供的特殊符号转义序列（ escape sequence ）。</p>
 <p>转义序列分成两种：字符转义序列和数字转义序列。</p>
 <h3 id="_10">字符处理函数</h3>
 <p>可以使用 toupper 库函数把小写字母转成大写字母：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toupper</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toupper</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>被调用时，函数检查参数是否是小写字母，如果是，那么将它转换成大写字母，否则，函数返回参数的值。</p>
 <h3 id="_11">读写字符</h3>
 <p>转换说明符 %c 允许 scanf 函数和 printf 函数对单独一个字符进行读写操作。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>在读入字符前， scanf 不会跳过空白字符。为了强制 scanf 函数在读入字符前跳过空白字符，需要在格式串转换说明符 %c 前面加上一个空格。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 <span class="n">scanf</span><span class="p">(</span><span class="s">&quot; %c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>C语言还提供了读写单独字符的其他方法。可以使用 getchar 和 putchar 函数来替代调用 scanf 函数和 printf 函数。每次调用 getchar 函数时，它会读入一个字符，并返回这个字符。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-
 <p>putchar 函数用来写单独一个字符：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>getchar 和 putchar 会比较快，原因是它们的实现比较简单，并且通常用宏来实现。</p>
 <h2 id="sizeof">sizeof 运算符</h2>
 <p>运算符 sizeof 允许程序确定用来存储指定类型值所需的空间的大小。</p>

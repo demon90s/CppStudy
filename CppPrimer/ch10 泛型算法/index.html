@@ -1641,10 +1641,9 @@
 <p>一些算法只会读取其输入范围内的元素，而从不改变元素。比如find。</p>
 <p><strong>操作两个序列的算法</strong></p>
 <p>举一个列子：equal算法，它比较两个序列中的元素。此算法接受三个迭代器：前两个表示第一个序列中的元素的范围，第三个表示第二个序列的首元素：</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// roster2中的元素数目应该至少与roster1一样多</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// roster2中的元素数目应该至少与roster1一样多</span>
 <span class="n">equal</span><span class="p">(</span><span class="n">roster1</span><span class="p">.</span><span class="n">cbegin</span><span class="p">(),</span><span class="w"> </span><span class="n">roster1</span><span class="p">.</span><span class="n">cend</span><span class="p">(),</span><span class="w"> </span><span class="n">roster2</span><span class="p">.</span><span class="n">cbegin</span><span class="p">());</span><span class="w"></span>
 </code></pre></div>
-
 <p>这样的算法基于一个非常重要的假设：它假定第二个序列至少与第一个序列一样长。</p>
 <h3 id="_5">写容器元素的算法</h3>
 <p>一些算法将新值赋予序列中的元素。当我们使用这类算法时，必须注意确保序列原大小至少不小于我们要求算法写入元素数目（note：如容器大小足够）。</p>
@@ -1674,14 +1673,12 @@
 <p>我们可以向一个算法传递任何类别的可调用对象，对于一个对象或一个表达式，如果可以对其使用可调用运算符，则称它为可调用的。</p>
 <p>一个lambda表达式表示一个可调用的代码单元。可以将其理解为一个未命名的内联函数。一个lambda表达式具有一个返回类型、一个参数列表和一个函数体。但与函数不同，lambda可以定义在函数内部。</p>
 <p>一个lambda表达式具有如下形式：</p>
-<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">capture</span><span class="w"> </span><span class="n">list</span><span class="p">](</span><span class="n">parameter</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">capture</span><span class="w"> </span><span class="n">list</span><span class="p">](</span><span class="n">parameter</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>其中，capture list是一个lambda所在函数中定义的局部变量的列表。</p>
 <p>可以忽略返回类型，这时会自动推断返回类型。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="lambda_1">lambda捕获和返回</h3>
 <p>当定义一个lambda时，编译器生成一个与lambda对应的新的（未命名的）类类型。当向一个函数传递一个lambda时，同时定义了一个新类型和该类型的一个对象。类似地，当使用auto定义一个用lambda初始化的变量时，定义了一个从lambda生成的类型的对象。</p>
 <p>默认情况下，从lambda生成的类都包含一个对应该lambda所捕获的变量的数据成员。类似任何普通类的数据成员，lambda的数据成员也在lambda对象创建时被初始化。</p>
@@ -1694,15 +1691,14 @@
 <p><strong>隐式捕获</strong></p>
 <p>可以让编译器根据lambda体中的代码来推断要使用哪些变量。为了指示编译器推断捕获列表，应在捕获列表中写一个&amp;或=。&amp;告诉编译器采用捕获引用方式，=则表示采用值捕获方式。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// sz为隐式捕获，值捕获方式</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// sz为隐式捕获，值捕获方式</span>
 <span class="n">wc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_if</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"></span>
 <span class="w">             </span><span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">sz</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>详见lambda捕获列表，p352。</p>
 <p><strong>可变lambda</strong></p>
 <p>默认情况下，对于一个值拷贝的变量，lambda不会改变其值。如果希望改变，必须在参数列表后加上关键字mutable。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">fcn3</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">fcn3</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// f可以改变它捕获的变量的值</span>
@@ -1711,27 +1707,23 @@
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// j为43</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_9">参数绑定</h3>
 <p>对于那种只在一两个地方使用的简单操作，lambda表达式是最有用的。如果需要在很多地方使用相同的操作，或者一个操作需要很多语句完成，通常应该定义一个函数。</p>
 <p>如果lambda的捕获列表为空，通常可以用函数来代替它。但如果捕获列表不为空就不能直接代替了。</p>
 <p><strong>标准库bind函数</strong></p>
 <p>为了解决这个问题，可以使用一个新的名为bind的标准库函数，它定义在头文件functional中。它接受一个可调用对象，生成一个新的可调用对象来“适应”原对象的参数列表。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">newCallable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bind</span><span class="p">(</span><span class="n">callable</span><span class="p">,</span><span class="w"> </span><span class="n">arg_list</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">newCallable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bind</span><span class="p">(</span><span class="n">callable</span><span class="p">,</span><span class="w"> </span><span class="n">arg_list</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>newCallable本身是一个可调用对象，arg_list是一个逗号分隔的参数列表，对应给定的callable参数。即，当我们调用newCallable时，newCallable会调用callable，并传递给它arg_list中的参数。</p>
 <p>arg_list中的参数可能包含形如<code>_n</code>的名字，这些参数是“占位符”，表示newCallable的参数。比如：<code>_1</code>为newCallable的第一个参数，<code>_2</code>为第二个参数。</p>
 <p><strong>使用placeholders名字</strong></p>
 <p>名字<code>_n</code>都定义在一个名为placeholders的命名空间中，这个命名空间本身定义在std命名空间中。</p>
 <p>一种简单的using语句是：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">namespace_name</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">namespace_name</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>这种形式说明希望所有来自namespace_name的名字都可以在我们的程序中直接使用。如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="o">::</span><span class="nn">placeholders</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="o">::</span><span class="nn">placeholders</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>这使得placeholders定义的所有名字都可用。</p>
 <h2 id="_10">再探迭代器</h2>
 <p>除了每个容器的迭代器，标准库在头文件iterator中还定义了额外几种迭代器。</p>
@@ -1751,9 +1743,8 @@
 </ul>
 <h3 id="_11">插入迭代器</h3>
 <p>插入器是一种迭代器适配器，它接受一个容器，生成一个迭代器，能实现向给定容器添加元素。当我们通过一个插入迭代器进行赋值时，该迭代器调用容器操作来向给定容器的指定位置插入一个元素。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="c1">// 在it指定的当前位置插入值t。</span>
+<div class="highlight"><pre><span></span><code><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="c1">// 在it指定的当前位置插入值t。</span>
 </code></pre></div>
-
 <p>插入迭代器有三种类型，差异在于元素插入的位置：</p>
 <ul>
 <li>
@@ -1811,12 +1802,11 @@
 <p>除了输出迭代器之外，一个高层类别的迭代器支持低层类别迭代器的所有操作。</p>
 <h3 id="_14">算法的形参模式</h3>
 <p>大多数算法具有如下4种形式之一：</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">alg</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">other</span> <span class="nv">args</span><span class="ss">)</span><span class="c1">;</span>
-<span class="nv">alg</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">dest</span>, <span class="nv">other</span> <span class="nv">args</span><span class="ss">)</span><span class="c1">;</span>
-<span class="nv">alg</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">beg2</span>, <span class="nv">other</span> <span class="nv">args</span><span class="ss">)</span><span class="c1">;</span>
-<span class="nv">alg</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">beg2</span>, <span class="nv">end2</span>, <span class="nv">other</span> <span class="nv">args</span><span class="ss">)</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>alg(beg, end, other args);
+alg(beg, end, dest, other args);
+alg(beg, end, beg2, other args);
+alg(beg, end, beg2, end2, other args);
 </code></pre></div>
-
 <p>其中，alg是算法名字，beg和end表述输入范围。几乎所有算法都有一个输入范围。</p>
 <p><strong>接受单个目标迭代器的算法</strong></p>
 <p>dest参数是一个表示算法可以写入目的位置的迭代器。算法假定（assume）：按其需要写入数据，不管写入多少个元素都是安全的。</p>
@@ -1828,22 +1818,19 @@
 <p>除了参数规范，算法还遵循一套命名和重载规范。</p>
 <p><strong>一些算法使用重载形式传递一个谓词</strong></p>
 <p>函数的一个版本用元素类型的运算符来比较元素；另一个版本接受一个额外的谓词参数，来代替&lt;或==：</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">unique</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span><span class="ss">)</span><span class="c1">;</span>
-<span class="nv">unique</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">comp</span><span class="ss">)</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>unique(beg, end);
+unique(beg, end, comp);
 </code></pre></div>
-
 <p><strong>_if版本的算法</strong></p>
 <p>接受一个元素值的算法通常有另一个不同名的（不是重载的）版本，该版本接受一个谓词代替元素值。接受谓词参数的算法都有附加的_if前缀：</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">find</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">val</span><span class="ss">)</span><span class="c1">;</span>
-<span class="nv">find_if</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">pred</span><span class="ss">)</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>find(beg, end, val);
+find_if(beg, end, pred);
 </code></pre></div>
-
 <p><strong>区分拷贝元素的版本和不拷贝的版本</strong></p>
 <p>默认情况下，重排元素的算法将重排后的元素写回给定的输入序列中。这些算法还提供另一个版本，将元素写到一个指定的输出目的位置。</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">reverse</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span><span class="ss">)</span><span class="c1">;</span>
-<span class="nv">reverse_copy</span><span class="ss">(</span><span class="nv">beg</span>, <span class="k">end</span>, <span class="nv">dest</span><span class="ss">)</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>reverse(beg, end);
+reverse_copy(beg, end, dest);
 </code></pre></div>
-
 <h2 id="_16">特定容器的算法</h2>
 <p>链表类型list定义了几个成员函数形式的算法。通用版本的sort要求随机访问迭代器，因此不能用于list。</p>
 <p>链表类型定义的其他算法的通用版本可以用于链表，但代价太高。这些算法需要交换输入序列中的元素。一个链表可以通过改变元素间的链接而不是真的交换它们的值来快速“交换”元素。因此，这些链表版本的算法的性能比对应的通用版本好得多。</p>

@@ -1283,7 +1283,7 @@
 <hr />
 <p>对于给定的名字或表达式，decltype能告诉你该名字或表达式的型别。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                </span><span class="c1">// decltype(i) 是 const int</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                </span><span class="c1">// decltype(i) 是 const int</span>
 
 <span class="kt">bool</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">w</span><span class="p">);</span><span class="w">        </span><span class="c1">// decltype(w) 是 const Widget&amp;</span>
 <span class="w">                                </span><span class="c1">// decltype(f) 是 bool(const Widget&amp;)</span>
@@ -1303,9 +1303,8 @@
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w">                  </span><span class="c1">// decltype(v) 是 vector&lt;int&gt;</span>
 <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">...</span><span class="w">               </span><span class="c1">// decltype(v[0]) 是 int&amp;</span>
 </code></pre></div>
-
 <p>C++11中，decltype主要用处大概在于声明那些返回值型别依赖于形参型别的函数模板。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
 <span class="k">auto</span><span class="w"> </span><span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -1313,36 +1312,32 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>这里的auto和型别推导没有关系，这是C++11中的返回值型别尾序语法。</p>
 <p>C++14中可以去掉返回值型别尾序语法，只保留auto。此时auto会发生型别推导。</p>
 <p>请看下面<strong>错误</strong>的示范：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
 <span class="k">auto</span><span class="w"> </span><span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">authenticateUser</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>由于在模板型别推导中，上述表达式引用性会被忽略，于是：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
 <span class="n">authAndAccess</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">       </span><span class="c1">// 返回 d[5] 但无法通过编译</span>
 </code></pre></div>
-
 <p>上述函数返回值型别为int，作为函数的返回值，它是一个右值，所以无法将10赋给它。</p>
 <p>如何修补？在C++14中通过decltype(auto)解决。即：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
 <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"> </span><span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">authenticateUser</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>此时推导规则采用的是decltype的规则。</p>
 <p>上述函数无法传递一个右值的容器对象，如何做到？采用万能引用。同时在调用<code>operator[]</code>时使用<code>std::forward</code>保持其型别。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Container</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="nc">Index</span><span class="o">&gt;</span><span class="w"></span>
 <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"></span>
 <span class="n">authAndAccess</span><span class="p">(</span><span class="n">Container</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">Index</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -1350,12 +1345,10 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Container</span><span class="o">&gt;</span><span class="p">(</span><span class="n">c</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>如果decltype应用于复杂的左值表达式（非单纯只是一个名字）的话，decltype就保证得出的型别总是左值引用。</p>
 <p>请看：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>decltype(x)结果是int。但如果<code>decltype((x))</code>的话，结果就成了<code>int&amp;</code>。</p>
                 
               

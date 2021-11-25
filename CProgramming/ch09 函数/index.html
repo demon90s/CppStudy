@@ -1467,32 +1467,29 @@
 <hr />
 <h2 id="_2">函数的定义和调用</h2>
 <p>由一个案例说明函数中的一些基本概念：</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">double</span> <span class="nv">average</span><span class="ss">(</span><span class="nv">double</span> <span class="nv">a</span>, <span class="nv">double</span> <span class="nv">b</span><span class="ss">)</span>
+<div class="highlight"><pre><span></span><code>double average(double a, double b)
 {
-    <span class="k">return</span> <span class="ss">(</span><span class="nv">a</span> <span class="o">+</span> <span class="nv">b</span><span class="ss">)</span> <span class="o">/</span> <span class="mi">2</span><span class="c1">;</span>
+    return (a + b) / 2;
 }
 </code></pre></div>
-
 <p><strong>返回类型</strong>：即函数开始处放置的double，表示每次调用该函数返回的类型。</p>
 <p><strong>形式参数（parameter）</strong>：标识符a和b</p>
 <p><strong>函数体</strong>：花括号里的内容。</p>
 <p><strong>实际参数（argument）</strong>：调用函数时，传递给形式参数的表达式。</p>
 <h3 id="_3">函数定义</h3>
 <p>函数定义的一般格式：</p>
-<div class="codehilite"><pre><span></span><code>返回类型 函数名(形式参数)
+<div class="highlight"><pre><span></span><code>返回类型 函数名(形式参数)
 {
     声明
     语句
 }
 </code></pre></div>
-
 <p>如果返回类型很长，可以把它单独放到一行。</p>
 <p>C89标准中，声明必须放在语句之前。</p>
 <h3 id="_4">函数调用</h3>
 <p>这样调用函数：</p>
-<div class="codehilite"><pre><span></span><code>average(x, y);
+<div class="highlight"><pre><span></span><code>average(x, y);
 </code></pre></div>
-
 <p>注意，圆括号不能省略，否则无法正确调用。</p>
 <p>返回类型若非void，则会返回一个临时值，这个值可以保存到变量里，也可以丢弃。</p>
 <h2 id="_5">实际参数</h2>
@@ -1506,15 +1503,13 @@
 <p>数组名可以作为函数的参数，但是函数无法得知数组的长度，只能传递第二个参数以表明长度。</p>
 <p>通过此数组名就可以访问数组元素了。</p>
 <p>如果形式参数是多维数组，那么必须指明列的长度：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">void</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">arr</span><span class="err">[]</span><span class="o">[</span><span class="n">LEN</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="nc">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>void sum(arr[][LEN], int n);
 </code></pre></div>
-
 <p>但这种用法比较少见。</p>
 <h2 id="return">return语句</h2>
 <p>非void的函数必须用return语句来指定要返回的值：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">return</span> 表达式<span class="c1">;</span>
+<div class="highlight"><pre><span></span><code>return 表达式;
 </code></pre></div>
-
 <p>如果表达式的值得类型与返回值的类型不一致，那么会把表达式的值转换成返回值的类型。</p>
 <h2 id="_8">程序终止</h2>
 <p>在main函数中执行return可以终止程序。</p>
@@ -1522,11 +1517,10 @@
 <p><strong>exit函数</strong></p>
 <p>另一种终止程序的办法是使用exit函数。此函数属于<code>&lt;stdlib.h&gt;</code>头。</p>
 <p>传递给exit的参数就是程序结束的状态码：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">exit</span><span class="ss">(</span><span class="mi">0</span><span class="ss">)</span><span class="c1">; // 正常终止</span>
-<span class="k">exit</span><span class="ss">(</span><span class="nv">EXIT_SUCCESS</span><span class="ss">)</span><span class="c1">; // 正常终止，此值为0</span>
-<span class="k">exit</span><span class="ss">(</span><span class="nv">EXIT_FAILURE</span><span class="ss">)</span><span class="c1">; // 异常终止，此值为1</span>
+<div class="highlight"><pre><span></span><code>exit(0); // 正常终止
+exit(EXIT_SUCCESS); // 正常终止，此值为0
+exit(EXIT_FAILURE); // 异常终止，此值为1
 </code></pre></div>
-
 <h2 id="_9">递归</h2>
 <p>如果函数调用它自己，那么此函数就是递归的（recursive）。</p>
 <p>为了防止无限递归，一定要有一个终止递归的条件。</p>

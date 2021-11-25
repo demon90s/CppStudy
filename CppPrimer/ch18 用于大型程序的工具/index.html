@@ -1609,12 +1609,11 @@
 </div>
 <p><strong>重新抛出</strong></p>
 <p>有时，一个单独的catch语句不能完整地处理某个异常。在执行了某些校正操作之后，当前的catch可能会决定由调用链更上一层的函数接着处理异常。一条catch语句通过重新抛出（rethrowing）的操作将异常传递给另外一个catch语句：</p>
-<div class="codehilite"><pre><span></span><code>throw;
+<div class="highlight"><pre><span></span><code>throw;
 </code></pre></div>
-
 <p>空的throw语句只能出现在catch语句或catch语句直接或间接调用的函数之内。如果在处理代码之外的区域遇到了空throw语句，编译器将调用terminate。</p>
 <p>一个重新抛出语句并不指定新的表达式，而是将当前的异常对象沿着调用链向上传递。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">my_error</span><span class="w"> </span><span class="o">&amp;</span><span class="n">eObj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">my_error</span><span class="w"> </span><span class="o">&amp;</span><span class="n">eObj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">eObj</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">errCodes</span><span class="o">::</span><span class="n">serverErr</span><span class="p">;</span><span class="w">  </span><span class="c1">// 修改了异常对象</span>
 <span class="w">    </span><span class="k">throw</span><span class="p">;</span><span class="w">                              </span><span class="c1">// 异常对象的status成员是severErr</span>
 <span class="p">}</span><span class="w"></span>
@@ -1623,11 +1622,10 @@
 <span class="w">    </span><span class="k">throw</span><span class="p">;</span><span class="w">                              </span><span class="c1">// 异常对象的status成员没有改变</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>捕获所有异常的处理代码</strong></p>
 <p>为了一次性捕获所有异常，我们使用省略号作为异常声明，这样的处理代码称为捕获所有异常（catch-all）的处理代码，形如catch(...)。它可以与任意类型的异常匹配。</p>
 <p>catch(...)通常与重新抛出语句一起使用，其中catch执行当前局部能完成的工作，随后重新抛出异常：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">manip</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">manip</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// 这里的操作将引发并抛出一个异常</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
@@ -1637,7 +1635,6 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果catch(...)与其他几个catch语句一起出现，则catch(...)必须在最后的位置。出现在捕获所有异常语句后面的catch语句将永远不会被匹配。</p>
@@ -1645,10 +1642,9 @@
 <h3 id="noexception">noexception异常说明</h3>
 <p>对于用户及编译器来说，预先知道某个函数不会抛出异常大有裨益。编译器确认函数不会抛出异常，它就能执行某些特殊的优化操作。</p>
 <p>在C++11新标准中，我们可以通过提供noexcept说明（noexcept specification）指定某个函数不会抛出异常，其形式是关键字noexcept紧跟在函数的参数列表后面：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">recoup</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="p">;</span><span class="w">              </span><span class="c1">// 不会抛出异常</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">recoup</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="p">;</span><span class="w">              </span><span class="c1">// 不会抛出异常</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">alloc</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w">                        </span><span class="c1">// 可能抛出异常</span>
 </code></pre></div>
-
 <p>对于一个函数来说，noexcept说明要么出现在该函数的所有声明语句和定义语句中，要么一次也不出现。</p>
 <p><strong>违反异常说明</strong></p>
 <p>编译器并不会在编译时检查noexcept说明。如果noexcept函数抛出了异常，程序就会调用terminate以确保遵守不在运行时抛出异常的承诺。</p>
@@ -1658,21 +1654,19 @@
 <p>命名空间（namespace）为防止名字冲突提供了更加可控的机制。命名空间分割了全局命名空间，其中每个命名空间是一个作用域。</p>
 <h3 id="_5">命名空间的定义</h3>
 <p>一个命名空间的定义包含两部分：首先是关键字namespace，随后是命名空间的名字。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">class</span> <span class="nc">Sales_data</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Foo</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>命名空间既可以定义在全局作用域内，也可以定义在其他命名空间中，但是不能定义在函数或类的内部。</p>
 <p>全局作用域是隐式的，所以它没有名字。这样的形式<code>::member_name</code>表示全局命名空间中的一个成员。</p>
 <p><strong>命名空间可以是不连续的</strong></p>
 <p>编写如下命名空间定义：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">nsp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">nsp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// 相关声明</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>可能是定义了一个名为nsp的新命名空间，也可能是为已经存在的命名空间添加一些新成员。</p>
 <p>命名空间的组织方式类似于我们管理自定义类及函数的方式：</p>
 <ul>
@@ -1689,15 +1683,13 @@
 <p>像namespace_name::member_name这样使用命名空间的成员显然非常烦琐，如果命名空间名字很长时尤其如此。</p>
 <p><strong>命名空间别名</strong></p>
 <p>命名空间别名（namespace alias）使得我们可以为命名空间的名字设定一个短得多的同义词。例如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 </code></pre></div>
-
 <p>我们可以为其设定一个短得多的同义词：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">primer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">primer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">Qlib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">cplusplus_primer</span><span class="o">::</span><span class="nn">QueryLib</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>一个命名空间可以有好几个同义词或别名，所有别名都与命名空间原来的名字等价。</p>
@@ -1717,7 +1709,7 @@
 <p>using声明或using指示能将某些函数添加到候选函数集。</p>
 <p><strong>与实参相关的查找与重载</strong></p>
 <p>对于接受类类型实参的函数来说，其名字查找将在实参类所属的命名空间中进行。这条规则对于如何确定候选函数集也有影响。我们将在每个实参类（以及实参类的基类）所属的命名空间中搜寻候选函数。在这些命名空间中所有与被调用函数同名的函数都将被添加到候选集当中。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">NS</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">NS</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">class</span> <span class="nc">Quote</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Quote</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1731,22 +1723,20 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>我们传递给display的实参属于类类型Bulk_item，因此该调用语句的候选函数不仅应该在调用语句所在的作用域中查找，而且也应该在Bulk_item及其基类Quote所属的命名空间中查找。命名空间NS中声明的函数display(const Quote&amp;)也将被添加到候选函数集当中。</p>
 <p>using声明与using指示都会把命名空间的函数注入当前的作用域，并在调用时加入到候选函数中。这有可能造成二义性调用等重载问题，具体见书本上的讨论。</p>
 <h2 id="_9">多重继承与虚继承</h2>
 <p>多重继承是指从多个直接基类中产生派生类的能力。多重继承的派生类继承了所以父类的属性。书本以动物体系为例进行讲解。</p>
 <h3 id="_10">多重继承</h3>
 <p>在派生类的派生列表中可以包含多个基类：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Bear</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ZooAnimal</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Bear</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ZooAnimal</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="k">class</span> <span class="nc">Panda</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Bear</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Endangered</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 </code></pre></div>
-
 <p>每个基类包含一个可选的访问说明符。对于派生类能够继承的基类个数，C++没有进行特殊规定；但是在某个给定的派生列表中，同一个基类只能出现一次。</p>
 <p>在多重继承关系中，派生类的对象包含有每个基类的子对象。在Panda对象中含有一个Bear部分（其中又含有一个ZooAnimal部分）、一个Endangered部分以及在Panda中声明的非静态数据成员。</p>
 <p><strong>派生类构造函数初始化所有基类</strong></p>
 <p>构造一个派生类对象将同时构造并初始化它的所有基类子对象。与从一个基类进行的派生一样，多重继承的派生类的构造函数初始值也只能初始化它的直接基类：</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 显式地初始化所有基类</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 显式地初始化所有基类</span>
 <span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span>
 <span class="w">    </span><span class="n">Bear</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Panda&quot;</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">Endangered</span><span class="p">(</span><span class="n">Endangered</span><span class="o">::</span><span class="n">critical</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1755,7 +1745,6 @@
 <span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Endangered</span><span class="p">(</span><span class="n">Endangered</span><span class="o">::</span><span class="n">critical</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 </code></pre></div>
-
 <p>基类的构造顺序与派生列表中基类的出现顺序保持一致，而与派生类构造函数初始值列表中基类的顺序无关。一个Panda对象的初始化顺序如下：</p>
 <ul>
 <li>
@@ -1773,7 +1762,7 @@
 </ul>
 <p><strong>继承的构造函数与多重继承</strong></p>
 <p>在C++11新标准中，允许派生类从它的一个或几个基类中继承构造函数。但是如果从多个基类中继承了相同的构造函数（即形参列表完全相同），则程序将产生错误：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">Base1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Base1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">Base1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
@@ -1790,7 +1779,6 @@
 <span class="w">    </span><span class="n">D1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Base1</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="w"> </span><span class="n">Base2</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>析构函数与多重继承</strong></p>
 <p>和往常一样，派生类的析构函数只负责清除派生类本身分配的资源，派生类的成员及基类都是自动销毁的。合成的析构函数体为空。</p>
 <p>析构函数的调用顺序正好与构造函数相反，在我们的例子中，析构函数的调用顺序是：~Panda, ~Endangered, ~Bear, ~ZooAnimal。</p>
@@ -1798,7 +1786,7 @@
 <p>与只有一个基类的继承一样，多重继承的派生类如果定义了自己的拷贝/赋值构造函数和赋值运算符，则必须在完整的对象上执行拷贝、移动或赋值操作。只有当派生类使用的是合成版本的拷贝、移动或赋值成员时，才会自动对基类部分执行这些操作。在合成的拷贝控制成员中，每个基类分别使用自己的对应成员隐式地完成构造、赋值或销毁等工作。</p>
 <h3 id="_11">类型转换与多个基类</h3>
 <p>在只有一个基类的情况下，派生类的指针或引用能自动转换成一个可访问基类的指针或引用。多个基类的情况与之类似。我们可以令某个可访问的基类的指针或引用直接指向一个派生类对象。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 接受Panda的基类引用的一系列操作</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 接受Panda的基类引用的一系列操作</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Bear</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">highlight</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Endangered</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 <span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ZooAnimal</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
@@ -1808,16 +1796,13 @@
 <span class="n">highlight</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span><span class="w">               </span><span class="c1">// 绑定到Endangered&amp;</span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ying_yang</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">          </span><span class="c1">// 绑定到ZooAnimal&amp;</span>
 </code></pre></div>
-
 <p>编译器不会在派生类向基类的几种转换中进行比较和选择，因为在它看来转换到任意一种基类都一样好。如果存在如下所示的print重载形式：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Bear</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Bear</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Endangered</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>那么通过Panda对象这样调用print函数将产生二义性编译错误：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">print</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">print</span><span class="p">(</span><span class="n">ying_yang</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>与只有一个基类的继承一样，对象、指针和引用的静态类型决定了我们能够使用哪些成员。</p>
 <h3 id="_12">多重继承下的类作用域</h3>
 <p>在只有一个基类的情况下，派生类的作用域嵌套在直接基类和间接基类的作用域中。查找过程沿着继承体系自底向上进行，直到找到所需的名字。派生类的名字将隐藏基类的同名成员。</p>
@@ -1839,27 +1824,24 @@
 </div>
 <p><strong>使用虚基类</strong></p>
 <p>我们指定虚基类的方式是在派生列表中添加关键字virtual:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 关键字public和virtual的顺序随意</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 关键字public和virtual的顺序随意</span>
 <span class="k">class</span> <span class="nc">Raccoon</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">virtaul</span><span class="w"> </span><span class="n">ZooAnimal</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="k">class</span> <span class="nc">Bear</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">virtaul</span><span class="w"> </span><span class="n">ZooAnimal</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 </code></pre></div>
-
 <p>上述代码将ZooAnimal定义为Raccoon和Bear的虚基类。</p>
 <p>virtual说明符表明了一种愿望，即在后续的派生类当中共享虚基类的同一份实例。至于什么样的类能够作为虚基类并没有特殊规定。如果某个类指定了虚基类，则该类的派生仍按常规方式进行：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Panda</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Bear</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Raccoon</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Endangered</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Panda</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Bear</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Raccoon</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Endangered</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 </code></pre></div>
-
 <p>Panda通过Raccon和Bear继承了ZooAnimal，因为Raccoon和Bear继承ZooAnimal的方式都是虚继承，所以在Panda中只有一个ZooAnimal基类部分。</p>
 <h3 id="_14">构造函数与虚继承</h3>
 <p>在虚派生中，虚基类是由最低层的派生类初始化的。以我们的程序为例，当创建Panda对象时，由Panda的构造函数独自控制ZooAnimal的初始化过程。即使ZooAnimal不是Panda的直接基类，Panda的构造函数也可以初始化ZooAnimal：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Panda</span><span class="o">::</span><span class="n">Panda</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">ZooAnimal</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Panda&quot;</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">Bear</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">Raccoon</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">onExhibit</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">Endangered</span><span class="p">(</span><span class="n">Endangered</span><span class="o">::</span><span class="n">critical</span><span class="p">),</span><span class="w"></span>
 <span class="w">    </span><span class="n">sleeping_flag</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>虚继承的对象的构造方式</strong></p>
 <p>含有虚基类的对象的构造顺序与一般的顺序稍有区别：首先使用提供给最低层派生类构造函数的初始值初始化该对象的虚基类子部分，接下来按照直接基类在派生列表中出现的次序依次对齐进行初始化。</p>
 <p>例如，当我们创建一个Panda对象时：</p>

@@ -1508,12 +1508,11 @@
 <h2 id="c">编写一个简单的C++程序</h2>
 <p>每个C++程序都包含一个或多个函数（function），其中一个必须命名为<strong>main</strong>。操作系统通过调用main来运行C++程序。</p>
 <p>下面是一个简单的main函数，它什么都不做，只是返回给操作系统一个值：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>main函数的返回类型必须为int。int类型是一种<strong>内置类型</strong>（built-in type），即语言自身定义的类型。</p>
 <p>函数体是一个以左<strong>花括号</strong>（curly brace）开始，以右花括号结束的语句块（block of statements）。</p>
 <p>return语句结束函数的执行。main的返回值被用来指示状态。返回值0表明成功，非0的返回值的含义由系统定义，通常用来指出错误类型。</p>
@@ -1534,7 +1533,7 @@
 <p>clog关联到标准错误，默认情况下，写到clog的数据是被缓冲的。写到cerr的数据是不缓冲的。</p>
 </div>
 <p><strong>一个使用IO库的程序</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter two numbers:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
@@ -1545,12 +1544,10 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><code>#include &lt;iostream&gt;</code>告诉编译器我们想要使用iostream库。尖括号中的名字指出了一个<strong>头文件</strong>（header）。每个使用标准库设施的程序都必须包含相关的头文件。#include指令和头文件的名字必须写在同一行中。#include指令一般出现在所有函数之外，源文件的开始位置。</p>
 <p><strong>向流写入数据</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter two numbers&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter two numbers&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>这条语句执行了一个<strong>表达式</strong>（expression）。在C++中，一个表达式产生一个计算结果，它由一个或多个运算对象和（通常是）一个运算符组成。这条语句中的表达式使用了<strong>输出运算符</strong>（&lt;&lt;）。</p>
 <p><code>&lt;&lt;</code>运算符接受两个运算对象：左侧必须是一个ostream对象；右侧是要打印的值。此运算符将给定的值写到给定的ostream对象中。计算结果是左侧的ostream对象。</p>
 <p>"Enter two numbers"是一个<strong>字符串字面值常量</strong>（string literal），它是用一对双引号包围的字符序列。</p>
@@ -1564,13 +1561,11 @@
 <p>命名空间可以帮助我们避免不经意的名字定义冲突。标准库定义的所有名字都在命名空间std中。</p>
 <p><strong>从流读取数据</strong></p>
 <p>首先定义两个名为v1和v2的<strong>变量</strong>（variable）来保存输入：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>这两个变量被定义为int类型，并<strong>初始化</strong>（initialize）为0。初始化一个变量，就是在变量创建的同时为它赋予一个值。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>这条语句读入输入数据。<strong>输入运算符</strong>（&gt;&gt;）接受一个istream作为其左侧运算对象，接受一个对象作为其右侧运算对象。它从给定的istream读入数据，并存入给定对象中。输入运算符返回其左侧运算对象作为计算结果。</p>
 <h2 id="_4">注释简介</h2>
 <p>注释（comments）通常用于概述算法，确定变量的用途，或者解释晦涩难懂的代码段。编译器会忽略掉注释，因此注释对程序的行为和性能不会有任何影响。</p>
@@ -1579,29 +1574,26 @@
 <p><strong>注释界定符不能嵌套</strong></p>
 <p>界定符对形式的注释是以<code>/*</code>开始，以<code>*/</code>结束的。因此，一个注释不能嵌套在另一个注释之内。</p>
 <p>如果在调试期间要注释掉包含界定符对形式注释的代码，最好的方式是用单行注释方式注释掉代码段的每一行。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// /*</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// /*</span>
 <span class="c1">//  * comments</span>
 <span class="c1">//  */</span>
 </code></pre></div>
-
 <h2 id="_5">控制流</h2>
 <p>语句一般是顺序执行的，语句块的第一条语句首先执行，然后是第二条，以此类推。但程序设计语言提供了多种不同的控制语句，允许我们写出更为复杂的执行路径。</p>
 <h3 id="while">while语句</h3>
 <p>while语句反复执行一段代码，直到给定条件为假为止。</p>
 <p>while语句的形式为：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">statement</span><span class="w"></span>
 </code></pre></div>
-
 <p>while语句的执行过程是交替地检测condition条件和执行关联的语句statement，直至condition为假时停止。所谓<strong>条件</strong>就是一个产生真或假的结果的表达式。</p>
 <p>statement可以是语句块，也叫循环体。所谓语句块（block），就是用花括号包围的语句序列。语句块也是语句的一种，在任何要求使用语句的地方都可以使用语句块。</p>
 <h3 id="for">for语句</h3>
 <p>每个for语句都包含两部分：循环头和循环体。循环头控制循环体的执行次数，它由三部分组成：一个初始化语句（init-statement）、一个循环条件（condition）以及一个表达式（expression）。</p>
 <p>比如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">val</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">val</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>for循环的总体执行流程：</p>
 <ol>
 <li>
@@ -1619,31 +1611,28 @@
 </ol>
 <h3 id="_6">读取数量不定的输入数据</h3>
 <p>使用这样的方法连续读入数据，直到遇到文件尾（Linux下，输入CTRL+D）：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">statement</span><span class="w"></span>
 </code></pre></div>
-
 <p>输入运算符返回其左侧对象，因此，此循环条件检测的是std::cin。</p>
 <p>当使用一个istream对象作为条件时，其效果是检测流的状态。如果流是有效的，那么检测成功。当遇到文件结束符（end-of-file），或遇到一个无效输入时，istream对象的状态会变为无效。</p>
 <h3 id="if">if语句</h3>
 <p>if也对一个条件求值，书本里有一个完整的例子。</p>
 <p>语法大致如此：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">statements</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">statements</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_7">类简介</h2>
 <p>在C++中，通过定义一个<strong>类</strong>（class）来定义自己的数据结构。一个类定义了一个类型，以及与其关联的一组操作。</p>
 <p>类似使用标准库设施，我们也需要使用头文件来自己的类。习惯上，头文件根据类名来命名，使用.h作为头文件的后缀。标准库的头文件通常不带后缀。</p>
 <h3 id="_8">初识成员函数</h3>
 <p><strong>什么是成员函数？</strong></p>
 <p>有这样的检测条件：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">item1</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">item2</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">item1</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">item2</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
-
 <p>调用名为isbn的成员函数（member function）。成员函数是定义为类的一部分的函数。</p>
 <p>使用<strong>点运算符（.）</strong>来表达我们需要“名为item1的对象的isbn成员”。点运算符只能用于类类型的对象。其左侧运算对象必须是一个类类型的对象，右侧运算对象必须是该类型的一个成员名，运算结果为右侧运算对象指定的成员。</p>
 <p>我们使用<strong>调用运算符（()）</strong>来调用一个函数，它是一对圆括号，里面放实参列表（可能为空）。</p>

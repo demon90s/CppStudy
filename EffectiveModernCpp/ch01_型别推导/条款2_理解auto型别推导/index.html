@@ -1335,7 +1335,7 @@
 <li>情况2 型别饰词是万能引用 若原表达式是左值 则推导为左值引用</li>
 <li>情况3 型别饰词既非指针也非引用 将原表达式引用部分忽略 顶层const忽略</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w">            </span><span class="c1">// 情况3 x型别推导为int</span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w">            </span><span class="c1">// 情况3 x型别推导为int</span>
 <span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">cx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">      </span><span class="c1">// 情况3 cx型别推导为const int</span>
 <span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">     </span><span class="c1">// 情况1 rx型别推导为const int&amp;</span>
 
@@ -1343,9 +1343,8 @@
 <span class="k">auto</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">uref2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cx</span><span class="p">;</span><span class="w">      </span><span class="c1">// 情况2 uref2型别推导为const int&amp;</span>
 <span class="k">auto</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">uref3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w">      </span><span class="c1">// 情况2 uref3型别推导为int&amp;&amp;</span>
 </code></pre></div>
-
 <p>对于数组和函数的推导规则，auto也是一样的。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;diwen&quot;</span><span class="p">;</span><span class="w">            </span><span class="c1">// name的型别是const char[6]</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;diwen&quot;</span><span class="p">;</span><span class="w">            </span><span class="c1">// name的型别是const char[6]</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">arr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">                       </span><span class="c1">// arr1的型别是const char*</span>
 <span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">                      </span><span class="c1">// arr2的型别是const (&amp;)char[6]</span>
 
@@ -1353,24 +1352,21 @@
 <span class="k">auto</span><span class="w"> </span><span class="n">func1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w">                         </span><span class="c1">// func1的型别是void(*)(int, double)</span>
 <span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">func2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w">                        </span><span class="c1">// func2的型别是void(&amp;)(int, double)</span>
 </code></pre></div>
-
 <h2 id="_1">例外情况</h2>
 <p>对于 <code>auto x{27}</code> 这样的初始化语句，x推导出的型别是<code>std::initializer_list</code>。而模板型别推导面对这样的情况就会失败：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">f</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">});</span><span class="w">       </span><span class="c1">// 错误！无法推导T的型别</span>
 </code></pre></div>
-
 <p>在C++14中，auto可以用来说明函数返回值需要推导，此时应用的不是auto型别推导，而是模板型别推导，因此下面代码无法通过编译：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>在C++14中，auto可以用来指定lambda式的形参型别，此时也是应用模板型别推导，因此下面代码也无法通过编译：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="n">f</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">});</span><span class="w"></span>
 </code></pre></div>
                 

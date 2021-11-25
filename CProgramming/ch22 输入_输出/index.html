@@ -1647,14 +1647,12 @@
 <p><strong>重定向（redirection）</strong></p>
 <p>操作系统允许通过重定向机制来改变标准流默认的含义。</p>
 <p>例如：</p>
-<div class="codehilite"><pre><span></span><code>demo &lt; in.data
+<div class="highlight"><pre><span></span><code>demo &lt; in.data
 </code></pre></div>
-
 <p>称为<strong>输入重定向（input redirection）</strong>，即把stdin流表示为文件in.dat，而非键盘。对于程序demo而言，它并不知道输入流是来自键盘还是文件。</p>
 <p>这样子是<strong>输出重定向（output redirection）</strong>：</p>
-<div class="codehilite"><pre><span></span><code>demo &gt; out.dat
+<div class="highlight"><pre><span></span><code>demo &gt; out.dat
 </code></pre></div>
-
 <p>如此一来，写入stdout的内容将不再输出到屏幕，而是文件out.dat。</p>
 <h3 id="_4">文本文件与二进制文件</h3>
 <p>文件就是字节的序列。</p>
@@ -1678,9 +1676,8 @@
 <p><strong>从命令行获取文件名</strong></p>
 <p>当程序需要打开一个文件时，通常通过命令行参数把文件名传给程序，这样更具灵活性。</p>
 <p>主函数：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[]);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[]);</span><span class="w"></span>
 </code></pre></div>
-
 <p>argc是命令行实际参数的数量（非数组长度），argv是参数字符串数组。</p>
 <p>argv[0]是程序名，argv[1] ~ argv[argc-1]是剩余参数。</p>
 <p>argv[argc]是空指针。</p>
@@ -1705,40 +1702,35 @@
 <h2 id="_8">字符的输入/输出</h2>
 <p>输入输出的字符类型应使用int，原因之一是由于函数通过返回EOF说明文件末尾or错误情况，EOF是一个负的整型常量。</p>
 <h3 id="_9">输出函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fputc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fputc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">putc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">putchar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_10">输入函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fgetc</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fgetc</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">getc</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">getchar</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_11">行的输入/输出</h2>
 <h3 id="_12">输出函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">puts</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>puts函数向标准输出输出一行字符串，会自动添加一个换行符。</p>
 <p>fputs不会自动添加换行符。</p>
 <h3 id="_13">输入函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">fgets</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">fgets</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 <span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">gets</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>gets函数逐个读取字符，存储到s中，直到读到换行符时停止，并把换行符丢弃。</p>
 <p>fgets当读入了size-1个字符时或读到换行符时停止，且会存储换行符。</p>
 <p>如果出现错误，或者在存储任何字符之前达到了输入流的末尾，函数返回空指针。否则返回第一个实参。</p>
 <p>函数会在字符串的末尾存储空字符。</p>
 <h2 id="_14">块的输入输出</h2>
-<div class="codehilite"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 
 <span class="kt">size_t</span><span class="w"> </span><span class="nf">fwrite</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>fread函数和fwrite函数允许程序在单步中读写大的数据块。</p>
 <p>fwrite函数被设计用来把数组复制给流。第一个参数是数组首元素的地址，第二个参数是每个数组元素的大小（以字节为单位），第三个参数是要写的元素的数量，第四个参数是文件指针，说明了要写的数据位置。</p>
 <p>fwrite返回实际写入的元素数量，如果写入错误，此数就会小于第三个参数。</p>
@@ -1749,7 +1741,7 @@
 <p>每个流都有相关联的<strong>文件位置（file position）</strong>。打开文件时，根据模式可以在文件的起始处或者末尾处设置文件位置。</p>
 <p>在执行读或写操作时，文件位置会自动推进。</p>
 <p>stdio.h提供了一些函数，用于确定当前的文件位置或者改变文件位置：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fseek</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">whence</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fseek</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">whence</span><span class="p">);</span><span class="w"></span>
 
 <span class="kt">long</span><span class="w"> </span><span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
 
@@ -1758,7 +1750,6 @@
 <span class="kt">int</span><span class="w"> </span><span class="nf">fgetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">fsetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>fseek</strong>函数改变第一个参数相关的文件的位置。第二个参数说明新位置是根据文件的起始处、当前位置还是文件末尾来计算，也就是第三个参数来计算。</p>
 <p>第三个参数可取值为：</p>
 <ul>
@@ -1779,16 +1770,14 @@
 <p>sprintf和snprintf函数将按写到数据流一样的方式写字符到字符串。</p>
 <p>sscanf函数从字符串中读出数据就像从数据流中读数据一样。</p>
 <h3 id="_17">输出函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sprintf</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sprintf</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">snprintf</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
-
 <p>类似于printf函数，唯一不同是sprintf函数把输出写入字符数组而不是流。当完成向字符串写入的时候，sprintf函数会添加一个空字符，并返回所存储的字符数量（不计空字符）。如果遇到错误，返回负值。</p>
 <p>snprintf写入的字符数量不会超过size-1，结尾空字符不计。只要size不是0，都会有空字符。</p>
 <h3 id="_18">输入函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sscanf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sscanf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
-
 <p>sscanf与scanf类似，唯一的不同就是sscanf从字符数组中读取数据而不是流。</p>
 <p>sscanf函数返回成功读入并存储的数据项的数量，如果在找到第一个数据项之前到达了字符串的末尾，那么sscan函数返回EOF。</p>
                 

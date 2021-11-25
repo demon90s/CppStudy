@@ -1549,9 +1549,8 @@
 <p>宏定义的作用范围从定义处开始到本文件末尾。</p>
 <h3 id="_5">简单宏定义</h3>
 <p>简单宏定义的格式如：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define &lt;宏名&gt; [替换列表]</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define &lt;宏名&gt; [替换列表]</span>
 </code></pre></div>
-
 <p>替换列表中可以有空格。甚至可以没有替换列表，此时宏替换后，就等于删除了这个宏一样。</p>
 <p>简单的宏定义一般用于：</p>
 <ul>
@@ -1560,9 +1559,8 @@
 </ul>
 <h3 id="_6">带参数的宏定义</h3>
 <p>格式如：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define &lt;宏名&gt;(x1, x2, ..., xn) [替换列表]</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define &lt;宏名&gt;(x1, x2, ..., xn) [替换列表]</span>
 </code></pre></div>
-
 <p>注意点：</p>
 <ul>
 <li>
@@ -1584,23 +1582,20 @@
 <ul>
 <li>#号代表参数会被替换成一个字符串字面量，例如 :</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define PRINT_INT(n) printf(#n &quot; = %d\n&quot;, n)</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PRINT_INT(n) printf(#n &quot; = %d\n&quot;, n)</span>
 </code></pre></div>
-
 <p>#n会被替换成"n"，相邻的字符串字面量可以连起来形成一个字符串字面量，所以PRINT_INT(a)的宏替换结果是：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <ul>
 <li>##代表将两边的记号连接在一起，成为一个记号，一个典型的例子：</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define GENERIC_MAX(type)               \</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define GENERIC_MAX(type)               \</span>
 <span class="cp">type type##_max(type x, type y)         \</span>
 <span class="cp">{                                       \</span>
 <span class="cp">        return x &gt; y ? x : y;           \</span>
 <span class="cp">};</span>
 </code></pre></div>
-
 <p>这个宏定义定义了一个取最大值的函数，可以方便的为这个函数指定比较类型。</p>
 <p>值得注意的是，<strong>#和##都在简单的宏替换后起作用</strong>。</p>
 <h3 id="_8">宏定义中的圆括号</h3>
@@ -1612,15 +1607,14 @@
 <li>用圆括号把每个宏参数括起来</li>
 </ol>
 <p>一个安全的宏的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define SUM(x, y) ((x) + (y))</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define SUM(x, y) ((x) + (y))</span>
 </code></pre></div>
-
 <h3 id="_9">创建较长的宏</h3>
 <p>一些废话：</p>
 <p>宏函数展开后，实际上只有一行。而编写的时候为了好看，可以用<code>\</code>作为换行连接符号。</p>
 <p>另外，宏函数使用时看上去应该像普通函数一样：后面也要加分号。所以宏函数的替换列表的末尾应该没有分号。</p>
 <p><strong>直接上书上所给的解决方案：</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define ECHO(str)    \</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define ECHO(str)    \</span>
 <span class="cp">do                   \</span>
 <span class="cp">{                    \</span>
 <span class="cp">    gets(str);       \</span>
@@ -1630,7 +1624,6 @@
 <span class="c1">// use</span>
 <span class="n">ECHO</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_10">预定义宏</h3>
 <p>常用预定义宏：</p>
 <table>
@@ -1672,18 +1665,17 @@
 <p>这种预定义宏配合条件编译就可以做到跨平台编译代码。</p>
 <p><strong>特殊的预定义宏<code>__VA_ARGS__</code></strong></p>
 <p>C99标准中，有一个特殊的预定义宏，它的作用是替换可变参数列表（...），但它要和##符号配合使用，此时##的意义不再是连接，而是：当可变参数列表为空的时候，去除<code>__VA_ARGS__</code>前面的逗号，从而避免编译错误。</p>
-<p>一个典型的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define CONSOLE_DEBUG(fmt, ...)\</span>
+<p>一个典型的例子：
+<div class="highlight"><pre><span></span><code><span class="cp">#define CONSOLE_DEBUG(fmt, ...)\</span>
 <span class="cp">    printf(&quot;FILE: &quot;__FILE__&quot;, LINE: %05d &quot;fmt&quot;\n&quot;, __LINE__, ##__VA_ARGS__);</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <p><code>__FUNCTION__</code></p>
 <p>这个宏代表了当前执行函数的函数名字符串。</p>
 <h2 id="_11">条件编译</h2>
 <p>条件编译指令排除了不应该出现的文本。只有通过了条件编译的文本块才会被交给编译器编译。</p>
 <p>条件一般是一个普通的宏。</p>
 <p>书写格式如：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#if MACRO</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#if MACRO</span>
 <span class="n">code</span><span class="w"></span>
 <span class="cp">#elif MACRO</span>
 <span class="n">code</span><span class="w"></span>
@@ -1691,14 +1683,12 @@
 <span class="n">code</span><span class="w"></span>
 <span class="cp">#endif</span>
 </code></pre></div>
-
 <h3 id="defined">defined 运算符</h3>
 <p>defined 运算符仅用于预处理器。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#if defined(DEBUG)</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#if defined(DEBUG)</span>
 <span class="p">...</span><span class="w"></span>
 <span class="cp">#endif</span>
 </code></pre></div>
-
 <p>如果标识符 DEBUG 是一个定义过的宏，则返回1，否则返回0。 defined 返回1意味着通过条件。</p>
 <p>指令说明：</p>
 <ul>
@@ -1721,18 +1711,16 @@
 <h2 id="_12">其他指令</h2>
 <p><strong>#error 指令</strong></p>
 <p>如果预处理器遇到一个<code>#error</code>指令，它会显示一个出错消息，大多数编译器会立即终止编译。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#error You can not include this file</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#error You can not include this file</span>
 </code></pre></div>
-
 <p><strong>#pragma指令</strong></p>
 <p><code>#pragma</code>指令为要求编译器执行某些特殊操作提供了一种方法。</p>
 <p>使用#pragma pack预处理指令来设置字节对齐。具体用法如：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#pragma pack(push)    </span><span class="c1">// 保存现在的字节对齐状态</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#pragma pack(push)    </span><span class="c1">// 保存现在的字节对齐状态</span>
 <span class="cp">#pragma pack(4)       </span><span class="c1">// 设置4字节对齐</span>
 <span class="c1">// 这里定义的结构体最好以4字节对齐</span>
 <span class="cp">#pragma pack(pop)     </span><span class="c1">// 恢复字节对齐状态</span>
 </code></pre></div>
-
 <p>这里字节对齐的意思是，将结构体中最大内置类型的成员的长度与默认字节对齐数（比如是4）对比，如果谁小，那么就按谁来对齐。</p>
                 
               

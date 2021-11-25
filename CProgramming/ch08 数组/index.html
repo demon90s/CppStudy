@@ -1441,16 +1441,14 @@
 <p>数组是含有多个数据值的数据结构，并且每个数据值具有相同的数据类型。这些数据值被称为元素。</p>
 <p>一维数组中的元素一个接一个地编排在单独一行。</p>
 <p>声明一个一维数组：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define N 10</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define N 10</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_3">数组下标</h3>
 <p>长度为n的数组元素的索引范围是0到n-1。</p>
 <p>使用数组元素：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>C语言不要求检查下标的范围，当下标超出范围时，程序可能执行不可预知的行为。</p>
@@ -1458,7 +1456,7 @@
 <h3 id="_4">数组初始化</h3>
 <p>数组可以在声明时获得一个初始值。</p>
 <p>数组初始化式（ array initializer ）：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">};</span><span class="w"></span>
 
 <span class="cm">/* initial value of a is {1, 2, 3, 4, 5, 6, 0, 0, 0, 0} */</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">};</span><span class="w"></span>
@@ -1469,31 +1467,27 @@
 <span class="cm">/* 可以忽略数组长度，编译器自行确认 */</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="sizeof">对数组使用 sizeof 运算符</h3>
 <p>运算符 sizeof 可以确定数组的大小（字节数）。</p>
 <p>利用 sizeof 来计算数组元素的大小：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define SIZE sizeof(a) / sizeof(a[0])</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define SIZE sizeof(a) / sizeof(a[0])</span>
 </code></pre></div>
-
 <h2 id="_5">多维数组</h2>
 <p>数组可以有任意维数。</p>
 <p>声明一个二维数组（或称为矩阵）：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">9</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">9</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
-
 <p>数组m有5行9列。</p>
 <p>为了在i行j列中存取数组m的元素，需要写成<code>m[i][j]</code>的形式。</p>
 <p>C语言按照行主序存储数组，也就是从第0行开始，接着第1行，如此下去。</p>
 <p><img alt="" src="../images/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%AD%98%E5%82%A8.jpg" /></p>
 <h3 id="_6">多维数组初始化</h3>
 <p>通过嵌套一维数组的方法可以产生二维数组的初始化式：</p>
-<div class="codehilite"><pre><span></span><code><span class="x">int a[3][3] = </span><span class="cp">{{</span><span class="m">1</span><span class="o">,</span> <span class="m">2</span><span class="o">,</span> <span class="m">3</span><span class="o">},</span> <span class="o">{</span><span class="m">4</span><span class="o">,</span> <span class="m">5</span><span class="o">,</span> <span class="m">6</span><span class="o">},</span> <span class="o">{</span><span class="m">7</span><span class="o">,</span> <span class="m">8</span><span class="o">,</span> <span class="m">9</span><span class="cp">}}</span><span class="x">;</span>
+<div class="highlight"><pre><span></span><code>int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 </code></pre></div>
-
 <h2 id="_7">常量数组</h2>
 <p>在数组定义前加const使得数组变成一个常量数组，表示不能修改数组里面的元素的值。但这样的数组必须在程序运行前就定义好数组内容，一般用于字符串数组。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">months</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">months</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="p">{</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
                 

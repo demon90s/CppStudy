@@ -1479,14 +1479,13 @@
                 <h1 id="_1">其他库函数</h1>
 <hr />
 <h2 id="stdargh">stdarg.h 可变长度实参</h2>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">va_start</span><span class="p">(</span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">va_start</span><span class="p">(</span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">);</span><span class="w"></span>
 <span class="n">type</span><span class="w"> </span><span class="nf">va_arg</span><span class="p">(</span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">);</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">va_end</span><span class="p">(</span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>stdarg.h提供了一种工具可以让我们自行编写的函数具有可变长的参数列表（varying number of arguments of varying types）。stdarg.h定义了一种va_list类型和三种宏，名为va_start, va_arg, va_end, 可以把这些宏看成是带有上述原型的函数。</p>
 <p>书中使用了此例进行讲解：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">max_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w">    </span><span class="c1">// n must be at least 1</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">max_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w">    </span><span class="c1">// n must be at least 1</span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">current</span><span class="p">,</span><span class="w"> </span><span class="n">largest</span><span class="p">;</span><span class="w"></span>
@@ -1504,7 +1503,6 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">largest</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>函数的第一个实参n说明了跟随其后的其他参数的数量。</p>
 <p>形参列表中的...符号表示可变数量的参数。带有可变参数的函数必须至少有一个“正常的”形参，在最后一个正常的参数后边始终会有省略号出现在参数列表的末尾。</p>
 <p><code>va_list ap</code>声明了一个变量，使得函数可以访问到可变参数。</p>
@@ -1516,11 +1514,10 @@
 <p>这里主要的难点就是带有可变实参列表的函数很难确定传递过来的参数的数量或类型。所以必须把这个信息传递给函数，并且函数假设知道了这个信息。上述max_int函数依靠第一个实参来指明跟随其后的其他参数的数量，并且它还设定参数是int类型的。</p>
 <p>另一个问题就是不得不处理NULL作为参数的情况，具体见书本。</p>
 <h3 id="vprintf">v...printf类函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">vprintf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">vprintf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">vfprintf</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">vsprintf</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>不同于printf等函数，v...printf类函数具有固定数量的实参，每个v...printf类函数的最后一个实参都是一个va_list型值。这个类型的值意味着此函数可以由带有可变实参列表的函数调用。</p>
 <p>实际上，v...printf类函数主要用于编写“包装”函数。包装函数接收可变数量的实参，并稍后把这些参数传递给v...printf类函数（通过va_list）。</p>
 <p>这种包装函数的核心内容是：</p>
@@ -1537,13 +1534,12 @@
 </ul>
 <h2 id="stdlibh">stdlib.h 通用的实用工具</h2>
 <h3 id="_3">字符串转换函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">atoi</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nptr</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">atoi</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nptr</span><span class="p">);</span><span class="w"></span>
 <span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">atoll</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nptr</span><span class="p">);</span><span class="w"></span>
 
 <span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">strtol</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nptr</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">endptr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="p">);</span><span class="w"></span>
 <span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">strtoll</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nptr</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">endptr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_4">伪随机生成函数</h3>
 <p>伪随机数的生成方法是：</p>
 <ul>
@@ -1555,10 +1551,9 @@
 </li>
 </ul>
 <p>如果每次程序运行的随机种子都一样，那么rand出来的数就会一样。因此通常采用当前时间戳作为随机种子（但如果两次启动间隔不足一秒，时间戳也是一样滴）。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">srand</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">srand</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seed</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">rand</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_5">与环境的通信</h3>
 <p>与外部通信的标准库函数可以：</p>
 <ul>
@@ -1576,49 +1571,42 @@
 <p>在main中执行return语句，即返回了一个状态码给操作系统；或者在程序的任意处执行exit函数，也可以终止程序并返回一个状态码给操作系统。</p>
 <p>exit是正常性质的结束程序，可以清理程序打开的资源。</p>
 <p>atexit函数还可以注册一个函数，在程序正常结束前，执行这个注册函数。可以注册多个atexit函数，调用顺序和注册顺序一致。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">atexit</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>获取环境变量</strong></p>
 <p>环境变量是一组存放到静态存储区的字符串，描述了操作系统的环境，比如PATH。使用getenv就可以获取它的值。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">getenv</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">getenv</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>执行命令</strong></p>
 <p>主要是通过system函数执行一个外部的命令。system函数返回该命令的终止状态码。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">system</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">system</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_6">搜索和排序工具</h3>
 <p>用于搜索的工具是：bsearch（实现为二分查找），用于排序的工具是：qsort（实现为快速排序）。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">qsort</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">qsort</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"></span>
 <span class="w">                  </span><span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">compar</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">bsearch</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">base</span><span class="p">,</span><span class="w"></span>
 <span class="w">                     </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"></span>
 <span class="w">                     </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">compar</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_7">整数算术运算函数</h3>
 <p><strong>abs求绝对值</strong></p>
-<p>函数原型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
+<p>函数原型：
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
 <p><strong>div求除法运算结果</strong></p>
-<p>函数原型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">div_t</span><span class="w"> </span><span class="nf">div</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numerator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">denominator</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
-<p>结果是第一个实参除以第二个实参。结果是一个div_t类型，它包含了商和余数，定义如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<p>函数原型：
+<div class="highlight"><pre><span></span><code><span class="kt">div_t</span><span class="w"> </span><span class="nf">div</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numerator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">denominator</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<p>结果是第一个实参除以第二个实参。结果是一个div_t类型，它包含了商和余数，定义如下：
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">quot</span><span class="p">;</span><span class="w">    </span><span class="cm">/* Quotient.  */</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rem</span><span class="p">;</span><span class="w">     </span><span class="cm">/* Remainder. */</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="kt">div_t</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-
+</code></pre></div></p>
 <p>但第二个实参一定不能为0，不然就会出现段错误。因此判断除数是否合法的责任就交给了程序员。</p>
 <h2 id="timeh">time.h 日期和时间</h2>
 <p>标准库提供了三种表示时间的类型：</p>
@@ -1681,27 +1669,23 @@
 </tbody>
 </table>
 <p><strong>时钟滴答</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="kt">clock_t</span><span class="w"> </span><span class="nf">clock</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">clock_t</span><span class="w"> </span><span class="nf">clock</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>clock函数返回处理器的时间（时钟滴答），即程序开始运行到执行到此的消耗的时间。但它的单位不是秒，为了将它转换成秒，可以给它除以宏CLOCK_PER_SEC。</p>
 <p>clock_t不能表示日期，只是善于表示时间区间（两个clock_t相减获得比较精准的时间差）。</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">clock</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_clock</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">CLOCK_PER_SEC</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">clock</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_clock</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">CLOCK_PER_SEC</span><span class="w"></span>
 </code></pre></div>
-
 <p>加double强制转换的理由是，标准C没有指明宏CLOCK_PER_SEC的类型，也没有说明clock_t的类型，所以必须用强制转换明确一下类型。</p>
 <p><strong>日历时间</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="kt">time_t</span><span class="w"> </span><span class="nf">time</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">time_t</span><span class="w"> </span><span class="nf">time</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
 <span class="kt">double</span><span class="w"> </span><span class="nf">difftime</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">time1</span><span class="p">,</span><span class="w"> </span><span class="kt">time_t</span><span class="w"> </span><span class="n">time0</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>time用来获取时间戳（UNIX从1970年为纪元），difftime获取两个时间戳的间隔，但这种计算间隔的方式没有用clock_t计算精准。</p>
 <p><strong>分解时间</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="kt">time_t</span><span class="w"> </span><span class="nf">mktime</span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="o">*</span><span class="n">tm</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">time_t</span><span class="w"> </span><span class="nf">mktime</span><span class="p">(</span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="o">*</span><span class="n">tm</span><span class="p">);</span><span class="w"></span>
 <span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="o">*</span><span class="n">localtime</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">time_t</span><span class="w"> </span><span class="o">*</span><span class="n">timep</span><span class="p">);</span><span class="w"></span>
 <span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">asctime</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">tm</span><span class="w"> </span><span class="o">*</span><span class="n">tm</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <ul>
 <li>
 <p>mktime将分解时间转换成日历时间（时间戳）。但它有一个很好得到地方，除了转换成日历时间，它还会先修正分解时间，如果分解时间中的某些值不正确的话。修正的规则就是“进位”，把溢出的时间补给高位的时间。比如tm_mday超过了31，那么tm_mon就会增加至少1。可以利用这一个修正的规则来计算未来的日期。见代码案例。</p>

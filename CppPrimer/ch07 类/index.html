@@ -1702,9 +1702,8 @@
 <p>成员函数体可以随意使用类中的成员，无须在意成员出现的顺序，这是因为编译器分两步处理类：首先编译成员的声明，然后才轮到成员函数体。</p>
 <p><strong>定义一个返回this对象的函数</strong></p>
 <p>可以使用如下语句返回this对象：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>返回类型使用引用类型，表明返回的就是this所指的对象。</p>
 <p>一般来说，当我们定义的函数类似于某个内置运算符时，应该令函数的行为尽量模仿这个运算符。比如说内置的赋值运算符把它的左侧运算对象当成左值返回，这种情况下，函数就可以返回this对象的引用。（见书本p233的详细讨论）</p>
 <h3 id="_3">定义类相关的非成员函数</h3>
@@ -1743,9 +1742,8 @@
 </ul>
 <p><strong>=default</strong></p>
 <p>C++11中，使用这种语句来让编译器生成一个默认构造函数：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">SalesData</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">SalesData</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>这种情况下，应当对内置类型的数据成员提供类内初始值，否则应当使用构造函数初始值列表形式的默认构造函数。</p>
@@ -1835,7 +1833,7 @@
 <p>要创建一个类的对象，则必须已经定义好了这个类，这是因为编译器需要知道类的存储空间大小。</p>
 <p>只有被定义，才能访问其成员。</p>
 <p>声明一个前置类型的方法：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">struct</span> <span class="nc">B</span><span class="p">;</span><span class="w"></span>
 
@@ -1844,7 +1842,6 @@
 <span class="w">    </span><span class="k">class</span> <span class="nc">C</span><span class="p">;</span><span class="w">    </span><span class="c1">// 前置声明一个在命名空间中的类</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_11">友元再探</h3>
 <p>类可以把普通函数定义成友元，也可以把类，类的成员函数定义成友元。</p>
 <p>友元类有权访问本类的非公有成员。</p>
@@ -1964,9 +1961,8 @@
 <p><strong>定义静态成员</strong></p>
 <p>static只能出现在类的内部，不能出现在外部。</p>
 <p>静态数据成员不属于类的对象，不是有构造函数初始化的。静态数据成员定义在函数体之外，一旦定义，就一直存在于程序的整个生命周期中。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">T</span><span class="o">::</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 定义并初始化一个静态成员</span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">T</span><span class="o">::</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 定义并初始化一个静态成员</span>
 </code></pre></div>
-
 <p><strong>静态成员的类内初始化</strong></p>
 <p>通常，不应该在类内初始化静态数据成员。</p>
 <p>不过，可以为静态成员提供const整数类型的类内初始值，且要求静态成员必须是字面值常量类型。</p>

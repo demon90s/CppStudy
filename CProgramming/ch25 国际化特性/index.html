@@ -1517,18 +1517,16 @@
 </li>
 </ul>
 <h3 id="setlocale">setlocale函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">setlocale</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">category</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">locale</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">setlocale</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">category</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">locale</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>setlocale函数修改当前的地区。如果第一个参数是LC_ALL，就会影响所有的类型。C语言标准对第二个参数仅定义了两种可能值："c"和""。其余的由实现定义，比如， gcc 对于简体中文的地区，可以是"zh_CN.UTF-8"</p>
 <p>程序执行开始时，都会隐含调用：<code>setlocale(LC_ALL, "C");</code></p>
 <p>如果用""作为第二个参数，就切换到了本地模式（native locale），这种模式下程序会适应本地的环境。</p>
 <p>如果调用成功，返回一个关于地区名字的字符串指针。如果调用失败，返回空指针。</p>
 <p>setlocale函数也可以当作搜索函数使用，如果第二个参数是空指针，setlocale函数会返回一个指向字符串的指针，这个字符串与当前地区类型的设置相关联。</p>
 <h3 id="localeconv">localeconv函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">lconv</span><span class="w"> </span><span class="o">*</span><span class="n">localeconv</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">lconv</span><span class="w"> </span><span class="o">*</span><span class="n">localeconv</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>函数返回的struct lconv结构包含了当前地区的详细信息，此结构具有静态存储期限。</p>
 <p>详细信息参考书本。</p>
 <h2 id="_3">多字节字符和宽字符</h2>
@@ -1550,18 +1548,16 @@
 <p>注意，在使用宽字符前，需要设置好本地环境，比如，要使用简体中文的宽字符，那么要先执行 <code>setlocale(LC_ALL, "zh_CN.UTF-8")</code> ，这样才能正确地解析宽字符。</p>
 </div>
 <h3 id="_6">多字节字符函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">mblen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">mbtowc</span><span class="p">(</span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">pwc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">wctomb</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">wchar_t</span><span class="w"> </span><span class="n">wc</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_7">多字节字符串函数</h3>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 <span class="kt">size_t</span><span class="w"> </span><span class="nf">mbstowcs</span><span class="p">(</span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="kt">size_t</span><span class="w"> </span><span class="nf">wcstombs</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_8">三字符序列</h2>
 <p>见书本简要介绍。</p>
 <div class="admonition note">

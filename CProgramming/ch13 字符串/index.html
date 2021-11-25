@@ -1534,27 +1534,23 @@
 <hr />
 <h2 id="_2">字符串字面量</h2>
 <p>字符串字面量（ string literal ）是用一对双括号括起来的字符序列：</p>
-<div class="codehilite"><pre><span></span><code><span class="s">&quot;Hello World&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;Hello World&quot;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_3">字符串字面量中的转义序列</h3>
 <p>字符串字面量可以包含<a href="https://zh.cppreference.com/w/cpp/language/escape">转义序列</a>：</p>
-<div class="codehilite"><pre><span></span><code><span class="s">&quot;Hello</span><span class="se">\t</span><span class="s">World</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;Hello</span><span class="se">\t</span><span class="s">World</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_4">延续字符串字面量</h3>
 <p>字符串字面量可能太长，以至于无法放置在单独一行内可以把第一行用字符\结尾，那么C语言就允许在下一行延续字符串字面量：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;put a disk in drive A, then \</span>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;put a disk in drive A, then \</span>
 <span class="s">press any key to continue&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>不只是字符串，字符\可以用来分割任何长的符号。</p>
 <p>但\有一个缺陷：字符串字面量必须从下一行的起始位置继续，从而破坏了程序的缩进结构。</p>
 <p>一个更好的办法是通过C语言的标准解决这个问题，也就是当两个或更多字符串字面量相连时（仅用空白字符分割），编译器必须把它们合并成单独一条字符串：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;put a disk in drive A, then&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;put a disk in drive A, then&quot;</span><span class="w"></span>
 <span class="w">       </span><span class="s">&quot;press any key to continue</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_5">如何存储字符串字面量</h3>
 <p>从本质上而言，C语言把字符串字面量作为字符数组来处理。当C语言编译器在程序中遇到长度为n的字符串字面量时，它会为字符串字面量分配长度为n+1的内存空间。+1存储的是额外的空字符，它用来标志字符串的末尾，用转义序列\0来表示，其数值为0。</p>
 <p>例如，字符串字面量"abc"是一个有4个字符的字符数组：</p>
@@ -1563,13 +1559,12 @@
 <p>既然字符串字面量是作为数组来存储的，那么编译器会把它看作是char*类型的指针。</p>
 <h3 id="_6">字符串字面量的操作</h3>
 <p>通常情况下可以在任何C语言允许使用char*指针的地方使用字符串字面量。例如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
 <span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 并非复制abc中的字符，而仅仅是使p指向字符串的第一个字符 */</span><span class="w"></span>
 
 <span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
 <span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="cm">/* C语言允许对指针添加下标，因此可以给字符串字面量添加下标 */</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>对于一些编译器而言，改变字符串字面量的内容可能会导致运行异常。因此不推荐这么做。</p>
@@ -1580,13 +1575,12 @@
 <h2 id="_8">字符串变量</h2>
 <p>C语言只要保证字符串是以空字符结尾的，任何一维的字符数组都可以用来存储字符串。</p>
 <p>定义字符串变量的惯用法：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define STR_LEN 80</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define STR_LEN 80</span>
 <span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="n">STR_LEN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="cm">/* 强调的事实是 str 可以存储最多80个字符 */</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_9">初始化字符串变量</h3>
 <p>字符串变量可以在声明时进行初始化：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="cm">/* 空字符串 */</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="cm">/* 空字符串 */</span><span class="w"></span>
 
 <span class="kt">char</span><span class="w"> </span><span class="n">date1</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;June 14&quot;</span><span class="p">;</span><span class="w"></span>
 
@@ -1594,13 +1588,11 @@
 
 <span class="kt">char</span><span class="w"> </span><span class="n">date3</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;June 14&quot;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 编译器自动计算长度 */</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_10">字符数组与字符指针</h3>
 <p>比如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">date1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;June 14&quot;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 字符数组 */</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">date1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;June 14&quot;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 字符数组 */</span><span class="w"></span>
 <span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">date2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;June 14&quot;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 字符串字面量的指针 */</span><span class="w"></span>
 </code></pre></div>
-
 <p>任何期望传递字符数组或字符指针的函数都将接受这两种声明的 date 作为参数。</p>
 <p>然而，需要注意，不能错误地认为上面两种 date 可以互换。两者之间有显著的差异：</p>
 <ul>
@@ -1622,7 +1614,7 @@
 <p>strlen 函数可以取得字符串的长度。</p>
 <h2 id="_12">字符串数组</h2>
 <p>比如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">planets</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">planets</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;Mercury&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;Venus&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;Earth&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1634,22 +1626,19 @@
 <span class="w">    </span><span class="s">&quot;Pluto&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>planets 数组的每一个元素是一个字符串的指针。</p>
 <h3 id="_13">命令参数</h3>
 <p>运行程序时，经常需要提供一些信息给程序，这是命令行参数（ command-line argument ）。必须把 main 函数定义为含有两个参数的函数：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>argc （参数计数）是命令行参数的数量（包括程序名本身，最少为1）。 argv ("参数向量")是指命令行参数的指针数组。 argv[0] 指向程序名， argv[n] 表示第n个参数。</p>
 <p>argv[argc] 始终是一个空指针。</p>
 <p>如果用户输入了下面的命令：</p>
-<div class="codehilite"><pre><span></span><code>ls -l remind.c
+<div class="highlight"><pre><span></span><code>ls -l remind.c
 </code></pre></div>
-
 <p>那么 argc 和 argv 是：</p>
 <ul>
 <li>

@@ -1442,7 +1442,7 @@
 <h2 id="_5">结构中的位域</h2>
 <p>C语言提供了声明成员为位域的结构。</p>
 <p>比如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">file_date</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">file_date</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nl">day</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nl">month</span><span class="p">:</span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nl">year</span><span class="p">:</span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
@@ -1453,7 +1453,6 @@
 <span class="n">fd</span><span class="p">.</span><span class="n">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
 <span class="n">fd</span><span class="p">.</span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="cm">/* represents 1988 */</span><span class="w"></span>
 </code></pre></div>
-
 <p>这个结构占据32个比特，每个成员后面的数字指定了它所占用位的长度。</p>
 <p>位域有一个限制，C语言不允许将&amp;运算符作用于位域。</p>
 <p>位域之间没有间隙，直到剩下的空间不够用来放下一个位域了，这时，一些编译器会跳到下一个存储单元继续存放位域，而另一些则会将位域拆开跨存储单元存放。位域的存放的顺序也是由实现定义的。</p>

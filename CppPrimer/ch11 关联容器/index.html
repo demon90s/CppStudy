@@ -1533,7 +1533,7 @@
 <p>除了与顺序容器相同的操作之外，关联容器还支持一些顺序容器不支持的操作（见p388）和类型别名（见p381）。</p>
 <p>关联容器的迭代器都是双向的。</p>
 <h3 id="_4">定义关联容器</h3>
-<div class="codehilite"><pre><span></span><code><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">word_count</span><span class="p">;</span><span class="w"> </span><span class="c1">// 空容器</span>
+<div class="highlight"><pre><span></span><code><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">word_count</span><span class="p">;</span><span class="w"> </span><span class="c1">// 空容器</span>
 <span class="n">set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;the&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;but&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;and&quot;</span><span class="p">};</span><span class="w"> </span><span class="c1">// 列表初始化</span>
 
 <span class="c1">// 三个元素；authors将姓映射为名</span>
@@ -1543,7 +1543,6 @@
 <span class="w">    </span><span class="p">{</span><span class="s">&quot;Dickens&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Charles&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>初始化multimap或multiset</strong></p>
 <p>一个map或set中的关键字必须是唯一的，即，对于一个给定的关键字，只能有一个元素的关键字等于它。</p>
 <p>multimap和multiset没有此限制，它们都允许多个元素具有相同的关键字（这些元素会相邻存储）。</p>
@@ -1551,28 +1550,25 @@
 <p>对于有序容器，关键字类型必须定义元素比较的方法，默认情况下，标准库使用关键字类型的&lt;运算符来比较两个关键字。</p>
 <p><strong>使用关键字类型的比较函数</strong></p>
 <p>用来组织一个容器中元素的操作的类型也是该容器类型的一部分。为了指定使用自定义的操作，必须在定义关联容器类型时提供此操作的类型（比如一个函数指针类型）。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">compareIsbn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Sales_data</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Sales_data</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">compareIsbn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Sales_data</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Sales_data</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">lhs</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">isbn</span><span class="p">();</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">multiset</span><span class="o">&lt;</span><span class="n">Sales_data</span><span class="p">,</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">compareIsbn</span><span class="p">)</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">bookstore</span><span class="p">(</span><span class="n">compareIsbn</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="pair">pair类型</h3>
 <p>pair类型定义在头文件utility中。</p>
 <p>一个pair保存两个数据成员，pair是一个用来生成特定类型的模板。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">anon</span><span class="p">;</span><span class="w"> </span><span class="c1">// 保存两个string</span>
+<div class="highlight"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">anon</span><span class="p">;</span><span class="w"> </span><span class="c1">// 保存两个string</span>
 <span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">line</span><span class="p">;</span><span class="w"> </span><span class="c1">// 保存string和vector&lt;int&gt;</span>
 </code></pre></div>
-
 <p>pair的默认构造函数对数据成员进行值初始化。也可以为每个成员提供初始化器：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">author</span><span class="p">{</span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joyce&quot;</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">author</span><span class="p">{</span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joyce&quot;</span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>pair的数据成员是public的，两个成员分别是first，second。</p>
 <p><strong>创建pair对象的函数</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"></span>
 <span class="n">process</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// 处理v</span>
@@ -1582,7 +1578,6 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// 隐式构造返回值</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_6">关联容器操作</h2>
 <p>除了表9.2(第295页)中列出的类型，关联容器还定义了这些类型：</p>
 <ul>
@@ -1606,13 +1601,12 @@
 <p>与不能改名map元素的关键字一样，一个set中的关键字也是const的。可以用一个set迭代器来读取元素的值，但不能修改。</p>
 <p><strong>遍历关联容器</strong></p>
 <p>map和set类型都支持begin和end操作，我们可以利用这些函数获取迭代器，然后用迭代器来遍历容器。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">map_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">map_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w"></span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">map_it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">word_count</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="w">    </span><span class="o">++</span><span class="n">map_it</span><span class="p">;</span><span class="w"> </span><span class="c1">// 递增迭代器，移动到下一个元素</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>当使用一个迭代器遍历一个map、multimap、set或multiset时，迭代器按关键字升序遍历元素。</p>
@@ -1623,21 +1617,19 @@
 <p>关联容器的insert成员向容器中添加一个元素或一个元素范围。由于map和set包含不重复的关键字，因此插入一个已存在的元素对容器没有任何影响。</p>
 <p><strong>向map添加元素</strong></p>
 <p>对一个map进行insert操作时，必须记住元素类型是pair。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
 <span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
 <span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
 <span class="n">word_count</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>向multiset或multimap添加元素</strong></p>
 <p>由于一个multi容器中的关键字不必唯一，在这些类型上调用insert总会插入一个元素：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="p">;</span><span class="w"></span>
 <span class="c1">// 插入第一个元素</span>
 <span class="n">authors</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Barth, John&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sot-Weed Factor&quot;</span><span class="p">});</span><span class="w"></span>
 <span class="c1">// 正确，添加第二个元素</span>
 <span class="n">authors</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Barth, John&quot;</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;Lost in the Funhouse&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>对允许重复关键字的容器，接受单个元素的insert操作返回一个指向新元素的迭代器。</p>
 <h3 id="_9">删除元素</h3>
 <p>关联容器定义了三个版本的erase：</p>

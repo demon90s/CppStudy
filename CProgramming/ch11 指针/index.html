@@ -1416,22 +1416,19 @@
 <p>地址是一个整数，用指针类型（pointer）的变量来存储。</p>
 <p><strong>指针变量的声明</strong></p>
 <p>在变量名前加星号，来声明一个指针变量。如：</p>
-<div class="codehilite"><pre><span></span><code>int *p;
+<div class="highlight"><pre><span></span><code>int *p;
 </code></pre></div>
-
 <p>此声明说明p是指向int类型的对象。</p>
 <h2 id="_3">取地址运算符和间接寻址运算符</h2>
 <h3 id="_4">取地址运算符</h3>
 <p>得到一个变量的地址在它前面加'&amp;'（取地址）。如：</p>
-<div class="codehilite"><pre><span></span><code>int i;
+<div class="highlight"><pre><span></span><code>int i;
 int *p = &amp;i;
 </code></pre></div>
-
 <h3 id="_5">间接寻址运算符</h3>
 <p>获取指针变量指向的存储空间首地址在它前面加<code>*</code>（间接寻址）。如：</p>
-<div class="codehilite"><pre><span></span><code>*p = 10;
+<div class="highlight"><pre><span></span><code>*p = 10;
 </code></pre></div>
-
 <p>这个操作（*p）得到的就是变量的<strong>别名</strong>。该操作会修改变量的值。</p>
 <h2 id="_6">指针赋值</h2>
 <p>只要是相同类型的指针，就可以相互赋值。这样它们就指向了相同的对象。</p>

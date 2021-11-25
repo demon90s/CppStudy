@@ -1370,12 +1370,11 @@
                 
                 <h1 id="1">条款1: 理解模板型别推导</h1>
 <p>有如下模板伪代码：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">ParamType</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">f</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>T的型别推导，不仅仅依赖实参的型别，还依赖ParamType的形式。具体有：</p>
 <ul>
 <li>ParamType 具有指针或引用型别（非万能引用）。</li>
@@ -1384,10 +1383,9 @@
 </ul>
 <h2 id="1-paramtype">情况1 ParamType是指针或引用</h2>
 <p>即如下（可能的）:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>型别推导会这样做：</p>
 <ol>
 <li>
@@ -1398,20 +1396,18 @@
 </li>
 </ol>
 <h2 id="2-paramtype">情况2 ParamType是万能引用</h2>
-<p>即如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<p>即如下：
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-
+</code></pre></div></p>
 <p>注意，形参声明方式写作<code>T&amp;&amp;</code>。</p>
 <p>如果expr是左值，T和ParamType都会被推导为左值引用。</p>
 <p>如果expr是右值，则使用情况1中的规则。</p>
 <h2 id="3-paramtype">情况3 ParamType既非指针也非引用</h2>
 <p>即如下:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>导出规则为：</p>
 <ul>
 <li>若expr具有引用型别，则忽略其引用部分。</li>
@@ -1423,19 +1419,17 @@
 </div>
 <h2 id="_1">数组实参</h2>
 <p>由于数组到指针的退化规则的存在，如果模板函数如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>那么将一个数组（比如 <code>const char name[] = "diwen"</code>）传递给它时，T会被推导成 <code>const char *</code> 。</p>
 <p>可以将形参声明成数组的引用，方法是将模板改成：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>T将推导出实际的数组型别，包含数组的尺寸。</p>
 <p>利用这一能力，可以创造一个模板，用来推导出数组含有的元素个数：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"></span>
 <span class="k">constexpr</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">arraySize</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="p">)[</span><span class="n">N</span><span class="p">])</span><span class="w"> </span><span class="k">noexcept</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>

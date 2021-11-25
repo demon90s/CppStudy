@@ -1536,28 +1536,25 @@
 <p>tuple的一个常见用途是从一个函数返回多个值。书中给出的案例见p638。</p>
 <h3 id="tuple_1">定义和初始化tuple</h3>
 <p>当我们定义一个tuple时，需要指出每个成员的类型：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">threeD</span><span class="p">;</span><span class="w">   </span><span class="c1">// 三个成员都设置为0</span>
+<div class="highlight"><pre><span></span><code><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">threeD</span><span class="p">;</span><span class="w">   </span><span class="c1">// 三个成员都设置为0</span>
 <span class="n">tuple</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">someVal</span><span class="p">(</span><span class="s">&quot;constants&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>当我们创建一个tuple对象时，可以使用tuple的默认构造函数，它会对每个成员进行值初始化。也可以为每个成员提供一个初始值。tuple的构造函数是explicit的，必须使用直接初始化语法。</p>
 <p>类似make_pair，标准库定义了make_tuple函数，用来生成tuple对象：</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 表示书店交易记录的tuple，包含: ISBN, 数量和每册书的价格</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 表示书店交易记录的tuple，包含: ISBN, 数量和每册书的价格</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;0-999-78345-X&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mf">20.00</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>make_tuple函数使用初始值的类型来推断tuple类型。本例中，item类型是<code>tuple&lt;const char*, int, double&gt;</code>。</p>
 <p><strong>访问tuple的成员</strong></p>
 <p>tuple的成员都是未命名的，要访问它们，就要使用get标准库函数模板，我们传递给get一个tuple对象，它返回指定成员的引用。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span><span class="w">           </span><span class="c1">// 返回item的第一个成员</span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span><span class="w">           </span><span class="c1">// 返回item的第一个成员</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span><span class="w">            </span><span class="c1">// 返回item的第二个成员</span>
 </code></pre></div>
-
 <blockquote>
 <p>my note: 如果引用索引超出范围，那么编译阶段会报错。</p>
 </blockquote>
 <p>可以通过两个辅助类模板来查询tuple成员的数量和类型：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="n">trans</span><span class="p">;</span><span class="w">       </span><span class="c1">// trans是itme的类型</span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="n">trans</span><span class="p">;</span><span class="w">       </span><span class="c1">// trans是itme的类型</span>
 
 <span class="c1">// 返回trans类型对象中成员的数量</span>
 <span class="kt">size_t</span><span class="w"> </span><span class="n">sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tuple_size</span><span class="o">&lt;</span><span class="n">trans</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="c1">// 返回3</span>
@@ -1565,25 +1562,22 @@
 <span class="c1">// cnt的类型与item中第二个成员相同</span>
 <span class="n">tuple_element</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">trans</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span><span class="w">   </span><span class="c1">// cnt是一个int</span>
 </code></pre></div>
-
 <p><strong>关系和相等运算符</strong></p>
 <p>tuple的关系和相等运算符的行为类似容器的对应操作，这些运算符逐对比较左侧tuple和右侧tuple的成员。只有两个tuple具有相同数量的成员时并且成员也支持比较操作时，我们才能比较它们。</p>
 <h2 id="bitset">bitset类型</h2>
 <p>标准库定义了bitset类，使得位运算的使用更为容易，并且能够处理超过最长整型类型大小的位集合。bitset类定义在头文件bitset中。</p>
 <h3 id="bitset_1">定义和初始化bitset</h3>
 <p>bitset类是一个类模板，它类似array类，具有固定的大小。当我们定义一个bitset时，需要声明它包含多少个二进制位。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span><span class="w">  </span><span class="c1">// 32位；低位为1，其他位为0</span>
+<div class="highlight"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span><span class="w">  </span><span class="c1">// 32位；低位为1，其他位为0</span>
 </code></pre></div>
-
 <p>二进制位的位置是从0开始编号的，因此，bitvec包含编号从0到31的32个二进制位。编号从0开始的二进制位被称为低位（low-order），编号到31结束的二进制位被称为高位（high-order）。</p>
 <p>p641页列出了初始化一个bitset的方法。</p>
 <p><strong>使用unsigned值初始化bitset</strong></p>
 <p>当我们使用一个整型值来初始化bitset时，此值将被转换为unsigned long long类型并被当作位模式来处理。bitset中的二进制位将是此模式的一个副本。如果bitset的大小大于unsigned long long的位数，则剩余高位被置为0。如果小于，则只使用给定值中的低位，超出bitset大小的高位被丢弃。</p>
 <p><strong>从一个string初始化bitset</strong></p>
 <p>我们可以从一个string或一个字符数组指针来初始化bitset。两种情况下，字符都直接表示位模式。当我们使用字符串表示数时，字符串中下标最小的字符对应高位：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec4</span><span class="p">(</span><span class="s">&quot;1100&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2、3两位为1，剩余两位为0</span>
+<div class="highlight"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec4</span><span class="p">(</span><span class="s">&quot;1100&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2、3两位为1，剩余两位为0</span>
 </code></pre></div>
-
 <p>如果string包含的字符数比bitset少，则bitset的高位被置为0。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1591,7 +1585,7 @@
 </div>
 <h3 id="bitset_2">bitset操作</h3>
 <p>bitset操作定义了多种检测或设置一个或多个二进制位的方法。见p643。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitvec</span><span class="p">(</span><span class="mi">1U</span><span class="p">);</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">is_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitvec</span><span class="p">.</span><span class="n">any</span><span class="p">();</span><span class="w">         </span><span class="c1">// true，因为有1位置位</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">is_not_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitvec</span><span class="p">.</span><span class="n">none</span><span class="p">();</span><span class="w">    </span><span class="c1">// false，因为有1位置位了</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">all_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitvec</span><span class="p">.</span><span class="n">all</span><span class="p">();</span><span class="w">        </span><span class="c1">// false，因为只有1位置位了</span>
@@ -1610,20 +1604,17 @@
 <span class="n">bitvec</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitvec</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">             </span><span class="c1">// 将最后一位设置为与第一位一样</span>
 <span class="o">~</span><span class="n">bitvec</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">                         </span><span class="c1">// 翻转第一位</span>
 </code></pre></div>
-
 <p><strong>提取bitset的值</strong></p>
 <p>to_ulong和to_ullong操作都返回一个值，保存了与bitset对象相同的位模式，只有当bitset的大小小于等于对应的大小时，我们才能使用这两个操作，否则将会抛出overflow_error异常。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ulong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitvec3</span><span class="p">.</span><span class="n">to_ulong</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ulong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitvec3</span><span class="p">.</span><span class="n">to_ulong</span><span class="p">();</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ulong = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ulong</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>bitset的IO运算符</strong></p>
 <p>输入运算符从一个输入流读取字符，保存到一个临时的string对象中。直到读取的字符数达到对应bitset的大小时，或是遇到不是1或0的字符时，或是遇到文件尾或输入错误时，读取过程才停止。随即用临时string对象来初始化bitset。如果读取的字符数小于bitset的大小，高位被置为0。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bits</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bits</span><span class="p">;</span><span class="w"></span>
 <span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bits</span><span class="p">;</span><span class="w">        </span><span class="c1">// 从cin读取最多16个0或1</span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;bits: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_1">正则表达式</h2>
 <p>正则表达式（regular expression）是一种描述字符序列的方法，是一种极其强大的计算工具。本章节主要是介绍如何使用C++正则表达式库（RE库），它定义在头文件regex中，它包含多个组件：</p>
 <table>
@@ -1697,19 +1688,17 @@
 </div>
 <h3 id="_3">随机数引擎和分布</h3>
 <p>随机数引擎是函数对象类，它们定义了一个调用运算符，该运算符不接受参数并返回一个随机unsigned整数。我们可以通过调用一个随机数引擎对象来生成原始随机数。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">default_random_engine</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">default_random_engine</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">        </span><span class="c1">// 生成一个随机无符号数</span>
 </code></pre></div>
-
 <p>标准库定义了多个随机数引擎类，区别在于性能和随机质量不同。</p>
 <p><strong>分布类型和引擎</strong></p>
 <p>为了得到一个指定范围内的数，我们使用一个分布类型的对象：</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 生成0到9之间（包含）均匀分布的随机数</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 生成0到9之间（包含）均匀分布的随机数</span>
 <span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span><span class="w"> </span><span class="n">u</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span><span class="w"></span>
 <span class="n">default_random_engine</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">u</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>分布类型也是函数对象类。分布类型定义了一个调用运算符，它接受一个随机数引擎作为参数。分布对象使用它的引擎参数生成随机数，并将其映射到指定的分布。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1722,16 +1711,14 @@
 </blockquote>
 <p><strong>设置随机数发生器种子</strong></p>
 <p>我们通常希望每次运行程序都会生成不同的随机结果，可以通过提供一个种子（seed）来达到这一目的。种子就是一个数值，引擎可以利用它从序列中一个新位置重新开始生成随机数。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">default_random_engine</span><span class="w"> </span><span class="n">e1</span><span class="p">;</span><span class="w">       </span><span class="c1">// 使用默认种子</span>
+<div class="highlight"><pre><span></span><code><span class="n">default_random_engine</span><span class="w"> </span><span class="n">e1</span><span class="p">;</span><span class="w">       </span><span class="c1">// 使用默认种子</span>
 <span class="n">e1</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">                    </span><span class="c1">// 调用seed设置一个种子值</span>
 <span class="n">default_random_engine</span><span class="w"> </span><span class="nf">e2</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">   </span><span class="c1">// 使用给定的种子值</span>
 </code></pre></div>
-
 <p>如果引擎种子相同，将生成相同的序列。</p>
 <p>选择一个好种子，是极其困难的，可能最常用的方法是调用系统函数time。它定义在头文件ctime中，它返回从一个特定时刻到当前经过了多少秒。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">default_random_engine</span><span class="w"> </span><span class="nf">e</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w">   </span><span class="c1">// 稍微随机些的种子</span>
+<div class="highlight"><pre><span></span><code><span class="n">default_random_engine</span><span class="w"> </span><span class="nf">e</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w">   </span><span class="c1">// 稍微随机些的种子</span>
 </code></pre></div>
-
 <blockquote>
 <p>my note: 使用random_device引擎为另一个引擎创建一个种子也是一种方法。</p>
 </blockquote>
@@ -1746,21 +1733,18 @@
 </div>
 <p><strong>控制布尔值的格式</strong></p>
 <p>默认情况下，bool值打印为1或0，通过对流使用boolalpha操纵符来修改原有格式：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">boolalpha</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 输出：true false</span>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">boolalpha</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 输出：true false</span>
 </code></pre></div>
-
 <p>一旦向cout“写入”了boolalpha，我们就改变了cout打印bool值的方式。后续打印bool值的操作都会打印true或false，为了取消格式的改变，noboolalpha：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">noboolalpha</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">noboolalpha</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>指定整型值的进制</strong></p>
 <p>默认情况下，整型值的输入输出使用十进制。我们可以使用操纵符hex、oct、dec将其改为十六进制、八进制或是改回十进制。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;default: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;default: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;octal: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">oct</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hex: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">hex</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;decimal: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
 </code></pre></div>
-
 <p><strong>在输出中指出进制</strong></p>
 <p>当对流应用showbase操纵符时，会在输出结果中显示进制：</p>
 <ul>
@@ -1774,31 +1758,28 @@
 <p>无前导字符串表示十进制。</p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">showbase</span><span class="p">;</span><span class="w">   </span><span class="c1">// 打印整型值时显示进制</span>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">showbase</span><span class="p">;</span><span class="w">   </span><span class="c1">// 打印整型值时显示进制</span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;default: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;octal: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">oct</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hex: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">hex</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;decimal: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">noshowbase</span><span class="p">;</span><span class="w"> </span><span class="c1">// 恢复流状态 </span>
 </code></pre></div>
-
 <p><strong>指定打印精度</strong></p>
 <p>setprecision操纵符接受一个参数，用来设置精度。它定义在头文件iomanip中。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">setprecision</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// 输出：1.41</span>
 </code></pre></div>
-
 <p>更多操纵符见p669。</p>
 <h3 id="_5">未格式化的输入/输出操作</h3>
 <p>标准库提供了一组低层操作，支持未格式化IO（unformatted IO）。这组操作允许我们将一个流当作一个无解释的字节序列来处理。</p>
 <p><strong>单字节操作</strong></p>
 <p>有几个未格式化操作每次一个字节地处理流，它们会读取而不是忽略空白符。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 读写一个字符</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 读写一个字符</span>
 <span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <table>
 <thead>
 <tr>

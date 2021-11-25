@@ -1587,28 +1587,25 @@
 <p>条件表达式的求值步骤是：首先计算出表达式1的值，如果此值不为零，那么计算表达式2的值，并且计算出来的值就是整个条件表达式的值；如果表达式1的值为零，那么计算表达式3的值，并且此值就是整个条件表达式的值。</p>
 <h3 id="_8">布尔值</h3>
 <p>因为许多程序需要变量能存储假值和真值，所以C语言缺少适当的布尔类型可能会很麻烦。可以使用 int 型变量来模拟布尔类型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">flag</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">flag</span><span class="p">;</span><span class="w"></span>
 <span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>为了使程序更加便于理解，一个好的方法是用类似 TRUE 和 FALSE 这样的名字定义宏：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define TRUE 1</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define TRUE 1</span>
 <span class="cp">#define FALSE 0</span>
 
 <span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span><span class="w"></span>
 <span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>为了更进一步实现这个想法，甚至可以定义用作类型的宏：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define BOOL int</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define BOOL int</span>
 
 <span class="n">BOOL</span><span class="w"> </span><span class="n">flag</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="switch">switch 语句</h2>
 <p>C语言提供了 switch 语句作为级联式 if 语句的替换：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="o">:</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Excellent&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Good&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
@@ -1622,9 +1619,8 @@
 <span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Illegal grade&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>switch 语句的最常用的格式如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="err">表达式</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="err">表达式</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="err">常量表达式</span><span class="o">:</span><span class="w"> </span><span class="err">多条语句</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="err">常量表达式</span><span class="o">:</span><span class="w"> </span><span class="err">多条语句</span><span class="w"></span>
@@ -1632,7 +1628,6 @@
 <span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="err">多条语句</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>switch 语句的组成部分：</p>
 <ul>
 <li>

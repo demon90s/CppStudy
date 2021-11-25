@@ -1441,14 +1441,12 @@
 <p>C语言允许在头中定义与库函数同名的宏。从而使得宏隐藏掉函数。</p>
 <p>使用宏可能会提高程序的运行速度。如果有不想使用宏的情况，可能是因为想缩小可执行代码的大小。</p>
 <p>若要删掉宏，可用如下方法：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#undef getchar</span>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#undef getchar
 </code></pre></div>
-
 <p>还可以禁用宏：</p>
-<div class="codehilite"><pre><span></span><code>(getchar)()
+<div class="highlight"><pre><span></span><code>(getchar)()
 </code></pre></div>
-
 <h2 id="stddefh">stddef.h 常用定义</h2>
 <p>此头提供了常用的类型和宏的定义。定义的类型包括以下几个：</p>
 <ul>
@@ -1464,13 +1462,12 @@
 </ul>
 <p>其中一个宏是：offsetof，其意思是求得结构体的起点到指定成员间的字节数。</p>
 <p>比如，有下面的结构体：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">s</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">s</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>offsetof(struct s, a)的值一定是0，因为结构体的首元素的地址一定是结构体的地址；</p>
 <p>offsetof(struct s, b)的值可能是1，但也可能是4（考虑到字节对齐）。</p>
                 

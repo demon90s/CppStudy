@@ -1508,56 +1508,49 @@
 <p>结构的元素可能具有不同的类型，而且，每个成员都有名字。</p>
 <h3 id="_3">结构变量的声明</h3>
 <p>一个声明结构变量的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">NAME_LEN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">on_hand</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">part1</span><span class="p">,</span><span class="w"> </span><span class="n">part2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>每个结构变量都有三个成员：number, name, on_hand 。</p>
 <p><code>struct {...}</code>指明了类型，而 part1 和 part2 则是具有这种类型的变量。</p>
 <p>结构的成员在内存中是按照声明的顺序存储的。第一个声明的变量放在存储位置的最前面。</p>
 <p>每个结构表示一种新的名字空间（ name space ）。 part1 的 number 和 part2 的 number 不会有冲突。</p>
 <h3 id="_4">结构变量的初始化</h3>
 <p>结构变量可以在声明的同时进行初始化：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">NAME_LEN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">on_hand</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">part1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">528</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Disk drive&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
 <span class="w">  </span><span class="n">part2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">914</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Printer cable&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>结构初始化式的表达式必须是常量。初始化式可以短于它所初始化的结构，这样任何“剩余”成员都用0作为它的初始值。</p>
 <h3 id="_5">对结构的操作</h3>
 <p>为了访问结构内的成员，首先写出结构的名字，然后写出成员的名字：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Part number: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">part1</span><span class="p">.</span><span class="n">number</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Part number: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">part1</span><span class="p">.</span><span class="n">number</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>结构成员的值是左值：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">part1</span><span class="p">.</span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">258</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">part1</span><span class="p">.</span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">258</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>用于访问结构成员的句点是一个运算符，其优先级比较高：</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">/* &amp;计算的是 part1.on_hand 的地址 */</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="cm">/* &amp;计算的是 part1.on_hand 的地址 */</span><span class="w"></span>
 <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">part1</span><span class="p">.</span><span class="n">on_hand</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>另一种主要的结构操作是赋值运算：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">part2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">part1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">part2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">part1</span><span class="p">;</span><span class="w"></span>
 <span class="cm">/* 现在 par1 和 part2 每个成员的值都一样 */</span><span class="w"></span>
 </code></pre></div>
-
 <p>可以用结构来复制数组：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span><span class="w"></span>
 <span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>运算符=仅仅用于类型一致的结构。</p>
 <h2 id="_6">结构类型</h2>
 <p>如果在两个地方编写了：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">NAME_LEN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">on_hand</span><span class="p">;</span><span class="w"></span>
@@ -1569,7 +1562,6 @@
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">on_hand</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">part2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>那么 part1 和 part2 就不是同一个类型，这样就不能执行赋值操作。为了解决这个问题，需要为表示结构的类型定义名字。方法有两种：</p>
 <ul>
 <li>
@@ -1581,7 +1573,7 @@
 </ul>
 <h3 id="_7">结构标记的声明</h3>
 <p>结构标记（ structure tag ）即：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">part</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">part</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">NAME_LEN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">on_hand</span><span class="p">;</span><span class="w"></span>
@@ -1590,10 +1582,9 @@
 <span class="cm">/* 用标记 part 声明变量 */</span><span class="w"></span>
 <span class="k">struct</span> <span class="nc">part</span><span class="w"> </span><span class="n">part1</span><span class="p">,</span><span class="w"> </span><span class="n">part2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_8">结构类型的定义</h3>
 <p>即：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">NAME_LEN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">on_hand</span><span class="p">;</span><span class="w"></span>
@@ -1602,11 +1593,10 @@
 <span class="cm">/* 声明变量 */</span><span class="w"></span>
 <span class="n">Part</span><span class="w"> </span><span class="n">part1</span><span class="p">,</span><span class="w"> </span><span class="n">part2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_9">联合</h2>
 <p>联合（ union ）也是由一个或多个成员构成的，而且这些成员可能具有不同的数据类型。但是，编译器只为联合中最大的成员分配足够的内存空间，联合的成员在这个空间内彼此覆盖。</p>
 <p>对于：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">union</span> <span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">u</span><span class="p">;</span><span class="w"></span>
@@ -1616,37 +1606,32 @@
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>他们的存储如：</p>
 <p><img alt="联合和结构的存储" src="../images/%E8%81%94%E5%90%88%E5%92%8C%E7%BB%93%E6%9E%84%E7%9A%84%E5%AD%98%E5%82%A8.jpg" /></p>
 <p>其中 u.i 和 u.f 具有相同的地址。</p>
 <h2 id="_10">枚举</h2>
 <p>枚举（ enumeration ）是一种由程序员列出的值，而且程序员必须为每种值命名（枚举常量）：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>虽然枚举和结构没什么共同的地方，但是它们的声明方式很类似。</p>
 <p>枚举常量的名字必须不同于闭合作用域内声明的其他标识符。</p>
 <h3 id="_11">枚举标记和枚举类型</h3>
 <p>为了定义枚举标记，可以写成：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">suit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">suit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
 <span class="cm">/* 声明枚举变量 */</span><span class="w"></span>
 <span class="k">enum</span><span class="w"> </span><span class="n">suit</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>用 typedef 给枚举命名：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">Suit</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">Suit</span><span class="p">;</span><span class="w"></span>
 
 <span class="cm">/* 声明枚举变量 */</span><span class="w"></span>
 <span class="n">Suit</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_12">枚举作为整数</h3>
 <p>在系统内部，C语言会把枚举变量和常量作为整数来处理。枚举常量的值可以是任意整数：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">suit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">suit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CLUBS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">DIAMONDS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">HEARTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">SPADES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>两个或多个枚举常量具有相同的值甚至也是合法的。</p>
 <p>当没有为枚举常量指定值时，它的值是一个大于前一个常量的值的值（大1）。默认第一个枚举常量的值为0。</p>
                 

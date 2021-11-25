@@ -1580,33 +1580,28 @@
 <p>程序员的责任是测试任意内存分配函数的返回值，并且在返回空指针时采取适当的操作。通过空指针试图访问内存的效果是未定义的，程序可能会崩溃或者出现不可预测的行为。</p>
 </div>
 <p>用名为NULL的宏来表示空指针，可用下列方式测试malloc函数的返回值：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="cm">/* allocation failed; take appropriate action */</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_4">动态分配字符串</h2>
 <p>动态内存分配经常用于字符串操作。字符串始终存储在固定长度的数组中，而且可能很难预测这些数组需要的长度。通过动态地分配字符串，可以推迟到程序运行时才作决定。</p>
 <h3 id="malloc">使用malloc函数为字符串分配内存</h3>
 <p>函数原型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>size_t是无符号整型，malloc分配了一段size个字节的连续空间，并返回该空间首地址。如果分配失败就返回NULL。</p>
 <p>因为C语言保证char型值确切需要一个字节的内存，为了给n个字符的字符串分配内存空间，可以写成：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>通常情况下，可以把void*型值赋给任何指针类型的变量。然而，一些程序员喜欢强制转换malloc函数的返回值：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>由于使用malloc函数分配内存不需要清除或者以任何方式初始化，所以p指向带有n+1个字符的未初始化的数组。</p>
 <p>可以调用strcpy函数对上述数组进行初始化：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">strcpy</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">strcpy</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>数组中前4个字符分别为a, b, c和空字符。</p>
 <h2 id="_5">动态分配数组</h2>
 <p>编写程序时，常常为难数组估计合适的大小。较方便的做法是等到程序运行时再来确定数组的实际大小。</p>
@@ -1614,38 +1609,32 @@
 <h3 id="malloc_1">使用malloc函数为数组分配存储空间</h3>
 <p>当使用malloc函数为数组分配存储空间时，需要使用sizeof运算符来计算出每个元素所需要的空间数量。</p>
 <p>使用sizeof计算是必须的，因为这样计算的结果在不同平台下都是正确的。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <p>这里的n可以在程序执行期间计算出来。</p>
 <p>一旦a指向了动态分配的内存块，就可以把它用作数组的名字。这都要感谢C语言中数组和指针的紧密关系。可以使用下列循环对此数组进行初始化：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="calloc">calloc函数</h3>
 <p>函数原型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">calloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">calloc</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>nmemb是数据单元的个数， size是一个数据单元的大小。返回成功申请的数据块首地址，失败返回NULL。</p>
 <p>calloc不仅会从“堆”申请存储区域，还会把这段区域清零。也因此其执行效率没有malloc高。</p>
 <p>下列calloc函数的调用为n个整数的数组分配存储空间，并且保证全部初始为0：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <p>通过调用以1作为第一个实际参数的calloc函数，可以为任何类型的数据项分配空间：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
 <span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">point</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <p>此语句执行后，p指向结构，且此结构的成员x和y都会被设置为0。</p>
 <h3 id="realloc">realloc函数</h3>
 <p>一旦为数组分配完内存，稍后可能会发现数组过大或过小。realloc函数可以调整数组的大小使它更适合需要。</p>
 <p>函数原型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">realloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">realloc</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>ptr必须指向内存块，且此内存块一定是先通过malloc函数、calloc函数或realloc函数的调用获得的。size表示内存块的新尺寸，新尺寸可能会大于或小于原有尺寸。</p>
 <p>C标准列出几条关于realloc函数的规则：</p>
 <ul>
@@ -1671,25 +1660,22 @@
 <h2 id="_6">释放存储</h2>
 <p>malloc函数和其他内存分配函数所获得的内存块都来自一个称为<strong>堆</strong>（heap）的存储池。调用这些函数经常会耗尽堆，或者要求大的内存块也可能耗尽堆，这会导致函数返回空指针。</p>
 <p>更糟的是，程序可能分配了内存块，然后又丢失了这些块的追踪路径，因而浪费了空间。如下例子：</p>
-<div class="codehilite"><pre><span></span><code>p = malloc(...);
+<div class="highlight"><pre><span></span><code>p = malloc(...);
 q = malloc(...);
 p = q;
 </code></pre></div>
-
 <p>由于没有指针指向第一个内存块，所以再也不能使用此内存块了。</p>
 <p>对于程序而言，不再访问到的内存块被称为是<strong>垃圾</strong>（garbage）。在后边留有垃圾的程序有<strong>内存泄漏</strong>（memory leak）。一些语言提供了<strong>垃圾收集器</strong>（garbage collector），但C语言不提供。每个C程序负责回收各自的垃圾，方法是调用free函数来释放不需要的内存。</p>
 <p>如上例子，就是一个内存泄漏。第一块内存再也访问不到了，这应该就是上文所说的留有垃圾。</p>
 <p><strong>free</strong></p>
 <p>只有一个方法释放由动态存储分配函数分配的内存空间。就是使用free函数，如果不释放，那么这块资源就一直放在“堆”里，直到程序退出。</p>
 <p>函数原型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">free</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">free</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>使用free函数很容易，只是简单地把指向不再需要的内存块的指针传递给free函数就可以了：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(...);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(...);</span><span class="w"></span>
 <span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>调用free函数来释放p所指向的内存块。然后会把这个释放的内存返回给堆，使此内存块可以被复用。</p>
 <h3 id="_7">“悬空指针”问题</h3>
 <p>free操作会生成<strong>悬空指针</strong>（dangling pointer）。即调用free(p)函数会释放p指向的内存块，但是不会改变p本身。如果忘记了p不再指向有效内存块（而使用它），后果很严重。</p>
@@ -1703,9 +1689,8 @@ p = q;
 <li>形参，成为模板函数的实现，比如qsort</li>
 </ul>
 <p>定义一个函数指针类型的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">Func</span><span class="p">)();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">Func</span><span class="p">)();</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_10">函数入口地址</h3>
 <p>函数名就是函数地址，但通常会对函数名做&amp;运算，其实得到的结果是一样的。同样对函数指针做<code>*</code>运算（解引用）和直接拿函数指针用也是一样的，都是代表了函数的入口地址。</p>
 <p>一般会对函数名做&amp;操作，对函数指针做<code>*</code>操作，让它们看上去比较像指针的使用。</p>

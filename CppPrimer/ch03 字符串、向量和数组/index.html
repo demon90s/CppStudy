@@ -1616,11 +1616,10 @@
 <hr />
 <h2 id="using">命名空间的using声明</h2>
 <p>有如下形式：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="o">::</span><span class="nn">name</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="o">::</span><span class="nn">name</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>使用完using声明（using declaration）后，就可以省略掉名字前的前缀了（如std::）。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">;</span><span class="w"></span>
 
@@ -1632,7 +1631,6 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>头文件不应包含using声明</strong></p>
 <p>这是因为头文件会被其它文件引用，从而使其它文件也使用了using声明，有可能造成命名冲突。</p>
 <h2 id="string">标准库类型string</h2>
@@ -1640,21 +1638,19 @@
 <h3 id="string_1">定义和初始化string对象</h3>
 <p>如何初始化类的对象是由类本身决定的。一个类可以定义很多种初始化对象的方式，只不过这些方式之间必须有所区别。</p>
 <p><strong>初始化string对象的方式：</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span><span class="w">           </span><span class="c1">// 默认初始化，s1是一个空串</span>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span><span class="w">           </span><span class="c1">// 默认初始化，s1是一个空串</span>
 <span class="n">string</span><span class="w"> </span><span class="nf">s2</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span><span class="w">       </span><span class="c1">// s2是s1的副本</span>
 <span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 等价于s2(s1)</span>
 <span class="n">string</span><span class="w"> </span><span class="nf">s3</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// s3是字面值&quot;value&quot;的副本，不包括最后的空字符</span>
 <span class="n">string</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 等价于s3(&quot;value&quot;)</span>
 <span class="n">string</span><span class="w"> </span><span class="nf">s4</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">);</span><span class="w">   </span><span class="c1">// 初始化为由n个字符c组成的串</span>
 </code></pre></div>
-
 <p><strong>直接初始化和拷贝初始化</strong></p>
 <p>如果使用等号（=）初始化一个变量，实际上执行的是<strong>拷贝初始化（copy initialization）</strong>，编译器把等号右侧的对象初始值拷贝到新创建的对象中去。如果不适用等号，则执行的是<strong>直接初始化</strong>（direct initialization）。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">s5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hiya&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 拷贝初始化</span>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">s5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hiya&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 拷贝初始化</span>
 <span class="n">string</span><span class="w"> </span><span class="nf">s6</span><span class="p">(</span><span class="s">&quot;hiya&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// 直接初始化</span>
 <span class="n">string</span><span class="w"> </span><span class="nf">s7</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 直接初始化</span>
 </code></pre></div>
-
 <h3 id="string_2">string对象上的操作</h3>
 <p>如：</p>
 <ul>
@@ -1695,38 +1691,33 @@
 <p>string类和大多数标准库类型都定义了几种配套类型，它们体现的是标准库与机器无关的特性。</p>
 <p><strong>字面值和string对象相加</strong></p>
 <p>标准库允许把字符字面值和字符串字面值转换成string对象，所以在需要string对象的地方就可以使用这两种字面值来替代。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;hi&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;,&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="string_3">处理string对象中的字符</h3>
 <p>字符处理函数的头文件是cctype，它和C的ctype.c一样，只不过前者是C++的命名规范。在书本p82有cctype头文件中的函数说明。</p>
 <p><strong>处理每个字符？使用基于范围的for语句</strong></p>
 <p>如果想对string对象中的每个字符做点儿什么操作，目前最好的办法是使用C++11新标准提供的一种语句：<strong>范围for</strong>（range for）语句。这种语句遍历序列中的每个元素并对序列中的每个值执行某种操作，其语法格式是：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nl">declaration</span> <span class="p">:</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nl">declaration</span> <span class="p">:</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">statement</span><span class="w"></span>
 </code></pre></div>
-
 <p>其中，expression部分是一个对象，用于表示一个序列。declaration部分负责定义一个变量，该变量将被用于访问序列中的基础元素。每次迭代，declaration部分的变量会被初始化为expression部分的下一个元素值。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">c</span> <span class="p">:</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">c</span> <span class="p">:</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// do something</span>
 </code></pre></div>
-
 <p>这里c是str中字符的副本，若要改变str中的字符，需要用引用：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="nl">c</span> <span class="p">:</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="nl">c</span> <span class="p">:</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// do something</span>
 </code></pre></div>
-
 <p><strong>使用下标运算符</strong></p>
 <p><code>[ ]</code>符号叫做下标运算符，范围是[0, s.size())，越界的结果是UB（undefined behavior，未定义行为）。</p>
 <h2 id="vector">标准库类型vector</h2>
 <p>vector是对象的集合，也叫容器（container）。集合中的每个对象都有一个索引，索引用于访问对象。</p>
 <p>vector是一个类模板。模板是为编译器提供的一份生成类或函数的说明。</p>
 <p>vector是模板而非类型，由vector生成的类型必须包含元素的类型，如：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>vector中存放的是对象，而引用不是对象，故不能存储引用。</p>
 <h3 id="vector_1">定义和初始化vector对象</h3>
 <p>vector模板控制着初始化向量的方法。</p>
@@ -1791,10 +1782,9 @@
 </li>
 </ul>
 <p>size返回的类型由vector定义的size_type类型。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">size_type</span><span class="w">    </span><span class="c1">// 正确</span>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">size_type</span><span class="w">    </span><span class="c1">// 正确</span>
 <span class="n">vector</span><span class="o">::</span><span class="n">size_type</span><span class="w">         </span><span class="c1">// 错误</span>
 </code></pre></div>
-
 <p>只有当元素的值可比较时，vector对象才能被比较。</p>
 <p>只能对确已存在的元素执行下标操作。</p>
 <h2 id="_2">迭代器介绍</h2>
@@ -1806,10 +1796,9 @@
 <p>end成员负责返回指向容器“尾元素的下一个位置”的迭代器。叫<strong>尾后迭代器（off-the-end iterator）</strong>。</p>
 <p>如果容器为空，begin和end都返回尾后迭代器。即：<code>v.begin() == v.end()</code></p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
 <span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>迭代器运算符</strong></p>
 <p>标准容器迭代器的运算符：</p>
 <ul>
@@ -1833,18 +1822,16 @@
 <p><strong>迭代器类型</strong></p>
 <p>标准库类型使用iterator和const_iterator来表示迭代器类型。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it1</span><span class="p">;</span><span class="w"></span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>it1能读写元素，而it2只能读。</p>
 <p>认定某个类型是迭代器类型当且仅当它支持一套操作，这套操作使得我们能访问容器的元素，或者从某个元素移动到另外一个元素。</p>
 <p><strong>begin和end运算符</strong></p>
 <p>begin和end返回的具体类型由对象是否是常量决定。如果对象是常量，返回const_iterator，否则返回iterator。</p>
 <p>为了专门得到const_iterator类型的迭代器，C++11中可以使用cbegin和cend：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>箭头运算符</strong></p>
 <p>即<code>-&gt;</code>，它把解引用和成员访问两个操作结合在一起。即：</p>
 <p><code>(*iter).mem</code>等价于<code>iter-&gt;mem</code>。</p>
@@ -1881,44 +1868,37 @@
 <p><strong>显式初始化数组元素</strong></p>
 <p>即列表初始化，此时可以忽略数组的维度，维度由编译器推断出来。</p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">// 剩下的元素执行值初始化，即为0</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">// 剩下的元素执行值初始化，即为0</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>字符数组的特殊性</strong></p>
 <p>可以用字符串字面值对此类数组进行初始化。如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>这样初始化的数组包含结尾的空字符。</p>
 <p><strong>不允许拷贝和赋值</strong></p>
 <p>这样的操作是非法的：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 非法</span>
 </code></pre></div>
-
 <p><strong>理解复杂的数组声明</strong></p>
 <p>定义一个指针数组：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 </code></pre></div>
-
 <p>定义一个指向数组的指针：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>定义一个绑定到数组的引用：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">a_ref</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">a_ref</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>默认情况下，类型修饰符从右向左依次绑定。不过理解数组的复杂声明时，应该由内向外理解。即从数组的名字开始按照由内向外的顺序阅读。</p>
 <h3 id="_7">访问数组元素</h3>
 <p>使用数组下标的时候，通常将其定义为size_t类型，这是一种机器相关的无符号类型。定义在cstddef头文件中，是C标准库stddef.h头文件的C++版本。</p>
 <p>可以使用范围for语句来遍历数组。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">i</span> <span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="nl">i</span> <span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>检查下标的值</strong></p>
 <p>与string和vector一样，数组的下标是否在合理范围之内由程序员负责检查。</p>
 <div class="admonition warning">
@@ -1929,40 +1909,35 @@
 <p>在很多用到数组名字的地方，编译器都会自动地将其替换为一个<strong>指向数组首元素的指针</strong>。</p>
 <p><strong>decltype</strong></p>
 <p>下面得到一个数组类型：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="k">decltype</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>auto</strong></p>
 <p>下面得到一个整型指针：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="k">auto</span><span class="w"> </span><span class="n">a2</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>指针也是迭代器</strong></p>
 <p>string和vector的迭代器支持的运算，指针都支持。</p>
 <p>使用递增运算符既可以让指向数组元素的指针向前移动到下一个位置上。</p>
 <p>这样可以获取数组尾元素的下一个位置的指针：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
-
 <p>不过C++11提供了begin和end函数，可以获取数组首元素的指针和尾后指针：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">beg_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">end_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>这俩函数定义在头文件iterator.h中。</p>
 <p>尾后指针不能解引用和递增操作。</p>
 <p>和迭代器一样，两个指针相减的结果是它们之间的距离。参与运算的两个指针必须指向同一个数组当中的元素。</p>
 <p><strong>下标和指针</strong></p>
 <p>对数组执行下标运算其实是对指向数组元素的指针执行下标运算：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ia</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">    </span><span class="c1">// ia转换成指向数组首元素的指针</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ia</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">    </span><span class="c1">// ia转换成指向数组首元素的指针</span>
 <span class="w">                  </span><span class="c1">// ia[2]得到(ia + 2)所指的元素</span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ia</span><span class="p">;</span><span class="w">      </span><span class="c1">// p指向ia的首元素</span>
 <span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">     </span><span class="c1">// 等价于i = ia[2]</span>
 </code></pre></div>
-
 <p>只要指针指向的是数组中的元素，都可以执行下标运算。</p>
 <p>内置的下标运算符可以处理负值，这和标准库类型的下标不一样（必须是无符号的）。</p>
 <h3 id="c">C风格字符串</h3>
@@ -1970,37 +1945,33 @@
 <p>p109列举了C语言标准库提供的一组函数，可以操作C风格字符串，他们定义在cstring头文件中。</p>
 <p><strong>c_str函数</strong></p>
 <p>string可使用c_str函数返回其C风格的字符串，如：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">c_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-
 <p>无法保证返回的C风格字符串一直有效，因此通常在返回后再把它拷贝到另一个地方。</p>
 <p><strong>使用数组初始化vector对象</strong></p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">end</span><span class="p">(</span><span class="n">a</span><span class="p">));</span><span class="w"></span>
 </code></pre></div>
-
 <h2 id="_9">多维数组</h2>
 <p>多维数组，实际上是数组的数组。</p>
 <p>如：<code>int a[3][4]</code>，可由内而外理解，a是一个含有3个元素的数组，每个元素又是一个含有4个元素的数组。</p>
 <p>对于二维数组，常把第一个维度看作行，第二个维度看作列。</p>
 <p><strong>多维数组的初始化</strong></p>
 <p>如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>列表初始化中未列出的元素执行值初始化。</p>
 <p><strong>多维数组的下标引用</strong></p>
 <p>如果表达式含有的下标运算符数量和维度一样多，该表达式的结果将是给定类型的元素；否则表达式的结果是内层数组。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">row</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="c1">// row绑定到a的第二个数组上</span>
 </code></pre></div>
-
 <p><strong>使用范围for语句处理多维数组</strong></p>
 <p>如果是外层循环，控制变量将得到数组类型。</p>
 <p>除了最内层的循环外，其他所有循环控制变量都应该是引用类型（因为若不是引用，编译器会认为外层控制变量是指针类型，而无法遍历一个指针）。</p>
@@ -2008,14 +1979,13 @@
 <p>当程序使用多维数组名字时，也会自动将其转换成指向数组首元素的指针。</p>
 <p>多维数组的首元素是一个内层数组，故使用多维数组名将得到一个指向内层数组的指针。</p>
 <p>即：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>还可以使用auto或者begin来得到指向内层数组的指针。</p>
 <p><strong>类型别名简化多维数组的指针</strong></p>
 <p>可以这样定义一个数组类型：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">int_arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span><span class="c1">// C++11</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">int_arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span><span class="c1">// C++11</span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">int_arr</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
                 

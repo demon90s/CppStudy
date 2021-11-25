@@ -1528,7 +1528,7 @@
 <p><strong>继承</strong></p>
 <p>通过继承（inheritance）联系在一起的类构成一种层次关系。层次关系的根部有一个基类（base class），其他类直接或间接地从基类继承而来，这些继承得到的类称为派生类（derived class）。</p>
 <p>基类负责定义在层次关系中所有类共同拥有的成员，而每个派生类定义各自特有的成员。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// 基类的部分定义</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 基类的部分定义</span>
 <span class="k">class</span> <span class="nc">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">isbn</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
@@ -1540,12 +1540,11 @@
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>对于某些函数，基类希望它的派生类各自定义适合自身的版本，此时基类就将这些函数声明成<strong>虚函数(virtual function)</strong>。</p>
 <p>派生类必须通过使用<strong>类派生列表（class deriveation list）</strong>明确指出它是从哪个基类继承而来的，其形式是：首先一个冒号，后面紧跟以逗号分隔的基类列表，其中每个基类前面可以有访问说明符。</p>
 <p>派生类必须在其内部对所有重新定义的虚函数进行声明，最好在后面加上override关键字，以确保编译器为我们做语法检查。</p>
 <h3 id="_2">定义基类</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Quote</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">Quote</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">sales_price</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">bookNo</span><span class="p">(</span><span class="n">book</span><span class="p">),</span><span class="w"> </span><span class="n">price</span><span class="p">(</span><span class="n">sales_price</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1562,7 +1561,6 @@
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>基类通常都应该定义一个虚析构函数，即使该函数不执行任何实际操作也是如此。</p>
@@ -1583,7 +1581,7 @@
 <p>派生类可以继承定义在基类中的成员，但派生类的成员函数不一定有权访问从基类继承而来的成员。</p>
 <p>派生类能访问公有成员、受保护的成员，不能访问私有成员。</p>
 <h3 id="_3">定义派生类</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Bulk_quote</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Bulk_quote</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Bulk_quote</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">Bulk_quote</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">qty</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">disc</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span>
@@ -1597,7 +1595,6 @@
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">discount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w">      </span><span class="c1">// 折扣</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>派生类中的虚函数</strong></p>
 <p>派生类经常覆盖它继承的虚函数。如果派生类没有覆盖其基类中的某个虚函数，则该虚函数的行为类似于其他的普通成员，派生类会直接继承其在基类中的版本。</p>
 <p>派生类可以在它覆盖的函数前使用virtual关键字，但不是必须的。C++11新标准允许派生类显式地注明它使用某个成员函数覆盖了它继承的虚函数，办法函数后面加一个关键字override。</p>
@@ -1613,12 +1610,11 @@
 </ul>
 <p>C++标准并没有明确规定派生类的对象在内存中如何分布。</p>
 <p>我们能把派生类的对象当成基类对象来使用，而且也能将基类的指针或引用绑定到派生类对象的基类部分上。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Quote</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w">             </span><span class="c1">// 基类对象</span>
+<div class="highlight"><pre><span></span><code><span class="n">Quote</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w">             </span><span class="c1">// 基类对象</span>
 <span class="n">Bulk_quote</span><span class="w"> </span><span class="n">bulk</span><span class="p">;</span><span class="w">        </span><span class="c1">// 派生类对象</span>
 <span class="n">Quote</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">item</span><span class="p">;</span><span class="w">       </span><span class="c1">// p指向Quote对象</span>
 <span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bulk</span><span class="p">;</span><span class="w">              </span><span class="c1">// p指向bulk的Quote部分</span>
 </code></pre></div>
-
 <p>这种转换称为<strong>派生类到基类的转换(derived-to-base)</strong>，这是一种隐式转换。</p>
 <p><strong>派生类的构造函数</strong></p>
 <p>尽管派生类对象中含有从基类继承而来的成员，但派生类并不能直接初始化这些成员。派生类必须使用基类的构造函数来初始化它的基类部分。</p>
@@ -1632,9 +1628,8 @@
 <p>静态成员遵循通用的访问控制规则，如果基类中的成员是private的，则派生类无权访问它。如果某静态成员是可访问的，则我们既能通过基类使用它也能通过派生类使用它。</p>
 <p><strong>防止继承的发生</strong></p>
 <p>有时候我们会定义这样一种类，我们不希望其他类继承它，或者不想考虑它是否适合作为一个基类。为了实现这一目的，C++11新标准提供了一种防止继承发生的方法，即在类名后跟一个关键字final：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">NoDerived</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/**/</span><span class="w"> </span><span class="p">};</span><span class="w">         </span><span class="c1">// NoDerived不能作为基类</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">NoDerived</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/**/</span><span class="w"> </span><span class="p">};</span><span class="w">         </span><span class="c1">// NoDerived不能作为基类</span>
 </code></pre></div>
-
 <h3 id="_4">类型转换与继承</h3>
 <p>可以将基类的指针或引用绑定到派生类对象上有一层极为重要的含义：当使用基类的引用（或指针）时，实际上我们并不清除该引用（或指针）所绑定对象的真实类型。该对象可能是基类的对象，也可能是派生类的对象。</p>
 <div class="admonition note">
@@ -1644,9 +1639,8 @@
 <p><strong>静态类型与动态类型</strong></p>
 <p>表达式的静态类型在编译时总是已知的，它是变量声明时的类型或表达式生成的类型。</p>
 <p>动态类型则是变量或表达式表示的内存中的对象的类型。动态类型直到运行时才可知。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">net_price</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">net_price</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>item的静态类型是Quote&amp;，它的动态类型则依赖于item绑定的实参。</p>
 <p>如果表达式既不是引用也不是指针，则它的动态类型永远与静态类型一致。</p>
 <p>当我们用一个派生类对象为一个基类对象初始化或赋值时，只有该派生类对象中的基类部分会被拷贝、移动或赋值，它的派生类部分将被忽略掉。</p>
@@ -1661,19 +1655,17 @@
 <p>如果派生类定义了一个函数与基类中虚函数的名字相同但是形参列表不同，这仍然是合法的行为。编译器将认为新定义的这个函数与基类中原有的函数是相互独立的。这时，派生类的函数并没有覆盖掉基类中的函数，这往往是一种失误，我们原本很可能希望覆盖。</p>
 <p>在C++11新标准中我们可以使用override关键字来说明派生类中的虚函数，这么做的好处是编译器可以为我们发现上述错误。如果我们使用override标记了某个函数，但该函数并没有覆盖已存在的虚函数，此时编译器将报错。</p>
 <p>我们还能把某个虚函数函数指定为final，如果虚函数函数定义成了final，则之后任何尝试覆盖该函数的操作都将引发错误。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">D</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">D</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="p">;</span><span class="w">    </span><span class="c1">// 不允许后续的其他类覆盖</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>虚函数与默认实参</strong></p>
 <p>虚函数可以拥有默认实参，如果某次函数调用使用了默认实参，则该实参值由本次调用的静态类型决定，即使用基类中定义的默认实参，即使实际运行的是派生类中的函数版本也是如此。</p>
 <p>如果虚函数使用默认实参，则基类和派生类中定义的默认实参最好一致。</p>
 <p><strong>回避虚函数机制</strong></p>
 <p>在某些情况下，我们希望对虚函数的调用不要进行动态绑定，而是强迫执行虚函数的某个特定版本。使用作用域运算符可以实现这一目的，例如：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">undiscounted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseP</span><span class="o">-&gt;</span><span class="n">Quote</span><span class="o">::</span><span class="n">net_price</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">undiscounted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseP</span><span class="o">-&gt;</span><span class="n">Quote</span><span class="o">::</span><span class="n">net_price</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-
 <p>该代码强行调用Quote的net_price函数，而不管baseP实际指向的对象到底是什么。该调用将在编译时完成解析。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1684,9 +1676,8 @@
 </div>
 <h2 id="_6">抽象基类</h2>
 <p>通过在函数体的位置（即在声明语句的分号）书写=0就可以将一个虚函数说明为纯虚函数。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>含有纯虚函数的类是抽象基类</strong></p>
 <p>抽象基类负责定义接口，而后续的其他类可以覆盖该接口。我们不能（直接）创建一个抽象基类的对象。</p>
 <div class="admonition note">
@@ -1710,7 +1701,7 @@
 <li>派生类的成员或友元只能通过派生类对象来访问基类的受保护成员。派生类对于一个基类对象中受保护成员没有任何访问权限。</li>
 </ul>
 <p>上述规则可以用下面的例子来理解：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">protected</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">prot_mem</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
@@ -1727,7 +1718,6 @@
 <span class="c1">// 错误：clobber不能访问Base的protected成员</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">clobber</span><span class="p">(</span><span class="n">Base</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">prot_mem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>公有、私有和受保护继承</strong></p>
 <p>某个类对其继承而来的成员的访问权限受到两个因素影响：</p>
 <ul>
@@ -1764,7 +1754,7 @@
 <p>友元关系不能继承，基类的友元在访问派生类成员时不具有特殊性，类似的，派生类的友元也不能随意访问基类的成员。</p>
 <p><strong>改变个别成员的可访问性</strong></p>
 <p>有时候我们需要改变派生类继承的某个名字的访问级别，通过using声明可以达到这一目的：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 <span class="k">protected</span><span class="o">:</span><span class="w"></span>
@@ -1779,7 +1769,6 @@
 <span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">Base</span><span class="o">::</span><span class="n">n</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>因为Derived使用了私有继承，所以继承而来的成员size和n默认情况下是Derived的私有成员。然而，我们使用using声明语句改变了这些成员的可访问性。</p>
 <p>通过在类的内部使用using声明语句，我们可以将该类的直接或间接基类中任何可访问成员标记出来。using声明语句中名字的访问权限由该using声明语句之前的访问说明符来决定。</p>
 <div class="admonition note">
@@ -1804,13 +1793,12 @@
 <h3 id="_10">虚析构函数</h3>
 <p>继承关系对基类拷贝控制最直接的影响是基类通常应该定义一个虚析构函数，这样我们就能动态分配继承体系中的对象了。</p>
 <p>当我们delete一个动态分配的对象的指针时，将执行析构函数。如果该指针指向继承体系中的某个类型，则有可能出现指针的静态类型与被删除对象的动态类型不符的情况。我们通过在基类中奖析构函数定义成虚析构函数以确保执行正确的析构函数版本。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// 如果我们删除的是一个指向派生类对象的基类指针，则需要虚析构函数</span>
 <span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Quote</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">// 动态绑定析构函数</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>如果基类的析构函数不是虚函数，则delete一个指向派生类对象的基类指针将产生未定义的行为。</p>
@@ -1827,7 +1815,7 @@
 <p>派生类的拷贝和移动构造函数在拷贝和移动自有成员的同时，也要拷贝和移动基类部分的成员。类似的，派生类赋值运算符也必须为其基类部分的成员赋值。</p>
 <p>和构造函数及赋值运算符不同的是，析构函数只负责销毁派生类自己分配的资源。派生类对象的基类部分是自动销毁的。</p>
 <p><strong>定义派生类的拷贝或移动构造函数</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/**/</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/**/</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 
 <span class="k">class</span> <span class="nc">D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
@@ -1837,42 +1825,37 @@
 <span class="w">    </span><span class="n">D</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Base</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>派生类赋值运算符</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// Base::operator=(const Base&amp;) 不会被自动调用</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Base::operator=(const Base&amp;) 不会被自动调用</span>
 <span class="n">D</span><span class="w"> </span><span class="o">&amp;</span><span class="n">D</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">Base</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 为基类部分赋值</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>派生类析构函数</strong></p>
 <p>在析构函数体执行完成后，对象的成员会被隐式销毁。类似的，对象的基类部分也是隐式销毁的。因此，和构造函数及赋值运算符不同的是，派生类析构函数只负责销毁由派生类自己分配的资源：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Base::~Base被自动调用执行</span>
 <span class="w">    </span><span class="o">~</span><span class="n">D</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 该处由用户定义清除派生类成员的操作 */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>对象销毁的顺序正好与其创建的顺序相反：派生类析构函数首先执行，然后是基类的析构函数，以此类推，沿着继承体系的反方向直到最后。</p>
 <h3 id="_13">继承的构造函数</h3>
 <p>在C++11新标准中，派生类能够重用其直接基类定义的构造函数。</p>
 <p>一个类只初始化它的直接基类，出于同样的原因，一个类也只继承其直接基类的构造函数。类不能继承默认、拷贝和移动构造函数。如果派生类没有直接定义这些构造函数，则编译器将为派生类合成它们。</p>
 <p>派生类继承基类构造函数的方式是提供一条注明了（直接）基类名的using声明语句。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Bulk_quote</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Disc_quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Bulk_quote</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Disc_quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">Disc_quote</span><span class="o">::</span><span class="n">Disc_quote</span><span class="p">;</span><span class="w"> </span><span class="c1">// 继承Disc_quote的构造函数</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">net_price</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>通常情况下，using声明语句只是令某个名字在当前作用域内可见。当当作用于构造函数时，using声明语句将令编译器产生代码。对于基类的每个构造函数，编译器都在派生类中生成一个形参列表完全相同的构造函数。</p>
 <p>在Bulk_quote类中，继承的构造函数等价于：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Bulk_quote</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">qty</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">disc</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Bulk_quote</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">qty</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">disc</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Disc_quote</span><span class="p">(</span><span class="n">book</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">qty</span><span class="p">,</span><span class="w"> </span><span class="n">disc</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 </code></pre></div>
-
 <p>如果派生类含有自己的数据成员，则这些成员将被默认初始化。</p>
                 
               

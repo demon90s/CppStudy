@@ -1546,19 +1546,17 @@
 <h3 id="_6">共享变量的声明</h3>
 <p>变量可以在文件中共享。</p>
 <p>为了声明变量而不定义，需要在变量声明的开始处放置关键字 extern :</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">/* in heaeder file */</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="cm">/* in heaeder file */</span><span class="w"></span>
 <span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>为了共享i，需要在一个源文件中定义i:</p>
-<div class="codehilite"><pre><span></span><code><span class="cm">/* in source file */</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="cm">/* in source file */</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_7">保护头文件</h3>
 <p>如果一个源文件同时包含一个头文件两次，那么可能产生编译错误（比如包含了两次相同的类型定义）。</p>
 <p>因此要用到一种保护头文件的方法：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef BOOLEAN_H</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef BOOLEAN_H</span>
 <span class="cp">#define BOOLEAN_H</span>
 
 <span class="cm">/*</span>
@@ -1567,15 +1565,13 @@
 
 <span class="cp">#endif</span>
 </code></pre></div>
-
 <p>如果再次包含此头文件，预处理器就不会再扩展真实的内容。</p>
 <h3 id="error">头文件中的#error指令</h3>
 <p>经常把#error指令放置在头文件中是用来检查不应该包含头文件的条件。例如：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef DOS</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef DOS</span>
 <span class="cp">#error Graphics supported only under DOS</span>
 <span class="cp">#endif</span>
 </code></pre></div>
-
 <p>如果非DOS的程序试图包含此头文件，那么编译将在#error指令处终止。</p>
 <h2 id="_8">构建多文件程序</h2>
 <p>构建大程序的基本步骤：</p>
@@ -1588,9 +1584,8 @@
 </li>
 </ul>
 <p>大多数编译器允许用单独一步来构建程序：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">fmt</span><span class="w"> </span><span class="n">fmt</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="n">word</span><span class="p">.</span><span class="n">c</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">fmt</span><span class="w"> </span><span class="n">fmt</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="n">word</span><span class="p">.</span><span class="n">c</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="makefile">makefile</h3>
 <p>使用 makefile 更易于构建大型程序。 makefile 列出了作为程序的部分文件，并描述了它们之间的依赖性。</p>
 <p>更多讨论见书本。</p>
@@ -1600,11 +1595,10 @@
 </div>
 <h3 id="_9">在程序外定义宏</h3>
 <p>大多数 UNIX 编译器支持-D选项，允许在命令行指定一个宏定义：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">DDEBUG</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">foo</span><span class="p">.</span><span class="n">c</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">DDEBUG</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">foo</span><span class="p">.</span><span class="n">c</span><span class="w"></span>
 </code></pre></div>
-
 <p>定义了宏 Debug ，在 foo.c 程序中，且值为1。如同在 foo.c 中的开始出现：</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#define DEBUG 1</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG 1</span>
 </code></pre></div>
                 
               

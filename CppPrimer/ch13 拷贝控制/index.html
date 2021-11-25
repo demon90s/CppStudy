@@ -1566,13 +1566,12 @@
 <h2 id="_2">拷贝、赋值与销毁</h2>
 <h3 id="_3">拷贝构造函数</h3>
 <p>如果一个构造函数的第一个参数是自身类类型的引用，且任何额外参数都有默认值，则此构造函数是拷贝构造函数。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Foo</span><span class="p">();</span><span class="w">               </span><span class="c1">// 默认构造函数</span>
 <span class="w">    </span><span class="n">Foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="w">     </span><span class="c1">// 拷贝构造函数</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>合成拷贝构造函数</strong></p>
 <p>如果我们没有为一个类定义拷贝构造函数，编译器会为我们定义一个。合成拷贝构造函数（synthesized copy constructor）会将其参数的成员逐个拷贝到正在创建的对象中。</p>
 <p>每个成员的类型决定了它如何拷贝：对类类型的成员，会使用其拷贝构造函数来拷贝；内置类型的成员则直接拷贝；如果数组元素是类类型，则使用元素的拷贝构造函数来逐个进行拷贝。</p>
@@ -1592,31 +1591,28 @@
 <p>某些类类型还会对它们所分配的对象使用拷贝初始化，如调用标准库容器的insert或push成员时。</p>
 <h3 id="_4">拷贝赋值运算符</h3>
 <p>类可以控制其对象如何赋值：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Sales_data</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="n">accum</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Sales_data</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="n">accum</span><span class="p">;</span><span class="w"></span>
 <span class="n">trans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accum</span><span class="p">;</span><span class="w">    </span><span class="c1">// 使用Sales_data的拷贝赋值运算符</span>
 </code></pre></div>
-
 <p><strong>重载赋值运算符</strong></p>
 <p>重载运算符（overloaded operator）本质上是函数，其名字是由operator关键字后接运算符符号组成。因此，赋值运算符就是一个名为operator=的函数。</p>
 <p>重载运算符的参数表示运算符的运算对象。某些运算符，包括赋值运算符，必须定义为成员函数。如果一个运算符是一个成员函数，其左侧运算对象就绑定到隐式的this参数。对于二元运算符，例如赋值运算符，其右侧运算对象作为显式参数传递。</p>
 <p>拷贝赋值运算符接受一个与其所在类相同类型的参数：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Foo</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">);</span><span class="w">    </span><span class="c1">// 赋值运算符</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>合成拷贝赋值运算符</strong></p>
 <p>如果一个类未定义自己的拷贝赋值运算符，编译器会为它合成一个。合成的版本会将右侧运算对象的每个非static成员赋予左侧运算符对象的对应成员。对于数组类型的成员，逐个赋值数组元素。</p>
 <h3 id="_5">析构函数</h3>
 <p>析构函数执行与构造函数相反的操作：构造函数初始化对象的非static数据成员，还可能做一些其他工作；析构函数释放对象使用的资源，并销毁对象的非static数据成员。</p>
 <p>析构函数是一个类的成员函数，名字由一个波浪号接类名构成。它没有返回值，也不接受参数：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="o">~</span><span class="n">Foo</span><span class="p">();</span><span class="w">    </span><span class="c1">// 析构函数</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>由于析构函数不接受参数，因此它不能被重载。一个类只能有一个析构函数。</p>
 <p><strong>析构函数完成什么工作</strong></p>
 <p>在一个构造函数中，成员的初始化是在函数体执行之前完成的，且按照它们在类中出现的顺序进行初始化。</p>
@@ -1659,12 +1655,11 @@
 <p>在新标准下，可以通过将拷贝构造函数和拷贝赋值运算符定义为<strong>删除的函数（deleted function）</strong>来阻止拷贝。</p>
 <p>删除的函数是这样一种函数：我们虽然声明了它们，但不能以任何方式使用它们。</p>
 <p>在函数的参数列表后接=delete来通知编译器，将它定义为删除的：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="nc">NoCopy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">NoCopy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">NoCopy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w">    </span><span class="c1">// 阻止拷贝</span>
 <span class="w">    </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NoCopy</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w">    </span><span class="c1">// 阻止赋值</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>还可以对任何函数指定=delete。</p>
 <p><strong>析构函数不能是删除的成员</strong></p>
 <p>如果析构函数被删除，就无法销毁此类对象。对于一个删除了析构函数的类型（或者其某个成员删除了析构函数），编译器将不允许定义该类型的变量或创建该类型的临时对象。</p>
@@ -1680,7 +1675,7 @@
 <p>类的行为像一个指针，意味着拷贝一个对象时，副本和原对象使用相同的底层数据。改变副本也会改变原对象，反之亦然。</p>
 <p>详细讨论见书本和代码案例。</p>
 <p>使用这样的例子解释：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">HasPtr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HasPtr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">     </span><span class="c1">// 准备定义构造函数、拷贝构造函数、拷贝赋值运算符、析构函数</span>
 <span class="k">private</span><span class="o">:</span><span class="w"></span>
@@ -1688,7 +1683,6 @@
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="_9">行为像值的类</h3>
 <p>对于类管理的资源，每个对象都应该拥有一份自己的拷贝。</p>
 <p>为了实现类值的行为，HasPtr需要：</p>
@@ -1730,27 +1724,24 @@
 <h2 id="_11">交换操作</h2>
 <p>管理资源的类通常还定义一个名为swap的函数。一些算法会在需要交换两个元素时调用swap。</p>
 <p>如果一个类定义了自己的swap，那么算法将使用类自定义的版本。否则算法将使用标准库定义的swap。标准库定义的版本可能像这样：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">HasPtr</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">HasPtr</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">;</span><span class="w"></span>
 <span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
 <span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>但对于HasPtr这样管理外部资源的类，可以直接交换指针，而不是分配多一个副本。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span><span class="w"></span>
 <span class="n">v1</span><span class="p">.</span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span><span class="w"></span>
 <span class="n">v2</span><span class="p">.</span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-
 <p>swap函数的存在是为了优化代码。详细定义方法见书本。</p>
 <p><strong>在赋值运算符中使用swap</strong></p>
 <p>定义swap的类通常用swap来定义它们的赋值运算符。这些运算符使用了一种名为<strong>拷贝并交换（copy and swap）</strong>的技术。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">HasPtr</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">HasPtr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">HasPtr</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">HasPtr</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p>rhs是右侧运算对象的一个副本，它会在赋值运算符结束时被自动销毁。</p>
 <p>这种技术自动处理了自赋值的情况且天然就是异常安全的。</p>
 <h2 id="_12">对象移动</h2>
@@ -1758,32 +1749,29 @@
 <p>使用移动而不是拷贝的另一个原因源于IO类或unique_ptr这样的类。这些类都包含不能被共享的资源（指针或IO缓冲）。因此，这些类的对象不能拷贝但可以移动。</p>
 <h3 id="_13">右值引用</h3>
 <p>为了支持移动操作，新标准引入了一种新的类型——<strong>右值引用（rvalue reference）</strong>。右值引用必须绑定到右值——一个将要销毁的对象。因此，我们可以自由地将一个右值引用的资源移动到另一个对象中。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">    </span><span class="c1">// 正确：r引用i</span>
 <span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误：不能将一个右值引用绑定到一个左值上</span>
 <span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// 正确：将rr2绑定到乘法结果上</span>
 </code></pre></div>
-
 <p><strong>左值持久，右值短暂</strong></p>
 <p>左值与右值的区别：左值有持久的状态，而右值要么是字面常量，要么是在表达式求值过程中创建的临时对象。</p>
 <p><strong>变量是左值</strong></p>
 <p>变量可以看作只有一个运算对象而没有运算符的表达式。类似其他任何表达式，变量表达式也有左值/右值属性。变量表达式都是左值。</p>
 <p>因此，我们不能将一个右值引用绑定到一个右值引用类型的变量上：</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">     </span><span class="c1">// 正确：字面常量是右值</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">     </span><span class="c1">// 正确：字面常量是右值</span>
 <span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr1</span><span class="p">;</span><span class="w">    </span><span class="c1">// 错误：表达式rr1是左值！</span>
 </code></pre></div>
-
 <p><strong>标准库move函数</strong></p>
 <p>虽然不能将一个右值引用直接绑定到一个左值上，但我们可以显式地将一个左值转换为对应的右值引用类型。方法是通过调用一个名为move的新标准库函数来获得绑定到左值上的右值引用。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rr3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 </code></pre></div>
-
 <p>move调用告诉编译器：我们有一个左值，但我们希望像一个右值一样处理它。调用move就意味着承诺：除了对i赋值或销毁它外，我们将不再使用它。</p>
 <h3 id="_14">移动构造函数和移动赋值运算符</h3>
 <p>移动的版本从给定对象“窃取”资源而不是拷贝资源。</p>
 <p>移动构造函数的第一个参数是该类型的一个右值引用。与拷贝构造函数一样，任何额外的参数都必须有默认实参。</p>
 <p>除了完成资源的移动，移动构造函数还必须确保移后源对象处于这样一个状态——销毁它是无害的。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">StrVec</span><span class="o">::</span><span class="n">StrVec</span><span class="p">(</span><span class="n">StrVec</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">noexcpet</span><span class="w"> </span><span class="c1">// 移动构造函数不应抛出异常</span>
+<div class="highlight"><pre><span></span><code><span class="n">StrVec</span><span class="o">::</span><span class="n">StrVec</span><span class="p">(</span><span class="n">StrVec</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">noexcpet</span><span class="w"> </span><span class="c1">// 移动构造函数不应抛出异常</span>
 <span class="w"> </span><span class="c1">// 成员初始化器接管s中的资源</span>
 <span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">elements</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">elements</span><span class="p">),</span><span class="w"> </span><span class="n">first_free</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">first_free</span><span class="p">),</span><span class="w"> </span><span class="n">cap</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">cap</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -1791,14 +1779,13 @@
 <span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">first_free</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">cap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>移动操作、标准库容器和异常</strong></p>
 <p>移动操作通常不分配资源，因此通常不会抛出异常，我们应当将此事通知标准库。除非标准库知道我们的移动构造函数不会抛出异常，否则它会认为移动我们的类对象时可能会抛出异常，并且为了处理这种可能性而做一些额外的工作。</p>
 <p>通知的方法是在构造函数中指明noexcept。</p>
 <p>详细的解释见书本p474。</p>
 <p><strong>移动赋值运算符</strong></p>
 <p>移动赋值运算符执行与析构函数和移动构造函数相同的工作。类似拷贝赋值运算符，移动赋值运算符必须正确处理自赋值：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">StrVec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">StrVec</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">StrVec</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">StrVec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">StrVec</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">StrVec</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// 直接检测自赋值</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1812,7 +1799,6 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-
 <p><strong>移后源对象必须可析构</strong></p>
 <p>从一个对象移动数据并不会销毁此对象，但有时在移动操作完成后，源对象会被销毁。因此，当我们编写一个移动操作时，必须确保移后源对象进入一个可析构的状态。</p>
 <p>除了将移后源对象置为析构安全的状态之外，移动操作还必须保证对象仍然是有效的，即可以安全地为其赋予新值或者可以安全地使用而不依赖其当前值。但是移动操作对移后源对象中留下的值没有任何要求。因此，我们的程序不应该依赖于移后源对象中的数据。</p>
@@ -1825,29 +1811,26 @@
 <p>如果类定义了一个移动构造函数或一个移动赋值运算符，则该类的拷贝版本会被定义为删除的。</p>
 <p><strong>移动右值，拷贝左值</strong></p>
 <p>如果一个类既有移动构造函数，也有拷贝构造函数，编译器使用普通的函数匹配规则来确定使用哪个构造函数。赋值操作的情况类似。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">StrVec</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">StrVec</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w"></span>
 <span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span><span class="w">                    </span><span class="c1">// v2是左值，使用拷贝赋值</span>
 <span class="n">StrVec</span><span class="w"> </span><span class="nf">getVec</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">);</span><span class="w">    </span><span class="c1">// getVec返回一个右值</span>
 <span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getVec</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span><span class="w">           </span><span class="c1">// getVec(cin)是一个右值；使用移动赋值</span>
 </code></pre></div>
-
 <p><strong>更新三/五法则</strong></p>
 <p>所有五个拷贝控制成员应该看作一个整体：一般来说，如果一个类定义了任何一个拷贝操作，它就应该定义所有五个操作。这些类通常拥有一个资源，而拷贝成员必须拷贝此资源。一般来说，拷贝一个资源会导致一些额外开销。在这种拷贝并非必要的情况下，定义了移动构造函数和移动赋值运算符的类就可以避免此问题。</p>
 <h2 id="_15">右值引用和成员函数</h2>
 <p>除了构造函数和赋值运算符之外，成员函数也可以提供拷贝和移动的版本：一个版本有一个右值引用参数，而另一个版本有一个const左值引用。</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">X</span><span class="o">&amp;</span><span class="p">);</span><span class="w">   </span><span class="c1">// 拷贝：绑定到任意类型的X</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">X</span><span class="o">&amp;</span><span class="p">);</span><span class="w">   </span><span class="c1">// 拷贝：绑定到任意类型的X</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">push_back</span><span class="p">(</span><span class="n">X</span><span class="o">&amp;&amp;</span><span class="p">);</span><span class="w">        </span><span class="c1">// 移动：只能绑定到类型X的可修改的右值</span>
 </code></pre></div>
-
 <p><strong>右值和左值引用成员函数</strong></p>
 <p>我们可以强制左侧运算对象是一个左值。</p>
 <p>我们指出this的左值/右值属性的方式与定义const成员函数相同，即，在参数列表后放置一个<strong>引用限定符（reference qualifier）</strong>。</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Foo</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="p">;</span><span class="w">   </span><span class="c1">// 只能向可修改的左值赋值</span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
-
 <p>引用限定符可以是&amp;或&amp;&amp;，分别指出this可以指向一个左值或右值。如果存在const限定符，引用限定符必须跟随在const限定符之后。</p>
                 
               
