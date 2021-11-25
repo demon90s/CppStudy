@@ -1700,9 +1700,13 @@
 <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span> <span class="nc">Blob</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// 每个Blob实例将访问权限授予相同类型实例化的BlobPtr和相等运算符</span>
 <span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="k">class</span> <span class="nc">BlobPtr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="w">   </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>注意上述模板参数列表只有一个typename，这样的前置声明是合法的。</p>
+</div>
 <p><strong>通用和特定的模板友好关系</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 前置声明，在将模板的一个特定实例声明为友元时要用到</span>
 <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span> <span class="nc">Pal</span><span class="p">;</span><span class="w"></span>
