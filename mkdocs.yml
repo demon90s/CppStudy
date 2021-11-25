@@ -69,6 +69,7 @@ nav:
       - 条款1_理解模板型别推导: EffectiveModernCpp/ch01_型别推导/条款1_理解模板型别推导.md
       - 条款2_理解auto型别推导: EffectiveModernCpp/ch01_型别推导/条款2_理解auto型别推导.md
       - 条款3_理解decltype: EffectiveModernCpp/ch01_型别推导/条款3_理解decltype.md
+      - 条款4_掌握查看型别推导结果的方法: EffectiveModernCpp/ch01_型别推导/条款4_掌握查看型别推导结果的方法.md
 
 theme:
   name: material
