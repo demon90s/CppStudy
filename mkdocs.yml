@@ -97,3 +97,7 @@ markdown_extensions:
   - admonition
   - codehilite
   - pymdownx.mark
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
