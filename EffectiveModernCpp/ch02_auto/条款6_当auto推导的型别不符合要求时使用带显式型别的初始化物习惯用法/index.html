@@ -11,19 +11,19 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>ch25 国际化特性 - C/C++学习笔记</title>
+        <title>条款6_当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法 - C/C++学习笔记</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -55,7 +55,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#6-auto" class="md-skip">
           跳转至
         </a>
       
@@ -76,7 +76,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="C/C++学习笔记" class="md-header__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
+    <a href="../../.." title="C/C++学习笔记" class="md-header__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ch25 国际化特性
+              条款6_当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法
             
           </span>
         </div>
@@ -172,7 +172,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       简介
     </a>
   </li>
@@ -180,8 +180,6 @@
       
         
   
-  
-    
   
 
 
@@ -194,7 +192,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../CProgramming/ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-tabs__link">
         C语言程序设计
       </a>
     </li>
@@ -217,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-tabs__link">
+      <a href="../../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-tabs__link">
         C++ Primer
       </a>
     </li>
@@ -228,6 +226,8 @@
       
         
   
+  
+    
   
 
 
@@ -240,7 +240,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-tabs__link">
+      <a href="../../ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-tabs__link md-tabs__link--active">
         Effective Modern C++
       </a>
     </li>
@@ -270,7 +270,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="C/C++学习笔记" class="md-nav__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
+    <a href="../../.." title="C/C++学习笔记" class="md-nav__button md-logo" aria-label="C/C++学习笔记" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -302,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         简介
       </a>
     </li>
@@ -315,14 +315,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -343,14 +341,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
       
       
@@ -373,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      <a href="../../../CProgramming/ch01%20C%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         ch01 C语言概述
       </a>
     </li>
@@ -387,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch02%20C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
+      <a href="../../../CProgramming/ch02%20C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
         ch02 C语言基本概念
       </a>
     </li>
@@ -401,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../../CProgramming/ch03%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="md-nav__link">
         ch03 格式化输入输出
       </a>
     </li>
@@ -415,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../CProgramming/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         ch04 表达式
       </a>
     </li>
@@ -429,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch05%20%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../../../CProgramming/ch05%20%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         ch05 选择语句
       </a>
     </li>
@@ -443,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch06%20%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+      <a href="../../../CProgramming/ch06%20%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
         ch06 循环
       </a>
     </li>
@@ -457,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../CProgramming/ch07%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         ch07 基本类型
       </a>
     </li>
@@ -471,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch08%20%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../CProgramming/ch08%20%E6%95%B0%E7%BB%84/" class="md-nav__link">
         ch08 数组
       </a>
     </li>
@@ -485,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch09%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../CProgramming/ch09%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
         ch09 函数
       </a>
     </li>
@@ -499,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../CProgramming/ch10%20%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" class="md-nav__link">
         ch10 程序结构
       </a>
     </li>
@@ -513,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch11%20%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../../CProgramming/ch11%20%E6%8C%87%E9%92%88/" class="md-nav__link">
         ch11 指针
       </a>
     </li>
@@ -527,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../CProgramming/ch12%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
         ch12 指针和数组
       </a>
     </li>
@@ -541,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch13%20%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+      <a href="../../../CProgramming/ch13%20%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
         ch13 字符串
       </a>
     </li>
@@ -555,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch14%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="md-nav__link">
+      <a href="../../../CProgramming/ch14%20%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/" class="md-nav__link">
         ch14 预处理器
       </a>
     </li>
@@ -569,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch15%20%E7%BC%96%E5%86%99%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../CProgramming/ch15%20%E7%BC%96%E5%86%99%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
         ch15 编写大规模程序
       </a>
     </li>
@@ -583,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" class="md-nav__link">
+      <a href="../../../CProgramming/ch16%20%E7%BB%93%E6%9E%84%E3%80%81%E8%81%94%E5%90%88%E5%92%8C%E6%9E%9A%E4%B8%BE/" class="md-nav__link">
         ch16 结构、联合和枚举
       </a>
     </li>
@@ -597,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch17%20%E6%8C%87%E9%92%88%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" class="md-nav__link">
+      <a href="../../../CProgramming/ch17%20%E6%8C%87%E9%92%88%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8/" class="md-nav__link">
         ch17 指针的高级应用
       </a>
     </li>
@@ -611,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch18%20%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+      <a href="../../../CProgramming/ch18%20%E5%A3%B0%E6%98%8E/" class="md-nav__link">
         ch18 声明
       </a>
     </li>
@@ -625,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch19%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../CProgramming/ch19%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         ch19 程序设计
       </a>
     </li>
@@ -639,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch20%20%E4%BD%8E%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../CProgramming/ch20%20%E4%BD%8E%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         ch20 低级程序设计
       </a>
     </li>
@@ -653,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch21%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
+      <a href="../../../CProgramming/ch21%20%E6%A0%87%E5%87%86%E5%BA%93/" class="md-nav__link">
         ch21 标准库
       </a>
     </li>
@@ -667,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch22%20%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../../CProgramming/ch22%20%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA/" class="md-nav__link">
         ch22 输入输出
       </a>
     </li>
@@ -681,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch23%20%E5%BA%93%E5%AF%B9%E6%95%B0%E5%80%BC%E5%92%8C%E5%AD%97%E7%AC%A6%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%AF%E6%8C%81/" class="md-nav__link">
+      <a href="../../../CProgramming/ch23%20%E5%BA%93%E5%AF%B9%E6%95%B0%E5%80%BC%E5%92%8C%E5%AD%97%E7%AC%A6%E6%95%B0%E6%8D%AE%E7%9A%84%E6%94%AF%E6%8C%81/" class="md-nav__link">
         ch23 库对数值和字符数据的支持
       </a>
     </li>
@@ -695,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch24%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="md-nav__link">
+      <a href="../../../CProgramming/ch24%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="md-nav__link">
         ch24 错误处理
       </a>
     </li>
@@ -707,128 +703,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ch25 国际化特性
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../CProgramming/ch25%20%E5%9B%BD%E9%99%85%E5%8C%96%E7%89%B9%E6%80%A7/" class="md-nav__link">
         ch25 国际化特性
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#localeh" class="md-nav__link">
-    locale.h 本地化
-  </a>
-  
-    <nav class="md-nav" aria-label="locale.h 本地化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    类别
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setlocale" class="md-nav__link">
-    setlocale函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#localeconv" class="md-nav__link">
-    localeconv函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    多字节字符和宽字符
-  </a>
-  
-    <nav class="md-nav" aria-label="多字节字符和宽字符">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    多字节字符
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    宽字符
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    多字节字符函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    多字节字符串函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    三字符序列
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -840,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch26%20%E5%85%B6%E4%BB%96%E5%BA%93%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../CProgramming/ch26%20%E5%85%B6%E4%BB%96%E5%BA%93%E5%87%BD%E6%95%B0/" class="md-nav__link">
         ch26 其他库函数
       </a>
     </li>
@@ -887,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheatsheet/%E6%83%AF%E7%94%A8%E6%B3%95/" class="md-nav__link">
+      <a href="../../../CProgramming/cheatsheet/%E6%83%AF%E7%94%A8%E6%B3%95/" class="md-nav__link">
         惯用法
       </a>
     </li>
@@ -968,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch01%20%E5%BC%80%E5%A7%8B/" class="md-nav__link">
         ch01 开始
       </a>
     </li>
@@ -982,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch02%20%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         ch02 变量和基本类型
       </a>
     </li>
@@ -996,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch03%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%90%91%E9%87%8F%E5%92%8C%E6%95%B0%E7%BB%84/" class="md-nav__link">
         ch03 字符串、向量和数组
       </a>
     </li>
@@ -1010,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch04%20%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         ch04 表达式
       </a>
     </li>
@@ -1024,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch05%20%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch05%20%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         ch05 语句
       </a>
     </li>
@@ -1038,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch06%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch06%20%E5%87%BD%E6%95%B0/" class="md-nav__link">
         ch06 函数
       </a>
     </li>
@@ -1052,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch07%20%E7%B1%BB/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch07%20%E7%B1%BB/" class="md-nav__link">
         ch07 类
       </a>
     </li>
@@ -1066,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch08%20IO%E5%BA%93/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch08%20IO%E5%BA%93/" class="md-nav__link">
         ch08 IO库
       </a>
     </li>
@@ -1080,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch09%20%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         ch09 顺序容器
       </a>
     </li>
@@ -1094,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch10%20%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/" class="md-nav__link">
         ch10 泛型算法
       </a>
     </li>
@@ -1108,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch11%20%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         ch11 关联容器
       </a>
     </li>
@@ -1122,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch12%20%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98/" class="md-nav__link">
         ch12 动态内存
       </a>
     </li>
@@ -1136,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch13%20%E6%8B%B7%E8%B4%9D%E6%8E%A7%E5%88%B6/" class="md-nav__link">
         ch13 拷贝控制
       </a>
     </li>
@@ -1150,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch14%20%E6%93%8D%E4%BD%9C%E9%87%8D%E8%BD%BD%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
         ch14 操作重载与类型转换
       </a>
     </li>
@@ -1164,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         ch15 面向对象程序设计
       </a>
     </li>
@@ -1178,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch16%20%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch16%20%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B/" class="md-nav__link">
         ch16 模板与泛型编程
       </a>
     </li>
@@ -1192,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch17%20%E6%A0%87%E5%87%86%E5%BA%93%E7%89%B9%E6%AE%8A%E8%AE%BE%E6%96%BD/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch17%20%E6%A0%87%E5%87%86%E5%BA%93%E7%89%B9%E6%AE%8A%E8%AE%BE%E6%96%BD/" class="md-nav__link">
         ch17 标准库特殊设施
       </a>
     </li>
@@ -1206,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch18%20%E7%94%A8%E4%BA%8E%E5%A4%A7%E5%9E%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         ch18 用于大型程序的工具
       </a>
     </li>
@@ -1220,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CppPrimer/ch19%20%E7%89%B9%E6%AE%8A%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF/" class="md-nav__link">
+      <a href="../../../CppPrimer/ch19%20%E7%89%B9%E6%AE%8A%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF/" class="md-nav__link">
         ch19 特殊工具与技术
       </a>
     </li>
@@ -1247,12 +1126,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -1301,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
+      <a href="../../ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE1_%E7%90%86%E8%A7%A3%E6%A8%A1%E6%9D%BF%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
         条款1_理解模板型别推导
       </a>
     </li>
@@ -1315,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE2_%E7%90%86%E8%A7%A3auto%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
+      <a href="../../ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE2_%E7%90%86%E8%A7%A3auto%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/" class="md-nav__link">
         条款2_理解auto型别推导
       </a>
     </li>
@@ -1329,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE3_%E7%90%86%E8%A7%A3decltype/" class="md-nav__link">
+      <a href="../../ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE3_%E7%90%86%E8%A7%A3decltype/" class="md-nav__link">
         条款3_理解decltype
       </a>
     </li>
@@ -1343,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE4_%E6%8E%8C%E6%8F%A1%E6%9F%A5%E7%9C%8B%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC%E7%BB%93%E6%9E%9C%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../../ch01_%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC/%E6%9D%A1%E6%AC%BE4_%E6%8E%8C%E6%8F%A1%E6%9F%A5%E7%9C%8B%E5%9E%8B%E5%88%AB%E6%8E%A8%E5%AF%BC%E7%BB%93%E6%9E%9C%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
         条款4_掌握查看型别推导结果的方法
       </a>
     </li>
@@ -1362,12 +1243,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
       
       
       
@@ -1390,7 +1273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch02_auto/%E6%9D%A1%E6%AC%BE5_%E4%BC%98%E5%85%88%E9%80%89%E7%94%A8auto%E8%80%8C%E9%9D%9E%E6%98%BE%E5%BC%8F%E5%9E%8B%E5%88%AB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+      <a href="../%E6%9D%A1%E6%AC%BE5_%E4%BC%98%E5%85%88%E9%80%89%E7%94%A8auto%E8%80%8C%E9%9D%9E%E6%98%BE%E5%BC%8F%E5%9E%8B%E5%88%AB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
         条款5_优先选用auto而非显式型别声明
       </a>
     </li>
@@ -1402,11 +1285,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../EffectiveModernCpp/ch02_auto/%E6%9D%A1%E6%AC%BE6_%E5%BD%93auto%E6%8E%A8%E5%AF%BC%E7%9A%84%E5%9E%8B%E5%88%AB%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82%E6%97%B6%E4%BD%BF%E7%94%A8%E5%B8%A6%E6%98%BE%E5%BC%8F%E5%9E%8B%E5%88%AB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E7%89%A9%E4%B9%A0%E6%83%AF%E7%94%A8%E6%B3%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         条款6_当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法
       </a>
+      
     </li>
   
 
@@ -1446,96 +1339,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#localeh" class="md-nav__link">
-    locale.h 本地化
-  </a>
-  
-    <nav class="md-nav" aria-label="locale.h 本地化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    类别
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setlocale" class="md-nav__link">
-    setlocale函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#localeconv" class="md-nav__link">
-    localeconv函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    多字节字符和宽字符
-  </a>
-  
-    <nav class="md-nav" aria-label="多字节字符和宽字符">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    多字节字符
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    宽字符
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    多字节字符函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    多字节字符串函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    三字符序列
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1546,99 +1349,41 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/CProgramming/ch25 国际化特性.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/demon90s/CppStudy/tree/master/notes/EffectiveModernCpp/ch02_auto/条款6_当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">第二十五章 国际化特性</h1>
+                <h1 id="6-auto">条款6: 当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法</h1>
 <hr />
-<h2 id="localeh">locale.h 本地化</h2>
-<p>locale.h提供的函数用于控制标准库中对于不同的地区会不一样的部分。</p>
-<p>地区通常指一个国家，或者一个国家的不同区域。</p>
-<p>在标准库中，依赖地区的部分包括：</p>
-<ul>
-<li>
-<p>数值的格式。比如一些地区的小数点是用逗号表示</p>
-</li>
-<li>
-<p>货币的格式。不同国家的货币符号不同。</p>
-</li>
-<li>
-<p>字符集。字符集依赖于地区使用的语言。亚洲国家通常比西方国家需要更大的字符集。</p>
-</li>
-<li>
-<p>日期和时间的表示格式。</p>
-</li>
-</ul>
-<h3 id="_2">类别</h3>
-<p>通过修改地区，程序可以改变它的行为来适应不同地区。</p>
-<p>可以使用一些宏来指定一个<strong>类型</strong>：</p>
-<ul>
-<li>
-<p>LC_COLLATE。影响两个字符串比较函数的行为（strcoll和strxfm）。</p>
-</li>
-<li>
-<p>LC_CTYPE。影响ctype.h中函数的行为，除了isdigit和isxdigit。同时还影响stdlib.h中的多字节函数。</p>
-</li>
-<li>
-<p>LC_MONETRAY。影响由localeconv函数返回的货币格式信息。</p>
-</li>
-<li>
-<p>LC_NUMERIC。影响格式化输入/输出函数使用的小数点字符以及stdlib.h中的字符串转换函数（atof和strtod），还会影响localeconv函数返回的非货币格式信息。</p>
-</li>
-<li>
-<p>LC_TIME。影响strftime函数的行为，该函数将时间转换成字符串。</p>
-</li>
-</ul>
-<h3 id="setlocale">setlocale函数</h3>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">setlocale</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">category</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">locale</span><span class="p">);</span><span class="w"></span>
+<p>以<code>std::vector&lt;bool&gt;</code>为例，这样写是正确的：</p>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bvec</span><span class="p">;</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvec</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
-<p>setlocale函数修改当前的地区。如果第一个参数是LC_ALL，就会影响所有的类型。C语言标准对第二个参数仅定义了两种可能值："c"和""。其余的由实现定义，比如， gcc 对于简体中文的地区，可以是"zh_CN.UTF-8"</p>
-<p>程序执行开始时，都会隐含调用：<code>setlocale(LC_ALL, "C");</code></p>
-<p>如果用""作为第二个参数，就切换到了本地模式（native locale），这种模式下程序会适应本地的环境。</p>
-<p>如果调用成功，返回一个关于地区名字的字符串指针。如果调用失败，返回空指针。</p>
-<p>setlocale函数也可以当作搜索函数使用，如果第二个参数是空指针，setlocale函数会返回一个指向字符串的指针，这个字符串与当前地区类型的设置相关联。</p>
-<h3 id="localeconv">localeconv函数</h3>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">lconv</span><span class="w"> </span><span class="o">*</span><span class="n">localeconv</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+<p>但下面的代码却有未定义行为：</p>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bvec</span><span class="p">;</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bvec</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w"></span>
+<span class="c1">// 使用b</span>
 </code></pre></div>
-<p>函数返回的struct lconv结构包含了当前地区的详细信息，此结构具有静态存储期限。</p>
-<p>详细信息参考书本。</p>
-<h2 id="_3">多字节字符和宽字符</h2>
-<p>因为定义已经把char型值的大小限制为一个字节，所以通过改变char类型的含义来处理更大的字符集显然是不可能的。</p>
-<p>C语言提供了两种可扩展字符集的编码：<strong>多字节字符</strong>（multibyte character）和<strong>宽字符</strong>（wide character）。</p>
-<p>C标准要求0字节始终用来表示空字符。</p>
-<h3 id="_4">多字节字符</h3>
-<p>在多字节字符编码中，一个或多个字节表示一个可扩展字符。C语言要求的基本字符是单字节的。</p>
-<p>一些多字节字符集依靠<strong>依赖状态编码</strong>（state-dependent encoding）。在这类编码中，每个多字节字符序列都以<strong>初始移位状态</strong>（initial shift state）开始。序列中稍后遇到的一些多字节字符会改变移位状态，并且影响后续字节的含义。</p>
-<p>MB_LEN_MAX和MB_CUR_MAX说明了多字节字符中字节的最大数量。MB_LEN_MAX定义在limits.h中，给出了任意支持地区的最大值。MB_CUR_MAX定义在stdlib.h中，给出了当前地区的最大值。</p>
-<h3 id="_5">宽字符</h3>
-<p>宽字符是一种其值表示字符的整数，所有宽字符要求相同的字节数。</p>
-<p>宽字符具有wchar_t类型。</p>
-<p>一个宽字符常量可以写成：<code>L'a'</code></p>
-<p>一个宽字符字符串可以写成：<code>L"abc"</code></p>
-<p>即在普通字符常量前用字母L作为前缀。</p>
-<div class="admonition note">
-<p class="admonition-title">my note</p>
-<p>注意，在使用宽字符前，需要设置好本地环境，比如，要使用简体中文的宽字符，那么要先执行 <code>setlocale(LC_ALL, "zh_CN.UTF-8")</code> ，这样才能正确地解析宽字符。</p>
-</div>
-<h3 id="_6">多字节字符函数</h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">mblen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">mbtowc</span><span class="p">(</span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">pwc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">wctomb</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">wchar_t</span><span class="w"> </span><span class="n">wc</span><span class="p">);</span><span class="w"></span>
+<p>为何？</p>
+<p><code>std::vector&lt;bool&gt;</code>经过了特化，它的<code>operator[]</code>返回的是一个<code>std::vector&lt;bool&gt;::reference</code>型别的对象，它是一个叫作“代理类”的东西。</p>
+<p>我们无法得到一个引用到比特的对象（<code>std::vector&lt;bool&gt;</code>用比特存储一个bool），故而它的内部实现做了一些工作。</p>
+<p><code>bvec[5]</code>返回了一个临时的对象，而此对象会马上被析构，而其副本b就拥有了一个空悬的指针（可能的实现），对它进行解引用就会出现未定义行为。</p>
+<p>但作者不认为这是auto的错，我们实际上要的是另一种型别，那么可以这样的方法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bvec</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span><span class="w"></span>
 </code></pre></div>
-<h3 id="_7">多字节字符串函数</h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
-<span class="kt">size_t</span><span class="w"> </span><span class="nf">mbstowcs</span><span class="p">(</span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<span class="kt">size_t</span><span class="w"> </span><span class="nf">wcstombs</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">wchar_t</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<p>这种写法之所以被作者推崇，是因为它显式的表达了代码书写者的意图。比如，对于这样的代码：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">calcEpsilon</span><span class="p">();</span><span class="w"></span>
+
+<span class="kt">float</span><span class="w"> </span><span class="n">ep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calcEpsilon</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-<h2 id="_8">三字符序列</h2>
-<p>见书本简要介绍。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>这就是一种字符替换方式，由于某些国家不支持C语言的标准的字符书写方式。</p>
-</div>
+<p>ep的型别表达的含义是模糊的，无法断定是疏忽大意，还是故意舍弃精度。</p>
+<p>而这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="n">ep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">calcEpsilon</span><span class="p">());</span><span class="w"></span>
+</code></pre></div>
+<p>就明显得多了，很显然就是故意舍弃了精度。</p>
                 
               
               
@@ -1658,7 +1403,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ch24%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ch24 错误处理" rel="prev">
+        <a href="../%E6%9D%A1%E6%AC%BE5_%E4%BC%98%E5%85%88%E9%80%89%E7%94%A8auto%E8%80%8C%E9%9D%9E%E6%98%BE%E5%BC%8F%E5%9E%8B%E5%88%AB%E5%A3%B0%E6%98%8E/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 条款5_优先选用auto而非显式型别声明" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1667,26 +1412,11 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              ch24 错误处理
+              条款5_优先选用auto而非显式型别声明
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../ch26%20%E5%85%B6%E4%BB%96%E5%BA%93%E5%87%BD%E6%95%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: ch26 其他库函数" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              ch26 其他库函数
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -1715,10 +1445,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
