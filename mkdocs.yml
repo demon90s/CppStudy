@@ -72,6 +72,7 @@ nav:
       - 条款4_掌握查看型别推导结果的方法: EffectiveModernCpp/ch01_型别推导/条款4_掌握查看型别推导结果的方法.md
     - ch02_auto:
       - 条款5_优先选用auto而非显式型别声明: EffectiveModernCpp/ch02_auto/条款5_优先选用auto而非显式型别声明.md
+      - 条款6_当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法: EffectiveModernCpp/ch02_auto/条款6_当auto推导的型别不符合要求时使用带显式型别的初始化物习惯用法.md
 
 theme:
   name: material
